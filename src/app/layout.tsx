@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { IBM_Plex_Sans_Hebrew, JetBrains_Mono } from "next/font/google";
 import "katex/dist/katex.min.css";
 import "./globals.css";
+import { SiteFooter, SiteHeader, SiteHeaderShell } from "@/components/SiteHeader";
 
 const plex = IBM_Plex_Sans_Hebrew({
   variable: "--font-hebrew",
@@ -22,7 +24,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="he" dir="rtl" className={`${plex.variable} ${mono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Suspense fallback={<SiteHeaderShell />}>
+          <SiteHeader />
+        </Suspense>
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

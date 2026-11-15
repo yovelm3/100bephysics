@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
 
 // Demo of the solution format. Not a real exercise from the bank.
@@ -33,7 +34,12 @@ export default function Home() {
         <SolutionSteps steps={demo} />
       </section>
 
-      <p className="text-sm text-muted">האתר בבנייה. בקרוב: הרשמה, מנוי ומאגר התרגילים במכניקה.</p>
+      <div className="flex flex-wrap gap-3">
+        <Link href="/signup" className="rounded-lg bg-accent px-5 py-2.5 font-semibold text-surface">הרשמה</Link>
+        <Link href="/subscribe" className="rounded-lg border border-line px-5 py-2.5 font-semibold text-accent">פרטים על המנוי</Link>
+      </div>
+
+      <p className="text-sm text-muted">האתר בבנייה. בקרוב: מאגר התרגילים במכניקה.</p>
     </main>
   );
 }
