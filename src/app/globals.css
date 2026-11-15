@@ -1,21 +1,65 @@
 @import "tailwindcss";
 
-/* Design tokens. Placeholder values until a design direction is chosen. */
+/*
+ * Design direction A, "דיו כחול" (chosen by the owner).
+ * Solution text is in blue ink. Important lines are highlighted:
+ *   key  = green (main result / key step)
+ *   warn = red   (a common trap / pay attention)
+ */
 :root {
   --background: #f4f6f9;
+  --surface: #ffffff;
   --foreground: #17233a;
   --muted: #5a6680;
   --line: #dbe1ea;
   --accent: #2b4c7e;
+  --accent-soft: #e6ecf5;
+  --ink: #2b4c7e;
+  --key: #2f7a55;
+  --key-soft: #e4f2ea;
+  --warn: #b03a32;
+  --warn-soft: #f9e6e4;
+  --caution: #a1661b;
+  --caution-soft: #f8eedf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --surface: #182235;
+    --foreground: #e4e9f2;
+    --muted: #9aa6bd;
+    --line: #2a3650;
+    --accent: #8fb1e6;
+    --accent-soft: #1f2d47;
+    --ink: #9dbbea;
+    --key: #6cc59a;
+    --key-soft: #173327;
+    --warn: #f0877e;
+    --warn-soft: #3a1d1b;
+    --caution: #e2a85a;
+    --caution-soft: #3a2c17;
+    color-scheme: dark;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+  --color-key: var(--key);
+  --color-key-soft: var(--key-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-caution: var(--caution);
+  --color-caution-soft: var(--caution-soft);
   --font-sans: var(--font-hebrew), Arial, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
 body {
@@ -29,4 +73,8 @@ body {
 .katex {
   direction: ltr;
   unicode-bidi: isolate;
+}
+
+.ltr {
+  white-space: nowrap;
 }

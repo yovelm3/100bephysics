@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Heebo } from "next/font/google";
+import { IBM_Plex_Sans_Hebrew, JetBrains_Mono } from "next/font/google";
 import "katex/dist/katex.min.css";
 import "./globals.css";
 
-// Temporary font until a design direction is chosen.
-const heebo = Heebo({
+const plex = IBM_Plex_Sans_Hebrew({
   variable: "--font-hebrew",
   subsets: ["hebrew", "latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -16,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="he" dir="rtl" className={`${heebo.variable} h-full antialiased`}>
+    <html lang="he" dir="rtl" className={`${plex.variable} ${mono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
