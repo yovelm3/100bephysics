@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
+    "katex": "^0.19.1",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
@@ -21,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "tailwindcss": "4.3.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.7"
   }
 }
