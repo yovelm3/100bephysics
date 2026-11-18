@@ -1,45 +1,52 @@
 import Link from "next/link";
-import { SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
+import { InlineText, SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
 
-// Demo of the solution format. Not a real exercise from the bank.
+// Temporary home page: the approved solution format (1987, question 1, part A).
+// The full landing page is built in stage 3.
 const demo: SolutionStep[] = [
-  { kind: "explain", text: "לא נתון זמן ולא מבקשים זמן, ולכן בוחרים במשוואה שלא תלויה בזמן." },
-  { kind: "step", what: "משוואה בלי זמן", tex: "v^2 = v_0^2 - 2gh" },
-  { kind: "step", what: "בשיא הגובה המהירות אפס", tex: "v = 0", highlight: "warn" },
-  { kind: "step", what: "הצבה", tex: "0 = 20^2 - 2\\cdot 10\\cdot h" },
-  { kind: "step", what: "העברת אגפים", tex: "20h = 400" },
-  { kind: "step", what: "חילוק ב-20", tex: "h = 20\\ \\text{m}", highlight: "key" },
-  { kind: "explain", text: "בדיקה בדרך אחרת: מוצאים את זמן העלייה ומציבים במשוואת המקום." },
-  { kind: "step", what: "זמן העלייה", tex: "t = \\frac{v_0}{g} = \\frac{20}{10} = 2\\ \\text{s}" },
-  { kind: "step", what: "הצבה במשוואת המקום", tex: "h = 20\\cdot 2 - \\tfrac{1}{2}\\cdot 10\\cdot 2^2 = 20\\ \\text{m}", highlight: "key" },
+  {
+    kind: "explain",
+    text: "הכוח נתון לפי זמן, $0.01\\,\\text{s}$, ולכן פותרים בקינמטיקה. קודם מוצאים את התאוצה מהחוק השני של ניוטון, ואחר כך את המהירות ממשוואת המהירות.",
+  },
+  { kind: "step", what: "ממירים מסה לק״ג", why: "הכוח נתון בניוטון, וניוטון מוגדר על ק״ג. בגרמים התאוצה תצא גדולה פי 1000", tex: "m = 400\\,\\text{g} = 0.4\\,\\text{kg}" },
+  { kind: "step", what: "כותבים את החוק השני של ניוטון בכיוון האופקי", why: "הכוח נתון לפי זמן, ולכן עובדים בקינמטיקה. החוק השני מחבר בין הכוח הנתון לתאוצה שצריך למצוא. בכיוון האופקי פועל רק כוח הדחיפה, כי הכובד אנכי", tex: "F = m \\cdot a" },
+  { kind: "step", what: "מבודדים את $a$", why: "זה הנעלם היחיד במשוואה", tex: "a = \\frac{F}{m}" },
+  { kind: "step", what: "מציבים $F = 1000$ ו-$m = 0.4$", why: "שני הנתונים כבר ביחידות הנכונות", tex: "a = \\frac{1000}{0.4}" },
+  { kind: "step", what: "מחלקים", why: "התאוצה עצומה, אבל היא פועלת רק מאית שנייה", tex: "a = 2500\\,\\text{m/s}^2" },
+  { kind: "step", what: "בוחרים את משוואת המהירות בתאוצה קבועה", why: "ידועים התאוצה, הזמן והמהירות ההתחלתית, ומחפשים מהירות. זו המשוואה שמקשרת בדיוק את ארבעתם, בלי מקום", tex: "v = v_0 + a \\cdot t" },
+  { kind: "step", what: "מציבים $v_0 = 0$ ו-$t = 0.01$", why: "הכדור מונח לפני הדחיפה, והכוח פועל במשך $0.01\\,\\text{s}$", tex: "v = 0 + 2500 \\cdot 0.01" },
+  { kind: "step", what: "כופלים", why: "זו המהירות ברגע שהכוח מפסיק, כלומר מהירות היציאה. מעכשיו היא קבועה בכיוון האופקי", tex: "v = 25\\,\\text{m/s}" },
 ];
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-4 py-10">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold text-accent">
-          <span className="ltr">100</span> בפיזיקה
+    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-4 py-10">
+      <header className="flex flex-col items-center gap-4 text-center">
+        <h1 className="max-w-[18ch] text-4xl leading-tight font-extrabold text-balance md:text-5xl">
+          מאגר אחד, כל הנושאים, ותוכנית <span className="text-accent">שמכירה אותך.</span>
         </h1>
-        <p className="text-lg text-muted">
-          מאגר תרגילים בפיזיקה לבגרות: תרגילים לפי נושאים, בדיקת תשובה ופתרון מלא שלב אחר שלב.
+        <p className="max-w-[52ch] text-lg text-muted">
+          האתר עוקב אחרי החומר שלמדת ואחרי המקומות שבהם נתקעת, ובונה לך מסלול תרגול שמוביל ל-<span className="ltr">100</span>.
         </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link href="/signup" className="rounded-xl bg-accent px-6 py-3 text-lg font-bold text-on-accent">להרשמה</Link>
+          <Link href="/subscribe" className="rounded-xl border-2 border-accent px-6 py-3 text-lg font-bold">פרטים על המנוי</Link>
+        </div>
       </header>
 
-      <section className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4">
-        <p className="text-sm text-muted">דוגמה לפורמט הפתרון</p>
-        <h2 className="text-lg font-bold">
-          כדור נזרק אנכית כלפי מעלה במהירות <span className="ltr">20 m/s</span>. מהו הגובה המרבי?
-        </h2>
+      <section className="flex flex-col gap-4">
+        <p className="text-sm font-bold text-muted">דוגמה לפורמט הפתרון · בגרות <span className="ltr">1987</span>, שאלה <span className="ltr">1</span>, סעיף א</p>
+        <p className="font-semibold">
+          <InlineText text="מה מהירות היציאה של הכדור?" />
+        </p>
         <SolutionSteps steps={demo} />
+        <p className="flex justify-between border-t border-line pt-3 font-bold">
+          <span>תשובה סופית</span>
+          <span className="ltr">25 m/s</span>
+        </p>
       </section>
 
-      <div className="flex flex-wrap gap-3">
-        <Link href="/signup" className="rounded-lg bg-accent px-5 py-2.5 font-semibold text-surface">הרשמה</Link>
-        <Link href="/subscribe" className="rounded-lg border border-line px-5 py-2.5 font-semibold text-accent">פרטים על המנוי</Link>
-      </div>
-
-      <p className="text-sm text-muted">האתר בבנייה. בקרוב: מאגר התרגילים במכניקה.</p>
+      <p className="text-center text-sm text-muted">האתר בבנייה. בקרוב: מאגר התרגילים במכניקה.</p>
     </main>
   );
 }

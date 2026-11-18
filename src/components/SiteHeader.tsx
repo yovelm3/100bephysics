@@ -27,7 +27,7 @@ export async function SiteHeader() {
           ) : (
             <>
               <Link href="/login" className="text-muted hover:text-accent">התחברות</Link>
-              <Link href="/signup" className="rounded-lg bg-accent px-3 py-1.5 text-surface">הרשמה</Link>
+              <Link href="/signup" className="rounded-lg bg-accent px-3 py-1.5 text-on-accent">הרשמה</Link>
             </>
           )}
         </nav>

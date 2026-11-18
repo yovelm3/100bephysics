@@ -1,46 +1,50 @@
 @import "tailwindcss";
 
 /*
- * Design direction A, "דיו כחול" (chosen by the owner).
- * Solution text is in blue ink. Important lines are highlighted:
- *   key  = green (main result / key step)
- *   warn = red   (a common trap / pay attention)
+ * Chosen design: direction A "אקדמי" colours (slate blue + muted gold) with the Heebo font (from direction C).
+ * Dark-medium background, one accent colour. All text meets WCAG AA on these backgrounds.
+ * Solutions use one uniform text colour (no green/red row highlights).
+ * `key` / `warn` / `caution` are status colours for UI messages only (success, error, notice).
+ * `.theme-light` = the light reading mode for the exercise page ("דיו כחול").
  */
 :root {
+  --background: #36404e;
+  --surface: #404b5a;
+  --foreground: #f2f4f7;
+  --muted: #c4ccd7;
+  --line: #5a6678;
+  --accent: #dcbb73;
+  --on-accent: #1d2430;
+  --accent-soft: #4a4f52;
+  --ink: #f2f4f7;
+  --key: #8fd3ad;
+  --key-soft: #36504a;
+  --warn: #ffaaa3;
+  --warn-soft: #57424a;
+  --caution: #f0c98a;
+  --caution-soft: #544b3f;
+  color-scheme: dark;
+}
+
+.theme-light {
   --background: #f4f6f9;
   --surface: #ffffff;
   --foreground: #17233a;
-  --muted: #5a6680;
-  --line: #dbe1ea;
+  --muted: #4f5b73;
+  --line: #d3dae5;
   --accent: #2b4c7e;
+  --on-accent: #ffffff;
   --accent-soft: #e6ecf5;
-  --ink: #2b4c7e;
+  --ink: #17233a;
   --key: #2f7a55;
   --key-soft: #e4f2ea;
   --warn: #b03a32;
   --warn-soft: #f9e6e4;
-  --caution: #a1661b;
+  --caution: #8a5512;
   --caution-soft: #f8eedf;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #111827;
-    --surface: #182235;
-    --foreground: #e4e9f2;
-    --muted: #9aa6bd;
-    --line: #2a3650;
-    --accent: #8fb1e6;
-    --accent-soft: #1f2d47;
-    --ink: #9dbbea;
-    --key: #6cc59a;
-    --key-soft: #173327;
-    --warn: #f0877e;
-    --warn-soft: #3a1d1b;
-    --caution: #e2a85a;
-    --caution-soft: #3a2c17;
-    color-scheme: dark;
-  }
+  color-scheme: light;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 @theme inline {
@@ -51,6 +55,7 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
   --color-ink: var(--ink);
   --color-key: var(--key);
   --color-key-soft: var(--key-soft);
@@ -66,6 +71,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-hebrew), Arial, sans-serif;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Formulas, numbers and units always read left-to-right inside RTL text. */

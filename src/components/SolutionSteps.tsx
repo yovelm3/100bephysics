@@ -1,43 +1,42 @@
 import { Math } from "@/components/Math";
 
-export type StepHighlight = "key" | "warn";
-
+/** One row of a full solution: what we do, why, and the calculation (LaTeX). */
 export type SolutionStep =
-  | { kind: "step"; what: string; tex: string; highlight?: StepHighlight }
+  | { kind: "step"; what: string; why: string; tex: string }
   | { kind: "explain"; text: string };
 
-const rowColor: Record<StepHighlight | "none", string> = {
-  none: "text-ink",
-  key: "bg-key-soft text-key font-semibold",
-  warn: "bg-warn-soft text-warn font-semibold",
-};
-
 /**
- * Full solution: each row is one equation with a Hebrew note of what we did.
- * Two columns on wide screens, one card per row on phones.
- * Rows are blue ink; highlighted rows are green (key) or red (warn).
+ * Full solution in the approved format: three columns ("מה עושים", "למה", "חישוב") on wide screens,
+ * one card per row on phones. All rows use the same text colour.
+ * `what` may contain inline formulas written as $...$.
  */
 export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
   return (
     <div className="flex flex-col gap-3">
       {groupSteps(steps).map((group, i) =>
         group.kind === "explain" ? (
-          <p key={i} className="text-sm text-muted">
-            {group.text}
+          <p key={i} className="text-muted">
+            <InlineText text={group.text} />
           </p>
         ) : (
           <div key={i} className="overflow-hidden rounded-xl border border-line bg-surface">
-            <div className="hidden grid-cols-[10rem_1fr] bg-accent-soft text-xs font-bold text-accent sm:grid">
-              <div className="px-3 py-2">מה עשינו</div>
-              <div className="px-3 py-2">חישוב</div>
+            <div className="hidden grid-cols-[11rem_minmax(0,1fr)_14rem] border-b border-line text-sm font-bold text-muted md:grid">
+              <div className="px-4 py-2.5">מה עושים</div>
+              <div className="px-4 py-2.5">למה</div>
+              <div className="px-4 py-2.5">חישוב</div>
             </div>
             {group.rows.map((row, j) => (
               <div
                 key={j}
-                className={`grid grid-cols-1 border-t border-line first:border-t-0 sm:grid-cols-[12rem_1fr] sm:first:border-t ${rowColor[row.highlight ?? "none"]}`}
+                className="grid grid-cols-1 gap-1 border-t border-line px-4 py-3 first:border-t-0 md:grid-cols-[11rem_minmax(0,1fr)_14rem] md:gap-0 md:px-0 md:py-0"
               >
-                <div className="px-3 pt-2 text-sm sm:border-e sm:border-line sm:py-2">{row.what}</div>
-                <div className="overflow-x-auto px-3 pb-2 text-left sm:py-2">
+                <div className="font-bold md:px-4 md:py-3 md:font-semibold">
+                  <InlineText text={row.what} />
+                </div>
+                <div className="text-muted md:px-4 md:py-3">
+                  <InlineText text={row.why} />
+                </div>
+                <div className="overflow-x-auto text-left md:px-4 md:py-3">
                   <Math tex={row.tex} />
                 </div>
               </div>
@@ -46,6 +45,18 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
         ),
       )}
     </div>
+  );
+}
+
+/** Hebrew text with inline $formulas$ rendered left-to-right. */
+export function InlineText({ text }: { text: string }) {
+  const parts = text.split(/(\$[^$]+\$)/g);
+  return (
+    <>
+      {parts.map((p, i) =>
+        p.startsWith("$") && p.endsWith("$") && p.length > 2 ? <Math key={i} tex={p.slice(1, -1)} /> : <span key={i}>{p}</span>,
+      )}
+    </>
   );
 }
 
