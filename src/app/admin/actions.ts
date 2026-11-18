@@ -32,3 +32,12 @@ export async function removeDevice(form: FormData) {
   if (error) throw new Error(error.message);
   revalidatePath("/admin");
 }
+
+export async function setTrack(form: FormData) {
+  const { supabase } = await requireAdmin("/admin");
+  const track = form.get("track");
+  if (track !== "highschool" && track !== "mechina") throw new Error("bad track");
+  const { error } = await supabase.rpc("admin_set_track", { p_user: uuid(form.get("user")), p_track: track });
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin");
+}

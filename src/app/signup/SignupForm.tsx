@@ -4,11 +4,27 @@ import { useActionState } from "react";
 import { signUp, type FormState } from "@/app/auth/actions";
 import { Button, Field, Notice } from "@/components/ui";
 
-export function SignupForm() {
+export function SignupForm({ track }: { track?: "highschool" | "mechina" }) {
   const [state, action, pending] = useActionState<FormState, FormData>(signUp, undefined);
   if (state?.done) return <Notice tone="ok">{state.done}</Notice>;
   return (
     <form action={action} className="flex flex-col gap-4">
+      <fieldset className="flex flex-col gap-2">
+        <legend className="mb-1 text-sm font-medium">אני</legend>
+        <div className="grid grid-cols-2 gap-2">
+          {[
+            ["highschool", "תלמיד תיכון"],
+            ["mechina", "תלמיד מכינה"],
+          ].map(([value, label]) => (
+            <label key={value} className="flex cursor-pointer items-center gap-2 rounded-lg border border-line px-3 py-3 has-[:checked]:border-accent has-[:checked]:bg-accent-soft">
+              <input type="radio" name="track" value={value} defaultChecked={track === value} required className="size-4" />
+              <span className="font-semibold">{label}</span>
+            </label>
+          ))}
+        </div>
+        <p className="text-xs text-muted">אי אפשר לשנות את הבחירה אחרי ההרשמה בלי פנייה למנהל האתר.</p>
+      </fieldset>
+
       <Field label="מייל" name="email" type="email" autoComplete="email" required dir="ltr" />
       <Field label="סיסמה (8 תווים לפחות)" name="password" type="password" autoComplete="new-password" minLength={8} required dir="ltr" />
 

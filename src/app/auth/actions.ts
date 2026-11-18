@@ -17,9 +17,11 @@ export async function signUp(_: FormState, form: FormData): Promise<FormState> {
   const email = text(form, "email").toLowerCase();
   const password = String(form.get("password") ?? "");
   const agreed = form.get("agree") === "on";
+  const track = form.get("track");
 
   if (!EMAIL_RE.test(email)) return { error: "כתובת המייל לא תקינה." };
   if (password.length < 8) return { error: "הסיסמה צריכה להיות באורך 8 תווים לפחות." };
+  if (track !== "highschool" && track !== "mechina") return { error: "בחר אם אתה תלמיד תיכון או תלמיד מכינה." };
   if (!agreed) return { error: "כדי להירשם צריך לסמן שקראת את האזהרה על מגבלת המכשירים ואתה מסכים לה." };
 
   const supabase = await createClient();
@@ -30,7 +32,7 @@ export async function signUp(_: FormState, form: FormData): Promise<FormState> {
     password,
     options: {
       emailRedirectTo: `${await siteUrl()}/auth/confirm?next=/account`,
-      data: { terms_accepted: true },
+      data: { terms_accepted: true, track },
     },
   });
   if (error) {

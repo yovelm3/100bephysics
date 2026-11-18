@@ -42,11 +42,15 @@ export async function createTestDb() {
 export type TestDb = Awaited<ReturnType<typeof createTestDb>>;
 
 /** Creates an auth user (fires the profile trigger) and returns its id. */
-export async function createUser(db: TestDb, email: string, opts: { admin?: boolean; terms?: boolean } = {}) {
+export async function createUser(
+  db: TestDb,
+  email: string,
+  opts: { admin?: boolean; terms?: boolean; track?: "highschool" | "mechina" } = {},
+) {
   const res = await db.query<{ id: string }>(
     `insert into auth.users (id, email, raw_user_meta_data)
      values (gen_random_uuid(), $1, $2) returning id`,
-    [email, JSON.stringify({ terms_accepted: opts.terms ?? true })],
+    [email, JSON.stringify({ terms_accepted: opts.terms ?? true, track: opts.track })],
   );
   const id = res.rows[0].id;
   if (opts.admin) await db.query(`update public.profiles set role = 'admin' where id = $1`, [id]);

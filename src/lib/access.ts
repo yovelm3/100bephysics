@@ -8,6 +8,7 @@ export type Profile = {
   id: string;
   email: string;
   role: "student" | "admin";
+  track: "highschool" | "mechina";
   locked: boolean;
   locked_at: string | null;
   daily_chat_limit: number;
@@ -55,7 +56,7 @@ export async function getAccess(): Promise<Access> {
 
   const { data: profile, error: pErr } = await supabase
     .from("profiles")
-    .select("id, email, role, locked, locked_at, daily_chat_limit, created_at")
+    .select("id, email, role, track, locked, locked_at, daily_chat_limit, created_at")
     .eq("id", userId)
     .single<Profile>();
   if (pErr || !profile) throw new Error(`profile not found: ${pErr?.message}`);

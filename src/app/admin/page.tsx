@@ -4,7 +4,7 @@ export const instant = false;
 import type { Metadata } from "next";
 import { Button, Card, Page, formatDate, formatDateTime } from "@/components/ui";
 import { requireAdmin } from "@/lib/access";
-import { grantSubscription, removeDevice, unlockUser } from "./actions";
+import { grantSubscription, removeDevice, setTrack, unlockUser } from "./actions";
 
 export const metadata: Metadata = { title: "ניהול | 100 בפיזיקה" };
 
@@ -12,6 +12,7 @@ type Row = {
   id: string;
   email: string;
   role: "student" | "admin";
+  track: "highschool" | "mechina";
   locked: boolean;
   locked_at: string | null;
   created_at: string;
@@ -25,7 +26,7 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
 
   let query = supabase
     .from("profiles")
-    .select("id, email, role, locked, locked_at, created_at, devices(id, browser, os, last_seen_at), subscriptions(ends_at, starts_at, source)")
+    .select("id, email, role, track, locked, locked_at, created_at, devices(id, browser, os, last_seen_at), subscriptions(ends_at, starts_at, source)")
     .order("created_at", { ascending: false })
     .limit(200);
   if (q) query = query.ilike("email", `%${q}%`);
@@ -66,7 +67,18 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
                 </span>
               </div>
             </div>
-            <p className="text-xs text-muted">נרשם ב-{formatDate(r.created_at)}</p>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs text-muted">נרשם ב-{formatDate(r.created_at)}</p>
+              <form action={setTrack} className="flex items-center gap-2 text-sm">
+                <input type="hidden" name="user" value={r.id} />
+                <label htmlFor={`track-${r.id}`}>מסלול:</label>
+                <select id={`track-${r.id}`} name="track" defaultValue={r.track} className="rounded-md border border-line bg-surface px-2 py-1">
+                  <option value="highschool">תיכון</option>
+                  <option value="mechina">מכינה</option>
+                </select>
+                <button className="text-xs font-semibold text-accent underline">שמירה</button>
+              </form>
+            </div>
 
             <details>
               <summary className="cursor-pointer text-sm font-semibold">
