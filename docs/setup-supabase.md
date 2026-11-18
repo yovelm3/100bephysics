@@ -8,6 +8,8 @@
 1. בתפריט הצד: **SQL Editor** → **New query**.
 2. להעתיק את כל התוכן של `supabase/migrations/20261115000001_accounts.sql` מ-GitHub, להדביק וללחוץ **Run**.
 3. צריך להופיע `Success. No rows returned`.
+4. לפתוח שאילתה חדשה (**New query**) ולעשות אותו דבר עם `supabase/migrations/20261118000001_tracks.sql`.
+5. בהמשך יתווספו קבצים נוספים לתיקייה הזאת. מריצים כל קובץ פעם אחת בלבד, לפי הסדר.
 
 ## 3. הגדרות התחברות
 **Authentication** → **URL Configuration**:
