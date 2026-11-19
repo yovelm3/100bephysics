@@ -1,0 +1,185 @@
+{
+  "id": "bagrut-1994-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1994,
+    "label": "1994 שאלה 3"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גופים $A$ ו-$B$ נעים ימינה לאורך קו ישר על משטח אופקי חסר חיכוך. מסתו של הגוף $A$ היא $2\\,\\text{kg}$, וגודל מהירותו $10\\,\\text{m/s}$. מסתו של הגוף $B$ היא $6\\,\\text{kg}$, וגודל מהירותו $4\\,\\text{m/s}$. אל הגוף $B$ צמוד מאחוריו קפיץ שקבוע הכוח שלו $800\\,\\text{N/m}$, ומסתו ניתנת להזנחה.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1994-q3.svg",
+    "alt": "גוף A במסה 2 קילוגרם נע ימינה ב-10 מטר לשנייה, וגוף B במסה 6 קילוגרם נע ימינה ב-4 מטר לשנייה. לגב של B צמוד קפיץ",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "התנגשות אלסטית",
+    "שימור תנע",
+    "אנרגיה בקפיץ",
+    "מהירות משותפת בכיווץ מרבי"
+  ],
+  "summary": "התנגשות דרך קפיץ: מהירויות סופיות, מה נשמר בזמן הכיווץ, ומה הכיווץ המרבי.",
+  "position": 11,
+  "parts": [
+    {
+      "label": "א1",
+      "question": "חשב את המהירות של הגוף $A$ אחרי ההתנגשות (כאשר אין יותר מגע בין גוף $A$ לקפיץ).",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "התנגשות אלסטית",
+          "why": "הקפיץ מחזיר את כל האנרגיה. שימור תנע ושימור אנרגיה",
+          "tex": "u_A = \\frac{(m_A - m_B)v_A + 2m_B v_B}{m_A + m_B}"
+        },
+        {
+          "what": "מציבים",
+          "why": "מסות 2 ו-6",
+          "tex": "u_A = \\frac{(2 - 6) \\cdot 10 + 2 \\cdot 6 \\cdot 4}{8} = 1\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$1\\,\\text{m/s}$ ימינה",
+      "keyAnswer": "u1=1 m/s"
+    },
+    {
+      "label": "א2",
+      "question": "חשב את המהירות של הגוף $B$ אחרי ההתנגשות.",
+      "answer": {
+        "type": "number",
+        "value": 7.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מציבים",
+          "why": "אותה שיטה",
+          "tex": "u_B = \\frac{2 \\cdot 2 \\cdot 10 + (6 - 2) \\cdot 4}{8} = 7\\,\\text{m/s}"
+        },
+        {
+          "what": "בדיקה: שימור תנע",
+          "why": "לפני ואחרי",
+          "tex": "20 + 24 = 2 \\cdot 1 + 6 \\cdot 7 = 44 \\;\\checkmark",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$7\\,\\text{m/s}$ ימינה",
+      "keyAnswer": "u2=7 m/s"
+    },
+    {
+      "label": "ב1",
+      "question": "בפרק הזמן שבין הרגע שבו גוף $A$ נוגע לראשונה בקפיץ עד הרגע שבו כיווצו של הקפיץ מרבי: האם האנרגיה הקינטית של מערכת שני הגופים $A$ ו-$B$ נשמרת? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "חלק מהאנרגיה נאגר בקפיץ",
+          "why": "הקפיץ מתכווץ ואוגר אנרגיה",
+          "tex": "E_k + E_s = \\text{const},\\ E_s > 0"
+        }
+      ],
+      "finalAnswer": "לא: חלק ממנה נאגר בקפיץ",
+      "keyAnswer": "לא"
+    },
+    {
+      "label": "ב2",
+      "question": "האם התנע של מערכת שני הגופים נשמר? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "אין כוחות חיצוניים אופקיים",
+          "why": "כוח הקפיץ פנימי למערכת",
+          "tex": "\\textstyle\\sum F_x = 0"
+        }
+      ],
+      "finalAnswer": "כן",
+      "keyAnswer": "כן"
+    },
+    {
+      "label": "ג1",
+      "question": "כאשר התכווצות הקפיץ מרבית, מהירויות הגופים שוות. מצא מהירות זו.",
+      "answer": {
+        "type": "number",
+        "value": 5.5,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע",
+          "why": "שני הגופים באותה מהירות",
+          "tex": "2 \\cdot 10 + 6 \\cdot 4 = 8\\,u \\Rightarrow u = 5.5\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$5.5\\,\\text{m/s}$",
+      "keyAnswer": "u=5.5 m/s"
+    },
+    {
+      "label": "ג2",
+      "question": "מצא את השיעור המרבי של התכווצות הקפיץ.",
+      "answer": {
+        "type": "number",
+        "value": 0.2598076211353316,
+        "unit": "m"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "האנרגיה בקפיץ",
+          "why": "ההפרש בין האנרגיה הקינטית לפני ובכיווץ המרבי",
+          "tex": "\\Delta E = 100 + 48 - \\tfrac{1}{2} \\cdot 8 \\cdot 5.5^2 = 27\\,\\text{J}"
+        },
+        {
+          "what": "הכיווץ",
+          "why": "אנרגיית קפיץ",
+          "tex": "\\tfrac{1}{2} \\cdot 800\\,x^2 = 27 \\Rightarrow x \\approx 0.26\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.26\\,\\text{m}$",
+      "keyAnswer": "x=0.26 m"
+    }
+  ]
+}

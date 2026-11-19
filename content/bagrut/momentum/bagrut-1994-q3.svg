@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-label="גוף A במסה 2 קילוגרם נע ימינה ב-10 מטר לשנייה, וגוף B במסה 6 קילוגרם נע ימינה ב-4 מטר לשנייה. לגב של B צמוד קפיץ">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="30" y="130" width="500" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="30" y1="130" x2="530" y2="130" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="95" y="80" width="50" height="50" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="120" y="110" text-anchor="middle" style="fill:var(--d-label)">2 kg</text>
+<text class="label" x="120" y="64" text-anchor="middle">A</text>
+<line x1="100" y1="52" x2="150" y2="52" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="125" y="42" text-anchor="middle">10 m/s</text>
+<polyline points="280,105 290,105 294,112 298,98 302,112 306,98 310,112 314,98 318,112 322,98 326,112 330,105 340,105" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="340" y="70" width="80" height="60" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="380" y="105" text-anchor="middle" style="fill:var(--d-label)">6 kg</text>
+<text class="label" x="380" y="54" text-anchor="middle">B</text>
+<line x1="360" y1="42" x2="410" y2="42" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="385" y="32" text-anchor="middle">4 m/s</text>
+</svg>

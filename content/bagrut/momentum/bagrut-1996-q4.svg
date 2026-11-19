@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="קפיץ תלוי מהתקרה, ובקצהו לוח עץ אופקי במסה M. קליע במסה m נע אנכית כלפי מעלה במהירות v, חודר דרך הלוח ויוצא במהירות u">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="200" y="8" width="160" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="200" y1="20" x2="360" y2="20" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="280,20 280,30 273,35 287,40 273,45 287,50 273,55 287,60 273,65 287,70 273,75 287,80 273,85 287,90 273,95 287,100 273,105 287,110 273,115 280,120 280,130" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="200" y="130" width="160" height="14" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="label" x="370" y="142" text-anchor="start">M</text>
+<line x1="180" y1="137" x2="380" y2="137" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<circle cx="280" cy="220" r="4" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="280" y1="214" x2="280" y2="160" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="290" y="190" text-anchor="start">v</text>
+<text class="label" x="270" y="236" text-anchor="end">m</text>
+</svg>
