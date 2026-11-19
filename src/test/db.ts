@@ -9,6 +9,7 @@ import path from "node:path";
 const AUTH_STUB = `
 create role anon nologin;
 create role authenticated nologin;
+create role service_role nologin bypassrls;
 create schema auth;
 grant usage on schema auth to anon, authenticated;
 create table auth.users (

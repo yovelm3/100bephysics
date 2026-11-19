@@ -290,3 +290,4 @@ grant execute on function public.admin_grant_subscription(uuid) to authenticated
 grant execute on function public.subscription_ends_at(uuid) to authenticated;
 grant execute on function public.is_admin() to authenticated;
 grant execute on function public.has_access() to anon, authenticated;
+grant execute on function public.apply_payment(uuid, text) to service_role;
