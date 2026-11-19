@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-label="מסילה חלקה ABCD: קטע אופקי AB, עלייה BC וקטע אופקי גבוה CD. קרונית 1 במסה 2 קילוגרם נעה ימינה לעבר קרונית 2 שבמנוחה. גרף הכוח של קרונית 1 על קרונית 2: משולש עד 10 בחזקת 4 ניוטון ב-0.5 אלפיות שנייה, וחזרה לאפס באלפית שנייה. ושלושה גרפי מהירות אפשריים">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<path d="M 30,120 L 330,120 Q 360,120 400,70 Q 420,46 450,46 L 530,46" fill="none" stroke="var(--d-line)" stroke-width="2.5" stroke-linejoin="round"/>
+<rect x="88" y="94" width="64" height="22" rx="5" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<text class="label" x="120" y="110" text-anchor="middle">1</text>
+<circle cx="102" cy="118" r="4" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="138" cy="118" r="4" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<rect x="218" y="94" width="64" height="22" rx="5" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<text class="label" x="250" y="110" text-anchor="middle">2</text>
+<circle cx="232" cy="118" r="4" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="268" cy="118" r="4" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="155" y1="88" x2="190" y2="88" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="172" y="80" text-anchor="middle">v₁</text>
+<text class="label" x="30" y="136" text-anchor="middle">A</text>
+<text class="label" x="330" y="136" text-anchor="middle">B</text>
+<text class="label" x="440" y="36" text-anchor="middle">C</text>
+<text class="label" x="528" y="36" text-anchor="middle">D</text>
+<line x1="70" y1="270" x2="248" y2="270" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="70" y1="270" x2="70" y2="152" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="193.1" y1="266" x2="193.1" y2="274" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="193.1" y="288" text-anchor="middle">1</text>
+<line x1="66" y1="186.7" x2="74" y2="186.7" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="62" y="190.7" text-anchor="end">10⁴</text>
+<text class="label" x="246" y="260" text-anchor="end">t (ms)</text>
+<text class="label" x="80" y="164" text-anchor="start">F (N)</text>
+<polyline points="70,270 131.5,186.7 193.1,270" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<line x1="70" y1="186.7" x2="131.5" y2="186.7" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<line x1="290" y1="270" x2="370" y2="270" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="290" y1="270" x2="290" y2="170" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="372" y="284" text-anchor="end">t</text>
+<text class="dim" x="284" y="174" text-anchor="end">v</text>
+<polyline points="290,193.5 311,193.5 311,216 335.5,216 335.5,238.5 353,238.5" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="325" y="292" text-anchor="middle">3</text>
+<line x1="380" y1="270" x2="460" y2="270" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="380" y1="270" x2="380" y2="170" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="462" y="284" text-anchor="end">t</text>
+<text class="dim" x="374" y="174" text-anchor="end">v</text>
+<polyline points="380,238.5 415,238.5 425.5,211.5 446.5,211.5" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="415" y="292" text-anchor="middle">2</text>
+<line x1="470" y1="270" x2="550" y2="270" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="470" y1="270" x2="470" y2="170" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="552" y="284" text-anchor="end">t</text>
+<text class="dim" x="464" y="174" text-anchor="end">v</text>
+<polyline points="470,211.5 505,211.5 515.5,238.5 536.5,238.5" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="505" y="292" text-anchor="middle">1</text>
+</svg>
