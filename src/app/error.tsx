@@ -14,7 +14,7 @@ export default function ErrorPage({ error, reset }: { error: Error & { digest?: 
       <p className="text-muted">לא הצלחנו לטעון את הדף. נסה שוב, ואם זה חוזר, פנה למנהל האתר.</p>
       {error.digest && <p className="ltr self-end text-xs text-muted">קוד שגיאה: {error.digest}</p>}
       <div className="flex gap-3">
-        <button onClick={reset} className="rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-on-accent">
+        <button onClick={reset} className="rounded-lg bg-cta px-4 py-2.5 text-sm font-semibold text-on-cta">
           לנסות שוב
         </button>
         <Link href="/" className="rounded-lg border border-line px-4 py-2.5 text-sm font-semibold text-accent">

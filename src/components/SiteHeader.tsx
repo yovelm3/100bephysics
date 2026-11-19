@@ -15,19 +15,19 @@ export async function SiteHeader() {
     }
   }
   return (
-    <header className="border-b border-line bg-surface">
+    <header className="bg-accent text-on-accent">
       <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-        <Link href="/" className="text-lg font-bold text-accent">
+        <Link href="/" className="text-lg font-bold text-on-accent">
           <span className="ltr">100</span> בפיזיקה
         </Link>
         <nav className="flex items-center gap-4 text-sm font-semibold">
-          {isAdmin && <Link href="/admin" className="text-accent">ניהול</Link>}
+          {isAdmin && <Link href="/admin" className="text-on-accent hover:underline">ניהול</Link>}
           {loggedIn ? (
-            <Link href="/account" className="text-accent">החשבון שלי</Link>
+            <Link href="/account" className="text-on-accent hover:underline">החשבון שלי</Link>
           ) : (
             <>
-              <Link href="/login" className="text-muted hover:text-accent">התחברות</Link>
-              <Link href="/signup" className="rounded-lg bg-accent px-3 py-1.5 text-on-accent">הרשמה</Link>
+              <Link href="/login" className="text-on-accent hover:underline">התחברות</Link>
+              <Link href="/signup" className="rounded-lg bg-cta px-3 py-1.5 text-on-cta">הרשמה</Link>
             </>
           )}
         </nav>
@@ -39,9 +39,9 @@ export async function SiteHeader() {
 /** Static version shown while the session is read. */
 export function SiteHeaderShell() {
   return (
-    <header className="border-b border-line bg-surface">
+    <header className="bg-accent text-on-accent">
       <div className="mx-auto flex max-w-4xl items-center justify-between gap-3 px-4 py-3">
-        <Link href="/" className="text-lg font-bold text-accent">
+        <Link href="/" className="text-lg font-bold text-on-accent">
           <span className="ltr">100</span> בפיזיקה
         </Link>
       </div>

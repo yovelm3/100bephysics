@@ -29,7 +29,7 @@ export default function Home() {
           האתר עוקב אחרי החומר שלמדת ואחרי המקומות שבהם נתקעת, ובונה לך מסלול תרגול שמוביל ל-<span className="ltr">100</span>.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/signup" className="rounded-xl bg-accent px-6 py-3 text-lg font-bold text-on-accent">להרשמה</Link>
+          <Link href="/signup" className="rounded-xl bg-cta px-6 py-3 text-lg font-bold text-on-cta">להרשמה</Link>
           <Link href="/subscribe" className="rounded-xl border-2 border-accent px-6 py-3 text-lg font-bold">פרטים על המנוי</Link>
         </div>
       </header>

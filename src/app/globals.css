@@ -1,50 +1,32 @@
 @import "tailwindcss";
 
 /*
- * Chosen design: direction A "אקדמי" colours (slate blue + muted gold) with the Heebo font (from direction C).
- * Dark-medium background, one accent colour. All text meets WCAG AA on these backgrounds.
+ * Chosen palette: "מנטה ושמש" (mint + sunshine). Light, fresh background.
+ *   accent = mint-teal brand colour: headings, links, key words, focus, top bar
+ *   cta    = sunshine yellow: primary buttons only (always with dark text)
  * Solutions use one uniform text colour (no green/red row highlights).
- * `key` / `warn` / `caution` are status colours for UI messages only (success, error, notice).
- * `.theme-light` = the light reading mode for the exercise page ("דיו כחול").
+ * `key` / `warn` / `caution` are status colours for UI messages only.
+ * Every text/background pair here was checked for WCAG AA (4.5:1).
  */
 :root {
-  --background: #36404e;
-  --surface: #404b5a;
-  --foreground: #f2f4f7;
-  --muted: #c4ccd7;
-  --line: #5a6678;
-  --accent: #dcbb73;
-  --on-accent: #1d2430;
-  --accent-soft: #4a4f52;
-  --ink: #f2f4f7;
-  --key: #8fd3ad;
-  --key-soft: #36504a;
-  --warn: #ffaaa3;
-  --warn-soft: #57424a;
-  --caution: #f0c98a;
-  --caution-soft: #544b3f;
-  color-scheme: dark;
-}
-
-.theme-light {
-  --background: #f4f6f9;
+  --background: #f3fbf7;
   --surface: #ffffff;
-  --foreground: #17233a;
-  --muted: #4f5b73;
-  --line: #d3dae5;
-  --accent: #2b4c7e;
+  --foreground: #133328;
+  --muted: #48665a;
+  --line: #cfe9dd;
+  --accent: #0f766e;
+  --accent-soft: #e0f2ee;
   --on-accent: #ffffff;
-  --accent-soft: #e6ecf5;
-  --ink: #17233a;
-  --key: #2f7a55;
-  --key-soft: #e4f2ea;
-  --warn: #b03a32;
-  --warn-soft: #f9e6e4;
-  --caution: #8a5512;
-  --caution-soft: #f8eedf;
+  --cta: #ffc83d;
+  --on-cta: #2b2100;
+  --ink: #133328;
+  --key: #166534;
+  --key-soft: #e3f6ea;
+  --warn: #b42318;
+  --warn-soft: #fdecea;
+  --caution: #8a5a00;
+  --caution-soft: #fff4d6;
   color-scheme: light;
-  background: var(--background);
-  color: var(--foreground);
 }
 
 @theme inline {
@@ -56,6 +38,8 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-on-accent: var(--on-accent);
+  --color-cta: var(--cta);
+  --color-on-cta: var(--on-cta);
   --color-ink: var(--ink);
   --color-key: var(--key);
   --color-key-soft: var(--key-soft);
@@ -94,4 +78,9 @@ body {
 
 .ltr {
   white-space: nowrap;
+}
+
+/* Focus ring stays visible on the mint top bar */
+header :focus-visible {
+  outline-color: var(--on-accent);
 }

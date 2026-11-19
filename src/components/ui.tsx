@@ -28,7 +28,7 @@ export function Field({ label, ...props }: { label: string } & ComponentProps<"i
 
 export function Button({ children, variant = "primary", ...props }: { variant?: "primary" | "ghost" | "danger" } & ComponentProps<"button">) {
   const styles = {
-    primary: "bg-accent text-on-accent hover:opacity-90",
+    primary: "bg-cta text-on-cta hover:opacity-90",
     ghost: "border border-line text-accent hover:bg-accent-soft",
     danger: "border border-warn text-warn hover:bg-warn-soft",
   }[variant];
