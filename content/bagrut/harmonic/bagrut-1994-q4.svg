@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 210" role="img" aria-label="קפיץ תלוי מהתקרה, משקולת של 0.6 קילוגרם בקצהו. הנקודה O היא מצב שיווי המשקל, והנקודה M נמצאת 10 סנטימטר מתחתיה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="70" y="13" width="120" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="70" y1="25" x2="190" y2="25" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="130,25 130,35 123,40.8 137,46.5 123,52.2 137,58 123,63.8 137,69.5 123,75.2 137,81 123,86.8 137,92.5 123,98.2 137,104 123,109.8 137,115.5 123,121.2 137,127 123,132.8 137,138.5 123,144.2 130,150 130,160" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="100" y="160" width="60" height="24" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="130" y="177" text-anchor="middle" style="fill:#ffffff">0.6 kg</text>
+<line x1="60" y1="130" x2="230" y2="130" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+<text class="label" x="54" y="134" text-anchor="end">O</text>
+<line x1="60" y1="172" x2="230" y2="172" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+<text class="label" x="54" y="176" text-anchor="end">M</text>
+<line x1="210" y1="130" x2="210" y2="172" stroke="var(--d-line)" stroke-width="1.2" marker-end="url(#f-arr)" marker-start="url(#f-arr)" stroke-linecap="round"/>
+<text class="dim" x="218" y="156" text-anchor="start">10 cm</text>
+</svg>
