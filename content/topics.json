@@ -1,0 +1,45 @@
+{
+  "_comment": "Approved topic tree, in bagrut order. Ids are stable; names are shown to students.",
+  "topics": [
+    { "id": "kinematics", "name": "קינמטיקה", "subtopics": [
+      { "id": "kin-straight-line", "name": "תנועה בקו ישר" },
+      { "id": "kin-graphs", "name": "גרפים של תנועה" },
+      { "id": "kin-free-fall", "name": "נפילה חופשית וזריקה אנכית" },
+      { "id": "kin-projectile", "name": "זריקה אופקית וזריקה משופעת" }
+    ]},
+    { "id": "dynamics", "name": "דינמיקה", "subtopics": [
+      { "id": "dyn-newton", "name": "חוקי ניוטון ותרשים כוחות" },
+      { "id": "dyn-friction", "name": "חיכוך" },
+      { "id": "dyn-incline", "name": "מישור משופע" },
+      { "id": "dyn-systems", "name": "מערכות גופים עם חוטים וגלגלות" },
+      { "id": "dyn-springs", "name": "קפיצים" }
+    ]},
+    { "id": "circular", "name": "תנועה מעגלית", "subtopics": [
+      { "id": "circ-uniform", "name": "תנועה מעגלית קצובה" },
+      { "id": "circ-horizontal", "name": "מעגל אופקי" },
+      { "id": "circ-vertical", "name": "מעגל אנכי" }
+    ]},
+    { "id": "momentum", "name": "מתקף ותנע", "subtopics": [
+      { "id": "mom-impulse", "name": "מתקף ושינוי תנע" },
+      { "id": "mom-conservation", "name": "שימור תנע" },
+      { "id": "mom-collisions", "name": "התנגשויות" }
+    ]},
+    { "id": "energy", "name": "עבודה ואנרגיה", "subtopics": [
+      { "id": "en-work", "name": "עבודה ומשפט עבודה-אנרגיה" },
+      { "id": "en-conservation", "name": "שימור אנרגיה מכנית" },
+      { "id": "en-friction", "name": "עבודת חיכוך" },
+      { "id": "en-power", "name": "הספק" }
+    ]},
+    { "id": "gravitation", "name": "כבידה", "subtopics": [
+      { "id": "grav-law", "name": "חוק הכבידה" },
+      { "id": "grav-orbits", "name": "לוויינים ותנועה במסלול" },
+      { "id": "grav-kepler", "name": "חוקי קפלר" },
+      { "id": "grav-energy", "name": "אנרגיה בשדה כבידה" }
+    ]},
+    { "id": "harmonic", "name": "תנועה הרמונית", "subtopics": [
+      { "id": "harm-spring", "name": "מתנד קפיץ" },
+      { "id": "harm-pendulum", "name": "מטוטלת" },
+      { "id": "harm-energy", "name": "אנרגיה בתנועה הרמונית" }
+    ]}
+  ]
+}
