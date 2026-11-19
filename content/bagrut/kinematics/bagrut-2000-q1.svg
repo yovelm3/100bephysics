@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="בניין בגובה 300 מטר. כדור א נזרק מרגלי הבניין כלפי מעלה במהירות 40 מטר לשנייה, ובאותו רגע כדור ב נזרק מהגג כלפי מטה במהירות 20 מטר לשנייה. ציר y כלפי מעלה, ראשיתו בקרקע">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="60" y="290" width="460" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="60" y1="290" x2="520" y2="290" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="230" y="40" width="80" height="250" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="200" y1="40" x2="200" y2="290" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="186" y="169" text-anchor="middle" transform="rotate(90.0 186 169)">300 m</text>
+<circle cx="330" cy="52" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="346" y="48" text-anchor="start">ב</text>
+<line x1="330" y1="64" x2="330" y2="110" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="342" y="96" text-anchor="start">20 m/s</text>
+<circle cx="330" cy="278" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="346" y="284" text-anchor="start">א</text>
+<line x1="330" y1="266" x2="330" y2="220" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="342" y="236" text-anchor="start">40 m/s</text>
+<line x1="90" y1="290" x2="90" y2="22" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<text class="label" x="98" y="26" text-anchor="start">y</text>
+<text class="label" x="80" y="296" text-anchor="end">0</text>
+</svg>

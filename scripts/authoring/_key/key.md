@@ -114,7 +114,7 @@
 2002 Q3: א. u = M√(2gh)/(4m)
 2002 Q4: א. h=0.9 m  ב. into the box  ג. vertical straight line  ד. cart speed does not change
 2002 Q5: א. 0.628 s  ב. Δℓ=0.6 m  ג. equal to zero  ד. different from zero
-2003 Q1: א. y1(t)=v1·t − g t²/2  ב. y2(t)=v2(t−T) − ½g(t−T)²  ג. 0.9 s  ד. 1.04 s
+2003 Q1: א. y1(t)=v1·t − g t²/2  ב. y2(t)=v2(t−T) − ½g(t−T)²  ג. 1.04 s  ד. 0.9 s
 2003 Q2: א. rising a=−4 m/s², falling a=−1 m/s²  ג. rising a=−g(sinα+μcosα) ; falling a=−g(sinα−μcosα)
 2003 Q3: א. the force T is exerted by the string; mg by the Earth
 2003 Q3 (cont): ב. T=mg·cosα0  ג. no  ד. T=mg(3−2cosα0)
