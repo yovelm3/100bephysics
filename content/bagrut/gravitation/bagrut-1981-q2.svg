@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="כדור הארץ ברדיוס r, ולוויין m1 במסלול מעגלי בגובה h = 3r מעל פני כדור הארץ. בנקודה A מתנגש בו מטאוריט m2">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<circle cx="280" cy="200" r="50" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="280" y1="200" x2="315" y2="165" stroke="var(--d-line)" stroke-width="1.2" stroke-linecap="round"/>
+<text class="dim" x="306" y="190" text-anchor="start">r</text>
+<path d="M 90,200 A 190 190 0 0 1 470,200" fill="none" stroke="var(--d-dim)" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<circle cx="280" cy="10" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="270" y="14" text-anchor="end">A</text>
+<circle cx="290" cy="10" r="5" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="300" y="14" text-anchor="start">m₁</text>
+<circle cx="430" cy="10" r="5" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="440" y="14" text-anchor="start">m₂</text>
+<line x1="422" y1="10" x2="360" y2="10" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<line x1="260" y1="150" x2="260" y2="10" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="274" y="84" text-anchor="middle" transform="rotate(-90.0 274 84)">h</text>
+</svg>

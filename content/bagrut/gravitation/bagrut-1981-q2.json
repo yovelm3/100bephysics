@@ -1,0 +1,134 @@
+{
+  "id": "bagrut-1981-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1981,
+    "label": "1981 שאלה 2"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-orbits",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הוספתי g = 10 על פני כדור הארץ (במפתח התשובות מתאימות ל-GM = gR²).",
+  "stem": "לוויין בעל מסה $m_1 = 500\\,\\text{kg}$ מקיף את כדור הארץ במסלול מעגלי, בגובה $h = 3r$ מעל פני כדור הארץ (הנח כי $r$, רדיוס כדור הארץ, שווה ל-$6400\\,\\text{km}$). בהיות הלוויין מעל הנקודה $A$ על פני כדור הארץ, מתנגש בו מטאוריט בעל מסה $m_2 = 100\\,\\text{kg}$. כתוצאה מכך נעצרים הלוויין והמטאוריט להרף עין, ולאחר מכן מתחילים שניהם ליפול יחדיו בכיוון אנכי כלפי מטה. ($g = 10\\,\\text{m/s}^2$ על פני כדור הארץ.)",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1981-q2.svg",
+    "alt": "כדור הארץ ברדיוס r, ולוויין m1 במסלול מעגלי בגובה h = 3r מעל פני כדור הארץ. בנקודה A מתנגש בו מטאוריט m2",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מהירות מסלולית",
+    "התנגשות פלסטית",
+    "אנרגיה פוטנציאלית כבידתית",
+    "GM = gR²"
+  ],
+  "summary": "לוויין ומטאוריט שעוצרים זה את זה: מהירויות לפני, חום שנוצר, ומהירות הפגיעה בקרקע מאנרגיה בשדה כבידה.",
+  "position": 2,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מה הייתה מהירות הלוויין לפני שהתנגש בו המטאוריט?",
+      "answer": {
+        "type": "number",
+        "value": 4000.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כבידה כוח צנטריפטלי",
+          "why": "רדיוס המסלול $4r$",
+          "tex": "v = \\sqrt{\\frac{GM}{4r}}"
+        },
+        {
+          "what": "$GM = gr^2$",
+          "why": "מציבים",
+          "tex": "v = \\sqrt{\\frac{g r}{4}} = \\sqrt{\\frac{10 \\cdot 6.4 \\times 10^6}{4}} = 4 \\times 10^3\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$4 \\times 10^3\\,\\text{m/s}$",
+      "keyAnswer": "4×10^3 m/s"
+    },
+    {
+      "label": "ב",
+      "question": "מה הייתה מהירות המטאוריט ברגע ההתנגשות?",
+      "answer": {
+        "type": "number",
+        "value": 20000.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע",
+          "why": "אחרי ההתנגשות הם עומדים להרף עין: התנע הכולל אפס",
+          "tex": "500 \\cdot 4000 = 100\\,v_m"
+        },
+        {
+          "what": "פותרים",
+          "why": "מחלקים ב-100",
+          "tex": "v_m = 2 \\times 10^4\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$2 \\times 10^4\\,\\text{m/s}$, נגד כיוון הלוויין",
+      "keyAnswer": "2×10^4 m/s"
+    },
+    {
+      "label": "ג",
+      "question": "מהי כמות החום (בג'אולים) שהתפתחה כתוצאה מההתנגשות?",
+      "answer": {
+        "type": "number",
+        "value": 24000000000.0,
+        "unit": "J"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כל האנרגיה הקינטית",
+          "why": "אחרי ההתנגשות הם עומדים",
+          "tex": "Q = \\tfrac{1}{2} \\cdot 500 \\cdot (4 \\times 10^3)^2 + \\tfrac{1}{2} \\cdot 100 \\cdot (2 \\times 10^4)^2 = 2.4 \\times 10^{10}\\,\\text{J}"
+        }
+      ],
+      "finalAnswer": "$2.4 \\times 10^{10}\\,\\text{J}$",
+      "keyAnswer": "2.4×10^10 J"
+    },
+    {
+      "label": "ד",
+      "question": "באיזו מהירות היו הלוויין והמטאוריט מגיעים ופוגעים בנקודה $A$, אילו בשעת נפילתם לא היו פועלים עליהם כוחות חיכוך (כמו התנגדות האוויר)?",
+      "answer": {
+        "type": "number",
+        "value": 9797.958971132713,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "שימור אנרגיה בשדה כבידה",
+          "why": "מנוחה במרחק $4r$ עד פני כדור הארץ",
+          "tex": "\\tfrac{1}{2}v^2 = GM\\left(\\frac{1}{r} - \\frac{1}{4r}\\right) = \\frac{3GM}{4r}"
+        },
+        {
+          "what": "מציבים",
+          "why": "GM = gr²",
+          "tex": "v = \\sqrt{\\frac{3 g r}{2}} = \\sqrt{9.6 \\times 10^7} \\approx 9.8 \\times 10^3\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 9.8 \\times 10^3\\,\\text{m/s}$",
+      "keyAnswer": "≈9.8×10^3 m/s"
+    }
+  ]
+}

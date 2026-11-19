@@ -1,0 +1,65 @@
+{
+  "id": "bagrut-1980w-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1980,
+    "label": "1980 חורף שאלה 3"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-orbits",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הוספתי לנוסח את הנתונים g ו-R (במקור לא מופיעים, ובשאלות אחרות בקובץ R = 6400 km).",
+  "stem": "לוויין מקיף את כדור הארץ במעגל מעל קו המשווה, ובמהירות זוויתית השווה למהירותו הזוויתית של כדור הארץ בסיבובו סביב צירו. (הנח: $g = 10\\,\\text{m/s}^2$ על פני כדור הארץ, ורדיוס כדור הארץ $R = 6400\\,\\text{km}$.)",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "לוויין גאוסטציונרי",
+    "כבידה ככוח צנטריפטלי",
+    "החוק השלישי של קפלר",
+    "GM = gR²"
+  ],
+  "summary": "לוויין שמסתובב יחד עם כדור הארץ: רדיוס המסלול מזמן מחזור של יממה.",
+  "position": 1,
+  "parts": [
+    {
+      "label": "א",
+      "question": "באיזה מרחק ממרכז כדור הארץ סובב לוויין זה?",
+      "answer": {
+        "type": "number",
+        "value": 42626129.37450368,
+        "unit": "m",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "explain": "זמן המחזור של הלוויין הוא יממה. כוח הכבידה הוא הכוח הצנטריפטלי."
+        },
+        {
+          "what": "כבידה כוח צנטריפטלי",
+          "why": "מבודדים את r³",
+          "tex": "\\frac{GMm}{r^2} = m\\left(\\frac{2\\pi}{T}\\right)^2 r \\Rightarrow r^3 = \\frac{GM T^2}{4\\pi^2}"
+        },
+        {
+          "what": "$GM$ מנתוני פני כדור הארץ",
+          "why": "על פני כדור הארץ $mg = GMm/R^2$",
+          "tex": "GM = gR^2 = 10 \\cdot (6.4 \\times 10^6)^2 \\approx 4.1 \\times 10^{14}"
+        },
+        {
+          "what": "מציבים $T = 86400\\,\\text{s}$",
+          "why": "יממה בשניות",
+          "tex": "r = \\sqrt[3]{\\frac{4.1 \\times 10^{14} \\cdot 86400^2}{4\\pi^2}} \\approx 4.24 \\times 10^7\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$\\approx 4.24 \\times 10^7\\,\\text{m}$",
+      "keyAnswer": "4.24×10^7 m"
+    }
+  ]
+}

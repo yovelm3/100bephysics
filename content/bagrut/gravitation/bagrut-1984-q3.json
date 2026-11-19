@@ -1,0 +1,135 @@
+{
+  "id": "bagrut-1984-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1984,
+    "label": "1984 שאלה 3"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-law",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב: במפתח √(ρA/ρB), שזה היחס T_B/T_A. ניסחתי את השאלה עם T_A/T_B, ולכן התשובה √(ρB/ρA). צריך להחליט על הניסוח.",
+  "stem": "רדיוסים וצפיפותם של שני כוכבים $A$ ו-$B$ הם: $R_A$, $R_B$ ו-$\\rho_A$, $\\rho_B$ בהתאמה. הנח כי הכוכבים הומוגניים, דהיינו צפיפותם קבועה. (את התשובות לשאלות הבאות עליך לבטא באמצעות ארבעת הגדלים האלו בלבד.)",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "חוק הכבידה",
+    "צפיפות ומסה",
+    "זמן מחזור של לוויין נמוך",
+    "אנרגיה של לוויין",
+    "מהירות מילוט"
+  ],
+  "summary": "השוואה בין שני כוכבים לפי רדיוס וצפיפות: תאוצת נפילה, זמן מחזור, אנרגיה ומהירות מילוט.",
+  "position": 4,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו היחס בין תאוצות הנפילה החופשית על פני שני הכוכבים, $g_A/g_B$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מסת כוכב",
+          "why": "צפיפות כפול נפח",
+          "tex": "M = \\rho \\cdot \\tfrac{4}{3}\\pi R^3"
+        },
+        {
+          "what": "תאוצת הנפילה",
+          "why": "חוק הכבידה על פני הכוכב",
+          "tex": "g = \\frac{GM}{R^2} = \\tfrac{4}{3}\\pi G\\rho R"
+        },
+        {
+          "what": "היחס",
+          "why": "מחלקים",
+          "tex": "\\frac{g_A}{g_B} = \\frac{\\rho_A R_A}{\\rho_B R_B}"
+        }
+      ],
+      "finalAnswer": "$\\frac{\\rho_A R_A}{\\rho_B R_B}$",
+      "keyAnswer": "ρA·RA/(ρB·RB)"
+    },
+    {
+      "label": "ב",
+      "question": "קרוב לפני כל אחד מהכוכבים סובב לוויין במסלול מעגלי. מהו היחס בין זמני המחזור של שני הלוויינים, $T_A/T_B$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "זמן מחזור ליד פני הכוכב",
+          "why": "רדיוס המסלול ≈ R",
+          "tex": "T = 2\\pi\\sqrt{\\frac{R^3}{GM}} = 2\\pi\\sqrt{\\frac{3}{4\\pi G\\rho}}"
+        },
+        {
+          "what": "היחס",
+          "why": "רק הצפיפות נשארת",
+          "tex": "\\frac{T_A}{T_B} = \\sqrt{\\frac{\\rho_B}{\\rho_A}}"
+        }
+      ],
+      "finalAnswer": "$\\frac{T_A}{T_B} = \\sqrt{\\frac{\\rho_B}{\\rho_A}}$",
+      "keyAnswer": "√(ρA/ρB)"
+    },
+    {
+      "label": "ג",
+      "question": "מהו היחס בין האנרגיות הכוללות (קינטית + פוטנציאלית) של שני הלוויינים, בהנחה שמסותיהם שוות? (הנח כי האנרגיה הפוטנציאלית שווה לאפס באינסוף.)",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אנרגיה כוללת",
+          "why": "לוויין במסלול מעגלי",
+          "tex": "E = -\\frac{GMm}{2R} \\propto \\frac{\\rho R^3}{R} = \\rho R^2"
+        },
+        {
+          "what": "היחס",
+          "why": "מחלקים",
+          "tex": "\\frac{E_A}{E_B} = \\frac{\\rho_A R_A^2}{\\rho_B R_B^2}"
+        }
+      ],
+      "finalAnswer": "$\\frac{\\rho_A R_A^2}{\\rho_B R_B^2}$",
+      "keyAnswer": "ρA·RA²/(ρB·RB²)"
+    },
+    {
+      "label": "ד",
+      "question": "מפני כל אחד מהכוכבים משלחים טיל אל מחוץ לתחום המשיכה של הכוכב. מהו היחס בין המהירויות ההתחלתיות המינימליות שיש להקנות לטילים? הנח כי לכוכבים אין אטמוספרה.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מהירות מילוט",
+          "why": "אנרגיה כוללת אפס",
+          "tex": "v = \\sqrt{\\frac{2GM}{R}} \\propto \\sqrt{\\rho R^2} = R\\sqrt{\\rho}"
+        },
+        {
+          "what": "היחס",
+          "why": "מחלקים",
+          "tex": "\\frac{v_A}{v_B} = \\frac{R_A}{R_B}\\sqrt{\\frac{\\rho_A}{\\rho_B}}"
+        }
+      ],
+      "finalAnswer": "$\\frac{R_A}{R_B}\\sqrt{\\frac{\\rho_A}{\\rho_B}}$",
+      "keyAnswer": "(RA/RB)√(ρA/ρB)"
+    }
+  ]
+}
