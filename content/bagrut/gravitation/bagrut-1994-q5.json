@@ -1,0 +1,148 @@
+{
+  "id": "bagrut-1994-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1994,
+    "label": "1994 שאלה 5"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-energy",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "לכוכב לכת דמיוני אין אטמוספרה. רדיוסו $R = 10^7\\,\\text{m}$, ותאוצת הנפילה החופשית על פניו היא $10\\,\\text{m/s}^2$. גוף משוחרר ממנוחה מנקודה $A$, שנמצאת בגובה $R$ (כרדיוס הכוכב) מעל פני הכוכב.",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "תאוצת כבידה במרחק",
+    "הערכה בגבולות",
+    "אנרגיה פוטנציאלית כבידתית"
+  ],
+  "summary": "נפילה מגובה שווה לרדיוס הכוכב: התאוצה משתנה פי 4, הזמן נמצא בין שני גבולות, והמהירות מאנרגיה.",
+  "position": 14,
+  "parts": [
+    {
+      "label": "א1",
+      "question": "חשב את תאוצת הנפילה החופשית בנקודה $A$.",
+      "answer": {
+        "type": "number",
+        "value": 2.5,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה הפוכה לריבוע המרחק",
+          "why": "$A$ במרחק $2R$ מהמרכז",
+          "tex": "g_A = g\\left(\\frac{R}{2R}\\right)^2 = \\frac{10}{4} = 2.5\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$2.5\\,\\text{m/s}^2$",
+      "keyAnswer": "g=2.5 m/s^2"
+    },
+    {
+      "label": "א2",
+      "question": "סרטט גרף מקורב, שמתאר את תאוצת הנפילה החופשית כפונקציה של מרחקו של הגוף ממרכז הכוכב, בתנועתו מ-$A$ עד פני הכוכב. רשום את התכונות המתמטיות שעליהן הוא מתבסס.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הקשר",
+          "why": "מחוק הכבידה ו-GM = gR²",
+          "tex": "g(r) = \\frac{gR^2}{r^2}"
+        },
+        {
+          "what": "צורה",
+          "why": "עקומה יורדת (היפרבולה ריבועית) מ-$10$ ב-$r = R$ ל-$2.5$ ב-$r = 2R$",
+          "tex": "g \\propto r^{-2}"
+        }
+      ],
+      "finalAnswer": "$g \\propto 1/r^2$: מ-$2.5$ ב-$2R$ עד $10$ ב-$R$",
+      "keyAnswer": null
+    },
+    {
+      "label": "א3",
+      "question": "הערך את משך נפילת הגוף, מרגע שחרורו ועד רגע פגיעתו בפני הכוכב, באמצעות קביעת גבול עליון וגבול תחתון עבור משך הנפילה. מהו הגבול התחתון?",
+      "answer": {
+        "type": "number",
+        "value": 1414.213562373095,
+        "unit": "s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "גבול תחתון",
+          "why": "אילו כל הדרך הייתה בתאוצה המרבית, $10$",
+          "tex": "t_{\\min} = \\sqrt{\\frac{2R}{10}} \\approx 1412\\,\\text{s}"
+        },
+        {
+          "what": "גבול עליון",
+          "why": "אילו כל הדרך הייתה בתאוצה המזערית, $2.5$",
+          "tex": "t_{\\max} = \\sqrt{\\frac{2R}{2.5}} \\approx 2828\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "בין $\\approx 1412\\,\\text{s}$ ל-$\\approx 2828\\,\\text{s}$",
+      "keyAnswer": "tmin=1412.2 s"
+    },
+    {
+      "label": "א4",
+      "question": "מהו הגבול העליון?",
+      "answer": {
+        "type": "number",
+        "value": 2828.42712474619,
+        "unit": "s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "גבול עליון",
+          "why": "התאוצה המזערית לאורך כל הדרך",
+          "tex": "t_{\\max} = \\sqrt{\\frac{2 \\cdot 10^7}{2.5}} \\approx 2828\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 2828\\,\\text{s}$",
+      "keyAnswer": "tmax=2828.4 s"
+    },
+    {
+      "label": "ב",
+      "question": "חשב את המהירות שבה פוגע הגוף בפני הכוכב.",
+      "answer": {
+        "type": "number",
+        "value": 10000.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור אנרגיה בשדה כבידה",
+          "why": "$GM = gR^2$",
+          "tex": "\\tfrac{1}{2}v^2 = gR^2\\left(\\frac{1}{R} - \\frac{1}{2R}\\right) = \\frac{gR}{2}"
+        },
+        {
+          "what": "המהירות",
+          "why": "שורש",
+          "tex": "v = \\sqrt{gR} = \\sqrt{10^8} = 10^4\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$10^4\\,\\text{m/s}$",
+      "keyAnswer": "v=10^4 m/s"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "bagrut-1996-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1996,
+    "label": "1996 שאלה 5"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-energy",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הוספתי לנוסח g = 9.8 ו-R = 6400 km (כמו בשאלה 1995 שלפניה בקובץ). התשובות מתאימות למפתח בדיוק של כ-0.5%.",
+  "stem": "טיל שוגר מפני כדור הארץ ממנוחה בכיוון אנכי. הטיל עלה בתאוצה קבועה של $20\\,\\text{m/s}^2$. כעבור $5$ דקות אזל הדלק במכלי הטיל. (השתמש ב-$g = 9.8\\,\\text{m/s}^2$ על פני כדור הארץ, ורדיוס כדור הארץ $6400\\,\\text{km}$.)",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "תאוצה קבועה",
+    "תאוצת כבידה בגובה",
+    "אנרגיה פוטנציאלית כבידתית",
+    "חוסר משקל"
+  ],
+  "summary": "טיל שמאיץ 5 דקות: גובה, תאוצת הכבידה שם, הגובה המרבי, ומה מראה דינמומטר לפני ואחרי כיבוי המנוע.",
+  "position": 16,
+  "parts": [
+    {
+      "label": "א",
+      "question": "באיזה גובה מעל פני כדור הארץ אזל הדלק?",
+      "answer": {
+        "type": "number",
+        "value": 900000.0,
+        "unit": "m"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה קבועה ממנוחה",
+          "why": "$300$ שניות",
+          "tex": "h = \\tfrac{1}{2} \\cdot 20 \\cdot 300^2 = 9 \\times 10^5\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$9 \\times 10^5\\,\\text{m}$",
+      "keyAnswer": "9×10^5 m"
+    },
+    {
+      "label": "ב",
+      "question": "מה תאוצת הנפילה החופשית בגובה שבו אזל הדלק במכלי הטיל?",
+      "answer": {
+        "type": "number",
+        "value": 7.532520172640272,
+        "unit": "m/s^2",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הפוך לריבוע המרחק",
+          "why": "R + h = 7.3×10⁶ m",
+          "tex": "g_h = g\\left(\\frac{R}{R + h}\\right)^2 = 9.8\\left(\\frac{6.4}{7.3}\\right)^2 \\approx 7.5\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$\\approx 7.5\\,\\text{m/s}^2$",
+      "keyAnswer": "7.51 m/s^2"
+    },
+    {
+      "label": "ג",
+      "question": "לאיזה גובה מקסימלי מעל פני כדור הארץ עלה הטיל?",
+      "answer": {
+        "type": "number",
+        "value": 4452561.405587982,
+        "unit": "m",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "המהירות כשאזל הדלק",
+          "why": "תאוצה קבועה 300 שניות",
+          "tex": "v = 20 \\cdot 300 = 6000\\,\\text{m/s}"
+        },
+        {
+          "what": "שימור אנרגיה בשדה כבידה",
+          "why": "$GM = gR^2 \\approx 4.01 \\times 10^{14}$",
+          "tex": "\\tfrac{1}{2}v^2 = GM\\left(\\frac{1}{r_1} - \\frac{1}{r_2}\\right)"
+        },
+        {
+          "what": "פותרים",
+          "why": "$r_1 = 7.3 \\times 10^6\\,\\text{m}$",
+          "tex": "r_2 \\approx 1.09 \\times 10^7\\,\\text{m} \\Rightarrow H = r_2 - R \\approx 4.47 \\times 10^6\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$\\approx 4.47 \\times 10^6\\,\\text{m}$",
+      "keyAnswer": "4.47×10^6 m"
+    },
+    {
+      "label": "ד1",
+      "question": "לקצהו של מד-כוח (דינמומטר) התלוי בתוך הטיל מחובר גוף שמסתו $2\\,\\text{kg}$. מה תהיה הוראת מד-הכוח רגע לפני שאזל הדלק?",
+      "answer": {
+        "type": "number",
+        "value": 55.06504034528054,
+        "unit": "N",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "החוק השני",
+          "why": "הכובד במקום הזה $g_h$",
+          "tex": "T = m(a + g_h) = 2(20 + 7.5) = 55\\,\\text{N}"
+        }
+      ],
+      "finalAnswer": "$\\approx 55\\,\\text{N}$",
+      "keyAnswer": "F=55 N"
+    },
+    {
+      "label": "ד2",
+      "question": "מה תהיה הוראת מד-הכוח רגע אחרי שאזל הדלק?",
+      "answer": {
+        "type": "number",
+        "value": 0.0,
+        "unit": "N"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "נפילה חופשית",
+          "why": "רק הכובד פועל על הטיל ועל הגוף",
+          "tex": "T = 0"
+        }
+      ],
+      "finalAnswer": "$0$",
+      "keyAnswer": "F=0"
+    }
+  ]
+}

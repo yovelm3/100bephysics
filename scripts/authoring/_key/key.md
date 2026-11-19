@@ -88,7 +88,7 @@
 1997 Q2: א. T=Mg/cosα  ב. aR=g·tanα  ד. the scale shows a larger value than the boy's weight
 1997 Q3: א. 0.276 N·s  ב. 0.288 kg·m/s  ג. inaccuracy in measurement / in reading results (open)  ד. yes
 1997 Q4: א. 4.58 m/s  ב. the body will not reach point D  ג. yes  ד. work is zero  ה. work of gravity is equal in both cases
-1997 Q5: א. R=10^7 m  ב. 6.71×10^25 kg  ג. 44.76 m/s²  ד. moves away
+1997 Q5: א. R=10^7 m  ב. 6.71×10^25 kg  ג. 44.76 m/s²  ד. floats (ירחף)
 1998 Q1: א. v0.08=0.3875 m/s  ב. 0.073 m  ג. 7.5 m/s²
 1998 Q2: א/ב: explanations (momentum conserved as vector; energy...) open
 1998 Q3: ג. right or left  ד. mg
