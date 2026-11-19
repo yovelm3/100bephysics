@@ -10,7 +10,7 @@ def fig():
     cx, cy = 200, 130
     g.circle(cx, cy, 18, fill="var(--d-accent, var(--d-body))"); g.heb(cx, cy + 40, "שמש")
     g.circle(cx, cy, 70, fill="none", stroke="var(--d-line)", width=1.3, dash="5 4")
-    g.circle(cx + 70, cy, 7); g.heb(cx + 70, cy + 24, "כדור הארץ")
+    g.circle(cx + 70, cy, 7); g.heb(cx + 82, cy + 4, "כדור הארץ", anchor="start")
     g.ball(cx - 50, cy - 49, r=5); g.heb(cx - 74, cy - 62, "חללית")
     g.path(f"M {cx + 300} {cy - 120} A 300 300 0 0 1 {cx + 300} {cy + 120}", width=1.2, dash="3 5")
     g.circle(cx + 300 - 1, cy, 6, fill="var(--d-fill)", stroke="var(--d-line)"); g.heb(cx + 270, cy - 16, "אריס")
