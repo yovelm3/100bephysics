@@ -17,7 +17,7 @@ def fig():
     panel(g, 300, 10, "תרשים א", [(10, 8, -6, -8, "m"), (1, 1, 0, 4, "2m")])
     panel(g, 40, 10, "תרשים ב", [(6, 0, -6, 8, "m"), (2, 7, 0, 4, "2m")])
     panel(g, 300, 245, "תרשים ד", [(1, 2, 8, 6, "m"), (9, 11, -4, 0, "2m")])
-    panel(g, 40, 245, "תרשים ג", [(2, 2, 6, 8, "m"), (9, 10, 0, -4, "2m")], extra=lambda ox, oy, s: (g.arrow(ox - 4, oy + 4 * s, ox - 34, oy + 4 * s, None), g.text(ox - 12, oy + 4 * s - 8, "3 m/s", cls="dim", anchor="end")))
+    panel(g, 40, 245, "תרשים ג", [(2, 2, 6, 8, "m"), (9, 10, 0, -4, "2m")], extra=lambda ox, oy, s: (g.arrow(ox - 4, oy + 4 * s, ox - 34, oy + 4 * s, None), g.text(ox - 34, oy + 4 * s + 18, "3 m/s", cls="dim", anchor="start")))
     return g
 
 E(id="bagrut-1998-q2", year=1998, label="1998 שאלה 2", topic="momentum", sub="mom-collisions", diff=4, fig=fig,

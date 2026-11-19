@@ -5,24 +5,24 @@
 <marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
 <marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
 </defs>
-<path d="M -70,40 A 210 210 0 0 0 140,250" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
-<circle cx="140" cy="40" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="150" y="44" text-anchor="start">O</text>
-<circle cx="-64" cy="34" r="6" fill="var(--d-body)" stroke="none" stroke-width="2"/>
-<text class="label" x="-76" y="28" text-anchor="end">A</text>
-<circle cx="140" cy="194" r="56" fill="none" stroke="var(--d-line)" stroke-width="3"/>
-<path d="M 140,250 L 400,250" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
-<circle cx="140" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="148" y="198" text-anchor="start">O'</text>
-<circle cx="140" cy="250" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="140" y="270" text-anchor="middle">B</text>
-<circle cx="196" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="210" y="199" text-anchor="middle">C</text>
-<circle cx="140" cy="138" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="140" y="130" text-anchor="middle">D</text>
-<circle cx="84" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="70" y="199" text-anchor="middle">E</text>
-<text class="label" x="240" y="242" text-anchor="middle">F</text>
-<line x1="-90" y1="40" x2="-90" y2="250" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
-<text class="dim" x="-104" y="149" text-anchor="middle" transform="rotate(90.0 -104 149)">R</text>
+<path d="M 40,40 A 210 210 0 0 0 250,250" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="250" cy="40" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="260" y="44" text-anchor="start">O</text>
+<circle cx="46" cy="34" r="6" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="34" y="28" text-anchor="end">A</text>
+<circle cx="250" cy="194" r="56" fill="none" stroke="var(--d-line)" stroke-width="3"/>
+<path d="M 250,250 L 510,250" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="250" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="258" y="198" text-anchor="start">O'</text>
+<circle cx="250" cy="250" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="250" y="270" text-anchor="middle">B</text>
+<circle cx="306" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="320" y="199" text-anchor="middle">C</text>
+<circle cx="250" cy="138" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="250" y="130" text-anchor="middle">D</text>
+<circle cx="194" cy="194" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="180" y="199" text-anchor="middle">E</text>
+<text class="label" x="350" y="242" text-anchor="middle">F</text>
+<line x1="20" y1="40" x2="20" y2="250" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="6" y="149" text-anchor="middle" transform="rotate(90.0 6 149)">R</text>
 </svg>

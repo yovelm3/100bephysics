@@ -9,7 +9,7 @@
 <text class="heb" x="120" y="120" text-anchor="middle" direction="rtl">מאדים</text>
 <circle cx="120" cy="115" r="52" fill="none" stroke="var(--d-line)" stroke-width="1.1" stroke-dasharray="4 4"/>
 <circle cx="172" cy="115" r="4" fill="var(--d-body)" stroke="none" stroke-width="2"/>
-<text class="heb" x="182" y="119" text-anchor="start" direction="rtl">פובוס</text>
+<text class="heb" x="182" y="119" text-anchor="end" direction="rtl">פובוס</text>
 <circle cx="120" cy="115" r="96" fill="none" stroke="var(--d-line)" stroke-width="1.1" stroke-dasharray="4 4"/>
 <circle cx="52" cy="47" r="4" fill="var(--d-body)" stroke="none" stroke-width="2"/>
 <text class="heb" x="50" y="33" text-anchor="middle" direction="rtl">דימוס</text>

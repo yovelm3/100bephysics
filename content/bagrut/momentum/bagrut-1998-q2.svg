@@ -141,6 +141,6 @@
 <text class="dim" x="191" y="281" text-anchor="start">2m</text>
 <line x1="184" y1="277" x2="184" y2="341" stroke="var(--d-label)" stroke-width="1.8" marker-end="url(#f-arr)"/>
 <line x1="36" y1="309" x2="6" y2="309" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
-<text class="dim" x="28" y="301" text-anchor="end">3 m/s</text>
+<text class="dim" x="6" y="327" text-anchor="start">3 m/s</text>
 <text class="heb" x="136" y="457" text-anchor="middle" direction="rtl">תרשים ג</text>
 </svg>

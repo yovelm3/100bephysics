@@ -68,6 +68,8 @@ class Fig:
         return self.add(f'<text class="{cls}" x="{f(x)}" y="{f(y)}" text-anchor="{anchor}"{tr}{st}>{esc(t)}</text>')
 
     def heb(self, x, y, t, anchor="middle"):
+        # direction="rtl" mirrors text-anchor; flip it so "start"/"end" mean left/right edge at x, as in text()
+        anchor = {"start": "end", "end": "start"}.get(anchor, anchor)
         return self.add(f'<text class="heb" x="{f(x)}" y="{f(y)}" text-anchor="{anchor}" direction="rtl">{esc(t)}</text>')
 
     # ---- composites -------------------------------------------------

@@ -18,8 +18,8 @@ def fig():
         g.rect(ox, 236, 100, 74, fill="none", width=1)
         g.path(f"M {ox+5},{cy-8} Q {cx},{cy-14} {ox+95},{cy+20}", stroke="var(--d-line)", width=1.5)
         g.dot(cx, cy - 10, 3)
-        g.arrow(cx, cy - 10, cx, cy + 22, None, width=1.8); g.text(cx + 6, cy + 20, "mg", cls="dim", anchor="start")
-        g.arrow(cx, cy - 10, cx + nvec[0], cy - 10 + nvec[1], None, width=1.8); g.text(cx + nvec[0] + 4, cy - 10 + nvec[1], "N", cls="dim", anchor="start")
+        g.arrow(cx, cy - 10, cx, cy + 22, None, width=1.8); g.text(cx - 6 if nvec[0] > 0 else cx + 6, cy + 20, "mg", cls="dim", anchor="end" if nvec[0] > 0 else "start")
+        g.arrow(cx, cy - 10, cx + nvec[0], cy - 10 + nvec[1], None, width=1.8); g.text(cx + nvec[0] + (4 if nvec[0] > 0 else -4), cy - 10 + nvec[1], "N", cls="dim", anchor="start" if nvec[0] > 0 else "end")
         g.text(ox + 50, 326, lab)
     return g
 

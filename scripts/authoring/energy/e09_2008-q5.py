@@ -7,7 +7,7 @@ def fig():
     g.wall(40, 130, 190); g.spring(40, 178, 100, 178, coils=6, amp=6); g.block(116, 178, 30, 22, None, fill="var(--d-fill)")
     g.wall(520, 60, 110, side="right"); g.spring(470, 98, 520, 98, coils=5, amp=6)
     for x, y, t in ((50, 206, "A"), (260, 206, "B"), (430, 126, "C"), (510, 50, "D")): g.text(x, y, t)
-    g.heb(70, 214, "קפיץ א"); g.heb(495, 80, "קפיץ ב"); g.dim(540, 110, 540, 190, "0.2 m", offset=0)
+    g.heb(76, 160, "קפיץ א"); g.heb(495, 80, "קפיץ ב"); g.dim(540, 110, 540, 190, "0.2 m", offset=0)
     return g
 
 x = math.sqrt(2 * (2 - 0.8) / 50)

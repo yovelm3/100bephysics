@@ -2,13 +2,13 @@ from mk import *
 import math
 
 def fig():
-    g = Fig(560, 280, "יצחק קשור לקפיץ מיוחד שמחובר לקצה קורה בגובה 77 מטר מעל הקרקע, ועומד על הקורה בתחילת הקפיצה")
-    g.ground(60, 400, 260)
-    g.rect(110, 40, 30, 220, fill="url(#f-hatch)", stroke="var(--d-line)")
-    g.rect(110, 34, 210, 12, fill="var(--d-fill)"); g.heb(220, 26, "קורה")
-    g.spring(320, 46, 320, 110, coils=6, amp=10); g.heb(350, 90, "קפיץ", anchor="start")
-    g.person(300, 34, 0.8); g.heb(300, 10, "יצחק")
-    g.dim(80, 40, 80, 260, "77 m")
+    g = Fig(560, 305, "יצחק קשור לקפיץ מיוחד שמחובר לקצה קורה בגובה 77 מטר מעל הקרקע, ועומד על הקורה בתחילת הקפיצה")
+    g.ground(60, 400, 290)
+    g.rect(110, 70, 30, 220, fill="url(#f-hatch)", stroke="var(--d-line)")
+    g.rect(110, 64, 210, 12, fill="var(--d-fill)"); g.heb(220, 56, "קורה")
+    g.spring(320, 76, 320, 140, coils=6, amp=10); g.heb(350, 120, "קפיץ", anchor="start")
+    g.person(300, 64, 0.8); g.heb(276, 30, "יצחק", anchor="end")
+    g.dim(80, 70, 80, 290, "77 m")
     return g
 
 w = math.sqrt(100 / 60)

@@ -3,7 +3,7 @@ import math
 
 def fig():
     g = Fig(560, 300, "מסילה חסרת חיכוך: רבע מעגל AB ברדיוס R סביב O, ואחריו לולאה מעגלית BCDEF ברדיוס r סביב O'. EC הוא קוטר אופקי של הלולאה")
-    O = (140, 40); R = 210
+    O = (250, 40); R = 210
     g.path(f"M {O[0] - R},{O[1]} A {R} {R} 0 0 0 {O[0]},{O[1] + R}", width=3)
     g.dot(*O); g.text(O[0] + 10, O[1] + 4, "O", anchor="start")
     g.ball(O[0] - R + 6, O[1] - 6, 6); g.text(O[0] - R - 6, O[1] - 12, "A", anchor="end")

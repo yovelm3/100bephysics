@@ -14,7 +14,7 @@ def fig():
     for j in range(2, 19, 4):
         g.text(ox - 8, oy + j * sy + 4, str(j), cls="dim", anchor="end")
     g.text(ox + 26 * sx + 24, oy + 4, "x (m)", anchor="start")
-    g.text(ox - 4, oy + 18 * sy + 36, "y (m)")
+    g.text(ox + 10, oy + 18 * sy + 18, "y (m)", anchor="start")
     for t in range(5):
         x, y = 3 * t, t * t
         g.circle(ox + x * sx, oy + y * sy, 5.5, fill="var(--d-label)")
