@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-label="בעיטת פנדל: כדור במרחק d מקו השער נבעט במהירות v0 בזווית אלפא למגרש. ארבעה גרפים של הרכיב האנכי של המהירות, ומסלול פרבולי עם הנקודות P ו-Q">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="20" y="150" width="520" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="20" y1="150" x2="540" y2="150" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="450" y="70" width="12" height="80" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="450" y1="70" x2="520" y2="70" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="520" y1="70" x2="520" y2="150" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<path d="M 100,145 Q 280,-30 455,110" fill="none" stroke="var(--d-body)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<circle cx="100" cy="143" r="7" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<line x1="106" y1="138" x2="146" y2="90" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="150" y="86" text-anchor="start">v₀</text>
+<path d="M 126,143 A 26 26 0 0 0 116.7,123.1" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="136.3" y="131.1" text-anchor="middle">α</text>
+<line x1="100" y1="150" x2="100" y2="137" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<line x1="450" y1="150" x2="450" y2="137" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<line x1="100" y1="132" x2="450" y2="132" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="275" y="150" text-anchor="middle">d</text>
+<text class="heb" x="456" y="175" text-anchor="middle" direction="rtl">קו השער</text>
+<line x1="40" y1="250" x2="100" y2="250" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="40" y1="280" x2="40" y2="200" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="102" y="264" text-anchor="end">t</text>
+<text class="dim" x="34" y="204" text-anchor="end">v_y</text>
+<polyline points="40,218 90,236" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="65" y="302" text-anchor="middle">4</text>
+<line x1="110" y1="250" x2="170" y2="250" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="110" y1="280" x2="110" y2="200" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="172" y="264" text-anchor="end">t</text>
+<text class="dim" x="104" y="204" text-anchor="end">v_y</text>
+<polyline points="110,236 160,244" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="135" y="302" text-anchor="middle">3</text>
+<line x1="180" y1="250" x2="240" y2="250" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="180" y1="280" x2="180" y2="200" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="242" y="264" text-anchor="end">t</text>
+<text class="dim" x="174" y="204" text-anchor="end">v_y</text>
+<polyline points="180,270 230,226" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="205" y="302" text-anchor="middle">2</text>
+<line x1="250" y1="250" x2="310" y2="250" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="250" y1="280" x2="250" y2="200" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="312" y="264" text-anchor="end">t</text>
+<text class="dim" x="244" y="204" text-anchor="end">v_y</text>
+<polyline points="250,222 300,274" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="275" y="302" text-anchor="middle">1</text>
+<line x1="330" y1="330" x2="538" y2="330" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="330" y1="330" x2="330" y2="202" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<text class="label" x="536" y="320" text-anchor="end">x</text>
+<text class="label" x="340" y="214" text-anchor="start">y</text>
+<polyline points="330,330 333.2,323.4 336.3,317 339.5,310.8 342.7,304.8 345.8,299.1 349,293.6 352.2,288.3 355.3,283.2 358.5,278.4 361.7,273.8 364.8,269.4 368,265.2 371.2,261.3 374.3,257.6 377.5,254.1 380.7,250.8 383.8,247.8 387,245 390.2,242.4 393.3,240 396.5,237.9 399.7,236 402.8,234.3 406,232.8 409.2,231.6 412.3,230.6 415.5,229.8 418.7,229.2 421.8,228.9 425,228.8 428.2,228.9 431.3,229.2 434.5,229.8 437.7,230.6 440.8,231.6 444,232.8 447.2,234.3 450.3,236 453.5,237.9 456.7,240 459.8,242.4 463,245 466.2,247.8 469.3,250.8 472.5,254.1 475.7,257.6 478.8,261.3 482,265.2 485.2,269.4 488.3,273.8 491.5,278.4 494.7,283.2 497.8,288.3 501,293.6 504.2,299.1 507.3,304.8 510.5,310.8 513.7,317 516.8,323.4 520,330" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="368" cy="265.2" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="360" y="259.2" text-anchor="end">P</text>
+<circle cx="425" cy="228.8" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="425" y="218.8" text-anchor="middle">Q</text>
+</svg>

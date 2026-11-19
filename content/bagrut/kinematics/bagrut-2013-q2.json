@@ -1,0 +1,171 @@
+{
+  "id": "bagrut-2013-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2013,
+    "label": "2013 שאלה 2"
+  },
+  "topic": "kinematics",
+  "subtopic": "kin-free-fall",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף נופל ממנוחה מראש מגדל גבוה. גודלו של כוח החיכוך עם האוויר נתון על ידי הביטוי $f = kv^2$, כאשר $k$ הוא קבוע שתלוי במאפייני הגוף, ו-$v$ היא מהירות הגוף.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2013-q2.svg",
+    "alt": "גוף נופל ממנוחה מראש מגדל גבוה. עליו פועלים כוח הכובד כלפי מטה וכוח החיכוך עם האוויר כלפי מעלה",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "חיכוך עם האוויר",
+    "נפילה חופשית",
+    "מהירות סופית (קבועה)",
+    "יחידות",
+    "תרשים כוחות"
+  ],
+  "summary": "נפילה עם חיכוך אוויר שתלוי במהירות. למה המהירות מפסיקה לגדול, ומה המהירות הסופית.",
+  "position": 31,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהן היחידות של $k$?",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "$\\text{kg/m}$",
+          "$\\text{kg}\\cdot\\text{m}$",
+          "$\\text{kg/s}$",
+          "$\\text{N/m}$"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "units"
+      ],
+      "solution": [
+        {
+          "what": "מבודדים את $k$",
+          "why": "מהביטוי לכוח",
+          "tex": "k = \\frac{f}{v^2}"
+        },
+        {
+          "what": "מציבים יחידות",
+          "why": "ניוטון הוא $\\text{kg}\\cdot\\text{m/s}^2$",
+          "tex": "[k] = \\frac{\\text{kg}\\cdot\\text{m/s}^2}{\\text{m}^2/\\text{s}^2} = \\frac{\\text{kg}}{\\text{m}}"
+        }
+      ],
+      "finalAnswer": "$\\text{kg/m}$",
+      "keyAnswer": "kg/m"
+    },
+    {
+      "label": "ב",
+      "question": "הגדר מהי \\\"נפילה חופשית\\\", וקבע אם תנועת הגוף הנתון היא נפילה חופשית. נמק את קביעתך.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "understanding"
+      ],
+      "solution": [
+        {
+          "what": "ההגדרה",
+          "why": "נפילה חופשית היא תנועה בהשפעת כוח הכובד בלבד",
+          "tex": "\\textstyle\\sum F = mg \\Rightarrow a = g"
+        },
+        {
+          "what": "הגוף הנתון",
+          "why": "פועל עליו גם חיכוך עם האוויר",
+          "tex": "\\textstyle\\sum F = mg - kv^2 \\ne mg"
+        }
+      ],
+      "finalAnswer": "לא: פועל עליו גם כוח החיכוך עם האוויר",
+      "keyAnswer": "לא נפילה חופשית"
+    },
+    {
+      "label": "ג",
+      "question": "סרטט תרשים של הכוחות שפועלים על הגוף במהלך נפילתו, והסבר בעזרתו מדוע ייתכן שהחל מרגע מסוים הגוף ינוע במהירות קבועה.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות",
+          "why": "כובד כלפי מטה, וחיכוך כלפי מעלה (נגד התנועה)",
+          "tex": "mg \\downarrow,\\quad kv^2 \\uparrow"
+        },
+        {
+          "what": "מה קורה כשהמהירות גדלה",
+          "why": "החיכוך גדל, והכוח השקול קטן",
+          "tex": "\\textstyle\\sum F = mg - kv^2 \\downarrow"
+        },
+        {
+          "what": "מהירות קבועה",
+          "why": "כשהחיכוך משתווה לכובד, הכוח השקול אפס, והמהירות מפסיקה לגדול",
+          "tex": "kv^2 = mg \\Rightarrow a = 0"
+        }
+      ],
+      "finalAnswer": "החיכוך גדל עם המהירות, עד שהוא שווה לכובד",
+      "keyAnswer": null
+    },
+    {
+      "label": "ד",
+      "question": "נתון: $k = 0.25$ (ביחידות שחישבת בסעיף א), $m = 10\\,\\text{kg}$. החל מרגע מסוים הגוף נע במהירות קבועה. חשב את גודל המהירות הקבועה של הגוף מרגע זה.",
+      "answer": {
+        "type": "number",
+        "value": 20.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תנאי למהירות קבועה",
+          "why": "הכוח השקול אפס",
+          "tex": "k v^2 = mg"
+        },
+        {
+          "what": "פותרים",
+          "why": "מבודדים את v",
+          "tex": "v = \\sqrt{\\frac{mg}{k}} = \\sqrt{\\frac{10 \\cdot 10}{0.25}} = \\sqrt{400} = 20\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$20\\,\\text{m/s}$",
+      "keyAnswer": "v=20 m/s"
+    },
+    {
+      "label": "ה",
+      "question": "סרטט במחברתך גרף של מהירות הגוף כפונקציה של הזמן, מרגע שחרור הגוף ועד רגע פגיעתו בקרקע. בגרף זה אל תציין ערכים על ציר הזמן.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "graph"
+      ],
+      "solution": [
+        {
+          "what": "בהתחלה",
+          "why": "מהירות אפס, ולכן אין חיכוך, והשיפוע הוא $g$",
+          "tex": "a(0) = g = 10\\,\\text{m/s}^2"
+        },
+        {
+          "what": "בהמשך",
+          "why": "השיפוע קטן בהדרגה, והגרף מתקרב לקו אופקי ב-$20\\,\\text{m/s}$",
+          "tex": "v \\to 20\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "עקומה שיוצאת מהראשית בשיפוע $g$ ומתמתנת לקו אופקי ב-$20\\,\\text{m/s}$",
+      "keyAnswer": null
+    }
+  ]
+}
