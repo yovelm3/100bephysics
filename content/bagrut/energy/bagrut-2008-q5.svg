@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" role="img" aria-label="מסילה חסרת חיכוך ABCD: קטע אופקי AB, עלייה, וקטע אופקי CD בגובה 0.2 מטר מעל AB. קפיץ א מחובר בנקודה A לקיר, וקפיץ ב מחובר בנקודה D לקיר. תיבה מונחת ליד קפיץ א">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<path d="M 40,190 L 260,190 Q 330,190 380,130 Q 400,110 430,110 L 520,110" fill="none" stroke="var(--d-line)" stroke-width="2.5" stroke-linejoin="round"/>
+<rect x="28" y="130" width="12" height="60" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="40" y1="130" x2="40" y2="190" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="40,178 50,178 53.3,184 56.7,172 60,184 63.3,172 66.7,184 70,172 73.3,184 76.7,172 80,184 83.3,172 86.7,184 90,178 100,178" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="101" y="167" width="30" height="22" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<rect x="520" y="60" width="12" height="50" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="520" y1="60" x2="520" y2="110" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="470,98 480,98 483,104 486,92 489,104 492,92 495,104 498,92 501,104 504,92 507,104 510,98 520,98" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<text class="label" x="50" y="206" text-anchor="middle">A</text>
+<text class="label" x="260" y="206" text-anchor="middle">B</text>
+<text class="label" x="430" y="126" text-anchor="middle">C</text>
+<text class="label" x="510" y="50" text-anchor="middle">D</text>
+<text class="heb" x="70" y="214" text-anchor="middle" direction="rtl">קפיץ א</text>
+<text class="heb" x="495" y="80" text-anchor="middle" direction="rtl">קפיץ ב</text>
+<line x1="540" y1="110" x2="540" y2="190" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="526" y="154" text-anchor="middle" transform="rotate(90.0 526 154)">0.2 m</text>
+</svg>
