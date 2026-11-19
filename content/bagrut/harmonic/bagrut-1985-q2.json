@@ -1,0 +1,119 @@
+{
+  "id": "bagrut-1985-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1985,
+    "label": "1985 שאלה 2"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-spring",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף מלבני, שמסתו $20\\,\\text{kg}$, נשען על $6$ קפיצים זהים, כמתואר בתרשים. כאשר מניחים במרכזו של הגוף המלבני גוף נוסף, שמסתו $10\\,\\text{kg}$, הוא שוקע בשיעור של $10\\,\\text{cm}$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1985-q2.svg",
+    "alt": "לוח מלבני מונח על שישה קפיצים זהים בנקודות A, B, C, D, E ו-F: ארבעה בפינות ושניים באמצע הצלעות הארוכות",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "קפיצים במקביל",
+    "מתנד קפיץ",
+    "זמן מחזור"
+  ],
+  "summary": "לוח על שישה קפיצים: קבוע של קפיץ אחד מהשקיעה, זמן המחזור, ומה קורה כששני קפיצים נשברים.",
+  "position": 4,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו קבוע הכוח של כל אחד משישת הקפיצים?",
+      "answer": {
+        "type": "number",
+        "value": 166.66666666666666,
+        "unit": "N/m",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "fbd",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הכוח הנוסף",
+          "why": "משקל הגוף הנוסף",
+          "tex": "\\Delta F = 10 \\cdot 10 = 100\\,\\text{N}"
+        },
+        {
+          "what": "שישה קפיצים במקביל",
+          "why": "כל אחד מתכווץ $0.1\\,\\text{m}$",
+          "tex": "6k \\cdot 0.1 = 100 \\Rightarrow k \\approx 167\\,\\text{N/m}"
+        }
+      ],
+      "finalAnswer": "$k \\approx 167\\,\\text{N/m}$",
+      "keyAnswer": "167 N/m"
+    },
+    {
+      "label": "ב",
+      "question": "הגוף המלבני העמוס מתחיל להתנודד מעלה-מטה (אך הוא נשאר כל הזמן במצב מאוזן). מהו זמן המחזור של התנודות?",
+      "answer": {
+        "type": "number",
+        "value": 1.0882796185405306,
+        "unit": "s",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "קבוע שקול",
+          "why": "קפיצים במקביל",
+          "tex": "K = 6k = 1000\\,\\text{N/m}"
+        },
+        {
+          "what": "מתנד קפיץ",
+          "why": "המסה המתנודדת: $20 + 10 = 30\\,\\text{kg}$",
+          "tex": "T = 2\\pi\\sqrt{\\frac{30}{1000}} \\approx 1.09\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 1.09\\,\\text{s}$",
+      "keyAnswer": "1.09 s"
+    },
+    {
+      "label": "ג",
+      "question": "הנח כי הקפיצים המחוברים לנקודות $C$ ו-$F$ נשברו. כיצד ישפיע הדבר על זמן המחזור של תנודות הלוח? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "זמן המחזור יגדל",
+          "זמן המחזור יקטן",
+          "זמן המחזור לא ישתנה"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "קבוע שקול קטן",
+          "why": "נשארים ארבעה קפיצים",
+          "tex": "K' = 4k \\approx 667\\,\\text{N/m}"
+        },
+        {
+          "what": "זמן מחזור",
+          "why": "$T \\propto 1/\\sqrt{K}$",
+          "tex": "T' = 2\\pi\\sqrt{\\frac{30}{667}} \\approx 1.33\\,\\text{s} > T"
+        }
+      ],
+      "finalAnswer": "זמן המחזור יגדל (לכ-$1.33\\,\\text{s}$)",
+      "keyAnswer": null
+    }
+  ]
+}

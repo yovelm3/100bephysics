@@ -1,0 +1,157 @@
+{
+  "id": "bagrut-1980-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1980,
+    "label": "1980 שאלה 3"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-spring",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "על שולחן אופקי חלק מונח קפיץ (שמסתו זניחה), שקצהו השמאלי מחובר לקיר וקצהו הימני חופשי. על קצה הקפיץ החופשי מפעילים כוח $F = 20\\,\\text{N}$, וכתוצאה מכך הקפיץ מתארך ב-$10\\,\\text{cm}$. לאחר שמצמידים לקצה זה של הקפיץ מסה $m = 2\\,\\text{kg}$, משחררים את הקפיץ.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1980-q3.svg",
+    "alt": "שולחן אופקי חלק. קפיץ שקצהו השמאלי מחובר לקיר, ולקצהו הימני מוצמדת מסה m של 2 קילוגרם. הקפיץ מתוח 10 סנטימטר משיווי משקל",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מתנד קפיץ",
+    "משרעת",
+    "מהירות מרבית",
+    "זמן מחזור"
+  ],
+  "summary": "מסה על קפיץ על שולחן חלק: קבוע הקפיץ מכוח ידוע, מהירות מרבית ורבע מחזור.",
+  "position": 1,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו האופי של תנועת המסה לאחר שחרור הקפיץ? נמק.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "fbd"
+      ],
+      "solution": [
+        {
+          "what": "הכוח היחיד בכיוון התנועה",
+          "why": "כוח הקפיץ, פרופורציוני להעתק ומכוון לשיווי המשקל",
+          "tex": "F = -kx"
+        },
+        {
+          "what": "החוק השני",
+          "why": "תאוצה פרופורציונית להעתק ובכיוון הפוך",
+          "tex": "a = -\\frac{k}{m}x"
+        }
+      ],
+      "finalAnswer": "תנועה הרמונית פשוטה סביב מצב הרפיון של הקפיץ",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "מה תהיה המהירות הגדולה ביותר (ערך מוחלט) של המסה הנעה, כשהיא קשורה לקצה הקפיץ?",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": "m/s",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "קבוע הקפיץ",
+          "why": "$F = 20\\,\\text{N}$ מאריך ב-$0.1\\,\\text{m}$",
+          "tex": "k = \\frac{20}{0.1} = 200\\,\\text{N/m}"
+        },
+        {
+          "what": "תדירות זוויתית",
+          "why": "מתנד קפיץ",
+          "tex": "\\omega = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{200}{2}} = 10\\,\\text{rad/s}"
+        },
+        {
+          "what": "משרעת",
+          "why": "משחררים ממנוחה בהעתק $10\\,\\text{cm}$",
+          "tex": "A = 0.1\\,\\text{m}"
+        },
+        {
+          "what": "מהירות מרבית",
+          "why": "בשיווי המשקל",
+          "tex": "v_{\\max} = A\\omega = 0.1 \\cdot 10 = 1\\,\\text{m/s}"
+        },
+        {
+          "what": "בדיקה באנרגיה",
+          "why": "אנרגיית הקפיץ הופכת לקינטית",
+          "tex": "\\frac{1}{2} \\cdot 200 \\cdot 0.1^2 = \\frac{1}{2} \\cdot 2 v^2 \\Rightarrow v = 1\\,\\text{m/s}",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$1\\,\\text{m/s}$",
+      "keyAnswer": "1 m/s"
+    },
+    {
+      "label": "ג",
+      "question": "כמה זמן לאחר שיחרור הקפיץ תגיע מהירות המסה לערכה המוחלט הגדול ביותר בפעם הראשונה?",
+      "answer": {
+        "type": "number",
+        "value": 0.15707963267948966,
+        "unit": "s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "זמן מחזור",
+          "why": "מ-$\\omega$",
+          "tex": "T = \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{10} \\approx 0.628\\,\\text{s}"
+        },
+        {
+          "what": "מהקצה לשיווי המשקל",
+          "why": "רבע מחזור",
+          "tex": "t = \\frac{T}{4} \\approx 0.157\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.16\\,\\text{s}$",
+      "keyAnswer": "≈0.16 s"
+    },
+    {
+      "label": "ד",
+      "question": "באיזה רגע תהיה למסה התאוצה הגדולה ביותר (בערכה המוחלט) בפעם הראשונה? מה תהיה מהירות המסה ברגע זה?",
+      "answer": {
+        "type": "number",
+        "value": 0.0,
+        "unit": "s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה מרבית בהעתק מרבי",
+          "why": "$|a| = \\omega^2 |x|$",
+          "tex": "t = 0:\\ x = A"
+        },
+        {
+          "what": "המהירות שם",
+          "why": "בקצה התנועה המסה נעצרת",
+          "tex": "v = 0"
+        }
+      ],
+      "finalAnswer": "ברגע השחרור $t = 0$, והמהירות אז אפס",
+      "keyAnswer": "at t=0"
+    }
+  ]
+}

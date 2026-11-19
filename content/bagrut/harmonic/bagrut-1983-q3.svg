@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320" role="img" aria-label="קפיץ תלוי מהתקרה. בקצהו התחתון גוף A שמסתו 2m, ומתחתיו גוף B שמסתו m תלוי בחוט">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="90" y="18" width="120" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="90" y1="30" x2="210" y2="30" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="150,30 150,40 143,46 157,52 143,58 157,64 143,70 157,76 143,82 157,88 143,94 157,100 143,106 157,112 143,118 157,124 143,130 157,136 143,142 157,148 143,154 150,160 150,170" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="125" y="172" width="50" height="40" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="150" y="197" text-anchor="middle" style="fill:#ffffff">A</text>
+<text class="label" x="190" y="197" text-anchor="start">2m</text>
+<line x1="150" y1="212" x2="150" y2="250" stroke="var(--d-line)" stroke-width="1.6" stroke-linecap="round"/>
+<rect x="128" y="252" width="44" height="36" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="150" y="275" text-anchor="middle" style="fill:#ffffff">B</text>
+<text class="label" x="188" y="275" text-anchor="start">m</text>
+</svg>

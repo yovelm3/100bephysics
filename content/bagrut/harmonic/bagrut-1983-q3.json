@@ -1,0 +1,130 @@
+{
+  "id": "bagrut-1983-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1983,
+    "label": "1983 שאלה 3"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-spring",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "קפיץ מחובר אל התקרה ועליו תלוי גוף $A$ שמסתו $2m$. אל גוף $A$ מחובר בחוט (שמסתו זניחה) גוף $B$ שמסתו $m$. כשהמערכת במנוחה, התארכותו של הקפיץ (התוספת לאורכו של הקפיץ החופשי) היא $d$. ברגע מסוים ניתק החוט, והגוף $B$ נופל. בטא את תשובותיך בעזרת הגדלים $m$, $d$ ו-$g$ (תאוצת הנפילה החופשית).",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1983-q3.svg",
+    "alt": "קפיץ תלוי מהתקרה. בקצהו התחתון גוף A שמסתו 2m, ומתחתיו גוף B שמסתו m תלוי בחוט",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מתנד קפיץ אנכי",
+    "שיווי משקל חדש",
+    "משרעת",
+    "כוח שקול מרבי"
+  ],
+  "summary": "מנתקים גוף תחתון ממערכת על קפיץ: שיווי משקל חדש, משרעת $d/3$, זמן מחזור ומהירות מרבית.",
+  "position": 3,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהי משרעת (אמפליטודה) התנודות של הגוף $A$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "קבוע הקפיץ",
+          "why": "לפני הניתוק הקפיץ מחזיק את שני הגופים",
+          "tex": "kd = 3mg \\Rightarrow k = \\frac{3mg}{d}"
+        },
+        {
+          "what": "שיווי המשקל החדש",
+          "why": "אחרי הניתוק נשאר רק $A$",
+          "tex": "kx_0 = 2mg \\Rightarrow x_0 = \\frac{2d}{3}"
+        },
+        {
+          "what": "משרעת",
+          "why": "$A$ מתחיל במנוחה, ולכן זו נקודת קצה",
+          "tex": "A = d - \\frac{2d}{3} = \\frac{d}{3}"
+        }
+      ],
+      "finalAnswer": "$\\frac{d}{3}$",
+      "keyAnswer": "d/3"
+    },
+    {
+      "label": "ב",
+      "question": "מהו זמן המחזור של התנודות?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מתנד קפיץ",
+          "why": "המסה המתנודדת $2m$",
+          "tex": "T = 2\\pi\\sqrt{\\frac{2m}{k}} = 2\\pi\\sqrt{\\frac{2m d}{3mg}} = 2\\pi\\sqrt{\\frac{2d}{3g}}"
+        }
+      ],
+      "finalAnswer": "$T = 2\\pi\\sqrt{\\frac{2d}{3g}}$",
+      "keyAnswer": "2π√(2d/3g)"
+    },
+    {
+      "label": "ג",
+      "question": "מהי המהירות המרבית של הגוף $A$ בעת תנודותיו?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מהירות מרבית",
+          "why": "בשיווי המשקל",
+          "tex": "v_{\\max} = A\\omega = \\frac{d}{3}\\sqrt{\\frac{3g}{2d}} = \\sqrt{\\frac{dg}{6}}"
+        }
+      ],
+      "finalAnswer": "$\\sqrt{\\frac{dg}{6}}$",
+      "keyAnswer": "√(dg/6)"
+    },
+    {
+      "label": "ד",
+      "question": "מהו הכוח השקול המרבי הפועל על הגוף $A$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "כוח שקול מרבי",
+          "why": "בנקודת הקצה, העתק מרבי משיווי המשקל",
+          "tex": "F_{\\max} = kA = \\frac{3mg}{d} \\cdot \\frac{d}{3} = mg"
+        },
+        {
+          "what": "בדיקה ברגע הניתוק",
+          "why": "הקפיץ עדיין דוחף $3mg$, והכובד על $A$ הוא $2mg$",
+          "tex": "F = 3mg - 2mg = mg",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$mg$",
+      "keyAnswer": "mg"
+    }
+  ]
+}

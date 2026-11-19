@@ -1,0 +1,183 @@
+{
+  "id": "bagrut-1981-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1981,
+    "label": "1981 שאלה 3"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-pendulum",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "מסה נקודתית $m$ תלויה בקצהו של חוט חסר מסה שאורכו $\\ell$. מסיטים את המסה ממצב שיווי המשקל שלה כך שהחוט יוצר זווית קטנה $\\theta$ ($\\sin\\theta \\approx \\theta$) עם האנך. מרפים מן המסה $m$, והיא מתחילה להתנודד בקצה החוט (מטוטלת מתמטית).",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1981-q3.svg",
+    "alt": "מטוטלת: חוט באורך l תלוי מהתקרה, ובקצהו מסה נקודתית m. החוט מוסט בזווית קטנה θ מהאנך",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מטוטלת מתמטית",
+    "זמן מחזור",
+    "שימור אנרגיה",
+    "מתיחות בנקודה הנמוכה"
+  ],
+  "summary": "מטוטלת בזווית קטנה: למה היא הרמונית, רבע מחזור, מהירות ומתיחות בנקודה הנמוכה, ומה קורה בגובה רדיוס כדור הארץ.",
+  "position": 2,
+  "parts": [
+    {
+      "label": "א",
+      "question": "הראה כי תנועת המטוטלת היא תנועה הרמונית, ופתח את הנוסחה עבור זמן המחזור של התנודות.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הכוח המחזיר",
+          "why": "רכיב הכובד המשיק למסלול",
+          "tex": "F = -mg\\sin\\theta \\approx -mg\\theta"
+        },
+        {
+          "what": "העתק לאורך הקשת",
+          "why": "$x = \\ell\\theta$",
+          "tex": "F \\approx -\\frac{mg}{\\ell}x"
+        },
+        {
+          "what": "כמו קפיץ עם $k = mg/\\ell$",
+          "why": "הכוח פרופורציוני להעתק ומכוון אל שיווי המשקל",
+          "tex": "T = 2\\pi\\sqrt{\\frac{m}{k}} = 2\\pi\\sqrt{\\frac{\\ell}{g}}"
+        }
+      ],
+      "finalAnswer": "$T = 2\\pi\\sqrt{\\ell/g}$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "אם המסה הנקודתית $m = 100\\,\\text{g}$, אורך החוט $\\ell = 1\\,\\text{m}$, והזווית בין החוט לאנך היא $\\theta = 5^\\circ$, כמה זמן יעבור מרגע שחרור המסה $m$ עד שהיא תגיע בפעם הראשונה למהירותה המקסימלית?",
+      "answer": {
+        "type": "number",
+        "value": 0.4967294132898051,
+        "unit": "s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "זמן מחזור",
+          "why": "מטוטלת מתמטית",
+          "tex": "T = 2\\pi\\sqrt{\\frac{1}{10}} \\approx 1.99\\,\\text{s}"
+        },
+        {
+          "what": "מהקצה לנקודה הנמוכה",
+          "why": "רבע מחזור",
+          "tex": "t = \\frac{T}{4} \\approx 0.5\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.5\\,\\text{s}$",
+      "keyAnswer": "≈0.5 s"
+    },
+    {
+      "label": "ג",
+      "question": "מה גודלה של המהירות המקסימלית?",
+      "answer": {
+        "type": "number",
+        "value": 0.2758732284312653,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "שימור אנרגיה",
+          "why": "גובה ההתחלה מעל הנקודה הנמוכה",
+          "tex": "h = \\ell(1 - \\cos 5^\\circ) \\approx 3.8 \\times 10^{-3}\\,\\text{m}"
+        },
+        {
+          "what": "מהירות בנקודה הנמוכה",
+          "why": "פוטנציאלית לקינטית",
+          "tex": "v = \\sqrt{2gh} = \\sqrt{2 \\cdot 10 \\cdot 3.8 \\times 10^{-3}} \\approx 0.28\\,\\text{m/s}"
+        },
+        {
+          "what": "בדיקה בדרך אחרת",
+          "why": "$A = \\ell\\theta$ ו-$\\omega = \\sqrt{g/\\ell}$",
+          "tex": "v = A\\omega = 0.0873 \\cdot 3.16 \\approx 0.28\\,\\text{m/s}",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$\\approx 0.28\\,\\text{m/s}$",
+      "keyAnswer": "≈0.28 m/s"
+    },
+    {
+      "label": "ד",
+      "question": "מהי מתיחות החוט, כאשר למסה $m$ המהירות המקסימלית?",
+      "answer": {
+        "type": "number",
+        "value": 1.007610603816509,
+        "unit": "N",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "fbd",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "בנקודה הנמוכה: תנועה מעגלית",
+          "why": "השקול כלפי מעלה הוא הכוח הצנטריפטלי",
+          "tex": "T - mg = \\frac{mv^2}{\\ell}"
+        },
+        {
+          "what": "מציבים",
+          "why": "$v^2 \\approx 0.076$",
+          "tex": "T = 0.1 \\cdot 10 + \\frac{0.1 \\cdot 0.28^2}{1} \\approx 1.008\\,\\text{N}"
+        }
+      ],
+      "finalAnswer": "$\\approx 1.008\\,\\text{N}$",
+      "keyAnswer": "≈1.008 N"
+    },
+    {
+      "label": "ה",
+      "question": "מעלים את המטוטלת המתמטית הנ\"ל לגובה $h$ מעל פני כדור הארץ. אם $h$ שווה לרדיוס של כדור הארץ, מה זמן המחזור של המטוטלת?",
+      "answer": {
+        "type": "number",
+        "value": 3.9738353063184406,
+        "unit": "s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצת הכובד בגובה $R$",
+          "why": "המרחק מהמרכז כפול",
+          "tex": "g' = g\\left(\\frac{R}{2R}\\right)^2 = \\frac{g}{4}"
+        },
+        {
+          "what": "זמן המחזור",
+          "why": "$T \\propto 1/\\sqrt{g}$",
+          "tex": "T' = 2\\pi\\sqrt{\\frac{\\ell}{g/4}} = 2T \\approx 3.97\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 4\\,\\text{s}$ (פי שניים)",
+      "keyAnswer": null
+    }
+  ]
+}
