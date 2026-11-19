@@ -213,3 +213,26 @@ class Fig:
         alt = esc(self.alt).replace('"', "&quot;")
         body = "\n".join(self.items)
         return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" role="img" aria-label="{alt}">\n{DEFS}\n{body}\n</svg>\n'
+
+
+def mini(g, ox, oy, w, h, fn=None, label="", xl="t", yl="v", neg=False, pts=None, segs=None, n=40):
+    """Small option graph. Origin at (ox, oy); unit box w x h (values in [0,1] on x, [-1,1] or [0,1] on y)."""
+    y0 = oy
+    g.line(ox, y0, ox + w + 10, y0, width=1.4)
+    g.line(ox, y0 + (h * 0.75 if neg else 0), ox, y0 - h - 10, width=1.4)
+    g.text(ox + w + 12, y0 + 14, xl, cls="dim", anchor="end")
+    g.text(ox - 6, y0 - h - 6, yl, cls="dim", anchor="end")
+    P_ = lambda a, b: (ox + a * w, y0 - b * h)
+    if fn is not None:
+        g.path("M " + " L ".join("%.1f,%.1f" % P_(i / n, fn(i / n)) for i in range(n + 1)), stroke="var(--d-body)", width=2.2)
+    if pts is not None:
+        g.poly([P_(a, b) for a, b in pts], close=False, stroke="var(--d-body)", width=2.2)
+    for sg in segs or []:
+        if callable(sg[0]):
+            f_, a0, a1 = sg
+            g.path("M " + " L ".join("%.1f,%.1f" % P_(a0 + (a1 - a0) * i / n, f_(a0 + (a1 - a0) * i / n)) for i in range(n + 1)), stroke="var(--d-body)", width=2.2)
+        else:
+            g.poly([P_(a, b) for a, b in sg], close=False, stroke="var(--d-body)", width=2.2)
+    if label:
+        g.text(ox + w / 2, y0 + (h * 0.75 if neg else 0) + 22, label, cls="label")
+    return P_
