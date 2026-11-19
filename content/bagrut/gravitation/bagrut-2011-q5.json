@@ -1,0 +1,169 @@
+{
+  "id": "bagrut-2011-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2011,
+    "label": "2011 שאלה 5"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-orbits",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "עמוס 1 הוא לוויין התקשורת הישראלי הראשון, שפיתחה התעשייה האווירית של ישראל. המסלול של הלוויין עמוס 1 הוא מעגלי (בקירוב). כלוויין תקשורת עמוס 1 נמצא כל הזמן מעל אותה נקודה $A$ שעל פני כדור הארץ. נתונים: מסת כדור הארץ $5.98 \\times 10^{24}\\,\\text{kg}$, רדיוס כדור הארץ $6.37 \\times 10^6\\,\\text{m}$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2011-q5.svg",
+    "alt": "כדור הארץ ועליו נקודה A. הלוויין עמוס 1 במסלול מעגלי, תמיד מעל הנקודה A",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "לוויין גאוסטציונרי",
+    "החוק השלישי של קפלר",
+    "מהירות זוויתית וקווית"
+  ],
+  "summary": "לוויין תקשורת: זמן מחזור של יממה, גובה ותאוצה במסלול, ולוויין של 12 שעות לפי קפלר.",
+  "position": 25,
+  "parts": [
+    {
+      "label": "א",
+      "question": "קבע את זמן המחזור של הלוויין עמוס 1 (בשעות). נמק את קביעתך.",
+      "answer": {
+        "type": "number",
+        "value": 24.0,
+        "unit": "h"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "תמיד מעל אותה נקודה",
+          "why": "מסתובב יחד עם כדור הארץ סביב צירו",
+          "tex": "T = 24\\,\\text{h}"
+        }
+      ],
+      "finalAnswer": "$24$ שעות",
+      "keyAnswer": "period 24 hours"
+    },
+    {
+      "label": "ב",
+      "question": "חשב את גובה המסלול של הלוויין עמוס 1 מעל פני כדור הארץ.",
+      "answer": {
+        "type": "number",
+        "value": 35880474.305047825,
+        "unit": "m",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "כבידה ככוח צנטריפטלי",
+          "why": "$T = 86400\\,\\text{s}$",
+          "tex": "r = \\sqrt[3]{\\frac{GMT^2}{4\\pi^2}} = \\sqrt[3]{\\frac{6.67 \\times 10^{-11} \\cdot 5.98 \\times 10^{24} \\cdot 86400^2}{4\\pi^2}} \\approx 4.22 \\times 10^7\\,\\text{m}"
+        },
+        {
+          "what": "גובה מעל הפנים",
+          "why": "מחסירים את רדיוס כדור הארץ",
+          "tex": "h = r - R \\approx 4.22 \\times 10^7 - 6.37 \\times 10^6 \\approx 3.59 \\times 10^7\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$h \\approx 3.59 \\times 10^7\\,\\text{m}$",
+      "keyAnswer": "h=3.59×10^7 m"
+    },
+    {
+      "label": "ג",
+      "question": "חשב את גודל התאוצה של הלוויין עמוס 1 במסלולו.",
+      "answer": {
+        "type": "number",
+        "value": 0.2234415011730614,
+        "unit": "m/s^2",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "התאוצה היא תאוצת הכבידה במסלול",
+          "why": "החוק השני של ניוטון",
+          "tex": "a = \\frac{GM}{r^2} = \\frac{6.67 \\times 10^{-11} \\cdot 5.98 \\times 10^{24}}{(4.22 \\times 10^7)^2} \\approx 0.224\\,\\text{m/s}^2"
+        },
+        {
+          "what": "בדיקה בדרך אחרת",
+          "why": "תאוצה צנטריפטלית",
+          "tex": "a = \\frac{4\\pi^2 r}{T^2} = \\frac{4\\pi^2 \\cdot 4.22 \\times 10^7}{86400^2} \\approx 0.223\\,\\text{m/s}^2",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$a \\approx 0.224\\,\\text{m/s}^2$",
+      "keyAnswer": "0.224 m/s²"
+    },
+    {
+      "label": "ד",
+      "question": "לוויין אחר (לא לוויין תקשורת) מקיף את כדור הארץ במסלול מעגלי במשך $12$ שעות. השתמש בחוקי קפלר וחשב באיזה גובה מעל פני כדור הארץ עובר המסלול של לוויין זה.",
+      "answer": {
+        "type": "number",
+        "value": 20246130.972486112,
+        "unit": "m",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "קפלר ביחס לעמוס 1",
+          "why": "אותו כוכב מרכזי",
+          "tex": "r_2 = r\\left(\\frac{12}{24}\\right)^{2/3} = \\frac{4.22 \\times 10^7}{2^{2/3}} \\approx 2.66 \\times 10^7\\,\\text{m}"
+        },
+        {
+          "what": "גובה",
+          "why": "מחסירים R",
+          "tex": "h_2 = 2.66 \\times 10^7 - 6.37 \\times 10^6 \\approx 2.02 \\times 10^7\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$h \\approx 2.02 \\times 10^7\\,\\text{m}$",
+      "keyAnswer": "h≈2.02×10^7 m"
+    },
+    {
+      "label": "ה",
+      "question": "קבע איזו מההיגדים 1-3 שלפניך אינו נכון, והסבר מדוע הוא אינו נכון. (1) תנועת לוויין במסלולו היא נפילה חופשית. (2) גודל המהירות הקווית של נקודה $A$ שעל פני כדור הארץ שווה לגודל המהירות הקווית של הלוויין עמוס 1 הנע במסלולו. (3) גודל המהירות הזוויתית של נקודה $A$ שעל פני כדור הארץ שווה לגודל המהירות הזוויתית של הלוויין עמוס 1 הנע במסלולו.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "היגד 1",
+          "היגד 2",
+          "היגד 3"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "אותה מהירות זוויתית",
+          "why": "שניהם משלימים סיבוב ב-24 שעות",
+          "tex": "\\omega_A = \\omega_{\\text{sat}}"
+        },
+        {
+          "what": "מהירות קווית",
+          "why": "רדיוס הסיבוב של הלוויין גדול בהרבה",
+          "tex": "v = \\omega r \\Rightarrow v_{\\text{sat}} > v_A"
+        }
+      ],
+      "finalAnswer": "היגד 2 אינו נכון",
+      "keyAnswer": "claim (2) not correct"
+    }
+  ]
+}

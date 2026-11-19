@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="השמש במרכז. מסלול כדור הארץ, והחללית על אותו מסלול. רחוק יותר: מסלול גדול של אריס">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<circle cx="200" cy="130" r="18" fill="var(--d-accent, var(--d-body))" stroke="none" stroke-width="2"/>
+<text class="heb" x="200" y="170" text-anchor="middle" direction="rtl">שמש</text>
+<circle cx="200" cy="130" r="70" fill="none" stroke="var(--d-line)" stroke-width="1.3" stroke-dasharray="5 4"/>
+<circle cx="270" cy="130" r="7" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="heb" x="270" y="154" text-anchor="middle" direction="rtl">כדור הארץ</text>
+<circle cx="150" cy="81" r="5" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="heb" x="126" y="68" text-anchor="middle" direction="rtl">חללית</text>
+<path d="M 500 10 A 300 300 0 0 1 500 250" fill="none" stroke="var(--d-line)" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="3 5"/>
+<circle cx="499" cy="130" r="6" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="heb" x="470" y="114" text-anchor="middle" direction="rtl">אריס</text>
+</svg>
