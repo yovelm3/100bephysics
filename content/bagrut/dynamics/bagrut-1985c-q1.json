@@ -1,0 +1,70 @@
+{
+  "id": "bagrut-1985c-q1",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1985,
+    "label": "1985 שאלה 1 (שאלון השלמה)"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-incline",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף מחליק ממצב של מנוחה, בלי חיכוך, במורד מדרון שאורכו $L$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1985c-q1.svg",
+    "alt": "גוף מחליק ממנוחה, בלי חיכוך, במורד מדרון שאורכו L",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מישור משופע חלק",
+    "תאוצה קבועה",
+    "משוואה בלי זמן"
+  ],
+  "summary": "במדרון חלק המהירות גדלה כמו שורש הדרך, ולכן חצי מהמהירות מתקבל כבר ברבע הדרך.",
+  "position": 6,
+  "parts": [
+    {
+      "label": "א",
+      "question": "באיזה מרחק מראש המדרון תהיה מהירות הגוף שווה למחצית מהירותו בתחתית המדרון?",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "$L/4$",
+          "$L/2$",
+          "$L/\\sqrt{2}$",
+          "$3L/4$"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה קבועה במורד",
+          "why": "בלי חיכוך",
+          "tex": "a = g\\sin\\alpha"
+        },
+        {
+          "what": "מהירות כפונקציה של הדרך",
+          "why": "ממנוחה, משוואה בלי זמן",
+          "tex": "v^2 = 2 a s \\Rightarrow v \\propto \\sqrt{s}"
+        },
+        {
+          "what": "חצי מהמהירות",
+          "why": "ריבוע המהירות קטן פי $4$",
+          "tex": "\\frac{s}{L} = \\left(\\tfrac{1}{2}\\right)^2 \\Rightarrow s = \\frac{L}{4}"
+        }
+      ],
+      "finalAnswer": "$L/4$",
+      "keyAnswer": "א'"
+    }
+  ]
+}

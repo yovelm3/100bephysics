@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-label="תרשים א: שני גופים במסה M תלויים משני צדי גלגלת בחוט b, והגלגלת תלויה מהתקרה בחוט c. תרשים ב: לגוף הימני נוסף גוף במסה m בחוט d">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="80" y="8" width="120" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="80" y1="20" x2="200" y2="20" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="140" y1="20" x2="140" y2="70" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="label" x="148" y="50" text-anchor="start">c</text>
+<circle cx="140" cy="90" r="22" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="140" cy="90" r="2.5" fill="var(--d-line)" stroke="none" stroke-width="2"/>
+<line x1="118" y1="90" x2="118" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="162" y1="90" x2="162" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="label" x="170" y="150" text-anchor="start">b</text>
+<rect x="101" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="118" y="210" text-anchor="middle" style="fill:#ffffff">M</text>
+<rect x="145" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="162" y="210" text-anchor="middle" style="fill:#ffffff">M</text>
+<text class="heb" x="140" y="322" text-anchor="middle" direction="rtl">תרשים א</text>
+<rect x="340" y="8" width="120" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="340" y1="20" x2="460" y2="20" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="400" y1="20" x2="400" y2="70" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="label" x="408" y="50" text-anchor="start">c</text>
+<circle cx="400" cy="90" r="22" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="400" cy="90" r="2.5" fill="var(--d-line)" stroke="none" stroke-width="2"/>
+<line x1="378" y1="90" x2="378" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="422" y1="90" x2="422" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="label" x="430" y="150" text-anchor="start">b</text>
+<rect x="361" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="378" y="210" text-anchor="middle" style="fill:#ffffff">M</text>
+<rect x="405" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="422" y="210" text-anchor="middle" style="fill:#ffffff">M</text>
+<line x1="422" y1="220" x2="422" y2="270" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="label" x="430" y="250" text-anchor="start">d</text>
+<rect x="408" y="271" width="28" height="26" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="422" y="289" text-anchor="middle" style="fill:#ffffff">m</text>
+<text class="heb" x="400" y="322" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>

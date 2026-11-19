@@ -1,0 +1,113 @@
+{
+  "id": "bagrut-1987-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1987,
+    "label": "1987 שאלה 2"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-friction",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "בסדרת ניסויים נגרר גוף בעל מסה $m$ על משטח אופקי על ידי כוח אופקי $F$, שמשתנה מניסוי לניסוי. בסדרת הניסויים התקבלו התוצאות שמתוארות בגרף.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1987-q2.svg",
+    "alt": "גרף התאוצה a כפונקציה של הכוח F: קו ישר שחותך את ציר הכוח ב-2 ניוטון ומגיע ל-2 מטר לשנייה בריבוע ב-10 ניוטון",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "החוק השני של ניוטון",
+    "חיכוך קינטי",
+    "שיפוע וחיתוך של גרף",
+    "גרף תאוצה-כוח"
+  ],
+  "summary": "מסה ומקדם חיכוך מגרף תאוצה-כוח: השיפוע הוא $1/m$ והחיתוך הוא כוח החיכוך.",
+  "position": 8,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהי מסת הגוף הנגרר?",
+      "answer": {
+        "type": "number",
+        "value": 4.0,
+        "unit": "kg"
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "החוק השני עם חיכוך",
+          "why": "החיכוך הקינטי קבוע",
+          "tex": "F - f = ma \\Rightarrow a = \\frac{1}{m}F - \\frac{f}{m}"
+        },
+        {
+          "what": "השיפוע",
+          "why": "קו ישר שהשיפוע שלו $1/m$",
+          "tex": "\\frac{1}{m} = \\frac{2 - 0}{10 - 2} = \\frac{1}{4} \\Rightarrow m = 4\\,\\text{kg}"
+        }
+      ],
+      "finalAnswer": "$4\\,\\text{kg}$",
+      "keyAnswer": "4 kg"
+    },
+    {
+      "label": "ב",
+      "question": "מהו מקדם החיכוך בין הגוף לבין השולחן?",
+      "answer": {
+        "type": "number",
+        "value": 0.05,
+        "unit": ""
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "החיתוך עם ציר הכוח",
+          "why": "ב-$F = 2\\,\\text{N}$ התאוצה אפס: הכוח שווה לחיכוך",
+          "tex": "f = 2\\,\\text{N}"
+        },
+        {
+          "what": "מקדם החיכוך",
+          "why": "$f = \\mu mg$",
+          "tex": "\\mu = \\frac{2}{4 \\cdot 10} = 0.05"
+        }
+      ],
+      "finalAnswer": "$\\mu = 0.05$",
+      "keyAnswer": "0.05"
+    },
+    {
+      "label": "ג",
+      "question": "על גבי הגוף הקודם מדביקים גוף נוסף שמסתו אף היא $m$. חוזרים ועורכים את ניסוי הגרירה על פני המשטח הנ\"ל. העתק את הגרף למחברתך והוסף לו גרף שמתאר את תלות התאוצה $a$ של הגוף החדש בכוח האופקי $F$ שמופעל עליו. הסבר את תשובתך.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "מסה כפולה",
+          "why": "השיפוע $1/(2m)$, חצי מהקודם",
+          "tex": "\\frac{1}{2m} = \\frac{1}{8}"
+        },
+        {
+          "what": "חיכוך כפול",
+          "why": "הנורמלי כפול, ולכן החיכוך כפול, והחיתוך עם ציר הכוח עובר ל-$4\\,\\text{N}$",
+          "tex": "f' = \\mu \\cdot 2mg = 4\\,\\text{N}"
+        }
+      ],
+      "finalAnswer": "קו ישר שחותך את ציר הכוח ב-$4\\,\\text{N}$, בחצי מהשיפוע",
+      "keyAnswer": null
+    }
+  ]
+}

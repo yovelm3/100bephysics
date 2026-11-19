@@ -10,6 +10,6 @@
 
 ## Status
 - kinematics: DONE 37/37 (imported to site). Known key mismatches: 1995 Q1 (key used x/t), 1999 Q1 ב3 (key typo 0.96).
-- dynamics: in progress (d01–d04 done = PDF page 1)
+- dynamics: in progress (d01–d16 done = PDF pages 1–5)
 - circular, momentum, energy, gravitation, harmonic: not started
 - Then: second independent pass (recompute every numeric answer in a separate script; check figures), re-import, summary for owner.

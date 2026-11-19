@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="תרשים א: מכונית על כביש אופקי, ומשקולת תלויה ממד-כוח בתקרה, החוט נוטה בזווית אלפא מהאנך. תרשים ב: המכונית עולה בכביש משופע במהירות קבועה, והחוט אנכי">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="20" y="200" width="240" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="20" y1="200" x2="260" y2="200" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="50" y="70" width="180" height="110" rx="0" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="85" cy="192" r="9" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="195" cy="192" r="9" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="140" y1="70" x2="172" y2="140" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="150" y="86" width="10" height="24" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="174" cy="146" r="8" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="140" y1="70" x2="140" y2="140" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<text class="label" x="150" y="132" text-anchor="start">α</text>
+<text class="heb" x="140" y="236" text-anchor="middle" direction="rtl">תרשים א</text>
+<path d="M 300,240 L 540,152" fill="none" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="326,115.7 476.4,61 510.6,154.9 360.2,209.6" fill="none" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<line x1="401.2" y1="88.3" x2="401.2" y2="168.3" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="401.2" cy="174.3" r="8" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="401.2" y1="88.3" x2="428.6" y2="163.5" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<text class="label" x="411.2" y="148.3" text-anchor="start">α</text>
+<text class="heb" x="420" y="254" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>

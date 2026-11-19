@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" role="img" aria-label="לוח משופע חלק ABCD בזווית 30 מעלות. גלגלת P בצלע העליונה BC. חוט שעובר על הגלגלת קשור לגוף M1 במסה 3 קילוגרם ולגוף M2 במסה 2 קילוגרם, ושניהם על הלוח">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<polygon points="60,270 375,270 515,74 200,74" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="375,270 515,270 515,74" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<path d="M 411,270 A 36 36 0 0 0 395.9,240.7" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="419.5" y="252.1" text-anchor="middle">α</text>
+<text class="label" x="48" y="286" text-anchor="middle">A</text>
+<text class="label" x="375" y="290" text-anchor="middle">D</text>
+<text class="label" x="525" y="68" text-anchor="middle">C</text>
+<text class="label" x="188" y="68" text-anchor="middle">B</text>
+<circle cx="357.5" cy="68" r="10" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="357.5" cy="68" r="2.5" fill="var(--d-line)" stroke="none" stroke-width="2"/>
+<text class="label" x="357.5" y="50" text-anchor="middle">P</text>
+<line x1="347.5" y1="68" x2="253.5" y2="174.4" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="367.5" y1="68" x2="309.5" y2="174.4" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="240.5" y="177.4" width="26" height="18" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5" transform="rotate(8 253.5 186.4)"/>
+<text class="label" x="227.5" y="192.4" text-anchor="end">M₂</text>
+<rect x="294.5" y="176.4" width="30" height="20" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5" transform="rotate(8 309.5 186.4)"/>
+<text class="label" x="335.5" y="192.4" text-anchor="start">M₁</text>
+</svg>

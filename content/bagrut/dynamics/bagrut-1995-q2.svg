@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 270" role="img" aria-label="תרשים א: גוף M וגוף m קשורים בחוט על משטח אופקי, וכוח F מושך את m ימינה. תרשים ב: במקום הכוח, חוט מעל גלגלת עם משקולת שמשקלה F">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="40" y="100" width="360" height="10" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="40" y1="100" x2="400" y2="100" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="95" y="50" width="90" height="50" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="140" y="80" text-anchor="middle" style="fill:#ffffff">M</text>
+<rect x="260" y="56" width="60" height="44" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="290" y="83" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="185" y1="75" x2="260" y2="78" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="320" y1="78" x2="380" y2="78" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="390" y="82" text-anchor="start">F</text>
+<text class="heb" x="470" y="80" text-anchor="middle" direction="rtl">תרשים א</text>
+<rect x="40" y="230" width="360" height="10" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="40" y1="230" x2="400" y2="230" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="95" y="180" width="90" height="50" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="140" y="210" text-anchor="middle" style="fill:#ffffff">M</text>
+<rect x="260" y="186" width="60" height="44" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="290" y="213" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="185" y1="205" x2="260" y2="208" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="400" y1="230" x2="400" y2="260" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<circle cx="412" cy="220" r="12" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="412" cy="220" r="2.5" fill="var(--d-line)" stroke="none" stroke-width="2"/>
+<line x1="320" y1="208" x2="412" y2="208" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="424" y1="220" x2="424" y2="240" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="410" y="242" width="28" height="28" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="heb" x="470" y="210" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>
