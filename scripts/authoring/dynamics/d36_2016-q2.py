@@ -17,7 +17,7 @@ def fig():
     for i, (h, t, a) in enumerate([(0.5, 1.01, 0.98), (1, 1.40, 1.02), (1.5, 1.72, 1.01)]):
         y = y0 + 28 + i * 16
         g.text(x0 + 33, y, f"{h:g}", cls="dim"); g.text(x0 + 100, y, f"{t:.2f}", cls="dim"); g.text(x0 + 167, y, f"{a:.2f}", cls="dim")
-    X, Y = g.graph(300, 290, 220, 230, "mA−mB (kg)", "a (m/s²)", xticks=[(v / 100, f"{v/100:g}") for v in range(1, 8)], yticks=[(v / 10, f"{v/10:g}") for v in range(1, 8)], xmax=0.07, ymax=0.7)
+    X, Y = g.graph(300, 290, 220, 230, "mA−mB (kg)", "a (m/s²)", xticks=[(v / 100, f"{v/100:g}") for v in (2, 4, 6)], yticks=[(v / 10, f"{v/10:g}") for v in range(1, 8)], xmax=0.07, ymax=0.7)
     for x, y in PTS: g.dot(X(x), Y(y))
     g.plot(X, Y, [(0.01, 0.1), (0.06, 0.6)], width=1.6)
     return g

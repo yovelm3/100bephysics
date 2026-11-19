@@ -36,13 +36,9 @@
 <text class="dim" x="63" y="322" text-anchor="middle">1.5</text>
 <text class="dim" x="130" y="322" text-anchor="middle">1.72</text>
 <text class="dim" x="197" y="322" text-anchor="middle">1.01</text>
-<line x1="331.4" y1="290" x2="331.4" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="362.9" y1="290" x2="362.9" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
-<line x1="394.3" y1="290" x2="394.3" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="425.7" y1="290" x2="425.7" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
-<line x1="457.1" y1="290" x2="457.1" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="488.6" y1="290" x2="488.6" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
-<line x1="520" y1="290" x2="520" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="300" y1="257.1" x2="520" y2="257.1" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="300" y1="224.3" x2="520" y2="224.3" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="300" y1="191.4" x2="520" y2="191.4" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
@@ -52,20 +48,12 @@
 <line x1="300" y1="60" x2="520" y2="60" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
 <line x1="300" y1="290" x2="538" y2="290" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
 <line x1="300" y1="290" x2="300" y2="42" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
-<line x1="331.4" y1="286" x2="331.4" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
-<text class="dim" x="331.4" y="308" text-anchor="middle">0.01</text>
 <line x1="362.9" y1="286" x2="362.9" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
 <text class="dim" x="362.9" y="308" text-anchor="middle">0.02</text>
-<line x1="394.3" y1="286" x2="394.3" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
-<text class="dim" x="394.3" y="308" text-anchor="middle">0.03</text>
 <line x1="425.7" y1="286" x2="425.7" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
 <text class="dim" x="425.7" y="308" text-anchor="middle">0.04</text>
-<line x1="457.1" y1="286" x2="457.1" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
-<text class="dim" x="457.1" y="308" text-anchor="middle">0.05</text>
 <line x1="488.6" y1="286" x2="488.6" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
 <text class="dim" x="488.6" y="308" text-anchor="middle">0.06</text>
-<line x1="520" y1="286" x2="520" y2="294" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
-<text class="dim" x="520" y="308" text-anchor="middle">0.07</text>
 <line x1="296" y1="257.1" x2="304" y2="257.1" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
 <text class="dim" x="292" y="261.1" text-anchor="end">0.1</text>
 <line x1="296" y1="224.3" x2="304" y2="224.3" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>

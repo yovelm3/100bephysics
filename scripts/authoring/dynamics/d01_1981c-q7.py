@@ -5,9 +5,9 @@ def cart(g, x, y, pend, ball, label=None, w=96, h=70):
     for wx in (x + 22, x + w - 22):
         g.circle(wx, y + h + 9, 9, fill="none", stroke="var(--d-line)")
     px = x + w / 2 + (pend * 30)
-    g.line(x + w / 2, y, px, y + 30, width=1.5); g.circle(px, y + 30, 7, fill="var(--d-label)")
+    g.line(x + w / 2, y, px, y + 20, width=1.5); g.circle(px, y + 20, 6, fill="var(--d-label)")
     bx = x + w / 2 + (ball * 30)
-    g.line(x + w / 2, y + h, bx, y + h - 26, width=1.5); g.circle(bx, y + h - 32, 7, fill="#ffffff", stroke="var(--d-line)")
+    g.line(x + w / 2, y + h, bx, y + h - 18, width=1.5); g.circle(bx, y + h - 24, 6, fill="#ffffff", stroke="var(--d-line)")
     if label:
         g.heb(x + w / 2, y + h + 38, label)
 
