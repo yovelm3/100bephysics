@@ -1,0 +1,140 @@
+{
+  "id": "bagrut-1991-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1991,
+    "label": "1991 שאלה 4"
+  },
+  "topic": "circular",
+  "subtopic": "circ-horizontal",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף קטן שמסתו $m$ קשור לקצה חוט שאורכו $\\ell$. קצהו השני של החוט קשור לנקודה קבועה $A$. הגוף נע במסלול מעגלי אופקי בתדירות $f$, כאשר הזווית בין החוט לבין הכיוון האנכי היא $\\alpha$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1991-q4.svg",
+    "alt": "מטוטלת קונית: גוף m בקצה חוט באורך ℓ שקשור לנקודה A, ונע במעגל אופקי. החוט נוטה בזווית אלפא מהאנך, ו-h המרחק מ-A למרכז המעגל",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מטוטלת קונית",
+    "תנועה מעגלית אופקית",
+    "רכיבי מתיחות",
+    "תדירות"
+  ],
+  "summary": "מטוטלת קונית: הקשר בין הזווית לתדירות, למה הגובה לא תלוי באורך החוט, ולמה החוט לא יכול להיות אופקי.",
+  "position": 5,
+  "parts": [
+    {
+      "label": "א",
+      "question": "ציין את כל הכוחות שפועלים על הגוף בעת תנועתו (מהו הכוח, מה כיוונו, מי מפעיל אותו).",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd"
+      ],
+      "solution": [
+        {
+          "what": "שני כוחות",
+          "why": "כובד (כדור הארץ), אנכי מטה. מתיחות (החוט), לאורך החוט כלפי $A$",
+          "tex": "mg\\downarrow,\\quad T"
+        }
+      ],
+      "finalAnswer": "כובד ומתיחות",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "על פי משוואות הכוחות פתח ביטוי של $\\cos\\alpha$ כפונקציה של אורך החוט $\\ell$ ושל התדירות $f$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אנכית",
+          "why": "אין תאוצה",
+          "tex": "T\\cos\\alpha = mg"
+        },
+        {
+          "what": "אופקית",
+          "why": "רדיוס המעגל $\\ell\\sin\\alpha$",
+          "tex": "T\\sin\\alpha = m(2\\pi f)^2 \\ell\\sin\\alpha \\Rightarrow T = 4\\pi^2 f^2 m\\ell"
+        },
+        {
+          "what": "מציבים",
+          "why": "מציבים את T במשוואה האנכית",
+          "tex": "\\cos\\alpha = \\frac{g}{4\\pi^2 \\ell f^2}"
+        }
+      ],
+      "finalAnswer": "$\\cos\\alpha = \\frac{g}{4\\pi^2\\ell f^2}$",
+      "keyAnswer": "cosα = g/(4π²ℓf²)"
+    },
+    {
+      "label": "ג",
+      "question": "מגדילים את אורך החוט פי $2$, והגוף מסתובב באותה תדירות $f$. האם המרחק $h$ בין נקודת התלייה לבין מרכז מעגל התנועה גדל, קטן או אינו משתנה? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "גדל",
+          "קטן",
+          "אינו משתנה"
+        ],
+        "correct": 2
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "ביטוי ל-$h$",
+          "why": "מסעיף ב",
+          "tex": "h = \\ell\\cos\\alpha = \\frac{g}{4\\pi^2 f^2}"
+        },
+        {
+          "what": "מסקנה",
+          "why": "$\\ell$ התבטל",
+          "tex": "h = h(f)"
+        }
+      ],
+      "finalAnswer": "אינו משתנה: $h = g/(4\\pi^2 f^2)$",
+      "keyAnswer": "אינו משתנה"
+    },
+    {
+      "label": "ד",
+      "question": "האם ייתכן שהגוף ינוע במסלול מעגלי אופקי כאשר החוט אופקי? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "חוט אופקי",
+          "why": "למתיחות אין רכיב אנכי, ושום כוח לא מאזן את הכובד",
+          "tex": "T\\cos 90^\\circ = 0 \\ne mg"
+        }
+      ],
+      "finalAnswer": "לא: חייב רכיב אנכי שיאזן את הכובד",
+      "keyAnswer": "לא"
+    }
+  ]
+}

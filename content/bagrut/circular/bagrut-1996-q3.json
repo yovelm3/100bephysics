@@ -1,0 +1,116 @@
+{
+  "id": "bagrut-1996-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1996,
+    "label": "1996 שאלה 3"
+  },
+  "topic": "circular",
+  "subtopic": "circ-vertical",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "כדור קטן שמסתו $m$ קשור לקצה חוט שאורכו $L$. קצהו השני של החוט קשור בנקודה קבועה $O$. הכדור משוחרר ממצב שבו החוט אופקי וישר. כאשר החוט מגיע למצב אנכי, הוא נתקל במסמר שנמצא במרחק $L/2$ מתחת לנקודה $O$, בנקודה $C$. מסמנים ב-$\\alpha$ את הזווית שהחוט יוצר עם $OC$, כשהכדור נע סביב $C$. המסמר ניצב למישור התנועה של החוט.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1996-q3.svg",
+    "alt": "כדור במסה m בקצה חוט באורך L שקשור לנקודה O, משוחרר כשהחוט אופקי. מסמר C נמצא L/2 מתחת ל-O. אחרי שהחוט נתקל במסמר הכדור נע במעגל סביב C, והחוט יוצר זווית אלפא עם OC",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מעגל אנכי",
+    "שימור אנרגיה",
+    "מתיחות מתאפסת",
+    "זריקה משופעת"
+  ],
+  "summary": "מטוטלת שהחוט שלה נתקל במסמר: מהירות לפי הזווית, היכן החוט מתרופף, ומה המסלול אחר כך.",
+  "position": 9,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו גודל המהירות של הכדור כאשר החוט יוצר זווית $\\alpha$ עם $OC$? בטא את תשובתך באמצעות $L$ ו-$\\alpha$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "גובה הכדור",
+          "why": "הכדור סובב סביב $C$ ברדיוס $L/2$. ביחס לגובה ההתחלתי (גובה $O$) הוא נמוך ב-",
+          "tex": "\\Delta h = \\frac{L}{2} - \\frac{L}{2}\\cos\\alpha"
+        },
+        {
+          "what": "שימור אנרגיה",
+          "why": "אין חיכוך, והחוט לא מבצע עבודה",
+          "tex": "v^2 = 2g\\Delta h = gL(1 - \\cos\\alpha)"
+        }
+      ],
+      "finalAnswer": "$v = \\sqrt{gL(1 - \\cos\\alpha)}$",
+      "keyAnswer": "√(gℓ(1−cosα))"
+    },
+    {
+      "label": "ב",
+      "question": "הראה כי ברגע שבו המתיחות בחוט מתאפסת, מתקיים $\\cos\\alpha = 2/3$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות בכיוון הרדיאלי (כלפי $C$)",
+          "why": "המתיחות ורכיב הכובד $mg\\cos\\alpha$",
+          "tex": "T + mg\\cos\\alpha = \\frac{m v^2}{L/2}"
+        },
+        {
+          "what": "מציבים $T = 0$ ואת $v^2$",
+          "why": "המסה מתבטלת",
+          "tex": "g\\cos\\alpha = 2g(1 - \\cos\\alpha)"
+        },
+        {
+          "what": "פותרים",
+          "why": "מעבירים אגפים",
+          "tex": "3\\cos\\alpha = 2 \\Rightarrow \\cos\\alpha = \\frac{2}{3}"
+        }
+      ],
+      "finalAnswer": "$\\cos\\alpha = 2/3$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ג",
+      "question": "מה תהיה צורת המסלול של הכדור כל עוד המתיחות בחוט היא אפס (קו ישר, מעגל, פרבולה, אחר)? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "קו ישר",
+          "מעגל",
+          "פרבולה",
+          "אחר"
+        ],
+        "correct": 2
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "רק כובד",
+          "why": "החוט רפוי, ולכדור יש מהירות משופעת",
+          "tex": "\\vec a = \\vec g"
+        }
+      ],
+      "finalAnswer": "פרבולה: זריקה משופעת",
+      "keyAnswer": "פרבולה"
+    }
+  ]
+}

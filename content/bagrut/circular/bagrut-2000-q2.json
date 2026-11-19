@@ -1,0 +1,111 @@
+{
+  "id": "bagrut-2000-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2000,
+    "label": "2000 שאלה 2"
+  },
+  "topic": "circular",
+  "subtopic": "circ-horizontal",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "מכונית נוסעת על כביש (לא נטוי) במישור אופקי במסלול מעגלי שרדיוסו $R$. גודל המהירות של המכונית קבוע. מקדם החיכוך הסטטי בין צמיגי המכונית לבין הכביש הוא $\\mu_s$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2000-q2.svg",
+    "alt": "תרשים א: כביש מעגלי משופע, ומכונית בזווית אלפא. תרשים ב: חתך של הכביש הנטוי עם המכונית, הכוח הנורמלי N, כוח הכובד mg, וצירי x ו-y",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "תנועה מעגלית אופקית",
+    "חיכוך סטטי ככוח צנטריפטלי",
+    "כביש משופע",
+    "בחירת צירים"
+  ],
+  "summary": "מכונית בסיבוב: המהירות המרבית בכביש שטוח, ולמה בכביש נטוי בוחרים צירים אופקי ואנכי.",
+  "position": 12,
+  "parts": [
+    {
+      "label": "א",
+      "question": "בטא באמצעות נתוני השאלה את המהירות המרבית שבה המכונית יכולה לנסוע על הכביש בלי להחליק.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הכוח הצנטריפטלי",
+          "why": "על כביש לא נטוי רק החיכוך הסטטי אופקי",
+          "tex": "f_s = \\frac{m v^2}{R}"
+        },
+        {
+          "what": "מהירות מרבית",
+          "why": "כשהחיכוך מקסימלי",
+          "tex": "\\mu_s mg = \\frac{m v_{\\max}^2}{R} \\Rightarrow v_{\\max} = \\sqrt{\\mu_s g R}"
+        }
+      ],
+      "finalAnswer": "$v_{\\max} = \\sqrt{\\mu_s g R}$",
+      "keyAnswer": "√(μs·g·r)"
+    },
+    {
+      "label": "ב",
+      "question": "מכונית נוסעת בכביש שצדו האחד מוגבה, והוא נטוי בזווית $\\alpha$, במסלול מעגלי אופקי שרדיוסו $R$. הנח כי החיכוך שהכביש מפעיל על המכונית ניתן להזנחה. תלמיד סרטט את הכוחות שפועלים על המכונית (תרשים ב), ורשם משוואה עבור רכיבי הכוחות בכיוון ציר $y$: $\\sum F_y = 0 \\Rightarrow N - mg\\cos\\alpha = 0$. הסבר מדוע משוואת התלמיד אינה נכונה.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כיוון התאוצה",
+          "why": "התאוצה אופקית, כלפי מרכז המעגל. יש לה רכיב בכיוון ציר $y$ (בניצב לכביש)",
+          "tex": "a_y = a_R\\sin\\alpha \\ne 0"
+        },
+        {
+          "what": "הנכון",
+          "why": "נוח לבחור צירים אופקי ואנכי",
+          "tex": "N\\cos\\alpha = mg,\\quad N\\sin\\alpha = \\frac{mv^2}{R}"
+        }
+      ],
+      "finalAnswer": "התאוצה הרדיאלית אופקית ויש לה רכיב בציר $y$, ולכן $\\sum F_y \\ne 0$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ג",
+      "question": "בטא, באמצעות $R$ ו-$\\alpha$, את מהירות המכונית שנוסעת בכביש הנטוי.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מחלקים את שתי המשוואות",
+          "why": "N ו-m מתבטלים",
+          "tex": "\\tan\\alpha = \\frac{v^2}{gR}"
+        },
+        {
+          "what": "המהירות",
+          "why": "מבודדים את v",
+          "tex": "v = \\sqrt{gR\\tan\\alpha}"
+        }
+      ],
+      "finalAnswer": "$v = \\sqrt{gR\\tan\\alpha}$",
+      "keyAnswer": "√(g·r·tanα)"
+    }
+  ]
+}

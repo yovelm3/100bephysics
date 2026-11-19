@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="מתקן: עמוד אנכי וזרוע אופקית. בקצה הזרוע חבל, ובקצהו כיסא עם מאזני קפיץ ונער. המערכת מסתובבת במעגל אופקי, והחבל נוטה בזווית אלפא מהאנך">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="150" y="30" width="12" height="200" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="156" y1="36" x2="276" y2="36" stroke="var(--d-line)" stroke-width="3" stroke-linecap="round"/>
+<line x1="276" y1="36" x2="341" y2="148.6" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="276" y1="36" x2="276" y2="130" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<path d="M 276,70 A 34 34 0 0 0 293,65.4" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="288.4" y="87.4" text-anchor="middle">α</text>
+<polygon points="323,148.6 359,148.6 363,170.6 319,170.6" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<g stroke="var(--d-line)" stroke-width="2.4" fill="none" stroke-linecap="round"><circle cx="341" cy="126.4" r="4.4"/><line x1="341" y1="130.8" x2="341" y2="141.8"/><line x1="341" y1="141.8" x2="336.1" y2="150.6"/><line x1="341" y1="141.8" x2="345.9" y2="150.6"/><line x1="334.4" y1="135.2" x2="347.6" y2="135.2"/></g>
+<ellipse cx="156" cy="161" rx="230" ry="34" fill="none" stroke="var(--d-dim)" stroke-width="1.4" stroke-dasharray="6 5"/>
+</svg>

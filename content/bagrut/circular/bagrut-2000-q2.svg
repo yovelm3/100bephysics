@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280" role="img" aria-label="תרשים א: כביש מעגלי משופע, ומכונית בזווית אלפא. תרשים ב: חתך של הכביש הנטוי עם המכונית, הכוח הנורמלי N, כוח הכובד mg, וצירי x ו-y">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<ellipse cx="150" cy="120" rx="130" ry="60" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<ellipse cx="150" cy="120" rx="80" ry="34" fill="#ffffff" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="150" cy="120" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="heb" x="150" y="220" text-anchor="middle" direction="rtl">תרשים א</text>
+<polygon points="320,250 540,250 540,147.4" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 370,250 A 50 50 0 0 0 365.3,228.9" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="382.5" y="241.1" text-anchor="middle">α</text>
+<rect x="420" y="168" width="40" height="24" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5" transform="rotate(-25 440 180)"/>
+<line x1="440" y1="180" x2="406.2" y2="107.5" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="394" y="100" text-anchor="end">N</text>
+<line x1="440" y1="180" x2="440" y2="250" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="448" y="244" text-anchor="start">mg</text>
+<line x1="480" y1="150" x2="454.6" y2="95.7" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="446" y="88" text-anchor="start">y</text>
+<text class="heb" x="430" y="272" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>

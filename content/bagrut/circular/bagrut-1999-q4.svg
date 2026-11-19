@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280" role="img" aria-label="מסילת רכבת הרים ACFL: A בגובה H, C נקודה נמוכה בגובה הקרקע בתחתית קשת BCD ברדיוס R, ו-F נקודה גבוהה בגובה h על קשת EFG">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="20" y="250" width="520" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="20" y1="250" x2="540" y2="250" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<path d="M 40,40 C 70,40 80,250 150,250 C 220,250 240,90 300,90 C 360,90 380,170 440,170 C 480,170 500,110 530,100" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="40" cy="40" r="6" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="30" y="36" text-anchor="end">A</text>
+<line x1="20" y1="40" x2="20" y2="250" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="6" y="149" text-anchor="middle" transform="rotate(90.0 6 149)">H</text>
+<text class="label" x="150" y="272" text-anchor="middle">C</text>
+<text class="label" x="110" y="240" text-anchor="end">B</text>
+<text class="label" x="196" y="236" text-anchor="start">D</text>
+<circle cx="150" cy="205" r="45" fill="none" stroke="var(--d-dim)" stroke-width="2" stroke-dasharray="4 4"/>
+<text class="dim" x="150" y="200" text-anchor="middle">R</text>
+<text class="label" x="300" y="80" text-anchor="middle">F</text>
+<text class="label" x="258" y="110" text-anchor="end">E</text>
+<text class="label" x="342" y="110" text-anchor="start">G</text>
+<text class="label" x="530" y="90" text-anchor="middle">L</text>
+<circle cx="300" cy="140" r="50" fill="none" stroke="var(--d-dim)" stroke-width="2" stroke-dasharray="4 4"/>
+<line x1="330" y1="90" x2="330" y2="250" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="316" y="174" text-anchor="middle" transform="rotate(90.0 316 174)">h</text>
+</svg>

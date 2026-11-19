@@ -1,0 +1,150 @@
+{
+  "id": "bagrut-1993-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1993,
+    "label": "1993 שאלה 4"
+  },
+  "topic": "circular",
+  "subtopic": "circ-vertical",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "בתרשים מתוארת מסילה חסרת חיכוך $ABCDEF$. קטע המסילה $AB$ הוא רבע מעגל שרדיוסו $R$ ומרכזו $O$. קטע המסילה $BCDE$ הוא מעגל שרדיוסו $r$ ומרכזו $O'$. $O$ ו-$O'$ נמצאים על אותו קו אנכי. גוף קטן משוחרר ממנוחה בנקודה $A$, ונע לאורך המסילה. $EC$ הוא קוטר אופקי של המעגל שמרכזו $O'$. בטא את תשובותיך לשאלות באמצעות נתוני השאלה.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1993-q4.svg",
+    "alt": "מסילה חסרת חיכוך: רבע מעגל AB ברדיוס R סביב O, ואחריו לולאה מעגלית BCDEF ברדיוס r סביב O'. EC הוא קוטר אופקי של הלולאה",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מעגל אנכי",
+    "שימור אנרגיה",
+    "תאוצה רדיאלית ומשיקית",
+    "תנאי לא-ניתוק בלולאה"
+  ],
+  "summary": "גוף שגולש ממסילה מעגלית לתוך לולאה: מהירות ותאוצות בצד הלולאה, והיחס $R/r$ המינימלי כדי לעבור את הלולאה.",
+  "position": 7,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו גודל המהירות של הגוף בנקודה $C$, ומה כיוונה?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הפרש הגבהים",
+          "why": "$A$ בגובה $R$ מעל $B$, ו-$C$ בגובה $r$ מעל $B$",
+          "tex": "\\Delta h = R - r"
+        },
+        {
+          "what": "שימור אנרגיה",
+          "why": "אין חיכוך, והנורמלי לא מבצע עבודה",
+          "tex": "v_C = \\sqrt{2g(R - r)}"
+        }
+      ],
+      "finalAnswer": "$v_C = \\sqrt{2g(R - r)}$, כלפי מעלה (משיק למעגל)",
+      "keyAnswer": "√(2g(R−r)) כלפי מעלה"
+    },
+    {
+      "label": "ב1",
+      "question": "מהי התאוצה הרדיאלית בנקודה $C$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה רדיאלית",
+          "why": "מציבים את v_C מסעיף א",
+          "tex": "a_R = \\frac{v_C^2}{r} = \\frac{2g(R - r)}{r} = 2g\\left(\\frac{R}{r} - 1\\right)"
+        }
+      ],
+      "finalAnswer": "$a_R = 2g\\left(\\frac{R}{r} - 1\\right)$, אופקית כלפי $O'$",
+      "keyAnswer": "2g(R/r −1)"
+    },
+    {
+      "label": "ב2",
+      "question": "מהי התאוצה המשיקית בנקודה $C$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות ב-$C$",
+          "why": "הנורמלי אופקי (רדיאלי). בכיוון המשיק (אנכי) פועל רק הכובד",
+          "tex": "a_t = g"
+        }
+      ],
+      "finalAnswer": "$a_t = g$, כלפי מטה",
+      "keyAnswer": "g"
+    },
+    {
+      "label": "ג",
+      "question": "חשב מה צריך להיות היחס המינימלי $R/r$, כדי שהגוף לא יתנתק מהמסילה המעגלית שמרכזה $O'$.",
+      "answer": {
+        "type": "number",
+        "value": 2.5,
+        "unit": ""
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הנקודה הקריטית",
+          "why": "בראש הלולאה ($D$). כדי לא להתנתק הנורמלי לא שלילי, כלומר הכובד לבד לא עולה על הכוח הדרוש",
+          "tex": "mg \\le \\frac{m v_D^2}{r} \\Rightarrow v_D^2 \\ge g r"
+        },
+        {
+          "what": "המהירות ב-$D$",
+          "why": "$D$ בגובה $2r$ מעל $B$",
+          "tex": "v_D^2 = 2g(R - 2r)"
+        },
+        {
+          "what": "התנאי",
+          "why": "מציבים ומחלקים ב-gr",
+          "tex": "2(R - 2r) \\ge r \\Rightarrow \\frac{R}{r} \\ge \\frac{5}{2}"
+        }
+      ],
+      "finalAnswer": "$R/r = 5/2$",
+      "keyAnswer": "R/r = 5/2"
+    },
+    {
+      "label": "ד",
+      "question": "הסבר מדוע הכוח השקול שפועל על הגוף בתנועתו לאורך קטע המסילה, שאחרי הנקודה $A$ ועד לנקודה $B$, אינו משיק למסילה.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כיוון התנועה משתנה",
+          "why": "המסלול עקום, ולכן דרושה תאוצה רדיאלית, ורכיב רדיאלי של הכוח השקול",
+          "tex": "a_R = \\frac{v^2}{R} \\ne 0"
+        }
+      ],
+      "finalAnswer": "כי המסלול עקום, ויש תאוצה רדיאלית (פרט לנקודה $A$, שבה $v = 0$)",
+      "keyAnswer": null
+    }
+  ]
+}
