@@ -121,7 +121,7 @@ export function ExercisePlayer({ exercise, parts }: { exercise: PlayerExercise; 
                 <button
                   type="button"
                   onClick={() => select(i)}
-                  className={`grid w-full grid-cols-[1.6em_minmax(0,1fr)] rounded-md px-2 py-1 text-start ${i === current ? "bg-accent-soft outline outline-1 outline-accent" : "hover:bg-background"}`}
+                  className={`grid w-full grid-cols-[2.4em_minmax(0,1fr)] rounded-md px-2 py-1 text-start ${i === current ? "bg-accent-soft outline outline-1 outline-accent" : "hover:bg-background"}`}
                 >
                   <b>{p.label}.</b>
                   <span>
