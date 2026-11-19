@@ -1,0 +1,133 @@
+{
+  "id": "bagrut-1993-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1993,
+    "label": "1993 שאלה 3"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוש עץ שמסתו $M = 9.98\\,\\text{kg}$ תלוי בקצהו של חוט שאורכו $2\\,\\text{m}$, ומסתו זניחה. קליע שמסתו $m = 0.02\\,\\text{kg}$ פוגע אופקית בגוש העץ במהירות $v = 500\\,\\text{m/s}$, ונתקע בגוש. הנח כי משך חדירת הקליע קצר מאוד וניתן להזנחה, וכי ממדי גוש העץ זניחים ביחס לאורך החוט.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1993-q3.svg",
+    "alt": "גוש עץ במסה 9.98 קילוגרם תלוי בחוט באורך 2 מטר. קליע במסה 0.02 קילוגרם פוגע בו אופקית במהירות 500 מטר לשנייה ונתקע בו",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מטוטלת בליסטית",
+    "התנגשות פלסטית",
+    "שימור תנע ואנרגיה",
+    "עבודה של מתיחות",
+    "זמן מחזור של מטוטלת"
+  ],
+  "summary": "קליע שנתקע בגוש תלוי: מהירות אחרי ההתנגשות מתנע, גובה מאנרגיה, ורבע מחזור של מטוטלת.",
+  "position": 10,
+  "parts": [
+    {
+      "label": "א",
+      "question": "האם האנרגיה המכנית נשמרת בתהליך ההתנגשות? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "התנגשות פלסטית",
+          "why": "הקליע נתקע: חלק גדול מהאנרגיה הופך לחום ולעיוות העץ",
+          "tex": "E_k' < E_k"
+        }
+      ],
+      "finalAnswer": "לא: התנגשות פלסטית",
+      "keyAnswer": "לא"
+    },
+    {
+      "label": "ב",
+      "question": "חשב את הגובה המרבי שאליו מתרומם גוש העץ (עם הקליע בתוכו).",
+      "answer": {
+        "type": "number",
+        "value": 0.05,
+        "unit": "m"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע בהתנגשות",
+          "why": "הקליע נתקע בגוש",
+          "tex": "0.02 \\cdot 500 = 10\\,V \\Rightarrow V = 1\\,\\text{m/s}"
+        },
+        {
+          "what": "שימור אנרגיה בעלייה",
+          "why": "אחרי ההתנגשות",
+          "tex": "h = \\frac{V^2}{2g} = 0.05\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$0.05\\,\\text{m}$",
+      "keyAnswer": "0.05 m"
+    },
+    {
+      "label": "ג",
+      "question": "מהי העבודה שנעשתה על ידי המתיחות בחוט, במשך עליית גוש העץ עם הקליע עד לגובה המרבי? נמק.",
+      "answer": {
+        "type": "number",
+        "value": 0.0,
+        "unit": "J"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "המתיחות ניצבת לתנועה",
+          "why": "הגוש נע בקשת מעגלית, והחוט תמיד לאורך הרדיוס",
+          "tex": "W_T = 0"
+        }
+      ],
+      "finalAnswer": "$0$",
+      "keyAnswer": "0"
+    },
+    {
+      "label": "ד",
+      "question": "כמה זמן לוקח לגוש העץ עם הקליע להגיע לגובהו המרבי? נמק.",
+      "answer": {
+        "type": "number",
+        "value": 0.7024814731040726,
+        "unit": "s",
+        "tolerancePct": 3
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "זווית קטנה",
+          "why": "גובה של $5\\,\\text{cm}$ בחוט של $2\\,\\text{m}$: זווית של כ-$13^\\circ$, ולכן תנודה הרמונית בקירוב",
+          "tex": "\\cos\\theta = 1 - \\frac{0.05}{2} \\Rightarrow \\theta \\approx 12.8^\\circ"
+        },
+        {
+          "what": "רבע זמן מחזור",
+          "why": "מנקודת שיווי המשקל לקיצון",
+          "tex": "t = \\frac{T}{4} = \\frac{\\pi}{2}\\sqrt{\\frac{L}{g}} = \\frac{\\pi}{2}\\sqrt{0.2} \\approx 0.70\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.7\\,\\text{s}$",
+      "keyAnswer": "≈0.7 s"
+    }
+  ]
+}
