@@ -37,6 +37,9 @@ export async function signUp(_: FormState, form: FormData): Promise<FormState> {
   });
   if (error) {
     if (/already registered/i.test(error.message)) return { error: "כבר קיים חשבון עם המייל הזה. נסה להתחבר." };
+    if (/rate limit|too many/i.test(error.message)) return { error: "נשלחו יותר מדי מיילים בזמן קצר. נסה שוב בעוד שעה." };
+    if (/password/i.test(error.message)) return { error: "הסיסמה חלשה מדי. בחר סיסמה ארוכה יותר, עם אותיות ומספרים." };
+    console.error("[signup]", error.message);
     return { error: "ההרשמה נכשלה. נסה שוב בעוד כמה דקות." };
   }
   return { done: `שלחנו מייל אימות אל ${email}. לחץ על הקישור שבמייל כדי להפעיל את החשבון.` };
@@ -53,7 +56,10 @@ export async function signIn(_: FormState, form: FormData): Promise<FormState> {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) {
     if (/not confirmed/i.test(error.message)) return { error: "עוד לא אימתת את המייל. חפש את מייל האימות בתיבה (וגם בספאם)." };
-    return { error: "המייל או הסיסמה לא נכונים." };
+    if (/rate limit|too many/i.test(error.message)) return { error: "יותר מדי ניסיונות. חכה כמה דקות ונסה שוב." };
+    if (/invalid login credentials/i.test(error.message)) return { error: "המייל או הסיסמה לא נכונים." };
+    console.error("[signin]", error.message);
+    return { error: "לא הצלחנו להתחבר כרגע. נסה שוב בעוד דקה." };
   }
   // Register this device before anything else.
   redirect(`/device?next=${encodeURIComponent(next)}`);
@@ -64,9 +70,10 @@ export async function requestPasswordReset(_: FormState, form: FormData): Promis
   if (!EMAIL_RE.test(email)) return { error: "כתובת המייל לא תקינה." };
   const supabase = await createClient();
   if (!supabase) return { error: "האתר עדיין לא חובר למסד הנתונים." };
-  await supabase.auth.resetPasswordForEmail(email, {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: `${await siteUrl()}/auth/confirm?next=/reset-password`,
   });
+  if (error && /rate limit|too many/i.test(error.message)) return { error: "נשלחו יותר מדי מיילים בזמן קצר. נסה שוב בעוד שעה." };
   // Same answer whether or not the address exists.
   return { done: "אם יש חשבון עם המייל הזה, שלחנו אליו קישור לבחירת סיסמה חדשה." };
 }

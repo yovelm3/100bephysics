@@ -26,7 +26,7 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
 
   let query = supabase
     .from("profiles")
-    .select("id, email, role, track, locked, locked_at, created_at, devices(id, browser, os, last_seen_at), subscriptions(ends_at, starts_at, source)")
+    .select("id, email, role, track, locked, locked_at, created_at, devices(id, browser, os, last_seen_at), subscriptions:subscriptions!subscriptions_user_id_fkey(ends_at, starts_at, source)")
     .order("created_at", { ascending: false })
     .limit(200);
   if (q) query = query.ilike("email", `%${q}%`);

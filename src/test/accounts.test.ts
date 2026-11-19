@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { asUser, createTestDb, createUser, type TestDb } from "./db";
+import { asUser, attempt, createTestDb, createUser, visibleRows, type TestDb } from "./db";
 
 const key = (n: number) => `device-key-number-${String(n).padStart(4, "0")}`;
 
@@ -84,9 +84,7 @@ describe("device limit", () => {
     const u = await createUser(db, "s@x.com");
     for (let i = 1; i <= 6; i++) await register(u, key(i));
     await expect(asUser(db, u, () => db.query(`select public.admin_unlock_user($1)`, [u]))).rejects.toThrow(/forbidden/);
-    await expect(
-      asUser(db, u, () => db.query(`update public.profiles set locked = false where id = $1`, [u])),
-    ).resolves.toMatchObject({ affectedRows: 0 });
+    await attempt(() => asUser(db, u, () => db.query(`update public.profiles set locked = false where id = $1`, [u])));
     expect(await isLocked(u)).toBe(true);
   });
 
@@ -133,7 +131,7 @@ describe("payments", () => {
     const u = await createUser(db, "s@x.com");
     const pay = await pendingPayment(u);
     await expect(asUser(db, u, () => db.query(`select public.apply_payment($1)`, [pay]))).rejects.toThrow();
-    await asUser(db, u, () => db.query(`update public.payments set status = 'paid' where id = $1`, [pay]));
+    await attempt(() => asUser(db, u, () => db.query(`update public.payments set status = 'paid' where id = $1`, [pay])));
     const r = await db.query<{ status: string }>(`select status from public.payments where id = $1`, [pay]);
     expect(r.rows[0].status).toBe("pending");
   });
@@ -157,16 +155,16 @@ describe("row level security", () => {
     const a = await createUser(db, "a@x.com");
     await register(a, key(1));
     await asUser(db, null, async () => {
-      expect((await db.query(`select * from public.profiles`)).rows.length).toBe(0);
-      expect((await db.query(`select * from public.devices`)).rows.length).toBe(0);
-      expect((await db.query(`select * from public.subscriptions`)).rows.length).toBe(0);
+      expect(await visibleRows(db, `select * from public.profiles`)).toBe(0);
+      expect(await visibleRows(db, `select * from public.devices`)).toBe(0);
+      expect(await visibleRows(db, `select * from public.subscriptions`)).toBe(0);
     });
   });
 
   it("a student cannot make themselves admin or insert a subscription", async () => {
     const a = await createUser(db, "a@x.com");
+    await attempt(() => asUser(db, a, () => db.query(`update public.profiles set role = 'admin' where id = $1`, [a])));
     await asUser(db, a, async () => {
-      await db.query(`update public.profiles set role = 'admin' where id = $1`, [a]);
       await expect(
         db.query(`insert into public.subscriptions (user_id, ends_at, source) values ($1, now() + interval '1 year', 'manual')`, [a]),
       ).rejects.toThrow();
@@ -234,5 +232,18 @@ describe("subscriptions and access", () => {
     await asUser(db, admin, () => db.query(`select public.admin_grant_subscription($1)`, [b]));
     const r = await asUser(db, a, () => db.query<{ e: string | null }>(`select public.subscription_ends_at($1) as e`, [b]));
     expect(r.rows[0].e).toBeNull();
+  });
+});
+
+describe("table privileges (new Supabase projects grant nothing by default)", () => {
+  it("a logged-in student can read their own profile, devices and subscriptions", async () => {
+    const u = await createUser(db, "s@x.com");
+    await register(u, key(1));
+    await asUser(db, u, async () => {
+      expect((await db.query(`select id from public.profiles where id = $1`, [u])).rows.length).toBe(1);
+      expect((await db.query(`select id from public.devices`)).rows.length).toBe(1);
+      expect((await db.query(`select id from public.subscriptions`)).rows.length).toBe(0);
+      expect((await db.query(`select id from public.payments`)).rows.length).toBe(0);
+    });
   });
 });

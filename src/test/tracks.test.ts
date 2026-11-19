@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { asUser, createTestDb, createUser, type TestDb } from "./db";
+import { asUser, attempt, createTestDb, createUser, type TestDb } from "./db";
 
 let db: TestDb;
 beforeEach(async () => {
@@ -22,7 +22,7 @@ describe("tracks", () => {
 
   it("a student cannot change their own track", async () => {
     const u = await createUser(db, "s@x.com", { track: "highschool" });
-    await asUser(db, u, () => db.query(`update public.profiles set track = 'mechina' where id = $1`, [u]));
+    await attempt(() => asUser(db, u, () => db.query(`update public.profiles set track = 'mechina' where id = $1`, [u])));
     await expect(asUser(db, u, () => db.query(`select public.admin_set_track($1, 'mechina')`, [u]))).rejects.toThrow(/forbidden/);
     expect(await track(u)).toBe("highschool");
   });

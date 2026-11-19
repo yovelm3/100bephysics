@@ -13,7 +13,10 @@ export function isValidDeviceKey(key: unknown): key is string {
 export function newDeviceKey(): string {
   const bytes = new Uint8Array(24);
   crypto.getRandomValues(bytes);
-  return Buffer.from(bytes).toString("base64url");
+  // base64url without Buffer, so this file is safe to import in the browser too
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
 
 /**

@@ -23,11 +23,8 @@ $$;
 grant execute on function auth.uid() to anon, authenticated;
 `;
 
-// Supabase grants table privileges to these roles by default; RLS does the filtering.
-const SUPABASE_DEFAULT_GRANTS = `
-grant usage on schema public to anon, authenticated;
-grant select, insert, update, delete on all tables in schema public to anon, authenticated;
-`;
+// New Supabase projects give the API roles no table privileges by default,
+// so the tests rely only on the grants written in the migrations.
 
 export async function createTestDb() {
   const db = new PGlite();
@@ -36,7 +33,6 @@ export async function createTestDb() {
   for (const file of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) {
     await db.exec(readFileSync(path.join(dir, file), "utf8"));
   }
-  await db.exec(SUPABASE_DEFAULT_GRANTS);
   return db;
 }
 
@@ -67,5 +63,23 @@ export async function asUser<T>(db: TestDb, userId: string | null, fn: () => Pro
   } finally {
     await db.exec(`reset role`);
     await db.query(`select set_config('request.jwt.claim.sub', '', false)`);
+  }
+}
+
+/** Runs a query that should be refused or change nothing; swallows "permission denied". */
+export async function attempt(fn: () => Promise<unknown>) {
+  try {
+    await fn();
+  } catch {
+    // refused: fine
+  }
+}
+
+/** Rows visible to the caller, or 0 if the caller may not read the table at all. */
+export async function visibleRows(db: TestDb, sql: string) {
+  try {
+    return (await db.query(sql)).rows.length;
+  } catch {
+    return 0;
   }
 }
