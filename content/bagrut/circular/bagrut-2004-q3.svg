@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="עמוד אנכי עם זרוע אופקית. בקצה הזרוע חבל שבקצהו משקולת. המערכת מסתובבת במהירות זוויתית אומגה, והחבל נוטה בזווית אלפא מהאנך. המשקולת בנקודה A">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="150" y="30" width="14" height="190" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<line x1="157" y1="36" x2="287" y2="36" stroke="var(--d-line)" stroke-width="4" stroke-linecap="round"/>
+<line x1="287" y1="36" x2="354.6" y2="181" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="287" y1="36" x2="287" y2="200" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<path d="M 287,72 A 36 36 0 0 0 302.2,68.6" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="297.8" y="89.8" text-anchor="middle">α</text>
+<circle cx="354.6" cy="181" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="366.6" y="199" text-anchor="start">A</text>
+<ellipse cx="157" cy="181" rx="198" ry="30" fill="none" stroke="var(--d-dim)" stroke-width="1.4" stroke-dasharray="6 5"/>
+<path d="M 132,110 A 26 8 0 1 0 182,110" fill="none" stroke="var(--d-body)" stroke-width="2" stroke-linejoin="round" marker-end="url(#f-arr)"/>
+<text class="label" x="124" y="108" text-anchor="end">ω</text>
+<text class="heb" x="150" y="20" text-anchor="middle" direction="rtl">עמוד אנכי</text>
+<text class="heb" x="230" y="24" text-anchor="middle" direction="rtl">זרוע אופקית</text>
+</svg>

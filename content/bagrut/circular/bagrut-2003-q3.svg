@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" role="img" aria-label="תרשים א: משקולת m תלויה במנוחה על חוט באורך ℓ מהתקרה. תרשים ב: הכוחות על המשקולת: T כלפי מעלה ו-mg כלפי מטה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="330" y="18" width="120" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="330" y1="30" x2="450" y2="30" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="390" y1="30" x2="390" y2="140" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="390" cy="150" r="12" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="390" y="155" text-anchor="middle" style="fill:#ffffff">m</text>
+<text class="label" x="400" y="90" text-anchor="start">ℓ</text>
+<text class="heb" x="390" y="220" text-anchor="middle" direction="rtl">תרשים א</text>
+<circle cx="160" cy="120" r="12" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="160" y="125" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="160" y1="106" x2="160" y2="50" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="172" y="74" text-anchor="start">T</text>
+<line x1="160" y1="134" x2="160" y2="190" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="172" y="176" text-anchor="start">mg</text>
+<text class="heb" x="160" y="220" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>
