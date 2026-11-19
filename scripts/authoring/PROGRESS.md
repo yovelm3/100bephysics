@@ -14,6 +14,6 @@
 - circular: DONE 26/26 (not yet imported)
 - momentum: DONE 28/28. Known mismatches: 1992 Q2 ג1 (key 39.6, calc 36.9); 2013 Q4 ב (key 0.2, graph and ג give 2)
 - energy: DONE 16/16. Note 1987 Q3 ג key lacks factor 3
-- gravitation: in progress (g01–g05 = PDF page 1; key from p14). Uses GM = gR² (g=10, R=6400 km) unless the question gives G, M
+- gravitation: in progress (g01–g09 = PDF pages 1–2; key from p14). Uses GM = gR² (g=10, R=6400 km) unless the question gives G, M
 - harmonic: not started
 - Then: second independent pass (recompute every numeric answer in a separate script; check figures), re-import, summary for owner.
