@@ -1,0 +1,126 @@
+{
+  "id": "bagrut-1988-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1988,
+    "label": "1988 שאלה 4"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-pendulum",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "על חישוק אנכי ברדיוס $R$ מושחל חרוז קטן. החרוז יכול לנוע על גבי החישוק ללא חיכוך. מרימים את החרוז לנקודה $A$ ומרפים ממנו (ראה תרשים).",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1988-q4.svg",
+    "alt": "חישוק אנכי שמרכזו O ורדיוסו R. B בראש החישוק ו-C בתחתיתו. חרוז בנקודה A על החישוק, כשהרדיוס אליה יוצר זווית θ עם האנך",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מטוטלת",
+    "תאוצה משתנה",
+    "תנועה מעגלית אופקית"
+  ],
+  "summary": "חרוז על חישוק: כמו מטוטלת באורך $R$, ובסיבוב החישוק החרוז נשאר בזווית קבועה.",
+  "position": 7,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו אופי תנועת החרוז (תנועה קצובה, שווה תאוצה, תאוצה משתנה) כאשר הזווית $\\theta$ גדולה? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "תנועה קצובה",
+          "תנועה שוות תאוצה",
+          "תנועה בתאוצה משתנה"
+        ],
+        "correct": 2
+      },
+      "skills": [
+        "principle",
+        "fbd"
+      ],
+      "solution": [
+        {
+          "what": "רכיב הכובד המשיק",
+          "why": "תלוי בזווית, והזווית משתנה בזמן התנועה",
+          "tex": "a_t = g\\sin\\theta"
+        },
+        {
+          "what": "גם כיוון התנועה משתנה",
+          "why": "יש גם תאוצה צנטריפטלית שתלויה במהירות",
+          "tex": "a_c = \\frac{v^2}{R}"
+        }
+      ],
+      "finalAnswer": "תאוצה משתנה",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "כמה זמן דרוש לחרוז כדי לבצע תנודה שלמה, כשהזווית $\\theta$ קטנה? (בטא את תשובתך באמצעות $R$.)",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כמו מטוטלת באורך $R$",
+          "why": "החישוק מכריח מסלול מעגלי כמו חוט; הנורמל מאונך לתנועה",
+          "tex": "F_t = -mg\\sin\\theta \\approx -mg\\theta"
+        },
+        {
+          "what": "זמן מחזור",
+          "why": "זווית קטנה",
+          "tex": "T = 2\\pi\\sqrt{\\frac{R}{g}}"
+        }
+      ],
+      "finalAnswer": "$T = 2\\pi\\sqrt{R/g}$",
+      "keyAnswer": "2π√(R/g)"
+    },
+    {
+      "label": "ג",
+      "question": "נתון שרדיוס החישוק $R = 30\\,\\text{cm}$ והחרוז עולה לנקודה $A$ כך ש-$\\theta = 30^\\circ$. אין תנועה יחסית בין החרוז לחישוק. באיזו מהירות זוויתית, $\\omega$, מסובבים את החישוק סביב צירו האנכי $BC$?",
+      "answer": {
+        "type": "number",
+        "value": 6.204032394013997,
+        "unit": "rad/s",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "fbd",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "רדיוס הסיבוב של החרוז",
+          "why": "המרחק מהציר $BC$",
+          "tex": "r = R\\sin\\theta"
+        },
+        {
+          "what": "כוחות",
+          "why": "נורמל לאורך הרדיוס אל $O$, וכובד",
+          "tex": "N\\cos\\theta = mg,\\quad N\\sin\\theta = m\\omega^2 R\\sin\\theta"
+        },
+        {
+          "what": "מחלקים",
+          "why": "$N$ מצטמצם",
+          "tex": "\\omega^2 = \\frac{g}{R\\cos\\theta} = \\frac{10}{0.3 \\cdot 0.866} \\approx 38.5"
+        },
+        {
+          "what": "תוצאה",
+          "why": "שורש",
+          "tex": "\\omega \\approx 6.2\\,\\text{rad/s}"
+        }
+      ],
+      "finalAnswer": "$\\omega \\approx 6.2\\,\\text{rad/s}$",
+      "keyAnswer": "6.2 rad/s"
+    }
+  ]
+}

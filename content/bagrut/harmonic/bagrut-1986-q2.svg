@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 170" role="img" aria-label="משטח אופקי חלק בין שני קירות. קפיץ מהקיר השמאלי אל גוף A, גוף B צמוד אליו מימין, וקפיץ מ-B אל הקיר הימני. נקודת המגע בין הגופים מסומנת 0">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="60" y="130" width="440" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="60" y1="130" x2="500" y2="130" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="50" width="12" height="80" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="60" y1="50" x2="60" y2="130" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="500" y="50" width="12" height="80" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="500" y1="50" x2="500" y2="130" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="60,110 70,110 78.3,117 86.7,103 95,117 103.3,103 111.7,117 120,103 128.3,117 136.7,103 145,117 153.3,103 161.7,117 170,103 178.3,117 186.7,103 195,117 203.3,103 211.7,117 220,110 230,110" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="230" y="90" width="40" height="40" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="250" y="115" text-anchor="middle" style="fill:#ffffff">A</text>
+<rect x="270" y="90" width="40" height="40" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="290" y="115" text-anchor="middle" style="fill:#ffffff">B</text>
+<polyline points="310,110 320,110 329.4,117 338.9,103 348.3,117 357.8,103 367.2,117 376.7,103 386.1,117 395.6,103 405,117 414.4,103 423.9,117 433.3,103 442.8,117 452.2,103 461.7,117 471.1,103 480.6,117 490,110 500,110" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<text class="label" x="270" y="80" text-anchor="middle">0</text>
+</svg>

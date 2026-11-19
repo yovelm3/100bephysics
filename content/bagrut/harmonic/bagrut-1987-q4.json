@@ -1,0 +1,141 @@
+{
+  "id": "bagrut-1987-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1987,
+    "label": "1987 שאלה 4"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-energy",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף שמסתו $0.8\\,\\text{kg}$ המחובר לקפיץ נע בתנועה הרמונית פשוטה על פני משטח אופקי חלק. זמן המחזור של התנועה הוא שנייה אחת. האנרגיה הכוללת של המערכת היא $1\\,\\text{J}$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1987-q4.svg",
+    "alt": "גוף שמסתו 0.8 קילוגרם מחובר לקפיץ ונע על משטח אופקי חלק בין שני קצוות התנועה",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "אנרגיה בתנועה הרמונית",
+    "קבוע קפיץ מזמן מחזור",
+    "משרעת"
+  ],
+  "summary": "מאנרגיה כוללת וזמן מחזור: מהירות מרבית, קבוע הקפיץ, משרעת, והנקודה שבה האנרגיה מתחלקת חצי-חצי.",
+  "position": 6,
+  "parts": [
+    {
+      "label": "א",
+      "question": "חשב את מהירותו המקסימלית של הגוף.",
+      "answer": {
+        "type": "number",
+        "value": 1.5811388300841898,
+        "unit": "m/s",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "בשיווי המשקל כל האנרגיה קינטית",
+          "why": "הקפיץ רפוי שם",
+          "tex": "\\frac{1}{2}mv_{\\max}^2 = E"
+        },
+        {
+          "what": "מציבים",
+          "why": "$E = 1\\,\\text{J}$",
+          "tex": "v_{\\max} = \\sqrt{\\frac{2 \\cdot 1}{0.8}} \\approx 1.58\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 1.58\\,\\text{m/s}$",
+      "keyAnswer": "1.58 m/s"
+    },
+    {
+      "label": "ב",
+      "question": "חשב את קבוע הקפיץ בתנועה ההרמונית.",
+      "answer": {
+        "type": "number",
+        "value": 31.582734083485946,
+        "unit": "N/m",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "זמן מחזור של מתנד קפיץ",
+          "why": "$T = 2\\pi\\sqrt{m/k}$",
+          "tex": "k = \\frac{4\\pi^2 m}{T^2} = \\frac{4\\pi^2 \\cdot 0.8}{1^2} \\approx 31.6\\,\\text{N/m}"
+        }
+      ],
+      "finalAnswer": "$\\approx 31.6\\,\\text{N/m}$",
+      "keyAnswer": "31.6 N/m"
+    },
+    {
+      "label": "ג",
+      "question": "חשב את משרעת התנודה.",
+      "answer": {
+        "type": "number",
+        "value": 0.25164606052243516,
+        "unit": "m",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "בקצה כל האנרגיה בקפיץ",
+          "why": "המהירות שם אפס",
+          "tex": "\\frac{1}{2}kA^2 = E \\Rightarrow A = \\sqrt{\\frac{2 \\cdot 1}{31.6}} \\approx 0.25\\,\\text{m}"
+        },
+        {
+          "what": "בדיקה בדרך אחרת",
+          "why": "$v_{\\max} = A\\omega$, $\\omega = 2\\pi$",
+          "tex": "A = \\frac{1.58}{2\\pi} \\approx 0.25\\,\\text{m}",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$\\approx 0.25\\,\\text{m}$",
+      "keyAnswer": "0.25 m"
+    },
+    {
+      "label": "ד",
+      "question": "באיזה מרחק מנקודת שיווי-המשקל שווה האנרגיה הקינטית של הגוף לאנרגיה הפוטנציאלית האגורה במערכת?",
+      "answer": {
+        "type": "number",
+        "value": 0.17794063585429423,
+        "unit": "m",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "חצי מהאנרגיה בקפיץ",
+          "why": "$E_k = E_p$ ו-$E_k + E_p = E$",
+          "tex": "\\frac{1}{2}kx^2 = \\frac{1}{2}E"
+        },
+        {
+          "what": "פותרים",
+          "why": "$x^2 = A^2/2$",
+          "tex": "x = \\frac{A}{\\sqrt{2}} = \\frac{0.25}{\\sqrt{2}} \\approx 0.18\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.18\\,\\text{m}$",
+      "keyAnswer": "0.18 m"
+    }
+  ]
+}
