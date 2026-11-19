@@ -60,6 +60,17 @@ def P(label, question, answer, skills, sol, final, key=None):
     return {"label": label, "question": question, "answer": answer, "skills": skills, "solution": sol, "finalAnswer": final, "keyAnswer": key}
 
 
+def _clean(v):
+    """Raw strings keep a backslash before quotes (r"\"..\""). Remove it: LaTeX never needs it."""
+    if isinstance(v, str):
+        return v.replace('\\"', '"')
+    if isinstance(v, list):
+        return [_clean(x) for x in v]
+    if isinstance(v, dict):
+        return {k: _clean(x) for k, x in v.items()}
+    return v
+
+
 def E(id, year, label, topic, sub, diff, stem, parts, concepts, summary, note=None, fig=None, alt="", review="", position=None):
     ex = {
         "id": id,
@@ -89,6 +100,7 @@ def E(id, year, label, topic, sub, diff, stem, parts, concepts, summary, note=No
         with open(os.path.join(out_dir, f"{id}.svg"), "w") as fh:
             fh.write(f.svg())
         ex["figure"] = {"type": "svg", "file": f"{id}.svg", "alt": f.alt, "provisional": False}
+    ex = _clean(ex)
     with open(os.path.join(out_dir, f"{id}.json"), "w") as fh:
         json.dump(ex, fh, ensure_ascii=False, indent=2)
         fh.write("\n")

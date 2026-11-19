@@ -107,7 +107,7 @@ export function ExercisePlayer({ exercise, parts }: { exercise: PlayerExercise; 
             </span>
           </h1>
           {exercise.figure && (
-            <figure className="m-0 sm:float-left sm:ms-0 sm:me-4 sm:mb-2 sm:w-[46%]" aria-label={exercise.figure.alt}>
+            <figure className="m-0 mx-auto w-full max-w-xl" aria-label={exercise.figure.alt}>
               {/* Our own reviewed SVG drawings (checked at import: no scripts or external links). */}
               <div role="img" aria-label={exercise.figure.alt} className="fig ltr" dangerouslySetInnerHTML={{ __html: exercise.figure.svg }} />
             </figure>

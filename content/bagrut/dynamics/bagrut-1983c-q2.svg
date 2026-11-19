@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 280" role="img" aria-label="תרשים 1: גוף של 200 גרם תלוי על שני קפיצים זהים זה לצד זה. תרשים 2: אותו גוף תלוי על שני הקפיצים זה מתחת לזה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="320" y="18" width="160" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="320" y1="30" x2="480" y2="30" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="80" y="18" width="160" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="80" y1="30" x2="240" y2="30" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="380,30 380,40 373,43.9 387,47.8 373,51.7 387,55.6 373,59.4 387,63.3 373,67.2 387,71.1 373,75 387,78.9 373,82.8 387,86.7 373,90.6 387,94.4 373,98.3 387,102.2 373,106.1 380,110 380,120" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<polyline points="420,30 420,40 413,43.9 427,47.8 413,51.7 427,55.6 413,59.4 427,63.3 413,67.2 427,71.1 413,75 427,78.9 413,82.8 427,86.7 413,90.6 427,94.4 413,98.3 427,102.2 413,106.1 420,110 420,120" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="360" y="121" width="80" height="30" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="400" y="141" text-anchor="middle" style="fill:var(--d-label)">200 g</text>
+<polyline points="160,30 160,40 153,43.9 167,47.8 153,51.7 167,55.6 153,59.4 167,63.3 153,67.2 167,71.1 153,75 167,78.9 153,82.8 167,86.7 153,90.6 167,94.4 153,98.3 167,102.2 153,106.1 160,110 160,120" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<polyline points="160,120 160,130 153,133.9 167,137.8 153,141.7 167,145.6 153,149.4 167,153.3 153,157.2 167,161.1 153,165 167,168.9 153,172.8 167,176.7 153,180.6 167,184.4 153,188.3 167,192.2 153,196.1 160,200 160,210" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="120" y="211" width="80" height="30" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="160" y="231" text-anchor="middle" style="fill:var(--d-label)">200 g</text>
+<text class="heb" x="400" y="270" text-anchor="middle" direction="rtl">תרשים 1</text>
+<text class="heb" x="160" y="270" text-anchor="middle" direction="rtl">תרשים 2</text>
+</svg>
