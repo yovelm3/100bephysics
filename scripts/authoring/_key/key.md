@@ -156,7 +156,7 @@
 2010 Q3: א. (1) u1=−0.1 m/s (2) u2=0.2 m/s  ב. u2 = 2m1·v1/(m1+m2)  ד. in both cases (1)+(2) the matching graph is B
 2010 Q4: א. table (points F,D,C,B,A): kinetic 0,+,+,+,0 ; gravitational PE rel. MN +,+,+,0,+ ; elastic PE +,0,0,0,0  ב. (1) vC≈6.32 m/s (2) vD≈5.83 m/s  ג. k=5100 N/m  ד. 2.4 m  ה. equal to it
 2010 Q5: א. (2) v=2.98 m/s  ב. 552.5 year  ג. E0=+3.56×10^11 J  ד. smaller than it
-2011 Q1: א. motion is decelerating  ב. 0.55 m/s  ג. ≈0.7 m/s  ד. 5 m/s²  ה. 0.019 m
+2011 Q1: א. motion is accelerating (מואצת)  ב. 0.55 m/s  ג. ≈0.7 m/s  ד. 5 m/s²  ה. 0.019 m
 2011 Q2: ב. slope represents spring extension under one unit of weight; slope equals 0.02 m  ד. μ=0.3  ה. M=0.2 kg  ו. fS=0.24 N
 2011 Q3: א. (1) momentum of the system right after releasing the spring is zero (2) vB=−0.3 m/s  ב. (1) 0.6 m/s right (2) J=−0.12 N·s  ג. (1) area represents the impulse (2) Fmax=3 N  ד. (1) vC=0.15 m/s (2) bodies move together right
 2011 Q4: א. (2) the body does not reach D  ג. 0.5 m  ד. W=−0.4 J

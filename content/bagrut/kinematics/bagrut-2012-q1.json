@@ -1,0 +1,232 @@
+{
+  "id": "bagrut-2012-q1",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2012,
+    "label": "2012 שאלה 1"
+  },
+  "topic": "kinematics",
+  "subtopic": "kin-free-fall",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב במקור מבקש ארבע מהירויות. חילקתי לב1-ב4.",
+  "stem": "האסטרונאוטיות אליס וקורל נחתו על כוכב-לכת, וערכו שם ניסוי בנפילה חופשית. הן שחררו גוף מגובה מסוים מעל פני הכוכב ורשמו את מקומו האנכי ביחס לציר $y$, שכיוונו החיובי כלפי מטה, כפונקציה של הזמן $t$. מהירות הגוף ברגע $t = 0$ אינה בהכרח אפס. תוצאות הניסוי מוצגות בטבלה.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2012-q1.svg",
+    "alt": "טבלה: מקום הגוף y במטרים בזמנים 0 עד 0.48 שניות, ושורה ריקה למהירויות",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "נפילה חופשית בכוכב אחר",
+    "מהירות רגעית מטבלה",
+    "קו מגמה",
+    "שיפוע כתאוצה",
+    "תאוצת כובד ומסת כוכב"
+  ],
+  "summary": "ניסוי נפילה על כוכב אחר: מהירויות מטבלה, קו מגמה, תאוצת הנפילה, ומסת הכוכב ביחס לכדור הארץ.",
+  "position": 29,
+  "parts": [
+    {
+      "label": "א",
+      "question": "העתק את הטבלה למחברתך. חשב בקירוב את מהירות הגוף בזמן $t = 0.24\\,\\text{s}$. פרט את חישוביך, וכתוב את התוצאה במקום המתאים בטבלה.",
+      "answer": {
+        "type": "number",
+        "value": 6.0625,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "explain": "מהירות רגעית בקירוב: ההעתק בין הנקודה שלפני לנקודה שאחרי, חלקי הזמן ביניהן."
+        },
+        {
+          "what": "הנקודות סביב $0.24\\,\\text{s}$",
+          "why": "$t = 0.16$ ו-$0.32\\,\\text{s}$",
+          "tex": "v(0.24) \\approx \\frac{1.400 - 0.430}{0.32 - 0.16} = \\frac{0.97}{0.16} \\approx 6.06\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 6.06\\,\\text{m/s}$",
+      "keyAnswer": "6.06 m/s"
+    },
+    {
+      "label": "ב1",
+      "question": "חשב את מהירות הגוף בזמן $t = 0.08\\,\\text{s}$, וכתוב את התוצאה בטבלה.",
+      "answer": {
+        "type": "number",
+        "value": 2.5875,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אותה שיטה",
+          "why": "הנקודות $0$ ו-$0.16\\,\\text{s}$",
+          "tex": "v(0.08) \\approx \\frac{0.430 - 0.016}{0.16} \\approx 2.59\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 2.59\\,\\text{m/s}$",
+      "keyAnswer": "2.59 m/s"
+    },
+    {
+      "label": "ב2",
+      "question": "חשב את מהירות הגוף בזמן $t = 0.16\\,\\text{s}$.",
+      "answer": {
+        "type": "number",
+        "value": 4.125,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אותה שיטה",
+          "why": "הנקודות $0.08$ ו-$0.24\\,\\text{s}$",
+          "tex": "v(0.16) \\approx \\frac{0.810 - 0.150}{0.16} \\approx 4.13\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 4.13\\,\\text{m/s}$",
+      "keyAnswer": "4.13 m/s"
+    },
+    {
+      "label": "ב3",
+      "question": "חשב את מהירות הגוף בזמן $t = 0.32\\,\\text{s}$.",
+      "answer": {
+        "type": "number",
+        "value": 7.437499999999999,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אותה שיטה",
+          "why": "הנקודות $0.24$ ו-$0.4\\,\\text{s}$",
+          "tex": "v(0.32) \\approx \\frac{2.000 - 0.810}{0.16} \\approx 7.44\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 7.44\\,\\text{m/s}$",
+      "keyAnswer": "7.44 m/s"
+    },
+    {
+      "label": "ב4",
+      "question": "חשב את מהירות הגוף בזמן $t = 0.4\\,\\text{s}$.",
+      "answer": {
+        "type": "number",
+        "value": 9.0,
+        "unit": "m/s",
+        "tolerancePct": 2
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אותה שיטה",
+          "why": "הנקודות $0.32$ ו-$0.48\\,\\text{s}$",
+          "tex": "v(0.4) \\approx \\frac{2.840 - 1.400}{0.16} = 9\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$9\\,\\text{m/s}$",
+      "keyAnswer": "9 m/s"
+    },
+    {
+      "label": "ג",
+      "question": "סרטט דיאגרמת פיזור (נקודות במערכת צירים) של מהירות הגוף כפונקציה של הזמן. הוסף לדיאגרמה קו מגמה.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "graph"
+      ],
+      "solution": [
+        {
+          "what": "הנקודות",
+          "why": "מסעיפים א ו-ב",
+          "tex": "(0.08, 2.59),\\ (0.16, 4.13),\\ (0.24, 6.06),\\ (0.32, 7.44),\\ (0.4, 9)"
+        },
+        {
+          "what": "קו המגמה",
+          "why": "קו ישר אחד שעובר קרוב ככל האפשר לכל הנקודות (לא חייב לעבור דרך כולן)",
+          "tex": "v \\approx 1.0 + 20t"
+        }
+      ],
+      "finalAnswer": "נקודות כמעט על קו ישר עולה",
+      "keyAnswer": null
+    },
+    {
+      "label": "ד",
+      "question": "חשב את השיפוע של קו המגמה. מה מייצג גודל זה? הסבר.",
+      "answer": {
+        "type": "number",
+        "value": 20.171875,
+        "unit": "m/s^2",
+        "tolerancePct": 3
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "שיפוע בין שתי נקודות רחוקות על הקו",
+          "why": "נקודות רחוקות נותנות שיפוע מדויק יותר",
+          "tex": "\\frac{9 - 2.59}{0.4 - 0.08} \\approx 20\\,\\text{m/s}^2"
+        },
+        {
+          "what": "המשמעות",
+          "why": "שיפוע של גרף מהירות-זמן הוא התאוצה. בנפילה חופשית זו תאוצת הנפילה בכוכב",
+          "tex": "g^* \\approx 20\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$\\approx 20\\,\\text{m/s}^2$: תאוצת הנפילה החופשית בכוכב",
+      "keyAnswer": "a=20 m/s^2"
+    },
+    {
+      "label": "ה",
+      "question": "נתון כי רדיוס הכוכב שווה לרדיוס כדור הארץ. היעזר בתוצאות הניסוי וחשב את היחס בין מסת כוכב הלכת לבין מסת כדור הארץ.",
+      "answer": {
+        "type": "number",
+        "value": 2.0,
+        "unit": ""
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצת הנפילה על פני כוכב",
+          "why": "מחוק הכבידה",
+          "tex": "g = \\frac{GM}{R^2}"
+        },
+        {
+          "what": "יחס",
+          "why": "הרדיוסים שווים ומתבטלים",
+          "tex": "\\frac{M^*}{M_E} = \\frac{g^*}{g} = \\frac{20}{10} = 2"
+        }
+      ],
+      "finalAnswer": "$2$",
+      "keyAnswer": "2"
+    }
+  ]
+}
