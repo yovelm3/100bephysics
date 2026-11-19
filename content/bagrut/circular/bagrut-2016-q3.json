@@ -1,0 +1,188 @@
+{
+  "id": "bagrut-2016-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2016,
+    "label": "2016 שאלה 3"
+  },
+  "topic": "circular",
+  "subtopic": "circ-vertical",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הזווית θ נמדדת מהרדיוס האופקי OA (כך יוצאות התשובות במפתח).",
+  "stem": "גוף שמסתו $m$ משוחרר ממנוחה בנקודה $A$, ונע לאורך מסלול $ABCD$. הקטע $ABC$ חלק וצורתו רבע מעגל שרדיוסו $R$ (הנקודה $A$ נמצאת בגובה מרכז המעגל). הקטע $CD$ הוא מישור אופקי מחוספס. יש להזניח את התנגדות האוויר. בסעיפים א-ג בטא את תשובותיך באמצעות הפרמטרים $\\theta$, $g$, $m$, $R$ (כולם או חלקם), כאשר $\\theta$ היא הזווית בין הרדיוס לנקודה $B$ לבין הרדיוס לנקודה $A$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2016-q3.svg",
+    "alt": "מסלול ABCD: רבע מעגל חלק ABC ברדיוס R, A בגובה המרכז, ו-C בתחתית; קטע CD אופקי מחוספס. B על הקשת בזווית תטא. וארבעה גרפים I עד IV של אנרגיה כפונקציה של זמן",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מעגל אנכי",
+    "תאוצה רדיאלית ומשיקית",
+    "עבודת חיכוך",
+    "גרף אנרגיה-זמן"
+  ],
+  "summary": "גוף שגולש ברבע מעגל ואז נבלם בחיכוך: מהירות ותאוצות על הקשת, מקדם החיכוך מאנרגיה, ואיך נראית האנרגיה המכנית בזמן.",
+  "position": 24,
+  "parts": [
+    {
+      "label": "א",
+      "question": "בטא את מהירותו של הגוף בנקודה $B$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הגובה שהגוף ירד",
+          "why": "מ-$A$ (בגובה המרכז) ל-$B$",
+          "tex": "\\Delta h = R\\sin\\theta"
+        },
+        {
+          "what": "שימור אנרגיה",
+          "why": "הקשת חלקה",
+          "tex": "v_B = \\sqrt{2gR\\sin\\theta}"
+        }
+      ],
+      "finalAnswer": "$v_B = \\sqrt{2gR\\sin\\theta}$",
+      "keyAnswer": "vB = √(2gR·sinθ)"
+    },
+    {
+      "label": "ב",
+      "question": "בטא את התאוצה הרדיאלית של הגוף בנקודה $B$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה רדיאלית",
+          "why": "מציבים את v_B",
+          "tex": "a_R = \\frac{v_B^2}{R} = 2g\\sin\\theta"
+        }
+      ],
+      "finalAnswer": "$a_R = 2g\\sin\\theta$",
+      "keyAnswer": "aR = 2g·sinθ"
+    },
+    {
+      "label": "ג",
+      "question": "בטא את התאוצה המשיקית של הגוף בנקודה $B$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "רכיב הכובד המשיקי",
+          "why": "הנורמלי רדיאלי. המשיק ב-$B$ יוצר זווית $\\theta$ עם האנך",
+          "tex": "a_T = g\\cos\\theta"
+        }
+      ],
+      "finalAnswer": "$a_T = g\\cos\\theta$",
+      "keyAnswer": "aT = g·cosθ"
+    },
+    {
+      "label": "ד",
+      "question": "אחרי שהגוף עבר בנקודה $C$, הוא נע בתאוצה קבועה עד שנעצר בנקודה $D$. נתון: מרחק העצירה $CD = 2R$. השתמש בשיקולי אנרגיה וחשב את מקדם החיכוך בין הגוף לבין המישור המחוספס.",
+      "answer": {
+        "type": "number",
+        "value": 0.5,
+        "unit": ""
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "האנרגיה ב-$C$",
+          "why": "ירידה של $R$",
+          "tex": "E_{k,C} = mgR"
+        },
+        {
+          "what": "עבודת החיכוך עד העצירה",
+          "why": "כל האנרגיה הולכת לחיכוך",
+          "tex": "\\mu mg \\cdot 2R = mgR"
+        },
+        {
+          "what": "פותרים",
+          "why": "mgR מתבטל",
+          "tex": "\\mu = 0.5"
+        }
+      ],
+      "finalAnswer": "$\\mu = 0.5$",
+      "keyAnswer": "μ=0.5"
+    },
+    {
+      "label": "ה1",
+      "question": "איזה מהגרפים I-IV מתאר נכון את האנרגיה המכנית של הגוף כפונקציה של הזמן, בקטע $ABC$? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "בקטע החלק",
+          "why": "אין חיכוך: האנרגיה המכנית נשמרת",
+          "tex": "E = \\text{const}"
+        }
+      ],
+      "finalAnswer": "גרף II",
+      "keyAnswer": "גרף II"
+    },
+    {
+      "label": "ה2",
+      "question": "איזה מהגרפים I-IV מתאר נכון את האנרגיה המכנית של הגוף כפונקציה של הזמן, בקטע $CD$? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correct": 3
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "בקטע המחוספס",
+          "why": "האנרגיה היא קינטית בלבד, והמהירות קטנה בקצב קבוע",
+          "tex": "E = \\tfrac{1}{2}m(v_C - at)^2"
+        },
+        {
+          "what": "צורת הגרף",
+          "why": "פרבולה יורדת שמתמתנת לאפס",
+          "tex": "\\frac{dE}{dt} \\to 0"
+        }
+      ],
+      "finalAnswer": "גרף IV",
+      "keyAnswer": "גרף IV"
+    }
+  ]
+}
