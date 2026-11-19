@@ -8,7 +8,7 @@ def fig():
     g.line(*O, O[0] + L, O[1], width=1.5, dash="5 4"); g.ball(O[0] + L, O[1], 8); g.text(O[0] + L + 14, O[1] + 4, "m", anchor="start")
     g.dim(O[0], O[1] - 20, O[0] + L, O[1] - 20, "L")
     g.path(f"M {O[0] + L},{O[1]} A {L} {L} 0 0 1 {O[0]},{O[1] + L}", stroke="var(--d-dim)", width=1.4, dash="6 5")
-    g.path(f"M {O[0]},{O[1] + L} A {L/2} {L/2} 0 1 1 {O[0] - 70},{C[1] - 70}", stroke="var(--d-dim)", width=1.4, dash="6 5")
+    g.path(f"M {O[0]},{O[1] + L} A {L/2} {L/2} 0 0 1 {O[0] - 70},{C[1] - 70}", stroke="var(--d-dim)", width=1.4, dash="6 5")
     g.line(*O, *C, width=1.5); g.dot(*C); g.text(C[0] - 10, C[1] + 16, "C", anchor="end")
     a = math.radians(40)
     bx, by = C[0] - (L / 2) * math.sin(a), C[1] - (L / 2) * math.cos(a)
