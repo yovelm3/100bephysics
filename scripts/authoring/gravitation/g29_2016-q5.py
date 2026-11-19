@@ -8,7 +8,7 @@ def fig():
     cx, cy = 210, 150
     g.circle(cx, cy, 90, fill="var(--d-fill)", stroke="var(--d-line)"); g.heb(cx, cy + 6, "כוכב לכת")
     g.circle(cx, cy, 120, fill="none", stroke="var(--d-line)", width=1.3, dash="5 4")
-    g.block(cx + 40, cy - 86, 34, 16, angle=-25); g.heb(cx + 62, cy - 62, "ג'ים")
+    g.block(cx + 40, cy - 86, 34, 16, angle=-25); g.heb(cx + 92, cy - 96, "ג'ים")
     g.block(cx - 10, cy - 120, 36, 16); g.heb(cx - 10, cy - 136, "טים")
     return g
 

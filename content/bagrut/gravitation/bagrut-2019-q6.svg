@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="למעלה: כדור הארץ, המרכז, נקודה D על הקו לירח, המרחק rE ממרכז כדור הארץ ל-D, והמרחק rM מ-D למרכז הירח. למטה: ארבעה גרפים של שקול כוחות הכבידה כפונקציה של המרחק r ממרכז כדור הארץ. גרף 1: קבוע וחיובי ואז קפיצה לשלילי. גרף 2: יורד מערך חיובי גדול ליד כדור הארץ, חוצה את האפס, ושואף לערך שלילי גדול ליד הירח. גרף 3: קו ישר יורד. גרף 4: יורד מערך חיובי גדול לערך שלילי קטן וקבוע כמעט">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<circle cx="110" cy="95" r="60" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="heb" x="110" y="25" text-anchor="middle" direction="rtl">כדור הארץ</text>
+<circle cx="560" cy="95" r="16" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="heb" x="560" y="69" text-anchor="middle" direction="rtl">הירח</text>
+<circle cx="110" cy="95" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="560" cy="95" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="110" y1="95" x2="560" y2="95" stroke="var(--d-line)" stroke-width="1.1" stroke-dasharray="5 4" stroke-linecap="round"/>
+<circle cx="250" cy="95" r="5" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="250" y="83" text-anchor="middle">D</text>
+<line x1="110" y1="121" x2="250" y2="121" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="180" y="145" text-anchor="middle">rE</text>
+<line x1="250" y1="121" x2="560" y2="121" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="405" y="145" text-anchor="middle">rM</text>
+<line x1="490" y1="290" x2="610" y2="290" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="490" y1="335" x2="490" y2="220" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="612" y="304" text-anchor="end">r</text>
+<text class="dim" x="484" y="224" text-anchor="end">ΣF</text>
+<polyline points="492.2,254 545,254 545,326 600,326" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="545" y="357" text-anchor="middle">1</text>
+<line x1="340" y1="290" x2="460" y2="290" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="340" y1="335" x2="340" y2="220" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="462" y="304" text-anchor="end">r</text>
+<text class="dim" x="334" y="224" text-anchor="end">ΣF</text>
+<path d="M 340.0,230.0 L 342.8,230.0 L 345.5,247.5 L 348.2,260.1 L 351.0,267.9 L 353.8,273.0 L 356.5,276.5 L 359.2,279.0 L 362.0,280.9 L 364.8,282.4 L 367.5,283.5 L 370.2,284.4 L 373.0,285.2 L 375.8,285.8 L 378.5,286.3 L 381.2,286.7 L 384.0,287.1 L 386.8,287.4 L 389.5,287.7 L 392.2,287.9 L 395.0,288.2 L 397.8,288.4 L 400.5,288.5 L 403.2,288.7 L 406.0,288.9 L 408.8,289.1 L 411.5,289.2 L 414.2,289.4 L 417.0,289.6 L 419.8,289.8 L 422.5,290.0 L 425.2,290.2 L 428.0,290.6 L 430.8,291.0 L 433.5,291.6 L 436.2,292.4 L 439.0,293.7 L 441.8,295.8 L 444.5,300.0 L 447.2,309.8 L 450.0,343.4" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="395" y="357" text-anchor="middle">2</text>
+<line x1="190" y1="290" x2="310" y2="290" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="190" y1="335" x2="190" y2="220" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="312" y="304" text-anchor="end">r</text>
+<text class="dim" x="184" y="224" text-anchor="end">ΣF</text>
+<polyline points="190,236 300,344" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="245" y="357" text-anchor="middle">3</text>
+<line x1="40" y1="290" x2="160" y2="290" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="40" y1="335" x2="40" y2="220" stroke="var(--d-line)" stroke-width="1.4" stroke-linecap="round"/>
+<text class="dim" x="162" y="304" text-anchor="end">r</text>
+<text class="dim" x="34" y="224" text-anchor="end">ΣF</text>
+<path d="M 40.0,230.0 L 42.8,230.0 L 45.5,255.4 L 48.2,272.1 L 51.0,281.6 L 53.8,287.5 L 56.5,291.4 L 59.2,294.1 L 62.0,296.1 L 64.8,297.6 L 67.5,298.8 L 70.2,299.7 L 73.0,300.4 L 75.8,301.0 L 78.5,301.4 L 81.2,301.8 L 84.0,302.2 L 86.8,302.4 L 89.5,302.7 L 92.2,302.9 L 95.0,303.1 L 97.8,303.2 L 100.5,303.4 L 103.2,303.5 L 106.0,303.6 L 108.8,303.7 L 111.5,303.8 L 114.2,303.9 L 117.0,304.0 L 119.8,304.0 L 122.5,304.1 L 125.2,304.1 L 128.0,304.2 L 130.8,304.2 L 133.5,304.3 L 136.2,304.3 L 139.0,304.3 L 141.8,304.4 L 144.5,304.4 L 147.2,304.4 L 150.0,304.5" fill="none" stroke="var(--d-body)" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="label" x="95" y="357" text-anchor="middle">4</text>
+</svg>
