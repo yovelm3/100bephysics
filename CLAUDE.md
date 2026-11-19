@@ -48,7 +48,7 @@
    - נבחר עיצוב: הצבעים של כיוון א' "אקדמי" עם הגופן Heebo, והוחל על האתר
    - מבנה מסך השאלה אושר, ופלטת "מנטה ושמש" נבחרה והוחלה על האתר
    - שלב 2 הושלם
-3. **תוכן ותרגול** – בעבודה. חלקים: א. תשתית תוכן – **הושלם** (migration `content`, עץ נושאים ב-`content/topics.json`, סכמה ב-`src/lib/content/schema.ts`, `npm run content:check` / `content:sql`; ה-SQL מוחל דרך חיבור ה-Supabase. התרגיל הראשון: `content/bagrut/kinematics/1987-q1.json`, טיוטה) · ב. דף תרגיל ובדיקת תשובה · ג. תוכן ראשון מקינמטיקה (3 ציורים לאישור קודם) · ד. רשימת המאגר הנעולה ודף נחיתה
+3. **תוכן ותרגול** – בעבודה. חלקים: א. תשתית תוכן – **הושלם** (migration `content`, עץ נושאים ב-`content/topics.json`, סכמה ב-`src/lib/content/schema.ts`, `npm run content:check` / `content:sql`; ה-SQL מוחל דרך חיבור ה-Supabase. התרגיל הראשון: `content/bagrut/kinematics/1987-q1.json`, טיוטה) · ב. דף תרגיל ובדיקת תשובה – **הושלם ונבדק על האתר החי** (37/37, `e2e/stage3.cjs`): `/exercise/[id]` + `ExercisePlayer`, בדיקה בשרת ב-`/api/answer` (`src/lib/answer-check.ts`), פתרון ב-`/api/solution`, ניסיונות בטבלת `attempts`, ניסיון חינם (`exercise_access`, `unlock_trial`), דפי `/practice` בסיסיים. הנפשות: `src/lib/animations/<id>.ts` (פיזיקה ושתי בניות + `verify`) ו-`src/components/animations/` (רישום לפי מזהה תרגיל). `prebuild` מריץ את בדיקות ההנפשות, בדיקת התשובות והצגת כל הפתרונות, כך שבנייה עם הנפשה שלא אומתה נכשלת · ג. תוכן ראשון מקינמטיקה (3 ציורים לאישור קודם) · ד. רשימת המאגר הנעולה ודף נחיתה
 4. צ'אט ומעקב
 4א. "מה למדתי" ותוכנית אישית
 4ב. חיפוש חופשי (Voyage AI ל-embeddings, באישור הבעלים)
@@ -92,6 +92,7 @@
   - בדיקה מקצה לקצה: `e2e/README.md`. משתמשי בדיקה זמניים נוצרים ונמחקים ב-SQL. שרת מקומי במחשב של Claude Code צריך `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`
   - סביבת העבודה של Claude Code ‏(`100bephysics`) מאפשרת גישה ל-`tizopvycienggfrmghwe.supabase.co` ול-`100bephysics.vercel.app`
 - **Next 16 עם Cache Components:** דף שקורא עוגיות צריך `export const instant = false` או `<Suspense>`. `createClient` קורא עוגיות לפני הכול, כדי שדפים מוגנים לא ייבנו כסטטיים
+- **פורמט שלבי פתרון:** `{explain}` או `{what, why, tex, check?}` (כמו בקובצי התוכן). אותו פורמט ב-`SolutionSteps`
 - **הרשאות:** תלמיד יכול רק לקרוא את השורות שלו (RLS). כל שינוי עובר דרך פונקציות SQL (`register_device`, `admin_*`, `apply_payment`) שבודקות הרשאה בעצמן
 - **מגבלת מכשירים:** מזהה אקראי בעוגייה `bp_device` (httpOnly) עם גיבוי ב-localStorage. `getAccess()` ב-`src/lib/access.ts` רושם את המכשיר בכל טעינה של דף מוגן. המכשיר השישי נועל את החשבון. מנהל לא ננעל. שחרור נעילה: רק מנהל, עם אפשרות למחוק את רשימת המכשירים
 - **מנוי:** טבלת `subscriptions`. ידני מלוח הניהול (3 חודשים מהיום) או אחרי תשלום (`apply_payment`). הגישה נקבעת לפי `has_access()`
