@@ -11,11 +11,11 @@ def fig():
     g.block(36, 156, 28, 30, "B")
     g.line(150, 72, 180, 72, width=1.5); g.spring(180, 72, 220, 72, coils=5, amp=5, lead=4); g.rect(176, 60, 48, 24, fill="none", width=1.2)
     g.arrow(224, 72, 270, 72, "F", lx=278, ly=76, anchor="start"); g.heb(200, 52, "מד-כוח")
-    x0, y0 = 300, 90
-    g.rect(x0, y0, 250, 52, fill="none", width=1.5); g.line(x0, y0 + 26, x0 + 250, y0 + 26, width=1.2); g.line(x0 + 64, y0, x0 + 64, y0 + 52, width=1.2)
-    g.text(x0 + 32, y0 + 18, "F (N)"); g.text(x0 + 32, y0 + 44, "a (m/s²)")
+    x0, y0 = 290, 90
+    g.rect(x0, y0, 262, 52, fill="none", width=1.5); g.line(x0, y0 + 26, x0 + 262, y0 + 26, width=1.2); g.line(x0 + 82, y0, x0 + 82, y0 + 52, width=1.2)
+    g.text(x0 + 41, y0 + 18, "F (N)"); g.text(x0 + 41, y0 + 44, "a (m/s²)")
     for i, (f_, a_) in enumerate(zip(F, A_)):
-        cx = x0 + 64 + 15 + i * 31
+        cx = x0 + 82 + 15 + i * 30
         g.text(cx, y0 + 18, f"{f_:g}", cls="dim"); g.text(cx, y0 + 44, f"{a_:g}", cls="dim")
     return g
 

@@ -1,0 +1,188 @@
+{
+  "id": "bagrut-2006-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2006,
+    "label": "2006 שאלה 2"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-newton",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "בתרשים מוצגת מכונית שנוסעת לאורך כביש ישר ואופקי. אל תקרת המכונית קשורה משקולת באמצעות חוט, שמסתו זניחה ביחס למסת המשקולת. החוט יוצר עם הכיוון האנכי זווית קבועה של $\\alpha = 30^\\circ$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2006-q2.svg",
+    "alt": "מכונית על כביש אופקי. משקולת תלויה בחוט מהתקרה, והחוט נוטה בזווית קבועה של 30 מעלות מהאנך, כשהמשקולת מאחור",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "החוק השני של ניוטון",
+    "מטוטלת במכונית מאיצה",
+    "מערכת אינרציאלית",
+    "כיוון תאוצה מול מהירות"
+  ],
+  "summary": "משקולת שנוטה בזווית קבועה בתוך מכונית: התאוצה $g\\tan\\alpha$, מה קורה כשהתאוצה כפולה, ולמה המסה לא משנה.",
+  "position": 25,
+  "parts": [
+    {
+      "label": "א",
+      "question": "סרטט במחברתך את המשקולת, וסמן בסרטוט את הכוחות שפועלים עליה (התייחס רק לכוחות שפועלים במערכת ייחוס אינרציאלית, ולא לכוחות שפועלים במערכת הייחוס המואצת שנעה עם המכונית).",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd"
+      ],
+      "solution": [
+        {
+          "what": "שני כוחות",
+          "why": "כובד אנכי ומתיחות לאורך החוט. אין כוח \"מדומה\" במערכת אינרציאלית",
+          "tex": "mg\\downarrow,\\quad T \\nwarrow"
+        }
+      ],
+      "finalAnswer": "כובד ומתיחות בלבד",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "מהו כיוון הכוח השקול שפועל על המשקולת? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "אופקי, ימינה",
+          "אופקי, שמאלה",
+          "אנכי",
+          "אפס"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "אין תאוצה אנכית",
+          "why": "המשקולת לא עולה ולא יורדת",
+          "tex": "T\\cos\\alpha = mg"
+        },
+        {
+          "what": "הרכיב האופקי",
+          "why": "רכיב המתיחות האופקי לא מאוזן, ומצביע לכיוון שהחוט נוטה אליו (ימינה)",
+          "tex": "\\textstyle\\sum F = T\\sin\\alpha \\rightarrow"
+        }
+      ],
+      "finalAnswer": "אופקי ימינה",
+      "keyAnswer": "ימינה"
+    },
+    {
+      "label": "ג",
+      "question": "חשב את תאוצת המכונית (גודל וכיוון).",
+      "answer": {
+        "type": "number",
+        "value": 5.773502691896257,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מחלקים את שתי המשוואות",
+          "why": "$T\\sin\\alpha = ma$ חלקי $T\\cos\\alpha = mg$",
+          "tex": "a = g\\tan\\alpha"
+        },
+        {
+          "what": "מציבים",
+          "why": "tan 30° ≈ 0.577",
+          "tex": "a = 10 \\cdot \\tan 30^\\circ \\approx 5.77\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$\\approx 5.77\\,\\text{m/s}^2$ אופקית ימינה",
+      "keyAnswer": "5.77 m/s^2"
+    },
+    {
+      "label": "ד",
+      "question": "אילו תאוצת המכונית הייתה כפולה מהתאוצה שחישבת בסעיף ג, מה הייתה הזווית $\\alpha$?",
+      "answer": {
+        "type": "number",
+        "value": 49.106605350869096,
+        "unit": "°"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "אותו קשר",
+          "why": "מציבים תאוצה כפולה",
+          "tex": "\\tan\\alpha' = \\frac{2a}{g} = 2\\tan 30^\\circ \\approx 1.155"
+        },
+        {
+          "what": "הזווית",
+          "why": "שימו לב: הזווית לא מוכפלת",
+          "tex": "\\alpha' \\approx 49.1^\\circ"
+        }
+      ],
+      "finalAnswer": "$\\approx 49.1^\\circ$",
+      "keyAnswer": "49.1°"
+    },
+    {
+      "label": "ה",
+      "question": "האם ייתכן שהמכונית נוסעת שמאלה? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "understanding"
+      ],
+      "solution": [
+        {
+          "what": "הזווית מראה רק את התאוצה",
+          "why": "מכונית שנוסעת שמאלה ומאטה מאיצה ימינה",
+          "tex": "\\vec v \\leftarrow,\\ \\vec a \\rightarrow"
+        }
+      ],
+      "finalAnswer": "כן, אם היא נוסעת שמאלה ומאטה",
+      "keyAnswer": "כן"
+    },
+    {
+      "label": "ו",
+      "question": "האם הזווית $\\alpha$ תלויה במסת המשקולת? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הביטוי",
+          "why": "המסה התבטלה",
+          "tex": "\\tan\\alpha = \\frac{a}{g}"
+        }
+      ],
+      "finalAnswer": "לא: $\\tan\\alpha = a/g$",
+      "keyAnswer": "לא תלויה במסה"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" role="img" aria-label="גוף A (3 קילוגרם) למעלה, וגוף B (2 קילוגרם) תלוי מתחתיו בחוט. התלמיד מושך את A כלפי מעלה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="280" y1="40" x2="280" y2="10" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="292" y="24" text-anchor="start">F = 70 N</text>
+<rect x="245" y="40" width="70" height="44" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="280" y="67" text-anchor="middle" style="fill:#ffffff">A</text>
+<line x1="280" y1="84" x2="280" y2="140" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="255" y="140" width="50" height="40" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="280" y="165" text-anchor="middle" style="fill:#ffffff">B</text>
+<text class="dim" x="330" y="66" text-anchor="start">3 kg</text>
+<text class="dim" x="320" y="164" text-anchor="start">2 kg</text>
+</svg>
