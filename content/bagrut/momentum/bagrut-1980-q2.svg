@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="טיפות גשם נופלות אנכית לתוך קרונית פתוחה שנוסעת אופקית במהירות 2 מטר לשנייה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="40" y="170" width="480" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="40" y1="170" x2="520" y2="170" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polygon points="180,90 360,90 350,150 190,150" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="215" cy="158" r="10" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="325" cy="158" r="10" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<line x1="380" y1="120" x2="450" y2="120" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="460" y="124" text-anchor="start">v = 2 m/s</text>
+<line x1="200" y1="20" x2="200" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="215" y1="55" x2="215" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="20" x2="230" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="245" y1="55" x2="245" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="260" y1="20" x2="260" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="275" y1="55" x2="275" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="290" y1="20" x2="290" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="305" y1="55" x2="305" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="320" y1="20" x2="320" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="335" y1="55" x2="335" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="350" y1="20" x2="350" y2="34" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+<line x1="365" y1="55" x2="365" y2="69" stroke="var(--d-body)" stroke-width="2" stroke-linecap="round"/>
+</svg>

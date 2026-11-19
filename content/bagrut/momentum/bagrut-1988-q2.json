@@ -1,0 +1,159 @@
+{
+  "id": "bagrut-1988-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1988,
+    "label": "1988 שאלה 2"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "מגג בניין שגובהו $5\\,\\text{m}$ מעל המשטח האופקי, נזרק גוש פלסטלינה שמסתו $0.5\\,\\text{kg}$ בכיוון אופקי, במהירות $v_0 = 8\\,\\text{m/s}$. גוש הפלסטלינה פגע בקרונית ונדבק אליה. הקרונית הייתה במנוחה לפני ההתנגשות ומסתה $1.5\\,\\text{kg}$. הנח כי גובה הקרונית קטן מאוד ביחס לגובה הבניין, והזנח את התנגדות האוויר.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1988-q2.svg",
+    "alt": "גוש פלסטלינה נזרק אופקית במהירות 8 מטר לשנייה מגג בניין בגובה 5 מטר, ופוגע בקרונית שעומדת על הקרקע",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "זריקה אופקית",
+    "שימור תנע ברכיב אחד",
+    "התנגשות פלסטית",
+    "חיכוך"
+  ],
+  "summary": "פלסטלינה שנזרקת מגג ונדבקת בקרונית: רק התנע האופקי נשמר, ואחר כך החיכוך עוצר.",
+  "position": 5,
+  "parts": [
+    {
+      "label": "א",
+      "question": "חשב את המרחק שבין רגלי הבניין לבין נקודת הפגיעה בקרונית.",
+      "answer": {
+        "type": "number",
+        "value": 8.0,
+        "unit": "m"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "זמן הנפילה",
+          "why": "זריקה אופקית מגובה $5\\,\\text{m}$",
+          "tex": "t = \\sqrt{\\frac{2 \\cdot 5}{10}} = 1\\,\\text{s}"
+        },
+        {
+          "what": "המרחק",
+          "why": "מהירות אופקית קבועה",
+          "tex": "x = 8 \\cdot 1 = 8\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$8\\,\\text{m}$",
+      "keyAnswer": "8 m"
+    },
+    {
+      "label": "ב1",
+      "question": "חשב את גודל המהירות שבה פגע גוש הפלסטלינה בקרונית.",
+      "answer": {
+        "type": "number",
+        "value": 12.806248474865697,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "רכיבי המהירות",
+          "why": "אחרי שנייה של נפילה",
+          "tex": "v_x = 8,\\quad v_y = 10 \\cdot 1 = 10\\,\\text{m/s}"
+        },
+        {
+          "what": "גודל",
+          "why": "פיתגורס",
+          "tex": "v = \\sqrt{64 + 100} \\approx 12.8\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 12.8\\,\\text{m/s}$",
+      "keyAnswer": "12.8 m/s"
+    },
+    {
+      "label": "ב2",
+      "question": "מה הזווית בין כיוון המהירות לבין הכיוון האופקי?",
+      "answer": {
+        "type": "number",
+        "value": 51.34019174590991,
+        "unit": "°"
+      },
+      "skills": [
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "טנגנס",
+          "why": "אנכי חלקי אופקי",
+          "tex": "\\tan\\theta = \\frac{10}{8} \\Rightarrow \\theta \\approx 51.3^\\circ"
+        }
+      ],
+      "finalAnswer": "$\\approx 51.3^\\circ$ מתחת לאופק",
+      "keyAnswer": "51.3°"
+    },
+    {
+      "label": "ג",
+      "question": "חשב את המהירות המשותפת (של גוש הפלסטלינה והקרונית) מיד אחרי ההתנגשות.",
+      "answer": {
+        "type": "number",
+        "value": 2.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע אופקי",
+          "why": "בכיוון האופקי אין כוח חיצוני בזמן ההתנגשות. הרכיב האנכי \"נבלע\" ברצפה",
+          "tex": "0.5 \\cdot 8 = 2\\,u"
+        },
+        {
+          "what": "פותרים",
+          "why": "מסה כוללת $2\\,\\text{kg}$",
+          "tex": "u = 2\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$2\\,\\text{m/s}$",
+      "keyAnswer": "2 m/s"
+    },
+    {
+      "label": "ד",
+      "question": "חשב את המרחק שעברה הקרונית עד שנעצרה. נתון: מקדם החיכוך בין הקרונית והמשטח האופקי הוא $0.2$.",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": "m"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "האטה",
+          "why": "החיכוך הקינטי",
+          "tex": "a = \\mu g = 2\\,\\text{m/s}^2"
+        },
+        {
+          "what": "מרחק עצירה",
+          "why": "משוואה בלי זמן",
+          "tex": "d = \\frac{2^2}{2 \\cdot 2} = 1\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$1\\,\\text{m}$",
+      "keyAnswer": "1 m"
+    }
+  ]
+}

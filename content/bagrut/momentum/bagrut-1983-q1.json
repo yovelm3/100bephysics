@@ -1,0 +1,114 @@
+{
+  "id": "bagrut-1983-q1",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1983,
+    "label": "1983 שאלה 1"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף מחליק, ממצב של מנוחה, במורד מדרון שזווית שיפועו $\\alpha$. בהגיעו לתחתית המדרון הוא מתנגש התנגשות אלסטית בקיר שנטוי בזווית $90^\\circ$ למדרון, ועולה שוב.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1983-q1.svg",
+    "alt": "גוף מחליק ממנוחה במורד מדרון בזווית אלפא. בתחתית המדרון קיר שניצב למדרון",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "התנגשות אלסטית",
+    "מישור משופע עם חיכוך",
+    "זמני תנועה"
+  ],
+  "summary": "גוף שיורד במדרון, ניתר מקיר ועולה: היחס בין זמני הירידה והעלייה, עם חיכוך ובלי.",
+  "position": 3,
+  "parts": [
+    {
+      "label": "א1",
+      "question": "מהו היחס בין זמן הירידה לזמן העלייה (מרגע ההתנגשות ועד רגע העצירה), כאשר המדרון חלק?",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": ""
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "התנגשות אלסטית בקיר",
+          "why": "גודל המהירות לא משתנה, רק הכיוון",
+          "tex": "v' = v"
+        },
+        {
+          "what": "התאוצה",
+          "why": "בלי חיכוך, אותה תאוצה בירידה ובעלייה",
+          "tex": "a = g\\sin\\alpha"
+        },
+        {
+          "what": "הזמנים",
+          "why": "מאפס עד $v$ ומ-$v$ עד אפס באותה תאוצה",
+          "tex": "t_\\downarrow = t_\\uparrow = \\frac{v}{a} \\Rightarrow \\frac{t_\\downarrow}{t_\\uparrow} = 1"
+        }
+      ],
+      "finalAnswer": "$1$",
+      "keyAnswer": "1"
+    },
+    {
+      "label": "א2",
+      "question": "מהו היחס, כאשר מקדם החיכוך בין הגוף למדרון הוא $\\mu$?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצות",
+          "why": "החיכוך נגד התנועה בשני הכיוונים",
+          "tex": "a_\\downarrow = g(\\sin\\alpha - \\mu\\cos\\alpha),\\quad a_\\uparrow = g(\\sin\\alpha + \\mu\\cos\\alpha)"
+        },
+        {
+          "what": "הזמנים",
+          "why": "הגוף מגיע לקיר במהירות $v$ ויוצא ממנו ב-$v$",
+          "tex": "t_\\downarrow = \\frac{v}{a_\\downarrow},\\quad t_\\uparrow = \\frac{v}{a_\\uparrow}"
+        },
+        {
+          "what": "היחס",
+          "why": "v מתבטל",
+          "tex": "\\frac{t_\\downarrow}{t_\\uparrow} = \\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}"
+        }
+      ],
+      "finalAnswer": "$\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}$",
+      "keyAnswer": "(sinα+μcosα)/(sinα−μcosα)"
+    },
+    {
+      "label": "ב",
+      "question": "הראה כי התשובה בסעיף א1 היא מקרה פרטי של התשובה בסעיף א2.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מציבים $\\mu = 0$",
+          "why": "החיכוך נעלם",
+          "tex": "\\frac{\\sin\\alpha}{\\sin\\alpha} = 1"
+        }
+      ],
+      "finalAnswer": "ב-$\\mu = 0$ היחס הוא $1$",
+      "keyAnswer": null
+    }
+  ]
+}

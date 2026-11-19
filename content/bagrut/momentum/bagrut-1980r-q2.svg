@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="שני גופים במסה 1 קילוגרם כל אחד, מחוברים בקפיץ מכווץ, מחליקים על משטח חלק. אחרי שחרור הקפיץ אחד נע בכיוון x ב-3 מטר לשנייה והשני בכיוון y ב-4 מטר לשנייה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="60" y1="170" x2="250" y2="170" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-axis)"/>
+<line x1="60" y1="170" x2="60" y2="20" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-axis)"/>
+<text class="label" x="256" y="174" text-anchor="start">x</text>
+<text class="label" x="66" y="26" text-anchor="start">y</text>
+<rect x="95" y="105" width="30" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="110" y="125" text-anchor="middle" style="fill:#ffffff">m</text>
+<polyline points="125,120 135,120 137.5,127 140,113 142.5,127 145,113 147.5,127 150,113 152.5,127 155,120 165,120" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="165" y="105" width="30" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="180" y="125" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="205" y1="90" x2="245" y2="60" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="250" y="58" text-anchor="start">v₀ ?</text>
+<rect x="365" y="135" width="30" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="380" y="155" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="397" y1="150" x2="457" y2="150" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="430" y="140" text-anchor="middle">3 m/s</text>
+<rect x="315" y="95" width="30" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="330" y="115" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="330" y1="93" x2="330" y2="33" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="340" y="60" text-anchor="start">4 m/s</text>
+<text class="heb" x="150" y="196" text-anchor="middle" direction="rtl">לפני</text>
+<text class="heb" x="400" y="196" text-anchor="middle" direction="rtl">אחרי</text>
+</svg>

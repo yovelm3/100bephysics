@@ -1,0 +1,140 @@
+{
+  "id": "bagrut-1986-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1986,
+    "label": "1986 שאלה 3"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "כדור $A$ מחליק בלי חיכוך לאורך מסילה מעגלית $PQ$, שבהמשכה קטע ישר $QS$. הכדור מתנגש בכדור $B$, שנמצא במנוחה בנקודה $S$, בקצה המסילה הישרה. המסילה $PQ$ היא רבע מעגל שרדיוסו $r = 20\\,\\text{cm}$. מסת הכדור $A$: $m_A = 60\\,\\text{gr}$. מסת הכדור $B$: $m_B = 20\\,\\text{gr}$. הכדור $A$ משוחרר ממנוחה בנקודה $P$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1986-q3.svg",
+    "alt": "מסילה: רבע מעגל PQ ברדיוס 20 סנטימטר, וקטע ישר QS. כדור A משוחרר בנקודה P, וכדור B במנוחה בנקודה S",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "שימור אנרגיה",
+    "התנגשות פלסטית",
+    "התנגשות אלסטית",
+    "שימור תנע ברכיבים"
+  ],
+  "summary": "כדור שגולש ברבע מעגל ומתנגש בכדור שני: מהירויות אחרי התנגשות פלסטית ואלסטית, ומשוואות להתנגשות לא מצחית.",
+  "position": 4,
+  "parts": [
+    {
+      "label": "א1",
+      "question": "מה תהיה מהירות הכדורים אחרי ההתנגשות, אם ההתנגשות בין הכדורים היא פלסטית?",
+      "answer": {
+        "type": "number",
+        "value": 1.5,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מהירות $A$ לפני ההתנגשות",
+          "why": "שימור אנרגיה, ירידה של $r$",
+          "tex": "v_A = \\sqrt{2 \\cdot 10 \\cdot 0.2} = 2\\,\\text{m/s}"
+        },
+        {
+          "what": "שימור תנע",
+          "why": "פלסטית: נעים יחד",
+          "tex": "0.06 \\cdot 2 = 0.08\\,u \\Rightarrow u = 1.5\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$1.5\\,\\text{m/s}$",
+      "keyAnswer": "1.5 m/s"
+    },
+    {
+      "label": "א2",
+      "question": "מה תהיה מהירות $A$ אחרי ההתנגשות, אם ההתנגשות היא אלסטית מצחית?",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "התנגשות אלסטית עם גוף במנוחה",
+          "why": "שימור תנע ואנרגיה נותנים",
+          "tex": "u_A = \\frac{m_A - m_B}{m_A + m_B}v_A = \\frac{40}{80} \\cdot 2 = 1\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$1\\,\\text{m/s}$, באותו כיוון",
+      "keyAnswer": "uA=1 m/s"
+    },
+    {
+      "label": "א3",
+      "question": "מה תהיה מהירות $B$ אחרי ההתנגשות האלסטית?",
+      "answer": {
+        "type": "number",
+        "value": 3.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "נוסחה",
+          "why": "מהתנגשות אלסטית עם גוף במנוחה",
+          "tex": "u_B = \\frac{2m_A}{m_A + m_B}v_A = \\frac{120}{80} \\cdot 2 = 3\\,\\text{m/s}"
+        },
+        {
+          "what": "בדיקה: שימור תנע",
+          "why": "בגרמים",
+          "tex": "60 \\cdot 2 = 60 \\cdot 1 + 20 \\cdot 3 = 120 \\;\\checkmark",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$3\\,\\text{m/s}$",
+      "keyAnswer": "uB=3 m/s"
+    },
+    {
+      "label": "ב",
+      "question": "ההתנגשות בין הכדורים היא אלסטית, אך לא מצחית, והכדור $A$ ממשיך בכיוון שיוצר זווית $\\alpha$ עם כיוון תנועתו לפני ההתנגשות. רשום את המשוואות שמאפשרות לחשב את מהירות של כל אחד מהכדורים, והסבר אותן. אין צורך לפתור את המשוואות.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע בכיוון התנועה המקורית",
+          "why": "אין כוחות חיצוניים אופקיים, ו-β זווית B",
+          "tex": "m_A v_A = m_A u_A\\cos\\alpha + m_B u_B\\cos\\beta"
+        },
+        {
+          "what": "שימור תנע בניצב",
+          "why": "לפני ההתנגשות אין תנע בכיוון הזה",
+          "tex": "0 = m_A u_A\\sin\\alpha - m_B u_B\\sin\\beta"
+        },
+        {
+          "what": "שימור אנרגיה",
+          "why": "התנגשות אלסטית",
+          "tex": "\\tfrac{1}{2}m_A v_A^2 = \\tfrac{1}{2}m_A u_A^2 + \\tfrac{1}{2}m_B u_B^2"
+        }
+      ],
+      "finalAnswer": "שתי משוואות תנע (רכיבים) ומשוואת אנרגיה, לשלושה נעלמים $u_A$, $u_B$, $\\beta$",
+      "keyAnswer": null
+    }
+  ]
+}
