@@ -37,6 +37,9 @@ for t in sorted(os.listdir(base)):
                 continue
             v = a["value"]
             nums = key_numbers(k)
+            if not nums:
+                nokey += 1
+                continue
             facs = [1] + ([1000] if re.search(r"\bkm\b", k) else []) + ([0.01] if re.search(r"\bcm\b", k) else []) + ([3600, 86400] if re.search(r"hr|hour|שעות|day|יממה", k) else [])
             hit = any((abs(abs(v) - abs(n * fc)) <= 0.025 * max(abs(v), 1e-12)) or (v == 0 and n == 0) for n in nums for fc in facs)
             if hit:
