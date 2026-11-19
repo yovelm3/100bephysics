@@ -9,7 +9,7 @@ Conventions (owner decisions, see CLAUDE.md):
   - solution rows: X(explain) or S(what, why, tex) / C(...) for a check row. "why" is always filled
   - keyAnswer: the final answer as printed in the source answer key (None if the key has none)
 """
-import json, os, sys
+import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", ".."))
@@ -25,12 +25,17 @@ def X(text):
     return {"explain": text}
 
 
+HEB = re.compile("[\u0590-\u05ff]")
+
+
 def S(what, why, tex):
     assert why.strip(), f"empty why: {what}"
+    assert not HEB.search(tex), f"Hebrew inside a formula (KaTeX cannot lay it out): {tex}"
     return {"what": what, "why": why, "tex": tex}
 
 
 def C(what, why, tex):
+    assert not HEB.search(tex), f"Hebrew inside a formula: {tex}"
     return {"what": what, "why": why, "tex": tex, "check": True}
 
 
