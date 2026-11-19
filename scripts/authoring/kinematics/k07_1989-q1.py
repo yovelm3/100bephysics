@@ -15,10 +15,11 @@ def fig():
     F_ = Pt(1.5, 0); G_ = Pt(0, 2.5)
     g.line(*E_, *F_, stroke="var(--d-dim)", width=1.2, dash="4 3")
     g.text((E_[0] + F_[0]) / 2 + 30, (E_[1] + F_[1]) / 2 + 8, "2.5 m", cls="dim")
-    g.dim(*G_, *E_, "1.5 m", offset=0, side=-1)
+    g.dim(G_[0], G_[1] + 16, E_[0], E_[1] + 16, "1.5 m", offset=0, side=-1)
+    g.line(*G_, G_[0], G_[1] + 20, stroke="var(--d-dim)", width=1, dash="3 3"); g.line(*E_, E_[0], E_[1] + 20, stroke="var(--d-dim)", width=1, dash="3 3")
     g.ball(*E_, r=7)
-    g.text(E_[0] + 10, E_[1] + 18, "E", anchor="start")
-    g.arrow(E_[0] - 10, E_[1] - 10, E_[0] - 62, E_[1] - 10, "v₀", lx=E_[0] - 74, ly=E_[1] - 6, anchor="end")
+    g.text(E_[0] + 10, E_[1] - 6, "E", anchor="start")
+    g.arrow(E_[0] - 6, E_[1] - 16, E_[0] - 60, E_[1] - 16, "v₀", lx=E_[0] - 33, ly=E_[1] - 24)
     g.heb(330, 308, "הכדור נזרק במקביל לצלע BC")
     return g
 

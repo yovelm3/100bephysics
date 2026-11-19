@@ -193,8 +193,8 @@ class Fig:
         for v, t in yticks:
             self.line(ox - 4, Y(v), ox + 4, Y(v), stroke="var(--d-line)", width=1.5)
             self.text(ox - 8, Y(v) + 4, t, cls="dim", anchor="end")
-        self.text(ox + w + 22, y0 + 4, xlabel, anchor="start")
-        self.text(ox, oy - h - 24, ylabel)
+        self.text(ox + w + 16, y0 - 10, xlabel, anchor="end")
+        self.text(ox + 10, oy - h - 6, ylabel, anchor="start")
         return X, Y
 
     def plot(self, X, Y, pts, width=2.6, dash=None, stroke="var(--d-body)"):

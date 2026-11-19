@@ -7,8 +7,8 @@
 </defs>
 <line x1="150" y1="65" x2="448" y2="65" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
 <line x1="150" y1="106" x2="150" y2="12" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
-<text class="label" x="452" y="69" text-anchor="start">t</text>
-<text class="label" x="150" y="6" text-anchor="middle">a</text>
+<text class="label" x="446" y="55" text-anchor="end">t</text>
+<text class="label" x="160" y="24" text-anchor="start">a</text>
 <polyline points="150,44 243.3,44" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
 <polyline points="243.3,65 336.7,65" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
 <polyline points="336.7,86 430,86" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
