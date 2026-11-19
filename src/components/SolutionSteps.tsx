@@ -1,9 +1,11 @@
 import { Math } from "@/components/Math";
 
-/** One row of a full solution: what we do, why, and the calculation (LaTeX). */
-export type SolutionStep =
-  | { kind: "step"; what: string; why: string; tex: string }
-  | { kind: "explain"; text: string };
+/**
+ * One item of a full solution, in the content-file format:
+ * a short explanation paragraph, or a row (what we do, why, calculation in LaTeX). `check` marks the verification row.
+ */
+export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean };
+type Row = Extract<SolutionStep, { what: string }>;
 
 /**
  * Full solution in the approved format: three columns ("מה עושים", "למה", "חישוב") on wide screens,
@@ -31,6 +33,7 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
                 className="grid grid-cols-1 gap-1 border-t border-line px-4 py-3 first:border-t-0 md:grid-cols-[11rem_minmax(0,1fr)_14rem] md:gap-0 md:px-0 md:py-0"
               >
                 <div className="font-bold md:px-4 md:py-3 md:font-semibold">
+                  {row.check && <span className="me-1 rounded bg-accent-soft px-1.5 text-xs text-accent">בדיקה</span>}
                   <InlineText text={row.what} />
                 </div>
                 <div className="text-muted md:px-4 md:py-3">
@@ -49,8 +52,8 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
 }
 
 /** Hebrew text with inline $formulas$ rendered left-to-right. */
-export function InlineText({ text }: { text: string }) {
-  const parts = text.split(/(\$[^$]+\$)/g);
+export function InlineText({ text }: { text: string | null | undefined }) {
+  const parts = (text ?? "").split(/(\$[^$]+\$)/g);
   return (
     <>
       {parts.map((p, i) =>
@@ -60,16 +63,14 @@ export function InlineText({ text }: { text: string }) {
   );
 }
 
-type Group =
-  | { kind: "explain"; text: string }
-  | { kind: "rows"; rows: Extract<SolutionStep, { kind: "step" }>[] };
+type Group = { kind: "explain"; text: string } | { kind: "rows"; rows: Row[] };
 
 function groupSteps(steps: SolutionStep[]): Group[] {
   const groups: Group[] = [];
-  for (const s of steps) {
-    if (s.kind === "explain") {
-      groups.push({ kind: "explain", text: s.text });
-    } else {
+  for (const s of steps ?? []) {
+    if ("explain" in s) {
+      groups.push({ kind: "explain", text: s.explain });
+    } else if ("what" in s) {
       const last = groups[groups.length - 1];
       if (last && last.kind === "rows") last.rows.push(s);
       else groups.push({ kind: "rows", rows: [s] });
