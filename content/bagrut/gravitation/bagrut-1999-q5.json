@@ -1,0 +1,123 @@
+{
+  "id": "bagrut-1999-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1999,
+    "label": "1999 שאלה 5"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-kepler",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "בטבלה רשומים נתונים על ארבעה ירחים של כוכב הלכת צדק. הנח שהירחים נעים במסלולים מעגליים.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1999-q5.svg",
+    "alt": "טבלה: רדיוס המסלול (ביחידות של 10 בחזקת 5 קילומטר) וזמן המחזור (בימים) של ארבעה ירחים של צדק",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "החוק השלישי של קפלר",
+    "מסת כוכב מנתוני ירחים"
+  ],
+  "summary": "ירחי צדק מקיימים $r^3/T^2$ קבוע. בעזרתו מחשבים זמן מחזור של לוויין, ומבינים שהקבוע תלוי במסת הכוכב.",
+  "position": 18,
+  "parts": [
+    {
+      "label": "א",
+      "question": "הראה כי ארבעה ירחים אלה מקיימים את החוק השלישי של קפלר. (שים לב: לא נדרש לשנות יחידות.)",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "החוק השלישי",
+          "why": "לאותו כוכב מרכזי",
+          "tex": "\\frac{r^3}{T^2} = C"
+        },
+        {
+          "what": "חישוב לכל ירח",
+          "why": "ביחידות הטבלה",
+          "tex": "\\frac{4.22^3}{1.77^2} \\approx 23.99,\\ \\frac{6.71^3}{3.55^2} \\approx 23.97,\\ \\frac{10.7^3}{7.16^2} \\approx 23.90,\\ \\frac{18.83^3}{16.69^2} \\approx 23.97"
+        }
+      ],
+      "finalAnswer": "היחס $r^3/T^2$ שווה (בערך $24$) לכל הירחים",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "רוצים להכניס לוויין למסלול מעגלי סביב כוכב הלכת צדק, שרדיוס מסלולו יהיה $10^5\\,\\text{km}$. חשב מה יהיה זמן המחזור של תנועת לוויין זה (בימים).",
+      "answer": {
+        "type": "number",
+        "value": 0.20417595232580255,
+        "unit": "day",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "קפלר ביחס לירח 1",
+          "why": "T ∝ r^1.5",
+          "tex": "T = 1.77\\left(\\frac{1}{4.22}\\right)^{3/2} \\approx 0.204\\,\\text{day}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.204$ יממה",
+      "keyAnswer": "0.204 day"
+    },
+    {
+      "label": "ג",
+      "question": "בטא את המסה $M$ של כוכב הלכת צדק באמצעות זמן המחזור $T$ ורדיוס המסלול $r$ של אחד הירחים (אינך נדרש להציב מספרים).",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כבידה ככוח צנטריפטלי",
+          "why": "ω = 2π/T",
+          "tex": "M = \\frac{4\\pi^2 r^3}{GT^2}"
+        }
+      ],
+      "finalAnswer": "$M = \\frac{4\\pi^2 r^3}{GT^2}$",
+      "keyAnswer": "M=4π²r³/(GT²)"
+    },
+    {
+      "label": "ד",
+      "question": "לוויין נע במסלול מעגלי שרדיוסו $10^5\\,\\text{km}$ סביב כוכב לכת שונה מצדק. האם זמן המחזור שלו יהיה שווה לזמן המחזור שחישבת בסעיף ב? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא (בדרך כלל)"
+        ],
+        "correct": 1
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "התלות במסה",
+          "why": "הקבוע של קפלר תלוי במסת הכוכב המרכזי",
+          "tex": "T^2 = \\frac{4\\pi^2}{GM}r^3"
+        }
+      ],
+      "finalAnswer": "לא: זמן המחזור תלוי במסת כוכב הלכת",
+      "keyAnswer": null
+    }
+  ]
+}
