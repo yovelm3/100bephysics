@@ -1,0 +1,123 @@
+{
+  "id": "bagrut-1987-q3",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1987,
+    "label": "1987 שאלה 3"
+  },
+  "topic": "energy",
+  "subtopic": "en-work",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה בסעיף ג: במפתח הביטוי בלי המקדם 3 (כלומר העבודה של F_min). לפי הנוסח 'בתנאי סעיף ב' F = 3F_min, ולכן כתבתי עם 3.",
+  "stem": "גוף שמסתו $m$ מונח על מדרון שזווית שיפועו $\\alpha$. מקדם החיכוך בינו ובין המדרון הוא $\\mu$. מפעילים כוח אופקי קבוע $F$ על הגוף.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1987-q3.svg",
+    "alt": "גוף m על מדרון בזווית אלפא עם חיכוך. כוח F אופקי דוחף אותו",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מישור משופע",
+    "חיכוך",
+    "כוח אופקי על מדרון",
+    "עבודה של כוח קבוע"
+  ],
+  "summary": "דחיפה אופקית במעלה מדרון עם חיכוך: הכוח המינימלי, מתי הוא לא קיים, התאוצה בכוח משולש, והעבודה.",
+  "position": 3,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו גודל הכוח המינימלי, $F_{\\min}$, שדרוש כדי לדחוף את הגוף במעלה המדרון? האם תמיד קיים כוח $F$ כזה? נמק.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "explain": "הכוח המינימלי מזיז את הגוף במהירות קבועה. החיכוך במורד, והכוח האופקי לוחץ גם על המדרון ומגדיל את הנורמלי."
+        },
+        {
+          "what": "בניצב למדרון",
+          "why": "אין תאוצה בניצב",
+          "tex": "N = mg\\cos\\alpha + F\\sin\\alpha"
+        },
+        {
+          "what": "לאורך המדרון",
+          "why": "מהירות קבועה: השקול אפס",
+          "tex": "F\\cos\\alpha = mg\\sin\\alpha + \\mu(mg\\cos\\alpha + F\\sin\\alpha)"
+        },
+        {
+          "what": "מבודדים",
+          "why": "מעבירים את F לצד אחד",
+          "tex": "F_{\\min} = mg\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\cos\\alpha - \\mu\\sin\\alpha}"
+        },
+        {
+          "what": "תנאי לקיום",
+          "why": "המכנה חייב להיות חיובי. אחרת שום כוח אופקי לא מספיק, כי הוא מגדיל את החיכוך מהר יותר משהוא דוחף",
+          "tex": "\\cos\\alpha > \\mu\\sin\\alpha \\iff \\mu < \\cot\\alpha"
+        }
+      ],
+      "finalAnswer": "$F_{\\min} = mg\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\cos\\alpha - \\mu\\sin\\alpha}$, ורק כש-$\\mu < \\cot\\alpha$",
+      "keyAnswer": "mg(sinα+μcosα)/(cosα−μsinα)"
+    },
+    {
+      "label": "ב",
+      "question": "כאשר מתקיים $F = 3F_{\\min}$, מהו גודל התאוצה שבה נע הגוף במעלה המדרון?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "החוק השני לאורך המדרון",
+          "why": "חיובי במעלה",
+          "tex": "ma = F(\\cos\\alpha - \\mu\\sin\\alpha) - mg(\\sin\\alpha + \\mu\\cos\\alpha)"
+        },
+        {
+          "what": "מציבים $F = 3F_{\\min}$",
+          "why": "$F_{\\min}(\\cos\\alpha - \\mu\\sin\\alpha) = mg(\\sin\\alpha + \\mu\\cos\\alpha)$",
+          "tex": "a = 2g(\\sin\\alpha + \\mu\\cos\\alpha)"
+        }
+      ],
+      "finalAnswer": "$a = 2g(\\sin\\alpha + \\mu\\cos\\alpha)$",
+      "keyAnswer": "2g(sinα+μcosα)"
+    },
+    {
+      "label": "ג",
+      "question": "בתנאי סעיף ב, הגוף עובר בזמן מסוים מרחק $\\ell$ מטרים לאורך המדרון. איזו עבודה עבד הכוח $F$ לאורך דרך זו?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "עבודה של כוח קבוע",
+          "why": "הזווית בין הכוח האופקי לתזוזה לאורך המדרון היא $\\alpha$",
+          "tex": "W = F\\ell\\cos\\alpha"
+        },
+        {
+          "what": "מציבים",
+          "why": "F = 3F_min",
+          "tex": "W = 3mg\\ell\\cos\\alpha\\,\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\cos\\alpha - \\mu\\sin\\alpha}"
+        }
+      ],
+      "finalAnswer": "$W = 3mg\\ell\\cos\\alpha\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\cos\\alpha - \\mu\\sin\\alpha}$",
+      "keyAnswer": "mgℓ·cosα·(sinα+μcosα)/(cosα−μsinα)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="גוף m על מדרון בזווית אלפא עם חיכוך. כוח F אופקי דוחף אותו">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<polygon points="100,170 480,170 480,50" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<rect x="60" y="170" width="460" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="60" y1="170" x2="520" y2="170" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<path d="M 150,170 A 50 50 0 0 0 147.7,155" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="165.2" y="165" text-anchor="middle">α</text>
+<rect x="265" y="93" width="50" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5" transform="rotate(-17.5 290 108)"/>
+<text class="label" x="290" y="113" text-anchor="middle" style="fill:#ffffff">m</text>
+<line x1="200" y1="118" x2="262" y2="118" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="196" y="122" text-anchor="end">F</text>
+</svg>

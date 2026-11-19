@@ -1,0 +1,131 @@
+{
+  "id": "bagrut-1985-q1",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1985,
+    "label": "1985 שאלה 1"
+  },
+  "topic": "energy",
+  "subtopic": "en-work",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "הגרף מתאר את הקשר בין מהירות $v$ של גוף לבין הכוח $F$ שמופעל עליו. (בתחילת פעולתו של הכוח נמצא הגוף במנוחה.) מסת הגוף $5$ ק\"ג. הכוח הוא הכוח היחיד שפועל על הגוף בכיוון התנועה.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1985-q1.svg",
+    "alt": "גרף הכוח F כפונקציה של מהירות הגוף v: 8 ניוטון עד 8 מטר לשנייה, 5 ניוטון עד 16, ו-2.5 ניוטון עד 20",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "משפט העבודה והאנרגיה",
+    "החוק השני של ניוטון",
+    "כוח כפונקציה של מהירות"
+  ],
+  "summary": "כוח שקטן במדרגות ככל שהמהירות גדלה: גרף כוח-זמן, ועבודה ממשפט העבודה והאנרגיה.",
+  "position": 1,
+  "parts": [
+    {
+      "label": "א",
+      "question": "שרטט גרף שמתאר את הכוח כפונקציה של הזמן שבו פעל עליו הכוח.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שלב ראשון",
+          "why": "תאוצה $8/5$, מ-$0$ עד $8\\,\\text{m/s}$",
+          "tex": "a_1 = 1.6\\,\\text{m/s}^2,\\quad t_1 = \\frac{8}{1.6} = 5\\,\\text{s}"
+        },
+        {
+          "what": "שלב שני",
+          "why": "תאוצה $5/5$, מ-$8$ עד $16$",
+          "tex": "a_2 = 1\\,\\text{m/s}^2,\\quad t_2 = 8\\,\\text{s}"
+        },
+        {
+          "what": "שלב שלישי",
+          "why": "תאוצה $2.5/5$, מ-$16$ עד $20$",
+          "tex": "a_3 = 0.5\\,\\text{m/s}^2,\\quad t_3 = 8\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "מדרגות: $8\\,\\text{N}$ עד $5\\,\\text{s}$, $5\\,\\text{N}$ עד $13\\,\\text{s}$, $2.5\\,\\text{N}$ עד $21\\,\\text{s}$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "מהי עבודת הכוח ב-$5$ השניות הראשונות לפעולתו?",
+      "answer": {
+        "type": "number",
+        "value": 160.0,
+        "unit": "J"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "משפט העבודה והאנרגיה",
+          "why": "הכוח הוא השקול, וב-$5\\,\\text{s}$ המהירות הגיעה ל-$8\\,\\text{m/s}$",
+          "tex": "W = \\Delta E_k = \\tfrac{1}{2} \\cdot 5 \\cdot 8^2 = 160\\,\\text{J}"
+        }
+      ],
+      "finalAnswer": "$160\\,\\text{J}$",
+      "keyAnswer": "160 J"
+    },
+    {
+      "label": "ג",
+      "question": "מהי האנרגיה הקינטית של הגוף אחרי $10$ השניות הראשונות לפעולת הכוח?",
+      "answer": {
+        "type": "number",
+        "value": 422.5,
+        "unit": "J"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "המהירות ב-$10\\,\\text{s}$",
+          "why": "$5$ שניות בשלב השני",
+          "tex": "v = 8 + 1 \\cdot 5 = 13\\,\\text{m/s}"
+        },
+        {
+          "what": "אנרגיה קינטית",
+          "why": "m = 5 kg",
+          "tex": "E_k = \\tfrac{1}{2} \\cdot 5 \\cdot 13^2 = 422.5\\,\\text{J}"
+        }
+      ],
+      "finalAnswer": "$422.5\\,\\text{J}$",
+      "keyAnswer": "422.5 J"
+    },
+    {
+      "label": "ד",
+      "question": "מהי העבודה הכוללת של הכוח שפועל על הגוף, מתחילת תנועתו של הגוף עד שהגיעו למהירות של $20$ מטר לשנייה?",
+      "answer": {
+        "type": "number",
+        "value": 1000.0,
+        "unit": "J"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "משפט העבודה והאנרגיה",
+          "why": "מתחיל ממנוחה",
+          "tex": "W = \\tfrac{1}{2} \\cdot 5 \\cdot 20^2 = 1000\\,\\text{J}"
+        }
+      ],
+      "finalAnswer": "$1000\\,\\text{J}$",
+      "keyAnswer": "1000 J"
+    }
+  ]
+}
