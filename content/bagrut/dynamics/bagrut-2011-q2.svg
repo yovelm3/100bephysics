@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-label="תרשים א: קופסה M על שולחן אופקי, נמשכת בקפיץ, ולידה גלילים במסה m. תרשים ב: התארכות הקפיץ כפונקציה של מספר הגלילים בקופסה, נקודות על קו ישר מ-0.07 מטר בגליל אחד עד 0.17 בשישה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="40" y="70" width="340" height="10" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="40" y1="70" x2="380" y2="70" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="105" y="30" width="70" height="40" rx="2" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="140" y="55" text-anchor="middle" style="fill:var(--d-label)">M</text>
+<polyline points="175,50 185,50 189.6,57 194.3,43 198.9,57 203.6,43 208.2,57 212.9,43 217.5,57 222.1,43 226.8,57 231.4,43 236.1,57 240.7,43 245.4,57 250,50 260,50" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="260" y1="50" x2="320" y2="50" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="330" y="54" text-anchor="start">F</text>
+<circle cx="60" cy="62" r="6" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="74" cy="62" r="6" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="88" cy="62" r="6" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="102" cy="62" r="6" fill="none" stroke="var(--d-line)" stroke-width="2"/>
+<text class="dim" x="60" y="46" text-anchor="middle">m</text>
+<text class="heb" x="470" y="60" text-anchor="middle" direction="rtl">תרשים א</text>
+<line x1="128.6" y1="310" x2="128.6" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="177.1" y1="310" x2="177.1" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="225.7" y1="310" x2="225.7" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="274.3" y1="310" x2="274.3" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="322.9" y1="310" x2="322.9" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="371.4" y1="310" x2="371.4" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="420" y1="310" x2="420" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="291" x2="420" y2="291" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="272" x2="420" y2="272" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="253" x2="420" y2="253" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="234" x2="420" y2="234" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="215" x2="420" y2="215" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="196" x2="420" y2="196" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="177" x2="420" y2="177" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="158" x2="420" y2="158" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="139" x2="420" y2="139" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="120" x2="420" y2="120" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="310" x2="438" y2="310" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="80" y1="310" x2="80" y2="102" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="128.6" y1="306" x2="128.6" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="128.6" y="328" text-anchor="middle">1</text>
+<line x1="177.1" y1="306" x2="177.1" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="177.1" y="328" text-anchor="middle">2</text>
+<line x1="225.7" y1="306" x2="225.7" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="225.7" y="328" text-anchor="middle">3</text>
+<line x1="274.3" y1="306" x2="274.3" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="274.3" y="328" text-anchor="middle">4</text>
+<line x1="322.9" y1="306" x2="322.9" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="322.9" y="328" text-anchor="middle">5</text>
+<line x1="371.4" y1="306" x2="371.4" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="371.4" y="328" text-anchor="middle">6</text>
+<line x1="420" y1="306" x2="420" y2="314" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="420" y="328" text-anchor="middle">7</text>
+<line x1="76" y1="291" x2="84" y2="291" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="295" text-anchor="end">0.02</text>
+<line x1="76" y1="272" x2="84" y2="272" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="276" text-anchor="end">0.04</text>
+<line x1="76" y1="253" x2="84" y2="253" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="257" text-anchor="end">0.06</text>
+<line x1="76" y1="234" x2="84" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="238" text-anchor="end">0.08</text>
+<line x1="76" y1="215" x2="84" y2="215" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="219" text-anchor="end">0.1</text>
+<line x1="76" y1="196" x2="84" y2="196" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="200" text-anchor="end">0.12</text>
+<line x1="76" y1="177" x2="84" y2="177" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="181" text-anchor="end">0.14</text>
+<line x1="76" y1="158" x2="84" y2="158" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="162" text-anchor="end">0.16</text>
+<line x1="76" y1="139" x2="84" y2="139" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="143" text-anchor="end">0.18</text>
+<line x1="76" y1="120" x2="84" y2="120" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="124" text-anchor="end">0.2</text>
+<text class="label" x="436" y="300" text-anchor="end">n</text>
+<text class="label" x="90" y="114" text-anchor="start">Δℓ (m)</text>
+<circle cx="128.6" cy="243.5" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="177.1" cy="224.5" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="225.7" cy="200.8" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="274.3" cy="181.8" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="322.9" cy="167.5" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<circle cx="371.4" cy="148.5" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<polyline points="104.3,253 395.7,139" fill="none" stroke="var(--d-body)" stroke-width="1.6" stroke-linejoin="round"/>
+<text class="heb" x="470" y="220" text-anchor="middle" direction="rtl">תרשים ב</text>
+</svg>

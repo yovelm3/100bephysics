@@ -1,0 +1,164 @@
+{
+  "id": "bagrut-2012-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2012,
+    "label": "2012 שאלה 2"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-incline",
+  "group": null,
+  "difficulty": 4,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף שמסתו $m$ מחליק במהירות קבועה במורד מישור משופע שזווית נטייתו $\\theta$. בסעיפים בטא את תשובותיך באמצעות הפרמטרים $m$, $v_0$, $\\theta$, $t$, $F$ ו-$g$, בהתאם לצורך.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2012-q2.svg",
+    "alt": "גוף במסה m מחליק במהירות קבועה במורד מישור משופע שזווית נטייתו תטא",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מישור משופע",
+    "חיכוך קינטי וסטטי",
+    "מהירות קבועה",
+    "ביטוי באמצעות פרמטרים"
+  ],
+  "summary": "גוף שגולש במהירות קבועה מגלה ש-$\\mu_k = \\tan\\theta$. מזה: למה הוא נשאר במקום אחרי עצירה, כמה הוא עולה, ומה עושה כוח נוסף.",
+  "position": 32,
+  "parts": [
+    {
+      "label": "א",
+      "question": "סרטט תרשים של הכוחות שפועלים על הגוף, וציין מהו כל כוח. מהו הכוח השקול שפועל על הגוף? הסבר.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות",
+          "why": "כובד, נורמלי, וחיכוך קינטי במעלה המדרון",
+          "tex": "mg,\\ N = mg\\cos\\theta,\\ f_k"
+        },
+        {
+          "what": "הכוח השקול",
+          "why": "מהירות קבועה, ולכן אין תאוצה",
+          "tex": "\\textstyle\\sum F = 0 \\Rightarrow f_k = mg\\sin\\theta"
+        },
+        {
+          "what": "מסקנה על מקדם החיכוך",
+          "why": "מחלקים f_k = μ_k N בנורמלי",
+          "tex": "\\mu_k = \\tan\\theta"
+        }
+      ],
+      "finalAnswer": "כובד, נורמלי וחיכוך. השקול אפס, ומכאן $\\mu_k = \\tan\\theta$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "הגוף נע במעלה המישור במהירות התחלתית $v_0$ שכיוונה מקביל למישור, ובשלב מסוים הוא נעצר ונשאר במקום. הסבר מדוע הגוף אינו מחליק מטה אחרי שהוא נעצר.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "כדי להתחיל לנוע",
+          "why": "רכיב הכובד צריך לעבור את החיכוך הסטטי המקסימלי",
+          "tex": "mg\\sin\\theta > \\mu_s mg\\cos\\theta\\ ?"
+        },
+        {
+          "what": "משווים",
+          "why": "מקדם החיכוך הסטטי לפחות כמו הקינטי, $\\mu_k = \\tan\\theta$",
+          "tex": "\\mu_s \\ge \\mu_k = \\tan\\theta \\Rightarrow mg\\sin\\theta \\le \\mu_s mg\\cos\\theta"
+        }
+      ],
+      "finalAnswer": "רכיב הכובד לא עולה על החיכוך הסטטי המקסימלי, כי $\\mu_s \\ge \\mu_k = \\tan\\theta$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ג",
+      "question": "איזה מרחק לאורך המישור עבר הגוף בתנועתו במעלה המישור?",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "התאוצה בעלייה",
+          "why": "רכיב הכובד והחיכוך שניהם במורד, ושניהם $mg\\sin\\theta$",
+          "tex": "a = -(g\\sin\\theta + \\mu_k g\\cos\\theta) = -2g\\sin\\theta"
+        },
+        {
+          "what": "משוואה בלי זמן",
+          "why": "עד עצירה",
+          "tex": "\\Delta x = \\frac{v_0^2}{2 \\cdot 2g\\sin\\theta} = \\frac{v_0^2}{4g\\sin\\theta}"
+        }
+      ],
+      "finalAnswer": "$\\Delta x = \\frac{v_0^2}{4g\\sin\\theta}$",
+      "keyAnswer": "Δx = −v0²/(4g·sinθ)"
+    },
+    {
+      "label": "ד1",
+      "question": "אחרי שהגוף נעצר, מפעילים עליו במשך $t$ שניות כוח קבוע $F$ שמקביל למישור, והגוף מתחיל לנוע במורד המישור. בטא את גודל המהירות שאליה יגיע הגוף כעבור פרק הזמן $t$. הנח שהגוף לא מגיע לתחתית המישור בפרק הזמן $t$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות במורד",
+          "why": "רכיב הכובד והחיכוך הקינטי מתבטלים (סעיף א), ונשאר $F$",
+          "tex": "a = \\frac{F}{m}"
+        },
+        {
+          "what": "המהירות",
+          "why": "ממנוחה",
+          "tex": "v = \\frac{F}{m}\\,t"
+        }
+      ],
+      "finalAnswer": "$v = \\frac{F}{m}t$",
+      "keyAnswer": "v=(F/m)t"
+    },
+    {
+      "label": "ד2",
+      "question": "האם הגוף יגיע לתחתית המישור במהירות שביטאת בסעיף ד1? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "אחרי שהכוח מפסיק",
+          "why": "שוב השקול אפס, והגוף נע במהירות קבועה",
+          "tex": "\\textstyle\\sum F = 0 \\Rightarrow v = \\text{const}"
+        }
+      ],
+      "finalAnswer": "כן: אחרי שהכוח מפסיק השקול אפס, והמהירות נשארת קבועה",
+      "keyAnswer": "כן"
+    }
+  ]
+}
