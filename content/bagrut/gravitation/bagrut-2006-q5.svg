@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 230" role="img" aria-label="כדור הארץ, הירח במסלולו סביב כדור הארץ, ולוויין במסלול מעגלי סביב הירח">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<circle cx="120" cy="115" r="46" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="heb" x="120" y="121" text-anchor="middle" direction="rtl">כדור הארץ</text>
+<path d="M 383 19 A 280 280 0 0 1 383 211" fill="none" stroke="var(--d-line)" stroke-width="1.2" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<circle cx="400" cy="115" r="22" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="heb" x="400" y="120" text-anchor="middle" direction="rtl">ירח</text>
+<circle cx="400" cy="115" r="64" fill="none" stroke="var(--d-line)" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="445" cy="70" r="6" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="heb" x="486" y="59" text-anchor="middle" direction="rtl">לוויין</text>
+</svg>
