@@ -6,7 +6,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 base = os.path.join(ROOT, "content", "bagrut")
 
 def key_numbers(k):
-    k = k.replace("−", "-").replace("×", "x").replace(",", "")
+    k = k.replace("−", "-").replace("×", "x").replace("·10", "x10").replace(",", "")
     out = []
     for m in re.finditer(r"(\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)", k):
         out.append(float(m.group(1)) / float(m.group(2)))
