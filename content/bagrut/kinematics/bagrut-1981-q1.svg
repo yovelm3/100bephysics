@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-label="גרף מהירות-זמן של טיל: עלייה קווית ל-180 מטר לשנייה ב-10 שניות, ואחר כך ירידה קווית שחוצה את האפס ב-100 שניות וממשיכה לערכים שליליים">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="70" y1="165" x2="508" y2="165" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="70" y1="296" x2="70" y2="22" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="91" y1="161" x2="91" y2="169" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="91" y="183" text-anchor="middle">10</text>
+<line x1="280" y1="161" x2="280" y2="169" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="280" y="183" text-anchor="middle">100</text>
+<line x1="66" y1="40" x2="74" y2="40" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="62" y="44" text-anchor="end">180</text>
+<text class="label" x="512" y="169" text-anchor="start">t (s)</text>
+<text class="label" x="70" y="16" text-anchor="middle">v (m/s)</text>
+<polyline points="70,165 91,40 469,290" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<line x1="91" y1="40" x2="91" y2="165" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<line x1="91" y1="40" x2="70" y2="40" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+</svg>

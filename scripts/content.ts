@@ -27,7 +27,7 @@ if (cmd === "check") {
   console.log(`✓ ${exercises.length} exercise file(s) valid · ${byStatus.published} published · ${byStatus.draft} draft · ${review.length} marked for review`);
   for (const r of review) console.log(`  ⚑ ${r.file}: ${r.exercise.reviewNotes}`);
 } else if (cmd === "sql") {
-  const sql = ["begin;", topicsSql(topics), ...exercises.map((x) => exerciseSql(x.exercise)), "commit;"].join("\n\n") + "\n";
+  const sql = ["begin;", topicsSql(topics), ...exercises.map((x) => exerciseSql(x.exercise, x.svg)), "commit;"].join("\n\n") + "\n";
   if (out) {
     writeFileSync(out, sql);
     console.error(`wrote ${out} (${exercises.length} exercises)`);

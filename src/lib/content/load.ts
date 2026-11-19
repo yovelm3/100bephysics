@@ -2,7 +2,15 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { ExerciseSchema, TopicsSchema, type Exercise, type Topics } from "./schema";
 
-export type LoadResult = { topics: Topics; exercises: { file: string; exercise: Exercise }[]; errors: string[] };
+export type LoadResult = { topics: Topics; exercises: { file: string; exercise: Exercise; svg: string | null }[]; errors: string[] };
+
+/** Our own SVG drawings only: no scripts, event handlers, external references or foreign objects. */
+export function checkSvg(svg: string): string | null {
+  if (!/^\s*<svg[\s>]/.test(svg)) return "must start with <svg";
+  if (/<script|<foreignObject|\son[a-z]+\s*=|javascript:|xlink:href\s*=\s*["']https?:|href\s*=\s*["']https?:/i.test(svg)) return "contains scripts, handlers or external links";
+  if (!/viewBox=/.test(svg)) return "needs a viewBox";
+  return null;
+}
 
 function walk(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -43,8 +51,17 @@ export function loadContent(root: string): LoadResult {
       if (subtopicTopic.get(e.subtopic) !== e.topic) errors.push(`${rel}: subtopic "${e.subtopic}" is not part of topic "${e.topic}"`);
       if (seen.has(e.id)) errors.push(`${rel}: id "${e.id}" already used in ${seen.get(e.id)}`);
       seen.set(e.id, rel);
-      if (e.figure && !existsSync(path.join(path.dirname(file), e.figure.file))) errors.push(`${rel}: figure file "${e.figure.file}" not found`);
-      exercises.push({ file: rel, exercise: e });
+      let svg: string | null = null;
+      if (e.figure) {
+        const fp = path.join(path.dirname(file), e.figure.file);
+        if (!existsSync(fp)) errors.push(`${rel}: figure file "${e.figure.file}" not found`);
+        else if (e.figure.type === "svg") {
+          svg = readFileSync(fp, "utf8");
+          const bad = checkSvg(svg);
+          if (bad) errors.push(`${rel}: figure ${e.figure.file}: ${bad}`);
+        }
+      }
+      exercises.push({ file: rel, exercise: e, svg });
     }
   }
   return { topics, exercises, errors };

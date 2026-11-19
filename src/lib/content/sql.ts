@@ -32,13 +32,14 @@ export function topicsSql(t: Topics): string {
 export const partId = (exerciseId: string, index: number) => `${exerciseId}-${index + 1}`;
 
 /** Upserts one exercise with its parts and answers. Parts keep stable ids, so attempts stay linked. */
-export function exerciseSql(e: Exercise): string {
+export function exerciseSql(e: Exercise, svg: string | null = null): string {
+  const figure = e.figure ? { type: e.figure.type, alt: e.figure.alt, provisional: e.figure.provisional, svg } : null;
   const out: string[] = [];
   out.push(
     `insert into public.exercises (id, pool, open_to_highschool, source_year, source_label, subtopic_id, group_id, difficulty, status, needs_review, review_notes, stem, figure, author_note, concepts, summary, position, updated_at)
 values (${[
       lit(e.id), lit(e.pool), lit(e.openToHighschool), lit(e.source.year), lit(e.source.label), lit(e.subtopic), lit(e.group), lit(e.difficulty),
-      lit(e.status), lit(e.needsReview), lit(e.reviewNotes || null), lit(e.stem), e.figure ? json(e.figure) : "null", lit(e.authorNote),
+      lit(e.status), lit(e.needsReview), lit(e.reviewNotes || null), lit(e.stem), figure ? json(figure) : "null", lit(e.authorNote),
       textArray(e.concepts), lit(e.summary || null), lit(e.position), "now()",
     ].join(", ")})
 on conflict (id) do update set pool = excluded.pool, open_to_highschool = excluded.open_to_highschool, source_year = excluded.source_year,

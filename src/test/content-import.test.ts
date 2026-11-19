@@ -36,9 +36,9 @@ describe("import into the database", () => {
     const db = await createTestDb();
     const { topics, exercises } = loadContent(root);
     await db.exec(topicsSql(topics));
-    for (const { exercise } of exercises) await db.exec(exerciseSql({ ...exercise, status: "published", needsReview: false }));
+    for (const { exercise, svg } of exercises) await db.exec(exerciseSql({ ...exercise, status: "published", needsReview: false }, svg));
     // importing twice must not duplicate anything
-    for (const { exercise } of exercises) await db.exec(exerciseSql({ ...exercise, status: "published", needsReview: false }));
+    for (const { exercise, svg } of exercises) await db.exec(exerciseSql({ ...exercise, status: "published", needsReview: false }, svg));
 
     const t = await db.query<{ n: number }>(`select count(*)::int as n from public.subtopics`);
     expect(t.rows[0].n).toBe(26);
@@ -56,5 +56,16 @@ describe("import into the database", () => {
       const sol = await db.query<{ s: { final_answer: string } }>(`select public.get_solution('bagrut-1987-q1-2') as s`);
       expect(sol.rows[0].s.final_answer).toBe(ex.parts[1].finalAnswer);
     });
+  });
+});
+
+describe("figure safety check", () => {
+  it("accepts a plain drawing and rejects scripts, handlers and external links", async () => {
+    const { checkSvg } = await import("@/lib/content/load");
+    expect(checkSvg('<svg viewBox="0 0 10 10"><circle r="2"/></svg>')).toBeNull();
+    expect(checkSvg('<svg viewBox="0 0 10 10"><script>alert(1)</script></svg>')).not.toBeNull();
+    expect(checkSvg('<svg viewBox="0 0 10 10" onload="x()"></svg>')).not.toBeNull();
+    expect(checkSvg('<svg viewBox="0 0 1 1"><image href="https://x/y.png"/></svg>')).not.toBeNull();
+    expect(checkSvg("<div>no</div>")).not.toBeNull();
   });
 });

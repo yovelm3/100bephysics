@@ -53,6 +53,8 @@ export const PartSchema = z
     skills: z.array(z.enum(SKILLS)).min(1),
     solution: z.array(SolutionStepSchema).min(1),
     finalAnswer: text,
+    /** The final answer as printed in the source answer key (for comparison), or null if the key has none. */
+    keyAnswer: z.string().trim().nullable().default(null),
     animation: z.record(z.string(), z.unknown()).nullable().optional(),
   })
   .strict();

@@ -44,6 +44,9 @@ export default async function ExercisePage({ params }: PageProps<"/exercise/[id]
     sourceLabel: ex.pool === "bagrut" ? ex.source_label : null,
     difficulty,
     stem: ex.stem,
+    figure: (ex.figure as { svg?: string | null; alt?: string; provisional?: boolean } | null)?.svg
+      ? { svg: (ex.figure as { svg: string }).svg, alt: (ex.figure as { alt?: string }).alt ?? "", provisional: !!(ex.figure as { provisional?: boolean }).provisional }
+      : null,
     authorNote: ex.author_note,
     isDraft: ex.status === "draft",
     topicName: (sub?.topics as unknown as { name: string } | null)?.name ?? "",

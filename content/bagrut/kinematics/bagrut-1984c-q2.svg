@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 270" role="img" aria-label="למעלה: גרף תאוצה-זמן עם תאוצה חיובית קבועה, אחר כך אפס, ואחר כך תאוצה שלילית קבועה. למטה: ארבעה גרפים של מקום-זמן, א עד ד">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="150" y1="65" x2="448" y2="65" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="150" y1="106" x2="150" y2="12" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<text class="label" x="452" y="69" text-anchor="start">t</text>
+<text class="label" x="150" y="6" text-anchor="middle">a</text>
+<polyline points="150,44 243.3,44" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<polyline points="243.3,65 336.7,65" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<polyline points="336.7,86 430,86" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<line x1="243.3" y1="44" x2="243.3" y2="65" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<line x1="336.7" y1="65" x2="336.7" y2="86" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<line x1="430" y1="65" x2="430" y2="86" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round"/>
+<line x1="30" y1="230" x2="138" y2="230" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="30" y1="230" x2="30" y2="152" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="144" y="234" text-anchor="start">t</text>
+<text class="dim" x="30" y="148" text-anchor="middle">x</text>
+<polyline points="30,230 60,188 100,188 130,230" fill="none" stroke="var(--d-body)" stroke-width="2.4" stroke-linejoin="round"/>
+<text class="heb" x="80" y="252" text-anchor="middle" direction="rtl">ד</text>
+<line x1="165" y1="230" x2="273" y2="230" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="165" y1="230" x2="165" y2="152" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="279" y="234" text-anchor="start">t</text>
+<text class="dim" x="165" y="148" text-anchor="middle">x</text>
+<path d="M 165,230 Q 190.0,230 198.0,188.0 L 232.0,188.0 Q 240.0,230 265,230" fill="none" stroke="var(--d-body)" stroke-width="2.4" stroke-linejoin="round"/>
+<text class="heb" x="215" y="252" text-anchor="middle" direction="rtl">ג</text>
+<line x1="300" y1="230" x2="408" y2="230" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="300" y1="230" x2="300" y2="152" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="414" y="234" text-anchor="start">t</text>
+<text class="dim" x="300" y="148" text-anchor="middle">x</text>
+<path d="M 300,230 Q 325.0,230 333.0,191.5" fill="none" stroke="var(--d-body)" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="333" y1="191.5" x2="333" y2="230" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<line x1="333" y1="230" x2="367" y2="230" stroke="var(--d-body)" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="367" y1="191.5" x2="367" y2="230" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<path d="M 367.0,191.5 Q 375.0,230 400,230" fill="none" stroke="var(--d-body)" stroke-width="2.4" stroke-linejoin="round"/>
+<text class="heb" x="350" y="252" text-anchor="middle" direction="rtl">ב</text>
+<line x1="435" y1="230" x2="543" y2="230" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="435" y1="230" x2="435" y2="152" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="549" y="234" text-anchor="start">t</text>
+<text class="dim" x="435" y="148" text-anchor="middle">x</text>
+<path d="M 435,230 Q 460.0,230 470.0,217.4 L 500.0,183.8 Q 515.0,167.0 535,165.6" fill="none" stroke="var(--d-body)" stroke-width="2.4" stroke-linejoin="round"/>
+<line x1="470" y1="217.4" x2="470" y2="230" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<line x1="500" y1="183.8" x2="500" y2="230" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<text class="heb" x="485" y="252" text-anchor="middle" direction="rtl">א</text>
+</svg>

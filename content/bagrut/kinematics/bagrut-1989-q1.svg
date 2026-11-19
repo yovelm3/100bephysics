@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="לוח משופע ABCD בזווית 30 מעלות לאופק. נקודה E נמצאת 2.5 מטר מעל הצלע DA ו-1.5 מטר מהצלע CD. הכדור נזרק מ-E במקביל ל-BC, לכיוון הצלע CD">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<polygon points="70,270 364,270 522.4,75.6 228.4,75.6" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="364,270 522.4,270 522.4,75.6" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<path d="M 404,270 A 40 40 0 0 0 389.3,239" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="414.6" y="251" text-anchor="middle">30°</text>
+<text class="label" x="58" y="286" text-anchor="middle">D</text>
+<text class="label" x="364" y="290" text-anchor="middle">A</text>
+<text class="label" x="532.4" y="69.6" text-anchor="middle">B</text>
+<text class="label" x="216.4" y="69.6" text-anchor="middle">C</text>
+<line x1="285" y1="135" x2="175" y2="270" stroke="var(--d-dim)" stroke-width="1.2" stroke-dasharray="4 3" stroke-linecap="round"/>
+<text class="dim" x="260" y="210.5" text-anchor="middle">2.5 m</text>
+<line x1="180" y1="135" x2="285" y2="135" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="232.5" y="125" text-anchor="middle">1.5 m</text>
+<circle cx="285" cy="135" r="7" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="label" x="295" y="153" text-anchor="start">E</text>
+<line x1="275" y1="125" x2="223" y2="125" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="211" y="129" text-anchor="end">v₀</text>
+<text class="heb" x="330" y="308" text-anchor="middle" direction="rtl">הכדור נזרק במקביל לצלע BC</text>
+</svg>
