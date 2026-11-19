@@ -1,0 +1,170 @@
+{
+  "id": "bagrut-1989-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1989,
+    "label": "1989 שאלה 4"
+  },
+  "topic": "harmonic",
+  "subtopic": "harm-spring",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף שמסתו $m = 0.4\\,\\text{kg}$ מונח על מסילה ישרה. הגרף שבתרשים מתאר את הכוח השקול הפועל על הגוף כפונקציה של ההעתק $x$ ממרכז המסילה. כיוון הכוח הוא לאורך המסילה. ברגע $t = 0$ נמצא הגוף במנוחה בנקודה $x = 0.2\\,\\text{m}$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1989-q4.svg",
+    "alt": "גרף הכוח F בניוטון כפונקציה של ההעתק x במטרים: קו ישר יורד מ-8 ניוטון ב-x של מינוס 0.2 מטר, דרך הראשית, עד מינוס 8 ניוטון ב-x של 0.2 מטר",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "תנועה הרמונית מגרף כוח",
+    "רבע מחזור",
+    "שטח מתחת לגרף כוח-מקום"
+  ],
+  "summary": "מגרף $F(x)$ ישר: זיהוי תנועה הרמונית, קבוע, זמן, מהירות ותאוצה, והשטח כעבודה.",
+  "position": 8,
+  "parts": [
+    {
+      "label": "א",
+      "question": "באיזו תנועה נע הגוף (קצובה, שוות תאוצה, הרמונית פשוטה או אחרת)? נמק.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "קצובה",
+          "שוות תאוצה",
+          "הרמונית פשוטה",
+          "אחרת"
+        ],
+        "correct": 2
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "צורת הגרף",
+          "why": "קו ישר דרך הראשית בשיפוע שלילי: הכוח פרופורציוני להעתק ובכיוון הפוך",
+          "tex": "F = -kx,\\quad k = \\frac{8}{0.2} = 40\\,\\text{N/m}"
+        }
+      ],
+      "finalAnswer": "הרמונית פשוטה",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "כמה זמן חולף מתחילת התנועה ועד לרגע שבו מגיע הגוף לראשונה לנקודה $x = 0$?",
+      "answer": {
+        "type": "number",
+        "value": 0.15707963267948966,
+        "unit": "s",
+        "tolerancePct": 1
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תדירות זוויתית",
+          "why": "$k = 40\\,\\text{N/m}$",
+          "tex": "\\omega = \\sqrt{\\frac{40}{0.4}} = 10\\,\\text{rad/s}"
+        },
+        {
+          "what": "רבע מחזור",
+          "why": "מהקצה לשיווי המשקל",
+          "tex": "t = \\frac{T}{4} = \\frac{\\pi}{2 \\cdot 10} \\approx 0.157\\,\\text{s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 0.157\\,\\text{s}$",
+      "keyAnswer": "0.157 s"
+    },
+    {
+      "label": "ג",
+      "question": "מהי מהירות הגוף (גודל בלבד) בנקודה $x = 0$?",
+      "answer": {
+        "type": "number",
+        "value": 2.0,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מהירות מרבית",
+          "why": "משרעת $0.2\\,\\text{m}$",
+          "tex": "v = A\\omega = 0.2 \\cdot 10 = 2\\,\\text{m/s}"
+        },
+        {
+          "what": "בדיקה בשטח מתחת לגרף",
+          "why": "עבודת הכוח מ-0.2 עד 0 שווה לשינוי באנרגיה הקינטית",
+          "tex": "\\frac{1}{2} \\cdot 0.2 \\cdot 8 = 0.8 = \\frac{1}{2} \\cdot 0.4 v^2 \\Rightarrow v = 2\\,\\text{m/s}",
+          "check": true
+        }
+      ],
+      "finalAnswer": "$2\\,\\text{m/s}$",
+      "keyAnswer": "2 m/s"
+    },
+    {
+      "label": "ד",
+      "question": "מהי תאוצת הגוף בנקודה $x = -0.2\\,\\text{m}$?",
+      "answer": {
+        "type": "number",
+        "value": 20.0,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "graph",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "הכוח מהגרף",
+          "why": "ב-$x = -0.2$",
+          "tex": "F = 8\\,\\text{N}"
+        },
+        {
+          "what": "החוק השני",
+          "why": "$a = F/m$",
+          "tex": "a = \\frac{8}{0.4} = 20\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$20\\,\\text{m/s}^2$, בכיוון החיובי",
+      "keyAnswer": "20 m/s²"
+    },
+    {
+      "label": "ה",
+      "question": "מהו הגודל הפיזיקלי שמבטא השטח הכלוא בין הגרף לבין ציר ה-$x$ בקטע שבין $x = 0.2\\,\\text{m}$ ל-$x = 0$? מה ערכו?",
+      "answer": {
+        "type": "number",
+        "value": 0.8,
+        "unit": "J"
+      },
+      "skills": [
+        "graph",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שטח מתחת לגרף כוח-מקום",
+          "why": "זו עבודת הכוח השקול",
+          "tex": "W = \\frac{1}{2} \\cdot 0.2 \\cdot 8 = 0.8\\,\\text{J}"
+        },
+        {
+          "what": "משפט עבודה-אנרגיה",
+          "why": "הכוח היחיד בכיוון התנועה",
+          "tex": "W = \\Delta E_k"
+        }
+      ],
+      "finalAnswer": "עבודת הכוח השקול, שווה לשינוי באנרגיה הקינטית: $0.8\\,\\text{J}$",
+      "keyAnswer": null
+    }
+  ]
+}

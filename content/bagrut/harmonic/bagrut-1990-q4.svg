@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 250" role="img" aria-label="קפיץ תלוי מהתקרה ובקצהו משקולת. נקודת שיווי המשקל O בגובה 2 מטר מעל הרצפה, והנקודה A מעליה ב-0.08 מטר">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="80" y="13" width="140" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="80" y1="25" x2="220" y2="25" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<rect x="60" y="225" width="200" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="60" y1="225" x2="260" y2="225" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="140,25 140,35 133,37.9 147,40.9 133,43.8 147,46.8 133,49.7 147,52.6 133,55.6 147,58.5 133,61.4 147,64.4 133,67.3 147,70.2 133,73.2 147,76.1 133,79.1 140,82 140,92" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="125" y="92" width="30" height="24" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<line x1="70" y1="92" x2="230" y2="92" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+<text class="label" x="64" y="96" text-anchor="end">A</text>
+<line x1="70" y1="116" x2="230" y2="116" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+<text class="label" x="64" y="120" text-anchor="end">O</text>
+<line x1="205" y1="92" x2="205" y2="116" stroke="var(--d-line)" stroke-width="1.2" stroke-linecap="round"/>
+<text class="dim" x="214" y="108" text-anchor="start">0.08 m</text>
+<line x1="205" y1="116" x2="205" y2="225" stroke="var(--d-line)" stroke-width="1.2" marker-end="url(#f-arr)" marker-start="url(#f-arr)" stroke-linecap="round"/>
+<text class="dim" x="214" y="175" text-anchor="start">2 m</text>
+</svg>
