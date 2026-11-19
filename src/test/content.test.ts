@@ -235,3 +235,44 @@ describe("content rules in the database", () => {
     await expect(asUser(db, s, () => db.query(`delete from public.exercise_parts`))).rejects.toThrow();
   });
 });
+
+describe("attempts", () => {
+  it("students read only their own attempts and cannot write any", async () => {
+    const a = await createUser(db, "a@x.com");
+    const b = await createUser(db, "b@x.com");
+    await db.query(`insert into public.attempts (user_id, exercise_id, part_id, kind, input, result) values ($1, 'b1', 'b1-1', 'answer', '25', 'correct'), ($2, 'b1', 'b1-1', 'solution', null, null)`, [a, b]);
+    expect(await visibleRows(db, `select 1`)).toBe(1);
+    await asUser(db, a, async () => {
+      expect((await db.query(`select * from public.attempts`)).rows.length).toBe(1);
+      await expect(db.query(`insert into public.attempts (user_id, exercise_id, part_id, kind, input, result) values ($1, 'b1', 'b1-1', 'answer', '1', 'correct')`, [a])).rejects.toThrow();
+    });
+    await asUser(db, null, async () => {
+      expect(await visibleRows(db, `select * from public.attempts`)).toBe(0);
+    });
+  });
+
+  it("an answer row needs a result, a solution row must not have one", async () => {
+    const a = await createUser(db, "a@x.com");
+    await expect(db.query(`insert into public.attempts (user_id, exercise_id, part_id, kind) values ($1, 'b1', 'b1-1', 'answer')`, [a])).rejects.toThrow();
+    await expect(db.query(`insert into public.attempts (user_id, exercise_id, part_id, kind, result) values ($1, 'b1', 'b1-1', 'solution', 'correct')`, [a])).rejects.toThrow();
+  });
+});
+
+describe("exercise_access", () => {
+  async function access(u: string, id: string) {
+    return asUser(db, u, async () => (await db.query<{ r: string }>(`select public.exercise_access($1) as r`, [id])).rows[0].r);
+  }
+  it("tells the page what to show", async () => {
+    const admin = await createUser(db, "a@x.com", { admin: true });
+    const s = await createUser(db, "s@x.com", { track: "highschool" });
+    expect(await access(s, "b1")).toBe("trial_available");
+    expect(await access(s, "m-closed")).toBe("not_found");
+    expect(await access(s, "draft1")).toBe("not_found");
+    await asUser(db, s, () => db.query(`select public.unlock_trial('b1'), public.unlock_trial('b2')`));
+    expect(await access(s, "b1")).toBe("view");
+    expect(await access(s, "b3")).toBe("trial_used_up");
+    await grantSub(admin, s);
+    expect(await access(s, "b3")).toBe("view");
+    expect(await access(admin, "draft1")).toBe("view");
+  });
+});

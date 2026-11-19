@@ -23,7 +23,10 @@ export async function SiteHeader() {
         <nav className="flex items-center gap-4 text-sm font-semibold">
           {isAdmin && <Link href="/admin" className="text-on-accent hover:underline">ניהול</Link>}
           {loggedIn ? (
-            <Link href="/account" className="text-on-accent hover:underline">החשבון שלי</Link>
+            <>
+              <Link href="/practice" className="text-on-accent hover:underline">תרגול</Link>
+              <Link href="/account" className="text-on-accent hover:underline">החשבון שלי</Link>
+            </>
           ) : (
             <>
               <Link href="/login" className="text-on-accent hover:underline">התחברות</Link>
