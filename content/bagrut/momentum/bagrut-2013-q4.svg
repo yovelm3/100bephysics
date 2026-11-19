@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="גרף הכוח שהמחבט מפעיל על כדור טניס כפונקציה של הזמן: עולה מאפס אחרי כ-1 אלפית שנייה לשיא של כ-1000 ניוטון ב-2.7 אלפיות שנייה, וחוזר לאפס בכ-4.6">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="152.7" y1="230" x2="152.7" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="225.5" y1="230" x2="225.5" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="298.2" y1="230" x2="298.2" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="370.9" y1="230" x2="370.9" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="443.6" y1="230" x2="443.6" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="199.6" x2="480" y2="199.6" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="169.2" x2="480" y2="169.2" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="138.8" x2="480" y2="138.8" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="108.4" x2="480" y2="108.4" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="78" x2="480" y2="78" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="47.6" x2="480" y2="47.6" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="80" y1="230" x2="498" y2="230" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="80" y1="230" x2="80" y2="22" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="152.7" y1="226" x2="152.7" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="152.7" y="248" text-anchor="middle">1</text>
+<line x1="225.5" y1="226" x2="225.5" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="225.5" y="248" text-anchor="middle">2</text>
+<line x1="298.2" y1="226" x2="298.2" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="298.2" y="248" text-anchor="middle">3</text>
+<line x1="370.9" y1="226" x2="370.9" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="370.9" y="248" text-anchor="middle">4</text>
+<line x1="443.6" y1="226" x2="443.6" y2="234" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="443.6" y="248" text-anchor="middle">5</text>
+<line x1="76" y1="199.6" x2="84" y2="199.6" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="203.6" text-anchor="end">200</text>
+<line x1="76" y1="169.2" x2="84" y2="169.2" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="173.2" text-anchor="end">400</text>
+<line x1="76" y1="138.8" x2="84" y2="138.8" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="142.8" text-anchor="end">600</text>
+<line x1="76" y1="108.4" x2="84" y2="108.4" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="112.4" text-anchor="end">800</text>
+<line x1="76" y1="78" x2="84" y2="78" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="82" text-anchor="end">1000</text>
+<line x1="76" y1="47.6" x2="84" y2="47.6" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="72" y="51.6" text-anchor="end">1200</text>
+<text class="label" x="496" y="220" text-anchor="end">t (ms)</text>
+<text class="label" x="90" y="34" text-anchor="start">F (N)</text>
+<line x1="116.4" y1="230" x2="116.4" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="152.7" y1="230" x2="152.7" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="189.1" y1="230" x2="189.1" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="225.5" y1="230" x2="225.5" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="261.8" y1="230" x2="261.8" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="298.2" y1="230" x2="298.2" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="334.5" y1="230" x2="334.5" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="370.9" y1="230" x2="370.9" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="407.3" y1="230" x2="407.3" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<line x1="443.6" y1="230" x2="443.6" y2="47.6" stroke="var(--d-hatch)" stroke-width="0.6" stroke-linecap="round"/>
+<polyline points="80,230 83.3,230 86.7,230 90,230 93.3,230 96.7,230 100,230 103.3,230 106.7,230 110,230 113.3,230 116.7,230 120,230 123.3,230 126.7,230 130,230 133.3,230 136.7,230 140,229.7 143.3,228.4 146.7,226.4 150,223.9 153.3,221 156.7,217.6 160,213.9 163.3,209.9 166.7,205.7 170,201.2 173.3,196.4 176.7,191.5 180,186.5 183.3,181.3 186.7,176 190,170.6 193.3,165.2 196.7,159.8 200,154.4 203.3,149 206.7,143.7 210,138.4 213.3,133.2 216.7,128.2 220,123.3 223.3,118.5 226.7,114 230,109.6 233.3,105.5 236.7,101.6 240,98 243.3,94.6 246.7,91.5 250,88.7 253.3,86.2 256.7,84 260,82.2 263.3,80.7 266.7,79.5 270,78.6 273.3,78.1 276.7,78 280,78.2 283.3,78.8 286.7,79.7 290,80.9 293.3,82.5 296.7,84.4 300,86.6 303.3,89.2 306.7,92 310,95.2 313.3,98.6 316.7,102.3 320,106.2 323.3,110.4 326.7,114.8 330,119.4 333.3,124.2 336.7,129.1 340,134.2 343.3,139.3 346.7,144.6 350,150 353.3,155.4 356.7,160.8 360,166.2 363.3,171.6 366.7,177 370,182.2 373.3,187.4 376.7,192.4 380,197.3 383.3,202 386.7,206.5 390,210.7 393.3,214.6 396.7,218.3 400,221.5 403.3,224.4 406.7,226.8 410,228.7 413.3,229.8 416.7,230 420,230 423.3,230 426.7,230 430,230 433.3,230 436.7,230 440,230 443.3,230 446.7,230 450,230 453.3,230 456.7,230 460,230 463.3,230 466.7,230 470,230 473.3,230 476.7,230 480,230" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+</svg>

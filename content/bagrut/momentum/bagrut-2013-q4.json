@@ -1,0 +1,166 @@
+{
+  "id": "bagrut-2013-q4",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2013,
+    "label": "2013 שאלה 4"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-impulse",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה במפתח: בסעיף ב במפתח רשום 0.2 kg·m/s, אבל התשובה לסעיף ג במפתח (33.71 m/s) מתאימה ל-2 kg·m/s, וגם השטח מתחת לגרף הוא כ-2 N·s. כתבתי 2. הצורה המדויקת של העקומה שורטטה בקירוב.",
+  "stem": "במשחק טניס מהירותו של הכדור משתנה בהשפעת הכוח שהמחבט מפעיל עליו. הגרף מתאר את גודל הכוח שהמחבט מפעיל על הכדור, כפונקציה של הזמן, במהלך חבטה אחת של שחקן טניס. מסת הכדור $m = 0.06\\,\\text{kg}$.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2013-q4.svg",
+    "alt": "גרף הכוח שהמחבט מפעיל על כדור טניס כפונקציה של הזמן: עולה מאפס אחרי כ-1 אלפית שנייה לשיא של כ-1000 ניוטון ב-2.7 אלפיות שנייה, וחוזר לאפס בכ-4.6",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "תנע",
+    "מתקף מגרף כוח-זמן",
+    "החוק השני בצורת תנע",
+    "שימור תנע עם כדור הארץ"
+  ],
+  "summary": "חבטת טניס: מתקף מהשטח מתחת לגרף, מהירות אחרי החבטה, ולמה גם התנע של כדור הארץ משתנה.",
+  "position": 25,
+  "parts": [
+    {
+      "label": "א",
+      "question": "ניוטון כתב את החוק השני באמצעות הגודל \"כמות התנועה\", $\\vec p = m\\vec v$. הראה שכאשר מסת הגוף קבועה, $\\frac{\\Delta\\vec p}{\\Delta t} = m\\vec a$.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "שינוי התנע",
+          "why": "המסה קבועה",
+          "tex": "\\Delta\\vec p = m\\Delta\\vec v"
+        },
+        {
+          "what": "מחלקים ב-$\\Delta t$",
+          "why": "הגדרת התאוצה",
+          "tex": "\\frac{\\Delta\\vec p}{\\Delta t} = m\\frac{\\Delta\\vec v}{\\Delta t} = m\\vec a"
+        }
+      ],
+      "finalAnswer": "$\\frac{\\Delta\\vec p}{\\Delta t} = m\\frac{\\Delta\\vec v}{\\Delta t} = m\\vec a$",
+      "keyAnswer": null
+    },
+    {
+      "label": "ב",
+      "question": "חשב בקירוב את גודל השינוי שחל בתנע של הכדור בעקבות חבטת המחבט.",
+      "answer": {
+        "type": "number",
+        "value": 2.0,
+        "unit": "kg·m/s",
+        "tolerancePct": 10
+      },
+      "skills": [
+        "graph",
+        "units"
+      ],
+      "solution": [
+        {
+          "what": "השטח מתחת לגרף",
+          "why": "משבצת אחת: $200\\,\\text{N}$ על $0.5\\,\\text{ms}$, כלומר $0.1\\,\\text{N}\\cdot\\text{s}$. סופרים כ-$20$ משבצות",
+          "tex": "\\Delta p \\approx 20 \\cdot 0.1 = 2\\,\\text{kg}\\cdot\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 2\\,\\text{kg}\\cdot\\text{m/s}$",
+      "keyAnswer": "Δp=0.2 kg·m/s"
+    },
+    {
+      "label": "ג1",
+      "question": "השחקן חובט אופקית בכדור שנע כלפי מעלה במהירות של $v = 5\\,\\text{m/s}$. חשב את גודל המהירות של הכדור מיד אחרי החבטה.",
+      "answer": {
+        "type": "number",
+        "value": 33.706247360261145,
+        "unit": "m/s",
+        "tolerancePct": 5
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "רכיב אופקי",
+          "why": "המתקף אופקי",
+          "tex": "v_x = \\frac{2}{0.06} \\approx 33.3\\,\\text{m/s}"
+        },
+        {
+          "what": "רכיב אנכי",
+          "why": "לא משתנה",
+          "tex": "v_y = 5\\,\\text{m/s}"
+        },
+        {
+          "what": "גודל",
+          "why": "פיתגורס",
+          "tex": "v = \\sqrt{33.3^2 + 5^2} \\approx 33.7\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 33.7\\,\\text{m/s}$",
+      "keyAnswer": "33.71 m/s"
+    },
+    {
+      "label": "ג2",
+      "question": "מה הזווית בין כיוון המהירות לבין האופק?",
+      "answer": {
+        "type": "number",
+        "value": 8.530849663258453,
+        "unit": "°",
+        "tolerancePct": 5
+      },
+      "skills": [
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "טנגנס",
+          "why": "אנכי חלקי אופקי",
+          "tex": "\\tan\\theta = \\frac{5}{33.3} \\Rightarrow \\theta \\approx 8.5^\\circ"
+        }
+      ],
+      "finalAnswer": "$\\approx 8.5^\\circ$ מעל האופק",
+      "keyAnswer": "8.54°"
+    },
+    {
+      "label": "ד",
+      "question": "כדור טניס מגיע לרצפה במהירות אנכית $v_1 = 12\\,\\text{m/s}$, וחוזר כלפי מעלה במהירות אנכית $v_2 = 12\\,\\text{m/s}$. איזה מההיגדים נכון? (1) התנע של הכדור והתנע של כדור הארץ השתנו. (2) התנע של הכדור השתנה, ואילו בתנע של כדור הארץ לא חל שום שינוי. (3) התנע והאנרגיה הקינטית של הכדור השתנו.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "(1)",
+          "(2)",
+          "(3)"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע",
+          "why": "התנע של הכדור התהפך, ולכן כדור הארץ קיבל שינוי תנע הפוך (קטן מאוד במהירות, אבל לא אפס)",
+          "tex": "\\Delta p_E = -\\Delta p_b \\ne 0"
+        },
+        {
+          "what": "האנרגיה הקינטית",
+          "why": "גודל המהירות לא השתנה",
+          "tex": "\\Delta E_k = 0"
+        }
+      ],
+      "finalAnswer": "(1) נכון. (2) ו-(3) לא נכונים",
+      "keyAnswer": "(1) נכון (2) לא נכון (3) לא נכון"
+    }
+  ]
+}
