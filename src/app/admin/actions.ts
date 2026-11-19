@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/access";
 
 function uuid(v: FormDataEntryValue | null) {
@@ -40,4 +41,16 @@ export async function setTrack(form: FormData) {
   const { error } = await supabase.rpc("admin_set_track", { p_user: uuid(form.get("user")), p_track: track });
   if (error) throw new Error(error.message);
   revalidatePath("/admin");
+}
+
+/** Imports every exercise file in the repository (content/) into the database. New and changed exercises stay drafts until published. */
+export async function importContentAction() {
+  await requireAdmin("/admin");
+  const { createAdminClient } = await import("@/lib/supabase/admin");
+  const { importContent } = await import("@/lib/content/import");
+  const admin = createAdminClient();
+  if (!admin) redirect("/admin?import=" + encodeURIComponent("חסר מפתח השרת של Supabase"));
+  const r = await importContent(admin);
+  revalidatePath("/admin");
+  redirect("/admin?import=" + encodeURIComponent(r.ok ? `ok:${r.exercises}:${r.parts}` : r.errors.slice(0, 5).join(" | ")));
 }

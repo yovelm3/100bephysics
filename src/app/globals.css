@@ -85,7 +85,7 @@ header :focus-visible {
   outline-color: var(--on-accent);
 }
 
-/* Exercise drawings (content/**/*.svg): one shared style, same colours as the approved sample drawings. */
+/* Exercise drawings (SVG files under content/): one shared style, same colours as the approved sample drawings. */
 .fig {
   --d-line: #48665a;
   --d-body: #0f766e;

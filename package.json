@@ -10,7 +10,7 @@
     "test": "vitest run --passWithNoTests",
     "content:check": "tsx scripts/content.ts check",
     "content:sql": "tsx scripts/content.ts sql",
-    "prebuild": "vitest run src/lib/animations src/lib/answer-check.test.ts src/components"
+    "prebuild": "tsx scripts/content.ts check && vitest run src/lib/animations src/lib/answer-check.test.ts src/components"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

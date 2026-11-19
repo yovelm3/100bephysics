@@ -4,7 +4,7 @@ export const instant = false;
 import type { Metadata } from "next";
 import { Button, Card, Page, formatDate, formatDateTime } from "@/components/ui";
 import { requireAdmin } from "@/lib/access";
-import { grantSubscription, removeDevice, setTrack, unlockUser } from "./actions";
+import { grantSubscription, importContentAction, removeDevice, setTrack, unlockUser } from "./actions";
 
 export const metadata: Metadata = { title: "ניהול | 100 בפיזיקה" };
 
@@ -22,7 +22,12 @@ type Row = {
 
 export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
   const { supabase } = await requireAdmin("/admin");
-  const q = String((await searchParams).q ?? "").trim().toLowerCase();
+  const sp = await searchParams;
+  const q = String(sp.q ?? "").trim().toLowerCase();
+  const imported = typeof sp.import === "string" ? sp.import : null;
+  const { data: counts } = await supabase.from("exercises").select("status");
+  const drafts = (counts ?? []).filter((c) => c.status === "draft").length;
+  const published = (counts ?? []).length - drafts;
 
   let query = supabase
     .from("profiles")
@@ -48,6 +53,24 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
         <Card className="gap-1 p-3"><span className="ltr text-2xl font-bold text-key">{activeCount}</span><span className="text-xs text-muted">מנויים פעילים</span></Card>
         <Card className="gap-1 p-3"><span className="ltr text-2xl font-bold text-warn">{lockedCount}</span><span className="text-xs text-muted">חשבונות נעולים</span></Card>
       </div>
+
+      <Card>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="font-bold">תרגילים במאגר</h2>
+          <span className="text-sm text-muted">
+            <span className="ltr">{published}</span> פורסמו · <span className="ltr">{drafts}</span> טיוטות
+          </span>
+        </div>
+        <p className="text-sm text-muted">טעינת כל קובצי התרגילים מהמאגר באתר. תרגילים חדשים נכנסים כטיוטות, ורק מנהל רואה אותם.</p>
+        {imported && (
+          <p role="status" className={`rounded-lg px-3 py-2 text-sm font-semibold ${imported.startsWith("ok:") ? "bg-key-soft text-key" : "bg-warn-soft text-warn"}`}>
+            {imported.startsWith("ok:") ? `נטענו ${imported.split(":")[1]} תרגילים (${imported.split(":")[2]} סעיפים).` : `הטעינה נכשלה: ${imported}`}
+          </p>
+        )}
+        <form action={importContentAction}>
+          <Button type="submit">טעינת התרגילים מהמאגר</Button>
+        </form>
+      </Card>
 
       <form className="flex gap-2">
         <input name="q" defaultValue={q} placeholder="חיפוש לפי מייל" dir="ltr" className="flex-1 rounded-lg border border-line bg-surface px-3 py-2" />
