@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="למעלה משמאל: גרף מסת הגוף mB בקילוגרם כפונקציה של זמן המחזור T בשניות: עקומה עולה מאפס ב-T שווה 1 עד כ-8.4 ב-T שווה 3.05. למעלה מימין: משטח A על קפיץ אנכי, וגוף B מונח עליו. למטה: ארבעה תרשימי כוחות על המסה m. בתרשים 1 כוח הקפיץ יחידה אחת כלפי מטה והכובד שתי יחידות כלפי מטה. בתרשים 2 כוח הקפיץ שתי יחידות כלפי מעלה והכובד שתיים כלפי מטה. בתרשים 3 כוח הקפיץ יחידה אחת כלפי מעלה והכובד שתיים כלפי מטה. בתרשים 4 כוח הקפיץ חמש יחידות כלפי מעלה והכובד שתיים כלפי מטה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<line x1="138.2" y1="270" x2="138.2" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="226.5" y1="270" x2="226.5" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="314.7" y1="270" x2="314.7" y2="40" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="246" x2="350" y2="246" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="222.1" x2="350" y2="222.1" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="198.1" x2="350" y2="198.1" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="174.2" x2="350" y2="174.2" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="150.2" x2="350" y2="150.2" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="126.2" x2="350" y2="126.2" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="102.3" x2="350" y2="102.3" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="78.3" x2="350" y2="78.3" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="54.4" x2="350" y2="54.4" stroke="var(--d-hatch)" stroke-width="1" stroke-linecap="round"/>
+<line x1="50" y1="270" x2="368" y2="270" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="50" y1="270" x2="50" y2="22" stroke="var(--d-line)" stroke-width="1.8" marker-end="url(#f-axis)"/>
+<line x1="138.2" y1="266" x2="138.2" y2="274" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="138.2" y="288" text-anchor="middle">1</text>
+<line x1="226.5" y1="266" x2="226.5" y2="274" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="226.5" y="288" text-anchor="middle">2</text>
+<line x1="314.7" y1="266" x2="314.7" y2="274" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="314.7" y="288" text-anchor="middle">3</text>
+<line x1="46" y1="246" x2="54" y2="246" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="250" text-anchor="end">1</text>
+<line x1="46" y1="222.1" x2="54" y2="222.1" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="226.1" text-anchor="end">2</text>
+<line x1="46" y1="198.1" x2="54" y2="198.1" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="202.1" text-anchor="end">3</text>
+<line x1="46" y1="174.2" x2="54" y2="174.2" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="178.2" text-anchor="end">4</text>
+<line x1="46" y1="150.2" x2="54" y2="150.2" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="154.2" text-anchor="end">5</text>
+<line x1="46" y1="126.2" x2="54" y2="126.2" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="130.2" text-anchor="end">6</text>
+<line x1="46" y1="102.3" x2="54" y2="102.3" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="106.3" text-anchor="end">7</text>
+<line x1="46" y1="78.3" x2="54" y2="78.3" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="82.3" text-anchor="end">8</text>
+<line x1="46" y1="54.4" x2="54" y2="54.4" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<text class="dim" x="42" y="58.4" text-anchor="end">9</text>
+<text class="label" x="366" y="260" text-anchor="end">T (s)</text>
+<text class="label" x="60" y="34" text-anchor="start">mB (kg)</text>
+<polyline points="138.2,270 141.2,268.3 144.3,266.6 147.3,264.8 150.3,263 153.3,261.1 156.3,259.2 159.3,257.2 162.4,255.1 165.4,253 168.4,250.8 171.4,248.6 174.4,246.3 177.4,244 180.4,241.6 183.5,239.1 186.5,236.6 189.5,234.1 192.5,231.5 195.5,228.8 198.5,226.1 201.5,223.3 204.6,220.4 207.6,217.6 210.6,214.6 213.6,211.6 216.6,208.5 219.6,205.4 222.6,202.2 225.7,199 228.7,195.7 231.7,192.4 234.7,189 237.7,185.5 240.7,182 243.8,178.4 246.8,174.8 249.8,171.1 252.8,167.4 255.8,163.6 258.8,159.8 261.8,155.9 264.9,151.9 267.9,147.9 270.9,143.8 273.9,139.7 276.9,135.5 279.9,131.3 282.9,127 286,122.6 289,118.2 292,113.8 295,109.2 298,104.7 301,100 304,95.4 307.1,90.6 310.1,85.8 313.1,81 316.1,76.1 319.1,71.1" fill="none" stroke="var(--d-body)" stroke-width="2.6" stroke-linejoin="round"/>
+<rect x="410" y="260" width="200" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="410" y1="260" x2="610" y2="260" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<polyline points="510,258 510,254 526,249 494,244 526,239 494,234 526,229 494,224 526,219 494,214 526,209 494,204 526,199 494,194 526,189 510,184 510,180" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="440" y="168" width="140" height="12" rx="0" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<text class="label" x="588" y="178" text-anchor="start">A</text>
+<rect x="480" y="112" width="60" height="56" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="510" y="145" text-anchor="middle" style="fill:#ffffff">B</text>
+<rect x="505" y="300" width="110" height="140" rx="0" fill="none" stroke="var(--d-hatch)" stroke-width="1"/>
+<circle cx="560" cy="390" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="550" y="386" text-anchor="end">m</text>
+<line x1="560" y1="390" x2="560" y2="426" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="566" y="430" text-anchor="start">mg</text>
+<line x1="554" y1="390" x2="554" y2="408" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="548" y="412" text-anchor="end">Fsp</text>
+<text class="label" x="560" y="458" text-anchor="middle">(1)</text>
+<rect x="355" y="300" width="110" height="140" rx="0" fill="none" stroke="var(--d-hatch)" stroke-width="1"/>
+<circle cx="410" cy="390" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="400" y="386" text-anchor="end">m</text>
+<line x1="410" y1="390" x2="410" y2="426" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="416" y="430" text-anchor="start">mg</text>
+<line x1="410" y1="390" x2="410" y2="354" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="416" y="362" text-anchor="start">Fsp</text>
+<text class="label" x="410" y="458" text-anchor="middle">(2)</text>
+<rect x="205" y="300" width="110" height="140" rx="0" fill="none" stroke="var(--d-hatch)" stroke-width="1"/>
+<circle cx="260" cy="390" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="250" y="386" text-anchor="end">m</text>
+<line x1="260" y1="390" x2="260" y2="426" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="266" y="430" text-anchor="start">mg</text>
+<line x1="260" y1="390" x2="260" y2="372" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="266" y="380" text-anchor="start">Fsp</text>
+<text class="label" x="260" y="458" text-anchor="middle">(3)</text>
+<rect x="55" y="300" width="110" height="140" rx="0" fill="none" stroke="var(--d-hatch)" stroke-width="1"/>
+<circle cx="110" cy="390" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="100" y="386" text-anchor="end">m</text>
+<line x1="110" y1="390" x2="110" y2="426" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="116" y="430" text-anchor="start">mg</text>
+<line x1="110" y1="390" x2="110" y2="300" stroke="var(--d-line)" stroke-width="1.6" marker-end="url(#f-arr)" stroke-linecap="round"/>
+<text class="label" x="116" y="308" text-anchor="start">Fsp</text>
+<text class="label" x="110" y="458" text-anchor="middle">(4)</text>
+</svg>
