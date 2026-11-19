@@ -1,0 +1,111 @@
+{
+  "id": "bagrut-1991-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1991,
+    "label": "1991 שאלה 5"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-orbits",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "לוויין נע סביב כוכב במסלול מעגלי במהירות $v$. לוויין שני נע סביב אותו כוכב במסלול מעגלי במהירות $2v$.",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "מהירות מסלולית",
+    "החוק השלישי של קפלר",
+    "מהירות מילוט"
+  ],
+  "summary": "שני לוויינים במהירויות $v$ ו-$2v$: יחס רדיוסים, יחס זמני מחזור, ולמה הכפלת המהירות משחררת לוויין.",
+  "position": 12,
+  "parts": [
+    {
+      "label": "א",
+      "question": "לאיזה מהלוויינים רדיוס סיבוב גדול יותר? פי כמה?",
+      "answer": {
+        "type": "number",
+        "value": 4.0,
+        "unit": ""
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "מהירות במסלול",
+          "why": "כבידה ככוח צנטריפטלי",
+          "tex": "v = \\sqrt{\\frac{GM}{r}} \\Rightarrow r \\propto \\frac{1}{v^2}"
+        },
+        {
+          "what": "היחס",
+          "why": "מציבים",
+          "tex": "\\frac{r_1}{r_2} = \\left(\\frac{2v}{v}\\right)^2 = 4"
+        }
+      ],
+      "finalAnswer": "ללוויין הראשון, פי $4$",
+      "keyAnswer": "ללווין הראשון רדיוס גדול פי 4"
+    },
+    {
+      "label": "ב",
+      "question": "לאיזה מהלוויינים זמן מחזור גדול יותר? פי כמה?",
+      "answer": {
+        "type": "number",
+        "value": 8.0,
+        "unit": ""
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "זמן מחזור",
+          "why": "היקף חלקי מהירות",
+          "tex": "T = \\frac{2\\pi r}{v} \\propto \\frac{r}{v}"
+        },
+        {
+          "what": "היחס",
+          "why": "רדיוס פי 4, מהירות חצי",
+          "tex": "\\frac{T_1}{T_2} = 4 \\cdot 2 = 8"
+        }
+      ],
+      "finalAnswer": "לראשון, פי $8$",
+      "keyAnswer": "ללווין הראשון זמן מחזור גדול פי 8"
+    },
+    {
+      "label": "ג",
+      "question": "מטאוריט פגע בלוויין הראשון בכיוון משיק לתנועתו, וגרם להכפלת מהירות הלוויין. האם יינתק הלוויין מן הכוכב? הסבר.",
+      "answer": {
+        "type": "choice",
+        "choices": [
+          "כן",
+          "לא"
+        ],
+        "correct": 0
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "מהירות המילוט במרחק הזה",
+          "why": "אנרגיה כוללת אפס",
+          "tex": "v_e = \\sqrt{\\frac{2GM}{r}} = \\sqrt{2}\\,v"
+        },
+        {
+          "what": "משווים",
+          "why": "המהירות החדשה",
+          "tex": "2v > \\sqrt{2}v"
+        }
+      ],
+      "finalAnswer": "כן: $2v$ גדולה ממהירות המילוט $\\sqrt{2}v$",
+      "keyAnswer": "כן"
+    }
+  ]
+}

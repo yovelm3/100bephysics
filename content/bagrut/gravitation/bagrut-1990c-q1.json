@@ -1,0 +1,54 @@
+{
+  "id": "bagrut-1990c-q1",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1990,
+    "label": "1990 שאלה 1 (שאלון השלמה)"
+  },
+  "topic": "gravitation",
+  "subtopic": "grav-law",
+  "group": null,
+  "difficulty": 2,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "כוכב שרדיוסו כרדיוס השמש קורס (מתכווץ), מבלי לאבד מסה, לכדור שרדיוסו $7$ ק\"מ. (במצב זה הוא נקרא כוכב נייטרונים.) רדיוס השמש $7 \\times 10^5$ ק\"מ.",
+  "figure": null,
+  "authorNote": null,
+  "concepts": [
+    "חוק הכבידה",
+    "תאוצת נפילה על פני כוכב"
+  ],
+  "summary": "כוכב שמתכווץ פי מאה אלף ברדיוס: תאוצת הנפילה על פניו גדלה פי $10^{10}$.",
+  "position": 11,
+  "parts": [
+    {
+      "label": "א",
+      "question": "פי כמה גדלה תאוצת הנפילה החופשית על פני הכוכב המקורי?",
+      "answer": {
+        "type": "number",
+        "value": 10000000000.0,
+        "unit": ""
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "תאוצה על הפנים",
+          "why": "אותה מסה",
+          "tex": "g = \\frac{GM}{R^2} \\propto \\frac{1}{R^2}"
+        },
+        {
+          "what": "היחס",
+          "why": "היחס ההפוך בין הרדיוסים, בריבוע",
+          "tex": "\\frac{g'}{g} = \\left(\\frac{7 \\times 10^5}{7}\\right)^2 = 10^{10}"
+        }
+      ],
+      "finalAnswer": "פי $10^{10}$",
+      "keyAnswer": "10^10"
+    }
+  ]
+}
