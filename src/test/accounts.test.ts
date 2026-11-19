@@ -247,3 +247,26 @@ describe("table privileges (new Supabase projects grant nothing by default)", ()
     });
   });
 });
+
+describe("deleting users", () => {
+  it("an admin who granted subscriptions can be deleted; the student's subscription stays", async () => {
+    const admin = await createUser(db, "admin@x.com", { admin: true });
+    const s = await createUser(db, "s@x.com");
+    await asUser(db, admin, () => db.query(`select public.admin_grant_subscription($1)`, [s]));
+    await db.query(`delete from auth.users where id = $1`, [admin]);
+    const r = await db.query<{ granted_by: string | null }>(`select granted_by from public.subscriptions where user_id = $1`, [s]);
+    expect(r.rows.length).toBe(1);
+    expect(r.rows[0].granted_by).toBeNull();
+  });
+
+  it("deleting a student removes their profile, devices and subscriptions", async () => {
+    const admin = await createUser(db, "admin@x.com", { admin: true });
+    const s = await createUser(db, "s@x.com");
+    await register(s, key(1));
+    await asUser(db, admin, () => db.query(`select public.admin_grant_subscription($1)`, [s]));
+    await db.query(`delete from auth.users where id = $1`, [s]);
+    for (const t of ["profiles where id", "devices where user_id", "subscriptions where user_id"]) {
+      expect((await db.query(`select 1 from public.${t} = $1`, [s])).rows.length).toBe(0);
+    }
+  });
+});
