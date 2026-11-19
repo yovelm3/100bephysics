@@ -79,7 +79,7 @@
           "tex": "r = \\frac{\\mu_s g}{\\omega^2} = \\frac{6}{88.8} \\approx 0.0675\\,\\text{m}"
         }
       ],
-      "finalAnswer": "$\\approx 6.75\\,\\text{cm}$",
+      "finalAnswer": "$\\approx 0.0675\\,\\text{m}$ (כ-$6.75\\,\\text{cm}$)",
       "keyAnswer": "r=0.0675 m"
     },
     {
