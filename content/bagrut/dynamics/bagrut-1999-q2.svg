@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" role="img" aria-label="שני גופים, A במסה 3 קילוגרם ו-B במסה 2 קילוגרם, תלויים משני צדי גלגלת. אדם מחזיק את B. שניהם בגובה 3.5 מטר מעל הרצפה">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="200" y="8" width="160" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="200" y1="20" x2="360" y2="20" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="280" y1="20" x2="280" y2="50" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="280" cy="80" r="32" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>
+<circle cx="280" cy="80" r="2.5" fill="var(--d-line)" stroke="none" stroke-width="2"/>
+<line x1="248" y1="80" x2="248" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="312" y1="80" x2="312" y2="190" stroke="var(--d-line)" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="231" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="248" y="210" text-anchor="middle" style="fill:#ffffff">B</text>
+<rect x="295" y="190" width="34" height="30" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="312" y="210" text-anchor="middle" style="fill:#ffffff">A</text>
+<text class="dim" x="248" y="240" text-anchor="middle">2 kg</text>
+<text class="dim" x="312" y="240" text-anchor="middle">3 kg</text>
+<path d="M 160,210 Q 200,200 230,206" fill="none" stroke="var(--d-line)" stroke-width="3" stroke-linejoin="round"/>
+<text class="heb" x="150" y="196" text-anchor="middle" direction="rtl">יד</text>
+<rect x="80" y="290" width="400" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="80" y1="290" x2="480" y2="290" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<line x1="180" y1="220" x2="230" y2="220" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<line x1="200" y1="220" x2="200" y2="290" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="186" y="259" text-anchor="middle" transform="rotate(90.0 186 259)">3.5 m</text>
+</svg>

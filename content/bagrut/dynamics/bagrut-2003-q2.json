@@ -1,0 +1,152 @@
+{
+  "id": "bagrut-2003-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2003,
+    "label": "2003 שאלה 2"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-incline",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גוף נע על מדרון לא חלק שזווית השיפוע שלו $\\alpha$. מקדם החיכוך הקינטי בין הגוף למשטח המדרון הוא $\\mu$. הגרף מתאר את מהירות הגוף מתחילת תנועתו במעלה המדרון ועד לרגע חזרתו לתחתית המדרון.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2003-q2.svg",
+    "alt": "גרף מהירות-זמן של גוף על מדרון: מ-8 מטר לשנייה ב-0 שניות לאפס ב-2 שניות, ואחר כך ל-4- ב-6 שניות",
+    "provisional": false
+  },
+  "authorNote": "החיכוך תמיד נגד כיוון התנועה. לכן בעלייה הוא \"עוזר\" לכובד, ובירידה מתנגד לו.",
+  "concepts": [
+    "מישור משופע",
+    "חיכוך קינטי",
+    "כיוון החיכוך",
+    "גרף מהירות-זמן"
+  ],
+  "summary": "גוף שעולה במדרון עם חיכוך וחוזר. התאוצות בעלייה ובירידה, ולמה הירידה ארוכה יותר.",
+  "position": 21,
+  "parts": [
+    {
+      "label": "א1",
+      "question": "קבע בעזרת הגרף את תאוצת הגוף בעלייה.",
+      "answer": {
+        "type": "number",
+        "value": -4.0,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "graph",
+        "signs"
+      ],
+      "solution": [
+        {
+          "what": "שיפוע הקטע הראשון",
+          "why": "מ-$8$ לאפס ב-$2$ שניות",
+          "tex": "a_\\uparrow = \\frac{0 - 8}{2} = -4\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$-4\\,\\text{m/s}^2$ (במורד)",
+      "keyAnswer": "−4 m/s^2"
+    },
+    {
+      "label": "א2",
+      "question": "קבע את תאוצת הגוף בירידה.",
+      "answer": {
+        "type": "number",
+        "value": -1.0,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "graph",
+        "signs"
+      ],
+      "solution": [
+        {
+          "what": "שיפוע הקטע השני",
+          "why": "מאפס ל-$-4$ ב-$4$ שניות",
+          "tex": "a_\\downarrow = \\frac{-4 - 0}{4} = -1\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$-1\\,\\text{m/s}^2$ (במורד)",
+      "keyAnswer": "−1 m/s^2"
+    },
+    {
+      "label": "ב",
+      "question": "צייר במחברתך את תרשימי הכוחות שפועלים על הגוף בעלייתו ובירידתו.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd"
+      ],
+      "solution": [
+        {
+          "what": "בשני המקרים",
+          "why": "כובד, נורמלי בניצב למדרון",
+          "tex": "mg,\\ N = mg\\cos\\alpha"
+        },
+        {
+          "what": "החיכוך",
+          "why": "תמיד נגד כיוון התנועה: בעלייה במורד, בירידה במעלה",
+          "tex": "f_\\uparrow \\downarrow,\\quad f_\\downarrow \\uparrow"
+        }
+      ],
+      "finalAnswer": "כובד ונורמלי, וחיכוך שמחליף כיוון: נגד התנועה",
+      "keyAnswer": null
+    },
+    {
+      "label": "ג",
+      "question": "כתוב ביטויים שמתארים את תאוצת הגוף בעלייתו ובירידתו כפונקציה של מקדם החיכוך $\\mu$, זווית השיפוע $\\alpha$ ו-$g$ (ציר חיובי במעלה המדרון).",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "בעלייה",
+          "why": "רכיב הכובד והחיכוך שניהם במורד",
+          "tex": "a_\\uparrow = -g(\\sin\\alpha + \\mu\\cos\\alpha)"
+        },
+        {
+          "what": "בירידה",
+          "why": "רכיב הכובד במורד, החיכוך במעלה",
+          "tex": "a_\\downarrow = -g(\\sin\\alpha - \\mu\\cos\\alpha)"
+        }
+      ],
+      "finalAnswer": "$a_\\uparrow = -g(\\sin\\alpha + \\mu\\cos\\alpha)$, $a_\\downarrow = -g(\\sin\\alpha - \\mu\\cos\\alpha)$",
+      "keyAnswer": "a=−g(sinα+μcosα) ; a=−g(sinα−μcosα)"
+    },
+    {
+      "label": "ד",
+      "question": "לפי הגרף, זמן הירידה גדול מזמן העלייה. בהסתמך על הביטויים שכתבת בסעיף ג, הסבר מדוע הירידה ארכה זמן רב יותר.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "אותה דרך",
+          "why": "הגוף עולה וחוזר לאותה נקודה",
+          "tex": "d = \\tfrac{1}{2}|a_\\uparrow| t_\\uparrow^2 = \\tfrac{1}{2}|a_\\downarrow| t_\\downarrow^2"
+        },
+        {
+          "what": "התאוצה בירידה קטנה יותר",
+          "why": "בירידה החיכוך נגד רכיב הכובד",
+          "tex": "|a_\\downarrow| < |a_\\uparrow| \\Rightarrow t_\\downarrow > t_\\uparrow"
+        }
+      ],
+      "finalAnswer": "בירידה החיכוך מחסיר מרכיב הכובד, התאוצה קטנה, ואותה דרך לוקחת יותר זמן",
+      "keyAnswer": null
+    }
+  ]
+}

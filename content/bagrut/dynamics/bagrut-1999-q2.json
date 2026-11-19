@@ -1,0 +1,165 @@
+{
+  "id": "bagrut-1999-q2",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 1999,
+    "label": "1999 שאלה 2"
+  },
+  "topic": "dynamics",
+  "subtopic": "dyn-systems",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "שני גופים, $A$ ו-$B$, שמסותיהם $m_1 = 3\\,\\text{kg}$ ו-$m_2 = 2\\,\\text{kg}$ בהתאמה, קשורים זה לזה באמצעות חוט שכרוך סביב גלגלת. אפשר להזניח את מסת החוט ואת כל כוחות החיכוך.",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-1999-q2.svg",
+    "alt": "שני גופים, A במסה 3 קילוגרם ו-B במסה 2 קילוגרם, תלויים משני צדי גלגלת. אדם מחזיק את B. שניהם בגובה 3.5 מטר מעל הרצפה",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "מכונת אטווד",
+    "כוח חיצוני נוסף",
+    "מתיחות",
+    "האטה ועצירה"
+  ],
+  "summary": "שני גופים על גלגלת: במנוחה, כשאדם דוחף, ואחרי שהוא מרפה. מתיחויות, תאוצות, וכמה קרוב לרצפה $B$ מגיע.",
+  "position": 17,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מרגע $t = 0$ עד רגע $t = 2\\,\\text{s}$ אדם מחזיק בגוף $B$ כך ששני הגופים נמצאים במנוחה בגובה $3.5$ מטר מעל הרצפה. חשב את מתיחות החוט במצב שבו הגופים מוחזקים במנוחה.",
+      "answer": {
+        "type": "number",
+        "value": 30.0,
+        "unit": "N"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שיווי משקל של $A$",
+          "why": "על $A$ פועלים רק החוט והכובד, והאדם לא נוגע בו",
+          "tex": "T = m_1 g = 3 \\cdot 10 = 30\\,\\text{N}"
+        }
+      ],
+      "finalAnswer": "$30\\,\\text{N}$",
+      "keyAnswer": "30 N"
+    },
+    {
+      "label": "ב1",
+      "question": "מרגע $t = 2\\,\\text{s}$ עד רגע $t = 4\\,\\text{s}$ האדם מפעיל על גוף $B$ כוח שגודלו $15\\,\\text{N}$ וכיוונו כלפי מטה. חשב את גודל תאוצת הגופים בפרק הזמן הזה.",
+      "answer": {
+        "type": "number",
+        "value": 1.0,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "הכוחות שמניעים את המערכת",
+          "why": "בצד $B$: משקלו ועוד כוח האדם. בצד $A$: משקלו",
+          "tex": "(m_2 g + F) - m_1 g = 20 + 15 - 30 = 5\\,\\text{N}"
+        },
+        {
+          "what": "התאוצה",
+          "why": "חלקי כל המסה",
+          "tex": "a = \\frac{5}{5} = 1\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$1\\,\\text{m/s}^2$ ($B$ יורד)",
+      "keyAnswer": "1 m/s^2"
+    },
+    {
+      "label": "ב2",
+      "question": "חשב את מתיחות החוט בפרק הזמן הזה.",
+      "answer": {
+        "type": "number",
+        "value": 33.0,
+        "unit": "N"
+      },
+      "skills": [
+        "fbd",
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "החוק השני ל-$A$",
+          "why": "$A$ עולה בתאוצה $1$",
+          "tex": "T - m_1 g = m_1 a \\Rightarrow T = 30 + 3 = 33\\,\\text{N}"
+        }
+      ],
+      "finalAnswer": "$33\\,\\text{N}$",
+      "keyAnswer": "33 N"
+    },
+    {
+      "label": "ג",
+      "question": "ברגע $t = 4\\,\\text{s}$ האדם מרפה מגוף $B$. חשב את גודל תאוצת הגופים אחרי הרגע $t = 4\\,\\text{s}$.",
+      "answer": {
+        "type": "number",
+        "value": 2.0,
+        "unit": "m/s^2"
+      },
+      "skills": [
+        "fbd",
+        "principle",
+        "signs"
+      ],
+      "solution": [
+        {
+          "what": "עכשיו $A$ כבד יותר",
+          "why": "התאוצה של המערכת לכיוון $A$ (מטה בצד $A$)",
+          "tex": "a = \\frac{(3 - 2) \\cdot 10}{5} = 2\\,\\text{m/s}^2"
+        },
+        {
+          "what": "משמעות",
+          "why": "$B$ עדיין נע מטה, ולכן הוא מאט",
+          "tex": "a_B = -2\\,\\text{m/s}^2"
+        }
+      ],
+      "finalAnswer": "$2\\,\\text{m/s}^2$ (הגופים מאטים)",
+      "keyAnswer": "−2 m/s^2"
+    },
+    {
+      "label": "ד",
+      "question": "חשב את המרחק המזערי בין גוף $B$ לרצפה.",
+      "answer": {
+        "type": "number",
+        "value": 0.5,
+        "unit": "m"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "עד $t = 4\\,\\text{s}$",
+          "why": "$2$ שניות ממנוחה בתאוצה $1$",
+          "tex": "d_1 = \\tfrac{1}{2} \\cdot 1 \\cdot 2^2 = 2\\,\\text{m},\\quad v = 2\\,\\text{m/s}"
+        },
+        {
+          "what": "אחרי השחרור עד העצירה",
+          "why": "מאט ב-$2\\,\\text{m/s}^2$",
+          "tex": "d_2 = \\frac{2^2}{2 \\cdot 2} = 1\\,\\text{m}"
+        },
+        {
+          "what": "הגובה המזערי",
+          "why": "מחסירים את שני הקטעים מהגובה ההתחלתי",
+          "tex": "3.5 - 2 - 1 = 0.5\\,\\text{m}"
+        }
+      ],
+      "finalAnswer": "$0.5\\,\\text{m}$",
+      "keyAnswer": "0.5 m"
+    }
+  ]
+}
