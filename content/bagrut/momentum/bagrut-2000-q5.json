@@ -1,0 +1,130 @@
+{
+  "id": "bagrut-2000-q5",
+  "pool": "bagrut",
+  "openToHighschool": false,
+  "source": {
+    "year": 2000,
+    "label": "2000 שאלה 5"
+  },
+  "topic": "momentum",
+  "subtopic": "mom-collisions",
+  "group": null,
+  "difficulty": 3,
+  "status": "draft",
+  "needsReview": true,
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "בתרשים א מתואר במבט מלמעלה משטח של שולחן חלק ועליו שתי דסקיות: דסקית I שמסתה $m_1 = 1\\,\\text{kg}$ נעה בכיוון החיובי של ציר $x$ במהירות שגודלה $v_1 = 10\\,\\text{m/s}$, ודסקית II שמסתה $m_2 = 1\\,\\text{kg}$ נחה בראשית של מערכת צירים שנמצאת במישור השולחן. אחרי התנגשות הדסקיות זו בזו, נעה דסקית II בזווית $\\alpha = 60^\\circ$ עם הציר $x$, במהירות שגודלה $u_2 = 4\\,\\text{m/s}$, כמתואר בתרשים ב. (תנועת דסקית I אחרי ההתנגשות אינה מתוארת בתרשים ב.)",
+  "figure": {
+    "type": "svg",
+    "file": "bagrut-2000-q5.svg",
+    "alt": "מבט מלמעלה על שולחן: תרשים א: דסקית I במסה 1 קילוגרם נעה במהירות 10 מטר לשנייה לעבר דסקית II במנוחה בראשית. תרשים ב: אחרי ההתנגשות דסקית II נעה במהירות 4 מטר לשנייה בזווית 60 מעלות מתחת לציר x, ברביע הרביעי",
+    "provisional": false
+  },
+  "authorNote": null,
+  "concepts": [
+    "שימור תנע ברכיבים",
+    "התנגשות בשני ממדים"
+  ],
+  "summary": "שתי דסקיות שמתנגשות על שולחן: התנע הכולל, למה שתיהן לא יכולות לנוע לאותו רביע, והמהירות של הדסקית הראשונה.",
+  "position": 16,
+  "parts": [
+    {
+      "label": "א",
+      "question": "מהו התנע הכולל של מערכת שתי הדסקיות אחרי ההתנגשות (ציין גודל וכיוון)?",
+      "answer": {
+        "type": "number",
+        "value": 10.0,
+        "unit": "kg·m/s"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "שימור תנע",
+          "why": "אין כוחות חיצוניים אופקיים",
+          "tex": "\\vec p' = \\vec p = 1 \\cdot 10\\,\\hat x"
+        }
+      ],
+      "finalAnswer": "$10\\,\\text{kg}\\cdot\\text{m/s}$ בכיוון ציר $x$",
+      "keyAnswer": "10 kg·m/s"
+    },
+    {
+      "label": "ב",
+      "question": "הסבר במילים מדוע לא ייתכן ששתי הדסקיות ינועו אחרי ההתנגשות ברביע הרביעי של מערכת הצירים.",
+      "answer": {
+        "type": "open"
+      },
+      "skills": [
+        "principle"
+      ],
+      "solution": [
+        {
+          "what": "רכיב $y$ של התנע",
+          "why": "לפני ההתנגשות הוא אפס, ולכן גם אחריה",
+          "tex": "p_y' = 0"
+        },
+        {
+          "what": "ברביע הרביעי",
+          "why": "שתי הדסקיות היו עם רכיב $y$ שלילי, והסכום לא יכול להיות אפס",
+          "tex": "p_{y1} + p_{y2} < 0"
+        }
+      ],
+      "finalAnswer": "רכיב $y$ של התנע חייב להישאר אפס",
+      "keyAnswer": null
+    },
+    {
+      "label": "ג1",
+      "question": "חשב את גודל המהירות של דסקית I אחרי ההתנגשות.",
+      "answer": {
+        "type": "number",
+        "value": 8.717797887081346,
+        "unit": "m/s"
+      },
+      "skills": [
+        "principle",
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "רכיב $x$",
+          "why": "שימור תנע בציר x, המסות שוות",
+          "tex": "10 = u_{1x} + 4\\cos 60^\\circ \\Rightarrow u_{1x} = 8\\,\\text{m/s}"
+        },
+        {
+          "what": "רכיב $y$",
+          "why": "שימור תנע בציר y",
+          "tex": "0 = u_{1y} - 4\\sin 60^\\circ \\Rightarrow u_{1y} \\approx 3.46\\,\\text{m/s}"
+        },
+        {
+          "what": "גודל",
+          "why": "פיתגורס",
+          "tex": "u_1 = \\sqrt{64 + 12} \\approx 8.72\\,\\text{m/s}"
+        }
+      ],
+      "finalAnswer": "$\\approx 8.72\\,\\text{m/s}$",
+      "keyAnswer": "u1=8.72 m/s"
+    },
+    {
+      "label": "ג2",
+      "question": "מה הזווית בין כיוון התנועה של דסקית I אחרי ההתנגשות לבין ציר $x$?",
+      "answer": {
+        "type": "number",
+        "value": 23.41322444637054,
+        "unit": "°"
+      },
+      "skills": [
+        "algebra"
+      ],
+      "solution": [
+        {
+          "what": "טנגנס",
+          "why": "y חלקי x",
+          "tex": "\\tan\\beta = \\frac{3.46}{8} \\Rightarrow \\beta \\approx 23.4^\\circ"
+        }
+      ],
+      "finalAnswer": "$\\approx 23.4^\\circ$ מעל ציר $x$",
+      "keyAnswer": "β=23.4°"
+    }
+  ]
+}

@@ -12,6 +12,6 @@
 - kinematics: DONE 37/37 (imported to site). Known key mismatches: 1995 Q1 (key used x/t), 1999 Q1 ב3 (key typo 0.96).
 - dynamics: DONE 39/39 (imported)
 - circular: DONE 26/26 (not yet imported)
-- momentum: in progress (m01–m13 = PDF pages 1–4; key from p16). Known mismatch: 1992 Q2 ג1 (key 39.6, calc 36.9)
+- momentum: in progress (m01–m17 = PDF pages 1–7; key from p16). Known mismatch: 1992 Q2 ג1 (key 39.6, calc 36.9)
 - energy, gravitation, harmonic: not started
 - Then: second independent pass (recompute every numeric answer in a separate script; check figures), re-import, summary for owner.

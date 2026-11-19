@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="מבט מלמעלה על שולחן: תרשים א: דסקית I במסה 1 קילוגרם נעה במהירות 10 מטר לשנייה לעבר דסקית II במנוחה בראשית. תרשים ב: אחרי ההתנגשות דסקית II נעה במהירות 4 מטר לשנייה בזווית 60 מעלות מתחת לציר x, ברביע הרביעי">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<rect x="300" y="20" width="220" height="150" rx="0" fill="none" stroke="var(--d-line)" stroke-width="1"/>
+<line x1="310" y1="95" x2="510" y2="95" stroke="var(--d-line)" stroke-width="1.4" marker-end="url(#f-axis)"/>
+<line x1="410" y1="160" x2="410" y2="28" stroke="var(--d-line)" stroke-width="1.4" marker-end="url(#f-axis)"/>
+<text class="dim" x="506" y="112" text-anchor="middle">x</text>
+<text class="dim" x="418" y="34" text-anchor="start">y</text>
+<text class="heb" x="410" y="190" text-anchor="middle" direction="rtl">תרשים א</text>
+<rect x="40" y="20" width="220" height="150" rx="0" fill="none" stroke="var(--d-line)" stroke-width="1"/>
+<line x1="50" y1="95" x2="250" y2="95" stroke="var(--d-line)" stroke-width="1.4" marker-end="url(#f-axis)"/>
+<line x1="150" y1="160" x2="150" y2="28" stroke="var(--d-line)" stroke-width="1.4" marker-end="url(#f-axis)"/>
+<text class="dim" x="246" y="112" text-anchor="middle">x</text>
+<text class="dim" x="158" y="34" text-anchor="start">y</text>
+<text class="heb" x="150" y="190" text-anchor="middle" direction="rtl">תרשים ב</text>
+<circle cx="340" cy="95" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<line x1="352" y1="82" x2="392" y2="82" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="372" y="72" text-anchor="middle">v₁</text>
+<text class="heb" x="340" y="120" text-anchor="middle" direction="rtl">I</text>
+<circle cx="410" cy="95" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="heb" x="410" y="120" text-anchor="middle" direction="rtl">II</text>
+<circle cx="150" cy="95" r="9" fill="var(--d-body)" stroke="none" stroke-width="2"/>
+<text class="heb" x="136" y="82" text-anchor="middle" direction="rtl">II</text>
+<line x1="150" y1="95" x2="175" y2="138.3" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="184" y="140" text-anchor="start">u₂</text>
+<path d="M 165,121 A 30 30 0 0 0 180,95" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="label" x="186.4" y="121" text-anchor="middle">α</text>
+<text class="heb" x="200" y="160" text-anchor="middle" direction="rtl">רביע רביעי</text>
+</svg>
