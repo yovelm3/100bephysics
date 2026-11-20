@@ -21,9 +21,9 @@ export default async function PracticePage() {
   ]);
   const rows = (data ?? []) as Row[];
   const solved = new Set((solvedRows ?? []).map((r) => r.exercise_id as string));
-  const withExercises = rows.filter((r) => r.exercise_count > 0);
-  const lists = await Promise.all(withExercises.map((r) => supabase.rpc("list_exercises", { p_subtopic: r.subtopic_id })));
-  const bySubtopic = new Map(withExercises.map((r, i) => [r.subtopic_id, (lists[i].data ?? []) as Ex[]]));
+  // Counted from the lists themselves: an admin also sees drafts, which the catalog counts leave out.
+  const lists = await Promise.all(rows.map((r) => supabase.rpc("list_exercises", { p_subtopic: r.subtopic_id })));
+  const bySubtopic = new Map(rows.map((r, i) => [r.subtopic_id, (lists[i].data ?? []) as Ex[]]));
   const topics = [...new Map(rows.map((r) => [r.topic_id, r.topic_name])).entries()];
 
   return (
@@ -38,7 +38,7 @@ export default async function PracticePage() {
       <div className="flex flex-col gap-3">
         {topics.map(([id, name]) => {
           const subs = rows.filter((r) => r.topic_id === id);
-          const total = subs.reduce((n, r) => n + r.exercise_count, 0);
+          const total = subs.reduce((n, r) => n + (bySubtopic.get(r.subtopic_id)?.length ?? 0), 0);
           return (
             <details key={id} className="group rounded-2xl border border-line bg-surface">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5 [&::-webkit-details-marker]:hidden">
@@ -57,7 +57,7 @@ export default async function PracticePage() {
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 [&::-webkit-details-marker]:hidden">
                           <span className="font-semibold">{r.subtopic_name}</span>
                           <span className="flex items-center gap-3 text-muted">
-                            <span className="ltr text-sm">{r.exercise_count}</span>
+                            <span className="ltr text-sm">{ex.length}</span>
                             <span aria-hidden className="transition-transform group-open/sub:rotate-180">▾</span>
                           </span>
                         </summary>
