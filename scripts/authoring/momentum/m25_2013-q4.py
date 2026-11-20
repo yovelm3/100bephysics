@@ -2,14 +2,18 @@ from mk import *
 import math
 
 def F(t):
-    if t < 0.8 or t > 4.6: return 0
-    return 1000 * math.sin(math.pi * (t - 0.8) / 3.8) ** 1.6
+    # shape traced from the original graph: slow rise from t=0, steep flanks at 1.5 and 3.5 ms, flat top 1000 N at 2.5 ms, back to 0 at 5 ms
+    x = abs(t - 2.5)
+    if x >= 2.5: return 0
+    core = 1000 * math.exp(-(x / 1.15) ** 4)
+    tail = 80 * (2.5 - x) ** 2 if x > 1.3 else 0
+    return max(core, tail)
 
 def fig():
-    g = Fig(560, 260, "גרף הכוח שהמחבט מפעיל על כדור טניס כפונקציה של הזמן: עולה מאפס אחרי כ-1 אלפית שנייה לשיא של כ-1000 ניוטון ב-2.7 אלפיות שנייה, וחוזר לאפס בכ-4.6")
-    X, Y = g.graph(80, 230, 400, 190, "t (ms)", "F (N)", xticks=[(t, str(t)) for t in range(1, 6)], yticks=[(v, str(v)) for v in range(200, 1201, 200)], xmax=5.5, ymax=1250)
+    g = Fig(560, 260, "גרף הכוח שהמחבט מפעיל על כדור טניס כפונקציה של הזמן: עולה לאט מאפס, בחדות סביב 1.5 אלפיות שנייה, לשיא של 1000 ניוטון ב-2.5 אלפיות שנייה, יורד בחדות סביב 3.5, וחוזר לאפס בכ-4.6")
+    X, Y = g.graph(80, 230, 400, 190, "t (ms)", "F (N)", xticks=[(t, str(t)) for t in range(1, 6)], yticks=[(v, str(v)) for v in range(200, 1201, 200)], xmax=6, ymax=1250)
     for t in [i * 0.5 for i in range(1, 11)]: g.line(X(t), Y(0), X(t), Y(1200), stroke="var(--d-hatch)", width=0.6)
-    g.curve(X, Y, F, 0, 5.5, n=120)
+    g.curve(X, Y, F, 0, 5, n=200)
     return g
 
 area = sum(F(i * 0.01) * 0.01 for i in range(551)) / 1000

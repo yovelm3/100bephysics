@@ -3,11 +3,18 @@ import math
 v1 = 0.03 / 0.090; v2 = 0.03 / 0.102; dp = 0.46 * (v1 + v2)
 
 def fig():
-    g = Fig(560, 300, "קרונית נעה על שולחן לעבר חיישן כוח בקצה השולחן. גרף הכוח שהחיישן מפעיל על הקרונית כפונקציה של הזמן: עולה מאפס לשיא של 10 ניוטון ב-22 אלפיות שנייה ויורד לאפס ב-44")
-    X, Y = g.graph(80, 270, 400, 220, "t (ms)", "F (N)", xticks=[(t, str(t)) for t in range(4, 45, 4)], yticks=[(v, str(v)) for v in range(1, 12)], xmax=46, ymax=11)
+    g = Fig(560, 440, "קרונית נעה על שולחן לעבר חיישן כוח בקצה השולחן. גרף הכוח שהחיישן מפעיל על הקרונית כפונקציה של הזמן: עולה מאפס לשיא של 10 ניוטון ב-22 אלפיות שנייה ויורד לאפס ב-44 (תרשים ב)")
+    # תרשים א: the cart on the table, moving toward the force sensor at the table's edge
+    g.rect(140, 70, 260, 8, fill="var(--d-fill)"); g.line(140, 78, 140, 120, width=2); g.line(400, 78, 400, 120, width=2)
+    g.rect(400, 22, 8, 56, fill="var(--d-label)", stroke="none", width=0); g.heb(392, 18, "חיישן כוח", anchor="end")
+    g.car(210, 70, w=56)
+    g.arrow(250, 40, 300, 40, None)
+    g.heb(270, 140, "תרשים א")
+    X, Y = g.graph(80, 400, 400, 220, "t (ms)", "F (N)", xticks=[(t, str(t)) for t in range(4, 45, 4)], yticks=[(v, str(v)) for v in range(1, 12)], xmax=46, ymax=11)
     for t in range(2, 46, 2):
         g.line(X(t), Y(0), X(t), Y(11), stroke="var(--d-hatch)", width=0.6)
     g.curve(X, Y, lambda t: 10 * math.sin(math.pi * t / 44), 0, 44)
+    g.heb(280, 436, "תרשים ב")
     return g
 
 E(id="bagrut-1997-q3", year=1997, label="1997 שאלה 3", topic="momentum", sub="mom-impulse", diff=3, fig=fig,

@@ -2,12 +2,19 @@ from mk import *
 import math
 
 def fig():
-    g = Fig(560, 220, "גוף מחליק ממנוחה במורד מדרון בזווית אלפא. בתחתית המדרון קיר שניצב למדרון")
-    g.poly([(120, 190), (500, 190), (120, 60)], fill="var(--d-fill)"); g.ground(60, 520, 190)
-    g.angle(500, 190, 50, 180 - 18.9, 180, "α", lr=66)
-    g.line(120, 60, 80, 176, width=3); g.rect(70, 60, 10, 120, fill="url(#f-hatch)", stroke="none", width=0)
-    g.block(330, 105, 40, 24, None, angle=-18.9)
-    g.arrow(300, 104, 260, 118, None)
+    g = Fig(560, 220, "מדרון שעולה ימינה בזווית אלפא. הגוף מחליק ממנוחה מראש המדרון כלפי מטה, לעבר קיר שנמצא בתחתית המדרון וניצב לו")
+    al = math.radians(18.9); ca, sa = math.cos(al), math.sin(al)
+    L0 = (110, 190); top = (500, 190 - 390 * math.tan(al))
+    g.poly([L0, (500, 190), top], fill="var(--d-fill)"); g.ground(40, 520, 190)
+    g.angle(L0[0], L0[1], 56, 0, 18.9, "α", lr=72)
+    w = (L0[0] - 70 * sa, L0[1] - 70 * ca)  # wall perpendicular to the slope
+    g.line(*L0, *w, width=3)
+    for k in range(1, 7):
+        p = (L0[0] - 10 * k * sa, L0[1] - 10 * k * ca); g.line(*p, p[0] - 9 * ca, p[1] + 9 * sa, stroke="var(--d-hatch)", width=1.4)
+    g.heb(w[0] - 6, w[1] - 8, "קיר")
+    s0 = 300; c = (L0[0] + s0 * ca - 13 * sa, L0[1] - s0 * sa - 13 * ca)
+    g.block(*c, 40, 24, None, angle=-18.9)
+    g.arrow(c[0] - 30 * ca - 8 * sa, c[1] + 30 * sa - 8 * ca, c[0] - 80 * ca - 8 * sa, c[1] + 80 * sa - 8 * ca, None)
     return g
 
 E(id="bagrut-1983-q1", year=1983, label="1983 שאלה 1", topic="momentum", sub="mom-collisions", diff=3, fig=fig,
