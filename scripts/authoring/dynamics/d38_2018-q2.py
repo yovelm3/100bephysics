@@ -1,4 +1,5 @@
 from mk import *
+import math
 F = [20, 30, 40, 50, 60]; A_ = [3.0, 5.0, 7.4, 9.1, 12.5]
 n = 5; fm = sum(F) / n; am = sum(A_) / n
 slope = sum((f - fm) * (a - am) for f, a in zip(F, A_)) / sum((f - fm) ** 2 for f in F)
@@ -13,6 +14,10 @@ def fig():
     g.block(210, 100, 30, 20, "m₁", angle=24)
     g.line(225, 93, 334, 36, width=1.5); g.line(348, 44, 348, 100, width=1.5); g.block(348, 116, 28, 32, "m₂")
     g.arrow(190, 104, 150, 122, "F", lx=146, ly=112, anchor="end")
+    ux, uy = -math.cos(math.radians(24)), math.sin(math.radians(24))
+    ox_, oy_ = 120, 120
+    g.line(ox_, oy_, ox_ + 34 * ux, oy_ + 34 * uy, width=1.4, arrow=True); g.text(ox_ + 40 * ux - 4, oy_ + 40 * uy + 6, "x", anchor="end")
+    g.line(ox_, oy_, ox_ - 34 * uy, oy_ + 34 * ux, width=1.4, arrow=True); g.text(ox_ - 40 * uy, oy_ + 40 * ux - 4, "y")
     x0, y0 = 60, 210
     g.rect(x0, y0, 440, 52, fill="none", width=1.5); g.line(x0, y0 + 26, x0 + 440, y0 + 26, width=1.2); g.line(x0 + 90, y0, x0 + 90, y0 + 52, width=1.2)
     g.text(x0 + 45, y0 + 18, "F (N)"); g.text(x0 + 45, y0 + 44, "a (m/s²)")
