@@ -3,10 +3,15 @@ import math
 w = 2 * math.pi * 1.5; r = 0.6 * 10 / w ** 2
 
 def fig():
-    g = Fig(560, 300, "דסקה מסתובבת ומטבע עליה. וגרף: כוח החיכוך על המטבע כפונקציה של ריבוע התדירות: עולה בקו ישר עד הנקודה B מעל A, ואחר כך קבוע ונמוך יותר עד D")
+    g = Fig(560, 300, "דסקה מסתובבת ומטבע עליה: תרשים א מבט מהצד, תרשים ב מבט משופע. וגרף: כוח החיכוך על המטבע כפונקציה של ריבוע התדירות: עולה בקו ישר עד הנקודה B מעל A, ואחר כך קבוע ונמוך יותר עד D")
     g.add('<ellipse cx="140" cy="80" rx="110" ry="30" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2"/>')
     g.rect(134, 74, 12, 10, fill="none"); g.add('<ellipse cx="190" cy="80" rx="10" ry="4" fill="var(--d-label)"/>')
-    g.line(140, 20, 140, 74, stroke="var(--d-dim)", width=1, dash="3 3"); g.heb(140, 14, "ציר הדסקה")
+    g.line(140, 20, 140, 74, stroke="var(--d-dim)", width=1, dash="3 3"); g.heb(140, 14, "ציר הדסקה"); g.heb(140, 132, "תרשים ב")
+    # תרשים א: side view
+    g.rect(40, 200, 200, 10, fill="var(--d-fill)"); g.line(140, 160, 140, 250, stroke="var(--d-dim)", width=1, dash="3 3")
+    g.rect(186, 194, 22, 6, fill="var(--d-label)", stroke="none", width=0)
+    g.path("M 128,176 A 12 5 0 1 0 152,176", width=1.4, arrow=True)
+    g.heb(140, 270, "מבט צד"); g.heb(140, 290, "תרשים א")
     X, Y = g.graph(330, 260, 180, 180, "f² (Hz²)", "F (N)", xmax=1, ymax=1, grid=False)
     g.plot(X, Y, [(0, 0), (0.45, 0.8)]); g.line(X(0.45), Y(0.8), X(0.45), Y(0.6), stroke="var(--d-dim)", width=1, dash="3 3"); g.plot(X, Y, [(0.45, 0.6), (0.85, 0.6)])
     g.line(X(0.45), Y(0.6), X(0.45), Y(0), stroke="var(--d-dim)", width=1, dash="4 3"); g.line(X(0), Y(0.8), X(0.45), Y(0.8), stroke="var(--d-dim)", width=1, dash="4 3")
