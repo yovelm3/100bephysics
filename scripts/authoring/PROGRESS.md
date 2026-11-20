@@ -14,6 +14,7 @@
 - circular: DONE 26/26 (not yet imported)
 - momentum: DONE 28/28. Known mismatches: 1992 Q2 ג1 (key 39.6, calc 36.9); 2013 Q4 ב (key 0.2, graph and ג give 2)
 - energy: DONE 16/16. Note 1987 Q3 ג key lacks factor 3
-- gravitation: in progress (g01–g17 = PDF pages 1–4; mismatch 1992 Q5 ב1 key 2.5N vs 50N; key from p14). Uses GM = gR² (g=10, R=6400 km) unless the question gives G, M
-- harmonic: not started
-- Then: second independent pass (recompute every numeric answer in a separate script; check figures), re-import, summary for owner.
+- gravitation: DONE 32/32. Mismatches: 1992 Q5 ב1 (key 2.5N vs 50N); 2003 Q5 ב (key 4.4e7, calc 4.23e7; ג in key fits 4.23e7); 2009 Q5 ד (key 38, calc 39, tol 3%)
+- harmonic: DONE 20/20, all match the key
+- Second pass DONE: scripts/verify/consistency.py (466/466 numeric answers agree with their final text), katex-check.mjs (6017 formulas, 0 errors), figure-check.cjs (180 figures, 0 cut/overlap after fixes), unkeyed answers recomputed by hand
+- Then: re-import, delete the temporary admin user, summary for owner.
