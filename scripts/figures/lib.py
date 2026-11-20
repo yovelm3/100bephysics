@@ -166,6 +166,25 @@ class Fig:
         )
         return self
 
+    def motorcycle(self, x, y_ground, w=64, rider=True, flip=False):
+        """Motorcycle facing right (left if flip), with an optional rider."""
+        d = -1 if flip else 1
+        X = lambda u: x + d * u * w / 64
+        r = 9 * w / 64; yw = y_ground - r
+        self.add(f'<g stroke="var(--d-line)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">'
+                 f'<path d="M {f(X(-24))},{f(yw)} L {f(X(-8))},{f(yw - 14)} L {f(X(12))},{f(yw - 14)} L {f(X(24))},{f(yw)}"/>'
+                 f'<path d="M {f(X(18))},{f(yw - 10)} L {f(X(14))},{f(yw - 24)} L {f(X(20))},{f(yw - 26)}"/></g>')
+        self.add(f'<path d="M {f(X(-16))},{f(yw - 14)} Q {f(X(-4))},{f(yw - 26)} {f(X(12))},{f(yw - 18)} L {f(X(12))},{f(yw - 12)} L {f(X(-16))},{f(yw - 12)} Z" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>')
+        for u in (-24, 24):
+            self.circle(X(u), yw, r, fill="none", stroke="var(--d-label)", width=3)
+            self.circle(X(u), yw, 2.2, fill="var(--d-label)")
+        if rider:
+            self.add(f'<g stroke="var(--d-line)" stroke-width="2.4" fill="none" stroke-linecap="round">'
+                     f'<circle cx="{f(X(0))}" cy="{f(yw - 50)}" r="{f(6.5 * w / 64)}" fill="var(--d-fill)"/>'
+                     f'<path d="M {f(X(-2))},{f(yw - 43)} L {f(X(-8))},{f(yw - 22)} L {f(X(4))},{f(yw - 12)}"/>'
+                     f'<path d="M {f(X(-4))},{f(yw - 36)} L {f(X(16))},{f(yw - 26)}"/></g>')
+        return self
+
     def car(self, x, y_ground, w=70, label=None, flip=False):
         h = 22
         self.add(f'<rect x="{f(x - w/2)}" y="{f(y_ground - 8 - h)}" width="{f(w)}" height="{f(h)}" rx="6" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>')

@@ -10,14 +10,16 @@ def fig():
         g.circle(83, y, 5, fill="var(--d-fill)")
     g.line(83, 98, 520, 98, width=1.5); g.text(83, 116, "0", cls="dim"); g.text(183, 116, "30", cls="dim"); g.line(183, 94, 183, 102, width=1.5)
     g.text(520, 116, "x (m)", cls="dim", anchor="end")
-    g.arrow(250, 50, 360, 50, None); g.heb(305, 42, "כיוון התנועה")
+    g.motorcycle(183, 90, 46)
+    g.car(120, 90, 54)
+    g.arrow(330, 50, 440, 50, None); g.heb(385, 42, "כיוון התנועה")
     g.heb(300, 130, "תרשים א")
     X, Y = g.graph(80, 300, 380, 140, "t (s)", "v (m/s)", xticks=[(5, "5"), (15, "15")], yticks=[(25, "25"), (30, "30")], xmax=16, ymax=30, grid=False)
     g.plot(X, Y, [(0, 25), (5, 25), (15, 0)])
     g.plot(X, Y, [(0, 0), (15, 30)], stroke="var(--d-line)")
     g.line(X(5), Y(25), X(5), Y(0), stroke="var(--d-dim)", width=1, dash="4 3")
     g.guide(X, Y, 15, 30)
-    g.heb(X(2.5), Y(25) - 8, "מכונית"); g.heb(X(9), Y(16) + 4, "אופנוע")
+    g.heb(X(2.5), Y(25) - 8, "מכונית"); g.heb(X(11.5), Y(23) - 6, "אופנוע")
     return g
 
 E(id="bagrut-2008-q1", year=2008, label="2008 שאלה 1", topic="kinematics", sub="kin-straight-line", diff=3, fig=fig,

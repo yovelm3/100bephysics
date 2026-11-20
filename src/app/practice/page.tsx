@@ -9,11 +9,21 @@ import { requireUser } from "@/lib/access";
 export const metadata: Metadata = { title: "תרגול | 100 בפיזיקה" };
 
 type Row = { topic_id: string; topic_name: string; subtopic_id: string; subtopic_name: string; exercise_count: number };
+type Ex = { id: string; source_label: string | null; difficulty: number; unlocked: boolean };
 
+/** Topics open like a drop-down list: topic → subtopics → questions. Native <details>, so it works without JavaScript. */
 export default async function PracticePage() {
-  const { supabase, hasActiveSubscription } = await requireUser("/practice");
-  const [{ data }, { data: trialLeft }] = await Promise.all([supabase.rpc("catalog"), supabase.rpc("trial_remaining")]);
+  const { supabase, profile, hasActiveSubscription } = await requireUser("/practice");
+  const [{ data }, { data: trialLeft }, { data: solvedRows }] = await Promise.all([
+    supabase.rpc("catalog"),
+    supabase.rpc("trial_remaining"),
+    supabase.from("attempts").select("exercise_id").eq("user_id", profile.id).eq("result", "correct"),
+  ]);
   const rows = (data ?? []) as Row[];
+  const solved = new Set((solvedRows ?? []).map((r) => r.exercise_id as string));
+  const withExercises = rows.filter((r) => r.exercise_count > 0);
+  const lists = await Promise.all(withExercises.map((r) => supabase.rpc("list_exercises", { p_subtopic: r.subtopic_id })));
+  const bySubtopic = new Map(withExercises.map((r, i) => [r.subtopic_id, (lists[i].data ?? []) as Ex[]]));
   const topics = [...new Map(rows.map((r) => [r.topic_id, r.topic_name])).entries()];
 
   return (
@@ -25,22 +35,57 @@ export default async function PracticePage() {
           </p>
         </Card>
       )}
-      <div className="grid gap-4 md:grid-cols-2">
-        {topics.map(([id, name]) => (
-          <Card key={id}>
-            <h2 className="text-lg font-bold text-accent">{name}</h2>
-            <ul className="flex flex-col divide-y divide-line">
-              {rows.filter((r) => r.topic_id === id).map((r) => (
-                <li key={r.subtopic_id}>
-                  <Link href={`/practice/${r.subtopic_id}`} className="flex justify-between gap-2 py-2 hover:text-accent">
-                    <span>{r.subtopic_name}</span>
-                    <span className="ltr text-muted">{r.exercise_count}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        ))}
+      <div className="flex flex-col gap-3">
+        {topics.map(([id, name]) => {
+          const subs = rows.filter((r) => r.topic_id === id);
+          const total = subs.reduce((n, r) => n + r.exercise_count, 0);
+          return (
+            <details key={id} className="group rounded-2xl border border-line bg-surface">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5 [&::-webkit-details-marker]:hidden">
+                <span className="text-lg font-bold text-accent">{name}</span>
+                <span className="flex items-center gap-3 text-muted">
+                  <span className="text-sm"><span className="ltr">{total}</span> שאלות</span>
+                  <span aria-hidden className="transition-transform group-open:rotate-180">▾</span>
+                </span>
+              </summary>
+              <ul className="flex flex-col gap-2 px-3 pb-4">
+                {subs.map((r) => {
+                  const ex = bySubtopic.get(r.subtopic_id) ?? [];
+                  return (
+                    <li key={r.subtopic_id}>
+                      <details className="group/sub rounded-xl border border-line">
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 [&::-webkit-details-marker]:hidden">
+                          <span className="font-semibold">{r.subtopic_name}</span>
+                          <span className="flex items-center gap-3 text-muted">
+                            <span className="ltr text-sm">{r.exercise_count}</span>
+                            <span aria-hidden className="transition-transform group-open/sub:rotate-180">▾</span>
+                          </span>
+                        </summary>
+                        {ex.length === 0 ? (
+                          <p className="px-4 pb-3 text-sm text-muted">עוד אין תרגילים בתת-נושא הזה.</p>
+                        ) : (
+                          <ul className="grid gap-2 px-3 pb-3 sm:grid-cols-2">
+                            {ex.map((e, i) => (
+                              <li key={e.id}>
+                                <Link href={`/exercise/${e.id}`} className="flex items-center justify-between gap-2 rounded-xl bg-background px-4 py-3 hover:text-accent">
+                                  <span>{e.source_label ?? `שאלה ${i + 1}`}</span>
+                                  <span className="flex items-center gap-2 text-sm text-muted">
+                                    קושי <span className="ltr">{e.difficulty}/5</span>
+                                    {solved.has(e.id) ? <span className="text-key">✓</span> : !e.unlocked && <span aria-label="נעול">🔒</span>}
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </details>
+                    </li>
+                  );
+                })}
+              </ul>
+            </details>
+          );
+        })}
       </div>
     </Page>
   );
