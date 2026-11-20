@@ -15,6 +15,10 @@ def fig():
     g.ball(satx, cy, r=5); g.heb(satx - 6, cy - 16, "לוויין")
     g.line(sx + 18, cy, satx - 7, cy, width=1.3, dash="5 4")
     g.dim(satx, cy + 50, ex, cy + 50, "x", ext=False)
+    for rr in (ex - sx, satx - sx):  # orbit arcs around the Sun
+        a1, a2 = math.radians(-40), math.radians(40)
+        p1 = (sx + rr * math.cos(a1), cy - rr * math.sin(a1)); p2 = (sx + rr * math.cos(a2), cy - rr * math.sin(a2))
+        g.path(f"M {p1[0]:.1f},{p1[1]:.1f} A {rr} {rr} 0 0 0 {p2[0]:.1f},{p2[1]:.1f}", width=1.1, dash="4 5")
     return g
 
 E(id="bagrut-2004-q5", year=2004, label="2004 שאלה 5", topic="gravitation", sub="grav-kepler", diff=4, fig=fig,

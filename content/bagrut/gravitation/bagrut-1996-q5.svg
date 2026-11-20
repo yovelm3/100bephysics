@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" role="img" aria-label="טיל אנכי שעולה כלפי מעלה. בתוכו מד-כוח תלוי מהחלק העליון, ובקצהו גוף שמסתו 2 קילוגרם. מתחת לטיל להבות">
+<defs>
+<pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
+<marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
+<marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
+</defs>
+<path d="M 240,230 L 240,90 Q 240,40 280,20 Q 320,40 320,90 L 320,230 Z" fill="var(--d-fill)" stroke="var(--d-line)" stroke-width="2" stroke-linejoin="round"/>
+<polyline points="280,60 280,66 273,70.1 287,74.3 273,78.4 287,82.6 273,86.7 287,90.9 273,95 287,99.1 273,103.3 287,107.4 273,111.6 287,115.7 273,119.9 280,124 280,130" fill="none" stroke="var(--d-line)" stroke-width="1.8" stroke-linejoin="round"/>
+<rect x="263" y="132" width="34" height="28" rx="2" fill="var(--d-body)" stroke="var(--d-line)" stroke-width="1.5"/>
+<text class="label" x="280" y="151" text-anchor="middle" style="fill:#ffffff">2 kg</text>
+<line x1="254" y1="234" x2="243.6" y2="280" stroke="var(--d-accent, var(--d-body))" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="270" y1="234" x2="266" y2="280" stroke="var(--d-accent, var(--d-body))" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="286" y1="234" x2="288.4" y2="280" stroke="var(--d-accent, var(--d-body))" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="302" y1="234" x2="310.8" y2="280" stroke="var(--d-accent, var(--d-body))" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="350" y1="200" x2="350" y2="130" stroke="var(--d-label)" stroke-width="2.4" marker-end="url(#f-arr)"/>
+<text class="label" x="360" y="170" text-anchor="start">a</text>
+<text class="heb" x="228" y="110" text-anchor="start" direction="rtl">מד-כוח</text>
+</svg>

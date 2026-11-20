@@ -4,7 +4,19 @@ g0 = 9.8; R = 6.4e6; GM = g0 * R * R
 h = 0.5 * 20 * 300 ** 2; r1 = R + h; gh = GM / r1 ** 2; v = 20 * 300
 r2 = 1 / (1 / r1 - v * v / (2 * GM)); H = r2 - R
 
-E(id="bagrut-1996-q5", year=1996, label="1996 שאלה 5", topic="gravitation", sub="grav-energy", diff=4,
+def fig():
+    g = Fig(560, 300, "טיל אנכי שעולה כלפי מעלה. בתוכו מד-כוח תלוי מהחלק העליון, ובקצהו גוף שמסתו 2 קילוגרם. מתחת לטיל להבות")
+    cx = 280
+    g.path(f"M {cx - 40},230 L {cx - 40},90 Q {cx - 40},40 {cx},20 Q {cx + 40},40 {cx + 40},90 L {cx + 40},230 Z", fill="var(--d-fill)", stroke="var(--d-line)", width=2)
+    g.spring(cx, 60, cx, 130, coils=7, amp=7, lead=6)
+    g.block(cx, 146, 34, 28, "2 kg")
+    for dx in (-26, -10, 6, 22):
+        g.line(cx + dx, 234, cx + dx * 1.4, 280, width=1.6, stroke="var(--d-accent, var(--d-body))")
+    g.arrow(cx + 70, 200, cx + 70, 130, "a", lx=cx + 80, ly=170, anchor="start")
+    g.heb(cx - 52, 110, "מד-כוח", anchor="end")
+    return g
+
+E(id="bagrut-1996-q5", year=1996, label="1996 שאלה 5", topic="gravitation", sub="grav-energy", diff=4, fig=fig,
   stem=r"טיל שוגר מפני כדור הארץ ממנוחה בכיוון אנכי. הטיל עלה בתאוצה קבועה של $20\,\text{m/s}^2$. כעבור $5$ דקות אזל הדלק במכלי הטיל. (השתמש ב-$g = 9.8\,\text{m/s}^2$ על פני כדור הארץ, ורדיוס כדור הארץ $6400\,\text{km}$.)",
   parts=[
     P("א", r"באיזה גובה מעל פני כדור הארץ אזל הדלק?", num(h, "m"), ["principle"], [

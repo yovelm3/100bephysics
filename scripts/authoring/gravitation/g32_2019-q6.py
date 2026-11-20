@@ -14,7 +14,7 @@ def fig():
     g.dot(ex, ey); g.dot(mx, ey); g.line(ex, ey, mx, ey, width=1.1, dash="5 4")
     dx = 250; g.ball(dx, ey, r=5); g.text(dx, ey - 12, "D")
     g.dim(ex, ey + 26, dx, ey + 26, "rE", ext=False, label_dy=6); g.dim(dx, ey + 26, mx, ey + 26, "rM", ext=False, label_dy=6)
-    defs = [("1", dict(segs=[[(0.02, 0.6), (0.5, 0.6), (0.5, -0.6), (1, -0.6)]])),
+    defs = [("1", dict(segs=[[(0.02, 0.7), (0.78, 0.7), (0.78, -0.18), (0.95, -0.18)]])),
             ("2", dict(fn=None, segs=[(F2, 0.0, 1.0)])),
             ("3", dict(pts=[(0.0, 0.9), (1.0, -0.9)])),
             ("4", dict(segs=[(lambda x: clip(0.01 / (x + 0.06) ** 2 - 0.25), 0.0, 1.0)]))]
