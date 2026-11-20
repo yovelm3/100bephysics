@@ -23,7 +23,8 @@ export default async function PracticePage() {
   const solved = new Set((solvedRows ?? []).map((r) => r.exercise_id as string));
   // Counted from the lists themselves: an admin also sees drafts, which the catalog counts leave out.
   const lists = await Promise.all(rows.map((r) => supabase.rpc("list_exercises", { p_subtopic: r.subtopic_id })));
-  const bySubtopic = new Map(rows.map((r, i) => [r.subtopic_id, (lists[i].data ?? []) as Ex[]]));
+  const year = (e: Ex) => Number(e.source_label?.match(/\d{4}/)?.[0] ?? 9999);
+  const bySubtopic = new Map(rows.map((r, i) => [r.subtopic_id, ((lists[i].data ?? []) as Ex[]).slice().sort((a, b) => year(a) - year(b))]));
   const topics = [...new Map(rows.map((r) => [r.topic_id, r.topic_name])).entries()];
 
   return (
@@ -40,12 +41,12 @@ export default async function PracticePage() {
           const subs = rows.filter((r) => r.topic_id === id);
           const total = subs.reduce((n, r) => n + (bySubtopic.get(r.subtopic_id)?.length ?? 0), 0);
           return (
-            <details key={id} className="group rounded-2xl border border-line bg-surface">
+            <details key={id} className="rounded-2xl border border-line bg-surface">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5 [&::-webkit-details-marker]:hidden">
                 <span className="text-lg font-bold text-accent">{name}</span>
                 <span className="flex items-center gap-3 text-muted">
                   <span className="text-sm"><span className="ltr">{total}</span> שאלות</span>
-                  <span aria-hidden className="transition-transform group-open:rotate-180">▾</span>
+                  <span aria-hidden className="transition-transform [details[open]>summary_&]:rotate-180">▾</span>
                 </span>
               </summary>
               <ul className="flex flex-col gap-2 px-3 pb-4">
@@ -53,12 +54,12 @@ export default async function PracticePage() {
                   const ex = bySubtopic.get(r.subtopic_id) ?? [];
                   return (
                     <li key={r.subtopic_id}>
-                      <details className="group/sub rounded-xl border border-line">
+                      <details className="rounded-xl border border-line">
                         <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 [&::-webkit-details-marker]:hidden">
                           <span className="font-semibold">{r.subtopic_name}</span>
                           <span className="flex items-center gap-3 text-muted">
                             <span className="ltr text-sm">{ex.length}</span>
-                            <span aria-hidden className="transition-transform group-open/sub:rotate-180">▾</span>
+                            <span aria-hidden className="transition-transform [details[open]>summary_&]:rotate-180">▾</span>
                           </span>
                         </summary>
                         {ex.length === 0 ? (

@@ -9,11 +9,11 @@ def fig():
     g.ball(O[0] - R + 6, O[1] - 6, 6); g.text(O[0] - R - 6, O[1] - 12, "A", anchor="end")
     B = (O[0], O[1] + R); r = 56; Oc = (B[0], B[1] - r)
     g.circle(*Oc, r, fill="none", stroke="var(--d-line)", width=3)
-    g.path(f"M {B[0]},{B[1]} L {B[0] + 260},{B[1]}", width=3)
+    g.path(f"M {B[0]},{B[1]} A {R} {R} 0 0 0 {O[0] + R},{O[1]}", width=3)  # the track rises again on the right (U shape)
     g.dot(*Oc); g.text(Oc[0] + 8, Oc[1] + 4, "O'", anchor="start")
     for (x, y, t, dx, dy) in ((B[0], B[1], "B", 0, 20), (Oc[0] + r, Oc[1], "C", 14, 5), (Oc[0], Oc[1] - r, "D", 0, -8), (Oc[0] - r, Oc[1], "E", -14, 5)):
         g.dot(x, y); g.text(x + dx, y + dy, t)
-    g.text(B[0] + 100, B[1] - 8, "F")
+    Fp = (O[0] + R * math.cos(math.radians(-35)), O[1] - R * math.sin(math.radians(-35))); g.dot(*Fp); g.text(Fp[0] + 12, Fp[1] + 4, "F", anchor="start")
     g.dim(O[0] - R - 20, O[1], O[0] - R - 20, B[1], "R")
     return g
 

@@ -1,44 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" role="img" aria-label="נדנדה ענקית: מגדל בגובה 46 מטר, ומתקן קשתי. הנערים קשורים בכבלים באורך 50 מטר לנקודה O, מורמים ל-A ומשוחררים, ונעים בקשת ABC. B הנקודה הנמוכה, 1 מטר מעל הקרקע. בנקודה M שבין A ל-B שמונה כיוונים I עד VIII">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="נדנדה ענקית בקנה מידה: מגדל בגובה 46 מטר, והנקודה A בראשו. הנערים קשורים בכבלים באורך 50 מטר לנקודה O, ונעים בקשת ABC. B הנקודה הנמוכה, 1 מטר מעל הקרקע. משמאל: הקשת ABC, ועליה הנקודה M ושמונה כיוונים I עד VIII">
 <defs>
 <pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
 <marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
 <marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
 <marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
 </defs>
-<rect x="20" y="280" width="520" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
-<line x1="20" y1="280" x2="540" y2="280" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
-<circle cx="300" cy="20" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="300" y="14" text-anchor="middle">O</text>
-<path d="M 168.1,208.4 A 230 230 0 0 0 431.9,208.4" fill="none" stroke="var(--d-dim)" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
-<line x1="300" y1="20" x2="300" y2="250" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
-<text class="dim" x="308" y="140" text-anchor="start">50 m</text>
-<circle cx="168.1" cy="208.4" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="160.1" y="202.4" text-anchor="end">A</text>
-<circle cx="300" cy="250" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="310" y="254" text-anchor="start">B</text>
-<circle cx="431.9" cy="208.4" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="439.9" y="202.4" text-anchor="start">C</text>
-<polygon points="162.1,212.4 144.1,280 180.1,280" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
-<line x1="30" y1="208.4" x2="30" y2="280" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
-<text class="dim" x="16" y="248.2" text-anchor="middle" transform="rotate(90.0 16 248.2)">46 m</text>
-<line x1="340" y1="250" x2="340" y2="280" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
-<text class="dim" x="326" y="269" text-anchor="middle" transform="rotate(90.0 326 269)">1 m</text>
-<circle cx="240.5" cy="242.2" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
-<text class="label" x="246.5" y="258.2" text-anchor="start">M</text>
-<line x1="240.5" y1="242.2" x2="240.5" y2="214.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="240.5" y="207.2" text-anchor="middle">I</text>
-<line x1="240.5" y1="242.2" x2="260.3" y2="222.4" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="268.8" y="218.9" text-anchor="middle">II</text>
-<line x1="240.5" y1="242.2" x2="268.5" y2="242.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="280.5" y="247.2" text-anchor="middle">III</text>
-<line x1="240.5" y1="242.2" x2="260.3" y2="262" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="268.8" y="275.4" text-anchor="middle">IV</text>
-<line x1="240.5" y1="242.2" x2="240.5" y2="270.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="240.5" y="287.2" text-anchor="middle">V</text>
-<line x1="240.5" y1="242.2" x2="220.7" y2="262" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="212.2" y="275.4" text-anchor="middle">VI</text>
-<line x1="240.5" y1="242.2" x2="212.5" y2="242.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="200.5" y="247.2" text-anchor="middle">VII</text>
-<line x1="240.5" y1="242.2" x2="220.7" y2="222.4" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
-<text class="dim" x="212.2" y="218.9" text-anchor="middle">VIII</text>
+<rect x="10" y="284" width="470" height="12" rx="0" fill="url(#f-hatch)" stroke="none" stroke-width="0"/>
+<line x1="10" y1="284" x2="480" y2="284" stroke="var(--d-line)" stroke-width="2" stroke-linecap="round"/>
+<circle cx="250" cy="80" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="250" y="72" text-anchor="middle">O</text>
+<path d="M 51.0,100.0 A 200.0 200.0 0 0 0 449.0,100.0" fill="none" stroke="var(--d-dim)" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<line x1="250" y1="80" x2="250" y2="280" stroke="var(--d-dim)" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round"/>
+<text class="dim" x="258" y="190" text-anchor="start">50 m</text>
+<circle cx="51" cy="100" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="59" y="92" text-anchor="start">A</text>
+<circle cx="250" cy="280" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="260" y="278" text-anchor="start">B</text>
+<circle cx="449" cy="100" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="441" y="92" text-anchor="end">C</text>
+<polygon points="51,100 37,284 65,284" fill="none" stroke="var(--d-line)" stroke-width="1.5" stroke-linejoin="round"/>
+<text class="heb" x="73" y="224" text-anchor="end" direction="rtl">מגדל</text>
+<line x1="14" y1="100" x2="14" y2="284" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="0" y="196" text-anchor="middle" transform="rotate(90.0 0 196)">46 m</text>
+<line x1="290" y1="280" x2="290" y2="284" stroke="var(--d-dim)" stroke-width="1.3" marker-start="url(#f-dim)" marker-end="url(#f-dim)"/>
+<text class="dim" x="276" y="286" text-anchor="middle" transform="rotate(90.0 276 286)">1 m</text>
+<path d="M 510.7,53.6 A 130 130 0 0 0 769.3,53.6" fill="none" stroke="var(--d-dim)" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="6 5"/>
+<circle cx="640" cy="40" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="640" y="32" text-anchor="middle">O</text>
+<circle cx="510.7" cy="53.6" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="510.7" y="45.6" text-anchor="middle">A</text>
+<circle cx="640" cy="170" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="640" y="190" text-anchor="middle">B</text>
+<circle cx="769.3" cy="53.6" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="769.3" y="45.6" text-anchor="middle">C</text>
+<circle cx="543.4" cy="127" r="3.5" fill="var(--d-label)" stroke="none" stroke-width="2"/>
+<text class="label" x="551.4" y="143" text-anchor="start">M</text>
+<line x1="543.4" y1="127" x2="543.4" y2="97" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="543.4" y="88" text-anchor="middle">I</text>
+<line x1="543.4" y1="127" x2="564.6" y2="105.8" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="574.5" y="100.9" text-anchor="middle">II</text>
+<line x1="543.4" y1="127" x2="573.4" y2="127" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="587.4" y="132" text-anchor="middle">III</text>
+<line x1="543.4" y1="127" x2="564.6" y2="148.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="574.5" y="163.1" text-anchor="middle">IV</text>
+<line x1="543.4" y1="127" x2="543.4" y2="157" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="543.4" y="176" text-anchor="middle">V</text>
+<line x1="543.4" y1="127" x2="522.2" y2="148.2" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="512.3" y="163.1" text-anchor="middle">VI</text>
+<line x1="543.4" y1="127" x2="513.4" y2="127" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="499.4" y="132" text-anchor="middle">VII</text>
+<line x1="543.4" y1="127" x2="522.2" y2="105.8" stroke="var(--d-label)" stroke-width="1.5" marker-end="url(#f-arr)"/>
+<text class="dim" x="512.3" y="100.9" text-anchor="middle">VIII</text>
 </svg>
