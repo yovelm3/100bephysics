@@ -2,7 +2,7 @@ from mk import *
 
 def fig():
     g = Fig(560, 330, "גרף המקום האנכי של כדור כפונקציה של הזמן: פרבולה מ-40 מטר ב-0 שניות (נקודה A), שיא 45 מטר ב-1 שנייה (B), 25 מטר ב-3 שניות (C), ו-0 ב-4 שניות (D)")
-    X, Y = g.graph(80, 300, 400, 260, "t (s)", "y (m)", xticks=[(t, str(t)) for t in range(1, 5)], yticks=[(v, str(v)) for v in range(5, 46, 5)], xmax=4.3, ymax=48)
+    X, Y = g.graph(80, 300, 400, 260, "t (s)", "y (m)", xticks=[(t, str(t)) for t in range(1, 5)], yticks=[(v, str(v)) for v in range(5, 46, 5)], xmax=4.8, ymax=48)
     g.curve(X, Y, lambda t: 40 + 10 * t - 5 * t * t, 0, 4)
     for t, lab in ((0, "A"), (1, "B"), (3, "C"), (4, "D")):
         y = 40 + 10 * t - 5 * t * t

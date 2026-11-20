@@ -11,7 +11,6 @@ def fig():
     g.line(83, 98, 520, 98, width=1.5); g.text(83, 116, "0", cls="dim"); g.text(183, 116, "30", cls="dim"); g.line(183, 94, 183, 102, width=1.5)
     g.text(520, 116, "x (m)", cls="dim", anchor="end")
     g.motorcycle(183, 90, 46)
-    g.car(120, 90, 54)
     g.arrow(330, 50, 440, 50, None); g.heb(385, 42, "כיוון התנועה")
     g.heb(300, 130, "תרשים א")
     X, Y = g.graph(80, 300, 380, 140, "t (s)", "v (m/s)", xticks=[(5, "5"), (15, "15")], yticks=[(25, "25"), (30, "30")], xmax=16, ymax=30, grid=False)
