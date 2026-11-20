@@ -2,7 +2,7 @@ from mk import *
 import math
 
 def fig():
-    g = Fig(560, 260, "מסילה במישור אנכי: הגוף m משוחרר מהנקודה A בגובה H = 3 מטר מעל המישור MN, יורד ל-B בתחתית, עולה ל-C בגובה h = 1 מטר, ונע בקטע אופקי מחוספס CD. בקצה הקטע קפיץ רפוי מחובר לקיר, והגוף נעצר בנקודה F")
+    g = Fig(560, 390, "מסילה במישור אנכי: הגוף m משוחרר מהנקודה A בגובה H = 3 מטר מעל המישור MN, יורד ל-B בתחתית, עולה ל-C בגובה h = 1 מטר, ונע בקטע אופקי מחוספס CD. בקצה הקטע קפיץ רפוי מחובר לקיר, והגוף נעצר בנקודה F")
     g.ground(40, 520, 230)
     g.path("M 100,60 Q 150,50 200,170 Q 230,240 260,200 Q 280,170 300,170 L 410,170 L 500,170", width=2.5)
     g.block(108, 52, 18, 12, None, fill="var(--d-fill)"); g.text(96, 54, "A", anchor="end")
@@ -10,6 +10,17 @@ def fig():
     g.spring(420, 160, 480, 160, coils=7, amp=8); g.rect(480, 120, 10, 50, fill="var(--d-label)", stroke="none", width=0)
     for x, y, t in ((52, 246, "M"), (232, 246, "B"), (300, 158, "C"), (420, 186, "D"), (446, 186, "F"), (510, 246, "N")): g.text(x, y, t)
     for x in range(310, 410, 14): g.line(x, 174, x + 8, 182, stroke="var(--d-dim)", width=1)
+    # the table from part א (energies at each point; A filled in as the example)
+    x0, y0, hw, cw, rh = 40, 266, 150, 60, 26
+    cols = ["A", "B", "C", "D", "F"]; rows = [("קינטית", "0"), ("פוטנציאלית כובדית", "+"), ("פוטנציאלית אלסטית", "0")]
+    W_ = hw + cw * len(cols)
+    g.rect(x0, y0, W_, rh * 4, fill="none", width=1.2)
+    for r in range(1, 4): g.line(x0, y0 + rh * r, x0 + W_, y0 + rh * r, width=0.8)
+    for c in range(len(cols)): g.line(x0 + W_ - hw - cw * c, y0, x0 + W_ - hw - cw * c, y0 + rh * 4, width=0.8)
+    g.heb(x0 + W_ - hw / 2, y0 + 18, "האנרגיה \\ הנקודה")
+    for c, lab in enumerate(cols): g.text(x0 + W_ - hw - cw * (c + 0.5), y0 + 18, lab)
+    for r, (name, a) in enumerate(rows):
+        g.heb(x0 + W_ - hw / 2, y0 + rh * (r + 1) + 18, name); g.text(x0 + W_ - hw - cw * 0.5, y0 + rh * (r + 1) + 18, a)
     return g
 
 vC = math.sqrt(40); vD = math.sqrt(34); k = 1.5 * 34 / 0.01

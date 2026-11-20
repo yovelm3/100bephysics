@@ -13,6 +13,7 @@ def fig():
     for x, h, lab in ((60, 12, "12m"), (170, 7, "7m"), (440, 8, "8m"), (480, 14, "14m")):
         g.line(x, Y(h), x, 250, stroke="var(--d-dim)", width=1, dash="4 3"); g.text(x - 4, (Y(h) + 250) / 2, lab, cls="dim", anchor="end")
     g.circle(170, Y(7) - 75, 75, fill="none", stroke="var(--d-dim)", dash="4 4"); g.text(170, Y(7) - 80, "R = 5m", cls="dim")
+    g.circle(250, Y(9.5) + 75, 75, fill="none", stroke="var(--d-dim)", dash="4 4"); g.text(250, Y(9.5) + 84, "R = 5m", cls="dim")
     g.angle(390, 250, 26, 0, 53, "53°", lr=40)
     return g
 

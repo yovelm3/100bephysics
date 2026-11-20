@@ -2,12 +2,18 @@ from mk import *
 import math
 
 def fig():
-    g = Fig(560, 230, "מסילה חלקה ABCD: הגוף בנקודה A בגובה 1 מטר מעל המשטח, במהירות 1 מטר לשנייה. C הנקודה הנמוכה, ו-D בגובה 1.5 מטר")
-    g.ground(30, 520, 200)
-    g.path("M 60,80 Q 110,90 150,170 Q 190,215 250,200 Q 380,190 430,40", width=3)
-    g.block(70, 74, 22, 16, None, angle=-20); g.arrow(84, 62, 110, 72, "1 m/s", lx=116, ly=66, anchor="start")
-    g.text(54, 86, "A", anchor="end"); g.text(140, 160, "B", anchor="end"); g.text(250, 220, "C"); g.text(440, 34, "D", anchor="start")
-    g.dim(40, 80, 40, 200, "1 m", offset=0); g.dim(470, 40, 470, 200, "1.5 m", offset=0)
+    g = Fig(720, 250, "תרשים א: מסילה חלקה ABCD: הגוף בנקודה A בגובה 1 מטר מעל המשטח, במהירות 1 מטר לשנייה, יורד דרך B לנקודה הנמוכה C ועולה לראש גבעה D בגובה 1.5 מטר. תרשים ב: אותה מסילה, ובמקום הקטע העקום ABC קטע ישר משופע AB'C")
+    for ox, lab, straight in ((380, "תרשים א", False), (20, "תרשים ב", True)):
+        gy = 200; X = lambda u: ox + u
+        g.ground(X(0), X(330), gy, depth=8)
+        A = (X(50), 80); C = (X(150), gy); D = (X(250), 40)
+        g.path(f"M {A[0]},{A[1]} Q {X(85)},{A[1] + 10} {X(105)},{gy - 40} Q {X(125)},{gy} {C[0]},{gy} Q {X(200)},{gy} {X(225)},{90} Q {X(240)},{40} {D[0]},{40} Q {X(270)},{40} {X(300)},{150}", width=2.6)
+        if straight:
+            g.line(A[0], A[1], C[0], C[1], width=2.6, dash="6 4"); g.text(X(112), gy - 74, "B'", anchor="start")
+        g.block(A[0] + 6, A[1] - 8, 20, 14, None, angle=-15); g.arrow(A[0] + 14, A[1] - 22, A[0] + 40, A[1] - 12, "1 m/s", lx=A[0] + 44, ly=A[1] - 22, anchor="start")
+        g.text(A[0] - 8, A[1] + 4, "A", anchor="end"); g.text(X(98), gy - 34, "B", anchor="end"); g.text(C[0], gy + 18, "C"); g.text(D[0], 32, "D")
+        g.dim(X(30), A[1], X(30), gy, "1 m", offset=0); g.dim(X(320), 40, X(320), gy, "1.5 m", offset=0)
+        g.heb(X(170), 240, lab)
     return g
 
 E(id="bagrut-1997-q4", year=1997, label="1997 שאלה 4", topic="energy", sub="en-conservation", diff=3, fig=fig,

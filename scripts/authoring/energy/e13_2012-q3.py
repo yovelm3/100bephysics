@@ -2,13 +2,19 @@ from mk import *
 import math
 
 def fig():
-    g = Fig(560, 300, "מסילה חלקה AB על שולחן בגובה H: הקצה A בגובה h מעל השולחן, והקצה B אופקי בקצה השולחן. כדור נורה מ-A במורד המסילה במהירות v0 ונוחת במרחק x. וגרף x בריבוע כפונקציה של h: קו ישר מ-1 ב-h=0 עד 11 ב-h=2 מטר")
+    g = Fig(560, 330, "מסילה חלקה AB על שולחן בגובה H: הקצה A בגובה h מעל השולחן, והקצה B אופקי בקצה השולחן. כדור נורה מ-A במורד המסילה במהירות v0 ונוחת במרחק x. וגרף x בריבוע כפונקציה של h: קו ישר מ-1 ב-h=0 עד 11 ב-h=2 מטר. תרשים ג (סעיף ה): כדור שני מוחזק בגובה H מעל הקרקע, במרחק 1.5 מטר מקצה השולחן")
     g.ground(20, 300, 150); g.rect(120, 92, 170, 10, fill="var(--d-fill)"); g.line(140, 102, 140, 150, width=3); g.line(270, 102, 270, 150, width=3)
     g.path("M 130,90 Q 220,90 280,24", width=2.5); g.line(280, 24, 280, 90, stroke="var(--d-dim)", width=1, dash="3 3")
     g.ball(266, 34, 5); g.arrow(258, 42, 236, 58, "v₀", lx=240, ly=40)
     g.text(288, 22, "A", anchor="start"); g.text(126, 84, "B", anchor="end")
     g.dim(296, 24, 296, 92, "h", offset=0); g.dim(296, 102, 296, 150, "H", offset=0)
     g.path("M 128,90 Q 80,92 50,148", stroke="var(--d-dim)", width=1.4, dash="5 4"); g.dim(50, 165, 140, 165, "x", offset=0)
+    g.heb(160, 186, "תרשים א")
+    # תרשים ג (part ה): the second ball, at height H, 1.5 m from the table's edge
+    gy = 300; g.ground(20, 300, gy); g.rect(140, gy - 48, 150, 8, fill="var(--d-fill)"); g.line(160, gy - 40, 160, gy, width=3); g.line(270, gy - 40, 270, gy, width=3)
+    g.path(f"M 150,{gy - 50} Q 230,{gy - 50} 280,{gy - 94}", width=2.2); g.dim(296, gy - 94, 296, gy - 48, "0.5 m", offset=0)
+    g.ball(60, gy - 48, 6); g.line(60, gy - 42, 60, gy, stroke="var(--d-dim)", width=1, dash="3 3"); g.dim(60, gy - 64, 140, gy - 64, "1.5 m", offset=0)
+    g.heb(160, gy + 24, "תרשים ג")
     X, Y = g.graph(350, 270, 180, 200, "h (m)", "x² (m²)", xticks=[(v, f"{v:g}") for v in (0.5, 1, 1.5, 2, 2.5)], yticks=[(v, str(v)) for v in (2, 4, 6, 8, 10, 12)], xmax=2.5, ymax=12)
     g.plot(X, Y, [(0, 1), (2, 11)])
     return g
