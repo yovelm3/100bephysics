@@ -6,6 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button, Card, Page } from "@/components/ui";
 import { requireUser } from "@/lib/access";
+import { MixedText } from "@/components/MixedText";
 import { isKeyMismatch, reviewNote } from "@/lib/review";
 import { setExerciseStatus, unlockTrial } from "./actions";
 import { ExercisePlayer, type PlayerExercise, type PlayerPart } from "./ExercisePlayer";
@@ -84,7 +85,7 @@ function ReviewPanel({ id, draft, notes, next }: { id: string; draft: boolean; n
         <h2 className="font-bold">{mismatch ? "לבדיקה: אי-התאמה לדף התשובות" : "בדיקת הבעלים"}</h2>
         <Link href="/admin/review" className="text-sm font-semibold text-accent underline">כל הטיוטות</Link>
       </div>
-      <p className="leading-relaxed">{note || "אין הערות מיוחדות. בדוק נוסח, ציור ופתרון."}</p>
+      <p className="leading-relaxed">{note ? <MixedText text={note} /> : "אין הערות מיוחדות. בדוק נוסח, ציור ופתרון."}</p>
       <form action={setExerciseStatus} className="flex flex-wrap gap-2">
         <input type="hidden" name="id" value={id} />
         {draft ? (

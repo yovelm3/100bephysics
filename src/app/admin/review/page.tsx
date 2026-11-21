@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, Page } from "@/components/ui";
 import { requireAdmin } from "@/lib/access";
+import { MixedText } from "@/components/MixedText";
 import { isKeyMismatch, reviewNote } from "@/lib/review";
 
 export const metadata: Metadata = { title: "בדיקת תרגילים | 100 בפיזיקה" };
@@ -88,7 +89,7 @@ export default async function ReviewPage({ searchParams }: PageProps<"/admin/rev
                       <span className="font-semibold">{r.source_label ?? r.id}</span>
                       <span className="text-sm text-muted">{r.subtopics?.name}</span>
                     </span>
-                    {note && <span className="text-sm text-muted">{note}</span>}
+                    {note && <span className="text-sm text-muted"><MixedText text={note} /></span>}
                   </Link>
                 </li>
               );
