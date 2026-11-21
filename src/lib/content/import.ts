@@ -9,6 +9,7 @@ export type ImportResult = { ok: true; exercises: number; parts: number } | { ok
 /**
  * Imports content/topics.json and every exercise file (content/<pool>/<topic>/*.json + its SVG) into the database.
  * Upserts only: never deletes exercises (attempts stay linked). Parts removed from a file are removed.
+ * An exercise already published on the site stays published.
  * Needs the service-role client (part_answers is server-only).
  */
 export async function importContent(admin: SupabaseClient, root = path.join(process.cwd(), "content")): Promise<ImportResult> {
@@ -18,6 +19,11 @@ export async function importContent(admin: SupabaseClient, root = path.join(proc
   const fail = (what: string, e: { message: string } | null) => (e ? `${what}: ${e.message}` : null);
   const t = topicRows(topics);
   const rows = exercises.map((x) => exerciseRows(x.exercise, x.svg));
+  // Approvals are made on the site (admin_set_exercise_status). Re-importing the files must not undo them.
+  const { data: live, error: liveErr } = await admin.from("exercises").select("id").eq("status", "published");
+  if (liveErr) return { ok: false, errors: [`read published: ${liveErr.message}`] };
+  const published = new Set((live ?? []).map((r) => r.id as string));
+  for (const r of rows) if (published.has(r.exercise.id)) Object.assign(r.exercise, { status: "published", needs_review: false });
 
   const steps: [string, () => PromiseLike<{ error: { message: string } | null }>][] = [
     ["topics", () => admin.from("topics").upsert(t.topics)],

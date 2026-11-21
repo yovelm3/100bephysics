@@ -4,9 +4,10 @@ export const instant = false;
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Card, Page } from "@/components/ui";
+import { Button, Card, Page } from "@/components/ui";
 import { requireUser } from "@/lib/access";
-import { unlockTrial } from "./actions";
+import { isKeyMismatch, reviewNote } from "@/lib/review";
+import { setExerciseStatus, unlockTrial } from "./actions";
 import { ExercisePlayer, type PlayerExercise, type PlayerPart } from "./ExercisePlayer";
 
 export const metadata: Metadata = { title: "תרגיל | 100 בפיזיקה" };
@@ -64,7 +65,46 @@ export default async function ExercisePage({ params }: PageProps<"/exercise/[id]
     solved: solved.has(p.id),
   }));
 
-  return <ExercisePlayer exercise={exercise} parts={playerParts} />;
+  let adminPanel = null;
+  if (profile.role === "admin") {
+    const { data: rv } = await supabase.from("exercises").select("review_notes").eq("id", id).single();
+    adminPanel = <ReviewPanel id={id} draft={ex.status === "draft"} notes={rv?.review_notes ?? null} next={exercise.nav.next} />;
+  }
+
+  return <ExercisePlayer exercise={exercise} parts={playerParts} adminPanel={adminPanel} />;
+}
+
+/** Owner review, visible to admins only: Claude's note on this exercise, and approve/publish. */
+function ReviewPanel({ id, draft, notes, next }: { id: string; draft: boolean; notes: string | null; next: string | null }) {
+  const note = reviewNote(notes);
+  const mismatch = isKeyMismatch(notes);
+  return (
+    <section aria-label="בדיקת הבעלים" className={`flex flex-col gap-3 rounded-2xl border-2 p-4 ${mismatch ? "border-warn bg-warn-soft" : "border-caution bg-caution-soft"}`}>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 className="font-bold">{mismatch ? "לבדיקה: אי-התאמה לדף התשובות" : "בדיקת הבעלים"}</h2>
+        <Link href="/admin/review" className="text-sm font-semibold text-accent underline">כל הטיוטות</Link>
+      </div>
+      <p className="leading-relaxed">{note || "אין הערות מיוחדות. בדוק נוסח, ציור ופתרון."}</p>
+      <form action={setExerciseStatus} className="flex flex-wrap gap-2">
+        <input type="hidden" name="id" value={id} />
+        {draft ? (
+          <>
+            <input type="hidden" name="status" value="published" />
+            <Button type="submit">אשר ופרסם</Button>
+            {next && (
+              <Button type="submit" variant="ghost" name="next" value={next}>אשר ועבור לשאלה הבאה</Button>
+            )}
+          </>
+        ) : (
+          <>
+            <span className="self-center rounded-full bg-key-soft px-3 py-1 text-sm font-bold text-key">פורסם: תלמידים רואים את השאלה</span>
+            <input type="hidden" name="status" value="draft" />
+            <Button type="submit" variant="danger">החזר לטיוטה</Button>
+          </>
+        )}
+      </form>
+    </section>
+  );
 }
 
 function Locked({ id, access }: { id: string; access: string }) {

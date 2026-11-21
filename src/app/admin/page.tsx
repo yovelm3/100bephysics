@@ -2,6 +2,7 @@
 export const instant = false;
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Button, Card, Page, formatDate, formatDateTime } from "@/components/ui";
 import { requireAdmin } from "@/lib/access";
 import { grantSubscription, importContentAction, removeDevice, setTrack, unlockUser } from "./actions";
@@ -67,9 +68,12 @@ export default async function AdminPage({ searchParams }: PageProps<"/admin">) {
             {imported.startsWith("ok:") ? `נטענו ${imported.split(":")[1]} תרגילים (${imported.split(":")[2]} סעיפים).` : `הטעינה נכשלה: ${imported}`}
           </p>
         )}
-        <form action={importContentAction}>
-          <Button type="submit">טעינת התרגילים מהמאגר</Button>
-        </form>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/admin/review" className="rounded-lg bg-cta px-4 py-2.5 text-sm font-semibold text-on-cta hover:opacity-90">בדיקת התרגילים ואישור</Link>
+          <form action={importContentAction}>
+            <Button type="submit" variant="ghost">טעינת התרגילים מהמאגר</Button>
+          </form>
+        </div>
       </Card>
 
       <form className="flex gap-2">

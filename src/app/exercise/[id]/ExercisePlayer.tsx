@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { ANIMATIONS } from "@/components/animations/registry";
 import { InlineText, SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
 
@@ -35,7 +35,7 @@ type Solution = { solution: SolutionStep[]; final_answer: string } | null;
 
 const unitLabel = (u: string | null) => (u ?? "").replace("^2", "²").replace("^3", "³").replace("^-1", "⁻¹");
 
-export function ExercisePlayer({ exercise, parts }: { exercise: PlayerExercise; parts: PlayerPart[] }) {
+export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: PlayerExercise; parts: PlayerPart[]; adminPanel?: ReactNode }) {
   const [current, setCurrent] = useState(() => Math.max(0, parts.findIndex((p) => !p.solved)));
   const [solved, setSolved] = useState<Record<string, boolean>>(() => Object.fromEntries(parts.map((p) => [p.id, p.solved])));
   const [inputs, setInputs] = useState<Record<string, string>>({});
@@ -96,6 +96,8 @@ export function ExercisePlayer({ exercise, parts }: { exercise: PlayerExercise; 
         </span>
         {exercise.isDraft && <span className="rounded-full bg-caution-soft px-3 py-0.5 font-bold text-caution">טיוטה: רק מנהל רואה</span>}
       </div>
+
+      {adminPanel}
 
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
         {/* Stem: one compact block, like the source booklets */}
