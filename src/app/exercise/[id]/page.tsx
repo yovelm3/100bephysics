@@ -82,10 +82,10 @@ function ReviewPanel({ id, draft, notes, next }: { id: string; draft: boolean; n
   return (
     <section aria-label="בדיקת הבעלים" className={`flex flex-col gap-3 rounded-2xl border-2 p-4 ${mismatch ? "border-warn bg-warn-soft" : "border-caution bg-caution-soft"}`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-bold">{mismatch ? "לבדיקה: אי-התאמה לדף התשובות" : "בדיקת הבעלים"}</h2>
+        <h2 className="font-bold">{mismatch ? (note.startsWith("צריך החלטה") ? "לבדיקה: צריך החלטה שלך" : "לבדיקה: הבדל מדף התשובות") : "בדיקת הבעלים"}</h2>
         <Link href="/admin/review" className="text-sm font-semibold text-accent underline">כל הטיוטות</Link>
       </div>
-      <p className="leading-relaxed">{note ? <MixedText text={note} /> : "אין הערות מיוחדות. בדוק נוסח, ציור ופתרון."}</p>
+      <p className="whitespace-pre-line leading-relaxed">{note ? <MixedText text={note} /> : "אין הערות מיוחדות. בדוק נוסח, ציור ופתרון."}</p>
       <form action={setExerciseStatus} className="flex flex-wrap gap-2">
         <input type="hidden" name="id" value={id} />
         {draft ? (

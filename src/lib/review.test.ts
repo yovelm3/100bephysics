@@ -7,9 +7,11 @@ describe("review notes", () => {
     expect(reviewNote("טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.")).toBe("");
     expect(reviewNote(null)).toBe("");
   });
-  it("flags disagreements with the answer key", () => {
-    expect(isKeyMismatch("טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה למפתח בסעיף ב")).toBe(true);
-    expect(isKeyMismatch("סעיף ד: במפתח 38, החישוב נותן 38.99")).toBe(true);
+  it("flags notes that need the owner's judgement", () => {
+    expect(isKeyMismatch("טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה לדף התשובות, בסעיף ב")).toBe(true);
+    expect(isKeyMismatch("הבדל קטן מדף התשובות, בסעיף ד")).toBe(true);
+    expect(isKeyMismatch("צריך החלטה שלך, בסעיף ג")).toBe(true);
+    expect(isKeyMismatch("הנחה שלי.\nהזווית נמדדת מהקיר. כך יוצאת התשובה בדף התשובות.")).toBe(false);
     expect(isKeyMismatch("סעיף ב פוצל לב1 וב2.")).toBe(false);
   });
 });

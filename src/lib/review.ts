@@ -5,7 +5,11 @@ export function reviewNote(notes: string | null | undefined): string {
   return (notes ?? "").replace(BOILERPLATE, "").trim();
 }
 
-/** A note that says the answer key and our solution disagree: the owner should look at these first. */
+/**
+ * Notes that need the owner's judgement: our answer differs from the answer key, or a decision is needed.
+ * They start with "אי-התאמה", "הבדל" or "צריך החלטה" (the plain-Hebrew note format); older notes say "אי-התאמה" anywhere.
+ */
 export function isKeyMismatch(notes: string | null | undefined): boolean {
-  return /אי-התאמה|במפתח/.test(reviewNote(notes));
+  const n = reviewNote(notes);
+  return /^(אי-התאמה|הבדל|צריך החלטה)/.test(n) || n.includes("אי-התאמה");
 }

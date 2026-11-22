@@ -20,7 +20,7 @@ type Row = {
 };
 
 const FILTERS = [
-  { key: "mismatch", label: "אי-התאמה למפתח" },
+  { key: "mismatch", label: "לבדיקה שלך" },
   { key: "draft", label: "כל הטיוטות" },
   { key: "published", label: "פורסמו" },
 ] as const;
@@ -89,7 +89,7 @@ export default async function ReviewPage({ searchParams }: PageProps<"/admin/rev
                       <span className="font-semibold">{r.source_label ?? r.id}</span>
                       <span className="text-sm text-muted">{r.subtopics?.name}</span>
                     </span>
-                    {note && <span className="text-sm text-muted"><MixedText text={note} /></span>}
+                    {note && <span className="text-sm text-muted"><MixedText text={note.split("\n")[0]} /></span>}
                   </Link>
                 </li>
               );
