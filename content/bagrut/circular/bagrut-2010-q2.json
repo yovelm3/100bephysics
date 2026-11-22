@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "חרוז קטן נע בתנועה מעגלית קצובה במישור אופקי בתוך חרוט שזווית הפתיחה שלו $2\\alpha$. כוחות החיכוך זניחים.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיפים ב ו-ג התלמיד בוחר את התשובה הנכונה מתוך ארבע. במקור סעיף ה הוא (1) ו-(2), וכך גם אצלנו.\nמה לבדוק: רק לאשר.",
+  "stem": "חרוז קטן נע במהירות שגודלה קבוע במעגל אופקי, בתוך חרוט שזווית הפתיחה שלו $2\\alpha$. החיכוך זניח.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2010-q2.svg",
@@ -27,12 +27,12 @@
     "מהירות וגובה",
     "זמן מחזור"
   ],
-  "summary": "חרוז בחרוט: הנורמלי מספק גם את התמיכה וגם את הכוח הצנטריפטלי, והגובה תלוי רק במהירות, $H = v^2/g$.",
+  "summary": "חרוז בחרוט: הכוח הנורמלי מספק גם את התמיכה וגם את הכוח אל המרכז, והגובה תלוי רק במהירות, $H = v^2/g$.",
   "position": 21,
   "parts": [
     {
       "label": "א",
-      "question": "בנה תרשים של כל הכוחות שפועלים על החרוז, ורשום ליד כל חץ את שם הכוח. ציין מי מפעיל כל כוח.",
+      "question": "שרטטו תרשים של כל הכוחות על החרוז, כתבו ליד כל חץ את שם הכוח, ומי מפעיל אותו.",
       "answer": {
         "type": "open"
       },
@@ -42,18 +42,29 @@
       "solution": [
         {
           "what": "שני כוחות",
-          "why": "כובד (כדור הארץ). נורמלי (דופן החרוט), בניצב לדופן, כלפי פנים ולמעלה",
-          "tex": "mg\\downarrow,\\quad N"
+          "why": "כוח הכובד, שכדור הארץ מפעיל, כלפי מטה. הכוח הנורמלי, שדופן החרוט מפעילה, ניצב לדופן, פנימה ולמעלה",
+          "tex": "mg,\\qquad N"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על החרוז: הכוח הנורמלי של דופן החרוט, ניצב לדופן, למעלה וימינה אל הציר, וכוח הכובד כלפי מטה. הכיוון החיובי אופקית אל מרכז המעגל, ימינה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"115.9\" y1=\"31.1\" x2=\"265.9\" y2=\"290.9\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"120.9\" y1=\"39.8\" x2=\"109.7\" y2=\"38.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130.9\" y1=\"57.1\" x2=\"119.7\" y2=\"55.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"140.9\" y1=\"74.4\" x2=\"129.7\" y2=\"72.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150.9\" y1=\"91.7\" x2=\"139.7\" y2=\"90.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"160.9\" y1=\"109\" x2=\"149.7\" y2=\"107.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170.9\" y1=\"126.4\" x2=\"159.7\" y2=\"124.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"180.9\" y1=\"143.7\" x2=\"169.7\" y2=\"142.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190.9\" y1=\"161\" x2=\"179.7\" y2=\"159.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"200.9\" y1=\"178.3\" x2=\"189.7\" y2=\"176.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210.9\" y1=\"195.6\" x2=\"199.7\" y2=\"194.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"220.9\" y1=\"213\" x2=\"209.7\" y2=\"211.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230.9\" y1=\"230.3\" x2=\"219.7\" y2=\"228.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"240.9\" y1=\"247.6\" x2=\"229.7\" y2=\"246\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250.9\" y1=\"264.9\" x2=\"239.7\" y2=\"263.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"260.9\" y1=\"282.2\" x2=\"249.7\" y2=\"280.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"303.5\" y2=\"96\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"319.1\" y=\"93\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"216\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"240\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז מימין</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על החרוז"
         }
       ],
-      "finalAnswer": "כובד ונורמלי",
+      "finalAnswer": "כוח הכובד והכוח הנורמלי",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "השתמש בחוקי ניוטון כדי לכתוב את שתי המשוואות שקובעות את תנועת החרוז: משוואה אחת לכיוון הרדיאלי ומשוואה אחת לכיוון האנכי.",
+      "question": "כתבו, לפי חוקי ניוטון, את שתי המשוואות שקובעות את התנועה של החרוז: אחת בכיוון הרדיאלי ואחת בכיוון האנכי.",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$N\\cos\\alpha = m a_R$, $N\\sin\\alpha = mg$",
+          "$N\\sin\\alpha = m a_R$, $N\\cos\\alpha = mg$",
+          "$N\\cos\\alpha = m a_R$, $N = mg$",
+          "$N = m a_R$, $N\\sin\\alpha = mg$"
+        ],
+        "correct": 0
       },
       "skills": [
         "fbd",
@@ -61,14 +72,23 @@
       ],
       "solution": [
         {
-          "what": "זווית הנורמלי",
-          "why": "הדופן נוטה בזווית $\\alpha$ מהאנך, והנורמלי ניצב לה, ולכן נוטה בזווית $\\alpha$ מהאופק",
-          "tex": "N_x = N\\cos\\alpha,\\ N_y = N\\sin\\alpha"
+          "explain": "בוחרים כחיובי את הכיוון האופקי אל מרכז המעגל, וכלפי מעלה בציר האנכי. השאלה לא קבעה כיוונים."
         },
         {
-          "what": "המשוואות",
-          "why": "רדיאלית: תאוצה מרכזית. אנכית: אין תאוצה",
-          "tex": "N\\cos\\alpha = m a_R,\\quad N\\sin\\alpha = mg"
+          "what": "הזווית של הכוח הנורמלי",
+          "why": "הדופן נטויה בזווית אלפא מהאנך, והכוח הנורמלי ניצב לה. לכן הוא נטוי בזווית אלפא מהאופק",
+          "tex": "N_x = N\\cos\\alpha,\\qquad N_y = N\\sin\\alpha"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי פועל רק הרכיב האופקי של הכוח הנורמלי",
+          "tex": "N\\cos\\alpha = m\\,a_R",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "החרוז לא עולה ולא יורד. הרכיב האנכי של הכוח הנורמלי מאזן את הכובד",
+          "tex": "N\\sin\\alpha - mg = 0"
         }
       ],
       "finalAnswer": "$N\\cos\\alpha = m a_R$, $N\\sin\\alpha = mg$",
@@ -76,9 +96,16 @@
     },
     {
       "label": "ג",
-      "question": "נתונה המהירות הקווית של החרוז, $v$. בטא בעזרתה את גובה מישור התנועה של החרוז, $H$.",
+      "question": "נתונה המהירות הקווית $v$ של החרוז. מה הגובה $H$ של מישור התנועה, בעזרת $v$?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$H = \\frac{v^2}{g}$",
+          "$H = \\frac{v^2}{2g}$",
+          "$H = \\frac{v^2\\tan\\alpha}{g}$",
+          "$H = \\frac{2v^2}{g}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -86,19 +113,20 @@
       ],
       "solution": [
         {
-          "what": "מחלקים",
-          "why": "N ו-m מתבטלים",
-          "tex": "a_R = \\frac{g}{\\tan\\alpha}"
+          "what": "מחלקים את המשוואות זו בזו",
+          "why": "הכוח הנורמלי והמסה מצטמצמים",
+          "tex": "\\frac{\\cos\\alpha}{\\sin\\alpha} = \\frac{a_R}{g} \\;\\Rightarrow\\; a_R = \\frac{g}{\\tan\\alpha}"
         },
         {
           "what": "רדיוס המעגל",
-          "why": "מהגיאומטריה",
+          "why": "מהגאומטריה של החרוט: הרדיוס הוא הגובה כפול הטנגנס של חצי זווית הפתיחה",
           "tex": "r = H\\tan\\alpha"
         },
         {
-          "what": "מציבים",
-          "why": "$a_R = v^2/r$",
-          "tex": "\\frac{v^2}{H\\tan\\alpha} = \\frac{g}{\\tan\\alpha} \\Rightarrow H = \\frac{v^2}{g}"
+          "what": "מציבים את התאוצה הרדיאלית",
+          "why": "ריבוע המהירות חלקי הרדיוס. הטנגנס מצטמצם",
+          "tex": "\\frac{v^2}{H\\tan\\alpha} = \\frac{g}{\\tan\\alpha} \\;\\Rightarrow\\; H = \\frac{v^2}{g}",
+          "eq": "a_R = \\frac{v^2}{r}"
         }
       ],
       "finalAnswer": "$H = \\frac{v^2}{g}$",
@@ -106,7 +134,7 @@
     },
     {
       "label": "ד",
-      "question": "הראה כי אם החרוז יאבד (מסיבה כלשהי) אנרגיה קינטית, מישור התנועה שלו בתוך החרוט יהיה נמוך יותר ($H$ קטן).",
+      "question": "הראו שאם החרוז מאבד, מסיבה כלשהי, אנרגיה קינטית, מישור התנועה שלו בחרוט יורד ($H$ קטן).",
       "answer": {
         "type": "open"
       },
@@ -115,9 +143,10 @@
       ],
       "solution": [
         {
-          "what": "הקשר",
-          "why": "מסעיף ג",
-          "tex": "H = \\frac{v^2}{g} = \\frac{2E_k}{mg}"
+          "what": "הקשר לאנרגיה הקינטית",
+          "why": "מכפילים ומחלקים בחצי המסה. הגובה פרופורציוני לאנרגיה הקינטית",
+          "tex": "H = \\frac{v^2}{g} = \\frac{2E_k}{mg}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2"
         }
       ],
       "finalAnswer": "$H$ פרופורציוני לאנרגיה הקינטית",
@@ -125,7 +154,7 @@
     },
     {
       "label": "ה1",
-      "question": "החרוז נע בתוך החרוט כאשר $\\alpha = 30^\\circ$ ו-$H = 20\\,\\text{cm}$. חשב את המהירות הקווית של החרוז.",
+      "question": "החרוז נע בחרוט כאשר $\\alpha = 30^\\circ$ ו-$H = 20\\,\\text{cm}$. מה המהירות הקווית של החרוז?",
       "answer": {
         "type": "number",
         "value": 1.4142135623730951,
@@ -136,8 +165,8 @@
       ],
       "solution": [
         {
-          "what": "מציבים",
-          "why": "H = 0.2 m",
+          "what": "מציבים בקשר מסעיף ג",
+          "why": "ממירים את הגובה למטר",
           "tex": "v = \\sqrt{gH} = \\sqrt{10 \\cdot 0.2} \\approx 1.41\\,\\text{m/s}"
         }
       ],
@@ -146,7 +175,7 @@
     },
     {
       "label": "ה2",
-      "question": "חשב את זמן המחזור של תנועת החרוז.",
+      "question": "מה זמן המחזור של התנועה של החרוז?",
       "answer": {
         "type": "number",
         "value": 0.5130199320647455,
@@ -158,13 +187,14 @@
       "solution": [
         {
           "what": "הרדיוס",
-          "why": "r = H tan α",
+          "why": "הגובה כפול הטנגנס של חצי זווית הפתיחה",
           "tex": "r = 0.2\\tan 30^\\circ \\approx 0.115\\,\\text{m}"
         },
         {
-          "what": "זמן מחזור",
-          "why": "היקף חלקי מהירות",
-          "tex": "T = \\frac{2\\pi r}{v} = \\frac{2\\pi \\cdot 0.115}{1.41} \\approx 0.51\\,\\text{s}"
+          "what": "זמן המחזור",
+          "why": "היקף המעגל חלקי המהירות",
+          "tex": "T = \\frac{2\\pi r}{v} = \\frac{2\\pi \\cdot 0.115}{1.41} \\approx 0.51\\,\\text{s}",
+          "eq": "v = \\frac{2\\pi r}{T}"
         }
       ],
       "finalAnswer": "$\\approx 0.51\\,\\text{s}$",

@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "דסקה מסתובבת במישור אופקי בתדירות קבועה של $90$ סיבובים לדקה. על הדסקה מונח מטבע קטן שמסתו $5\\,\\text{gr}$, שמסתובב עם הדסקה. מקדם החיכוך הסטטי בין הדסקה למטבע הוא $\\mu_s = 0.6$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבמקור סעיף ג הוא (1) ו-(2), וכך גם אצלנו.\nמה לבדוק: רק לאשר.",
+  "stem": "דסקה מסתובבת במישור אופקי בתדירות קבועה של $90$ סיבובים לדקה. על הדסקה מונח מטבע קטן שמסתו $5\\,\\text{g}$, והוא מסתובב יחד איתה. מקדם החיכוך הסטטי בין הדסקה למטבע $\\mu_s = 0.6$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2012-q5.svg",
@@ -27,12 +27,12 @@
     "גרף כוח מול ריבוע תדירות",
     "המרת סיבובים לדקה"
   ],
-  "summary": "מטבע על דסקה מסתובבת: המרחק המקסימלי בלי החלקה, וקריאת גרף החיכוך מול $f^2$.",
+  "summary": "מטבע על דסקה מסתובבת: המרחק הגדול ביותר בלי החלקה, וקריאת גרף החיכוך מול $f^2$.",
   "position": 22,
   "parts": [
     {
       "label": "א",
-      "question": "סרטט את כל הכוחות שפועלים על המטבע כשהדסקה מסתובבת. ציין ליד כל כוח את שמו, ורשום מי מפעיל כל כוח.",
+      "question": "שרטטו את כל הכוחות על המטבע כשהדסקה מסתובבת. כתבו ליד כל כוח את שמו ומי מפעיל אותו.",
       "answer": {
         "type": "open"
       },
@@ -42,16 +42,20 @@
       "solution": [
         {
           "what": "שלושה כוחות",
-          "why": "כובד (כדור הארץ), נורמלי (הדסקה), חיכוך סטטי (הדסקה) כלפי הציר",
-          "tex": "mg\\downarrow,\\ N\\uparrow,\\ f_s \\to O"
+          "why": "כוח הכובד, שכדור הארץ מפעיל. הכוח הנורמלי, שהדסקה מפעילה. חיכוך סטטי, שהדסקה מפעילה, אל הציר",
+          "tex": "mg,\\qquad N,\\qquad f_s"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המטבע, במבט מהצד: חיכוך סטטי אופקי אל ציר הדסקה, הכוח הנורמלי של הדסקה כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי אל הציר\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"144\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"126\" y=\"156\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הציר משמאל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המטבע"
         }
       ],
-      "finalAnswer": "כובד, נורמלי, וחיכוך סטטי כלפי הציר",
+      "finalAnswer": "כוח הכובד, הכוח הנורמלי, וחיכוך סטטי אל הציר",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "חשב את המרחק המרבי (המקסימלי) מציר הדסקה, שבו יכול המטבע להימצא במנוחה ביחס לדסקה בלי שהוא יחליק על פני הדסקה.",
+      "question": "מה המרחק הגדול ביותר מציר הדסקה שבו המטבע יכול להיות במנוחה ביחס לדסקה, בלי להחליק?",
       "answer": {
         "type": "number",
         "value": 0.06754745576155852,
@@ -64,27 +68,44 @@
       ],
       "solution": [
         {
+          "explain": "בוחרים כחיובי את הכיוון אל הציר, מרכז המעגל, וכלפי מעלה בציר האנכי."
+        },
+        {
           "what": "המהירות הזוויתית",
-          "why": "$90$ סיבובים לדקה הם $1.5$ סיבובים לשנייה",
-          "tex": "\\omega = 2\\pi \\cdot 1.5 = 3\\pi \\approx 9.42\\,\\text{rad/s}"
+          "why": "תשעים סיבובים בדקה הם סיבוב וחצי בשנייה",
+          "tex": "\\omega = 2\\pi f = 2\\pi \\cdot 1.5 = 3\\pi \\approx 9.42\\,\\text{rad/s}",
+          "eq": "\\omega = 2\\pi f"
         },
         {
-          "what": "התנאי",
-          "why": "החיכוך המקסימלי הוא הכוח הצנטריפטלי",
-          "tex": "\\mu_s mg = m\\omega^2 r"
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "המטבע לא עולה ולא יורד",
+          "tex": "N - mg = 0 \\;\\Rightarrow\\; N = mg",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "פותרים",
-          "why": "m מתבטל",
-          "tex": "r = \\frac{\\mu_s g}{\\omega^2} = \\frac{6}{88.8} \\approx 0.0675\\,\\text{m}"
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "החיכוך הסטטי הוא הכוח האופקי היחיד",
+          "tex": "f_s = m\\,\\omega^2 r",
+          "eq": "a_R = \\omega^2 r"
+        },
+        {
+          "what": "מציבים את החיכוך המרבי",
+          "why": "במרחק הגדול ביותר החיכוך הסטטי מרבי",
+          "tex": "f_s = \\mu_s N = \\mu_s mg \\;\\Rightarrow\\; \\mu_s mg = m\\,\\omega^2 r",
+          "eq": "f_s \\le \\mu_s N"
+        },
+        {
+          "what": "מחלקים במסה ומבודדים",
+          "why": "המסה מצטמצמת",
+          "tex": "r = \\frac{\\mu_s g}{\\omega^2} = \\frac{0.6 \\cdot 10}{9.42^2} = \\frac{6}{88.8} \\approx 0.0675\\,\\text{m}"
         }
       ],
-      "finalAnswer": "$\\approx 0.0675\\,\\text{m}$ (כ-$6.75\\,\\text{cm}$)",
+      "finalAnswer": "$\\approx 0.0675\\,\\text{m}$ (בערך $6.75\\,\\text{cm}$)",
       "keyAnswer": "r=0.0675 m"
     },
     {
       "label": "ג1",
-      "question": "מניחים את המטבע על גבי הדסקה במרחק שחישבת בסעיף ב. מתחילים לסובב את הדסקה ומגדילים באיטיות את תדירות הסיבוב שלה, החל מאפס. בגרף מוצג גודל כוח החיכוך שפועל על המטבע כפונקציה של ריבוע תדירות הסיבוב של הדסקה. בתחום $AD$ המטבע מחליק. מצא את שיעור הנקודה $A$ (ערך $f^2$). הסבר.",
+      "question": "שמים את המטבע במרחק מסעיף ב. מתחילים לסובב את הדסקה, ומגדילים לאט את התדירות, מאפס. בגרף מוצג גודל כוח החיכוך על המטבע כפונקציה של ריבוע תדירות הסיבוב. בתחום $AD$ המטבע מחליק. מה הערך של $f^2$ בנקודה $A$? הסבירו.",
       "answer": {
         "type": "number",
         "value": 2.25,
@@ -96,14 +117,14 @@
       ],
       "solution": [
         {
-          "what": "מה מייצגת $A$",
-          "why": "התדירות שבה המטבע מתחיל להחליק. במרחק הזה זו בדיוק התדירות של סעיף ב",
+          "what": "מה הנקודה A",
+          "why": "הרגע שבו המטבע מתחיל להחליק. במרחק הזה, זו בדיוק התדירות מסעיף ב",
           "tex": "f = 1.5\\,\\text{Hz}"
         },
         {
-          "what": "השיעור",
+          "what": "הערך",
           "why": "מעלים בריבוע",
-          "tex": "f^2 = 2.25\\,\\text{Hz}^2"
+          "tex": "f^2 = 1.5^2 = 2.25\\,\\text{Hz}^2"
         }
       ],
       "finalAnswer": "$f^2 = 2.25\\,\\text{Hz}^2$",
@@ -111,7 +132,7 @@
     },
     {
       "label": "ג2",
-      "question": "מצא את שיעור הנקודה $B$ (ערך כוח החיכוך). הסבר.",
+      "question": "מה הערך של כוח החיכוך בנקודה $B$? הסבירו.",
       "answer": {
         "type": "number",
         "value": 0.03,
@@ -123,14 +144,15 @@
       ],
       "solution": [
         {
-          "what": "מה מייצגת $B$",
-          "why": "כוח החיכוך הסטטי המקסימלי",
-          "tex": "f_{s,\\max} = \\mu_s mg"
+          "what": "מה הנקודה B",
+          "why": "החיכוך הסטטי המרבי, רגע לפני שהמטבע מחליק",
+          "tex": "f_{s,\\max} = \\mu_s N = \\mu_s mg",
+          "eq": "f_s \\le \\mu_s N"
         },
         {
           "what": "מציבים",
-          "why": "m = 0.005 kg",
-          "tex": "0.6 \\cdot 0.005 \\cdot 10 = 0.03\\,\\text{N}"
+          "why": "ממירים חמישה גרם לקילוגרם",
+          "tex": "f_{s,\\max} = 0.6 \\cdot 0.005 \\cdot 10 = 0.03\\,\\text{N}"
         }
       ],
       "finalAnswer": "$3 \\times 10^{-2}\\,\\text{N}$",
@@ -138,7 +160,7 @@
     },
     {
       "label": "ד",
-      "question": "אילו מסת המטבע הייתה גדולה מזו הנתונה, האם הגרף שמוצג בתרשים היה משתנה? נמק.",
+      "question": "אילו המסה של המטבע הייתה גדולה יותר, האם הגרף היה משתנה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -153,17 +175,17 @@
       ],
       "solution": [
         {
-          "what": "הנקודה $A$",
-          "why": "לא תלויה במסה: $\\mu_s g = \\omega^2 r$",
+          "what": "הנקודה A",
+          "why": "מהמשוואה בסעיף ב המסה הצטמצמה, ולכן התדירות שבה המטבע מחליק לא תלויה במסה",
           "tex": "f_A^2 = \\frac{\\mu_s g}{4\\pi^2 r}"
         },
         {
-          "what": "הנקודה $B$ והשיפוע",
-          "why": "פרופורציוניים למסה",
-          "tex": "f_{s,\\max} = \\mu_s mg,\\quad F = 4\\pi^2 m r f^2"
+          "what": "הנקודה B והשיפוע",
+          "why": "החיכוך המרבי והכוח שדרוש לתנועה המעגלית פרופורציוניים למסה, ולכן הם גדלים",
+          "tex": "f_{s,\\max} = \\mu_s mg \\qquad f_s = 4\\pi^2 m r f^2"
         }
       ],
-      "finalAnswer": "כן: $B$ והשיפוע גדלים, אבל $A$ לא זזה",
+      "finalAnswer": "כן: הנקודה $B$ והשיפוע גדלים, אבל $A$ לא זזה",
       "keyAnswer": null
     }
   ]
