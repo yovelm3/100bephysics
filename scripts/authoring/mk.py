@@ -54,6 +54,11 @@ def table(cols, rows, alt="", colw=110, rowh=30):
     return g
 
 
+def TBL(caption, head, rows):
+    """A table answer, shown as a real table in the solution. Cells may contain $formulas$."""
+    return {"caption": caption, "head": list(head), "rows": [[str(c) for c in r] for r in rows]}
+
+
 def C(what, why, tex):
     assert not HEB.search(tex), f"Hebrew inside a formula: {tex}"
     return {"what": what, "why": why, "tex": tex, "check": True}

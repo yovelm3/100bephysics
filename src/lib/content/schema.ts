@@ -23,6 +23,8 @@ const text = z.string().trim().min(1);
 export const SolutionStepSchema = z.union([
   z.object({ explain: text }).strict(),
   z.object({ what: text, why: text, tex: text, check: z.boolean().optional() }).strict(),
+  /** A table answer (for parts that ask to build a table). Cells may contain $formulas$. Shown left-to-right like a physics table. */
+  z.object({ caption: text, head: z.array(text).min(1), rows: z.array(z.array(z.string())).min(1) }).strict(),
   /** A drawn answer (table, graph, force diagram) for parts that ask to draw one. Our own SVG, checked like figures. */
   z
     .object({ draw: text, caption: text })

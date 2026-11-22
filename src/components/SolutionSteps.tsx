@@ -4,7 +4,7 @@ import { Math } from "@/components/Math";
  * One item of a full solution, in the content-file format:
  * a short explanation paragraph, or a row (what we do, why, calculation in LaTeX). `check` marks the verification row.
  */
-export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean } | { draw: string; caption: string };
+export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean } | { draw: string; caption: string } | { caption: string; head: string[]; rows: string[][] };
 type Row = Extract<SolutionStep, { what: string }>;
 
 /**
@@ -16,7 +16,37 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
   return (
     <div className="flex flex-col gap-3">
       {groupSteps(steps).map((group, i) =>
-        group.kind === "draw" ? (
+        group.kind === "table" ? (
+          <figure key={i} className="flex flex-col gap-2 rounded-xl border border-line bg-surface p-3">
+            <figcaption className="font-bold">
+              <InlineText text={group.caption} />
+            </figcaption>
+            <div className="overflow-x-auto">
+              <table dir="ltr" className="mx-auto border-collapse text-center">
+                <thead>
+                  <tr>
+                    {group.head.map((h, k) => (
+                      <th key={k} className="border border-line bg-accent-soft px-4 py-2 font-semibold">
+                        <InlineText text={h} />
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.rows.map((r, k) => (
+                    <tr key={k}>
+                      {r.map((c, m) => (
+                        <td key={m} className="border border-line px-4 py-2">
+                          <InlineText text={c} />
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </figure>
+        ) : group.kind === "draw" ? (
           <figure key={i} className="flex flex-col gap-2 rounded-xl border border-line bg-surface p-3">
             <figcaption className="font-bold">
               <InlineText text={group.caption} />
@@ -71,12 +101,14 @@ export function InlineText({ text }: { text: string | null | undefined }) {
   );
 }
 
-type Group = { kind: "explain"; text: string } | { kind: "rows"; rows: Row[] } | { kind: "draw"; svg: string; caption: string };
+type Group = { kind: "explain"; text: string } | { kind: "rows"; rows: Row[] } | { kind: "draw"; svg: string; caption: string } | { kind: "table"; caption: string; head: string[]; rows: string[][] };
 
 function groupSteps(steps: SolutionStep[]): Group[] {
   const groups: Group[] = [];
   for (const s of steps ?? []) {
-    if ("draw" in s) {
+    if ("head" in s) {
+      groups.push({ kind: "table", caption: s.caption, head: s.head, rows: s.rows });
+    } else if ("draw" in s) {
       groups.push({ kind: "draw", svg: s.draw, caption: s.caption });
     } else if ("explain" in s) {
       groups.push({ kind: "explain", text: s.explain });
