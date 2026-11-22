@@ -28,12 +28,12 @@
     "כיווני מהירות, תאוצה וכוח",
     "תאוצה כשהמהירות אפס"
   ],
-  "summary": "גוף שנע ימינה, נעצר וחוזר. מתי הוא מסתובב, האם הוא חוזר להתחלה, ומה הכיוונים של $v$, $a$ ו-$\\sum F$ בכל שלב.",
+  "summary": "גוף שנע ימינה, נעצר וחוזר: מתי הוא מסתובב, האם הוא חוזר להתחלה, ומה הכיוונים של $v$, $a$ ו-$\\sum F$ בכל שלב.",
   "position": 13,
   "parts": [
     {
       "label": "א",
-      "question": "האם הגוף משנה את כיוון תנועתו? אם כן, באיזה רגע?",
+      "question": "האם הגוף משנה את כיוון התנועה שלו? אם כן, באיזה רגע?",
       "answer": {
         "type": "number",
         "value": 16.0,
@@ -45,25 +45,32 @@
       ],
       "solution": [
         {
-          "explain": "הגוף משנה כיוון כשהמהירות מחליפה סימן, כלומר כשהגרף חוצה את ציר הזמן."
+          "explain": "הכיוון החיובי נקבע בשאלה: ימינה, כי הגוף מתחיל לנוע ימינה והמהירות בגרף חיובית. הגוף משנה כיוון כשהמהירות מחליפה סימן, כלומר כשהגרף חוצה את ציר הזמן."
         },
         {
-          "what": "מוצאים את השיפוע בקטע היורד",
-          "why": "מ-$(8, 10)$ ל-$(20, -5)$",
-          "tex": "a = \\frac{-5 - 10}{20 - 8} = -1.25\\,\\text{m/s}^2"
+          "what": "השיפוע בקטע היורד",
+          "why": "לוקחים את שתי הנקודות שבקצות הקטע",
+          "tex": "a = \\frac{-5 - 10}{20 - 8} = -1.25\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         },
         {
-          "what": "מוצאים מתי $v = 0$",
-          "why": "מתחילים מ-$10\\,\\text{m/s}$ ב-$t = 8\\,\\text{s}$",
-          "tex": "0 = 10 - 1.25(t - 8) \\Rightarrow t = 16\\,\\text{s}"
+          "what": "משוואת המהירות בקטע הזה",
+          "why": "סופרים זמן מתחילת הקטע, ששם המהירות עשר",
+          "tex": "v = 10 - 1.25\\,(t - 8)",
+          "eq": "v = v_0 + at"
+        },
+        {
+          "what": "מציבים מהירות אפס",
+          "why": "מחפשים את הרגע שבו הגרף חוצה את הציר",
+          "tex": "0 = 10 - 1.25\\,(t - 8) \\;\\Rightarrow\\; t - 8 = 8 \\;\\Rightarrow\\; t = 16\\,\\text{s}"
         }
       ],
-      "finalAnswer": "כן, ב-$t = 16\\,\\text{s}$",
+      "finalAnswer": "כן, ברגע $t = 16\\,\\text{s}$",
       "keyAnswer": "16 s"
     },
     {
       "label": "ב",
-      "question": "סרטט גרף שמתאר את תאוצת הגוף כפונקציה של הזמן, מ-$t = 0$ עד $t = 25\\,\\text{s}$.",
+      "question": "שרטטו גרף של תאוצת הגוף כפונקציה של הזמן, מ-$t = 0$ עד $t = 25\\,\\text{s}$.",
       "answer": {
         "type": "open"
       },
@@ -73,32 +80,40 @@
       ],
       "solution": [
         {
-          "what": "$0$ עד $5\\,\\text{s}$",
-          "why": "שיפוע הקטע",
-          "tex": "a = \\frac{10}{5} = 2\\,\\text{m/s}^2"
+          "explain": "בכל קטע ישר של גרף המהירות התאוצה קבועה ושווה לשיפוע, ולכן גרף התאוצה בנוי ממדרגות."
         },
         {
-          "what": "$5$ עד $8\\,\\text{s}$",
-          "why": "מהירות קבועה",
-          "tex": "a = 0"
+          "what": "הקטע הראשון",
+          "why": "המהירות עולה מאפס לעשר",
+          "tex": "0 < t < 5:\\quad a = \\frac{10 - 0}{5 - 0} = 2\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         },
         {
-          "what": "$8$ עד $20\\,\\text{s}$",
+          "what": "הקטע השני",
+          "why": "המהירות קבועה",
+          "tex": "5 < t < 8:\\quad a = 0"
+        },
+        {
+          "what": "הקטע השלישי",
           "why": "חישבנו בסעיף א",
-          "tex": "a = -1.25\\,\\text{m/s}^2"
+          "tex": "8 < t < 20:\\quad a = -1.25\\,\\text{m/s}^2"
         },
         {
-          "what": "$20$ עד $25\\,\\text{s}$",
-          "why": "מ-$-5$ לאפס",
-          "tex": "a = \\frac{0 - (-5)}{5} = 1\\,\\text{m/s}^2"
+          "what": "הקטע הרביעי",
+          "why": "המהירות עולה ממינוס חמש לאפס",
+          "tex": "20 < t < 25:\\quad a = \\frac{0 - (-5)}{25 - 20} = 1\\,\\text{m/s}^2"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: תאוצה כפונקציה של הזמן. מדרגות: 2 מטר לשנייה בריבוע עד 5 שניות, אפס עד 8 שניות, מינוס 1.25 עד 20 שניות, ו-1 עד 25 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"147.8\" y1=\"220\" x2=\"147.8\" y2=\"30\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"194.4\" y1=\"220\" x2=\"194.4\" y2=\"30\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"381.1\" y1=\"220\" x2=\"381.1\" y2=\"30\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"458.9\" y1=\"220\" x2=\"458.9\" y2=\"30\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"195.1\" x2=\"490\" y2=\"195.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"93.3\" x2=\"490\" y2=\"93.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"48.1\" x2=\"490\" y2=\"48.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"138.6\" x2=\"508\" y2=\"138.6\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"226\" x2=\"70\" y2=\"12\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"147.8\" y1=\"134.6\" x2=\"147.8\" y2=\"142.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"147.8\" y=\"156.6\" text-anchor=\"middle\">5</text>\n<line x1=\"194.4\" y1=\"134.6\" x2=\"194.4\" y2=\"142.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"194.4\" y=\"156.6\" text-anchor=\"middle\">8</text>\n<line x1=\"381.1\" y1=\"134.6\" x2=\"381.1\" y2=\"142.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"381.1\" y=\"156.6\" text-anchor=\"middle\">20</text>\n<line x1=\"458.9\" y1=\"134.6\" x2=\"458.9\" y2=\"142.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"458.9\" y=\"156.6\" text-anchor=\"middle\">25</text>\n<line x1=\"66\" y1=\"195.1\" x2=\"74\" y2=\"195.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"199.1\" text-anchor=\"end\">-1.25</text>\n<line x1=\"66\" y1=\"93.3\" x2=\"74\" y2=\"93.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"97.3\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"48.1\" x2=\"74\" y2=\"48.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"52.1\" text-anchor=\"end\">2</text>\n<text class=\"label\" x=\"506\" y=\"128.6\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"24\" text-anchor=\"start\">a (m/s²)</text>\n<polyline points=\"70,48.1 147.8,48.1\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"147.8,138.6 194.4,138.6\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"194.4,195.1 381.1,195.1\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"381.1,93.3 458.9,93.3\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<line x1=\"147.8\" y1=\"220\" x2=\"147.8\" y2=\"30\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"194.4\" y1=\"220\" x2=\"194.4\" y2=\"30\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"381.1\" y1=\"220\" x2=\"381.1\" y2=\"30\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: תאוצה כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "מדרגות: $2$, $0$, $-1.25$, $1\\,\\text{m/s}^2$",
+      "finalAnswer": "ארבע מדרגות: $2$, $0$, $-1.25$ ו-$1\\,\\text{m/s}^2$",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "האם במהלך תנועתו הגוף חוזר לנקודת המוצא (הנקודה שממנה יצא ברגע $t = 0$)? אם כן, באיזה רגע? אם לא, נמק.",
+      "question": "האם הגוף חוזר במהלך התנועה לנקודה שממנה יצא ברגע $t = 0$? אם כן, באיזה רגע? אם לא, נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -113,30 +128,30 @@
       ],
       "solution": [
         {
-          "explain": "משווים את השטח מעל הציר (ימינה) לשטח מתחת לציר (שמאלה)."
+          "explain": "משווים את השטח שמעל הציר, תנועה ימינה, לשטח שמתחת לציר, תנועה שמאלה."
         },
         {
-          "what": "השטח מעל הציר, $0$ עד $16\\,\\text{s}$",
-          "why": "טרפז: בסיסים $16$ ו-$3$ שניות, גובה $10$",
-          "tex": "\\frac{16 + 3}{2} \\cdot 10 = 95\\,\\text{m}"
+          "what": "השטח מעל הציר",
+          "why": "טרפז מההתחלה ועד שהגוף מסתובב. הבסיס הקטן הוא הקטע שבו המהירות קבועה",
+          "tex": "\\frac{16 + (8 - 5)}{2} \\cdot 10 = 95\\,\\text{m}"
         },
         {
-          "what": "השטח מתחת לציר, $16$ עד $25\\,\\text{s}$",
-          "why": "משולש: בסיס $9$ שניות, עומק $5$",
-          "tex": "\\tfrac{1}{2} \\cdot 9 \\cdot 5 = 22.5\\,\\text{m}"
+          "what": "השטח מתחת לציר",
+          "why": "משולש מהרגע שהגוף מסתובב עד הסוף. העומק מינוס חמש",
+          "tex": "\\tfrac{1}{2} \\cdot (25 - 16) \\cdot (-5) = -22.5\\,\\text{m}"
         },
         {
-          "what": "משווים",
-          "why": "הגוף חזר שמאלה רק $22.5\\,\\text{m}$ מתוך $95$, ובסוף הוא נעצר",
-          "tex": "x(25) = 95 - 22.5 = 72.5\\,\\text{m} > 0"
+          "what": "המקום בסוף התנועה",
+          "why": "מחברים את שני ההעתקים. בסוף הגוף נעצר, ולכן הוא לא יחזור",
+          "tex": "x(25) = 95 + (-22.5) = 72.5\\,\\text{m} > 0"
         }
       ],
-      "finalAnswer": "לא. בסוף התנועה הגוף נמצא $72.5\\,\\text{m}$ ימינה לנקודת המוצא",
+      "finalAnswer": "לא. בסוף התנועה הגוף נמצא $72.5\\,\\text{m}$ מימין לנקודת המוצא",
       "keyAnswer": "הגוף לא חוזר לנקודת המוצא"
     },
     {
       "label": "ד",
-      "question": "העתק למחברתך את הטבלה, והשלם בה את השורה הראשונה: בפרק הזמן $0 < t < 5\\,\\text{s}$, מה כיוון המהירות, מה כיוון התאוצה ומה כיוון הכוח השקול שפועל על הגוף?",
+      "question": "העתיקו את הטבלה והשלימו את השורה הראשונה: בפרק הזמן $0 < t < 5\\,\\text{s}$, מה כיוון המהירות, מה כיוון התאוצה ומה כיוון הכוח השקול שפועל על הגוף?",
       "answer": {
         "type": "open"
       },
@@ -147,18 +162,36 @@
       "solution": [
         {
           "what": "כיוון המהירות",
-          "why": "המהירות חיובית",
-          "tex": "v > 0 \\Rightarrow \\rightarrow"
+          "why": "המהירות בגרף חיובית, כלומר ימינה",
+          "tex": "v > 0"
         },
         {
           "what": "כיוון התאוצה",
-          "why": "השיפוע חיובי",
-          "tex": "a > 0 \\Rightarrow \\rightarrow"
+          "why": "השיפוע חיובי, כלומר התאוצה ימינה",
+          "tex": "a = 2\\,\\text{m/s}^2 > 0"
         },
         {
           "what": "כיוון הכוח השקול",
-          "why": "לפי החוק השני של ניוטון, תמיד בכיוון התאוצה",
-          "tex": "\\sum \\vec F = m\\vec a \\Rightarrow \\rightarrow"
+          "why": "לפי החוק השני של ניוטון, הכוח השקול תמיד בכיוון התאוצה",
+          "tex": "\\Sigma\\vec F = m\\vec a \\;\\Rightarrow\\; \\Sigma F > 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "caption": "השורה הראשונה בטבלה",
+          "head": [
+            "פרק הזמן",
+            "מהירות",
+            "תאוצה",
+            "כוח שקול"
+          ],
+          "rows": [
+            [
+              "$0 < t < 5$",
+              "ימינה",
+              "ימינה",
+              "ימינה"
+            ]
+          ]
         }
       ],
       "finalAnswer": "שלושתם ימינה",
@@ -166,7 +199,7 @@
     },
     {
       "label": "ה",
-      "question": "השלם את הטבלה עבור פרקי זמן אחרים בתחום $5 < t < 25\\,\\text{s}$: חלק את התחום לפרקים כך שבכל פרק כיוון כל אחד מהווקטורים לא משתנה. אם וקטור מסוים שווה לאפס, רשום זאת בטבלה.",
+      "question": "השלימו את הטבלה עבור התחום $5 < t < 25\\,\\text{s}$: חלקו את התחום לפרקי זמן, כך שבכל פרק הכיוון של כל אחד מהווקטורים לא משתנה. אם וקטור מסוים שווה לאפס, רשמו זאת בטבלה.",
       "answer": {
         "type": "open"
       },
@@ -177,32 +210,76 @@
       ],
       "solution": [
         {
-          "what": "$5 < t < 8\\,\\text{s}$",
-          "why": "מהירות חיובית קבועה",
-          "tex": "v \\rightarrow,\\quad a = 0,\\quad \\textstyle\\sum F = 0"
+          "explain": "גבולות הפרקים הם הרגעים שבהם משהו משתנה: השיפוע משתנה, או שהמהירות מחליפה סימן. הכוח השקול תמיד בכיוון התאוצה."
         },
         {
-          "what": "$8 < t < 16\\,\\text{s}$",
-          "why": "מהירות חיובית ויורדת",
-          "tex": "v \\rightarrow,\\quad a \\leftarrow,\\quad \\textstyle\\sum F \\leftarrow"
+          "what": "פרק ראשון",
+          "why": "המהירות חיובית וקבועה, ולכן אין תאוצה ואין כוח שקול",
+          "tex": "5 < t < 8:\\quad v > 0,\\ \\ a = 0,\\ \\ \\Sigma F = 0"
         },
         {
-          "what": "$16 < t < 20\\,\\text{s}$",
-          "why": "מהירות שלילית שגדלה בגודלה",
-          "tex": "v \\leftarrow,\\quad a \\leftarrow,\\quad \\textstyle\\sum F \\leftarrow"
+          "what": "פרק שני",
+          "why": "המהירות עדיין חיובית אבל קטנה, ולכן התאוצה שמאלה",
+          "tex": "8 < t < 16:\\quad v > 0,\\ \\ a < 0,\\ \\ \\Sigma F < 0"
         },
         {
-          "what": "$20 < t < 25\\,\\text{s}$",
-          "why": "מהירות שלילית שחוזרת לאפס",
-          "tex": "v \\leftarrow,\\quad a \\rightarrow,\\quad \\textstyle\\sum F \\rightarrow"
+          "what": "פרק שלישי",
+          "why": "המהירות שלילית וגודלה גדל. התאוצה עדיין שמאלה",
+          "tex": "16 < t < 20:\\quad v < 0,\\ \\ a < 0,\\ \\ \\Sigma F < 0"
+        },
+        {
+          "what": "פרק רביעי",
+          "why": "המהירות שלילית וחוזרת לאפס, ולכן התאוצה ימינה",
+          "tex": "20 < t < 25:\\quad v < 0,\\ \\ a > 0,\\ \\ \\Sigma F > 0"
+        },
+        {
+          "caption": "הטבלה המלאה",
+          "head": [
+            "פרק הזמן",
+            "מהירות",
+            "תאוצה",
+            "כוח שקול"
+          ],
+          "rows": [
+            [
+              "$0 < t < 5$",
+              "ימינה",
+              "ימינה",
+              "ימינה"
+            ],
+            [
+              "$5 < t < 8$",
+              "ימינה",
+              "אפס",
+              "אפס"
+            ],
+            [
+              "$8 < t < 16$",
+              "ימינה",
+              "שמאלה",
+              "שמאלה"
+            ],
+            [
+              "$16 < t < 20$",
+              "שמאלה",
+              "שמאלה",
+              "שמאלה"
+            ],
+            [
+              "$20 < t < 25$",
+              "שמאלה",
+              "ימינה",
+              "ימינה"
+            ]
+          ]
         }
       ],
-      "finalAnswer": "ראה את ארבע השורות בפתרון",
+      "finalAnswer": "ראו את הטבלה המלאה",
       "keyAnswer": null
     },
     {
       "label": "ו",
-      "question": "מהי תאוצת הגוף ברגע $t = 16\\,\\text{s}$? נמק.",
+      "question": "מה תאוצת הגוף ברגע $t = 16\\,\\text{s}$? נמקו.",
       "answer": {
         "type": "number",
         "value": -1.25,
@@ -214,12 +291,12 @@
       ],
       "solution": [
         {
-          "explain": "ברגע $16\\,\\text{s}$ המהירות אפס, אבל השאלה על התאוצה, כלומר על השיפוע."
+          "explain": "ברגע הזה המהירות אפס, אבל השאלה על התאוצה, כלומר על השיפוע."
         },
         {
-          "what": "השיפוע של הקטע שבו נמצא הרגע",
-          "why": "$t = 16$ באמצע הקטע $8$ עד $20$, שבו השיפוע קבוע",
-          "tex": "a = -1.25\\,\\text{m/s}^2"
+          "what": "השיפוע בקטע שבו נמצא הרגע",
+          "why": "הרגע נמצא בתוך הקטע השלישי, שבו השיפוע קבוע. המהירות עוברת דרך אפס בלי שהשיפוע משתנה",
+          "tex": "a(16) = -1.25\\,\\text{m/s}^2"
         }
       ],
       "finalAnswer": "$-1.25\\,\\text{m/s}^2$ (שמאלה), אף שהמהירות ברגע הזה אפס",
