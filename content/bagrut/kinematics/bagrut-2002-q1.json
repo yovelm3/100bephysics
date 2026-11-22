@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "שוטר יושב על אופנוע שנמצא במנוחה בשולי כביש ישר, ומביט במכונית שמתרחקת ממנו במהירות קבועה של $108\\,\\text{km/h}$. כשהמכונית נמצאת במרחק $87.5\\,\\text{m}$ מהשוטר, הוא יוצא על אופנועו בעקבות המכונית, בתאוצה קבועה של $4$ מטר לשנייה בכל שנייה ($4\\,\\text{m/s}^2$). רגע זה מוגדר כ-$t = 0$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיפים ב ו-ג התלמיד בוחר את הביטוי הנכון מתוך ארבעה. הביטויים לפי ציר שראשיתו באופנוע וכיוונו בכיוון הנסיעה. מי שבחר ציר אחר יקבל ביטוי אחר, וזה נכון גם כן. כתבתי את זה בפתרון.\nמה לבדוק: רק לאשר.",
+  "stem": "שוטר יושב על אופנוע שעומד בשולי כביש ישר, ומסתכל על מכונית שמתרחקת ממנו במהירות קבועה של $108\\,\\text{km/h}$. כשהמכונית נמצאת $87.5\\,\\text{m}$ מהשוטר, הוא יוצא אחריה בתאוצה קבועה של ארבעה מטר לשנייה בכל שנייה ($4\\,\\text{m/s}^2$). הרגע הזה הוא $t = 0$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2002-q1.svg",
@@ -28,12 +28,12 @@
     "השגה",
     "המרת יחידות"
   ],
-  "summary": "אופנוע שיוצא ממנוחה רודף אחרי מכונית במהירות קבועה. משוואת מקום לכל אחד, ורגע ההשגה.",
+  "summary": "אופנוע שיוצא ממנוחה רודף אחרי מכונית במהירות קבועה: משוואת מקום לכל אחד, ורגע ההשגה.",
   "position": 19,
   "parts": [
     {
       "label": "א",
-      "question": "מה משמעות המשפט \"גוף נע בתאוצה קבועה של $4$ מטר לשנייה בכל שנייה\"?",
+      "question": "מה המשמעות של המשפט \"גוף נע בתאוצה קבועה של ארבעה מטר לשנייה בכל שנייה\"?",
       "answer": {
         "type": "open"
       },
@@ -43,18 +43,31 @@
       "solution": [
         {
           "what": "מה אומרת היחידה",
-          "why": "תאוצה היא שינוי מהירות חלקי זמן",
-          "tex": "a = \\frac{\\Delta v}{\\Delta t} = \\frac{4\\,\\text{m/s}}{1\\,\\text{s}}"
+          "why": "תאוצה היא שינוי המהירות חלקי פרק הזמן. כאן המהירות משתנה בארבעה מטר לשנייה, בכל שנייה",
+          "tex": "a = \\frac{\\Delta v}{\\Delta t} = \\frac{4\\,\\text{m/s}}{1\\,\\text{s}} = 4\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
+        },
+        {
+          "what": "דוגמה",
+          "why": "הגוף יוצא ממנוחה, ובכל שנייה מוסיפים ארבעה למהירות",
+          "tex": "v:\\ 0,\\ 4,\\ 8,\\ 12,\\ \\dots\\ \\text{m/s}"
         }
       ],
-      "finalAnswer": "בכל שנייה מהירות הגוף גדלה ב-$4\\,\\text{m/s}$",
+      "finalAnswer": "בכל שנייה מהירות הגוף גדלה בארבעה מטר לשנייה",
       "keyAnswer": "מהירות הגוף גדלה ב-4 מטר לשנייה כל שנייה"
     },
     {
       "label": "ב",
-      "question": "הגדר ציר מקום $x$ (ציין את כיוונו החיובי ואת מקום ראשיתו), ורשום ביטוי מתמטי שמתאר את מקום האופנוע ביחס לציר שבחרת, כפונקציה של הזמן (החל מרגע $t = 0$). שים לב ליחידות שבהן מבוטאים הנתונים.",
+      "question": "הגדירו ציר מקום $x$: מה הכיוון החיובי שלו ואיפה הראשית. כתבו ביטוי למקום האופנוע לפי הציר שבחרתם, כפונקציה של הזמן, מרגע $t = 0$. שימו לב ליחידות של הנתונים. (לבחירת התשובה: הראשית במקום האופנוע, והכיוון החיובי בכיוון הנסיעה.)",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$x_m = 2t^2$",
+          "$x_m = 4t^2$",
+          "$x_m = 87.5 + 2t^2$",
+          "$x_m = 4t$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -64,23 +77,39 @@
       "solution": [
         {
           "what": "בוחרים ציר",
-          "why": "ראשית במקום האופנוע ($m$), וכיוון חיובי בכיוון תנועת המכונית ($c$)",
+          "why": "השאלה מבקשת שנבחר בעצמנו. הראשית במקום שבו עומד האופנוע, והכיוון החיובי הוא כיוון הנסיעה של המכונית",
           "tex": "x_m(0) = 0"
         },
         {
           "what": "משוואת המקום של האופנוע",
-          "why": "יוצא ממנוחה בתאוצה קבועה",
-          "tex": "x_m = \\tfrac{1}{2} \\cdot 4 \\cdot t^2 = 2t^2"
+          "why": "האופנוע יוצא ממנוחה מהראשית, בתאוצה קבועה וחיובית",
+          "tex": "x_m = 0 + 0 \\cdot t + \\tfrac{1}{2} \\cdot 4 \\cdot t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
+        },
+        {
+          "what": "מסדרים",
+          "why": "חצי כפול ארבע",
+          "tex": "x_m = 2t^2\\ \\ (\\text{m})"
+        },
+        {
+          "explain": "מי שבוחר ציר אחר, למשל ראשית במקום אחר או כיוון הפוך, יקבל ביטוי אחר, וגם הוא נכון. המספרים יוצאים אותו דבר בכל בחירה."
         }
       ],
-      "finalAnswer": "$x_{\\text{אופנוע}} = 2t^2$ (במטרים)",
+      "finalAnswer": "$x_m = 2t^2$ (במטרים)",
       "keyAnswer": "x_motorcycle=2t²"
     },
     {
       "label": "ג",
-      "question": "רשום ביטוי מתמטי שמתאר את מקום המכונית ביחס לאותו ציר, כפונקציה של הזמן (החל מרגע $t = 0$).",
+      "question": "כתבו ביטוי למקום המכונית לפי אותו ציר, כפונקציה של הזמן, מרגע $t = 0$.",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$x_c = 87.5 + 30t$",
+          "$x_c = 87.5 + 108t$",
+          "$x_c = 30t$",
+          "$x_c = 87.5 - 30t$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -88,22 +117,23 @@
       ],
       "solution": [
         {
-          "what": "ממירים מהירות",
-          "why": "מחלקים ב-$3.6$",
+          "what": "ממירים את המהירות למטר לשנייה",
+          "why": "בקילומטר יש אלף מטר ובשעה יש שלושת אלפים ושש מאות שניות, ולכן מחלקים בשלוש נקודה שש",
           "tex": "108\\,\\text{km/h} = \\frac{108}{3.6} = 30\\,\\text{m/s}"
         },
         {
           "what": "משוואת המקום של המכונית",
-          "why": "מהירות קבועה, ובזמן $t = 0$ היא כבר $87.5\\,\\text{m}$ לפני השוטר",
-          "tex": "x_c = 87.5 + 30t"
+          "why": "ברגע אפס המכונית כבר לפני השוטר, והיא נוסעת בכיוון החיובי במהירות קבועה, בלי תאוצה",
+          "tex": "x_c = 87.5 + 30t + \\tfrac{1}{2} \\cdot 0 \\cdot t^2 = 87.5 + 30t",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
-      "finalAnswer": "$x_{\\text{מכונית}} = 87.5 + 30t$",
+      "finalAnswer": "$x_c = 87.5 + 30t$ (במטרים)",
       "keyAnswer": "x_car=87.5+30t"
     },
     {
       "label": "ד",
-      "question": "חשב אחרי כמה זמן ישיג השוטר את המכונית.",
+      "question": "אחרי כמה זמן משיג השוטר את המכונית?",
       "answer": {
         "type": "number",
         "value": 17.5,
@@ -115,23 +145,23 @@
       "solution": [
         {
           "what": "משווים את המקומות",
-          "why": "ההשגה היא רגע שבו שניהם באותו מקום",
+          "why": "ברגע ההשגה שניהם באותו מקום",
           "tex": "2t^2 = 87.5 + 30t"
         },
         {
           "what": "מסדרים למשוואה ריבועית",
-          "why": "מחלקים ב-2",
+          "why": "מעבירים הכול לאגף אחד ומחלקים בשתיים",
           "tex": "t^2 - 15t - 43.75 = 0"
         },
         {
-          "what": "פותרים",
-          "why": "הפתרון השלילי לא פיזיקלי",
-          "tex": "t = \\frac{15 + \\sqrt{225 + 175}}{2} = \\frac{15 + 20}{2} = 17.5\\,\\text{s}"
+          "what": "פותרים לפי נוסחת השורשים",
+          "why": "הפתרון השלילי הוא לפני שהשוטר יצא, ולכן לא מתאים",
+          "tex": "t = \\frac{15 + \\sqrt{15^2 + 4 \\cdot 43.75}}{2} = \\frac{15 + \\sqrt{400}}{2} = \\frac{15 + 20}{2} = 17.5\\,\\text{s}"
         },
         {
           "what": "בדיקה",
           "why": "מציבים בשתי המשוואות",
-          "tex": "2 \\cdot 17.5^2 = 612.5 = 87.5 + 30 \\cdot 17.5 \\;\\checkmark",
+          "tex": "2 \\cdot 17.5^2 = 612.5\\,\\text{m},\\qquad 87.5 + 30 \\cdot 17.5 = 612.5\\,\\text{m} \\;\\checkmark",
           "check": true
         }
       ],
@@ -140,7 +170,7 @@
     },
     {
       "label": "ה",
-      "question": "סרטט גרף שמתאר את מהירות המכונית כפונקציה של הזמן, מרגע $t = 0$ ועד הרגע שבו השוטר משיג את המכונית. הוסף לאותה מערכת צירים גרף שמתאר את מהירות האופנוע כפונקציה של הזמן, באותו פרק זמן.",
+      "question": "שרטטו גרף של מהירות המכונית כפונקציה של הזמן, מרגע $t = 0$ עד הרגע שבו השוטר משיג אותה. הוסיפו באותה מערכת צירים גרף של מהירות האופנוע באותו פרק זמן.",
       "answer": {
         "type": "open"
       },
@@ -150,21 +180,26 @@
       "solution": [
         {
           "what": "המכונית",
-          "why": "מהירות קבועה: קו אופקי",
+          "why": "המהירות קבועה, ולכן הגרף הוא קו אופקי",
           "tex": "v_c = 30\\,\\text{m/s}"
         },
         {
           "what": "האופנוע",
-          "why": "קו ישר מהראשית, שיפוע $4$",
-          "tex": "v_m = 4t,\\quad v_m(17.5) = 70\\,\\text{m/s}"
+          "why": "יוצא ממנוחה בתאוצה קבועה, ולכן הגרף הוא קו ישר שעולה מהראשית",
+          "tex": "v_m = 0 + 4t,\\qquad v_m(17.5) = 70\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
         },
         {
           "what": "נקודת החיתוך",
-          "why": "ברגע הזה המהירויות שוות, והמרחק ביניהם הכי גדול",
-          "tex": "4t = 30 \\Rightarrow t = 7.5\\,\\text{s}"
+          "why": "ברגע הזה המהירויות שוות. עד אז המכונית מהירה יותר ומתרחקת, ולכן ברגע הזה המרחק ביניהם הכי גדול",
+          "tex": "4t = 30 \\;\\Rightarrow\\; t = 7.5\\,\\text{s}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: מהירות כפונקציה של הזמן. המכונית: קו אופקי ב-30 מטר לשנייה. האופנוע: קו ישר שעולה מאפס עד 70 מטר לשנייה אחרי 17.5 שניות. הקווים נחתכים אחרי 7.5 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"180.5\" y1=\"280\" x2=\"180.5\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"235.8\" y1=\"280\" x2=\"235.8\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"291.1\" y1=\"280\" x2=\"291.1\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"401.6\" y1=\"280\" x2=\"401.6\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"456.8\" y1=\"280\" x2=\"456.8\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"249.7\" x2=\"490\" y2=\"249.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"189.2\" x2=\"490\" y2=\"189.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"128.7\" x2=\"490\" y2=\"128.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"68.2\" x2=\"490\" y2=\"68.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"280\" x2=\"508\" y2=\"280\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"280\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"180.5\" y1=\"276\" x2=\"180.5\" y2=\"284\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"180.5\" y=\"298\" text-anchor=\"middle\">5</text>\n<line x1=\"235.8\" y1=\"276\" x2=\"235.8\" y2=\"284\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"235.8\" y=\"298\" text-anchor=\"middle\">7.5</text>\n<line x1=\"291.1\" y1=\"276\" x2=\"291.1\" y2=\"284\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"291.1\" y=\"298\" text-anchor=\"middle\">10</text>\n<line x1=\"401.6\" y1=\"276\" x2=\"401.6\" y2=\"284\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"401.6\" y=\"298\" text-anchor=\"middle\">15</text>\n<line x1=\"456.8\" y1=\"276\" x2=\"456.8\" y2=\"284\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"456.8\" y=\"298\" text-anchor=\"middle\">17.5</text>\n<line x1=\"66\" y1=\"249.7\" x2=\"74\" y2=\"249.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"253.7\" text-anchor=\"end\">10</text>\n<line x1=\"66\" y1=\"189.2\" x2=\"74\" y2=\"189.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"193.2\" text-anchor=\"end\">30</text>\n<line x1=\"66\" y1=\"128.7\" x2=\"74\" y2=\"128.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"132.7\" text-anchor=\"end\">50</text>\n<line x1=\"66\" y1=\"68.2\" x2=\"74\" y2=\"68.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"72.2\" text-anchor=\"end\">70</text>\n<text class=\"label\" x=\"506\" y=\"270\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">v (m/s)</text>\n<polyline points=\"70,189.2 456.8,189.2\" fill=\"none\" stroke=\"var(--d-label)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<polyline points=\"70,280 456.8,68.2\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<line x1=\"235.8\" y1=\"189.2\" x2=\"235.8\" y2=\"280\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"235.8\" y1=\"189.2\" x2=\"70\" y2=\"189.2\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<text class=\"heb\" x=\"460.8\" y=\"179.2\" text-anchor=\"start\" direction=\"rtl\">מכונית</text>\n<text class=\"heb\" x=\"442.8\" y=\"74.2\" text-anchor=\"start\" direction=\"rtl\">אופנוע</text>\n</svg>\n",
+          "caption": "הגרף: מהירות המכונית ומהירות האופנוע"
         }
       ],
-      "finalAnswer": "קו אופקי ב-$30$, וקו עולה מאפס עד $70\\,\\text{m/s}$, שנחתכים ב-$7.5\\,\\text{s}$",
+      "finalAnswer": "קו אופקי ב-$30\\,\\text{m/s}$, וקו שעולה מאפס עד $70\\,\\text{m/s}$. הם נחתכים אחרי $7.5\\,\\text{s}$",
       "keyAnswer": null
     }
   ]
