@@ -12,8 +12,8 @@
   "difficulty": 2,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "תמי, תלמידה במגמת פיזיקה, החליטה לחקור את השינויים שחלים במהירות של מעלית בזמן תנועתה. לצורך כך הוצבו במעלית מאזני רצפה ביתיים. תמי נכנסה למעלית באחת מקומות הבניין, נעמדה על המאזניים ולחצה על לחצן קומה אחרת. המעלית התחילה לנוע ונעצרה רק כשהגיעה לקומה האחרת. הגרף מתאר את הוריית המאזניים בפרק הזמן שתמי עמדה עליהם.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ג הוא סעיף אחד, כמו במקור, עם שתי תיבות. בגרף של סעיף ה אין ערכי מהירות, כמו שהשאלה מבקשת.\nמה לבדוק: רק לאשר.",
+  "stem": "תמי, תלמידה במגמת פיזיקה, רצתה לחקור איך משתנה המהירות של מעלית בזמן הנסיעה. במעלית הוצבו מאזני רצפה ביתיים. תמי נכנסה למעלית באחת הקומות, עמדה על המאזניים ולחצה על כפתור של קומה אחרת. המעלית התחילה לנוע, ונעצרה כשהגיעה לקומה האחרת. הגרף מתאר את מה שהראו המאזניים בזמן שתמי עמדה עליהם.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2015-q3.svg",
@@ -27,12 +27,12 @@
     "תאוצה מהוריית מאזניים",
     "כיוון התנועה"
   ],
-  "summary": "מהוריית המאזניים במעלית מוצאים מתי היא מאיצה, בכמה, ולאיזה כיוון היא נסעה.",
+  "summary": "ממה שמראים המאזניים במעלית מוצאים מתי היא מאיצה, בכמה, ולאיזה כיוון היא נסעה.",
   "position": 35,
   "parts": [
     {
       "label": "א",
-      "question": "לפניך רשומים שלושה כוחות שפועלים על תמי במהלך תנועת המעלית. קבע איזה מהכוחות מיוצג על ידי הוריית המאזניים. (1) כוח הכובד שמופעל על תמי על ידי כדור הארץ. (2) הכוח הנורמלי שמופעל על תמי על ידי המאזניים. (3) הכוח השקול שפועל על תמי.",
+      "question": "איזה משלושת הכוחות שפועלים על תמי מראים המאזניים? (1) כוח הכובד שכדור הארץ מפעיל על תמי. (2) הכוח הנורמלי שהמאזניים מפעילים על תמי. (3) הכוח השקול על תמי.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -49,8 +49,9 @@
       "solution": [
         {
           "what": "מה המאזניים מודדים",
-          "why": "את הכוח שהם דוחפים את תמי (לפי החוק השלישי, שווה לכוח שהיא לוחצת עליהם)",
-          "tex": "N"
+          "why": "את הכוח שבו תמי לוחצת עליהם. לפי החוק השלישי, הוא שווה לכוח שבו הם דוחפים אותה, כלומר לכוח הנורמלי",
+          "tex": "\\vec F_{1,2} = -\\vec F_{2,1} \\;\\Rightarrow\\; N",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         }
       ],
       "finalAnswer": "(2) הכוח הנורמלי",
@@ -58,7 +59,7 @@
     },
     {
       "label": "ב",
-      "question": "קבע את מצב המעלית בכל אחד מהקטעים $A, B, C, D, E$ של הגרף: מנוחה, תנועה קצובה או תנועה במהירות משתנה.",
+      "question": "מה המצב של המעלית בכל אחד מהקטעים $A, B, C, D, E$ בגרף: מנוחה, מהירות קבועה, או מהירות משתנה?",
       "answer": {
         "type": "open"
       },
@@ -68,31 +69,70 @@
       ],
       "solution": [
         {
-          "what": "$A$ ו-$E$",
-          "why": "הוריה שווה למשקל, לפני תחילת התנועה ואחרי העצירה",
-          "tex": "N = mg,\\ v = 0"
+          "what": "קטעים A ו-E",
+          "why": "המאזניים מראים את המשקל, לפני שהמעלית התחילה לנוע ואחרי שנעצרה",
+          "tex": "N = mg,\\qquad v = 0"
         },
         {
-          "what": "$B$ ו-$D$",
-          "why": "הוריה שונה מהמשקל: יש תאוצה",
-          "tex": "N \\ne mg"
+          "what": "קטעים B ו-D",
+          "why": "המאזניים מראים משהו שונה מהמשקל, ולכן יש תאוצה",
+          "tex": "N \\ne mg \\;\\Rightarrow\\; a \\ne 0"
         },
         {
-          "what": "$C$",
-          "why": "הוריה שווה למשקל באמצע הנסיעה: מהירות קבועה",
-          "tex": "N = mg,\\ v \\ne 0"
+          "what": "קטע C",
+          "why": "המאזניים מראים את המשקל באמצע הנסיעה: מהירות קבועה",
+          "tex": "N = mg,\\qquad v \\ne 0"
+        },
+        {
+          "caption": "התשובה בטבלה",
+          "head": [
+            "קטע",
+            "מצב המעלית"
+          ],
+          "rows": [
+            [
+              "A",
+              "מנוחה"
+            ],
+            [
+              "B",
+              "מהירות משתנה"
+            ],
+            [
+              "C",
+              "מהירות קבועה"
+            ],
+            [
+              "D",
+              "מהירות משתנה"
+            ],
+            [
+              "E",
+              "מנוחה"
+            ]
+          ]
         }
       ],
-      "finalAnswer": "A מנוחה, B מהירות משתנה, C תנועה קצובה, D מהירות משתנה, E מנוחה",
+      "finalAnswer": "A מנוחה, B מהירות משתנה, C מהירות קבועה, D מהירות משתנה, E מנוחה",
       "keyAnswer": "A מנוחה, B משתנה, C קצובה, D משתנה, E מנוחה"
     },
     {
-      "label": "ג1",
-      "question": "חשב את גודל תאוצת המעלית בקטע $B$.",
+      "label": "ג",
+      "question": "מה גודל התאוצה של המעלית בקטע $B$, ומה בקטע $D$? (בקטעים $A$, $C$, $E$ התאוצה אפס.)",
       "answer": {
-        "type": "number",
-        "value": 0.5,
-        "unit": "m/s^2"
+        "type": "multi",
+        "items": [
+          {
+            "label": "קטע B",
+            "value": 0.5,
+            "unit": "m/s^2"
+          },
+          {
+            "label": "קטע D",
+            "value": 0.5,
+            "unit": "m/s^2"
+          }
+        ]
       },
       "skills": [
         "fbd",
@@ -100,44 +140,44 @@
       ],
       "solution": [
         {
-          "what": "מסת תמי",
-          "why": "ההוריה במנוחה היא 50",
+          "explain": "בוחרים כלפי מעלה כחיובי. השאלה לא קבעה כיוון."
+        },
+        {
+          "what": "המסה של תמי",
+          "why": "במנוחה המאזניים מראים את המסה שלה",
           "tex": "m = 50\\,\\text{kg}"
         },
         {
-          "what": "החוק השני",
-          "why": "חיובי מעלה, $N = 47.5 \\cdot 10 = 475\\,\\text{N}$",
-          "tex": "a = \\frac{475 - 500}{50} = -0.5\\,\\text{m/s}^2"
-        }
-      ],
-      "finalAnswer": "$0.5\\,\\text{m/s}^2$ (כלפי מטה)",
-      "keyAnswer": "0.5 m/s^2"
-    },
-    {
-      "label": "ג2",
-      "question": "חשב את גודל תאוצת המעלית בקטע $D$. (בקטעים $A$, $C$, $E$ התאוצה אפס.)",
-      "answer": {
-        "type": "number",
-        "value": 0.5,
-        "unit": "m/s^2"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על תמי: הכוח הנורמלי של המאזניים כלפי מעלה, וכוח הכובד כלפי מטה. הנורמלי קטן מהכובד. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"59.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"47.5\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הנורמלי קטן מהכובד</text>\n</svg>\n",
+          "caption": "קטע B: תרשים הכוחות על תמי"
+        },
         {
-          "what": "החוק השני",
-          "why": "$N = 525\\,\\text{N}$",
-          "tex": "a = \\frac{525 - 500}{50} = 0.5\\,\\text{m/s}^2"
+          "what": "משוואת כוחות בקטע B",
+          "why": "המאזניים מראים ארבעים ושבע וחצי, ולכן הכוח הנורמלי ארבע מאות שבעים וחמישה ניוטון. בכיוון החיובי הכוח הנורמלי, ונגדו הכובד",
+          "tex": "475 - 500 = 50\\,a_B",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה שלילית, כלומר כלפי מטה",
+          "tex": "a_B = \\frac{-25}{50} = -0.5\\,\\text{m/s}^2"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על תמי: הכוח הנורמלי של המאזניים כלפי מעלה, וכוח הכובד כלפי מטה. הנורמלי גדול מהכובד. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"52.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"40.5\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הנורמלי גדול מהכובד</text>\n</svg>\n",
+          "caption": "קטע D: תרשים הכוחות על תמי"
+        },
+        {
+          "what": "משוואת כוחות בקטע D",
+          "why": "המאזניים מראים חמישים ושתיים וחצי",
+          "tex": "525 - 500 = 50\\,a_D \\;\\Rightarrow\\; a_D = 0.5\\,\\text{m/s}^2"
         }
       ],
-      "finalAnswer": "$0.5\\,\\text{m/s}^2$ (כלפי מעלה)",
-      "keyAnswer": "−0.5 m/s^2"
+      "finalAnswer": "בשני הקטעים $0.5\\,\\text{m/s}^2$: בקטע B כלפי מטה, ובקטע D כלפי מעלה",
+      "keyAnswer": "0.5 m/s^2 ; 0.5 m/s^2"
     },
     {
       "label": "ד",
-      "question": "קבע אם במהלך נסיעה זו המעלית עלתה, ירדה או שאי אפשר לקבוע זאת. הסבר.",
+      "question": "האם בנסיעה הזו המעלית עלתה, ירדה, או שאי אפשר לדעת? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -153,14 +193,15 @@
       ],
       "solution": [
         {
-          "what": "קטע $B$",
-          "why": "המעלית יצאה ממנוחה, והתאוצה הראשונה כלפי מטה",
-          "tex": "v_0 = 0,\\ a < 0 \\Rightarrow v < 0"
+          "what": "קטע B",
+          "why": "המעלית יצאה ממנוחה, והתאוצה הראשונה כלפי מטה. לכן המהירות שלה כלפי מטה",
+          "tex": "v_0 = 0,\\quad a < 0 \\;\\Rightarrow\\; v < 0",
+          "eq": "v = v_0 + at"
         },
         {
-          "what": "קטע $D$",
+          "what": "קטע D",
           "why": "תאוצה כלפי מעלה עוצרת מעלית שיורדת",
-          "tex": "a > 0,\\ v < 0 \\Rightarrow |v|\\downarrow"
+          "tex": "a > 0,\\quad v < 0 \\;\\Rightarrow\\; |v|\\ \\downarrow"
         }
       ],
       "finalAnswer": "ירדה: היא יצאה ממנוחה בתאוצה כלפי מטה",
@@ -168,7 +209,7 @@
     },
     {
       "label": "ה",
-      "question": "סרטט במחברתך גרף שמתאר את הגודל של מהירות המעלית כפונקציה של הזמן, עבור פרק הזמן $0 \\le t \\le 13\\,\\text{s}$. אינך נדרש לרשום את ערכי המהירות על ציר הגרף.",
+      "question": "שרטטו גרף של גודל המהירות של המעלית כפונקציה של הזמן, בפרק הזמן $0 \\le t \\le 13\\,\\text{s}$. אין צורך לרשום ערכי מהירות על הציר.",
       "answer": {
         "type": "open"
       },
@@ -178,11 +219,16 @@
       "solution": [
         {
           "what": "צורת הגרף",
-          "why": "אפס עד $3\\,\\text{s}$, עלייה בקו ישר עד $5\\,\\text{s}$, קבוע עד $9\\,\\text{s}$, ירידה בקו ישר עד $11\\,\\text{s}$, ואפס",
-          "tex": "|v|_{\\max} = 0.5 \\cdot 2 = 1\\,\\text{m/s}"
+          "why": "אפס בקטע A, עלייה בקו ישר בקטע B, קו אופקי בקטע C, ירידה בקו ישר בקטע D, ואפס בקטע E",
+          "tex": "|v|_{\\max} = 0 + 0.5 \\cdot (5 - 3) = 1\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 260\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: גודל המהירות של המעלית כפונקציה של הזמן. אפס עד 3 שניות, עלייה בקו ישר עד 5 שניות, קו אופקי עד 9 שניות, ירידה בקו ישר עד 11 שניות, ואפס עד 13 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"160\" y1=\"220\" x2=\"160\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"220\" y1=\"220\" x2=\"220\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"340\" y1=\"220\" x2=\"340\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"400\" y1=\"220\" x2=\"400\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"460\" y1=\"220\" x2=\"460\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"220\" x2=\"508\" y2=\"220\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"220\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"160\" y1=\"216\" x2=\"160\" y2=\"224\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"160\" y=\"238\" text-anchor=\"middle\">3</text>\n<line x1=\"220\" y1=\"216\" x2=\"220\" y2=\"224\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"220\" y=\"238\" text-anchor=\"middle\">5</text>\n<line x1=\"340\" y1=\"216\" x2=\"340\" y2=\"224\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"340\" y=\"238\" text-anchor=\"middle\">9</text>\n<line x1=\"400\" y1=\"216\" x2=\"400\" y2=\"224\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"400\" y=\"238\" text-anchor=\"middle\">11</text>\n<line x1=\"460\" y1=\"216\" x2=\"460\" y2=\"224\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"460\" y=\"238\" text-anchor=\"middle\">13</text>\n<text class=\"label\" x=\"506\" y=\"210\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">|v|</text>\n<polyline points=\"70,220 160,220 220,89.2 340,89.2 400,220 460,220\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: גודל המהירות של המעלית כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "טרפז: $0$ עד $3$, עלייה עד $5$, קבוע עד $9$, ירידה עד $11\\,\\text{s}$",
+      "finalAnswer": "טרפז: אפס עד $3\\,\\text{s}$, עלייה עד $5\\,\\text{s}$, קבוע עד $9\\,\\text{s}$, ירידה עד $11\\,\\text{s}$",
       "keyAnswer": null
     }
   ]
