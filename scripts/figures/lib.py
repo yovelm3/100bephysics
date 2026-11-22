@@ -293,18 +293,25 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
         pts = [(cx + sx_ * hw * ux + sy_ * hh * vx, cy + sx_ * hw * uy + sy_ * hh * vy) for sx_, sy_ in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
         g.poly(pts, fill="var(--d-body)", stroke="var(--d-line)", width=1.5)
     if body_label:  # next to the body, in the widest gap between the force arrows (a label on the body gets covered)
-        angs = sorted({a % 360 for _, a, _ in forces} | ({(tilt - 90) % 360, (tilt - 45) % 360, (tilt - 135) % 360} if surface == "below" else set())) or [0]
+        angs = sorted({fo[1] % 360 for fo in forces} | ({(tilt - 90) % 360, (tilt - 45) % 360, (tilt - 135) % 360} if surface == "below" else set())) or [0]
         gaps = [((angs[(k + 1) % len(angs)] - angs[k]) % 360 or 360, angs[k]) for k in range(len(angs))]
         gap, start = max(gaps)
         mid = math.radians(start + gap / 2)
         g.text(cx + 44 * math.cos(mid), cy - 44 * math.sin(mid) + 6, body_label, cls="label")
-    for label, ang, size in forces:
+    for force in forces:
+        label, ang, size = force[:3]
+        off = force[3] if len(force) > 3 else 0  # side shift (px), to draw two forces in the same direction side by side
         a = math.radians(ang)
         L = min(24 + 70 * size, h / 2 - 28)  # proportional to the force, but always inside the drawing
-        x2, y2 = cx + L * math.cos(a), cy - L * math.sin(a)
-        g.add(f'<line x1="{f(cx)}" y1="{f(cy)}" x2="{f(x2)}" y2="{f(y2)}" stroke="var(--d-force, var(--d-label))" stroke-width="3" stroke-linecap="round" marker-end="url(#f-force)"/>')
-        lx, ly = cx + (L + 18) * math.cos(a), cy - (L + 18) * math.sin(a) + 6
-        g.text(lx, ly, label, cls="force", anchor="middle")
+        ox_, oy_ = cx + off * math.sin(a), cy + off * math.cos(a)
+        x2, y2 = ox_ + L * math.cos(a), oy_ - L * math.sin(a)
+        g.add(f'<line x1="{f(ox_)}" y1="{f(oy_)}" x2="{f(x2)}" y2="{f(y2)}" stroke="var(--d-force, var(--d-label))" stroke-width="3" stroke-linecap="round" marker-end="url(#f-force)"/>')
+        lx, ly = ox_ + (L + 18) * math.cos(a), oy_ - (L + 18) * math.sin(a) + 6
+        if "_" in label:  # "T_b": a real subscript
+            base, sub = label.split("_", 1)
+            g.add(f'<text class="force" x="{f(lx)}" y="{f(ly)}" text-anchor="middle">{esc(base)}<tspan dy="5" font-size="13">{esc(sub)}</tspan></text>')
+        else:
+            g.text(lx, ly, label, cls="force", anchor="middle")
     g.circle(cx, cy, 3.2, fill="var(--d-label)")
     if positive is not None:
         a = math.radians(positive)
