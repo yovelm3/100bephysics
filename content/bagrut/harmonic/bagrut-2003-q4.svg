@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 445" role="img" aria-label="שלושה גרפים של מקום x כפונקציה של זמן t. גרף I: קשתות פרבוליות מ-20 מטר ב-t אפס, יורד לאפס ב-2 שניות, עולה ל-20 ב-4, וכן הלאה עד 10 שניות. גרף II: קוסינוס בין 0.1 למינוס 0.1 מטר, זמן מחזור 2 שניות. גרף III: קווים ישרים בין 0 ל-2 מטר: מתחיל ב-1, מגיע ל-2 ב-1 שנייה, ל-0 ב-3, ל-2 ב-5 וכן הלאה">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 445" direction="ltr" role="img" aria-label="שלושה גרפים של מקום x כפונקציה של זמן t. גרף I: קשתות פרבוליות מ-20 מטר ב-t אפס, יורד לאפס ב-2 שניות, עולה ל-20 ב-4, וכן הלאה עד 10 שניות. גרף II: קוסינוס בין 0.1 למינוס 0.1 מטר, זמן מחזור 2 שניות. גרף III: קווים ישרים בין 0 ל-2 מטר: מתחיל ב-1, מגיע ל-2 ב-1 שנייה, ל-0 ב-3, ל-2 ב-5 וכן הלאה">
 <defs>
 <pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
 <marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
