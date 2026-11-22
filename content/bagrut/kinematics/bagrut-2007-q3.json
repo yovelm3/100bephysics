@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב במקור שואל גודל וכיוון. פיצלתי לב1 ולב2.",
-  "stem": "כדור שמסתו $0.25\\,\\text{kg}$ נזרק מנקודה מסוימת מעל הקרקע בכיוון משופע. בתרשים א מוצגות תוצאות המדידות של הרכיב האופקי של מהירות הכדור, $v_x$, כפונקציה של הזמן. בתרשים ב מוצגות תוצאות המדידות של הרכיב האנכי של מהירות הכדור, $v_y$, כפונקציה של הזמן.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ב הוא סעיף אחד, כמו במקור, עם שתי תיבות: גודל וזווית.\nמה לבדוק: רק לאשר.",
+  "stem": "זורקים באלכסון כדור שמסתו $0.25\\,\\text{kg}$, מנקודה מסוימת מעל הקרקע. בתרשים א מוצגות מדידות של הרכיב האופקי של מהירות הכדור, $v_x$, כפונקציה של הזמן. בתרשים ב מוצגות מדידות של הרכיב האנכי של מהירות הכדור, $v_y$, כפונקציה של הזמן.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2007-q3.svg",
@@ -28,12 +28,12 @@
     "אנרגיה קינטית בשיא",
     "כוח אופקי קבוע"
   ],
-  "summary": "זריקה משופעת שנתונה בגרפים של רכיבי המהירות. כיוון, גובה זריקה, אנרגיה בשיא, ומה עושה כוח אופקי.",
+  "summary": "זריקה משופעת שנתונה בגרפים של רכיבי המהירות: כיוון, גובה זריקה, אנרגיה בשיא, ומה עושה כוח אופקי.",
   "position": 25,
   "parts": [
     {
       "label": "א",
-      "question": "האם כיוון המהירות ההתחלתית של הכדור הוא מעל האופק או מתחת לאופק? נמק.",
+      "question": "האם המהירות ההתחלתית של הכדור מכוונת מעל האופק או מתחת לאופק? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -48,8 +48,11 @@
       ],
       "solution": [
         {
-          "what": "קוראים את $v_y$ ב-$t = 0$",
-          "why": "מתרשים ב. בתרשים הכיוון החיובי של $v_y$ כלפי מעלה (כי בהמשך הוא נעשה שלילי בגלל הכובד)",
+          "explain": "בתרשים ב הרכיב האנכי יורד עם הזמן, כי הכובד מושך כלפי מטה. לכן בתרשים הזה הכיוון החיובי הוא כלפי מעלה."
+        },
+        {
+          "what": "קוראים את הרכיב האנכי ברגע הזריקה",
+          "why": "מתרשים ב, בתחילת הגרף. הוא חיובי, כלומר כלפי מעלה",
           "tex": "v_{0y} = +2\\,\\text{m/s}"
         }
       ],
@@ -57,12 +60,22 @@
       "keyAnswer": "מעל האופק"
     },
     {
-      "label": "ב1",
-      "question": "מצא את גודל המהירות ההתחלתית של הכדור.",
+      "label": "ב",
+      "question": "מה הגודל ומה הכיוון של המהירות ההתחלתית של הכדור?",
       "answer": {
-        "type": "number",
-        "value": 3.605551275463989,
-        "unit": "m/s"
+        "type": "multi",
+        "items": [
+          {
+            "label": "גודל המהירות ההתחלתית",
+            "value": 3.605551275463989,
+            "unit": "m/s"
+          },
+          {
+            "label": "הזווית מעל האופק",
+            "value": 33.690067525979785,
+            "unit": "°"
+          }
+        ]
       },
       "skills": [
         "graph",
@@ -71,42 +84,26 @@
       "solution": [
         {
           "what": "רכיבי המהירות ההתחלתית",
-          "why": "מהתרשימים, ב-$t = 0$",
-          "tex": "v_{0x} = 3,\\quad v_{0y} = 2\\,\\text{m/s}"
+          "why": "קוראים משני התרשימים, ברגע הזריקה",
+          "tex": "v_{0x} = 3\\,\\text{m/s},\\qquad v_{0y} = 2\\,\\text{m/s}"
         },
         {
-          "what": "גודל",
-          "why": "פיתגורס",
+          "what": "הגודל לפי משפט פיתגורס",
+          "why": "שני הרכיבים ניצבים זה לזה",
           "tex": "v_0 = \\sqrt{3^2 + 2^2} = \\sqrt{13} \\approx 3.6\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$\\approx 3.6\\,\\text{m/s}$",
-      "keyAnswer": "v0=3.6 m/s"
-    },
-    {
-      "label": "ב2",
-      "question": "מצא את כיוון המהירות ההתחלתית (הזווית עם האופק).",
-      "answer": {
-        "type": "number",
-        "value": 33.690067525979785,
-        "unit": "°"
-      },
-      "skills": [
-        "algebra"
-      ],
-      "solution": [
+        },
         {
-          "what": "טנגנס הזווית",
-          "why": "היחס בין הרכיב האנכי לאופקי",
-          "tex": "\\tan\\alpha = \\frac{2}{3} \\Rightarrow \\alpha \\approx 33.7^\\circ"
+          "what": "הזווית עם האופק",
+          "why": "הטנגנס של הזווית הוא הרכיב האנכי חלקי הרכיב האופקי",
+          "tex": "\\tan\\alpha = \\frac{2}{3} \\;\\Rightarrow\\; \\alpha \\approx 33.7^\\circ"
         }
       ],
-      "finalAnswer": "$\\approx 33.7^\\circ$ מעל האופק",
-      "keyAnswer": "α=33.7°"
+      "finalAnswer": "$\\approx 3.6\\,\\text{m/s}$, בזווית $\\approx 33.7^\\circ$ מעל האופק",
+      "keyAnswer": "v0=3.6 m/s ; α=33.7°"
     },
     {
       "label": "ג",
-      "question": "הכדור פגע בקרקע ברגע $t = 0.6\\,\\text{s}$. חשב מאיזה גובה מעל הקרקע נזרק הכדור.",
+      "question": "הכדור פגע בקרקע ברגע $t = 0.6\\,\\text{s}$. מאיזה גובה מעל הקרקע נזרק הכדור?",
       "answer": {
         "type": "number",
         "value": 0.6,
@@ -119,27 +116,28 @@
       ],
       "solution": [
         {
-          "explain": "ההעתק האנכי הוא השטח מתחת לגרף $v_y$, עם סימן."
+          "explain": "ההעתק האנכי הוא השטח שמתחת לגרף של הרכיב האנכי, עם סימן: שטח מעל הציר הוא תנועה כלפי מעלה, ושטח מתחת לציר הוא תנועה כלפי מטה."
         },
         {
-          "what": "שטח מעל הציר",
-          "why": "$v_y$ מתאפס ב-$0.2\\,\\text{s}$",
+          "what": "השטח מעל הציר",
+          "why": "הרכיב האנכי מתאפס אחרי שתי עשיריות שנייה. זה משולש",
           "tex": "\\tfrac{1}{2} \\cdot 0.2 \\cdot 2 = 0.2\\,\\text{m}"
         },
         {
-          "what": "שטח מתחת לציר",
-          "why": "מ-$0.2$ עד $0.6\\,\\text{s}$",
-          "tex": "-\\tfrac{1}{2} \\cdot 0.4 \\cdot 4 = -0.8\\,\\text{m}"
+          "what": "השטח מתחת לציר",
+          "why": "משולש מהרגע הזה ועד הפגיעה. העומק שלו מינוס ארבע",
+          "tex": "\\tfrac{1}{2} \\cdot (0.6 - 0.2) \\cdot (-4) = -0.8\\,\\text{m}"
         },
         {
-          "what": "העתק אנכי כולל",
-          "why": "הכדור נגמר $0.6\\,\\text{m}$ מתחת לנקודת הזריקה, כלומר על הקרקע",
-          "tex": "\\Delta y = 0.2 - 0.8 = -0.6\\,\\text{m}"
+          "what": "ההעתק האנכי הכולל",
+          "why": "מחברים את שני השטחים. הכדור נגמר מתחת לנקודת הזריקה, על הקרקע",
+          "tex": "\\Delta y = 0.2 + (-0.8) = -0.6\\,\\text{m}"
         },
         {
-          "what": "בדיקה במשוואת מקום",
-          "why": "$v_{0y} = 2$, תאוצה $-10$",
-          "tex": "2 \\cdot 0.6 - 5 \\cdot 0.36 = -0.6 \\;\\checkmark",
+          "what": "בדיקה במשוואת המקום",
+          "why": "כלפי מעלה חיובי, ותאוצת הכובד שלילית",
+          "tex": "\\Delta y = 2 \\cdot 0.6 + \\tfrac{1}{2}(-10) \\cdot 0.6^2 = 1.2 - 1.8 = -0.6\\,\\text{m} \\;\\checkmark",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2",
           "check": true
         }
       ],
@@ -148,7 +146,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב את האנרגיה הקינטית של הכדור בשיא מסלולו.",
+      "question": "מה האנרגיה הקינטית של הכדור בשיא המסלול?",
       "answer": {
         "type": "number",
         "value": 1.125,
@@ -161,13 +159,14 @@
       "solution": [
         {
           "what": "המהירות בשיא",
-          "why": "בשיא הרכיב האנכי אפס, ונשאר רק האופקי",
+          "why": "בשיא הרכיב האנכי אפס, ונשאר רק הרכיב האופקי, שלא משתנה",
           "tex": "v_{\\text{top}} = v_x = 3\\,\\text{m/s}"
         },
         {
-          "what": "אנרגיה קינטית",
-          "why": "המסה $0.25\\,\\text{kg}$",
-          "tex": "E_k = \\tfrac{1}{2} \\cdot 0.25 \\cdot 3^2 = 1.125\\,\\text{J}"
+          "what": "האנרגיה הקינטית",
+          "why": "מציבים את המסה ואת המהירות",
+          "tex": "E_k = \\tfrac{1}{2} \\cdot 0.25 \\cdot 3^2 = 1.125\\,\\text{J}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2"
         }
       ],
       "finalAnswer": "$1.125\\,\\text{J}$",
@@ -175,7 +174,7 @@
     },
     {
       "label": "ה",
-      "question": "זורקים את הכדור פעם נוספת מאותה נקודה ובאותה מהירות (גודל וכיוון), אבל הפעם במהלך תנועת הכדור פועל עליו כוח אופקי קבוע שגודלו $2\\,\\text{N}$, בכיוון מנוגד לכיוון הרכיב האופקי של המהירות ההתחלתית. סרטט גרף של הרכיב האופקי של מהירות הכדור, $v_x$, כפונקציה של הזמן, מרגע הזריקה עד רגע פגיעתו בקרקע.",
+      "question": "זורקים את הכדור שוב מאותה נקודה, באותה מהירות (גודל וכיוון). הפעם, בזמן התנועה פועל על הכדור כוח אופקי קבוע של $2\\,\\text{N}$, נגד הכיוון של הרכיב האופקי של המהירות ההתחלתית. שרטטו גרף של הרכיב האופקי של מהירות הכדור, $v_x$, כפונקציה של הזמן, מרגע הזריקה עד הפגיעה בקרקע.",
       "answer": {
         "type": "open"
       },
@@ -186,22 +185,40 @@
       ],
       "solution": [
         {
-          "what": "התאוצה האופקית",
-          "why": "החוק השני בכיוון האופקי",
-          "tex": "a_x = -\\frac{2}{0.25} = -8\\,\\text{m/s}^2"
+          "explain": "הכוח הנוסף אופקי, ולכן הוא לא משנה את התנועה האנכית: הכדור עדיין פוגע בקרקע אחרי שש עשיריות שנייה. בציר האופקי יש עכשיו תאוצה. הכיוון החיובי בציר האופקי הוא כיוון הזריקה, כמו בתרשים א."
         },
         {
-          "what": "זמן התנועה",
-          "why": "הכוח אופקי ולא משנה את התנועה האנכית",
-          "tex": "t = 0.6\\,\\text{s}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הכדור באוויר: כוח הכובד mg כלפי מטה, והכוח האופקי F נגד כיוון הזריקה. הכיוון החיובי בציר האופקי הוא כיוון הזריקה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"119\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"101\" y=\"156\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"256\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"280\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח נגד כיוון הזריקה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הכדור באוויר"
         },
         {
-          "what": "הגרף",
-          "why": "קו ישר יורד מ-$3$, חוצה את האפס ב-$0.375\\,\\text{s}$",
-          "tex": "v_x = 3 - 8t,\\quad v_x(0.6) = -1.8\\,\\text{m/s}"
+          "what": "משוואת כוחות בציר האופקי",
+          "why": "בכיוון החיובי לא פועל אף כוח. נגדו פועל הכוח הנוסף",
+          "tex": "0 - F = m a_x",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה יוצאת שלילית, כלומר נגד כיוון הזריקה",
+          "tex": "a_x = -\\frac{F}{m} = -\\frac{2}{0.25} = -8\\,\\text{m/s}^2"
+        },
+        {
+          "what": "משוואת המהירות בציר האופקי",
+          "why": "מתחילים מהרכיב האופקי ההתחלתי",
+          "tex": "v_x = 3 + (-8)\\,t",
+          "eq": "v = v_0 + at"
+        },
+        {
+          "what": "נקודות חשובות בגרף",
+          "why": "הרגע שבו הרכיב האופקי מתאפס, והערך ברגע הפגיעה",
+          "tex": "v_x = 0 \\;\\Rightarrow\\; t = 0.375\\,\\text{s} \\qquad v_x(0.6) = 3 - 4.8 = -1.8\\,\\text{m/s}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: הרכיב האופקי של המהירות כפונקציה של הזמן, כשפועל הכוח האופקי. קו ישר יורד מ-3 מטר לשנייה, חוצה את האפס אחרי 0.375 שניות, ומגיע למינוס 1.8 אחרי 0.6 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"133.6\" y1=\"200\" x2=\"133.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"197.3\" y1=\"200\" x2=\"197.3\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"260.9\" y1=\"200\" x2=\"260.9\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"308.6\" y1=\"200\" x2=\"308.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"388.2\" y1=\"200\" x2=\"388.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"451.8\" y1=\"200\" x2=\"451.8\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"185.7\" x2=\"490\" y2=\"185.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"162.9\" x2=\"490\" y2=\"162.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"105.7\" x2=\"490\" y2=\"105.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"77.1\" x2=\"490\" y2=\"77.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"48.6\" x2=\"490\" y2=\"48.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"134.3\" x2=\"508\" y2=\"134.3\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"206\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"133.6\" y1=\"130.3\" x2=\"133.6\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"133.6\" y=\"152.3\" text-anchor=\"middle\">0.1</text>\n<line x1=\"197.3\" y1=\"130.3\" x2=\"197.3\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"197.3\" y=\"152.3\" text-anchor=\"middle\">0.2</text>\n<line x1=\"260.9\" y1=\"130.3\" x2=\"260.9\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"260.9\" y=\"152.3\" text-anchor=\"middle\">0.3</text>\n<line x1=\"308.6\" y1=\"130.3\" x2=\"308.6\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"308.6\" y=\"152.3\" text-anchor=\"middle\">0.375</text>\n<line x1=\"388.2\" y1=\"130.3\" x2=\"388.2\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"388.2\" y=\"152.3\" text-anchor=\"middle\">0.5</text>\n<line x1=\"451.8\" y1=\"130.3\" x2=\"451.8\" y2=\"138.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"451.8\" y=\"152.3\" text-anchor=\"middle\">0.6</text>\n<line x1=\"66\" y1=\"185.7\" x2=\"74\" y2=\"185.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"189.7\" text-anchor=\"end\">-1.8</text>\n<line x1=\"66\" y1=\"162.9\" x2=\"74\" y2=\"162.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"166.9\" text-anchor=\"end\">-1</text>\n<line x1=\"66\" y1=\"105.7\" x2=\"74\" y2=\"105.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"109.7\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"77.1\" x2=\"74\" y2=\"77.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"81.1\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"48.6\" x2=\"74\" y2=\"48.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"52.6\" text-anchor=\"end\">3</text>\n<text class=\"label\" x=\"506\" y=\"124.3\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">vₓ (m/s)</text>\n<polyline points=\"70,48.6 451.8,185.7\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<line x1=\"451.8\" y1=\"185.7\" x2=\"451.8\" y2=\"134.3\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"451.8\" y1=\"185.7\" x2=\"70\" y2=\"185.7\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: הרכיב האופקי של המהירות כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "קו ישר מ-$3$ ל-$-1.8\\,\\text{m/s}$",
+      "finalAnswer": "קו ישר מ-$3$ עד $-1.8\\,\\text{m/s}$, שחוצה את האפס אחרי $0.375\\,\\text{s}$",
       "keyAnswer": null
     }
   ]

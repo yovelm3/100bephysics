@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב במקור מבקש טבלה של שמונה ערכים. בדיקה אוטומטית רק לשני ערכים (ב1, ב2), והשאר בפתרון.",
-  "stem": "יעל ואורי חקרו את התנועה לאורך מגלשת מים בלונה-פארק. למסלול המגלשה צורה עקומה לכל אורכו (אך צורתו אינה בהכרח קשת של מעגל). יעל גלשה ואורי צילם אותה במהלך גלישתה באמצעות מצלמת וידאו. לאחר מכן הם ניתחו את סרטון הווידאו: המקום שבו יעל על המגלשה בתמונה הנבחרת הראשונה הוגדר כ\"ראשית התנועה\" (בנקודה זו כבר הייתה ליעל מהירות), והרגע שבו צולמה התמונה הוגדר כ-$t = 0$. אחר כך, על סמך הסרטון, רשמו את הדרך $s$ שעברה יעל לאורך המגלשה מ\"ראשית התנועה\" במרווחי זמן של $0.4\\,\\text{s}$. הממצאים רשומים בטבלה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ב הוא סעיף אחד, כמו במקור, עם שמונה תיבות, אחת לכל רגע בטבלה.\nמה לבדוק: רק לאשר.",
+  "stem": "יעל ואורי חקרו את התנועה במגלשת מים בלונה פארק. המסלול של המגלשה עקום לכל אורכו, אבל הוא לא בהכרח קשת של מעגל. יעל גלשה, ואורי צילם אותה במצלמת וידאו. אחר כך הם ניתחו את הסרטון: המקום של יעל בתמונה הראשונה שבחרו הוגדר \"ראשית התנועה\" (בנקודה הזו כבר הייתה ליעל מהירות), והרגע של התמונה הזו הוגדר $t = 0$. לפי הסרטון הם רשמו את הדרך $s$ שעברה יעל לאורך המגלשה מ\"ראשית התנועה\", כל $0.4\\,\\text{s}$. התוצאות בטבלה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2007-q1.svg",
@@ -28,12 +28,12 @@
     "תאוצה רדיאלית",
     "מסלול עקום"
   ],
-  "summary": "גלישה במגלשה עקומה: מהירויות מטבלת דרך-זמן, ואיזה סוגי תאוצה יש.",
+  "summary": "גלישה במגלשה עקומה: מהירויות מטבלת דרך-זמן, ואילו סוגי תאוצה יש.",
   "position": 24,
   "parts": [
     {
       "label": "א",
-      "question": "חשב את גודל המהירות של יעל ברגע $t = 1.6\\,\\text{s}$. פרט את חישוביך.",
+      "question": "מה גודל המהירות של יעל ברגע $t = 1.6\\,\\text{s}$? פרטו את החישוב.",
       "answer": {
         "type": "number",
         "value": 4.499999999999999,
@@ -45,24 +45,70 @@
       ],
       "solution": [
         {
-          "explain": "מהירות רגעית: הדרך בין הנקודה שלפני לנקודה שאחרי, חלקי הזמן ביניהן."
+          "explain": "המהירות הרגעית קרובה מאוד למהירות הממוצעת בפרק זמן שהרגע נמצא באמצעו. לכן לוקחים את הנקודה שלפני הרגע ואת הנקודה שאחריו."
         },
         {
-          "what": "הנקודות סביב $1.6\\,\\text{s}$",
-          "why": "$t = 1.2$ ו-$2.0\\,\\text{s}$",
-          "tex": "v(1.6) \\approx \\frac{7.22 - 3.62}{0.8} = 4.5\\,\\text{m/s}"
+          "what": "בוחרים את הנקודות סביב הרגע",
+          "why": "הנקודה שלפניו והנקודה שאחריו בטבלה",
+          "tex": "t = 1.2\\,\\text{s}:\\ s = 3.62\\,\\text{m} \\qquad t = 2.0\\,\\text{s}:\\ s = 7.22\\,\\text{m}"
+        },
+        {
+          "what": "המהירות הממוצעת בפרק הזה",
+          "why": "הדרך חלקי הזמן",
+          "tex": "v(1.6) \\approx \\frac{7.22 - 3.62}{2.0 - 1.2} = \\frac{3.6}{0.8} = 4.5\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
         }
       ],
       "finalAnswer": "$\\approx 4.5\\,\\text{m/s}$",
       "keyAnswer": "v1.6≈4.5 m/s"
     },
     {
-      "label": "ב1",
-      "question": "הכן טבלה של גודל המהירות של יעל ברגעים $t = 0.4\\,\\text{s}$ עד $t = 3.2\\,\\text{s}$. מה גודל המהירות ברגע $t = 0.4\\,\\text{s}$?",
+      "label": "ב",
+      "question": "הכינו טבלה של גודל המהירות של יעל ברגעים $t = 0.4\\,\\text{s}$ עד $t = 3.2\\,\\text{s}$, כל $0.4\\,\\text{s}$.",
       "answer": {
-        "type": "number",
-        "value": 2.1999999999999997,
-        "unit": "m/s"
+        "type": "multi",
+        "items": [
+          {
+            "label": "$t = 0.4\\,\\text{s}$",
+            "value": 2.1999999999999997,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 0.8\\,\\text{s}$",
+            "value": 3.4,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 1.2\\,\\text{s}$",
+            "value": 4.1,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 1.6\\,\\text{s}$",
+            "value": 4.499999999999999,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 2\\,\\text{s}$",
+            "value": 4.800000000000001,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 2.4\\,\\text{s}$",
+            "value": 5.05,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 2.8\\,\\text{s}$",
+            "value": 5.249999999999999,
+            "unit": "m/s"
+          },
+          {
+            "label": "$t = 3.2\\,\\text{s}$",
+            "value": 5.349999999999999,
+            "unit": "m/s"
+          }
+        ]
       },
       "skills": [
         "graph",
@@ -70,44 +116,82 @@
       ],
       "solution": [
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0$ ו-$0.8\\,\\text{s}$",
-          "tex": "v(0.4) \\approx \\frac{1.76 - 0}{0.8} = 2.2\\,\\text{m/s}"
+          "explain": "אותה שיטה כמו בסעיף א, לכל רגע: הנקודה שלפניו והנקודה שאחריו, חלקי שמונה עשיריות שנייה."
         },
         {
-          "what": "שאר הטבלה",
-          "why": "באותה שיטה לכל רגע",
-          "tex": "3.4,\\ 4.1,\\ 4.5,\\ 4.8,\\ 5.05,\\ 5.25,\\ 5.35\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$2.2\\,\\text{m/s}$",
-      "keyAnswer": "2.2 m/s"
-    },
-    {
-      "label": "ב2",
-      "question": "מה גודל המהירות ברגע $t = 3.2\\,\\text{s}$?",
-      "answer": {
-        "type": "number",
-        "value": 5.349999999999999,
-        "unit": "m/s"
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+          "what": "הרגע הראשון",
+          "why": "הנקודה הראשונה בטבלה והנקודה השלישית",
+          "tex": "v(0.4) \\approx \\frac{1.76 - 0}{0.8} = 2.2\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $2.8$ ו-$3.6\\,\\text{s}$",
-          "tex": "v(3.2) \\approx \\frac{15.54 - 11.26}{0.8} = 5.35\\,\\text{m/s}"
+          "what": "הרגע השני",
+          "why": "אותה שיטה",
+          "tex": "v(0.8) \\approx \\frac{3.62 - 0.90}{0.8} = 3.4\\,\\text{m/s}"
+        },
+        {
+          "what": "הרגע השלישי",
+          "why": "אותה שיטה",
+          "tex": "v(1.2) \\approx \\frac{5.04 - 1.76}{0.8} = 4.1\\,\\text{m/s}"
+        },
+        {
+          "what": "הרגעים הבאים",
+          "why": "אותה שיטה",
+          "tex": "v(2.0) \\approx \\frac{8.88 - 5.04}{0.8} = 4.8 \\qquad v(2.4) \\approx \\frac{11.26 - 7.22}{0.8} = 5.05"
+        },
+        {
+          "what": "שני הרגעים האחרונים",
+          "why": "אותה שיטה",
+          "tex": "v(2.8) \\approx \\frac{13.08 - 8.88}{0.8} = 5.25 \\qquad v(3.2) \\approx \\frac{15.54 - 11.26}{0.8} = 5.35"
+        },
+        {
+          "caption": "הטבלה",
+          "head": [
+            "$t\\,(\\text{s})$",
+            "$v\\,(\\text{m/s})$"
+          ],
+          "rows": [
+            [
+              "0.4",
+              "2.2"
+            ],
+            [
+              "0.8",
+              "3.4"
+            ],
+            [
+              "1.2",
+              "4.1"
+            ],
+            [
+              "1.6",
+              "4.5"
+            ],
+            [
+              "2",
+              "4.8"
+            ],
+            [
+              "2.4",
+              "5.05"
+            ],
+            [
+              "2.8",
+              "5.25"
+            ],
+            [
+              "3.2",
+              "5.35"
+            ]
+          ]
         }
       ],
-      "finalAnswer": "$5.35\\,\\text{m/s}$",
-      "keyAnswer": "5.35 m/s"
+      "finalAnswer": "ראו את הטבלה",
+      "keyAnswer": "2.2 ; 3.4 ; 4.1 ; 4.5 ; 4.8 ; 5.05 ; 5.25 ; 5.35 m/s"
     },
     {
       "label": "ג",
-      "question": "סרטט גרף של גודל המהירות של יעל כפונקציה של הזמן.",
+      "question": "שרטטו גרף של גודל המהירות של יעל כפונקציה של הזמן.",
       "answer": {
         "type": "open"
       },
@@ -117,13 +201,17 @@
       "solution": [
         {
           "what": "מסמנים את הנקודות",
-          "why": "מהטבלה של סעיף ב",
-          "tex": "(0.4, 2.2),\\ (0.8, 3.4),\\ \\dots,\\ (3.2, 5.35)"
+          "why": "שמונה נקודות מהטבלה של סעיף ב",
+          "tex": "(0.4,\\ 2.2),\\ (0.8,\\ 3.4),\\ \\dots,\\ (3.2,\\ 5.35)"
         },
         {
           "what": "צורת הגרף",
-          "why": "עולה, אבל השיפוע הולך וקטן: הגרף מתמתן",
-          "tex": "\\Delta v:\\ 1.2,\\ 0.7,\\ 0.4,\\ 0.3,\\ \\dots"
+          "why": "המהירות גדלה כל הזמן, אבל בכל פרק זמן היא גדלה פחות מבפרק הקודם. לכן הגרף עולה ומתמתן",
+          "tex": "\\Delta v:\\ 1.2,\\ 0.7,\\ 0.4,\\ 0.3,\\ 0.25,\\ 0.2,\\ 0.1\\ \\text{m/s}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 310\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: גודל המהירות של יעל כפונקציה של הזמן. שמונה נקודות, מ-2.2 מטר לשנייה אחרי 0.4 שניות ועד 5.35 אחרי 3.2 שניות. עקומה עולה שהולכת ומתמתנת\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"118\" y1=\"270\" x2=\"118\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"166\" y1=\"270\" x2=\"166\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"214\" y1=\"270\" x2=\"214\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"262\" y1=\"270\" x2=\"262\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"270\" x2=\"310\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"358\" y1=\"270\" x2=\"358\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"406\" y1=\"270\" x2=\"406\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"454\" y1=\"270\" x2=\"454\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"234.5\" x2=\"490\" y2=\"234.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"199\" x2=\"490\" y2=\"199\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"163.5\" x2=\"490\" y2=\"163.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"128.1\" x2=\"490\" y2=\"128.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"92.6\" x2=\"490\" y2=\"92.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"57.1\" x2=\"490\" y2=\"57.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"270\" x2=\"508\" y2=\"270\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"270\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"118\" y1=\"266\" x2=\"118\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"118\" y=\"288\" text-anchor=\"middle\">0.4</text>\n<line x1=\"166\" y1=\"266\" x2=\"166\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"166\" y=\"288\" text-anchor=\"middle\">0.8</text>\n<line x1=\"214\" y1=\"266\" x2=\"214\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"214\" y=\"288\" text-anchor=\"middle\">1.2</text>\n<line x1=\"262\" y1=\"266\" x2=\"262\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"262\" y=\"288\" text-anchor=\"middle\">1.6</text>\n<line x1=\"310\" y1=\"266\" x2=\"310\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"310\" y=\"288\" text-anchor=\"middle\">2</text>\n<line x1=\"358\" y1=\"266\" x2=\"358\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"358\" y=\"288\" text-anchor=\"middle\">2.4</text>\n<line x1=\"406\" y1=\"266\" x2=\"406\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"406\" y=\"288\" text-anchor=\"middle\">2.8</text>\n<line x1=\"454\" y1=\"266\" x2=\"454\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"454\" y=\"288\" text-anchor=\"middle\">3.2</text>\n<line x1=\"66\" y1=\"234.5\" x2=\"74\" y2=\"234.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"238.5\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"199\" x2=\"74\" y2=\"199\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"203\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"163.5\" x2=\"74\" y2=\"163.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"167.5\" text-anchor=\"end\">3</text>\n<line x1=\"66\" y1=\"128.1\" x2=\"74\" y2=\"128.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"132.1\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"92.6\" x2=\"74\" y2=\"92.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"96.6\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"57.1\" x2=\"74\" y2=\"57.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"61.1\" text-anchor=\"end\">6</text>\n<text class=\"label\" x=\"506\" y=\"260\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">v (m/s)</text>\n<path d=\"M 118.0,191.9 C 126.0,184.8 150.0,160.6 166.0,149.4 C 182.0,138.1 198.0,131.0 214.0,124.5 C 230.0,118.0 246.0,114.5 262.0,110.3 C 278.0,106.2 294.0,102.9 310.0,99.7 C 326.0,96.4 342.0,93.5 358.0,90.8 C 374.0,88.1 390.0,85.5 406.0,83.7 C 422.0,81.9 446.0,80.8 454.0,80.2\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"118\" cy=\"191.9\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"166\" cy=\"149.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"214\" cy=\"124.5\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"262\" cy=\"110.3\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"310\" cy=\"99.7\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"358\" cy=\"90.8\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"406\" cy=\"83.7\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"454\" cy=\"80.2\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "הגרף: גודל המהירות כפונקציה של הזמן"
         }
       ],
       "finalAnswer": "עקומה עולה שמתמתנת",
@@ -131,7 +219,7 @@
     },
     {
       "label": "ד",
-      "question": "האם במהלך תנועתה הייתה ליעל תאוצה משיקית? נמק.",
+      "question": "האם הייתה ליעל תאוצה משיקית במהלך הגלישה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -145,9 +233,9 @@
       ],
       "solution": [
         {
-          "what": "תאוצה משיקית משנה את גודל המהירות",
-          "why": "מהטבלה גודל המהירות גדל כל הזמן",
-          "tex": "|v|\\uparrow \\Rightarrow a_t \\ne 0"
+          "what": "מה עושה תאוצה משיקית",
+          "why": "תאוצה משיקית משנה את גודל המהירות. לפי הטבלה, גודל המהירות גדל כל הזמן",
+          "tex": "|v|:\\ 2.2 \\to 5.35\\,\\text{m/s} \\;\\Rightarrow\\; a_t \\ne 0"
         }
       ],
       "finalAnswer": "כן, כי גודל המהירות משתנה",
@@ -155,7 +243,7 @@
     },
     {
       "label": "ה",
-      "question": "האם במהלך תנועתה הייתה ליעל תאוצה רדיאלית? נמק.",
+      "question": "האם הייתה ליעל תאוצה רדיאלית במהלך הגלישה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -169,9 +257,10 @@
       ],
       "solution": [
         {
-          "what": "תאוצה רדיאלית משנה את כיוון המהירות",
-          "why": "המסלול עקום, ולכן כיוון המהירות משתנה כל הזמן",
-          "tex": "a_R = \\frac{v^2}{r} \\ne 0"
+          "what": "מה עושה תאוצה רדיאלית",
+          "why": "תאוצה רדיאלית משנה את כיוון המהירות. המסלול עקום, ולכן כיוון המהירות משתנה כל הזמן",
+          "tex": "a_R = \\frac{v^2}{r} \\ne 0",
+          "eq": "a_R = \\frac{v^2}{r}"
         }
       ],
       "finalAnswer": "כן, כי המסלול עקום וכיוון המהירות משתנה",
