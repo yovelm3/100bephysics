@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. ציורי האפשרויות בסעיף א שורטטו מחדש באופן סכמטי.",
-  "stem": "בתרשים מוצג מסלול גלישה על קרח שמורכב משלושה קטעים: $AC$, $CG$ ו-$GL$. שני הקטעים הראשונים, $AC$ ו-$CG$, הם קשתות מעגליות שרדיוסן $R$. הקטע השלישי, $GL$, הוא מסלול לא מעגלי. בקטעים $AC$ ו-$CG$ החיכוך בין גולש למסלול ניתן להזנחה, ואילו מהנקודה $G$ קיים חיכוך שלא ניתן להזנחה. גולש מתחיל לנוע ממנוחה מהנקודה $A$. הוא נע בהחלקה בלבד ולא נעזר במקלות סקי. בכל מהלך תנועתו הגולש לא מתנתק מהמסלול. התנגדות האוויר ניתנת להזנחה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nציורי האפשרויות בסעיף א שורטטו מחדש בצורה סכמטית. במקור סעיף ב הוא (1) ו-(2), וכך גם אצלנו.\nמה לבדוק: רק לאשר.",
+  "stem": "בתרשים מוצג מסלול גלישה על קרח, שבנוי משלושה קטעים: $AC$, $CG$ ו-$GL$. שני הקטעים הראשונים, $AC$ ו-$CG$, הם קשתות של מעגלים שרדיוסם $R$. הקטע השלישי, $GL$, לא מעגלי. בקטעים $AC$ ו-$CG$ אפשר להזניח את החיכוך, אבל מהנקודה $G$ יש חיכוך שאי אפשר להזניח. גולש יוצא ממנוחה מהנקודה $A$. הוא רק מחליק, בלי מקלות סקי, ולא מתנתק מהמסלול לאורך כל הדרך. אפשר להזניח את התנגדות האוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2018-q3.svg",
@@ -32,7 +32,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "קבע איזה מהאיורים 1-4 מציג נכון את תרשים הכוחות שפועלים על הגולש בנקודה $B$. נמק את קביעתך.",
+      "question": "איזה מהאיורים 1-4 מציג נכון את הכוחות על הגולש בנקודה $B$? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -49,22 +49,26 @@
       ],
       "solution": [
         {
-          "what": "הכוחות",
-          "why": "כובד, ונורמלי בניצב למסלול כלפי חוץ (הגולש על גבי קשת קמורה)",
-          "tex": "mg,\\ N"
+          "explain": "בנקודה B הגולש על קשת קמורה, ומרכז הקשת מתחתיו. בוחרים כחיובי את הכיוון אל המרכז."
         },
         {
-          "what": "גודל הנורמלי",
-          "why": "המרכז מתחת לגולש: השקול כלפי המרכז, ולכן $N < mg$",
-          "tex": "mg\\cos\\theta - N = \\frac{mv^2}{R}"
+          "what": "הכוחות",
+          "why": "כוח הכובד, כלפי מטה, והכוח הנורמלי של המסלול, ניצב למסלול, כלפי חוץ",
+          "tex": "mg,\\qquad N"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי רכיב הכובד שבכיוון הרדיוס, ונגדו הכוח הנורמלי. הגולש נע, ולכן הכוח הנורמלי קטן מהרכיב הזה",
+          "tex": "mg\\cos\\theta - N = m\\,\\frac{v^2}{R} > 0 \\;\\Rightarrow\\; N < mg",
+          "eq": "a_R = \\frac{v^2}{r}"
         }
       ],
-      "finalAnswer": "איור 1: נורמלי קצר מ-$mg$, בניצב למסלול",
+      "finalAnswer": "איור 1: כוח נורמלי קצר מ-$mg$, ניצב למסלול",
       "keyAnswer": "גרף 1"
     },
     {
       "label": "ב1",
-      "question": "קבע אם לתאוצה של הגולש בנקודה $D$ יש רכיב משיקי. נמק את קביעתך.",
+      "question": "האם לתאוצה של הגולש בנקודה $D$ יש רכיב משיקי? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -78,9 +82,10 @@
       ],
       "solution": [
         {
-          "what": "ב-$D$ המסלול עדיין יורד",
-          "why": "רכיב הכובד לאורך המסלול לא אפס, והמהירות גדלה",
-          "tex": "a_t = g\\sin\\theta \\ne 0"
+          "what": "בנקודה D המסלול עדיין יורד",
+          "why": "לרכיב הכובד שלאורך המסלול יש גודל, והמהירות גדלה",
+          "tex": "mg\\sin\\theta = m\\,a_t \\;\\Rightarrow\\; a_t = g\\sin\\theta \\ne 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],
       "finalAnswer": "כן: המהירות גדלה בירידה",
@@ -88,7 +93,7 @@
     },
     {
       "label": "ב2",
-      "question": "העתק למחברתך (באופן מקורב) את הקטע המעגלי $CG$, והוסף לתרשים חץ שמתאר את התאוצה הכוללת של הגולש בנקודה $D$ (אין צורך לחשב).",
+      "question": "העתיקו בקירוב את הקטע המעגלי $CG$, והוסיפו חץ שמתאר את התאוצה הכוללת של הגולש בנקודה $D$. (אין צורך לחשב.)",
       "answer": {
         "type": "open"
       },
@@ -98,16 +103,20 @@
       "solution": [
         {
           "what": "שני רכיבים",
-          "why": "רדיאלי כלפי מרכז הקשת $CG$ (מעלה), ומשיקי קדימה במורד",
+          "why": "רכיב רדיאלי, אל מרכז הקשת, כלומר למעלה. ורכיב משיקי, קדימה במורד, כמו שמצאנו בסעיף הקודם",
           "tex": "\\vec a = \\vec a_R + \\vec a_t"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים התשובה: הקשת CG, שהמרכז שלה מעליה, ובנקודה D חץ כתום של התאוצה הכוללת. החץ נוטה למעלה, אל מרכז הקשת, וקדימה, בכיוון התנועה במורד\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<path d=\"M 86.8,158.6 L 92.5,165.1 L 98.6,171.4 L 104.9,177.5 L 111.4,183.2 L 118.2,188.7 L 125.3,193.8 L 132.5,198.7 L 140.0,203.2 L 147.7,207.4 L 155.5,211.3 L 163.5,214.8 L 171.6,217.9 L 179.9,220.7 L 188.2,223.2 L 196.7,225.3 L 205.3,227.0 L 213.9,228.3 L 222.6,229.2 L 231.3,229.8 L 240.0,230.0 L 248.7,229.8 L 257.4,229.2 L 266.1,228.3 L 274.7,227.0 L 283.3,225.3 L 291.8,223.2 L 300.1,220.7 L 308.4,217.9 L 316.5,214.8 L 324.5,211.3 L 332.3,207.4 L 340.0,203.2 L 347.5,198.7 L 354.7,193.8 L 361.8,188.7 L 368.6,183.2 L 375.1,177.5 L 381.4,171.4 L 387.5,165.1 L 393.2,158.6\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"3\" stroke-linejoin=\"round\"/>\n<circle cx=\"240\" cy=\"30\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"248\" y=\"34\" text-anchor=\"start\">O</text>\n<circle cx=\"155.5\" cy=\"211.3\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"145.5\" y=\"227.3\" text-anchor=\"end\">D</text>\n<text class=\"label\" x=\"78.8\" y=\"162.6\" text-anchor=\"end\">C</text>\n<text class=\"label\" x=\"401.2\" y=\"162.6\" text-anchor=\"start\">G</text>\n<line x1=\"240\" y1=\"30\" x2=\"155.5\" y2=\"211.3\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"155.5\" y1=\"211.3\" x2=\"208.4\" y2=\"183\" stroke=\"var(--d-ask)\" stroke-width=\"2.8\" marker-end=\"url(#f-ask)\"/>\n<text class=\"label\" x=\"223.2\" y=\"178.3\" text-anchor=\"start\" style=\"fill:var(--d-ask)\">a</text>\n<line x1=\"155.5\" y1=\"211.3\" x2=\"200.8\" y2=\"232.4\" stroke=\"var(--d-label)\" stroke-width=\"2\" marker-end=\"url(#f-arr)\"/>\n<text class=\"label\" x=\"208\" y=\"249.8\" text-anchor=\"middle\">v</text>\n</svg>\n",
+          "caption": "התרשים: התאוצה הכוללת בנקודה D"
         }
       ],
-      "finalAnswer": "חץ שנוטה מעלה לכיוון המרכז וקדימה בכיוון התנועה",
+      "finalAnswer": "חץ שנוטה למעלה, אל המרכז, וקדימה, בכיוון התנועה",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "נתון: $R = 60\\,\\text{m}$, מסת הגולש עם ציוד הגלישה $m = 80\\,\\text{kg}$, הגובה של הנקודה $E$ מעל הקרקע $h_1 = 32\\,\\text{m}$ ($E$ הנקודה הנמוכה ביותר במסלול). חשב את גודל המהירות של הגולש בחולפו בנקודה $E$.",
+      "question": "נתון: $R = 60\\,\\text{m}$, מסת הגולש עם הציוד $m = 80\\,\\text{kg}$, והנקודה $E$, הנמוכה ביותר במסלול, בגובה $h_1 = 32\\,\\text{m}$ מעל הקרקע. מה גודל המהירות של הגולש בנקודה $E$?",
       "answer": {
         "type": "number",
         "value": 23.664319132398465,
@@ -118,14 +127,18 @@
       ],
       "solution": [
         {
-          "what": "הפרש גבהים",
-          "why": "$A$ בגובה $R = 60\\,\\text{m}$",
+          "explain": "עד הנקודה E אין חיכוך, והכוח הנורמלי ניצב לתנועה ולא עושה עבודה. לכן האנרגיה המכנית נשמרת."
+        },
+        {
+          "what": "הפרש הגבהים",
+          "why": "הנקודה A בגובה הרדיוס, שישים מטר",
           "tex": "\\Delta h = 60 - 32 = 28\\,\\text{m}"
         },
         {
           "what": "שימור אנרגיה",
-          "why": "אין חיכוך עד E",
-          "tex": "v_E = \\sqrt{2 \\cdot 10 \\cdot 28} = \\sqrt{560} \\approx 23.66\\,\\text{m/s}"
+          "why": "הגולש יוצא ממנוחה",
+          "tex": "mg\\,\\Delta h = \\tfrac{1}{2}m v_E^2 \\;\\Rightarrow\\; v_E = \\sqrt{2 \\cdot 10 \\cdot 28} = \\sqrt{560} \\approx 23.66\\,\\text{m/s}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "$\\approx 23.66\\,\\text{m/s}$",
@@ -133,7 +146,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב את הכוח (גודל וכיוון) שהגולש מפעיל על המסלול בנקודה $E$.",
+      "question": "מה הכוח (גודל וכיוון) שהגולש מפעיל על המסלול בנקודה $E$?",
       "answer": {
         "type": "number",
         "value": 1546.6666666666665,
@@ -145,19 +158,28 @@
       ],
       "solution": [
         {
-          "what": "ב-$E$",
-          "why": "קשת קעורה, המרכז מעל הגולש",
-          "tex": "N - mg = \\frac{m v_E^2}{R}"
+          "explain": "בנקודה E הקשת קעורה, ומרכז הקשת מעל הגולש. בוחרים כלפי מעלה כחיובי."
         },
         {
-          "what": "מציבים",
-          "why": "mg = 800 N",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגולש בנקודה E: הכוח הנורמלי של המסלול כלפי מעלה, גדול מהמשקל, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה, אל מרכז הקשת\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"31.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"19.5\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"223\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"247\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז מעל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגולש בנקודה E"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי הכוח הנורמלי, ונגדו הכובד",
+          "tex": "N - mg = m\\,\\frac{v_E^2}{R}",
+          "eq": "a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "מבודדים ומציבים",
+          "why": "המשקל של הגולש שמונה מאות ניוטון",
           "tex": "N = 800 + \\frac{80 \\cdot 560}{60} \\approx 1546.7\\,\\text{N}"
         },
         {
-          "what": "לפי החוק השלישי",
-          "why": "הגולש לוחץ על המסלול באותו גודל, כלפי מטה",
-          "tex": "F = 1546.7\\,\\text{N}\\downarrow"
+          "what": "הכוח של הגולש על המסלול",
+          "why": "לפי החוק השלישי, שווה בגודלו והפוך בכיוונו: כלפי מטה",
+          "tex": "N' \\approx 1546.7\\,\\text{N}\\ \\downarrow",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         }
       ],
       "finalAnswer": "$\\approx 1546.7\\,\\text{N}$ כלפי מטה",
@@ -165,7 +187,7 @@
     },
     {
       "label": "ה",
-      "question": "נתון: סך כל העבודה של כוח החיכוך מהנקודה $G$ ועד לנקודת עצירתו של הגולש הוא $20\\,\\text{kJ}$. גובה הנקודה $L$ מעל הקרקע $h_2 = 36\\,\\text{m}$. קבע אם הגולש הגיע לנקודה $L$. הסבר את קביעתך באמצעות חישוב.",
+      "question": "נתון: העבודה של כוח החיכוך, מהנקודה $G$ ועד שהגולש נעצר, היא $20\\,\\text{kJ}$ בגודלה. הנקודה $L$ בגובה $h_2 = 36\\,\\text{m}$ מעל הקרקע. האם הגולש מגיע לנקודה $L$? הסבירו בעזרת חישוב.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -181,18 +203,20 @@
       "solution": [
         {
           "what": "האנרגיה בהתחלה",
-          "why": "גובה A הוא R",
-          "tex": "mgR = 80 \\cdot 10 \\cdot 60 = 48\\,\\text{kJ}"
+          "why": "בנקודה A הגולש במנוחה, בגובה הרדיוס",
+          "tex": "E_A = mgR = 80 \\cdot 10 \\cdot 60 = 48\\,\\text{kJ}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         },
         {
-          "what": "מה דרוש כדי להגיע ל-$L$",
-          "why": "אנרגיית גובה ב-$L$ ועוד מה שהחיכוך לוקח",
-          "tex": "80 \\cdot 10 \\cdot 36 + 20\\,000 = 48.8\\,\\text{kJ}"
+          "what": "משפט העבודה והאנרגיה",
+          "why": "העבודה של החיכוך, שהוא כוח לא משמר, שווה לשינוי באנרגיה המכנית. כדי להגיע לנקודה L צריך אנרגיה פוטנציאלית של הגובה שלה, ועוד את מה שהחיכוך לוקח",
+          "tex": "E_L = mgh_2 + |W_f| = 80 \\cdot 10 \\cdot 36 + 20\\,000 = 48.8\\,\\text{kJ}",
+          "eq": "W_{\\text{nc}} = \\Delta E"
         },
         {
           "what": "משווים",
-          "why": "חסרים 800 J",
-          "tex": "48 < 48.8"
+          "why": "חסרות שמונה מאות ג'אול",
+          "tex": "48\\,\\text{kJ} < 48.8\\,\\text{kJ}"
         }
       ],
       "finalAnswer": "לא: האנרגיה לא מספיקה",
