@@ -53,7 +53,8 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
               <InlineText text={group.caption} />
             </figcaption>
             {/* Our own SVG, validated by checkSvg when the content is loaded. */}
-            <ZoomFigure svg={group.svg} alt={group.caption.replace(/\$/g, "")} className="mx-auto max-w-2xl" />
+            {/* A force diagram reads well small; graphs and tables need more width. Tapping opens either full screen. */}
+            <ZoomFigure svg={group.svg} alt={group.caption.replace(/\$/g, "")} className={`mx-auto ${/תרשים (ה)?כוחות/.test(group.caption) ? "max-w-sm" : "max-w-xl"}`} />
           </figure>
         ) : group.kind === "explain" ? (
           <p key={i} className="font-semibold leading-relaxed text-foreground">

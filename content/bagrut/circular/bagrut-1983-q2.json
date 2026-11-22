@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "לפניך תיאור מבנה של סחרחרה (קרוסלה): מקצהו העליון של עמוד זקוף, שניתן לסיבוב סביב צירו, יוצאות זרועות אופקיות באורך $b = 1.4\\,\\text{m}$. בקצה כל זרוע קשור חבל שאורכו $\\ell = 2.0\\,\\text{m}$, ובקצהו כיסא שמסתו $m = 5\\,\\text{kg}$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבדף התשובות 4.34 מטר, ואצלי 4.35 מטר. ההבדל רק מעיגול, והאתר מקבל את שניהם.\nמה לבדוק: רק לאשר.",
+  "stem": "זה המבנה של סחרחרה: מהקצה העליון של עמוד אנכי, שאפשר לסובב סביב הציר שלו, יוצאות זרועות אופקיות באורך $b = 1.4\\,\\text{m}$. בקצה כל זרוע קשור חבל באורך $\\ell = 2.0\\,\\text{m}$, ובקצה החבל כיסא שמסתו $m = 5\\,\\text{kg}$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1983-q2.svg",
@@ -32,7 +32,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "חשב את התדירות שבה אפשר לסובב את הסחרחרה, כך שהכיסאות יתרחקו מרחק העולה על $3.0\\,\\text{m}$ מציר הסיבוב (העמוד). (מצא את התדירות שבה המרחק הוא בדיוק $3.0\\,\\text{m}$.)",
+      "question": "באיזו תדירות צריך לסובב את הסחרחרה כדי שהכיסאות יתרחקו יותר מ-$3.0\\,\\text{m}$ מציר הסיבוב (העמוד)? (מצאו את התדירות שבה המרחק בדיוק $3.0\\,\\text{m}$.)",
       "answer": {
         "type": "number",
         "value": 0.33552808069658024,
@@ -45,35 +45,52 @@
       ],
       "solution": [
         {
-          "explain": "הכיסא נע במעגל אופקי. הכוחות: כובד ומתיחת החבל. הרכיב האופקי של המתיחות הוא הכוח הצנטריפטלי."
+          "explain": "הכיסא נע במעגל אופקי סביב העמוד. על הכיסא פועלים כוח הכובד ומתיחות החבל. בוחרים כחיובי את הכיוון אל מרכז המעגל, אופקית, וכלפי מעלה בציר האנכי. השאלה לא קבעה כיוונים. התאוצה כלפי המרכז."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הכיסא: מתיחות החבל לאורך החבל, למעלה ולכיוון העמוד, וכוח הכובד כלפי מטה. הכיוון החיובי אופקית אל מרכז המעגל\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"123.7\" y2=\"85\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"109.4\" y=\"80.2\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"230\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"254\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מרכז המעגל משמאל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הכיסא"
         },
         {
           "what": "הזווית של החבל",
-          "why": "המרחק מהציר הוא הזרוע ועוד הרכיב האופקי של החבל",
-          "tex": "3 = 1.4 + 2\\sin\\theta \\Rightarrow \\sin\\theta = 0.8,\\ \\cos\\theta = 0.6"
+          "why": "המרחק מהעמוד הוא אורך הזרוע ועוד הרכיב האופקי של החבל. נסמן את הזווית של החבל עם האנך באות תטא",
+          "tex": "3 = 1.4 + 2\\sin\\theta \\;\\Rightarrow\\; \\sin\\theta = 0.8,\\quad \\cos\\theta = 0.6"
         },
         {
-          "what": "משוואות הכוחות",
-          "why": "אנכית אין תאוצה. אופקית התאוצה כלפי המרכז",
-          "tex": "T\\cos\\theta = mg,\\quad T\\sin\\theta = m\\omega^2 r"
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "הכיסא לא עולה ולא יורד. הרכיב האנכי של המתיחות מאזן את הכובד",
+          "tex": "T\\cos\\theta - mg = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "מחלקים",
-          "why": "המסה מתבטלת",
-          "tex": "\\omega^2 = \\frac{g\\tan\\theta}{r} = \\frac{10 \\cdot 4/3}{3} \\approx 4.44 \\Rightarrow \\omega \\approx 2.11\\,\\text{rad/s}"
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי פועל רק הרכיב האופקי של המתיחות. התאוצה היא התאוצה הרדיאלית",
+          "tex": "T\\sin\\theta - 0 = m\\,\\omega^2 r",
+          "eq": "a_R = \\frac{v^2}{r} = \\omega^2 r"
+        },
+        {
+          "what": "מחלקים את המשוואות זו בזו",
+          "why": "המתיחות והמסה מצטמצמות",
+          "tex": "\\tan\\theta = \\frac{\\omega^2 r}{g} \\;\\Rightarrow\\; \\omega^2 = \\frac{g\\tan\\theta}{r} = \\frac{10 \\cdot \\tfrac{4}{3}}{3} \\approx 4.44"
+        },
+        {
+          "what": "המהירות הזוויתית",
+          "why": "מוציאים שורש",
+          "tex": "\\omega \\approx 2.11\\,\\text{rad/s}"
         },
         {
           "what": "התדירות",
-          "why": "מחלקים ב-2π",
-          "tex": "f = \\frac{\\omega}{2\\pi} \\approx 0.335\\,\\text{Hz} \\approx \\tfrac{1}{3}\\,\\text{Hz}"
+          "why": "מחלקים בשני פאי",
+          "tex": "f = \\frac{\\omega}{2\\pi} \\approx 0.335\\,\\text{Hz} \\approx \\tfrac{1}{3}\\,\\text{Hz}",
+          "eq": "\\omega = 2\\pi f"
         }
       ],
-      "finalAnswer": "$f \\approx \\tfrac{1}{3}\\,\\text{Hz}$",
+      "finalAnswer": "$f \\approx \\tfrac{1}{3}\\,\\text{Hz}$ ($\\approx 0.335\\,\\text{Hz}$)",
       "keyAnswer": "1/3 Hz"
     },
     {
       "label": "ב",
-      "question": "מה תהיה המתיחות בחבל הנ\"ל, אם בכיסא יושב נער שמסתו $M = 55\\,\\text{kg}$, והסחרחרה סובבת בתדירות שחישבת בסעיף א?",
+      "question": "מה המתיחות בחבל, אם בכיסא יושב נער שמסתו $M = 55\\,\\text{kg}$, והסחרחרה מסתובבת בתדירות מסעיף א?",
       "answer": {
         "type": "number",
         "value": 1000.0,
@@ -85,9 +102,20 @@
       ],
       "solution": [
         {
-          "what": "משוואה אנכית",
-          "why": "אותה זווית (היא לא תלויה במסה), והמסה הכוללת $60\\,\\text{kg}$",
-          "tex": "T = \\frac{(m + M)g}{\\cos\\theta} = \\frac{600}{0.6} = 1000\\,\\text{N}"
+          "what": "אותה זווית",
+          "why": "בסעיף א המסה הצטמצמה, ולכן באותה תדירות הזווית לא תלויה במסה",
+          "tex": "\\cos\\theta = 0.6"
+        },
+        {
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "עכשיו המסה היא של הכיסא והנער יחד",
+          "tex": "T\\cos\\theta - (m + M)\\,g = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מבודדים את המתיחות",
+          "why": "מחלקים בקוסינוס",
+          "tex": "T = \\frac{(5 + 55) \\cdot 10}{0.6} = 1000\\,\\text{N}"
         }
       ],
       "finalAnswer": "$10^3\\,\\text{N}$",
@@ -95,7 +123,7 @@
     },
     {
       "label": "ג",
-      "question": "הנער היושב בכיסא מחזיק בידו כדור קטן, והסחרחרה מסתובבת בתדירות שחישבת בסעיף א. ברגע מסוים עוזב הנער את הכדור, וזה פוגע בקרקע כעבור $0.5\\,\\text{s}$. מהו המרחק של נקודת הפגיעה מציר הסיבוב (העמוד הזקוף)?",
+      "question": "הנער בכיסא מחזיק כדור קטן, והסחרחרה מסתובבת בתדירות מסעיף א. ברגע מסוים הנער עוזב את הכדור, והכדור פוגע בקרקע אחרי $0.5\\,\\text{s}$. מה המרחק של נקודת הפגיעה מציר הסיבוב (העמוד)?",
       "answer": {
         "type": "number",
         "value": 4.358898943540674,
@@ -107,18 +135,20 @@
       ],
       "solution": [
         {
-          "what": "מהירות הכדור ברגע השחרור",
-          "why": "מהירות משיקית של מעגל ברדיוס $3\\,\\text{m}$",
-          "tex": "v = \\omega r \\approx 2.11 \\cdot 3 \\approx 6.3\\,\\text{m/s}"
+          "what": "המהירות של הכדור ברגע השחרור",
+          "why": "מהירות משיקית במעגל שרדיוסו שלושה מטר",
+          "tex": "v = \\omega r \\approx 2.11 \\cdot 3 \\approx 6.3\\,\\text{m/s}",
+          "eq": "v = \\omega r"
         },
         {
           "what": "התנועה האופקית אחרי השחרור",
-          "why": "בקו ישר, בכיוון המשיק",
-          "tex": "s = v t \\approx 6.3 \\cdot 0.5 \\approx 3.16\\,\\text{m}"
+          "why": "הכדור ממשיך בקו ישר, בכיוון המשיק, במהירות קבועה",
+          "tex": "s = 0 + 6.3 \\cdot 0.5 \\approx 3.16\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "המרחק מהציר",
-          "why": "המשיק ניצב לרדיוס, ולכן פיתגורס",
+          "what": "המרחק מהעמוד",
+          "why": "המשיק ניצב לרדיוס, ולכן משתמשים במשפט פיתגורס",
           "tex": "d = \\sqrt{3^2 + 3.16^2} \\approx 4.35\\,\\text{m}"
         }
       ],
