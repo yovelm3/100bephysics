@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. בסעיף ג התלמיד בוחר אחד מארבעה סרטוטי כוחות (בתרשים ג). לפי דף התשובות התשובה היא סרטוט 1, וכך גם אצלי.\nמה לבדוק: שהסרטוטים בתרשים ג נאמנים למקור.",
-  "stem": "בתרשים א מוצגת מכונית שנעה על כביש אופקי במעקם (קטע מעגלי) שרדיוסו $80\\,\\text{m}$. נתון כי מקדם החיכוך הסטטי בין גלגלי המכונית לבין הכביש הוא $0.4$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף ג התלמיד בוחר אחד מארבעה שרטוטי כוחות (בתרשים ג). לפי דף התשובות התשובה היא שרטוט 1, וכך גם אצלי.\nמה לבדוק: שהשרטוטים בתרשים ג נאמנים למקור.",
+  "stem": "בתרשים א מוצגת מכונית שנוסעת על כביש אופקי בעקומה (קטע מעגלי) שרדיוסה $80\\,\\text{m}$. מקדם החיכוך הסטטי בין הגלגלים לכביש הוא $0.4$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2006-q4.svg",
@@ -27,12 +27,12 @@
     "כביש מוגבה",
     "סף החלקה"
   ],
-  "summary": "מכונית בסיבוב: מהירות מקסימלית בכביש שטוח, זווית הגבהה בלי חיכוך, כיוון החיכוך כשנוסעים מהר יותר, ומכונית שעומדת בעקומה.",
+  "summary": "מכונית בסיבוב: מהירות מרבית בכביש שטוח, זווית הגבהה בלי חיכוך, כיוון החיכוך כשנוסעים מהר יותר, ומכונית שעומדת בעקומה.",
   "position": 18,
   "parts": [
     {
       "label": "א",
-      "question": "חשב את המהירות המקסימלית שבה המכונית יכולה לנוע במעקם זה בלי להחליק.",
+      "question": "מה המהירות הגדולה ביותר שבה המכונית יכולה לנסוע בעקומה בלי להחליק?",
       "answer": {
         "type": "number",
         "value": 17.88854381999832,
@@ -44,13 +44,33 @@
       ],
       "solution": [
         {
-          "what": "החיכוך הסטטי הוא הכוח הצנטריפטלי",
-          "why": "במהירות מקסימלית הוא מקסימלי",
-          "tex": "\\mu_s mg = \\frac{m v^2}{r}"
+          "explain": "בוחרים כחיובי את הכיוון אל מרכז העקומה, וכלפי מעלה בציר האנכי. השאלה לא קבעה כיוונים."
         },
         {
-          "what": "פותרים",
-          "why": "m מתבטל",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המכונית במבט מאחור: חיכוך סטטי אופקי אל מרכז העקומה, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי אל המרכז\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"137\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"119\" y=\"156\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז משמאל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המכונית, במבט מאחור"
+        },
+        {
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "המכונית לא עולה ולא יורדת",
+          "tex": "N - mg = 0 \\;\\Rightarrow\\; N = mg",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "החיכוך הסטטי הוא הכוח האופקי היחיד",
+          "tex": "f_s = m\\,\\frac{v^2}{r}",
+          "eq": "a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "מציבים את החיכוך המרבי",
+          "why": "במהירות הגדולה ביותר החיכוך הסטטי מרבי",
+          "tex": "f_s = \\mu_s N = \\mu_s mg \\;\\Rightarrow\\; \\mu_s mg = m\\,\\frac{v^2}{r}",
+          "eq": "f_s \\le \\mu_s N"
+        },
+        {
+          "what": "מחלקים במסה ומבודדים",
+          "why": "המסה מצטמצמת",
           "tex": "v = \\sqrt{\\mu_s g r} = \\sqrt{0.4 \\cdot 10 \\cdot 80} = \\sqrt{320} \\approx 17.9\\,\\text{m/s}"
         }
       ],
@@ -59,7 +79,7 @@
     },
     {
       "label": "ב",
-      "question": "מהנדסי תנועה מתכננים ליצור בכביש הגבהה (הטיה) בזווית $\\theta$, כמתואר בתרשים ב, כדי לאפשר נסיעה בטוחה (ברדיוס קבוע) במהירות שחישבת בסעיף א, בלי להיעזר בחיכוך. חשב את זווית ההגבהה הנדרשת, $\\theta$.",
+      "question": "מהנדסי תנועה רוצים להגביה את הכביש בזווית $\\theta$ (תרשים ב), כדי שאפשר יהיה לנסוע בבטחה, באותו רדיוס, במהירות מסעיף א, בלי צורך בחיכוך. מה זווית ההגבהה $\\theta$?",
       "answer": {
         "type": "number",
         "value": 21.801409486351815,
@@ -72,14 +92,19 @@
       ],
       "solution": [
         {
-          "what": "בלי חיכוך",
-          "why": "הרכיב האופקי של הנורמלי הוא הכוח הצנטריפטלי",
-          "tex": "N\\cos\\theta = mg,\\quad N\\sin\\theta = \\frac{m v^2}{r}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המכונית בכביש המוגבה: הכוח הנורמלי ניצב לכביש, נוטה אל מרכז העקומה, וכוח הכובד כלפי מטה. הכיוון החיובי אופקית אל המרכז\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"79.2\" y1=\"226.6\" x2=\"357.3\" y2=\"114.2\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"88.4\" y1=\"222.8\" x2=\"85.3\" y2=\"233.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"107\" y1=\"215.4\" x2=\"103.9\" y2=\"226.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"125.5\" y1=\"207.9\" x2=\"122.4\" y2=\"218.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"144.1\" y1=\"200.4\" x2=\"140.9\" y2=\"211.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"162.6\" y1=\"192.9\" x2=\"159.5\" y2=\"203.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.2\" y1=\"185.4\" x2=\"178\" y2=\"196.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199.7\" y1=\"177.9\" x2=\"196.6\" y2=\"188.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"218.2\" y1=\"170.4\" x2=\"215.1\" y2=\"181.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"236.8\" y1=\"162.9\" x2=\"233.7\" y2=\"173.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"255.3\" y1=\"155.4\" x2=\"252.2\" y2=\"166.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"273.9\" y1=\"147.9\" x2=\"270.8\" y2=\"158.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"292.4\" y1=\"140.4\" x2=\"289.3\" y2=\"151.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"311\" y1=\"132.9\" x2=\"307.8\" y2=\"143.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"329.5\" y1=\"125.4\" x2=\"326.4\" y2=\"136.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"348\" y1=\"118\" x2=\"344.9\" y2=\"128.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"176.9,142.9 228.8,121.9 243.1,157.1 191.2,178.1\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"172.2\" y2=\"56.4\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"165.4\" y=\"45.7\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">בלי חיכוך</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המכונית בכביש המוגבה, בלי חיכוך"
         },
         {
-          "what": "מחלקים",
-          "why": "N ו-m מתבטלים",
-          "tex": "\\tan\\theta = \\frac{v^2}{g r} = \\frac{320}{800} = 0.4 \\Rightarrow \\theta \\approx 21.8^\\circ"
+          "what": "משוואות הכוחות",
+          "why": "בציר האנכי אין תאוצה. בכיוון המרכז, האופקי, פועל רק הרכיב האופקי של הכוח הנורמלי",
+          "tex": "N\\cos\\theta - mg = 0 \\qquad N\\sin\\theta = m\\,\\frac{v^2}{r}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את המשוואות זו בזו",
+          "why": "הכוח הנורמלי והמסה מצטמצמים",
+          "tex": "\\tan\\theta = \\frac{v^2}{g r} = \\frac{320}{800} = 0.4 \\;\\Rightarrow\\; \\theta \\approx 21.8^\\circ"
         }
       ],
       "finalAnswer": "$\\approx 21.8^\\circ$",
@@ -87,7 +112,7 @@
     },
     {
       "label": "ג",
-      "question": "אילו מכונית הייתה נוסעת במעקם המוגבה, בלי להחליק (ברדיוס קבוע), במהירות גדולה מזו שחישבת בסעיף א, איזה מבין ארבעת הסרטוטים 1-4 שבתרשים ג היה מתאר נכון את כיוון הכוחות הפועלים על המכונית ($f$ כוח חיכוך, $N$ הכוח הנורמלי, $mg$ המשקל)? נמק. (מרכז המעקם בצד הנמוך של הכביש.)",
+      "question": "אילו מכונית נסעה בעקומה המוגבהת, בלי להחליק ובאותו רדיוס, במהירות גדולה מזו של סעיף א, איזה מארבעת השרטוטים 1-4 בתרשים ג מתאר נכון את כיווני הכוחות עליה ($f$ חיכוך, $N$ הכוח הנורמלי, $mg$ המשקל)? נמקו. (מרכז העקומה בצד הנמוך של הכביש.)",
       "answer": {
         "type": "choice",
         "choices": [
@@ -104,22 +129,27 @@
       ],
       "solution": [
         {
-          "what": "דרוש כוח צנטריפטלי גדול יותר",
-          "why": "הרכיב האופקי של הנורמלי לא מספיק. המכונית \"נוטה\" להחליק החוצה, והחיכוך מתנגד לכך",
-          "tex": "N\\sin\\theta + f\\cos\\theta = \\frac{mv^2}{r}"
+          "what": "דרוש כוח גדול יותר אל המרכז",
+          "why": "הרכיב האופקי של הכוח הנורמלי כבר לא מספיק. המכונית נוטה להחליק החוצה, במעלה השיפוע, והחיכוך מתנגד לזה",
+          "tex": "N\\sin\\theta + f_s\\cos\\theta = m\\,\\frac{v^2}{r}",
+          "eq": "a_R = \\frac{v^2}{r}"
         },
         {
           "what": "כיוון החיכוך",
-          "why": "החיכוך מקביל לכביש, במורד השיפוע (לכיוון מרכז המעקם)",
-          "tex": "f\\ \\parallel\\ \\text{slope}"
+          "why": "החיכוך מקביל לכביש, במורד השיפוע, כלומר לכיוון מרכז העקומה",
+          "tex": "f_s\\ \\swarrow"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המכונית במהירות גדולה יותר: הכוח הנורמלי ניצב לכביש, חיכוך סטטי במורד השיפוע, אל מרכז העקומה, וכוח הכובד כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"79.2\" y1=\"226.6\" x2=\"357.3\" y2=\"114.2\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"88.4\" y1=\"222.8\" x2=\"85.3\" y2=\"233.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"107\" y1=\"215.4\" x2=\"103.9\" y2=\"226.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"125.5\" y1=\"207.9\" x2=\"122.4\" y2=\"218.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"144.1\" y1=\"200.4\" x2=\"140.9\" y2=\"211.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"162.6\" y1=\"192.9\" x2=\"159.5\" y2=\"203.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.2\" y1=\"185.4\" x2=\"178\" y2=\"196.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199.7\" y1=\"177.9\" x2=\"196.6\" y2=\"188.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"218.2\" y1=\"170.4\" x2=\"215.1\" y2=\"181.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"236.8\" y1=\"162.9\" x2=\"233.7\" y2=\"173.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"255.3\" y1=\"155.4\" x2=\"252.2\" y2=\"166.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"273.9\" y1=\"147.9\" x2=\"270.8\" y2=\"158.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"292.4\" y1=\"140.4\" x2=\"289.3\" y2=\"151.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"311\" y1=\"132.9\" x2=\"307.8\" y2=\"143.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"329.5\" y1=\"125.4\" x2=\"326.4\" y2=\"136.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"348\" y1=\"118\" x2=\"344.9\" y2=\"128.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"176.9,142.9 228.8,121.9 243.1,157.1 191.2,178.1\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"172.2\" y2=\"56.4\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"165.4\" y=\"45.7\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"155.3\" y2=\"172.1\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"138.6\" y=\"184.8\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">החיכוך במורד השיפוע</text>\n</svg>\n",
+          "caption": "תרשים הכוחות במהירות גדולה יותר (שרטוט 1)"
         }
       ],
-      "finalAnswer": "סרטוט 1: החיכוך במורד השיפוע, כלפי מרכז המעקם",
+      "finalAnswer": "שרטוט 1: החיכוך במורד השיפוע, אל מרכז העקומה",
       "keyAnswer": "האפשרות הנכונה (1)"
     },
     {
       "label": "ד",
-      "question": "בגלל סיבות של בטיחות החליטו המהנדסים להקטין את זווית ההגבהה. הזווית החדשה היא $15^\\circ$. בזמן חנוכת הכביש החדש נוצר פקק תנועה, והמכוניות נעצרו במעקם. האם המכוניות יחליקו לרוחב הכביש? הסבר. הנח שמקדם החיכוך הסטטי נשאר $0.4$.",
+      "question": "מטעמי בטיחות החליטו המהנדסים להקטין את זווית ההגבהה ל-$15^\\circ$. בחנוכת הכביש נוצר פקק, והמכוניות עצרו בעקומה. האם המכוניות יחליקו לרוחב הכביש? הסבירו. (מקדם החיכוך הסטטי נשאר $0.4$.)",
       "answer": {
         "type": "choice",
         "choices": [
@@ -134,14 +164,23 @@
       ],
       "solution": [
         {
-          "what": "מכונית עומדת על מדרון",
-          "why": "מחליקה רק אם רכיב הכובד במורד גדול מהחיכוך המקסימלי",
-          "tex": "\\tan\\theta > \\mu_s\\ ?"
+          "explain": "מכונית עומדת על מדרון. בוחרים את הכיוון במורד השיפוע כחיובי."
         },
         {
-          "what": "משווים",
-          "why": "tan 15° ≈ 0.27",
-          "tex": "\\tan 15^\\circ \\approx 0.27 < 0.4"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על מכונית שעומדת: הכוח הנורמלי ניצב לכביש, חיכוך סטטי במעלה השיפוע, וכוח הכובד כלפי מטה. הכיוון החיובי במורד השיפוע\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"70.8\" y1=\"210.1\" x2=\"360.6\" y2=\"132.4\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"80.5\" y1=\"207.5\" x2=\"76\" y2=\"218\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"99.8\" y1=\"202.3\" x2=\"95.4\" y2=\"212.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"119.1\" y1=\"197.1\" x2=\"114.7\" y2=\"207.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"138.4\" y1=\"192\" x2=\"134\" y2=\"202.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"157.7\" y1=\"186.8\" x2=\"153.3\" y2=\"197.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"177.1\" y1=\"181.6\" x2=\"172.6\" y2=\"192.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"196.4\" y1=\"176.4\" x2=\"191.9\" y2=\"186.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"215.7\" y1=\"171.3\" x2=\"211.3\" y2=\"181.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"235\" y1=\"166.1\" x2=\"230.6\" y2=\"176.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"254.3\" y1=\"160.9\" x2=\"249.9\" y2=\"171.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"273.6\" y1=\"155.7\" x2=\"269.2\" y2=\"166.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"293\" y1=\"150.5\" x2=\"288.5\" y2=\"161\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"312.3\" y1=\"145.4\" x2=\"307.9\" y2=\"155.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"331.6\" y1=\"140.2\" x2=\"327.2\" y2=\"150.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350.9\" y1=\"135\" x2=\"346.5\" y2=\"145.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"178,138.9 232.1,124.4 242,161.1 187.9,175.6\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"185.7\" y2=\"59.2\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"181\" y=\"47.8\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"256.8\" y2=\"137.4\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"274.2\" y=\"138.8\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"85.3\" y1=\"236.8\" x2=\"46.7\" y2=\"247.2\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"35.1\" y=\"244.3\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המכונית עומדת</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על מכונית שעומדת בעקומה"
+        },
+        {
+          "what": "משוואות הכוחות",
+          "why": "המכונית במנוחה. בניצב לכביש הכוח הנורמלי מאזן את רכיב הכובד. לאורך הכביש החיכוך מאזן את רכיב הכובד במורד",
+          "tex": "N = mg\\cos\\theta \\qquad mg\\sin\\theta - f_s = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "האם החיכוך מספיק?",
+          "why": "החיכוך הסטטי יכול להגיע לכל היותר למקדם החיכוך כפול הכוח הנורמלי. מחלקים את שני הצדדים בכוח הנורמלי",
+          "tex": "\\frac{f_s}{N} = \\tan 15^\\circ \\approx 0.27 < 0.4 = \\mu_s",
+          "eq": "f_s \\le \\mu_s N"
         }
       ],
       "finalAnswer": "לא: $\\tan 15^\\circ < 0.4$",
