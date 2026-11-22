@@ -19,6 +19,7 @@ DEFS = """<defs>
 <pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
 <marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>
 <marker id="f-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--d-label)"/></marker>
+<marker id="f-force" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0.5 L12,6 L0,11.5 L3,6 z" fill="var(--d-force, var(--d-label))"/></marker>
 <marker id="f-axis" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-line)" stroke-width="1.5"/></marker>
 </defs>"""
 
@@ -260,3 +261,54 @@ def mini(g, ox, oy, w, h, fn=None, label="", xl="t", yl="v", neg=False, pts=None
     if label:
         g.text(ox + w / 2, y0 + (h * 0.75 if neg else 0) + 22, label, cls="label")
     return P_
+
+
+def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h=300, body_label=None, note=None):
+    """
+    A force diagram (תרשים כוחות) for the solution, in one consistent, sharp style.
+      forces:   [(label, angle_deg, size)]  angle in math convention (0 = right, 90 = up), size 0.4..1.6 (relative length)
+      positive: angle of the chosen positive direction (drawn as a dashed arrow marked "+"), or None
+      body:     "block" or "ball";  tilt: rotation of the block and of the surface line (degrees, e.g. an incline)
+      surface:  None, "below" (a surface under the body, along the tilt) or "wall-left"/"wall-right"
+    """
+    g = Fig(w, h, alt)
+    cx, cy = w / 2, h / 2
+    t = math.radians(tilt)
+    if surface == "below":
+        dx, dy = math.cos(t), -math.sin(t)            # along the surface (screen coordinates)
+        sx, sy = cx + 22 * math.sin(t), cy + 22 * math.cos(t)  # the contact point under the body
+        g.line(sx - 150 * dx, sy - 150 * dy, sx + 150 * dx, sy + 150 * dy, width=2.4)
+        for k in range(-7, 8):                        # hatching on the far side of the surface
+            px, py = sx + k * 20 * dx, sy + k * 20 * dy
+            g.line(px, py, px + 9 * math.sin(t) - 7 * dx, py + 9 * math.cos(t) - 7 * dy, stroke="var(--d-hatch)", width=1.4)
+    elif surface in ("wall-left", "wall-right"):
+        x = cx - 30 if surface == "wall-left" else cx + 30
+        g.line(x, cy - 90, x, cy + 90, width=2.4)
+    if body == "ball":
+        g.circle(cx, cy, 16, fill="var(--d-body)")
+    else:  # the block sits on the surface, rotated with it (drawn as a polygon so the tilt is exact)
+        hw, hh = 28, 19
+        ux, uy = math.cos(t), -math.sin(t)
+        vx, vy = math.sin(t), math.cos(t)
+        pts = [(cx + sx_ * hw * ux + sy_ * hh * vx, cy + sx_ * hw * uy + sy_ * hh * vy) for sx_, sy_ in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+        g.poly(pts, fill="var(--d-body)", stroke="var(--d-line)", width=1.5)
+        if body_label:
+            g.text(cx, cy + 5, body_label, color="#ffffff")
+    for label, ang, size in forces:
+        a = math.radians(ang)
+        L = 46 + 50 * size
+        x2, y2 = cx + L * math.cos(a), cy - L * math.sin(a)
+        g.add(f'<line x1="{f(cx)}" y1="{f(cy)}" x2="{f(x2)}" y2="{f(y2)}" stroke="var(--d-force, var(--d-label))" stroke-width="3" stroke-linecap="round" marker-end="url(#f-force)"/>')
+        lx, ly = cx + (L + 18) * math.cos(a), cy - (L + 18) * math.sin(a) + 6
+        g.text(lx, ly, label, cls="force", anchor="middle")
+    g.circle(cx, cy, 3.2, fill="var(--d-label)")
+    if positive is not None:
+        a = math.radians(positive)
+        ox, oy = 46, h - 30
+        x2, y2 = ox + 40 * math.cos(a), oy - 40 * math.sin(a)
+        g.line(ox, oy, x2, y2, stroke="var(--d-dim)", width=1.8, dash="5 4", arrow=True)
+        g.text(x2 + 12 * math.cos(a) + (8 if abs(math.cos(a)) < 0.3 else 0), y2 - 12 * math.sin(a) + 5, "+", cls="label")
+        g.heb(ox + 24, oy + 22, "כיוון חיובי")
+    if note:
+        g.heb(w / 2, 22, note)
+    return g

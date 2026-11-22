@@ -4,7 +4,7 @@ import { Math } from "@/components/Math";
  * One item of a full solution, in the content-file format:
  * a short explanation paragraph, or a row (what we do, why, calculation in LaTeX). `check` marks the verification row.
  */
-export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean } | { draw: string; caption: string } | { caption: string; head: string[]; rows: string[][] };
+export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; eq?: string; check?: boolean } | { draw: string; caption: string } | { caption: string; head: string[]; rows: string[][] };
 type Row = Extract<SolutionStep, { what: string }>;
 
 /**
@@ -60,7 +60,7 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
           </p>
         ) : (
           <div key={i} className="overflow-hidden rounded-xl border border-line bg-surface">
-            <div className="hidden grid-cols-[11rem_minmax(0,1fr)_14rem] border-b border-line text-sm font-bold text-muted md:grid">
+            <div className="hidden grid-cols-[10rem_minmax(0,1fr)_minmax(16rem,1.4fr)] border-b border-line text-sm font-bold text-muted md:grid">
               <div className="px-4 py-2.5">מה עושים</div>
               <div className="px-4 py-2.5">למה</div>
               <div className="px-4 py-2.5">חישוב</div>
@@ -68,16 +68,21 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
             {group.rows.map((row, j) => (
               <div
                 key={j}
-                className="grid grid-cols-1 gap-1 border-t border-line px-4 py-3 first:border-t-0 md:grid-cols-[11rem_minmax(0,1fr)_14rem] md:gap-0 md:px-0 md:py-0"
+                className="grid grid-cols-1 gap-1 border-t border-line px-4 py-3 first:border-t-0 md:grid-cols-[10rem_minmax(0,1fr)_minmax(16rem,1.4fr)] md:gap-0 md:px-0 md:py-0"
               >
                 <div className="font-bold md:px-4 md:py-3 md:font-semibold">
                   {row.check && <span className="me-1 rounded bg-accent-soft px-1.5 text-xs text-accent">בדיקה</span>}
                   <InlineText text={row.what} />
+                  {row.eq && (
+                    <span className="mt-1 block text-sm font-normal text-muted" title="המשוואה מדף הנוסחאות">
+                      <Math tex={row.eq} />
+                    </span>
+                  )}
                 </div>
                 <div className="text-muted md:px-4 md:py-3">
                   <InlineText text={row.why} />
                 </div>
-                <div className="sol-tex min-w-0 text-left md:px-4 md:py-3">
+                <div className="sol-tex min-w-0 overflow-x-auto text-left md:px-4 md:py-3">
                   <Math tex={breakable(row.tex)} />
                 </div>
               </div>

@@ -22,8 +22,9 @@ bad = good = 0
 for f in sorted(glob.glob(os.path.join(ROOT, "content/bagrut/*/*.json"))):
     e = json.load(open(f))
     for p in e["parts"]:
-        a = p["answer"]
-        if a["type"] != "number":
+      items = p["answer"]["items"] if p["answer"]["type"] == "multi" else [p["answer"]]
+      for a in items:
+        if a.get("type", "number") != "number":
             continue
         v = a["value"]; tol = max(0.03, (a.get("tolerancePct") or 0) / 100 + 0.01)
         fin = p.get("finalAnswer") or p.get("final") or ""

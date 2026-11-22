@@ -30,7 +30,7 @@ export default async function ExercisePage({ params }: PageProps<"/exercise/[id]
   if (!ex) notFound();
 
   const [{ data: parts }, { data: sub }, { data: list }, { data: attempts }] = await Promise.all([
-    supabase.from("exercise_parts").select("id, position, label, question, answer_type, unit, choices").eq("exercise_id", id).order("position"),
+    supabase.from("exercise_parts").select("id, position, label, slot, question, answer_type, unit, choices").eq("exercise_id", id).order("position"),
     supabase.from("subtopics").select("id, name, topics(name)").eq("id", ex.subtopic_id).single(),
     supabase.rpc("list_exercises", { p_subtopic: ex.subtopic_id }),
     supabase.from("attempts").select("part_id, result").eq("user_id", profile.id).eq("exercise_id", id).eq("result", "correct"),
@@ -59,6 +59,7 @@ export default async function ExercisePage({ params }: PageProps<"/exercise/[id]
   const playerParts: PlayerPart[] = (parts ?? []).map((p) => ({
     id: p.id,
     label: p.label,
+    slot: (p.slot as string | null) ?? null,
     question: p.question,
     answerType: p.answer_type,
     unit: p.unit,

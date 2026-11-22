@@ -28,10 +28,34 @@ def X(text):
 HEB = re.compile("[\u0590-\u05ff]")
 
 
-def S(what, why, tex):
+# Files rewritten under the owner's rules of 2026-11-22 set STRICT = True: "why" holds Hebrew words only,
+# every formula goes to the calculation column (owner's decision on reading direction).
+STRICT = {"on": False}
+
+
+def S(what, why, tex, eq=None):
+    """A solution row. `eq`: the formula-sheet equation used in this step, shown small under "what"."""
     assert why.strip(), f"empty why: {what}"
     assert not HEB.search(tex), f"Hebrew inside a formula (KaTeX cannot lay it out): {tex}"
-    return {"what": what, "why": why, "tex": tex}
+    if STRICT["on"]:
+        assert "$" not in why, f"'why' must be Hebrew words only (move the formula to the calculation): {why}"
+    row = {"what": what, "why": why, "tex": tex}
+    if eq:
+        assert not HEB.search(eq), f"Hebrew inside an equation: {eq}"
+        row["eq"] = eq
+    return row
+
+
+def multi(*items):
+    """A part that asks for several numbers: multi(("label", value, "unit"), ("label", value, "unit", tolPct), ...)."""
+    out = []
+    for it in items:
+        label, value, unit = it[:3]
+        d = {"label": label, "value": float(value), "unit": unit}
+        if len(it) > 3 and it[3]:
+            d["tolerancePct"] = it[3]
+        out.append(d)
+    return {"type": "multi", "items": out}
 
 
 def D(caption, fig):
@@ -59,9 +83,10 @@ def TBL(caption, head, rows):
     return {"caption": caption, "head": list(head), "rows": [[str(c) for c in r] for r in rows]}
 
 
-def C(what, why, tex):
-    assert not HEB.search(tex), f"Hebrew inside a formula: {tex}"
-    return {"what": what, "why": why, "tex": tex, "check": True}
+def C(what, why, tex, eq=None):
+    row = S(what, why, tex, eq)
+    row["check"] = True
+    return row
 
 
 def num(value, unit, tol=None):

@@ -22,7 +22,8 @@ const text = z.string().trim().min(1);
 
 export const SolutionStepSchema = z.union([
   z.object({ explain: text }).strict(),
-  z.object({ what: text, why: text, tex: text, check: z.boolean().optional() }).strict(),
+  /** A row: what we do, why (Hebrew words only), the calculation (LaTeX). `eq`: the formula-sheet equation used, shown small under "what". */
+  z.object({ what: text, why: text, tex: text, eq: text.optional(), check: z.boolean().optional() }).strict(),
   /** A table answer (for parts that ask to build a table). Cells may contain $formulas$. Shown left-to-right like a physics table. */
   z.object({ caption: text, head: z.array(text).min(1), rows: z.array(z.array(z.string())).min(1) }).strict(),
   /** A drawn answer (table, graph, force diagram) for parts that ask to draw one. Our own SVG, checked like figures. */
@@ -56,11 +57,31 @@ const ChoiceAnswer = z
 
 const OpenAnswer = z.object({ type: z.literal("open") }).strict(); // drawing / explanation, not checked automatically
 
+/** Several numbers in one part, each in its own answer box with a short label. Each is checked on its own. */
+const MultiAnswer = z
+  .object({
+    type: z.literal("multi"),
+    items: z
+      .array(
+        z
+          .object({
+            label: text,
+            value: z.number().finite(),
+            unit: z.string().trim(),
+            tolerancePct: z.number().positive().max(10).nullable().optional(),
+          })
+          .strict(),
+      )
+      .min(2)
+      .max(8),
+  })
+  .strict();
+
 export const PartSchema = z
   .object({
     label: text,
     question: text,
-    answer: z.union([NumberAnswer, ChoiceAnswer, OpenAnswer]),
+    answer: z.union([NumberAnswer, ChoiceAnswer, OpenAnswer, MultiAnswer]),
     skills: z.array(z.enum(SKILLS)).min(1),
     solution: z.array(SolutionStepSchema).min(1),
     finalAnswer: text,

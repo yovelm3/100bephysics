@@ -28,8 +28,9 @@ for t in sorted(os.listdir(base)):
             continue
         e = json.load(open(os.path.join(base, t, f)))
         for p in e["parts"]:
-            a = p["answer"]
-            if a["type"] != "number":
+          items = p["answer"]["items"] if p["answer"]["type"] == "multi" else [p["answer"]]
+          for a in items:
+            if a.get("type", "number") != "number":
                 continue
             k = p.get("keyAnswer")
             if not k:
