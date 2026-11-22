@@ -152,7 +152,7 @@
         {
           "what": "הסכום",
           "why": "התאוצה הכוללת בין שני הרכיבים",
-          "tex": "\\vec a = \\vec a_R + \\vec a_t \\;\\Rightarrow\\; \\text{III}"
+          "tex": "\\vec a = \\vec a_R + \\vec a_t "
         }
       ],
       "finalAnswer": "כיוון III",

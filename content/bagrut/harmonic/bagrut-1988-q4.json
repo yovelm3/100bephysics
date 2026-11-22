@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "על חישוק אנכי ברדיוס $R$ מושחל חרוז קטן. החרוז יכול לנוע על גבי החישוק ללא חיכוך. מרימים את החרוז לנקודה $A$ ומרפים ממנו (ראה תרשים).",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף ב התלמיד בוחר את הביטוי הנכון מתוך ארבעה.\nמה לבדוק: רק לאשר.",
+  "stem": "על חישוק אנכי שהרדיוס שלו $R$ מושחל חרוז קטן, שיכול לנוע על החישוק בלי חיכוך. מרימים את החרוז לנקודה $A$ ומשחררים (ראו תרשים).",
   "figure": {
     "type": "svg",
     "file": "bagrut-1988-q4.svg",
@@ -26,18 +26,18 @@
     "תאוצה משתנה",
     "תנועה מעגלית אופקית"
   ],
-  "summary": "חרוז על חישוק: כמו מטוטלת באורך $R$, ובסיבוב החישוק החרוז נשאר בזווית קבועה.",
+  "summary": "חרוז על חישוק: מתנהג כמו מטוטלת שאורכה הרדיוס, ובסיבוב של החישוק הוא נשאר בזווית קבועה.",
   "position": 7,
   "parts": [
     {
       "label": "א",
-      "question": "מהו אופי תנועת החרוז (תנועה קצובה, שווה תאוצה, תאוצה משתנה) כאשר הזווית $\\theta$ גדולה? נמק.",
+      "question": "איזו תנועה יש לחרוז (במהירות קבועה, בתאוצה קבועה, או בתאוצה משתנה) כשהזווית $\\theta$ גדולה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
-          "תנועה קצובה",
-          "תנועה שוות תאוצה",
-          "תנועה בתאוצה משתנה"
+          "במהירות קבועה",
+          "בתאוצה קבועה",
+          "בתאוצה משתנה"
         ],
         "correct": 2
       },
@@ -47,38 +47,47 @@
       ],
       "solution": [
         {
-          "what": "רכיב הכובד המשיק",
-          "why": "תלוי בזווית, והזווית משתנה בזמן התנועה",
+          "what": "הרכיב של הכובד לאורך החישוק",
+          "why": "הוא תלוי בזווית, והזווית משתנה בזמן התנועה",
           "tex": "a_t = g\\sin\\theta"
         },
         {
           "what": "גם כיוון התנועה משתנה",
-          "why": "יש גם תאוצה צנטריפטלית שתלויה במהירות",
-          "tex": "a_c = \\frac{v^2}{R}"
+          "why": "החרוז נע על מעגל, ולכן יש לו גם תאוצה אל המרכז, שתלויה במהירות",
+          "tex": "a_R = \\frac{v^2}{R}",
+          "eq": "a_R = \\frac{v^2}{r}"
         }
       ],
-      "finalAnswer": "תאוצה משתנה",
+      "finalAnswer": "בתאוצה משתנה",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "כמה זמן דרוש לחרוז כדי לבצע תנודה שלמה, כשהזווית $\\theta$ קטנה? (בטא את תשובתך באמצעות $R$.)",
+      "question": "כמה זמן לוקחת לחרוז תנודה שלמה, כשהזווית $\\theta$ קטנה? כתבו בעזרת $R$.",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$T = 2\\pi\\sqrt{\\frac{R}{g}}$",
+          "$T = 2\\pi\\sqrt{\\frac{2R}{g}}$",
+          "$T = \\pi\\sqrt{\\frac{R}{g}}$",
+          "$T = 2\\pi\\sqrt{\\frac{g}{R}}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle"
       ],
       "solution": [
         {
-          "what": "כמו מטוטלת באורך $R$",
-          "why": "החישוק מכריח מסלול מעגלי כמו חוט; הנורמל מאונך לתנועה",
-          "tex": "F_t = -mg\\sin\\theta \\approx -mg\\theta"
+          "what": "כמו מטוטלת באורך הרדיוס",
+          "why": "החישוק מכריח את החרוז לנוע על מעגל, כמו חוט. הכוח הנורמלי ניצב לתנועה, ונשאר רק הרכיב של הכובד לאורך המסלול",
+          "tex": "F_t = -mg\\sin\\theta \\approx -mg\\,\\theta"
         },
         {
-          "what": "זמן מחזור",
-          "why": "זווית קטנה",
-          "tex": "T = 2\\pi\\sqrt{\\frac{R}{g}}"
+          "what": "זמן המחזור",
+          "why": "בזווית קטנה זו מטוטלת מתמטית שאורכה הרדיוס",
+          "tex": "T = 2\\pi\\sqrt{\\frac{R}{g}}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{L}{g}}"
         }
       ],
       "finalAnswer": "$T = 2\\pi\\sqrt{R/g}$",
@@ -86,7 +95,7 @@
     },
     {
       "label": "ג",
-      "question": "נתון שרדיוס החישוק $R = 30\\,\\text{cm}$ והחרוז עולה לנקודה $A$ כך ש-$\\theta = 30^\\circ$. אין תנועה יחסית בין החרוז לחישוק. באיזו מהירות זוויתית, $\\omega$, מסובבים את החישוק סביב צירו האנכי $BC$?",
+      "question": "רדיוס החישוק $R = 30\\,\\text{cm}$. מסובבים את החישוק סביב הציר האנכי $BC$, והחרוז עולה לנקודה $A$ שבה $\\theta = 30^\\circ$ ונשאר בה, בלי לזוז ביחס לחישוק. מה המהירות הזוויתית $\\omega$ של הסיבוב?",
       "answer": {
         "type": "number",
         "value": 6.204032394013997,
@@ -99,23 +108,31 @@
       ],
       "solution": [
         {
-          "what": "רדיוס הסיבוב של החרוז",
-          "why": "המרחק מהציר $BC$",
+          "explain": "החרוז נע במעגל אופקי סביב הציר. ציר אחד אופקי, אל מרכז המעגל, וציר אחד אנכי, כלפי מעלה."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על החרוז: הכוח הנורמלי של החישוק לאורך הרדיוס אל מרכז החישוק, וכוח הכובד כלפי מטה. הכיוון החיובי אל ציר הסיבוב\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"257\" y2=\"68.6\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"266\" y=\"59\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"234.9\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"258.9\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על החרוז"
+        },
+        {
+          "what": "רדיוס הסיבוב",
+          "why": "המרחק של החרוז מהציר האנכי",
           "tex": "r = R\\sin\\theta"
         },
         {
-          "what": "כוחות",
-          "why": "נורמל לאורך הרדיוס אל $O$, וכובד",
-          "tex": "N\\cos\\theta = mg,\\quad N\\sin\\theta = m\\omega^2 R\\sin\\theta"
+          "what": "משוואות כוחות",
+          "why": "באנכי אין תאוצה. באופקי הרכיב של הכוח הנורמלי נותן את התאוצה אל הציר",
+          "tex": "N\\cos\\theta - mg = 0,\\qquad N\\sin\\theta = m\\,\\omega^2 R\\sin\\theta",
+          "eq": "\\Sigma F_R = m\\omega^2 r"
         },
         {
           "what": "מחלקים",
-          "why": "$N$ מצטמצם",
+          "why": "מבודדים את הכוח הנורמלי מהמשוואה הראשונה ומציבים בשנייה",
           "tex": "\\omega^2 = \\frac{g}{R\\cos\\theta} = \\frac{10}{0.3 \\cdot 0.866} \\approx 38.5"
         },
         {
-          "what": "תוצאה",
-          "why": "שורש",
+          "what": "התוצאה",
+          "why": "מוציאים שורש",
           "tex": "\\omega \\approx 6.2\\,\\text{rad/s}"
         }
       ],

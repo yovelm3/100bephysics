@@ -12,8 +12,8 @@
   "difficulty": 2,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "על שולחן אופקי חלק מונח קפיץ (שמסתו זניחה), שקצהו השמאלי מחובר לקיר וקצהו הימני חופשי. על קצה הקפיץ החופשי מפעילים כוח $F = 20\\,\\text{N}$, וכתוצאה מכך הקפיץ מתארך ב-$10\\,\\text{cm}$. לאחר שמצמידים לקצה זה של הקפיץ מסה $m = 2\\,\\text{kg}$, משחררים את הקפיץ.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "stem": "על שולחן אופקי חלק מונח קפיץ קל. הקצה השמאלי שלו מחובר לקיר, והקצה הימני חופשי. מפעילים על הקצה החופשי כוח $F = 20\\,\\text{N}$, והקפיץ מתארך ב-$10\\,\\text{cm}$. מצמידים לקצה הזה מסה $m = 2\\,\\text{kg}$, ומשחררים.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1980-q3.svg",
@@ -27,12 +27,12 @@
     "מהירות מרבית",
     "זמן מחזור"
   ],
-  "summary": "מסה על קפיץ על שולחן חלק: קבוע הקפיץ מכוח ידוע, מהירות מרבית ורבע מחזור.",
+  "summary": "מסה על קפיץ על שולחן חלק: קבוע הקפיץ מכוח ידוע, המהירות המרבית, ורבע מחזור.",
   "position": 1,
   "parts": [
     {
       "label": "א",
-      "question": "מהו האופי של תנועת המסה לאחר שחרור הקפיץ? נמק.",
+      "question": "איזו תנועה עושה המסה אחרי השחרור? נמקו.",
       "answer": {
         "type": "open"
       },
@@ -42,22 +42,31 @@
       ],
       "solution": [
         {
+          "explain": "איקס הוא ההעתק מהמקום שבו הקפיץ רפוי. הכיוון החיובי ימינה."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המסה: כוח הקפיץ שמאלה, אל מצב שיווי המשקל, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי ימינה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"130\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"112\" y=\"156\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">sp</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"230\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"254\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המסה כשהקפיץ מתוח"
+        },
+        {
           "what": "הכוח היחיד בכיוון התנועה",
-          "why": "כוח הקפיץ, פרופורציוני להעתק ומכוון לשיווי המשקל",
-          "tex": "F = -kx"
+          "why": "הכוח הנורמלי והכובד מאזנים זה את זה. נשאר כוח הקפיץ, שפרופורציוני להעתק ותמיד מכוון אל מצב שיווי המשקל",
+          "tex": "F_{sp} = -Kx",
+          "eq": "F_{sp} = K\\Delta\\ell"
         },
         {
           "what": "החוק השני",
-          "why": "תאוצה פרופורציונית להעתק ובכיוון הפוך",
-          "tex": "a = -\\frac{k}{m}x"
+          "why": "מחלקים במסה. התאוצה פרופורציונית להעתק ובכיוון ההפוך לו, וזו תנועה הרמונית",
+          "tex": "a = -\\frac{K}{m}\\,x",
+          "eq": "a = -\\omega^2 x"
         }
       ],
-      "finalAnswer": "תנועה הרמונית פשוטה סביב מצב הרפיון של הקפיץ",
+      "finalAnswer": "תנועה הרמונית סביב המקום שבו הקפיץ רפוי",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "מה תהיה המהירות הגדולה ביותר (ערך מוחלט) של המסה הנעה, כשהיא קשורה לקצה הקפיץ?",
+      "question": "מה המהירות הגדולה ביותר (בגודל) של המסה שקשורה לקצה הקפיץ?",
       "answer": {
         "type": "number",
         "value": 1.0,
@@ -71,28 +80,32 @@
       "solution": [
         {
           "what": "קבוע הקפיץ",
-          "why": "$F = 20\\,\\text{N}$ מאריך ב-$0.1\\,\\text{m}$",
-          "tex": "k = \\frac{20}{0.1} = 200\\,\\text{N/m}"
+          "why": "מהכוח ומההתארכות שבשאלה",
+          "tex": "K = \\frac{20}{0.1} = 200\\,\\text{N/m}",
+          "eq": "F_{sp} = K\\Delta\\ell"
         },
         {
-          "what": "תדירות זוויתית",
-          "why": "מתנד קפיץ",
-          "tex": "\\omega = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{200}{2}} = 10\\,\\text{rad/s}"
+          "what": "המהירות הזוויתית",
+          "why": "של מסה על קפיץ",
+          "tex": "\\omega = \\sqrt{\\frac{K}{m}} = \\sqrt{\\frac{200}{2}} = 10\\,\\text{rad/s}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{m}{K}},\\qquad \\omega = \\frac{2\\pi}{T}"
         },
         {
-          "what": "משרעת",
-          "why": "משחררים ממנוחה בהעתק $10\\,\\text{cm}$",
+          "what": "המשרעת",
+          "why": "המסה משוחררת ממנוחה, עשרה סנטימטרים מנקודת שיווי המשקל",
           "tex": "A = 0.1\\,\\text{m}"
         },
         {
-          "what": "מהירות מרבית",
-          "why": "בשיווי המשקל",
-          "tex": "v_{\\max} = A\\omega = 0.1 \\cdot 10 = 1\\,\\text{m/s}"
+          "what": "המהירות המרבית",
+          "why": "היא בנקודת שיווי המשקל",
+          "tex": "v_{\\max} = 0.1 \\cdot 10 = 1\\,\\text{m/s}",
+          "eq": "v_{\\max} = A\\omega"
         },
         {
           "what": "בדיקה באנרגיה",
-          "why": "אנרגיית הקפיץ הופכת לקינטית",
-          "tex": "\\frac{1}{2} \\cdot 200 \\cdot 0.1^2 = \\frac{1}{2} \\cdot 2 v^2 \\Rightarrow v = 1\\,\\text{m/s}",
+          "why": "האנרגיה של הקפיץ המתוח הופכת לאנרגיה קינטית",
+          "tex": "\\tfrac{1}{2} \\cdot 200 \\cdot 0.1^2 = \\tfrac{1}{2} \\cdot 2\\,v^2 \\;\\Rightarrow\\; v = 1\\,\\text{m/s}",
+          "eq": "U_{sp} = \\tfrac{1}{2}K(\\Delta\\ell)^2",
           "check": true
         }
       ],
@@ -101,7 +114,7 @@
     },
     {
       "label": "ג",
-      "question": "כמה זמן לאחר שיחרור הקפיץ תגיע מהירות המסה לערכה המוחלט הגדול ביותר בפעם הראשונה?",
+      "question": "כמה זמן אחרי השחרור המהירות של המסה מגיעה בפעם הראשונה לגודל המרבי?",
       "answer": {
         "type": "number",
         "value": 0.15707963267948966,
@@ -114,13 +127,14 @@
       ],
       "solution": [
         {
-          "what": "זמן מחזור",
-          "why": "מ-$\\omega$",
-          "tex": "T = \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{10} \\approx 0.628\\,\\text{s}"
+          "what": "זמן המחזור",
+          "why": "מהמהירות הזוויתית",
+          "tex": "T = \\frac{2\\pi}{10} \\approx 0.628\\,\\text{s}",
+          "eq": "\\omega = \\frac{2\\pi}{T}"
         },
         {
           "what": "מהקצה לשיווי המשקל",
-          "why": "רבע מחזור",
+          "why": "זה רבע מחזור",
           "tex": "t = \\frac{T}{4} \\approx 0.157\\,\\text{s}"
         }
       ],
@@ -129,7 +143,7 @@
     },
     {
       "label": "ד",
-      "question": "באיזה רגע תהיה למסה התאוצה הגדולה ביותר (בערכה המוחלט) בפעם הראשונה? מה תהיה מהירות המסה ברגע זה?",
+      "question": "באיזה רגע התאוצה של המסה בפעם הראשונה הגדולה ביותר (בגודל)? מה המהירות באותו רגע?",
       "answer": {
         "type": "number",
         "value": 0.0,
@@ -140,17 +154,18 @@
       ],
       "solution": [
         {
-          "what": "תאוצה מרבית בהעתק מרבי",
-          "why": "$|a| = \\omega^2 |x|$",
-          "tex": "t = 0:\\ x = A"
+          "what": "התאוצה הגדולה ביותר בהעתק הגדול ביותר",
+          "why": "התאוצה פרופורציונית להעתק. ההעתק הגדול ביותר הוא ברגע השחרור",
+          "tex": "|a| = \\omega^2 |x|,\\qquad t = 0:\\ x = A",
+          "eq": "a = -\\omega^2 x"
         },
         {
-          "what": "המהירות שם",
-          "why": "בקצה התנועה המסה נעצרת",
+          "what": "המהירות ברגע הזה",
+          "why": "בקצה התנועה המסה עומדת לרגע",
           "tex": "v = 0"
         }
       ],
-      "finalAnswer": "ברגע השחרור $t = 0$, והמהירות אז אפס",
+      "finalAnswer": "ברגע השחרור, $t = 0$, והמהירות אז אפס",
       "keyAnswer": "at t=0"
     }
   ]

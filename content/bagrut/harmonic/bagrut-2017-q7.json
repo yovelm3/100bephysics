@@ -12,8 +12,8 @@
   "difficulty": 2,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "קרונית נמצאת במנוחה על משטח אופקי בנקודה $O$. קפיץ אופקי רפוי קשור בקצהו האחד לקרונית ובקצהו האחר לנקודה קבועה. נתון: מסת הקרונית היא $1.2\\,\\text{kg}$, קבוע הקפיץ הוא $30\\,\\text{N/m}$. מסת הקפיץ זניחה. מסיטים את הקרונית מנקודה $O$ לנקודה $A$, בתוך כדי מתיחת הקפיץ בשיעור $10\\,\\text{cm}$, ומשחררים אותה ממנוחה. כוחות החיכוך במערכת זניחים.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף ד התלמיד כותב בתיבה את גודל המהירות. גודל התאוצה, אפס, מופיע בפתרון.\nמה לבדוק: רק לאשר.",
+  "stem": "קרונית עומדת על משטח אופקי בנקודה $O$. קפיץ אופקי רפוי קשור בקצה אחד לקרונית ובקצה השני לנקודה קבועה. מסת הקרונית $1.2\\,\\text{kg}$, וקבוע הקפיץ $30\\,\\text{N/m}$. מסת הקפיץ זניחה. מזיזים את הקרונית מ-$O$ לנקודה $A$, כך שהקפיץ נמתח $10\\,\\text{cm}$, ומשחררים ממנוחה. מזניחים את החיכוך.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2017-q7.svg",
@@ -26,18 +26,18 @@
     "רבע מחזור",
     "כיווני מהירות ותאוצה"
   ],
-  "summary": "קרונית על קפיץ: למה התאוצה משתנה, רבע מחזור, כיווני המהירות והתאוצה, ומהירות מרבית.",
+  "summary": "קרונית על קפיץ: למה התאוצה משתנה, רבע מחזור, הכיוונים של המהירות והתאוצה, והמהירות המרבית.",
   "position": 18,
   "parts": [
     {
       "label": "א",
-      "question": "מהו האופי של תנועת הקרונית במהלכה מ-$A$ ל-$O$: שוות-מהירות, שוות-תאוצה, או לא שוות-תאוצה? הסבר את קביעתך.",
+      "question": "איזו תנועה עושה הקרונית בדרך מ-$A$ ל-$O$: במהירות קבועה, בתאוצה קבועה, או בתאוצה שמשתנה? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
-          "שוות-מהירות",
-          "שוות-תאוצה",
-          "לא שוות-תאוצה"
+          "במהירות קבועה",
+          "בתאוצה קבועה",
+          "בתאוצה שמשתנה"
         ],
         "correct": 2
       },
@@ -47,22 +47,28 @@
       ],
       "solution": [
         {
-          "what": "כוח הקפיץ",
-          "why": "קטן ככל שהקרונית מתקרבת ל-$O$",
-          "tex": "F = -kx"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקרונית: כוח הקפיץ אל הנקודה O, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"144\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"126\" y=\"156\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">sp</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"230\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"254\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "תרשים הכוחות על הקרונית בדרך"
         },
         {
-          "what": "תאוצה",
-          "why": "משתנה עם המקום",
-          "tex": "a = -\\frac{k}{m}x"
+          "what": "כוח הקפיץ",
+          "why": "הכוח פרופורציוני למתיחה, והמתיחה קטנה ככל שהקרונית מתקרבת לנקודה",
+          "tex": "F_{sp} = K\\Delta\\ell",
+          "eq": "F_{sp} = K\\Delta\\ell"
+        },
+        {
+          "what": "התאוצה",
+          "why": "לפי החוק השני התאוצה היא הכוח חלקי המסה, ולכן גם היא משתנה",
+          "tex": "a = -\\frac{K}{m}\\,x",
+          "eq": "a = -\\omega^2 x"
         }
       ],
-      "finalAnswer": "לא שוות-תאוצה: התאוצה קטנה ככל שמתקרבים ל-$O$",
+      "finalAnswer": "בתאוצה שמשתנה: התאוצה קטנה ככל שמתקרבים ל-$O$",
       "keyAnswer": "force changes"
     },
     {
       "label": "ב",
-      "question": "חשב כמה זמן חלף מהרגע ששחררו את הקרונית בנקודה $A$ עד שהיא חלפה לראשונה בנקודה $O$.",
+      "question": "כמה זמן עובר מהשחרור ב-$A$ עד שהקרונית עוברת בפעם הראשונה ב-$O$?",
       "answer": {
         "type": "number",
         "value": 0.3141592653589793,
@@ -75,13 +81,14 @@
       ],
       "solution": [
         {
-          "what": "תדירות זוויתית",
-          "why": "מתנד קפיץ",
-          "tex": "\\omega = \\sqrt{\\frac{30}{1.2}} = 5\\,\\text{rad/s}"
+          "what": "המהירות הזוויתית",
+          "why": "של מסה על קפיץ",
+          "tex": "\\omega = \\sqrt{\\frac{30}{1.2}} = 5\\,\\text{rad/s}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{m}{K}},\\qquad \\omega = \\frac{2\\pi}{T}"
         },
         {
           "what": "רבע מחזור",
-          "why": "מהקצה לשיווי המשקל",
+          "why": "מהקצה לנקודת שיווי המשקל",
           "tex": "t = \\frac{T}{4} = \\frac{\\pi}{2 \\cdot 5} \\approx 0.314\\,\\text{s}"
         }
       ],
@@ -90,13 +97,13 @@
     },
     {
       "label": "ג",
-      "question": "לאחר שהקרונית הגיעה לנקודה $O$ היא ממשיכה לנוע עד שנעצרה לרגע בנקודה $B$, ואז התחילה לנוע שוב לעבר $O$. קבע מהו כיוון המהירות של הקרונית ומהו כיוון תאוצתה (לעבר $B$ או לעבר $O$) בתנועתה מן הנקודה $B$ לעבר הנקודה $O$. נמק את שתי הקביעות.",
+      "question": "אחרי $O$ הקרונית ממשיכה לנוע עד שהיא נעצרת לרגע בנקודה $B$, ואז נעה שוב אל $O$. מה הכיוון של המהירות שלה ומה הכיוון של התאוצה שלה (אל $B$ או אל $O$) בדרך מ-$B$ אל $O$? נמקו את שתי התשובות.",
       "answer": {
         "type": "choice",
         "choices": [
-          "מהירות לעבר $O$, תאוצה לעבר $O$",
-          "מהירות לעבר $O$, תאוצה לעבר $B$",
-          "מהירות לעבר $B$, תאוצה לעבר $O$"
+          "המהירות אל $O$, והתאוצה אל $O$",
+          "המהירות אל $O$, והתאוצה אל $B$",
+          "המהירות אל $B$, והתאוצה אל $O$"
         ],
         "correct": 0
       },
@@ -106,22 +113,22 @@
       ],
       "solution": [
         {
-          "what": "מהירות",
-          "why": "הקרונית נעה מ-$B$ אל $O$",
-          "tex": "\\vec{v} \\to O"
+          "what": "המהירות",
+          "why": "הקרונית נעה מהנקודה האחת אל השנייה, ולכן המהירות בכיוון התנועה",
+          "tex": "\\vec v \\to O"
         },
         {
-          "what": "תאוצה",
-          "why": "כוח הקפיץ (המכווץ) מכוון תמיד אל שיווי המשקל",
-          "tex": "\\vec{a} \\to O"
+          "what": "התאוצה",
+          "why": "הקפיץ מכווץ, ודוחף את הקרונית תמיד אל נקודת שיווי המשקל",
+          "tex": "\\vec a \\to O"
         }
       ],
-      "finalAnswer": "שתיהן לעבר $O$ (הקרונית מאיצה)",
+      "finalAnswer": "שתיהן אל $O$, והקרונית מאיצה",
       "keyAnswer": "velocity toward O, acceleration toward O"
     },
     {
       "label": "ד",
-      "question": "מצא את גודל מהירות הקרונית ואת גודל תאוצתה ברגע שהיא חלפה בנקודה $O$. (תשובה: גודל המהירות.)",
+      "question": "מה גודל המהירות ומה גודל התאוצה של הקרונית ברגע שהיא עוברת ב-$O$? כתבו בתיבה את גודל המהירות.",
       "answer": {
         "type": "number",
         "value": 0.5,
@@ -133,28 +140,30 @@
       ],
       "solution": [
         {
-          "what": "ב-$O$: הקפיץ רפוי",
+          "what": "בנקודה הזו הקפיץ רפוי",
           "why": "אין כוח, ולכן אין תאוצה",
-          "tex": "a = 0"
+          "tex": "F_{sp} = 0 \\;\\Rightarrow\\; a = 0"
         },
         {
-          "what": "מהירות מרבית",
-          "why": "בשיווי המשקל",
-          "tex": "v = A\\omega = 0.1 \\cdot 5 = 0.5\\,\\text{m/s}"
+          "what": "המהירות המרבית",
+          "why": "היא בנקודת שיווי המשקל",
+          "tex": "v = 0.1 \\cdot 5 = 0.5\\,\\text{m/s}",
+          "eq": "v_{\\max} = A\\omega"
         },
         {
           "what": "בדיקה באנרגיה",
-          "why": "אנרגיית הקפיץ ב-$A$ הופכת לקינטית",
-          "tex": "\\frac{1}{2} \\cdot 30 \\cdot 0.1^2 = \\frac{1}{2} \\cdot 1.2 v^2 \\Rightarrow v = 0.5\\,\\text{m/s}",
+          "why": "האנרגיה של הקפיץ המתוח הופכת לאנרגיה קינטית",
+          "tex": "\\tfrac{1}{2} \\cdot 30 \\cdot 0.1^2 = \\tfrac{1}{2} \\cdot 1.2\\,v^2 \\;\\Rightarrow\\; v = 0.5\\,\\text{m/s}",
+          "eq": "U_{sp} = \\tfrac{1}{2}K(\\Delta\\ell)^2",
           "check": true
         }
       ],
-      "finalAnswer": "$v = 0.5\\,\\text{m/s}$, $a = 0$",
+      "finalAnswer": "$v = 0.5\\,\\text{m/s}$ ו-$a = 0$",
       "keyAnswer": "v=0.5 m/s"
     },
     {
       "label": "ה",
-      "question": "האם יתכן שבנקודה מסוימת מהירות הקרונית הייתה אפס, אך תאוצתה הייתה שונה מאפס? הסבר את תשובתך.",
+      "question": "האם יכול להיות שבנקודה מסוימת המהירות של הקרונית אפס, אבל התאוצה שלה לא אפס? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -168,9 +177,10 @@
       ],
       "solution": [
         {
-          "what": "בקצוות $A$ ו-$B$",
-          "why": "הקרונית נעצרת לרגע, אבל הקפיץ מתוח או מכווץ במידה מרבית",
-          "tex": "v = 0,\\ |a| = \\omega^2 A = 2.5\\,\\text{m/s}^2"
+          "what": "בקצוות",
+          "why": "בקצה התנועה הקרונית עוצרת לרגע, אבל הקפיץ מתוח או מכווץ הכי הרבה, ולכן התאוצה שם הגדולה ביותר",
+          "tex": "v = 0,\\qquad |a| = \\omega^2 A = 25 \\cdot 0.1 = 2.5\\,\\text{m/s}^2",
+          "eq": "a = -\\omega^2 x"
         }
       ],
       "finalAnswer": "כן: בנקודות $A$ ו-$B$",

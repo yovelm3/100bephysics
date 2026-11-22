@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "כדי לחקור את תלות זמן המחזור של תנועה הרמונית במסה, מבצע תלמיד את הפעולות הבאות: קושר קפיץ לכן ותולה עליו סל. לתוך הסל הוא מכניס גלילי ברזל, שמסת כל אחד מהם היא $300$ גרם, מרים את הסל מעל נקודת שיווי המשקל ועוזב. בעזרת שעון עצר הוא מודד את הזמן הדרוש לעשרה מחזורים, ומחשב את זמן המחזור $T$ עבור מספר גלילים משתנה בסל. בטבלה תוצאות מדידותיו.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף ב יש בפתרון ציור של הגרף.\nמה לבדוק: רק לאשר.",
+  "stem": "תלמיד בודק איך זמן המחזור של תנועה הרמונית תלוי במסה. הוא תולה סל על קפיץ, ומכניס לסל גלילי ברזל, כל אחד במסה $300\\,\\text{g}$. הוא מרים את הסל מעל נקודת שיווי המשקל ומשחרר. בעזרת שעון עצר הוא מודד את הזמן של עשרה מחזורים, ומחשב את זמן המחזור $T$ למספרים שונים של גלילים בסל. הטבלה מראה את התוצאות.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1992-q3.svg",
@@ -23,15 +23,15 @@
   "authorNote": null,
   "concepts": [
     "ניסוי במתנד קפיץ",
-    "ליניאריזציה של גרף",
+    "לינאריזציה של גרף",
     "שגיאת מדידה"
   ],
-  "summary": "מדידת $T$ כתלות במספר גלילים: גרף $T^2(n)$ ישר, משמעות החיתוכים, וקבוע הקפיץ מהשיפוע.",
+  "summary": "מדידת זמן מחזור לפי מספר גלילים: הגרף של ריבוע זמן המחזור ישר, משמעות החיתוכים, וקבוע הקפיץ מהשיפוע.",
   "position": 11,
   "parts": [
     {
       "label": "א",
-      "question": "הסבר מדוע מדד התלמיד עשרה מחזורים, אף על פי שיש לו שעון עצר המודד מאיות שנייה.",
+      "question": "הסבירו למה התלמיד מדד עשרה מחזורים, למרות שהשעון שלו מודד מאיות שנייה.",
       "answer": {
         "type": "open"
       },
@@ -40,22 +40,22 @@
       ],
       "solution": [
         {
-          "what": "שגיאת התגובה",
-          "why": "זמן התגובה של האדם (כעשירית שנייה) גדול בהרבה מדיוק השעון",
+          "what": "זמן התגובה",
+          "why": "זמן התגובה של אדם, כשהוא לוחץ על השעון, הוא בערך עשירית שנייה. זה הרבה יותר מהדיוק של השעון",
           "tex": "\\Delta t \\approx 0.1\\,\\text{s}"
         },
         {
           "what": "מחלקים בעשרה",
-          "why": "השגיאה בזמן מחזור אחד קטנה פי עשרה",
+          "why": "אותה שגיאה מתחלקת על עשרה מחזורים, ולכן השגיאה בזמן מחזור אחד קטנה פי עשרה",
           "tex": "\\Delta T = \\frac{\\Delta t}{10}"
         }
       ],
-      "finalAnswer": "כדי להקטין את השגיאה היחסית שנובעת מזמן התגובה",
+      "finalAnswer": "כדי להקטין את השגיאה בגלל זמן התגובה",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "ערוך גרף של $T^2$ כפונקציה של מספר הגלילים.",
+      "question": "שרטטו גרף של $T^2$ כפונקציה של מספר הגלילים.",
       "answer": {
         "type": "open"
       },
@@ -64,22 +64,26 @@
       ],
       "solution": [
         {
-          "what": "מחשבים $T^2$",
+          "what": "מחשבים את ריבוע זמן המחזור",
           "why": "לכל שורה בטבלה",
-          "tex": "T^2 \\approx 0.40,\\ 0.71,\\ 1.02,\\ 1.28,\\ 1.59,\\ 1.90\\,\\text{s}^2"
+          "tex": "T^2 \\approx 0.40,\\quad 0.71,\\quad 1.02,\\quad 1.28,\\quad 1.59,\\quad 1.90\\,\\text{s}^2"
         },
         {
-          "what": "הקו המתאים",
-          "why": "הנקודות על קו ישר",
-          "tex": "T^2 \\approx 0.30n + 0.10"
+          "what": "הקו",
+          "why": "הנקודות כמעט על קו ישר",
+          "tex": "T^2 \\approx 0.30\\,n + 0.10"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-20 0 480 280\" direction=\"ltr\" role=\"img\" aria-label=\"גרף ריבוע זמן המחזור כפונקציה של מספר הגלילים: שש נקודות על קו ישר עולה, שלא עובר בראשית אלא חותך את הציר האנכי מעט מעל האפס\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"120\" y1=\"240\" x2=\"120\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"240\" x2=\"170\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"220\" y1=\"240\" x2=\"220\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"240\" x2=\"270\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"320\" y1=\"240\" x2=\"320\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"370\" y1=\"240\" x2=\"370\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"201.9\" x2=\"400\" y2=\"201.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"163.8\" x2=\"400\" y2=\"163.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"125.7\" x2=\"400\" y2=\"125.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"87.6\" x2=\"400\" y2=\"87.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"49.5\" x2=\"400\" y2=\"49.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"240\" x2=\"418\" y2=\"240\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"240\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"120\" y1=\"236\" x2=\"120\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"120\" y=\"258\" text-anchor=\"middle\">1</text>\n<line x1=\"170\" y1=\"236\" x2=\"170\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"170\" y=\"258\" text-anchor=\"middle\">2</text>\n<line x1=\"220\" y1=\"236\" x2=\"220\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"220\" y=\"258\" text-anchor=\"middle\">3</text>\n<line x1=\"270\" y1=\"236\" x2=\"270\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"270\" y=\"258\" text-anchor=\"middle\">4</text>\n<line x1=\"320\" y1=\"236\" x2=\"320\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"320\" y=\"258\" text-anchor=\"middle\">5</text>\n<line x1=\"370\" y1=\"236\" x2=\"370\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"370\" y=\"258\" text-anchor=\"middle\">6</text>\n<line x1=\"66\" y1=\"201.9\" x2=\"74\" y2=\"201.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"205.9\" text-anchor=\"end\">0.4</text>\n<line x1=\"66\" y1=\"163.8\" x2=\"74\" y2=\"163.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"167.8\" text-anchor=\"end\">0.8</text>\n<line x1=\"66\" y1=\"125.7\" x2=\"74\" y2=\"125.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"129.7\" text-anchor=\"end\">1.2</text>\n<line x1=\"66\" y1=\"87.6\" x2=\"74\" y2=\"87.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"91.6\" text-anchor=\"end\">1.6</text>\n<line x1=\"66\" y1=\"49.5\" x2=\"74\" y2=\"49.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"53.5\" text-anchor=\"end\">2</text>\n<text class=\"label\" x=\"416\" y=\"230\" text-anchor=\"end\">n</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">T² (s²)</text>\n<polyline points=\"70,230 390,48.2\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n<circle cx=\"120\" cy=\"202.2\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"170\" cy=\"172.8\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"220\" cy=\"142.8\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"270\" cy=\"118.4\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"320\" cy=\"88.8\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"370\" cy=\"58.6\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "הגרף"
         }
       ],
-      "finalAnswer": "קו ישר בשיפוע $\\approx 0.30\\,\\text{s}^2$ לגליל",
+      "finalAnswer": "קו ישר, בשיפוע $\\approx 0.30\\,\\text{s}^2$ לכל גליל",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "האם הקו שסרטטת עובר דרך ראשית הצירים? אם כן, מה המסקנה מכך? אם לא, איזה גודל פיזיקלי מייצגת כל אחת מנקודות החיתוך של הקו עם הצירים?",
+      "question": "האם הקו עובר בראשית הצירים? אם כן, מה המסקנה? אם לא, איזה גודל פיזיקלי מייצגת כל אחת מנקודות החיתוך של הקו עם הצירים?",
       "answer": {
         "type": "open"
       },
@@ -89,18 +93,19 @@
       ],
       "solution": [
         {
-          "what": "הקשר התאורטי",
-          "why": "המסה המתנודדת: הסל ועוד הגלילים",
-          "tex": "T^2 = \\frac{4\\pi^2}{k}(m_s + 0.3n)"
+          "what": "הקשר לפי התיאוריה",
+          "why": "המסה שמתנודדת היא הסל ועוד הגלילים. נסמן את מסת הסל באות אם עם הציון אס",
+          "tex": "T^2 = \\frac{4\\pi^2}{K}\\,(m_s + 0.3\\,n)",
+          "eq": "T = 2\\pi\\sqrt{\\frac{m}{K}}"
         },
         {
-          "what": "חיתוך עם ציר $T^2$",
-          "why": "$n = 0$: הסל לבדו",
-          "tex": "T^2(0) = \\frac{4\\pi^2 m_s}{k}"
+          "what": "החיתוך עם הציר האנכי",
+          "why": "כשאין גלילים, נשאר הסל לבד",
+          "tex": "T^2(0) = \\frac{4\\pi^2 m_s}{K}"
         },
         {
-          "what": "חיתוך עם ציר $n$",
-          "why": "מספר גלילים \"שלילי\" שמסתם שווה למסת הסל",
+          "what": "החיתוך עם ציר הגלילים",
+          "why": "מספר שלילי של גלילים, שהמסה שלהם שווה למסת הסל",
           "tex": "n_0 = -\\frac{m_s}{0.3}"
         }
       ],
@@ -109,7 +114,7 @@
     },
     {
       "label": "ד",
-      "question": "מהו הקבוע של הקפיץ?",
+      "question": "מה הקבוע של הקפיץ?",
       "answer": {
         "type": "number",
         "value": 39.70416413759692,
@@ -122,17 +127,17 @@
       ],
       "solution": [
         {
-          "what": "שיפוע הגרף",
-          "why": "$T^2$ גדל בכל גליל ב-",
-          "tex": "s \\approx \\frac{1.90 - 0.40}{5} \\approx 0.30\\,\\text{s}^2"
+          "what": "השיפוע של הגרף",
+          "why": "בכל גליל נוסף ריבוע זמן המחזור גדל באותו שיעור",
+          "tex": "s \\approx \\frac{1.90 - 0.40}{6 - 1} \\approx 0.30\\,\\text{s}^2"
         },
         {
-          "what": "משווים לתאוריה",
-          "why": "השיפוע הוא $4\\pi^2 \\cdot 0.3/k$",
-          "tex": "k = \\frac{4\\pi^2 \\cdot 0.3}{0.30} \\approx 39.5\\,\\text{N/m}"
+          "what": "משווים לתיאוריה",
+          "why": "לפי הקשר מהסעיף הקודם, השיפוע הוא מה שמכפיל את מספר הגלילים",
+          "tex": "\\frac{4\\pi^2 \\cdot 0.3}{K} = 0.30 \\;\\Rightarrow\\; K \\approx 39.5\\,\\text{N/m}"
         }
       ],
-      "finalAnswer": "$k \\approx 39.5\\,\\text{N/m}$",
+      "finalAnswer": "$K \\approx 39.5\\,\\text{N/m}$",
       "keyAnswer": "39.5 N/m"
     }
   ]

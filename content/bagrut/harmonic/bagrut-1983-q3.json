@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "קפיץ מחובר אל התקרה ועליו תלוי גוף $A$ שמסתו $2m$. אל גוף $A$ מחובר בחוט (שמסתו זניחה) גוף $B$ שמסתו $m$. כשהמערכת במנוחה, התארכותו של הקפיץ (התוספת לאורכו של הקפיץ החופשי) היא $d$. ברגע מסוים ניתק החוט, והגוף $B$ נופל. בטא את תשובותיך בעזרת הגדלים $m$, $d$ ו-$g$ (תאוצת הנפילה החופשית).",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבכל הסעיפים התלמיד בוחר את הביטוי הנכון מתוך ארבעה.\nמה לבדוק: רק לאשר.",
+  "stem": "קפיץ קשור לתקרה, ותלוי עליו גוף $A$ שמסתו $2m$. לגוף $A$ קשור בחוט קל גוף $B$ שמסתו $m$. כשהמערכת במנוחה, הקפיץ ארוך ב-$d$ מהאורך הרפוי שלו. ברגע מסוים החוט נקרע, והגוף $B$ נופל. כתבו את התשובות בעזרת $m$, $d$ ותאוצת הנפילה החופשית $g$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1983-q3.svg",
@@ -27,14 +27,21 @@
     "משרעת",
     "כוח שקול מרבי"
   ],
-  "summary": "מנתקים גוף תחתון ממערכת על קפיץ: שיווי משקל חדש, משרעת $d/3$, זמן מחזור ומהירות מרבית.",
+  "summary": "מנתקים גוף תחתון ממערכת על קפיץ: שיווי משקל חדש, משרעת של שליש, זמן מחזור ומהירות מרבית.",
   "position": 3,
   "parts": [
     {
       "label": "א",
-      "question": "מהי משרעת (אמפליטודה) התנודות של הגוף $A$?",
+      "question": "מה המשרעת של התנודות של הגוף $A$?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$\\frac{d}{3}$",
+          "$\\frac{2d}{3}$",
+          "$d$",
+          "$\\frac{d}{2}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "fbd",
@@ -42,18 +49,23 @@
       ],
       "solution": [
         {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על שני הגופים יחד: כוח הקפיץ כלפי מעלה וכוח הכובד על שניהם כלפי מטה, שווים בגודלם\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"63\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"51\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">sp</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"237\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"261\" text-anchor=\"middle\">3mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "תרשים הכוחות על שני הגופים יחד, לפני שהחוט נקרע"
+        },
+        {
           "what": "קבוע הקפיץ",
-          "why": "לפני הניתוק הקפיץ מחזיק את שני הגופים",
-          "tex": "kd = 3mg \\Rightarrow k = \\frac{3mg}{d}"
+          "why": "לפני שהחוט נקרע, הקפיץ מחזיק את שני הגופים בשיווי משקל",
+          "tex": "K d - 3mg = 0 \\;\\Rightarrow\\; K = \\frac{3mg}{d}",
+          "eq": "F_{sp} = K\\Delta\\ell"
         },
         {
           "what": "שיווי המשקל החדש",
-          "why": "אחרי הניתוק נשאר רק $A$",
-          "tex": "kx_0 = 2mg \\Rightarrow x_0 = \\frac{2d}{3}"
+          "why": "אחרי שהחוט נקרע, הקפיץ מחזיק רק את הגוף העליון. נסמן את ההתארכות החדשה באות איקס אפס",
+          "tex": "K x_0 = 2mg \\;\\Rightarrow\\; x_0 = \\frac{2d}{3}"
         },
         {
-          "what": "משרעת",
-          "why": "$A$ מתחיל במנוחה, ולכן זו נקודת קצה",
+          "what": "המשרעת",
+          "why": "ברגע שהחוט נקרע הגוף עומד, ולכן זו נקודת קצה של התנודה. המשרעת היא המרחק ממנה לשיווי המשקל החדש",
           "tex": "A = d - \\frac{2d}{3} = \\frac{d}{3}"
         }
       ],
@@ -62,9 +74,16 @@
     },
     {
       "label": "ב",
-      "question": "מהו זמן המחזור של התנודות?",
+      "question": "מה זמן המחזור של התנודות?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$T = 2\\pi\\sqrt{\\frac{2d}{3g}}$",
+          "$T = 2\\pi\\sqrt{\\frac{d}{g}}$",
+          "$T = 2\\pi\\sqrt{\\frac{3d}{2g}}$",
+          "$T = 2\\pi\\sqrt{\\frac{d}{3g}}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -72,9 +91,10 @@
       ],
       "solution": [
         {
-          "what": "מתנד קפיץ",
-          "why": "המסה המתנודדת $2m$",
-          "tex": "T = 2\\pi\\sqrt{\\frac{2m}{k}} = 2\\pi\\sqrt{\\frac{2m d}{3mg}} = 2\\pi\\sqrt{\\frac{2d}{3g}}"
+          "what": "מסה על קפיץ",
+          "why": "המסה שמתנודדת היא רק הגוף העליון",
+          "tex": "T = 2\\pi\\sqrt{\\frac{2m}{K}} = 2\\pi\\sqrt{\\frac{2m\\,d}{3mg}} = 2\\pi\\sqrt{\\frac{2d}{3g}}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{m}{K}}"
         }
       ],
       "finalAnswer": "$T = 2\\pi\\sqrt{\\frac{2d}{3g}}$",
@@ -82,9 +102,16 @@
     },
     {
       "label": "ג",
-      "question": "מהי המהירות המרבית של הגוף $A$ בעת תנודותיו?",
+      "question": "מה המהירות המרבית של הגוף $A$ בתנודות?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$\\sqrt{\\frac{dg}{6}}$",
+          "$\\sqrt{\\frac{dg}{3}}$",
+          "$\\sqrt{\\frac{2dg}{3}}$",
+          "$\\sqrt{dg}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -92,9 +119,10 @@
       ],
       "solution": [
         {
-          "what": "מהירות מרבית",
-          "why": "בשיווי המשקל",
-          "tex": "v_{\\max} = A\\omega = \\frac{d}{3}\\sqrt{\\frac{3g}{2d}} = \\sqrt{\\frac{dg}{6}}"
+          "what": "המהירות המרבית",
+          "why": "היא בנקודת שיווי המשקל. המהירות הזוויתית מזמן המחזור",
+          "tex": "v_{\\max} = A\\omega = \\frac{d}{3}\\sqrt{\\frac{3g}{2d}} = \\sqrt{\\frac{dg}{6}}",
+          "eq": "v_{\\max} = A\\omega"
         }
       ],
       "finalAnswer": "$\\sqrt{\\frac{dg}{6}}$",
@@ -102,9 +130,16 @@
     },
     {
       "label": "ד",
-      "question": "מהו הכוח השקול המרבי הפועל על הגוף $A$?",
+      "question": "מה הכוח השקול המרבי על הגוף $A$?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$mg$",
+          "$2mg$",
+          "$3mg$",
+          "$\\frac{mg}{3}$"
+        ],
+        "correct": 0
       },
       "skills": [
         "fbd",
@@ -112,14 +147,18 @@
       ],
       "solution": [
         {
-          "what": "כוח שקול מרבי",
-          "why": "בנקודת הקצה, העתק מרבי משיווי המשקל",
-          "tex": "F_{\\max} = kA = \\frac{3mg}{d} \\cdot \\frac{d}{3} = mg"
+          "what": "הכוח השקול המרבי",
+          "why": "הוא בנקודת הקצה, שם ההעתק משיווי המשקל הוא הגדול ביותר",
+          "tex": "F_{\\max} = K A = \\frac{3mg}{d} \\cdot \\frac{d}{3} = mg"
         },
         {
-          "what": "בדיקה ברגע הניתוק",
-          "why": "הקפיץ עדיין דוחף $3mg$, והכובד על $A$ הוא $2mg$",
-          "tex": "F = 3mg - 2mg = mg",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף העליון ברגע שהחוט נקרע: כוח הקפיץ כלפי מעלה, גדול מכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"63\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"51\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">sp</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"216\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"240\" text-anchor=\"middle\">2mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף העליון, ברגע שהחוט נקרע"
+        },
+        {
+          "what": "בדיקה ברגע שהחוט נקרע",
+          "why": "הקפיץ עוד מתוח כמו קודם ודוחף כלפי מעלה, והכובד על הגוף קטן יותר",
+          "tex": "\\Sigma F = 3mg - 2mg = mg",
           "check": true
         }
       ],

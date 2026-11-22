@@ -225,7 +225,7 @@
         {
           "what": "אחרי שהכוח מפסיק",
           "why": "שוב רכיב הכובד והחיכוך מתבטלים, כמו בסעיף א. הכוח השקול אפס, והמהירות נשארת קבועה",
-          "tex": "mg\\sin\\theta - f_k = 0 \\;\\Rightarrow\\; v = \\text{const}",
+          "tex": "mg\\sin\\theta - f_k = 0 \\;\\Rightarrow\\; \\Delta v = 0",
           "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],

@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "מסה נקודתית $m$ תלויה בקצהו של חוט חסר מסה שאורכו $\\ell$. מסיטים את המסה ממצב שיווי המשקל שלה כך שהחוט יוצר זווית קטנה $\\theta$ ($\\sin\\theta \\approx \\theta$) עם האנך. מרפים מן המסה $m$, והיא מתחילה להתנודד בקצה החוט (מטוטלת מתמטית).",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "stem": "מסה נקודתית $m$ תלויה בקצה של חוט קל שאורכו $\\ell$. מזיזים את המסה ממצב שיווי המשקל, כך שהחוט יוצר זווית קטנה $\\theta$ עם האנך (בזווית קטנה $\\sin\\theta \\approx \\theta$). משחררים, והמסה מתנודדת בקצה החוט. זו מטוטלת מתמטית.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1981-q3.svg",
@@ -27,12 +27,12 @@
     "שימור אנרגיה",
     "מתיחות בנקודה הנמוכה"
   ],
-  "summary": "מטוטלת בזווית קטנה: למה היא הרמונית, רבע מחזור, מהירות ומתיחות בנקודה הנמוכה, ומה קורה בגובה רדיוס כדור הארץ.",
+  "summary": "מטוטלת בזווית קטנה: למה התנועה הרמונית, רבע מחזור, המהירות והמתיחות בנקודה הנמוכה, ומה קורה בגובה של רדיוס כדור הארץ.",
   "position": 2,
   "parts": [
     {
       "label": "א",
-      "question": "הראה כי תנועת המטוטלת היא תנועה הרמונית, ופתח את הנוסחה עבור זמן המחזור של התנודות.",
+      "question": "הראו שהתנועה של המטוטלת הרמונית, ומצאו ביטוי לזמן המחזור של התנודות.",
       "answer": {
         "type": "open"
       },
@@ -43,19 +43,24 @@
       ],
       "solution": [
         {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המסה: מתיחות החוט לאורך החוט אל נקודת התלייה, וכוח הכובד כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"189.8\" y2=\"69\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"185.4\" y=\"57.5\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"233.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"257.5\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "תרשים הכוחות על המסה"
+        },
+        {
           "what": "הכוח המחזיר",
-          "why": "רכיב הכובד המשיק למסלול",
-          "tex": "F = -mg\\sin\\theta \\approx -mg\\theta"
+          "why": "המתיחות ניצבת למסלול. בכיוון המסלול פועל רק הרכיב של הכובד, והוא מכוון אל נקודת שיווי המשקל",
+          "tex": "F = -mg\\sin\\theta \\approx -mg\\,\\theta"
         },
         {
-          "what": "העתק לאורך הקשת",
-          "why": "$x = \\ell\\theta$",
-          "tex": "F \\approx -\\frac{mg}{\\ell}x"
+          "what": "ההעתק לאורך הקשת",
+          "why": "ההעתק הוא אורך החוט כפול הזווית",
+          "tex": "x = \\ell\\theta \\;\\Rightarrow\\; F \\approx -\\frac{mg}{\\ell}\\,x"
         },
         {
-          "what": "כמו קפיץ עם $k = mg/\\ell$",
-          "why": "הכוח פרופורציוני להעתק ומכוון אל שיווי המשקל",
-          "tex": "T = 2\\pi\\sqrt{\\frac{m}{k}} = 2\\pi\\sqrt{\\frac{\\ell}{g}}"
+          "what": "כמו קפיץ",
+          "why": "הכוח פרופורציוני להעתק ובכיוון ההפוך, ולכן התנועה הרמונית. מה שמכפיל את ההעתק משחק את התפקיד של קבוע הקפיץ",
+          "tex": "K = \\frac{mg}{\\ell} \\;\\Rightarrow\\; T = 2\\pi\\sqrt{\\frac{m}{mg/\\ell}} = 2\\pi\\sqrt{\\frac{\\ell}{g}}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{m}{K}}"
         }
       ],
       "finalAnswer": "$T = 2\\pi\\sqrt{\\ell/g}$",
@@ -63,7 +68,7 @@
     },
     {
       "label": "ב",
-      "question": "אם המסה הנקודתית $m = 100\\,\\text{g}$, אורך החוט $\\ell = 1\\,\\text{m}$, והזווית בין החוט לאנך היא $\\theta = 5^\\circ$, כמה זמן יעבור מרגע שחרור המסה $m$ עד שהיא תגיע בפעם הראשונה למהירותה המקסימלית?",
+      "question": "המסה $m = 100\\,\\text{g}$, אורך החוט $\\ell = 1\\,\\text{m}$, והזווית $\\theta = 5^\\circ$. כמה זמן עובר מהשחרור עד שהמסה מגיעה בפעם הראשונה למהירות הגדולה ביותר?",
       "answer": {
         "type": "number",
         "value": 0.4967294132898051,
@@ -76,13 +81,14 @@
       ],
       "solution": [
         {
-          "what": "זמן מחזור",
-          "why": "מטוטלת מתמטית",
-          "tex": "T = 2\\pi\\sqrt{\\frac{1}{10}} \\approx 1.99\\,\\text{s}"
+          "what": "זמן המחזור",
+          "why": "של מטוטלת מתמטית",
+          "tex": "T = 2\\pi\\sqrt{\\frac{1}{10}} \\approx 1.99\\,\\text{s}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{L}{g}}"
         },
         {
           "what": "מהקצה לנקודה הנמוכה",
-          "why": "רבע מחזור",
+          "why": "זה רבע מחזור",
           "tex": "t = \\frac{T}{4} \\approx 0.5\\,\\text{s}"
         }
       ],
@@ -91,7 +97,7 @@
     },
     {
       "label": "ג",
-      "question": "מה גודלה של המהירות המקסימלית?",
+      "question": "מה גודל המהירות הגדולה ביותר?",
       "answer": {
         "type": "number",
         "value": 0.2758732284312653,
@@ -104,19 +110,21 @@
       ],
       "solution": [
         {
-          "what": "שימור אנרגיה",
-          "why": "גובה ההתחלה מעל הנקודה הנמוכה",
-          "tex": "h = \\ell(1 - \\cos 5^\\circ) \\approx 3.8 \\times 10^{-3}\\,\\text{m}"
+          "what": "הגובה ההתחלתי",
+          "why": "הגובה מעל הנקודה הנמוכה הוא אורך החוט פחות החלק האנכי שלו",
+          "tex": "h = \\ell - \\ell\\cos 5^\\circ \\approx 3.8 \\times 10^{-3}\\,\\text{m}"
         },
         {
-          "what": "מהירות בנקודה הנמוכה",
-          "why": "פוטנציאלית לקינטית",
-          "tex": "v = \\sqrt{2gh} = \\sqrt{2 \\cdot 10 \\cdot 3.8 \\times 10^{-3}} \\approx 0.28\\,\\text{m/s}"
+          "what": "שימור אנרגיה",
+          "why": "אנרגיית הגובה הופכת לקינטית בנקודה הנמוכה. המסה מצטמצמת",
+          "tex": "mgh = \\tfrac{1}{2}m\\,v^2 \\;\\Rightarrow\\; v = \\sqrt{2 \\cdot 10 \\cdot 3.8 \\times 10^{-3}} \\approx 0.28\\,\\text{m/s}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         },
         {
           "what": "בדיקה בדרך אחרת",
-          "why": "$A = \\ell\\theta$ ו-$\\omega = \\sqrt{g/\\ell}$",
-          "tex": "v = A\\omega = 0.0873 \\cdot 3.16 \\approx 0.28\\,\\text{m/s}",
+          "why": "המשרעת היא אורך הקשת, והמהירות הזוויתית מזמן המחזור",
+          "tex": "v = A\\omega = (1 \\cdot 0.0873) \\cdot \\sqrt{10} \\approx 0.28\\,\\text{m/s}",
+          "eq": "v_{\\max} = A\\omega",
           "check": true
         }
       ],
@@ -125,7 +133,7 @@
     },
     {
       "label": "ד",
-      "question": "מהי מתיחות החוט, כאשר למסה $m$ המהירות המקסימלית?",
+      "question": "מה מתיחות החוט כשהמהירות של המסה הגדולה ביותר?",
       "answer": {
         "type": "number",
         "value": 1.007610603816509,
@@ -138,13 +146,18 @@
       ],
       "solution": [
         {
-          "what": "בנקודה הנמוכה: תנועה מעגלית",
-          "why": "השקול כלפי מעלה הוא הכוח הצנטריפטלי",
-          "tex": "T - mg = \\frac{mv^2}{\\ell}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המסה בנקודה הנמוכה: מתיחות החוט כלפי מעלה, קצת גדולה מכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה, אל נקודת התלייה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"240.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"264.5\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות בנקודה הנמוכה"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בנקודה הנמוכה המסה נעה בקשת של מעגל. הכיוון החיובי אל נקודת התלייה. בכיוון הזה המתיחות, ונגדו הכובד",
+          "tex": "T - mg = m\\frac{v^2}{\\ell}",
+          "eq": "\\Sigma F_R = m\\frac{v^2}{r}"
         },
         {
           "what": "מציבים",
-          "why": "$v^2 \\approx 0.076$",
+          "why": "את המהירות מהסעיף הקודם",
           "tex": "T = 0.1 \\cdot 10 + \\frac{0.1 \\cdot 0.28^2}{1} \\approx 1.008\\,\\text{N}"
         }
       ],
@@ -153,7 +166,7 @@
     },
     {
       "label": "ה",
-      "question": "מעלים את המטוטלת המתמטית הנ\"ל לגובה $h$ מעל פני כדור הארץ. אם $h$ שווה לרדיוס של כדור הארץ, מה זמן המחזור של המטוטלת?",
+      "question": "מעלים את המטוטלת לגובה $h$ מעל פני כדור הארץ, ששווה לרדיוס של כדור הארץ. מה זמן המחזור שלה שם?",
       "answer": {
         "type": "number",
         "value": 3.9738353063184406,
@@ -166,17 +179,19 @@
       ],
       "solution": [
         {
-          "what": "תאוצת הכובד בגובה $R$",
-          "why": "המרחק מהמרכז כפול",
-          "tex": "g' = g\\left(\\frac{R}{2R}\\right)^2 = \\frac{g}{4}"
+          "what": "תאוצת הכובד בגובה רדיוס אחד",
+          "why": "המרחק מהמרכז גדל פי שניים, ולכן התאוצה קטנה פי ארבעה",
+          "tex": "g' = \\frac{GM}{(2R)^2} = \\frac{g}{4}",
+          "eq": "g^* = \\frac{GM}{r^2}"
         },
         {
           "what": "זמן המחזור",
-          "why": "$T \\propto 1/\\sqrt{g}$",
-          "tex": "T' = 2\\pi\\sqrt{\\frac{\\ell}{g/4}} = 2T \\approx 3.97\\,\\text{s}"
+          "why": "זמן המחזור הפוך לשורש של תאוצת הכובד, ולכן גדל פי שניים",
+          "tex": "T' = 2\\pi\\sqrt{\\frac{\\ell}{g/4}} = 2T \\approx 3.97\\,\\text{s}",
+          "eq": "T = 2\\pi\\sqrt{\\frac{L}{g}}"
         }
       ],
-      "finalAnswer": "$\\approx 4\\,\\text{s}$ (פי שניים)",
+      "finalAnswer": "$\\approx 4\\,\\text{s}$, פי שניים",
       "keyAnswer": null
     }
   ]

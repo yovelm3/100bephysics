@@ -172,7 +172,7 @@
         {
           "what": "הכוח השקול",
           "why": "הכובד והכוח האופקי קבועים, ולכן גם השקול שלהם קבוע בגודל ובכיוון",
-          "tex": "\\vec F_{\\text{net}} = m\\vec g + \\vec F = \\text{const}"
+          "tex": "\\Sigma\\vec F = m\\vec g + \\vec F,\\qquad \\Delta(\\Sigma\\vec F) = 0"
         },
         {
           "what": "התאוצות בשני הצירים",
