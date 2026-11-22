@@ -103,7 +103,7 @@ header :focus-visible {
   --d-force: #1d4ed8;
 }
 .fig svg { display: block; height: auto; width: 100%; }
-.fig .label { font-family: var(--font-mono), ui-monospace, monospace; font-size: 14px; fill: var(--d-label); }
-.fig .dim { font-family: var(--font-mono), ui-monospace, monospace; font-size: 13px; fill: var(--d-dim); }
+.fig .label { font-family: KaTeX_Main, "Times New Roman", serif; font-size: 16px; fill: var(--d-label); }
+.fig .dim { font-family: var(--font-hebrew), Arial, sans-serif; font-size: 14px; fill: var(--d-dim); font-variant-numeric: tabular-nums; }
 .fig .force { font-family: KaTeX_Math, "Times New Roman", serif; font-style: italic; font-size: 18px; font-weight: 600; fill: var(--d-force); }
-.fig .heb { font-family: var(--font-hebrew), Arial, sans-serif; font-size: 14px; font-weight: 700; fill: var(--d-label); }
+.fig .heb { font-family: var(--font-hebrew), Arial, sans-serif; font-size: 15px; font-weight: 700; fill: var(--d-label); }

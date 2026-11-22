@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, type ReactNode } from "react";
 import { ANIMATIONS } from "@/components/animations/registry";
 import { InlineText, SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
+import { ZoomFigure } from "@/components/ZoomFigure";
 
 export type PlayerExercise = {
   id: string;
@@ -152,9 +153,9 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
             </span>
           </h1>
           {exercise.figure && (
-            <figure className="m-0 mx-auto w-full max-w-xl" aria-label={exercise.figure.alt}>
+            <figure className="m-0 w-full" aria-label={exercise.figure.alt}>
               {/* Our own reviewed SVG drawings (checked at import: no scripts or external links). */}
-              <div role="img" aria-label={exercise.figure.alt} className="fig ltr" dangerouslySetInnerHTML={{ __html: exercise.figure.svg }} />
+              <ZoomFigure svg={exercise.figure.svg} alt={exercise.figure.alt} />
             </figure>
           )}
           <p className="text-justify leading-relaxed">

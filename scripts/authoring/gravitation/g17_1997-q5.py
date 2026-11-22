@@ -6,7 +6,7 @@ def fig():
     g_ = Fig(560, 220, "כוכב שמרכזו O ורדיוסו R, וחללית במרחק H מפני הכוכב. מהחללית הכוכב נראה בזווית ראייה של 60 מעלות")
     g_.circle(160, 110, 90, fill="var(--d-fill)", stroke="var(--d-line)"); g_.dot(160, 110); g_.text(150, 118, "O", anchor="end")
     g_.line(160, 110, 250, 110, width=1.2); g_.text(205, 102, "R", cls="dim")
-    g_.dim(250, 110, 340, 110, "H", offset=0)
+    g_.dim(250, 132, 340, 132, "H", offset=0)
     g_.circle(350, 110, 8, fill="var(--d-fill)", stroke="var(--d-line)"); g_.heb(350, 140, "חללית"); g_.heb(160, 214, "כוכב")
     g_.line(342, 110, 115, 32, stroke="var(--d-dim)", width=1, dash="4 3"); g_.line(342, 110, 115, 188, stroke="var(--d-dim)", width=1, dash="4 3")
     g_.angle(342, 110, 30, 150, 210, "60°", lr=44)

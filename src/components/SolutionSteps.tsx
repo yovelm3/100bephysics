@@ -1,4 +1,5 @@
 import { Math } from "@/components/Math";
+import { ZoomFigure } from "@/components/ZoomFigure";
 
 /**
  * One item of a full solution, in the content-file format:
@@ -52,7 +53,7 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
               <InlineText text={group.caption} />
             </figcaption>
             {/* Our own SVG, validated by checkSvg when the content is loaded. */}
-            <div className="fig ltr mx-auto w-full max-w-xl" dangerouslySetInnerHTML={{ __html: group.svg }} />
+            <ZoomFigure svg={group.svg} alt={group.caption.replace(/\$/g, "")} className="mx-auto max-w-2xl" />
           </figure>
         ) : group.kind === "explain" ? (
           <p key={i} className="font-semibold leading-relaxed text-foreground">
