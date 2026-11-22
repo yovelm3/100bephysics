@@ -304,11 +304,15 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
     g.circle(cx, cy, 3.2, fill="var(--d-label)")
     if positive is not None:
         a = math.radians(positive)
-        ox, oy = 46, h - 30
-        x2, y2 = ox + 40 * math.cos(a), oy - 40 * math.sin(a)
+        mx, my = 66, h - 58  # arrow centred here, so it never runs into the caption below
+        ox, oy = mx - 20 * math.cos(a), my + 20 * math.sin(a)
+        x2, y2 = mx + 20 * math.cos(a), my - 20 * math.sin(a)
         g.line(ox, oy, x2, y2, stroke="var(--d-dim)", width=1.8, dash="5 4", arrow=True)
-        g.text(x2 + 12 * math.cos(a) + (8 if abs(math.cos(a)) < 0.3 else 0), y2 - 12 * math.sin(a) + 5, "+", cls="label")
-        g.heb(ox + 24, oy + 22, "כיוון חיובי")
+        if abs(math.cos(a)) < 0.3:  # vertical: "+" beside the tip
+            g.text(x2 + 12, y2 + 6, "+", cls="label")
+        else:
+            g.text(x2 + 12 * math.cos(a), y2 - 12 * math.sin(a) - 6, "+", cls="label", anchor="middle")
+        g.heb(mx + 2, h - 12, "כיוון חיובי", anchor="middle")
     if note:  # bottom-right corner, away from the arrows
         g.heb(w - 12, h - 10, note, anchor="end")
     return g

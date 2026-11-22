@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ה במקור הוא שאלה אחת על כל השלבים. חילקתי לשלושה סעיפים (ה1, ה2, ה3) כדי שאפשר יהיה לבדוק כל מספר.",
-  "stem": "רקטה לחקר מזג האוויר שולחה אנכית כלפי מעלה. הגרף מתאר את מהירות הרקטה כפונקציה של הזמן. הנח שאפשר להזניח את התנגדות האוויר.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ה הוא סעיף אחד, כמו במקור, עם שלוש תיבות (מה מראה הדינמומטר בכל שלב).\nמה לבדוק: רק לאשר.",
+  "stem": "רקטה לחקר מזג האוויר שוגרה אנכית כלפי מעלה. הגרף מתאר את מהירות הרקטה כפונקציה של הזמן. אפשר להזניח את התנגדות האוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1984-q1.svg",
@@ -28,12 +28,12 @@
     "חוסר משקל",
     "דינמומטר בגוף מאיץ"
   ],
-  "summary": "רקטה עם מנוע, ואחר כך בנפילה חופשית ובירידה מבוקרת. קריאת גרף, חישוב גובה וזמן, ומה מראה דינמומטר בכל שלב.",
+  "summary": "רקטה עם מנוע, ואחר כך בנפילה חופשית ובירידה מבוקרת: קריאת גרף, גובה וזמן, ומה מראה דינמומטר בכל שלב.",
   "position": 4,
   "parts": [
     {
       "label": "א",
-      "question": "כעבור כמה שניות נגמר הדלק במנועי הרקטה? נמק.",
+      "question": "כעבור כמה שניות נגמר הדלק במנועי הרקטה? נמקו.",
       "answer": {
         "type": "number",
         "value": 10.0,
@@ -45,17 +45,18 @@
       ],
       "solution": [
         {
-          "explain": "כל עוד המנוע דוחף, המהירות כלפי מעלה גדלה. ברגע שהדלק נגמר נשאר רק כוח הכובד, והמהירות מתחילה לקטון."
+          "explain": "הכיוון החיובי נקבע לפי הגרף: בהתחלה הרקטה עולה והמהירות חיובית, ולכן כלפי מעלה חיובי. כל עוד המנוע דוחף, המהירות כלפי מעלה גדלה. ברגע שהדלק נגמר נשאר רק כוח הכובד, והמהירות מתחילה לקטון."
         },
         {
           "what": "מחפשים את הנקודה שבה השיפוע מתהפך",
-          "why": "השיפוע הוא התאוצה. עד $10$ שניות הוא חיובי (המנוע דוחף), ואחר כך שלילי (רק כובד)",
+          "why": "השיפוע הוא התאוצה. עד עשר שניות הוא חיובי והמנוע דוחף, ואחר כך הוא שלילי ופועל רק כוח הכובד",
           "tex": "t = 10\\,\\text{s}"
         },
         {
           "what": "בדיקה: התאוצה אחרי הכיבוי",
-          "why": "בלי מנוע ובלי התנגדות אוויר, התאוצה צריכה להיות $-g$",
-          "tex": "\\frac{0 - 200}{30 - 10} = -10\\,\\text{m/s}^2 = -g \\;\\checkmark",
+          "why": "בלי מנוע ובלי התנגדות אוויר, התאוצה צריכה להיות תאוצת הנפילה החופשית, כלפי מטה",
+          "tex": "a = \\frac{0 - 200}{30 - 10} = -10\\,\\text{m/s}^2 = -g \\;\\checkmark",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}",
           "check": true
         }
       ],
@@ -64,7 +65,7 @@
     },
     {
       "label": "ב",
-      "question": "כעבור כמה שניות הגיעה הרקטה לגובה המקסימלי? נמק.",
+      "question": "כעבור כמה שניות הגיעה הרקטה לגובה המרבי? נמקו.",
       "answer": {
         "type": "number",
         "value": 30.0,
@@ -76,12 +77,12 @@
       ],
       "solution": [
         {
-          "explain": "בגובה המקסימלי הרקטה מפסיקה לעלות. זה הרגע שבו המהירות מתאפסת ומחליפה כיוון."
+          "explain": "בגובה המרבי הרקטה מפסיקה לעלות. זה הרגע שבו המהירות מתאפסת ומחליפה כיוון."
         },
         {
-          "what": "מחפשים בגרף איפה $v = 0$",
-          "why": "לפני הרגע הזה המהירות חיובית (עלייה), ואחריו שלילית (ירידה)",
-          "tex": "t = 30\\,\\text{s}"
+          "what": "מחפשים בגרף את הרגע שבו המהירות אפס",
+          "why": "לפני הרגע הזה המהירות חיובית והרקטה עולה, ואחריו המהירות שלילית והיא יורדת",
+          "tex": "v(t) = 0 \\;\\Rightarrow\\; t = 30\\,\\text{s}"
         }
       ],
       "finalAnswer": "$30\\,\\text{s}$",
@@ -89,7 +90,7 @@
     },
     {
       "label": "ג",
-      "question": "לאיזה גובה עלתה הרקטה? נמק.",
+      "question": "לאיזה גובה עלתה הרקטה? נמקו.",
       "answer": {
         "type": "number",
         "value": 3000.0,
@@ -101,17 +102,17 @@
       ],
       "solution": [
         {
-          "explain": "הגובה הוא השטח שמתחת לגרף מהירות-זמן, מ-$0$ עד רגע השיא."
+          "explain": "הגובה הוא השטח שמתחת לגרף מהירות-זמן, מתחילת התנועה עד רגע השיא."
         },
         {
-          "what": "מחשבים את שטח המשולש",
-          "why": "בסיס המשולש $30\\,\\text{s}$ וגובהו $200\\,\\text{m/s}$",
+          "what": "שטח המשולש",
+          "why": "בסיס המשולש הוא שלושים שניות, והגובה שלו הוא המהירות המרבית",
           "tex": "H = \\tfrac{1}{2} \\cdot 30 \\cdot 200 = 3000\\,\\text{m}"
         },
         {
-          "what": "בדיקה: שני חלקים בנפרד",
-          "why": "עד הכיבוי $\\tfrac{1}{2} \\cdot 10 \\cdot 200$, ואחריו $\\tfrac{1}{2} \\cdot 20 \\cdot 200$",
-          "tex": "1000 + 2000 = 3000\\,\\text{m} \\;\\checkmark",
+          "what": "בדיקה בדרך אחרת: שני חלקים בנפרד",
+          "why": "משולש עד הכיבוי ועוד משולש מהכיבוי עד השיא",
+          "tex": "\\tfrac{1}{2} \\cdot 10 \\cdot 200 + \\tfrac{1}{2} \\cdot 20 \\cdot 200 = 1000 + 2000 = 3000\\,\\text{m} \\;\\checkmark",
           "check": true
         }
       ],
@@ -120,7 +121,7 @@
     },
     {
       "label": "ד",
-      "question": "בשיא הגובה הופעל מנוע-עזר, שגרם לרקטה לרדת בתאוצה קבועה של $0.05\\,\\text{m/s}^2$. כמה שניות אחרי שילוח הרקטה היא חוזרת לקרקע?",
+      "question": "בגובה המרבי הופעל מנוע עזר, והרקטה ירדה ממנו בתאוצה קבועה של $0.05\\,\\text{m/s}^2$. כעבור כמה שניות מהשיגור חזרה הרקטה לקרקע?",
       "answer": {
         "type": "number",
         "value": 376.41,
@@ -132,21 +133,27 @@
       ],
       "solution": [
         {
-          "explain": "מהשיא הרקטה יוצאת ממנוחה ויורדת $3000\\,\\text{m}$ בתאוצה קבועה וקטנה. מוצאים את זמן הירידה ומוסיפים את $30$ השניות עד השיא."
+          "explain": "מהשיא הרקטה יוצאת ממנוחה ויורדת שלושת אלפים מטר בתאוצה קבועה וקטנה. מוצאים את זמן הירידה, ומוסיפים את שלושים השניות עד השיא. לירידה בוחרים כלפי מטה כחיובי, כי זה כיוון התנועה והתאוצה."
         },
         {
-          "what": "כותבים משוואת מקום לירידה",
-          "why": "בשיא המהירות אפס, והתאוצה קבועה",
-          "tex": "H = \\tfrac{1}{2} a t_2^2"
+          "what": "משוואת המקום לירידה",
+          "why": "הראשית בשיא, כלפי מטה חיובי. בשיא המהירות אפס, והתאוצה קבועה",
+          "tex": "3000 = 0 + 0 \\cdot t_2 + \\tfrac{1}{2} \\cdot 0.05\\,t_2^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "מבודדים את זמן הירידה ומציבים",
-          "why": "$H = 3000\\,\\text{m}$ מסעיף ג ו-$a = 0.05\\,\\text{m/s}^2$",
-          "tex": "t_2 = \\sqrt{\\frac{2 \\cdot 3000}{0.05}} = \\sqrt{120000} \\approx 346.4\\,\\text{s}"
+          "what": "מבודדים את ריבוע הזמן",
+          "why": "מכפילים בשתיים ומחלקים בתאוצה",
+          "tex": "t_2^2 = \\frac{2 \\cdot 3000}{0.05} = 120000"
+        },
+        {
+          "what": "מוציאים שורש",
+          "why": "זמן הוא חיובי",
+          "tex": "t_2 = \\sqrt{120000} \\approx 346.4\\,\\text{s}"
         },
         {
           "what": "מוסיפים את זמן העלייה",
-          "why": "השאלה שואלת כמה זמן מהשילוח, לא מהשיא",
+          "why": "השאלה שואלת כמה זמן מהשיגור, ולא מהשיא",
           "tex": "t = 30 + 346.4 = 376.4\\,\\text{s}"
         }
       ],
@@ -154,101 +161,92 @@
       "keyAnswer": "376.4 s"
     },
     {
-      "label": "ה1",
-      "question": "בתוך הרקטה תלוי גוף של $0.5\\,\\text{kg}$ על מאזני קפיץ (דינמומטר). מה מורה הדינמומטר ב-$10$ השניות הראשונות?",
+      "label": "ה",
+      "question": "בתוך הרקטה תלוי על מאזני קפיץ (דינמומטר) גוף שמסתו $0.5\\,\\text{kg}$. מה מראה הדינמומטר: בעשר השניות הראשונות, בעשרים השניות שאחרי שהדלק נגמר, ובזמן הירידה עם מנוע העזר?",
       "answer": {
-        "type": "number",
-        "value": 15.0,
-        "unit": "N"
+        "type": "multi",
+        "items": [
+          {
+            "label": "בעשר השניות הראשונות",
+            "value": 15.0,
+            "unit": "N"
+          },
+          {
+            "label": "בעשרים השניות שאחרי שהדלק נגמר",
+            "value": 0.0,
+            "unit": "N"
+          },
+          {
+            "label": "בזמן הירידה עם מנוע העזר",
+            "value": 4.975,
+            "unit": "N"
+          }
+        ]
       },
       "skills": [
         "fbd",
+        "signs",
         "principle",
-        "signs"
+        "algebra"
       ],
       "solution": [
         {
-          "explain": "על הגוף פועלים שני כוחות: הכובד כלפי מטה והדינמומטר כלפי מעלה. הגוף נע יחד עם הרקטה, ולכן יש לו אותה תאוצה."
+          "explain": "הגוף נע יחד עם הרקטה, ולכן יש לו אותה תאוצה. על הגוף פועלים שני כוחות: הכובד כלפי מטה, והדינמומטר כלפי מעלה. הדינמומטר מראה את הכוח שהוא מפעיל. בכל שלב בונים משוואת כוחות לגוף."
         },
         {
-          "what": "מוצאים את תאוצת הרקטה בשלב הזה",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" role=\"img\" aria-label=\"תרשים כוחות על הגוף התלוי: כוח הדינמומטר T כלפי מעלה וכוח הכובד mg כלפי מטה. תאוצה כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"34\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"22\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"246\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"270\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">תאוצה כלפי מעלה</text>\n</svg>\n",
+          "caption": "שלב ראשון: תרשים הכוחות על הגוף (התאוצה כלפי מעלה)"
+        },
+        {
+          "what": "התאוצה בשלב הראשון",
           "why": "השיפוע של הקטע הראשון בגרף. הוא חיובי, כלומר התאוצה כלפי מעלה",
-          "tex": "a = \\frac{200}{10} = 20\\,\\text{m/s}^2"
+          "tex": "a_1 = \\frac{200 - 0}{10} = 20\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         },
         {
-          "what": "כותבים את החוק השני, כיוון חיובי כלפי מעלה",
-          "why": "הדינמומטר מושך מעלה, הכובד מושך מטה",
-          "tex": "T - mg = ma"
+          "what": "משוואת כוחות, כלפי מעלה חיובי",
+          "why": "בוחרים את כיוון התאוצה כחיובי. בכיוון החיובי פועל כוח הדינמומטר, ונגדו פועל הכובד",
+          "tex": "T_1 - mg = m a_1",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "מבודדים ומציבים",
-          "why": "הדינמומטר מורה את הכוח $T$",
-          "tex": "T = m(g + a) = 0.5 \\cdot (10 + 20) = 15\\,\\text{N}"
-        }
-      ],
-      "finalAnswer": "$15\\,\\text{N}$",
-      "keyAnswer": "15 N"
-    },
-    {
-      "label": "ה2",
-      "question": "מה מורה הדינמומטר ב-$20$ השניות שאחרי שהדלק נגמר?",
-      "answer": {
-        "type": "number",
-        "value": 0.0,
-        "unit": "N"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
-        {
-          "explain": "אחרי הכיבוי הרקטה נעה רק בהשפעת הכובד, כלומר בנפילה חופשית, גם כשהיא עדיין עולה."
+          "what": "מבודדים את הכוח",
+          "why": "מעבירים את הכובד לאגף השני ומוציאים את המסה כגורם משותף",
+          "tex": "T_1 = mg + ma_1 = m(g + a_1) = 0.5 \\cdot (10 + 20) = 15\\,\\text{N}"
         },
         {
-          "what": "התאוצה בשלב הזה",
-          "why": "השיפוע מ-$10$ עד $30$ שניות",
-          "tex": "a = -10\\,\\text{m/s}^2 = -g"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" role=\"img\" aria-label=\"תרשים כוחות על הגוף בנפילה חופשית: רק כוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"246\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"270\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הדינמומטר לא מושך</text>\n</svg>\n",
+          "caption": "שלב שני: תרשים הכוחות על הגוף (נפילה חופשית)"
         },
         {
-          "what": "מציבים בחוק השני",
-          "why": "כשהתאוצה היא בדיוק $-g$, הכובד לבדו מספיק כדי לתת אותה, והדינמומטר לא צריך למשוך",
-          "tex": "T = m(g + a) = 0.5 \\cdot (10 - 10) = 0"
-        }
-      ],
-      "finalAnswer": "$0$ (מצב של חוסר משקל)",
-      "keyAnswer": "0"
-    },
-    {
-      "label": "ה3",
-      "question": "מה מורה הדינמומטר בזמן הירידה עם מנוע-העזר?",
-      "answer": {
-        "type": "number",
-        "value": 4.975,
-        "unit": "N"
-      },
-      "skills": [
-        "fbd",
-        "principle",
-        "signs"
-      ],
-      "solution": [
-        {
-          "explain": "בירידה הרקטה מאיצה כלפי מטה ב-$0.05\\,\\text{m/s}^2$ בלבד, פחות מ-$g$. לכן הדינמומטר צריך למשוך קצת פחות ממשקל הגוף."
+          "what": "התאוצה בשלב השני",
+          "why": "השיפוע מעשר עד שלושים שניות. הרקטה עדיין עולה, אבל מאטה",
+          "tex": "a_2 = \\frac{0 - 200}{30 - 10} = -10\\,\\text{m/s}^2 = -g"
         },
         {
-          "what": "כותבים את החוק השני, כיוון חיובי כלפי מטה",
-          "why": "התאוצה כלפי מטה, ולכן נוח לבחור את מטה כחיובי",
-          "tex": "mg - T = ma"
+          "what": "משוואת כוחות, כלפי מעלה חיובי",
+          "why": "אותה משוואה כמו בשלב הראשון. התאוצה שלילית כי היא נגד הכיוון החיובי",
+          "tex": "T_2 - mg = m a_2 \\;\\Rightarrow\\; T_2 = m(g + a_2) = 0.5 \\cdot (10 - 10) = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" role=\"img\" aria-label=\"תרשים כוחות על הגוף התלוי: כוח הדינמומטר T כלפי מעלה וכוח הכובד mg כלפי מטה. תאוצה קטנה כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"59\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"47\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"246\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"270\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">תאוצה קטנה כלפי מטה</text>\n</svg>\n",
+          "caption": "שלב שלישי: תרשים הכוחות על הגוף (התאוצה כלפי מטה)"
+        },
+        {
+          "what": "משוואת כוחות, כלפי מטה חיובי",
+          "why": "בירידה התאוצה כלפי מטה, ולכן נוח לבחור את מטה כחיובי. בכיוון החיובי פועל הכובד, ונגדו פועל הדינמומטר",
+          "tex": "mg - T_3 = m a_3",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
           "what": "מבודדים ומציבים",
-          "why": "$a = 0.05\\,\\text{m/s}^2$",
-          "tex": "T = m(g - a) = 0.5 \\cdot (10 - 0.05) = 4.975\\,\\text{N}"
+          "why": "מעבירים את הכוח לאגף אחד ומוציאים את המסה כגורם משותף",
+          "tex": "T_3 = m(g - a_3) = 0.5 \\cdot (10 - 0.05) = 4.975\\,\\text{N}"
         }
       ],
-      "finalAnswer": "$4.975\\,\\text{N}$",
-      "keyAnswer": "4.975 N"
+      "finalAnswer": "$15\\,\\text{N}$, אחר כך $0$ (חוסר משקל), ובירידה $4.975\\,\\text{N}$",
+      "keyAnswer": "15 N ; 0 ; 4.975 N"
     }
   ]
 }
