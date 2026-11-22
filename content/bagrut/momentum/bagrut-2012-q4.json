@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בתרשים א מוצגת מסילה חלקה $ABCD$. קרונית 1 שמסתה $m_1 = 2\\,\\text{kg}$ נעה ימינה על קטע המסילה האופקי $AB$ במהירות שגודלה $v_1$. קרונית 1 מתנגשת התנגשות מצח אלסטית (לחלוטין) בקרונית 2, שנמצאת במנוחה על קטע $AB$ של המסילה. הנח שתרשים ב מתאר את הכוח $F$ שהפעילה קרונית 1 על קרונית 2 במהלך ההתנגשות, כפונקציה של הזמן.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף א התלמיד בוחר מתוך ארבע אפשרויות. בסעיף ד יש בפתרון ציור של שתי העקומות.\nמה לבדוק: רק לאשר.",
+  "stem": "תרשים א מראה מסילה חלקה $ABCD$. קרונית 1, שמסתה $m_1 = 2\\,\\text{kg}$, נוסעת ימינה על הקטע האופקי $AB$ במהירות $v_1$. היא מתנגשת חזיתית, התנגשות אלסטית, בקרונית 2 שעומדת על הקטע $AB$. תרשים ב מראה את הכוח $F$ שקרונית 1 הפעילה על קרונית 2 בזמן ההתנגשות, כפונקציה של הזמן.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2012-q4.svg",
@@ -32,9 +32,16 @@
   "parts": [
     {
       "label": "א",
-      "question": "איזה גודל פיזיקלי מייצג השטח הכלוא בין העקומה שבתרשים ב לבין ציר הזמן?",
+      "question": "איזה גודל פיזיקלי מייצג השטח שבין העקומה בתרשים ב לציר הזמן?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "המתקף שקרונית 1 הפעילה על קרונית 2",
+          "העבודה שקרונית 1 עשתה על קרונית 2",
+          "התאוצה של קרונית 2",
+          "האנרגיה הקינטית של קרונית 2"
+        ],
+        "correct": 0
       },
       "skills": [
         "graph",
@@ -43,8 +50,9 @@
       "solution": [
         {
           "what": "שטח מתחת לגרף כוח-זמן",
-          "why": "כוח כפול זמן",
-          "tex": "J = \\Delta p"
+          "why": "בכל פרק זמן קצר השטח הוא כוח כפול זמן, וזה המתקף. השטח כולו הוא המתקף בכל ההתנגשות",
+          "tex": "J = F\\,\\Delta t",
+          "eq": "\\vec J_{\\text{tot}} = \\Delta\\vec p"
         }
       ],
       "finalAnswer": "את המתקף שקרונית 1 הפעילה על קרונית 2",
@@ -52,7 +60,7 @@
     },
     {
       "label": "ב",
-      "question": "אחרי ההתנגשות קרונית 2 נעה ימינה במהירות $u_2 = 1.25\\,\\text{m/s}$. חשב את המסה $m_2$ של קרונית 2.",
+      "question": "אחרי ההתנגשות קרונית 2 נוסעת ימינה במהירות $u_2 = 1.25\\,\\text{m/s}$. מה המסה $m_2$ של קרונית 2?",
       "answer": {
         "type": "number",
         "value": 4.0,
@@ -66,13 +74,14 @@
       "solution": [
         {
           "what": "המתקף מהגרף",
-          "why": "שטח משולש: בסיס $10^{-3}\\,\\text{s}$, גובה $10^4\\,\\text{N}$",
+          "why": "השטח של משולש: חצי בסיס כפול גובה. ממירים אלפיות שנייה לשניות",
           "tex": "J = \\tfrac{1}{2} \\cdot 10^{-3} \\cdot 10^{4} = 5\\,\\text{N}\\cdot\\text{s}"
         },
         {
           "what": "שינוי התנע של קרונית 2",
-          "why": "מתחילה ממנוחה",
-          "tex": "5 = m_2 \\cdot 1.25 \\Rightarrow m_2 = 4\\,\\text{kg}"
+          "why": "המתקף שווה לשינוי התנע. הקרונית התחילה ממנוחה",
+          "tex": "5 = m_2 \\cdot 1.25 - 0 \\;\\Rightarrow\\; m_2 = 4\\,\\text{kg}",
+          "eq": "\\vec J_{\\text{tot}} = \\Delta\\vec p"
         }
       ],
       "finalAnswer": "$4\\,\\text{kg}$",
@@ -80,7 +89,7 @@
     },
     {
       "label": "ג",
-      "question": "כתוב שתי משוואות לחישוב המהירות של קרונית 1 לפני ההתנגשות, והצב במשוואות את הערכים המתאימים. אין צורך לפתור את המשוואות.",
+      "question": "כתבו שתי משוואות שמהן אפשר לחשב את המהירות של קרונית 1 לפני ההתנגשות, והציבו בהן את הערכים. אין צורך לפתור.",
       "answer": {
         "type": "open"
       },
@@ -89,22 +98,27 @@
       ],
       "solution": [
         {
+          "explain": "ימינה הוא הכיוון החיובי. מסמנים את המהירות של קרונית 1 אחרי ההתנגשות בסימן משלה."
+        },
+        {
           "what": "שימור תנע",
-          "why": "קרונית 2 במנוחה לפני",
-          "tex": "2v_1 = 2u_1 + 4 \\cdot 1.25"
+          "why": "קרונית 2 עמדה לפני ההתנגשות",
+          "tex": "2\\,v_1 + 0 = 2\\,u_1 + 4 \\cdot 1.25",
+          "eq": "m_A\\vec v_A + m_B\\vec v_B = m_A\\vec u_A + m_B\\vec u_B"
         },
         {
           "what": "התנגשות אלסטית",
-          "why": "המהירות היחסית מתהפכת (או שימור אנרגיה)",
-          "tex": "v_1 - 0 = -(u_1 - 1.25) \\Rightarrow v_1 = -u_1 + 1.25"
+          "why": "מהירות ההתקרבות שווה למהירות ההתרחקות. אפשר גם לכתוב שימור אנרגיה קינטית",
+          "tex": "v_1 - 0 = -(u_1 - 1.25)",
+          "eq": "v_A - v_B = -(u_A - u_B)"
         }
       ],
-      "finalAnswer": "$2v_1 = 2u_1 + 5$ ו-$v_1 = -u_1 + 1.25$",
+      "finalAnswer": "$2v_1 = 2u_1 + 5$ וגם $v_1 = -u_1 + 1.25$",
       "keyAnswer": "2v1=2u1+5 ; v1=−u1+1.25"
     },
     {
       "label": "ד",
-      "question": "העתק את תרשים ב למחברתך. הוסף לתרשים עקומה שמתארת את הכוח שקרונית 2 מפעילה על קרונית 1 במהלך ההתנגשות.",
+      "question": "העתיקו את תרשים ב, והוסיפו לו עקומה של הכוח שקרונית 2 הפעילה על קרונית 1 בזמן ההתנגשות.",
       "answer": {
         "type": "open"
       },
@@ -114,17 +128,22 @@
       ],
       "solution": [
         {
-          "what": "החוק השלישי",
-          "why": "בכל רגע שווה בגודלו והפוך בכיוונו",
-          "tex": "F_{21}(t) = -F_{12}(t)"
+          "what": "החוק השלישי של ניוטון",
+          "why": "בכל רגע הכוח של קרונית 2 על קרונית 1 שווה בגודלו לכוח של קרונית 1 על קרונית 2, ובכיוון הפוך",
+          "tex": "\\vec F_{2,1}(t) = -\\vec F_{1,2}(t)",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף הכוח כפונקציה של הזמן: הכוח של קרונית 1 על קרונית 2 הוא משולש מעל הציר עד עשר בחזקת ארבע ניוטון, והכוח של קרונית 2 על קרונית 1 הוא אותו משולש מתחת לציר\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"70\" y1=\"95\" x2=\"388\" y2=\"95\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"156\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"185.4\" y1=\"91\" x2=\"185.4\" y2=\"99\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"185.4\" y=\"113\" text-anchor=\"middle\">0.5</text>\n<line x1=\"300.8\" y1=\"91\" x2=\"300.8\" y2=\"99\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"300.8\" y=\"113\" text-anchor=\"middle\">1</text>\n<line x1=\"66\" y1=\"49.2\" x2=\"74\" y2=\"49.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"53.2\" text-anchor=\"end\">10⁴</text>\n<line x1=\"66\" y1=\"140.8\" x2=\"74\" y2=\"140.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"144.8\" text-anchor=\"end\">−10⁴</text>\n<text class=\"label\" x=\"386\" y=\"85\" text-anchor=\"end\">t (ms)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">F (N)</text>\n<polyline points=\"70,95 185.4,49.2 300.8,95\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<polyline points=\"70,95 185.4,140.8 300.8,95\" fill=\"none\" stroke=\"var(--d-ask)\" stroke-width=\"2.6\" stroke-linejoin=\"round\" stroke-dasharray=\"6 4\"/>\n<text class=\"label\" x=\"213.1\" y=\"51.5\" text-anchor=\"start\">F₁₂</text>\n<text class=\"label\" x=\"213.1\" y=\"148.5\" text-anchor=\"start\" style=\"fill:var(--d-ask)\">F₂₁</text>\n</svg>\n",
+          "caption": "הגרף עם שתי העקומות"
         }
       ],
-      "finalAnswer": "אותו משולש, מתחת לציר הזמן (עד $-10^4\\,\\text{N}$)",
+      "finalAnswer": "אותו משולש, מתחת לציר הזמן, עד מינוס עשר בחזקת ארבע ניוטון",
       "keyAnswer": null
     },
     {
       "label": "ה",
-      "question": "בשלב מסוים של תנועתה, עולה קרונית 2 בקטע $BC$ של המסילה, נעה לאורכו, וממשיכה לנוע על פני קטע $CD$ של המסילה. איזה מבין הגרפים (1)-(3) מתאר נכון את גודל המהירות של קרונית 2 כפונקציה של הזמן, מהרגע שבו הסתיימה ההתנגשות עד הרגע שבו היא מגיעה לנקודה $D$? נמק.",
+      "question": "בשלב מסוים קרונית 2 עולה בקטע $BC$ וממשיכה לנסוע בקטע $CD$. איזה מהגרפים (1) עד (3) מתאר נכון את גודל המהירות של קרונית 2 כפונקציה של הזמן, מסוף ההתנגשות עד שהיא מגיעה ל-$D$? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -140,19 +159,20 @@
       ],
       "solution": [
         {
-          "what": "על $AB$",
-          "why": "אופקי וחלק: מהירות קבועה",
+          "what": "בקטע הראשון",
+          "why": "הקטע אופקי וחלק, ולכן אין כוח בכיוון התנועה והמהירות קבועה",
           "tex": "v = 1.25\\,\\text{m/s}"
         },
         {
-          "what": "על $BC$",
-          "why": "עלייה: המהירות קטנה בהדרגה (ולא בבת אחת)",
-          "tex": "v\\downarrow"
+          "what": "בעלייה",
+          "why": "רכיב הכובד לאורך המסילה פועל נגד התנועה, ולכן המהירות קטנה בהדרגה, לא בבת אחת",
+          "tex": "a < 0"
         },
         {
-          "what": "על $CD$",
-          "why": "שוב אופקי: מהירות קבועה, נמוכה יותר",
-          "tex": "v = \\text{const}"
+          "what": "בקטע העליון",
+          "why": "שוב קטע אופקי וחלק, ולכן המהירות קבועה, אבל נמוכה יותר כי הקרונית גבוהה יותר",
+          "tex": "\\tfrac{1}{2}mv_{CD}^2 = \\tfrac{1}{2}m \\cdot 1.25^2 - mgh",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "גרף 1",
