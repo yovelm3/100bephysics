@@ -292,8 +292,12 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
         vx, vy = math.sin(t), math.cos(t)
         pts = [(cx + sx_ * hw * ux + sy_ * hh * vx, cy + sx_ * hw * uy + sy_ * hh * vy) for sx_, sy_ in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
         g.poly(pts, fill="var(--d-body)", stroke="var(--d-line)", width=1.5)
-        if body_label:
-            g.text(cx, cy + 5, body_label, color="#ffffff")
+    if body_label:  # next to the body, in the widest gap between the force arrows (a label on the body gets covered)
+        angs = sorted({a % 360 for _, a, _ in forces} | ({(tilt - 90) % 360, (tilt - 45) % 360, (tilt - 135) % 360} if surface == "below" else set())) or [0]
+        gaps = [((angs[(k + 1) % len(angs)] - angs[k]) % 360 or 360, angs[k]) for k in range(len(angs))]
+        gap, start = max(gaps)
+        mid = math.radians(start + gap / 2)
+        g.text(cx + 44 * math.cos(mid), cy - 44 * math.sin(mid) + 6, body_label, cls="label")
     for label, ang, size in forces:
         a = math.radians(ang)
         L = min(24 + 70 * size, h / 2 - 28)  # proportional to the force, but always inside the drawing
