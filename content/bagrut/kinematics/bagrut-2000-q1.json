@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. ‏",
-  "stem": "גובהו של בניין הוא $300\\,\\text{m}$. כדור א' נזרק מרגלי הבניין כלפי מעלה במהירות שגודלה $40\\,\\text{m/s}$. ברגע הזריקה של כדור א', נזרק כדור ב' מגג הבניין כלפי מטה במהירות שגודלה $20\\,\\text{m/s}$. הזנח את השפעת התנגדות האוויר על תנועת הכדורים. הנח שהכדורים אינם מתנגשים, אלא חולפים זה ליד זה. נגדיר ציר $y$ שראשיתו בגובה הקרקע וכיוונו החיובי כלפי מעלה. פתור את הסעיפים רק ביחס לציר הזה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "stem": "גובה בניין הוא $300\\,\\text{m}$. מרגלי הבניין זורקים את כדור א' כלפי מעלה, במהירות שגודלה $40\\,\\text{m/s}$. באותו רגע זורקים את כדור ב' מגג הבניין כלפי מטה, במהירות שגודלה $20\\,\\text{m/s}$. אפשר להזניח את התנגדות האוויר. הכדורים לא מתנגשים, אלא חולפים זה ליד זה. ציר $y$ מתחיל בגובה הקרקע, וכיוונו החיובי כלפי מעלה. פתרו את כל הסעיפים לפי הציר הזה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2000-q1.svg",
@@ -27,12 +27,12 @@
     "מפגש",
     "מהירות יחסית קבועה"
   ],
-  "summary": "כדור עולה וכדור יורד באותו בניין. גובה מרבי, זמן פגיעה, רגע מפגש, ומרחק שקטן בקצב קבוע.",
+  "summary": "כדור עולה וכדור יורד באותו בניין: גובה מרבי, זמן פגיעה, רגע מפגש, ומרחק שקטן בקצב קבוע.",
   "position": 16,
   "parts": [
     {
       "label": "א",
-      "question": "מהו הגובה המרבי מעל הקרקע שאליו יגיע כדור א'?",
+      "question": "מה הגובה המרבי מעל הקרקע שאליו מגיע כדור א'?",
       "answer": {
         "type": "number",
         "value": 80.0,
@@ -44,17 +44,18 @@
       ],
       "solution": [
         {
-          "explain": "בגובה המרבי מהירות כדור א' מתאפסת. משתמשים במשוואה בלי זמן."
+          "explain": "הכיוון החיובי נקבע בשאלה: כלפי מעלה. בגובה המרבי מהירות הכדור מתאפסת. הזמן לא ידוע ולא נשאל, ולכן משתמשים במשוואה בלי זמן."
         },
         {
-          "what": "משוואת מהירות-מקום",
-          "why": "מהירות התחלתית $40$, מהירות סופית אפס, תאוצה $-g$",
-          "tex": "v^2 = v_0^2 - 2g\\,h"
+          "what": "משוואת המהירות בלי זמן",
+          "why": "המהירות ההתחלתית חיובית, כי היא כלפי מעלה. התאוצה היא תאוצת הכובד, ולכן מציבים אותה במקום התאוצה, עם סימן שלילי, כי היא כלפי מטה. בשיא המהירות אפס",
+          "tex": "0^2 = 40^2 + 2 \\cdot (-10)\\,(h - 0)",
+          "eq": "v^2 = v_0^2 + 2a(x - x_0)"
         },
         {
-          "what": "מציבים $v = 0$",
-          "why": "זה הגובה המרבי",
-          "tex": "h = \\frac{v_0^2}{2g} = \\frac{40^2}{20} = 80\\,\\text{m}"
+          "what": "מבודדים את הגובה",
+          "why": "מעבירים אגפים ומחלקים",
+          "tex": "20h = 1600 \\;\\Rightarrow\\; h = 80\\,\\text{m}"
         }
       ],
       "finalAnswer": "$80\\,\\text{m}$",
@@ -62,7 +63,7 @@
     },
     {
       "label": "ב",
-      "question": "כעבור כמה זמן מרגע הזריקה של כדור א' הוא יפגע בקרקע?",
+      "question": "כעבור כמה זמן מרגע הזריקה פוגע כדור א' בקרקע?",
       "answer": {
         "type": "number",
         "value": 8.0,
@@ -75,13 +76,14 @@
       "solution": [
         {
           "what": "משוואת המקום של כדור א'",
-          "why": "יוצא מ-$y = 0$ כלפי מעלה",
-          "tex": "y_A = 40t - 5t^2"
+          "why": "הכדור יוצא מגובה הקרקע, כלפי מעלה, ותאוצת הכובד שלילית",
+          "tex": "y_A = 0 + 40t + \\tfrac{1}{2}(-10)t^2 = 40t - 5t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "מציבים $y_A = 0$",
-          "why": "חוזר לגובה הקרקע. הפתרון $t = 0$ הוא רגע הזריקה",
-          "tex": "t(40 - 5t) = 0 \\Rightarrow t = 8\\,\\text{s}"
+          "what": "מציבים גובה אפס",
+          "why": "הכדור חוזר לקרקע. מוציאים את הזמן כגורם משותף. הפתרון אפס הוא רגע הזריקה",
+          "tex": "0 = t\\,(40 - 5t) \\;\\Rightarrow\\; t = 8\\,\\text{s}"
         }
       ],
       "finalAnswer": "$8\\,\\text{s}$",
@@ -89,7 +91,7 @@
     },
     {
       "label": "ג",
-      "question": "כעבור כמה זמן מרגע הזריקה ייפגשו שני הכדורים (כלומר יימצאו באותו גובה)?",
+      "question": "כעבור כמה זמן מרגע הזריקה נפגשים שני הכדורים, כלומר נמצאים באותו גובה?",
       "answer": {
         "type": "number",
         "value": 5.0,
@@ -102,27 +104,33 @@
       ],
       "solution": [
         {
-          "explain": "כותבים משוואת מקום לכל כדור, באותו ציר, ומשווים."
+          "explain": "כותבים משוואת מקום לכל כדור, לפי אותו ציר, ומשווים ביניהן."
         },
         {
           "what": "משוואת המקום של כדור ב'",
-          "why": "יוצא מ-$y = 300$, ומהירותו כלפי מטה, ולכן שלילית",
-          "tex": "y_B = 300 - 20t - 5t^2"
+          "why": "הכדור יוצא מגובה הגג. המהירות שלו כלפי מטה, ולכן שלילית, וגם התאוצה שלילית",
+          "tex": "y_B = 300 + (-20)t + \\tfrac{1}{2}(-10)t^2 = 300 - 20t - 5t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "משווים",
-          "why": "באותו רגע ובאותו גובה. האיבר $-5t^2$ זהה ומתבטל",
-          "tex": "40t - 5t^2 = 300 - 20t - 5t^2 \\Rightarrow 60t = 300"
+          "what": "משווים את שני המקומות",
+          "why": "במפגש שני הכדורים באותו גובה באותו רגע",
+          "tex": "40t - 5t^2 = 300 - 20t - 5t^2"
         },
         {
-          "what": "פותרים",
-          "why": "מחלקים ב-60",
+          "what": "מצמצמים",
+          "why": "האיבר של ריבוע הזמן זהה בשני האגפים, ולכן מתבטל. מעבירים את האיברים עם הזמן לאגף אחד",
+          "tex": "60t = 300"
+        },
+        {
+          "what": "מחלקים",
+          "why": "משוואה ממעלה ראשונה",
           "tex": "t = 5\\,\\text{s}"
         },
         {
-          "what": "בדיקה: שני הכדורים עדיין באוויר",
-          "why": "מציבים $t = 5$ בשתי המשוואות",
-          "tex": "y_A = 200 - 125 = 75 = 300 - 100 - 125 = y_B \\;\\checkmark",
+          "what": "בדיקה: שני הכדורים באותו גובה ועדיין באוויר",
+          "why": "מציבים את הזמן בשתי המשוואות",
+          "tex": "y_A = 200 - 125 = 75\\,\\text{m},\\qquad y_B = 300 - 100 - 125 = 75\\,\\text{m} \\;\\checkmark",
           "check": true
         }
       ],
@@ -131,7 +139,7 @@
     },
     {
       "label": "ד",
-      "question": "סרטט גרף שמתאר את המרחק בין שני הכדורים כפונקציה של הזמן, מרגע זריקתם עד רגע \"פגישתם\". הסבר.",
+      "question": "שרטטו גרף של המרחק בין שני הכדורים כפונקציה של הזמן, מרגע הזריקה עד רגע המפגש. הסבירו.",
       "answer": {
         "type": "open"
       },
@@ -142,16 +150,20 @@
       "solution": [
         {
           "what": "המרחק בין הכדורים",
-          "why": "התאוצות שוות, ולכן הן מתבטלות בהפרש",
-          "tex": "d = y_B - y_A = 300 - 60t"
+          "why": "מחסירים את שתי משוואות המקום. לשני הכדורים אותה תאוצה, ולכן האיברים של ריבוע הזמן מתבטלים",
+          "tex": "d = y_B - y_A = (300 - 20t - 5t^2) - (40t - 5t^2) = 300 - 60t"
         },
         {
           "what": "צורת הגרף",
-          "why": "קו ישר יורד: הכדורים מתקרבים במהירות יחסית קבועה של $60\\,\\text{m/s}$",
-          "tex": "d(0) = 300,\\quad d(5) = 0"
+          "why": "זה קו ישר יורד: הכדורים מתקרבים זה לזה במהירות קבועה",
+          "tex": "d(0) = 300\\,\\text{m},\\qquad d(5) = 0"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: המרחק בין הכדורים כפונקציה של הזמן. קו ישר יורד מ-300 מטר ברגע אפס, עד אפס אחרי 5 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"145\" y1=\"260\" x2=\"145\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"220\" y1=\"260\" x2=\"220\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"295\" y1=\"260\" x2=\"295\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"370\" y1=\"260\" x2=\"370\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"445\" y1=\"260\" x2=\"445\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"218.8\" x2=\"490\" y2=\"218.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"177.5\" x2=\"490\" y2=\"177.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"136.2\" x2=\"490\" y2=\"136.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"95\" x2=\"490\" y2=\"95\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"53.8\" x2=\"490\" y2=\"53.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"145\" y1=\"256\" x2=\"145\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"145\" y=\"278\" text-anchor=\"middle\">1</text>\n<line x1=\"220\" y1=\"256\" x2=\"220\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"220\" y=\"278\" text-anchor=\"middle\">2</text>\n<line x1=\"295\" y1=\"256\" x2=\"295\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"295\" y=\"278\" text-anchor=\"middle\">3</text>\n<line x1=\"370\" y1=\"256\" x2=\"370\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"370\" y=\"278\" text-anchor=\"middle\">4</text>\n<line x1=\"445\" y1=\"256\" x2=\"445\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"445\" y=\"278\" text-anchor=\"middle\">5</text>\n<line x1=\"66\" y1=\"218.8\" x2=\"74\" y2=\"218.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"222.8\" text-anchor=\"end\">60</text>\n<line x1=\"66\" y1=\"177.5\" x2=\"74\" y2=\"177.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"181.5\" text-anchor=\"end\">120</text>\n<line x1=\"66\" y1=\"136.2\" x2=\"74\" y2=\"136.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"140.2\" text-anchor=\"end\">180</text>\n<line x1=\"66\" y1=\"95\" x2=\"74\" y2=\"95\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"99\" text-anchor=\"end\">240</text>\n<line x1=\"66\" y1=\"53.8\" x2=\"74\" y2=\"53.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"57.8\" text-anchor=\"end\">300</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">d (m)</text>\n<polyline points=\"70,53.8 445,260\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: המרחק בין הכדורים כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "קו ישר מ-$300\\,\\text{m}$ לאפס ב-$5\\,\\text{s}$: לשני הכדורים אותה תאוצה, ולכן המהירות היחסית קבועה",
+      "finalAnswer": "קו ישר מ-$300\\,\\text{m}$ עד אפס אחרי $5\\,\\text{s}$: לשני הכדורים אותה תאוצה, ולכן הם מתקרבים במהירות קבועה",
       "keyAnswer": null
     }
   ]
