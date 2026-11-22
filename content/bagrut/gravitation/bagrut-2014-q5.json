@@ -10,9 +10,9 @@
   "subtopic": "grav-kepler",
   "group": null,
   "difficulty": 4,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית. הנחה שלי.\nמה לבדוק: רק לאשר.",
   "stem": "בשנת 1877 התגלו שני ירחים שנעים סביב מאדים: פובוס ודימוס. זמן המחזור של פובוס סביב מאדים $T_P = 0.3189$ יממות, ורדיוס המסלול שלו $r_P = 9.377 \\times 10^6\\,\\text{m}$. זמן המחזור של דימוס $T_D = 1.262$ יממות.",
   "figure": {
     "type": "svg",

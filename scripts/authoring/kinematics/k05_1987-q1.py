@@ -55,7 +55,9 @@ for part, key in zip(ex["parts"], ["25 m/s", "≈5.2 m/s^2", "30 m"]):
     part["keyAnswer"] = key
     part["question"] = Q[part["label"]]
     part["solution"] = mk._clean(SOL[part["label"]])
-ex["reviewNotes"] = "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבנוסח החדש כתבתי שהכדור מונח על משטח, כדי שיהיה ברור מאיפה הוא נזרק.\nמה לבדוק: רק לאשר."
+ex["status"] = "published" if mk.PUBLISH else "draft"
+ex["needsReview"] = not mk.PUBLISH
+ex["reviewNotes"] = ("פורסם לבקשת הבעלים לפני בדיקה אישית. " if mk.PUBLISH else "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. ") + "הנחה שלי.\nבנוסח החדש כתבתי שהכדור מונח על משטח, כדי שיהיה ברור מאיפה הוא נזרק.\nמה לבדוק: רק לאשר."
 with open(p, "w") as fh:
     json.dump(ex, fh, ensure_ascii=False, indent=2)
     fh.write("\n")

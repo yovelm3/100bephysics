@@ -10,9 +10,9 @@
   "subtopic": "dyn-systems",
   "group": null,
   "difficulty": 3,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית.",
   "stem": "על שולחן חלק עומדת קרונית שמסתה $m = 6\\,\\text{kg}$. הקרונית קשורה בחוט, שעובר על גלגלת בלי חיכוך, למשקולת שמסתה $M = 4\\,\\text{kg}$. כוח אופקי $F = 60\\,\\text{N}$ מושך את הקרונית שמאלה במשך $3$ שניות, ואז מפסיק לפעול.",
   "figure": {
     "type": "svg",

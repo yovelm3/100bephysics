@@ -10,9 +10,9 @@
   "subtopic": "harm-spring",
   "group": null,
   "difficulty": 2,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית. הנחה שלי.\nמה לבדוק: רק לאשר.",
   "stem": "גוף שמסתו $m = 0.4\\,\\text{kg}$ נמצא על מסילה ישרה. הגרף מראה את הכוח השקול על הגוף כפונקציה של ההעתק $x$ ממרכז המסילה. הכוח פועל לאורך המסילה. ברגע $t = 0$ הגוף עומד בנקודה $x = 0.2\\,\\text{m}$.",
   "figure": {
     "type": "svg",

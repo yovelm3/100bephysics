@@ -10,9 +10,9 @@
   "subtopic": "harm-spring",
   "group": null,
   "difficulty": 2,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית. הנחה שלי.\nמה לבדוק: רק לאשר.",
   "stem": "לוח מלבני שמסתו $20\\,\\text{kg}$ מונח על $6$ קפיצים זהים, כמו בתרשים. כשמניחים במרכז הלוח גוף נוסף שמסתו $10\\,\\text{kg}$, הלוח שוקע $10\\,\\text{cm}$.",
   "figure": {
     "type": "svg",

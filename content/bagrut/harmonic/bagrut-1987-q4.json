@@ -10,9 +10,9 @@
   "subtopic": "harm-energy",
   "group": null,
   "difficulty": 2,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית. הנחה שלי.\nמה לבדוק: רק לאשר.",
   "stem": "גוף שמסתו $0.8\\,\\text{kg}$ מחובר לקפיץ, ונע בתנועה הרמונית על משטח אופקי חלק. זמן המחזור שנייה אחת, והאנרגיה הכוללת של המערכת $1\\,\\text{J}$.",
   "figure": {
     "type": "svg",

@@ -10,9 +10,9 @@
   "subtopic": "kin-free-fall",
   "group": null,
   "difficulty": 2,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית.",
   "stem": "אדם עומד על גג בניין וזורק כדור אנכית כלפי מעלה. הגרף מתאר את המיקום האנכי של הכדור כפונקציה של הזמן, מרגע הזריקה ועד הפגיעה בקרקע. בגרף מסומנות הנקודות $A$, $B$, $C$ ו-$D$. אפשר להזניח את התנגדות האוויר.",
   "figure": {
     "type": "svg",

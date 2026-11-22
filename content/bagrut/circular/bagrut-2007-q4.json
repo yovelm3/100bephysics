@@ -10,9 +10,9 @@
   "subtopic": "circ-vertical",
   "group": null,
   "difficulty": 3,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית.",
   "stem": "בתרשים מוצגת מסילה בלי חיכוך, $ABCDEFG$. הקטע $CDEF$ הוא מעגל שרדיוסו $r = 0.4\\,\\text{m}$. הנקודות $C$ ו-$E$ בקצות הקוטר האנכי, והנקודות $D$ ו-$F$ בקצות הקוטר האופקי. הנקודה $A$ גבוהה ב-$1.2\\,\\text{m}$ מהנקודה $C$. גוף שמסתו $0.2\\,\\text{kg}$, וממדיו קטנים בהרבה מרדיוס המעגל, משוחרר ממנוחה בנקודה $A$ ונע לאורך המסילה.",
   "figure": {
     "type": "svg",

@@ -10,9 +10,9 @@
   "subtopic": "en-conservation",
   "group": null,
   "difficulty": 3,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית. הנחה שלי.\nמה לבדוק: רק לאשר.",
   "stem": "לתלמיד יש שני קפיצים קלים: קפיץ א, שהקבוע שלו $K_1 = 100\\,\\text{N/m}$, וקפיץ ב, שהקבוע שלו $K_2 = 50\\,\\text{N/m}$.",
   "figure": {
     "type": "svg",

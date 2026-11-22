@@ -1,25 +1,27 @@
+// Reads the session (for the counts the visitor's track sees) on every request.
+export const instant = false;
+
 import Link from "next/link";
-import { InlineText, SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
+import { createClient } from "@/lib/supabase/server";
 
-// Temporary home page: the approved solution format (1987, question 1, part A).
-// The full landing page is built in stage 3.
-const demo: SolutionStep[] = [
-  {
-    explain: "הכוח נתון לפי זמן, $0.01\\,\\text{s}$, ולכן פותרים בקינמטיקה. קודם מוצאים את התאוצה מהחוק השני של ניוטון, ואחר כך את המהירות ממשוואת המהירות.",
-  },
-  { what: "ממירים מסה לק״ג", why: "הכוח נתון בניוטון, וניוטון מוגדר על ק״ג. בגרמים התאוצה תצא גדולה פי 1000", tex: "m = 400\\,\\text{g} = 0.4\\,\\text{kg}" },
-  { what: "כותבים את החוק השני של ניוטון בכיוון האופקי", why: "הכוח נתון לפי זמן, ולכן עובדים בקינמטיקה. החוק השני מחבר בין הכוח הנתון לתאוצה שצריך למצוא. בכיוון האופקי פועל רק כוח הדחיפה, כי הכובד אנכי", tex: "F = m \\cdot a" },
-  { what: "מבודדים את $a$", why: "זה הנעלם היחיד במשוואה", tex: "a = \\frac{F}{m}" },
-  { what: "מציבים $F = 1000$ ו-$m = 0.4$", why: "שני הנתונים כבר ביחידות הנכונות", tex: "a = \\frac{1000}{0.4}" },
-  { what: "מחלקים", why: "התאוצה עצומה, אבל היא פועלת רק מאית שנייה", tex: "a = 2500\\,\\text{m/s}^2" },
-  { what: "בוחרים את משוואת המהירות בתאוצה קבועה", why: "ידועים התאוצה, הזמן והמהירות ההתחלתית, ומחפשים מהירות. זו המשוואה שמקשרת בדיוק את ארבעתם, בלי מקום", tex: "v = v_0 + a \\cdot t" },
-  { what: "מציבים $v_0 = 0$ ו-$t = 0.01$", why: "הכדור מונח לפני הדחיפה, והכוח פועל במשך $0.01\\,\\text{s}$", tex: "v = 0 + 2500 \\cdot 0.01" },
-  { what: "כופלים", why: "זו המהירות ברגע שהכוח מפסיק, כלומר מהירות היציאה. מעכשיו היא קבועה בכיוון האופקי", tex: "v = 25\\,\\text{m/s}" },
-];
+type Row = { topic_id: string; topic_name: string; exercise_count: number };
 
-export default function Home() {
+// Home page. No sample question or solution here (owner's decision): the catalog is one click away, locked.
+// New marketing texts are proposed to the owner before they are written here.
+export default async function Home() {
+  const supabase = await createClient();
+  const { data } = supabase ? await supabase.rpc("catalog", { p_track: "highschool" }) : { data: [] };
+  const counts = new Map<string, { name: string; n: number }>();
+  for (const r of (data ?? []) as Row[]) {
+    const c = counts.get(r.topic_id) ?? { name: r.topic_name, n: 0 };
+    c.n += r.exercise_count;
+    counts.set(r.topic_id, c);
+  }
+  const topics = [...counts.values()];
+  const total = topics.reduce((n, t) => n + t.n, 0);
+
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-4 py-10">
+    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-10 px-4 py-10">
       <header className="flex flex-col items-center gap-4 text-center">
         <h1 className="max-w-[18ch] text-4xl leading-tight font-extrabold text-balance md:text-5xl">
           מאגר אחד, כל הנושאים, ותוכנית <span className="text-accent">שמכירה אותך.</span>
@@ -29,23 +31,28 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/signup" className="rounded-xl bg-cta px-6 py-3 text-lg font-bold text-on-cta">להרשמה</Link>
-          <Link href="/subscribe" className="rounded-xl border-2 border-accent px-6 py-3 text-lg font-bold">פרטים על המנוי</Link>
+          <Link href="/practice" className="rounded-xl border-2 border-accent px-6 py-3 text-lg font-bold">למאגר השאלות</Link>
         </div>
       </header>
 
-      <section className="flex flex-col gap-4">
-        <p className="text-sm font-bold text-muted">דוגמה לפורמט הפתרון · בגרות <span className="ltr">1987</span>, שאלה <span className="ltr">1</span>, סעיף א</p>
-        <p className="font-semibold">
-          <InlineText text="מה מהירות היציאה של הכדור?" />
-        </p>
-        <SolutionSteps steps={demo} />
-        <p className="flex justify-between border-t border-line pt-3 font-bold">
-          <span>תשובה סופית</span>
-          <span className="ltr">25 m/s</span>
-        </p>
-      </section>
+      {total > 0 && (
+        <section className="flex flex-col gap-4" aria-labelledby="pool">
+          <h2 id="pool" className="text-center text-2xl font-bold">
+            <span className="ltr">{total}</span> שאלות בגרות במכניקה, עם פתרון מלא לכל סעיף
+          </h2>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {topics.map((t) => (
+              <li key={t.name}>
+                <Link href="/practice" className="flex min-h-11 items-center justify-between gap-3 rounded-2xl border border-line bg-surface px-5 py-4 hover:border-accent">
+                  <span className="font-bold text-accent">{t.name}</span>
+                  <span className="text-sm text-muted"><span className="ltr">{t.n}</span> שאלות</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-      <p className="text-center text-sm text-muted">האתר בבנייה. בקרוב: מאגר התרגילים במכניקה.</p>
     </main>
   );
 }

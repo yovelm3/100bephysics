@@ -29,6 +29,7 @@ export async function SiteHeader() {
             </>
           ) : (
             <>
+              <Link href="/practice" className="text-on-accent hover:underline">המאגר</Link>
               <Link href="/login" className="text-on-accent hover:underline">התחברות</Link>
               <Link href="/signup" className="rounded-lg bg-cta px-3 py-1.5 text-on-cta">הרשמה</Link>
             </>

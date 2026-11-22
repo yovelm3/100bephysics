@@ -10,9 +10,9 @@
   "subtopic": "kin-graphs",
   "group": null,
   "difficulty": 3,
-  "status": "draft",
-  "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
+  "status": "published",
+  "needsReview": false,
+  "reviewNotes": "פורסם לבקשת הבעלים לפני בדיקה אישית.",
   "stem": "ברגע $t = 0$ גוף מתחיל לנוע ימינה לאורך קו ישר. הגרף מתאר את מהירות הגוף כפונקציה של הזמן.",
   "figure": {
     "type": "svg",

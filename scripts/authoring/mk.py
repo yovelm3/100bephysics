@@ -121,6 +121,11 @@ def _clean(v):
     return v
 
 
+# The owner asked to put the site to work with all the questions (2026-11-22): every question is published,
+# and the review notes stay on the exercise for the owner to go through later (/admin/review, "published").
+PUBLISH = True
+
+
 def E(id, year, label, topic, sub, diff, stem, parts, concepts, summary, note=None, fig=None, alt="", review="", position=None):
     ex = {
         "id": id,
@@ -131,9 +136,9 @@ def E(id, year, label, topic, sub, diff, stem, parts, concepts, summary, note=No
         "subtopic": sub,
         "group": None,
         "difficulty": diff,
-        "status": "draft",
-        "needsReview": True,
-        "reviewNotes": ("טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. " + review).strip(),
+        "status": "published" if PUBLISH else "draft",
+        "needsReview": not PUBLISH,
+        "reviewNotes": (("פורסם לבקשת הבעלים לפני בדיקה אישית. " if PUBLISH else "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. ") + review).strip(),
         "stem": stem,
         "figure": None,
         "authorNote": note,
