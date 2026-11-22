@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "גוף מחליק, ממצב של מנוחה, במורד מדרון שזווית שיפועו $\\alpha$. בהגיעו לתחתית המדרון הוא מתנגש התנגשות אלסטית בקיר שנטוי בזווית $90^\\circ$ למדרון, ועולה שוב.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבמקור סעיף א הוא (1) ו-(2), וכך גם אצלנו. בסעיף א(2) התלמיד בוחר את הביטוי הנכון מתוך ארבעה.\nמה לבדוק: רק לאשר.",
+  "stem": "גוף יוצא ממנוחה ומחליק במורד מדרון בזווית $\\alpha$. בתחתית המדרון הוא מתנגש התנגשות אלסטית בקיר שניצב למדרון, ועולה בחזרה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1983-q1.svg",
@@ -31,7 +31,7 @@
   "parts": [
     {
       "label": "א1",
-      "question": "מהו היחס בין זמן הירידה לזמן העלייה (מרגע ההתנגשות ועד רגע העצירה), כאשר המדרון חלק?",
+      "question": "מה היחס בין זמן הירידה לזמן העלייה (מרגע ההתנגשות עד שהגוף נעצר), כשהמדרון חלק?",
       "answer": {
         "type": "number",
         "value": 1.0,
@@ -42,19 +42,24 @@
       ],
       "solution": [
         {
-          "what": "התנגשות אלסטית בקיר",
-          "why": "גודל המהירות לא משתנה, רק הכיוון",
-          "tex": "v' = v"
+          "explain": "בכל שלב בוחרים את כיוון התנועה כחיובי. השאלה לא קבעה כיוון."
         },
         {
-          "what": "התאוצה",
-          "why": "בלי חיכוך, אותה תאוצה בירידה ובעלייה",
-          "tex": "a = g\\sin\\alpha"
+          "what": "התנגשות אלסטית בקיר",
+          "why": "הקיר לא זז, ולכן בהתנגשות אלסטית גודל המהירות לא משתנה, רק הכיוון",
+          "tex": "u = v"
+        },
+        {
+          "what": "משוואת כוחות לאורך המדרון",
+          "why": "בלי חיכוך, הכוח היחיד לאורך המדרון הוא רכיב הכובד. מחלקים במסה",
+          "tex": "mg\\sin\\alpha = ma \\;\\Rightarrow\\; a = g\\sin\\alpha",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
           "what": "הזמנים",
-          "why": "מאפס עד $v$ ומ-$v$ עד אפס באותה תאוצה",
-          "tex": "t_\\downarrow = t_\\uparrow = \\frac{v}{a} \\Rightarrow \\frac{t_\\downarrow}{t_\\uparrow} = 1"
+          "why": "בירידה המהירות גדלה מאפס ל-v, ובעלייה קטנה מ-v לאפס, באותו גודל של תאוצה",
+          "tex": "t_\\downarrow = \\frac{v}{a} = t_\\uparrow \\;\\Rightarrow\\; \\frac{t_\\downarrow}{t_\\uparrow} = 1",
+          "eq": "v = v_0 + at"
         }
       ],
       "finalAnswer": "$1$",
@@ -62,9 +67,16 @@
     },
     {
       "label": "א2",
-      "question": "מהו היחס, כאשר מקדם החיכוך בין הגוף למדרון הוא $\\mu$?",
+      "question": "מה היחס כשמקדם החיכוך בין הגוף למדרון הוא $\\mu$?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}$",
+          "$\\frac{\\sin\\alpha - \\mu\\cos\\alpha}{\\sin\\alpha + \\mu\\cos\\alpha}$",
+          "$\\sqrt{\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}}$",
+          "$1$"
+        ],
+        "correct": 0
       },
       "skills": [
         "fbd",
@@ -73,19 +85,46 @@
       ],
       "solution": [
         {
-          "what": "תאוצות",
-          "why": "החיכוך נגד התנועה בשני הכיוונים",
-          "tex": "a_\\downarrow = g(\\sin\\alpha - \\mu\\cos\\alpha),\\quad a_\\uparrow = g(\\sin\\alpha + \\mu\\cos\\alpha)"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות בירידה: כוח הכובד, הכוח הנורמלי ניצב למדרון, וחיכוך קינטי במעלה המדרון, נגד התנועה. הכיוון החיובי במורד\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"69.1\" y1=\"94.1\" x2=\"328.9\" y2=\"244.1\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"77.8\" y1=\"99.1\" x2=\"67.2\" y2=\"103.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"95.1\" y1=\"109.1\" x2=\"84.5\" y2=\"113.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"112.4\" y1=\"119.1\" x2=\"101.8\" y2=\"123.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"129.7\" y1=\"129.1\" x2=\"119.2\" y2=\"133.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"147\" y1=\"139.1\" x2=\"136.5\" y2=\"143.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"164.4\" y1=\"149.1\" x2=\"153.8\" y2=\"153.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.7\" y1=\"159.1\" x2=\"171.1\" y2=\"163.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199\" y1=\"169.1\" x2=\"188.4\" y2=\"173.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"216.3\" y1=\"179.1\" x2=\"205.8\" y2=\"183.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"233.6\" y1=\"189.1\" x2=\"223.1\" y2=\"193.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"251\" y1=\"199.1\" x2=\"240.4\" y2=\"203.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"268.3\" y1=\"209.1\" x2=\"257.7\" y2=\"213.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"285.6\" y1=\"219.1\" x2=\"275\" y2=\"223.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"302.9\" y1=\"229.1\" x2=\"292.4\" y2=\"233.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"320.2\" y1=\"239.1\" x2=\"309.7\" y2=\"243.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"195.3,119.5 243.7,147.5 224.7,180.5 176.3,152.5\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"253.5\" y2=\"74.7\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"262.5\" y=\"65.1\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"165\" y2=\"124\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"149.4\" y=\"121\" text-anchor=\"middle\">fₖ</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"48.7\" y1=\"232\" x2=\"83.3\" y2=\"252\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"93.7\" y=\"252\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">יורד</text>\n</svg>\n",
+          "caption": "בירידה: תרשים הכוחות על הגוף"
+        },
+        {
+          "what": "משוואת כוחות בירידה",
+          "why": "בכיוון החיובי, במורד, רכיב הכובד. נגדו החיכוך",
+          "tex": "mg\\sin\\alpha - f_k = m\\,a_\\downarrow",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מציבים את החיכוך ומחלקים במסה",
+          "why": "הכוח הנורמלי מאזן את רכיב הכובד שבניצב למדרון",
+          "tex": "f_k = \\mu N = \\mu mg\\cos\\alpha \\;\\Rightarrow\\; a_\\downarrow = g(\\sin\\alpha - \\mu\\cos\\alpha)",
+          "eq": "f_k = \\mu_k N"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות בעלייה: כוח הכובד, הכוח הנורמלי, וחיכוך קינטי במורד המדרון, נגד התנועה. הכיוון החיובי במעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"69.1\" y1=\"94.1\" x2=\"328.9\" y2=\"244.1\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"77.8\" y1=\"99.1\" x2=\"67.2\" y2=\"103.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"95.1\" y1=\"109.1\" x2=\"84.5\" y2=\"113.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"112.4\" y1=\"119.1\" x2=\"101.8\" y2=\"123.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"129.7\" y1=\"129.1\" x2=\"119.2\" y2=\"133.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"147\" y1=\"139.1\" x2=\"136.5\" y2=\"143.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"164.4\" y1=\"149.1\" x2=\"153.8\" y2=\"153.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.7\" y1=\"159.1\" x2=\"171.1\" y2=\"163.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199\" y1=\"169.1\" x2=\"188.4\" y2=\"173.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"216.3\" y1=\"179.1\" x2=\"205.8\" y2=\"183.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"233.6\" y1=\"189.1\" x2=\"223.1\" y2=\"193.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"251\" y1=\"199.1\" x2=\"240.4\" y2=\"203.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"268.3\" y1=\"209.1\" x2=\"257.7\" y2=\"213.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"285.6\" y1=\"219.1\" x2=\"275\" y2=\"223.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"302.9\" y1=\"229.1\" x2=\"292.4\" y2=\"233.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"320.2\" y1=\"239.1\" x2=\"309.7\" y2=\"243.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"195.3,119.5 243.7,147.5 224.7,180.5 176.3,152.5\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"253.5\" y2=\"74.7\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"262.5\" y=\"65.1\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"255\" y2=\"176\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"270.6\" y=\"191\" text-anchor=\"middle\">fₖ</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"83.3\" y1=\"252\" x2=\"48.7\" y2=\"232\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"38.3\" y=\"220\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">עולה</text>\n</svg>\n",
+          "caption": "בעלייה: תרשים הכוחות על הגוף"
+        },
+        {
+          "what": "משוואת כוחות בעלייה",
+          "why": "עכשיו הכיוון החיובי במעלה. בכיוון הזה לא פועל אף כוח. נגדו רכיב הכובד והחיכוך",
+          "tex": "0 - mg\\sin\\alpha - f_k = m\\,a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מציבים את החיכוך ומחלקים במסה",
+          "why": "גודל ההאטה בעלייה",
+          "tex": "|a_\\uparrow| = g(\\sin\\alpha + \\mu\\cos\\alpha)"
         },
         {
           "what": "הזמנים",
-          "why": "הגוף מגיע לקיר במהירות $v$ ויוצא ממנו ב-$v$",
-          "tex": "t_\\downarrow = \\frac{v}{a_\\downarrow},\\quad t_\\uparrow = \\frac{v}{a_\\uparrow}"
+          "why": "הגוף מגיע לקיר במהירות v, ויוצא ממנו באותה מהירות",
+          "tex": "t_\\downarrow = \\frac{v}{a_\\downarrow},\\qquad t_\\uparrow = \\frac{v}{|a_\\uparrow|}",
+          "eq": "v = v_0 + at"
         },
         {
           "what": "היחס",
-          "why": "v מתבטל",
-          "tex": "\\frac{t_\\downarrow}{t_\\uparrow} = \\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}"
+          "why": "המהירות מצטמצמת, וגם תאוצת הכובד",
+          "tex": "\\frac{t_\\downarrow}{t_\\uparrow} = \\frac{|a_\\uparrow|}{a_\\downarrow} = \\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}"
         }
       ],
       "finalAnswer": "$\\frac{\\sin\\alpha + \\mu\\cos\\alpha}{\\sin\\alpha - \\mu\\cos\\alpha}$",
@@ -93,7 +132,7 @@
     },
     {
       "label": "ב",
-      "question": "הראה כי התשובה בסעיף א1 היא מקרה פרטי של התשובה בסעיף א2.",
+      "question": "הראו שהתשובה בסעיף א1 היא מקרה פרטי של התשובה בסעיף א2.",
       "answer": {
         "type": "open"
       },
@@ -102,12 +141,12 @@
       ],
       "solution": [
         {
-          "what": "מציבים $\\mu = 0$",
-          "why": "החיכוך נעלם",
-          "tex": "\\frac{\\sin\\alpha}{\\sin\\alpha} = 1"
+          "what": "מציבים מקדם חיכוך אפס",
+          "why": "בלי חיכוך האיברים עם מקדם החיכוך נעלמים",
+          "tex": "\\mu = 0:\\quad \\frac{\\sin\\alpha + 0}{\\sin\\alpha - 0} = 1"
         }
       ],
-      "finalAnswer": "ב-$\\mu = 0$ היחס הוא $1$",
+      "finalAnswer": "כשאין חיכוך היחס הוא $1$",
       "keyAnswer": null
     }
   ]
