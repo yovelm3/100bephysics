@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב במקור מבקש ארבע מהירויות. חילקתי לב1-ב4.",
-  "stem": "האסטרונאוטיות אליס וקורל נחתו על כוכב-לכת, וערכו שם ניסוי בנפילה חופשית. הן שחררו גוף מגובה מסוים מעל פני הכוכב ורשמו את מקומו האנכי ביחס לציר $y$, שכיוונו החיובי כלפי מטה, כפונקציה של הזמן $t$. מהירות הגוף ברגע $t = 0$ אינה בהכרח אפס. תוצאות הניסוי מוצגות בטבלה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ב הוא סעיף אחד, כמו במקור, עם ארבע תיבות.\nמה לבדוק: רק לאשר.",
+  "stem": "האסטרונאוטיות אליס וקורל נחתו על כוכב לכת, וערכו שם ניסוי בנפילה חופשית. הן שחררו גוף מגובה מסוים מעל פני הכוכב, ורשמו את המקום האנכי שלו לפי ציר $y$, שכיוונו החיובי כלפי מטה, כפונקציה של הזמן $t$. המהירות של הגוף ברגע $t = 0$ לא בהכרח אפס. התוצאות מוצגות בטבלה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2012-q1.svg",
@@ -33,7 +33,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "העתק את הטבלה למחברתך. חשב בקירוב את מהירות הגוף בזמן $t = 0.24\\,\\text{s}$. פרט את חישוביך, וכתוב את התוצאה במקום המתאים בטבלה.",
+      "question": "העתיקו את הטבלה. חשבו בקירוב את מהירות הגוף ברגע $t = 0.24\\,\\text{s}$, פרטו את החישוב, וכתבו את התוצאה במקום המתאים בטבלה.",
       "answer": {
         "type": "number",
         "value": 6.0625,
@@ -46,25 +46,54 @@
       ],
       "solution": [
         {
-          "explain": "מהירות רגעית בקירוב: ההעתק בין הנקודה שלפני לנקודה שאחרי, חלקי הזמן ביניהן."
+          "explain": "הכיוון החיובי נקבע בשאלה: כלפי מטה. המהירות הרגעית קרובה מאוד למהירות הממוצעת בפרק זמן שהרגע נמצא באמצעו. לכן לוקחים את הנקודה שלפני הרגע ואת הנקודה שאחריו."
         },
         {
-          "what": "הנקודות סביב $0.24\\,\\text{s}$",
-          "why": "$t = 0.16$ ו-$0.32\\,\\text{s}$",
-          "tex": "v(0.24) \\approx \\frac{1.400 - 0.430}{0.32 - 0.16} = \\frac{0.97}{0.16} \\approx 6.06\\,\\text{m/s}"
+          "what": "בוחרים את הנקודות סביב הרגע",
+          "why": "הנקודה שלפניו והנקודה שאחריו בטבלה",
+          "tex": "t = 0.16\\,\\text{s}:\\ y = 0.430\\,\\text{m} \\qquad t = 0.32\\,\\text{s}:\\ y = 1.400\\,\\text{m}"
+        },
+        {
+          "what": "המהירות הממוצעת בפרק הזה",
+          "why": "ההעתק חלקי הזמן",
+          "tex": "v(0.24) \\approx \\frac{1.400 - 0.430}{0.32 - 0.16} = \\frac{0.97}{0.16} \\approx 6.06\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
         }
       ],
       "finalAnswer": "$\\approx 6.06\\,\\text{m/s}$",
       "keyAnswer": "6.06 m/s"
     },
     {
-      "label": "ב1",
-      "question": "חשב את מהירות הגוף בזמן $t = 0.08\\,\\text{s}$, וכתוב את התוצאה בטבלה.",
+      "label": "ב",
+      "question": "חשבו את מהירות הגוף ברגעים $t = 0.08\\,\\text{s}$, $0.16\\,\\text{s}$, $0.32\\,\\text{s}$ ו-$0.4\\,\\text{s}$, וכתבו את התוצאות בטבלה.",
       "answer": {
-        "type": "number",
-        "value": 2.5875,
-        "unit": "m/s",
-        "tolerancePct": 2
+        "type": "multi",
+        "items": [
+          {
+            "label": "$t = 0.08\\,\\text{s}$",
+            "value": 2.5875,
+            "unit": "m/s",
+            "tolerancePct": 2
+          },
+          {
+            "label": "$t = 0.16\\,\\text{s}$",
+            "value": 4.125,
+            "unit": "m/s",
+            "tolerancePct": 2
+          },
+          {
+            "label": "$t = 0.32\\,\\text{s}$",
+            "value": 7.437499999999999,
+            "unit": "m/s",
+            "tolerancePct": 2
+          },
+          {
+            "label": "$t = 0.4\\,\\text{s}$",
+            "value": 9.0,
+            "unit": "m/s",
+            "tolerancePct": 2
+          }
+        ]
       },
       "skills": [
         "graph",
@@ -72,86 +101,65 @@
       ],
       "solution": [
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0$ ו-$0.16\\,\\text{s}$",
-          "tex": "v(0.08) \\approx \\frac{0.430 - 0.016}{0.16} \\approx 2.59\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$\\approx 2.59\\,\\text{m/s}$",
-      "keyAnswer": "2.59 m/s"
-    },
-    {
-      "label": "ב2",
-      "question": "חשב את מהירות הגוף בזמן $t = 0.16\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 4.125,
-        "unit": "m/s",
-        "tolerancePct": 2
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+          "explain": "אותה שיטה כמו בסעיף א: הנקודה שלפני כל רגע והנקודה שאחריו, חלקי שש-עשרה מאיות שנייה."
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.08$ ו-$0.24\\,\\text{s}$",
+          "what": "הרגע הראשון",
+          "why": "הנקודה הראשונה בטבלה והנקודה השלישית",
+          "tex": "v(0.08) \\approx \\frac{0.430 - 0.016}{0.16} \\approx 2.59\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
+        },
+        {
+          "what": "הרגע השני",
+          "why": "אותה שיטה",
           "tex": "v(0.16) \\approx \\frac{0.810 - 0.150}{0.16} \\approx 4.13\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$\\approx 4.13\\,\\text{m/s}$",
-      "keyAnswer": "4.13 m/s"
-    },
-    {
-      "label": "ב3",
-      "question": "חשב את מהירות הגוף בזמן $t = 0.32\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 7.437499999999999,
-        "unit": "m/s",
-        "tolerancePct": 2
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.24$ ו-$0.4\\,\\text{s}$",
+          "what": "הרגע השלישי",
+          "why": "אותה שיטה",
           "tex": "v(0.32) \\approx \\frac{2.000 - 0.810}{0.16} \\approx 7.44\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$\\approx 7.44\\,\\text{m/s}$",
-      "keyAnswer": "7.44 m/s"
-    },
-    {
-      "label": "ב4",
-      "question": "חשב את מהירות הגוף בזמן $t = 0.4\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 9.0,
-        "unit": "m/s",
-        "tolerancePct": 2
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.32$ ו-$0.48\\,\\text{s}$",
+          "what": "הרגע הרביעי",
+          "why": "אותה שיטה",
           "tex": "v(0.4) \\approx \\frac{2.840 - 1.400}{0.16} = 9\\,\\text{m/s}"
+        },
+        {
+          "caption": "הטבלה עם המהירויות",
+          "head": [
+            "$t\\,(\\text{s})$",
+            "$v\\,(\\text{m/s})$"
+          ],
+          "rows": [
+            [
+              "0.08",
+              "2.59"
+            ],
+            [
+              "0.16",
+              "4.13"
+            ],
+            [
+              "0.24",
+              "6.06"
+            ],
+            [
+              "0.32",
+              "7.44"
+            ],
+            [
+              "0.4",
+              "9"
+            ]
+          ]
         }
       ],
-      "finalAnswer": "$9\\,\\text{m/s}$",
-      "keyAnswer": "9 m/s"
+      "finalAnswer": "$\\approx 2.59$, $4.13$, $7.44$ ו-$9\\,\\text{m/s}$",
+      "keyAnswer": "2.59 ; 4.13 ; 7.44 ; 9 m/s"
     },
     {
       "label": "ג",
-      "question": "סרטט דיאגרמת פיזור (נקודות במערכת צירים) של מהירות הגוף כפונקציה של הזמן. הוסף לדיאגרמה קו מגמה.",
+      "question": "שרטטו דיאגרמת פיזור, כלומר נקודות במערכת צירים, של מהירות הגוף כפונקציה של הזמן. הוסיפו קו מגמה.",
       "answer": {
         "type": "open"
       },
@@ -161,13 +169,17 @@
       "solution": [
         {
           "what": "הנקודות",
-          "why": "מסעיפים א ו-ב",
-          "tex": "(0.08, 2.59),\\ (0.16, 4.13),\\ (0.24, 6.06),\\ (0.32, 7.44),\\ (0.4, 9)"
+          "why": "מהטבלה של סעיפים א ו-ב",
+          "tex": "(0.08,\\ 2.59),\\ (0.16,\\ 4.13),\\ (0.24,\\ 6.06),\\ (0.32,\\ 7.44),\\ (0.4,\\ 9)"
         },
         {
           "what": "קו המגמה",
-          "why": "קו ישר אחד שעובר קרוב ככל האפשר לכל הנקודות (לא חייב לעבור דרך כולן)",
+          "why": "קו ישר אחד שעובר קרוב ככל האפשר לכל הנקודות. הוא לא חייב לעבור דרך כולן",
           "tex": "v \\approx 1.0 + 20t"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 310\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: חמש נקודות של מהירות כפונקציה של הזמן, מ-2.59 מטר לשנייה אחרי 0.08 שניות ועד 9 אחרי 0.4 שניות, וקו מגמה ישר שעובר קרוב לכולן\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"143\" y1=\"270\" x2=\"143\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"216.1\" y1=\"270\" x2=\"216.1\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"289.1\" y1=\"270\" x2=\"289.1\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"362.2\" y1=\"270\" x2=\"362.2\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"435.2\" y1=\"270\" x2=\"435.2\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"228.1\" x2=\"490\" y2=\"228.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"186.2\" x2=\"490\" y2=\"186.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"144.3\" x2=\"490\" y2=\"144.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"102.4\" x2=\"490\" y2=\"102.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"60.5\" x2=\"490\" y2=\"60.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"270\" x2=\"508\" y2=\"270\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"270\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"143\" y1=\"266\" x2=\"143\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"143\" y=\"288\" text-anchor=\"middle\">0.08</text>\n<line x1=\"216.1\" y1=\"266\" x2=\"216.1\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"216.1\" y=\"288\" text-anchor=\"middle\">0.16</text>\n<line x1=\"289.1\" y1=\"266\" x2=\"289.1\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"289.1\" y=\"288\" text-anchor=\"middle\">0.24</text>\n<line x1=\"362.2\" y1=\"266\" x2=\"362.2\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"362.2\" y=\"288\" text-anchor=\"middle\">0.32</text>\n<line x1=\"435.2\" y1=\"266\" x2=\"435.2\" y2=\"274\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"435.2\" y=\"288\" text-anchor=\"middle\">0.4</text>\n<line x1=\"66\" y1=\"228.1\" x2=\"74\" y2=\"228.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"232.1\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"186.2\" x2=\"74\" y2=\"186.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"190.2\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"144.3\" x2=\"74\" y2=\"144.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"148.3\" text-anchor=\"end\">6</text>\n<line x1=\"66\" y1=\"102.4\" x2=\"74\" y2=\"102.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"106.4\" text-anchor=\"end\">8</text>\n<line x1=\"66\" y1=\"60.5\" x2=\"74\" y2=\"60.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"64.5\" text-anchor=\"end\">10</text>\n<text class=\"label\" x=\"506\" y=\"260\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">v (m/s)</text>\n<polyline points=\"70,249 480.9,58.8\" fill=\"none\" stroke=\"var(--d-ask)\" stroke-width=\"2.6\" stroke-linejoin=\"round\" stroke-dasharray=\"7 5\"/>\n<circle cx=\"143\" cy=\"215.8\" r=\"5.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"216.1\" cy=\"183.6\" r=\"5.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"289.1\" cy=\"143\" r=\"5.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"362.2\" cy=\"114.2\" r=\"5.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"435.2\" cy=\"81.4\" r=\"5.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"heb\" x=\"471.7\" y=\"85.1\" text-anchor=\"start\" direction=\"rtl\">קו מגמה</text>\n</svg>\n",
+          "caption": "הדיאגרמה: הנקודות וקו המגמה"
         }
       ],
       "finalAnswer": "נקודות כמעט על קו ישר עולה",
@@ -175,7 +187,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב את השיפוע של קו המגמה. מה מייצג גודל זה? הסבר.",
+      "question": "מה השיפוע של קו המגמה? מה מייצג הגודל הזה? הסבירו.",
       "answer": {
         "type": "number",
         "value": 20.171875,
@@ -189,12 +201,13 @@
       "solution": [
         {
           "what": "שיפוע בין שתי נקודות רחוקות על הקו",
-          "why": "נקודות רחוקות נותנות שיפוע מדויק יותר",
-          "tex": "\\frac{9 - 2.59}{0.4 - 0.08} \\approx 20\\,\\text{m/s}^2"
+          "why": "לוקחים נקודות רחוקות זו מזו, כי אז טעות קטנה בקריאה משפיעה פחות",
+          "tex": "\\frac{9 - 2.59}{0.4 - 0.08} \\approx 20\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         },
         {
           "what": "המשמעות",
-          "why": "שיפוע של גרף מהירות-זמן הוא התאוצה. בנפילה חופשית זו תאוצת הנפילה בכוכב",
+          "why": "השיפוע של גרף מהירות-זמן הוא התאוצה. בנפילה חופשית זו תאוצת הנפילה בכוכב",
           "tex": "g^* \\approx 20\\,\\text{m/s}^2"
         }
       ],
@@ -203,7 +216,7 @@
     },
     {
       "label": "ה",
-      "question": "נתון כי רדיוס הכוכב שווה לרדיוס כדור הארץ. היעזר בתוצאות הניסוי וחשב את היחס בין מסת כוכב הלכת לבין מסת כדור הארץ.",
+      "question": "נתון שהרדיוס של כוכב הלכת שווה לרדיוס של כדור הארץ. היעזרו בתוצאות הניסוי, וחשבו את היחס בין המסה של כוכב הלכת למסה של כדור הארץ.",
       "answer": {
         "type": "number",
         "value": 2.0,
@@ -216,13 +229,19 @@
       "solution": [
         {
           "what": "תאוצת הנפילה על פני כוכב",
-          "why": "מחוק הכבידה",
-          "tex": "g = \\frac{GM}{R^2}"
+          "why": "לפי חוק הכבידה, היא תלויה במסה של הכוכב וברדיוס שלו",
+          "tex": "g^* = \\frac{GM}{r^2}",
+          "eq": "g^* = \\frac{GM}{r^2}"
         },
         {
-          "what": "יחס",
-          "why": "הרדיוסים שווים ומתבטלים",
-          "tex": "\\frac{M^*}{M_E} = \\frac{g^*}{g} = \\frac{20}{10} = 2"
+          "what": "כותבים את היחס",
+          "why": "מחלקים את הביטוי של כוכב הלכת בביטוי של כדור הארץ. הקבוע והרדיוסים השווים מתבטלים",
+          "tex": "\\frac{g^*}{g} = \\frac{GM^*/r^2}{GM_E/r^2} = \\frac{M^*}{M_E}"
+        },
+        {
+          "what": "מציבים",
+          "why": "התאוצה מסעיף ד, ותאוצת הכובד בכדור הארץ",
+          "tex": "\\frac{M^*}{M_E} = \\frac{20}{10} = 2"
         }
       ],
       "finalAnswer": "$2$",
