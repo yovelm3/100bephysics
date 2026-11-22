@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "גוף שמסתו $0.4\\,\\text{kg}$ מחליק על משטח משופע חסר חיכוך שזווית שיפועו $30^\\circ$. ברגע $t = 0$, שבו מהירות הגוף הייתה $12\\,\\text{m/s}$ בכיוון המורד, החל לפעול על הגוף כוח $F$ שגודלו $3.6\\,\\text{N}$ וכיוונו במעלה המשטח המשופע. ברגע $t = 5\\,\\text{s}$ חדל הכוח $F$ לפעול. פתור את הסעיפים ביחס לציר מקום $x$, שכיוונו החיובי בכיוון המורד וראשיתו ($x = 0$) בנקודה שבה היה הגוף ברגע $t = 0$.",
+  "stem": "גוף שמסתו $0.4\\,\\text{kg}$ מחליק על משטח משופע בלי חיכוך, בזווית של $30^\\circ$. ברגע $t = 0$, כשמהירות הגוף $12\\,\\text{m/s}$ במורד, מתחיל לפעול עליו כוח $F$ של $3.6\\,\\text{N}$ במעלה המשטח. ברגע $t = 5\\,\\text{s}$ הכוח $F$ מפסיק לפעול. פתרו לפי ציר מקום $x$, שכיוונו החיובי במורד המשטח, וראשיתו ($x = 0$) במקום של הגוף ברגע $t = 0$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1997-q1.svg",
@@ -27,12 +27,12 @@
     "תאוצה שלילית",
     "סימנים לפי ציר"
   ],
-  "summary": "גוף שמחליק במורד ונבלם בכוח במעלה. מהירות ומקום אחרי $5$ שניות, ומה קורה כשהכוח מפסיק.",
+  "summary": "גוף שמחליק במורד ונבלם בכוח במעלה: מהירות ומקום אחרי $5$ שניות, ומה קורה כשהכוח מפסיק.",
   "position": 15,
   "parts": [
     {
       "label": "א",
-      "question": "מצא את מהירות הגוף ברגע $t = 5\\,\\text{s}$ (גודל וכיוון).",
+      "question": "מה המהירות של הגוף ברגע $t = 5\\,\\text{s}$, בגודל ובכיוון?",
       "answer": {
         "type": "number",
         "value": -8.0,
@@ -45,27 +45,46 @@
       ],
       "solution": [
         {
-          "what": "הכוחות לאורך המדרון",
-          "why": "רכיב הכובד במורד (חיובי), והכוח $F$ במעלה",
-          "tex": "\\textstyle\\sum F = mg\\sin 30^\\circ - F = 0.4 \\cdot 10 \\cdot 0.5 - 3.6 = -1.6\\,\\text{N}"
+          "explain": "הכיוון החיובי נקבע בשאלה: במורד המשטח. המשטח חלק, ולכן אין חיכוך."
         },
         {
-          "what": "התאוצה",
-          "why": "החוק השני",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף: כוח הכובד כלפי מטה, הכוח הנורמלי ניצב למשטח, והכוח F במעלה המשטח. הכיוון החיובי במורד המשטח\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"69.1\" y1=\"94.1\" x2=\"328.9\" y2=\"244.1\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"77.8\" y1=\"99.1\" x2=\"67.2\" y2=\"103.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"95.1\" y1=\"109.1\" x2=\"84.5\" y2=\"113.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"112.4\" y1=\"119.1\" x2=\"101.8\" y2=\"123.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"129.7\" y1=\"129.1\" x2=\"119.2\" y2=\"133.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"147\" y1=\"139.1\" x2=\"136.5\" y2=\"143.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"164.4\" y1=\"149.1\" x2=\"153.8\" y2=\"153.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.7\" y1=\"159.1\" x2=\"171.1\" y2=\"163.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199\" y1=\"169.1\" x2=\"188.4\" y2=\"173.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"216.3\" y1=\"179.1\" x2=\"205.8\" y2=\"183.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"233.6\" y1=\"189.1\" x2=\"223.1\" y2=\"193.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"251\" y1=\"199.1\" x2=\"240.4\" y2=\"203.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"268.3\" y1=\"209.1\" x2=\"257.7\" y2=\"213.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"285.6\" y1=\"219.1\" x2=\"275\" y2=\"223.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"302.9\" y1=\"229.1\" x2=\"292.4\" y2=\"233.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"320.2\" y1=\"239.1\" x2=\"309.7\" y2=\"243.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"195.3,119.5 243.7,147.5 224.7,180.5 176.3,152.5\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"253.5\" y2=\"74.7\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"262.5\" y=\"65.1\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"134.7\" y2=\"106.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"119.1\" y=\"103.5\" text-anchor=\"middle\">F</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"48.7\" y1=\"232\" x2=\"83.3\" y2=\"252\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"93.7\" y=\"252\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח F פועל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף כשהכוח F פועל"
+        },
+        {
+          "what": "משוואת כוחות בניצב למשטח",
+          "why": "בכיוון הזה הגוף לא זז, ולכן הכוח הנורמלי מאזן את רכיב הכובד",
+          "tex": "N - mg\\cos 30^\\circ = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "משוואת כוחות לאורך המשטח",
+          "why": "בכיוון החיובי פועל רכיב הכובד שלאורך המשטח. נגדו פועל הכוח F",
+          "tex": "mg\\sin 30^\\circ - F = ma"
+        },
+        {
+          "what": "מציבים",
+          "why": "הסינוס של שלושים מעלות הוא חצי",
+          "tex": "0.4 \\cdot 10 \\cdot 0.5 - 3.6 = 0.4\\,a \\;\\Rightarrow\\; -1.6 = 0.4\\,a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה שלילית, כלומר במעלה המשטח",
           "tex": "a = \\frac{-1.6}{0.4} = -4\\,\\text{m/s}^2"
         },
         {
-          "what": "המהירות",
-          "why": "משוואת מהירות, תאוצה קבועה",
-          "tex": "v = 12 - 4 \\cdot 5 = -8\\,\\text{m/s}"
+          "what": "משוואת המהירות",
+          "why": "המהירות ההתחלתית חיובית, במורד, והתאוצה קבועה",
+          "tex": "v = 12 + (-4) \\cdot 5 = -8\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
         }
       ],
-      "finalAnswer": "$8\\,\\text{m/s}$ במעלה המדרון ($v = -8\\,\\text{m/s}$)",
+      "finalAnswer": "$8\\,\\text{m/s}$ במעלה המשטח ($v = -8\\,\\text{m/s}$)",
       "keyAnswer": "8 m/s כלפי מעלה"
     },
     {
       "label": "ב",
-      "question": "סרטט גרף שמתאר את מהירות הגוף כפונקציה של הזמן, מרגע $t = 0$ עד רגע $t = 5\\,\\text{s}$ (רשום ערכים מספריים על הצירים).",
+      "question": "שרטטו גרף של מהירות הגוף כפונקציה של הזמן, מרגע $t = 0$ עד רגע $t = 5\\,\\text{s}$. רשמו ערכים על הצירים.",
       "answer": {
         "type": "open"
       },
@@ -74,22 +93,27 @@
       ],
       "solution": [
         {
-          "what": "קו ישר",
-          "why": "תאוצה קבועה $-4$",
-          "tex": "v = 12 - 4t"
+          "what": "משוואת המהירות",
+          "why": "התאוצה קבועה, ולכן הגרף קו ישר",
+          "tex": "v = 12 - 4t",
+          "eq": "v = v_0 + at"
         },
         {
           "what": "נקודות חשובות",
-          "why": "התחלה, עצירה וסוף",
-          "tex": "(0, 12),\\ (3, 0),\\ (5, -8)"
+          "why": "ההתחלה, הרגע שבו הגוף נעצר, והסוף",
+          "tex": "v = 0 \\;\\Rightarrow\\; t = 3\\,\\text{s} \\qquad (0,\\ 12),\\ (3,\\ 0),\\ (5,\\ -8)"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: מהירות הגוף כפונקציה של הזמן. קו ישר יורד מ-12 מטר לשנייה ברגע אפס, חוצה את האפס אחרי 3 שניות, ומגיע למינוס 8 אחרי 5 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"145\" y1=\"260\" x2=\"145\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"220\" y1=\"260\" x2=\"220\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"295\" y1=\"260\" x2=\"295\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"370\" y1=\"260\" x2=\"370\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"445\" y1=\"260\" x2=\"445\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"245.3\" x2=\"490\" y2=\"245.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"206.2\" x2=\"490\" y2=\"206.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"128\" x2=\"490\" y2=\"128\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"88.9\" x2=\"490\" y2=\"88.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"49.8\" x2=\"490\" y2=\"49.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"167.1\" x2=\"508\" y2=\"167.1\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"266\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"145\" y1=\"163.1\" x2=\"145\" y2=\"171.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"145\" y=\"185.1\" text-anchor=\"middle\">1</text>\n<line x1=\"220\" y1=\"163.1\" x2=\"220\" y2=\"171.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"220\" y=\"185.1\" text-anchor=\"middle\">2</text>\n<line x1=\"295\" y1=\"163.1\" x2=\"295\" y2=\"171.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"295\" y=\"185.1\" text-anchor=\"middle\">3</text>\n<line x1=\"370\" y1=\"163.1\" x2=\"370\" y2=\"171.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"370\" y=\"185.1\" text-anchor=\"middle\">4</text>\n<line x1=\"445\" y1=\"163.1\" x2=\"445\" y2=\"171.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"445\" y=\"185.1\" text-anchor=\"middle\">5</text>\n<line x1=\"66\" y1=\"245.3\" x2=\"74\" y2=\"245.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"249.3\" text-anchor=\"end\">-8</text>\n<line x1=\"66\" y1=\"206.2\" x2=\"74\" y2=\"206.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"210.2\" text-anchor=\"end\">-4</text>\n<line x1=\"66\" y1=\"128\" x2=\"74\" y2=\"128\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"132\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"88.9\" x2=\"74\" y2=\"88.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"92.9\" text-anchor=\"end\">8</text>\n<line x1=\"66\" y1=\"49.8\" x2=\"74\" y2=\"49.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"53.8\" text-anchor=\"end\">12</text>\n<text class=\"label\" x=\"506\" y=\"157.1\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">v (m/s)</text>\n<polyline points=\"70,49.8 445,245.3\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<line x1=\"445\" y1=\"245.3\" x2=\"445\" y2=\"167.1\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"445\" y1=\"245.3\" x2=\"70\" y2=\"245.3\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: מהירות הגוף כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "קו ישר מ-$12$ ל-$-8\\,\\text{m/s}$, חוצה את האפס ב-$3\\,\\text{s}$",
+      "finalAnswer": "קו ישר מ-$12$ עד $-8\\,\\text{m/s}$, שחוצה את האפס אחרי $3\\,\\text{s}$",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "מצא את מקום הגוף ברגע $t = 5\\,\\text{s}$.",
+      "question": "איפה נמצא הגוף ברגע $t = 5\\,\\text{s}$?",
       "answer": {
         "type": "number",
         "value": 10.0,
@@ -101,17 +125,18 @@
       ],
       "solution": [
         {
-          "what": "משוואת מקום",
-          "why": "אותה תאוצה קבועה לאורך כל 5 השניות",
-          "tex": "x = 12 \\cdot 5 - \\tfrac{1}{2} \\cdot 4 \\cdot 5^2 = 60 - 50 = 10\\,\\text{m}"
+          "what": "משוואת המקום",
+          "why": "אותה תאוצה קבועה לאורך כל חמש השניות",
+          "tex": "x = 0 + 12 \\cdot 5 + \\tfrac{1}{2}(-4) \\cdot 5^2 = 60 - 50 = 10\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
-      "finalAnswer": "$x = 10\\,\\text{m}$: $10\\,\\text{m}$ במורד מהנקודה שבה התחיל הכוח לפעול",
+      "finalAnswer": "$x = 10\\,\\text{m}$: עשרה מטר במורד מהנקודה שבה התחיל הכוח לפעול",
       "keyAnswer": "10 m"
     },
     {
       "label": "ד",
-      "question": "תאר, במילים או באמצעות סרטוט, את מסלול תנועתו של הגוף אחרי שהכוח $F$ חדל לפעול. הסבר.",
+      "question": "תארו במילים, או בשרטוט, את התנועה של הגוף אחרי שהכוח $F$ מפסיק לפעול. הסבירו.",
       "answer": {
         "type": "open"
       },
@@ -120,14 +145,25 @@
       ],
       "solution": [
         {
-          "what": "אחרי $5\\,\\text{s}$",
-          "why": "נשאר רק רכיב הכובד במורד, והגוף נע במעלה ב-$8\\,\\text{m/s}$",
-          "tex": "a = g\\sin 30^\\circ = +5\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף אחרי שהכוח F הפסיק: רק כוח הכובד והכוח הנורמלי. הכיוון החיובי במורד המשטח\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"69.1\" y1=\"94.1\" x2=\"328.9\" y2=\"244.1\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"77.8\" y1=\"99.1\" x2=\"67.2\" y2=\"103.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"95.1\" y1=\"109.1\" x2=\"84.5\" y2=\"113.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"112.4\" y1=\"119.1\" x2=\"101.8\" y2=\"123.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"129.7\" y1=\"129.1\" x2=\"119.2\" y2=\"133.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"147\" y1=\"139.1\" x2=\"136.5\" y2=\"143.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"164.4\" y1=\"149.1\" x2=\"153.8\" y2=\"153.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"181.7\" y1=\"159.1\" x2=\"171.1\" y2=\"163.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"199\" y1=\"169.1\" x2=\"188.4\" y2=\"173.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"216.3\" y1=\"179.1\" x2=\"205.8\" y2=\"183.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"233.6\" y1=\"189.1\" x2=\"223.1\" y2=\"193.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"251\" y1=\"199.1\" x2=\"240.4\" y2=\"203.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"268.3\" y1=\"209.1\" x2=\"257.7\" y2=\"213.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"285.6\" y1=\"219.1\" x2=\"275\" y2=\"223.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"302.9\" y1=\"229.1\" x2=\"292.4\" y2=\"233.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"320.2\" y1=\"239.1\" x2=\"309.7\" y2=\"243.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"195.3,119.5 243.7,147.5 224.7,180.5 176.3,152.5\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"253.5\" y2=\"74.7\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"262.5\" y=\"65.1\" text-anchor=\"middle\">N</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"48.7\" y1=\"232\" x2=\"83.3\" y2=\"252\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"93.7\" y=\"252\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח F הפסיק</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף אחרי שהכוח F הפסיק"
+        },
+        {
+          "what": "משוואת כוחות לאורך המשטח",
+          "why": "נשאר רק רכיב הכובד, בכיוון החיובי",
+          "tex": "mg\\sin 30^\\circ - 0 = ma",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה חיובית, במורד",
+          "tex": "a = g\\sin 30^\\circ = 5\\,\\text{m/s}^2"
         },
         {
           "what": "התנועה",
-          "why": "מאט במעלה, נעצר, ואז מאיץ במורד, באותו קו ישר",
-          "tex": "t_1 = \\frac{8}{5} = 1.6\\,\\text{s}"
+          "why": "הגוף נע במעלה המשטח, נגד התאוצה, ולכן מאט. הוא נעצר, ואחר כך מאיץ במורד, באותו קו ישר",
+          "tex": "0 = -8 + 5\\,t_1 \\;\\Rightarrow\\; t_1 = 1.6\\,\\text{s}",
+          "eq": "v = v_0 + at"
         }
       ],
       "finalAnswer": "ממשיך במעלה ומאט, נעצר, ואז מחליק ומאיץ במורד",
