@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי, בסעיפים ה ו-ו.\nאין לסעיפים האלה תשובה בדף התשובות. את הכוח המרבי בסעיף ו קראתי מהגרף, בערך 2700 ניוטון. האתר מקבל תשובה קרובה.\nמה לבדוק: את הפתרון של סעיפים ה ו-ו.",
-  "stem": "צנחן קפץ ממטוס ברגע $t = 0$. במהלך נפילתו הוא פתח את המצנח. הצנחן והמצנח ייחשבו גוף אחד שנקרא \"הצנחן\". הגרף מתאר את גודל הרכיב האנכי של מהירות הצנחן כפונקציה של הזמן. על הצנחן פועלים במהלך נפילתו שני כוחות: כוח הכובד וכוח התנגדות האוויר.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי, בסעיפים ה ו-ו.\nאין לסעיפים האלה תשובה בדף התשובות. את הכוח המרבי בסעיף ו קראתי מהגרף, בערך 2700 ניוטון.\nמה לבדוק: את הפתרון של סעיפים ה ו-ו.",
+  "stem": "צנחן קופץ ממטוס ברגע $t = 0$, ובמהלך הנפילה פותח את המצנח. מתייחסים לצנחן ולמצנח כאל גוף אחד, \"הצנחן\". הגרף מתאר את גודל הרכיב האנכי של מהירות הצנחן כפונקציה של הזמן. בזמן הנפילה פועלים על הצנחן שני כוחות: כוח הכובד וכוח התנגדות האוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2014-q1.svg",
@@ -33,7 +33,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "תאר במילים את תנועת הצנחן בפרק הזמן $0 \\le t < 20\\,\\text{s}$. בתשובתך התייחס לגודל הרכיב האנכי של מהירות הנפילה של הצנחן ולגודל של תאוצתו.",
+      "question": "תארו במילים את התנועה של הצנחן בפרק הזמן $0 \\le t < 20\\,\\text{s}$. התייחסו לגודל הרכיב האנכי של המהירות ולגודל התאוצה.",
       "answer": {
         "type": "open"
       },
@@ -43,14 +43,17 @@
       ],
       "solution": [
         {
-          "what": "עד כ-$13\\,\\text{s}$",
-          "why": "המהירות גדלה, אבל השיפוע (התאוצה) הולך וקטן",
-          "tex": "v\\uparrow,\\ a\\downarrow"
+          "explain": "הגרף מראה גודל מהירות כלפי מטה, ולכן כאן הכיוון החיובי הוא כלפי מטה. התאוצה היא השיפוע של הגרף."
         },
         {
-          "what": "מ-$13$ עד $20\\,\\text{s}$",
-          "why": "הגרף אופקי: מהירות קבועה של $50\\,\\text{m/s}$, בלי תאוצה",
-          "tex": "v = 50\\,\\text{m/s},\\ a = 0"
+          "what": "עד בערך שלוש-עשרה שניות",
+          "why": "המהירות גדלה, אבל השיפוע, כלומר התאוצה, הולך וקטן",
+          "tex": "v\\ \\uparrow,\\qquad a\\ \\downarrow"
+        },
+        {
+          "what": "משלוש-עשרה עד עשרים שניות",
+          "why": "הגרף אופקי: מהירות קבועה, בלי תאוצה",
+          "tex": "v = 50\\,\\text{m/s},\\qquad a = 0"
         }
       ],
       "finalAnswer": "המהירות גדלה בתאוצה שהולכת וקטנה, עד מהירות קבועה של $50\\,\\text{m/s}$",
@@ -58,7 +61,7 @@
     },
     {
       "label": "ב",
-      "question": "ציין את הסיבה לשינוי הפתאומי בגודל הרכיב האנכי של המהירות בפרק הזמן $20\\,\\text{s} \\le t < 25\\,\\text{s}$.",
+      "question": "מה הסיבה לשינוי הפתאומי בגודל הרכיב האנכי של המהירות בפרק הזמן $20\\,\\text{s} \\le t < 25\\,\\text{s}$?",
       "answer": {
         "type": "open"
       },
@@ -67,9 +70,9 @@
       ],
       "solution": [
         {
-          "what": "מה קרה ב-$20\\,\\text{s}$",
-          "why": "הצנחן פתח את המצנח. התנגדות האוויר גדלה מאוד בבת אחת, והכוח השקול כלפי מעלה",
-          "tex": "f \\gg mg \\Rightarrow a\\uparrow"
+          "what": "מה קרה אחרי עשרים שניות",
+          "why": "הצנחן פתח את המצנח. התנגדות האוויר גדלה מאוד בבת אחת, ונעשתה גדולה מהכובד. לכן הכוח השקול כלפי מעלה, והצנחן מאט",
+          "tex": "f > mg \\;\\Rightarrow\\; \\Sigma F < 0"
         }
       ],
       "finalAnswer": "פתיחת המצנח",
@@ -77,7 +80,7 @@
     },
     {
       "label": "ג",
-      "question": "הסבר איך היית מחשב בעזרת הגרף את המרחק האנכי שעבר הצנחן מרגע $t = 0$ עד הרגע שבו המצנח נפתח (אין צורך לחשב מרחק זה).",
+      "question": "הסבירו איך אפשר לחשב בעזרת הגרף את המרחק האנכי שעבר הצנחן מרגע $t = 0$ עד הרגע שבו נפתח המצנח. אין צורך לחשב את המרחק.",
       "answer": {
         "type": "open"
       },
@@ -87,8 +90,8 @@
       "solution": [
         {
           "what": "השטח מתחת לגרף",
-          "why": "ההעתק הוא השטח מתחת לגרף מהירות-זמן. הגרף עקום, ולכן סופרים משבצות או מחלקים לרצועות צרות",
-          "tex": "\\Delta y \\approx \\textstyle\\sum v_i\\,\\Delta t"
+          "why": "ההעתק הוא השטח שמתחת לגרף מהירות-זמן. הגרף עקום, ולכן סופרים משבצות, או מחלקים את השטח לרצועות צרות ומחברים",
+          "tex": "\\Delta y \\approx \\Sigma\\, v_i\\,\\Delta t"
         }
       ],
       "finalAnswer": "השטח מתחת לגרף מ-$0$ עד $20\\,\\text{s}$",
@@ -96,7 +99,7 @@
     },
     {
       "label": "ד",
-      "question": "הראה מתוך הגרף שגודל תאוצת הנפילה החופשית בגובה שהצנחן קפץ ממנו הוא $g = 10\\,\\text{m/s}^2$ בקירוב.",
+      "question": "הראו בעזרת הגרף שתאוצת הנפילה החופשית בגובה שבו קפץ הצנחן היא בערך $g = 10\\,\\text{m/s}^2$.",
       "answer": {
         "type": "open"
       },
@@ -107,21 +110,22 @@
       "solution": [
         {
           "what": "בשנייה הראשונה",
-          "why": "המהירות קטנה, ולכן התנגדות האוויר זניחה, ופועל בעיקר הכובד",
-          "tex": "f \\approx 0 \\Rightarrow a \\approx g"
+          "why": "המהירות עוד קטנה, ולכן התנגדות האוויר זניחה, ופועל כמעט רק הכובד. התאוצה היא בערך תאוצת הכובד",
+          "tex": "f \\approx 0 \\;\\Rightarrow\\; a \\approx g"
         },
         {
           "what": "השיפוע בהתחלה",
-          "why": "מהגרף, בשנייה הראשונה המהירות גדלה בכ-$10\\,\\text{m/s}$",
-          "tex": "a \\approx \\frac{10\\,\\text{m/s}}{1\\,\\text{s}} = 10\\,\\text{m/s}^2"
+          "why": "לפי הגרף, בשנייה הראשונה המהירות גדלה בערך בעשרה מטר לשנייה",
+          "tex": "a \\approx \\frac{10 - 0}{1 - 0} = 10\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         }
       ],
-      "finalAnswer": "בשנייה הראשונה המהירות גדלה בכ-$10\\,\\text{m/s}$",
+      "finalAnswer": "בשנייה הראשונה המהירות גדלה בערך ב-$10\\,\\text{m/s}$",
       "keyAnswer": "a≈10 m/s^2"
     },
     {
       "label": "ה",
-      "question": "עבור כל אחד משני הכוחות שפועלים על הצנחן, קבע אם הוא גדל, קטן או נשאר קבוע בפרק הזמן $0 \\le t < 20\\,\\text{s}$. הסבר את קביעתך.",
+      "question": "לכל אחד משני הכוחות שפועלים על הצנחן: האם הוא גדל, קטן או נשאר קבוע בפרק הזמן $0 \\le t < 20\\,\\text{s}$? הסבירו.",
       "answer": {
         "type": "open"
       },
@@ -131,14 +135,33 @@
       ],
       "solution": [
         {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הצנחן: כוח הכובד mg כלפי מטה, וכוח התנגדות האוויר f כלפי מעלה. התנגדות קטנה. הכיוון החיובי כלפי מטה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"98\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"86\" text-anchor=\"middle\">f</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">התנגדות קטנה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות בתחילת הנפילה"
+        },
+        {
           "what": "כוח הכובד",
-          "why": "תלוי רק במסה וב-$g$",
+          "why": "תלוי רק במסה ובתאוצת הכובד, ולכן קבוע",
           "tex": "mg = \\text{const}"
         },
         {
+          "what": "משוואת כוחות",
+          "why": "כלפי מטה חיובי. בכיוון החיובי פועל הכובד, ונגדו פועלת התנגדות האוויר",
+          "tex": "mg - f = ma",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
           "what": "התנגדות האוויר",
-          "why": "גדלה עם המהירות, עד שהיא שווה לכובד (מ-$13\\,\\text{s}$ בערך) ואז קבועה",
-          "tex": "f\\uparrow \\to f = mg"
+          "why": "גדלה עם המהירות. לכן הכוח השקול והתאוצה קטנים",
+          "tex": "f\\ \\uparrow \\;\\Rightarrow\\; a\\ \\downarrow"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הצנחן: כוח הכובד mg כלפי מטה, וכוח התנגדות האוויר f כלפי מעלה. התנגדות שווה לכובד. הכיוון החיובי כלפי מטה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">f</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">התנגדות שווה לכובד</text>\n</svg>\n",
+          "caption": "תרשים הכוחות במהירות הקבועה"
+        },
+        {
+          "what": "במהירות קבועה",
+          "why": "אין תאוצה, ולכן ההתנגדות שווה לכובד, ומפסיקה לגדול",
+          "tex": "mg - f = 0 \\;\\Rightarrow\\; f = mg"
         }
       ],
       "finalAnswer": "הכובד קבוע. התנגדות האוויר גדלה, ואחר כך קבועה ושווה לכובד",
@@ -146,7 +169,7 @@
     },
     {
       "label": "ו",
-      "question": "מסת הצנחן היא $m = 80\\,\\text{kg}$. בפרק הזמן $0 \\le t < 55\\,\\text{s}$, קבע את הגודל המרבי (המקסימלי) של הכוח השקול שפועל על הצנחן, ואת גודלו המזערי (המינימלי) של כוח זה. הסבר את קביעתך.",
+      "question": "מסת הצנחן $m = 80\\,\\text{kg}$. בפרק הזמן $0 \\le t < 55\\,\\text{s}$, מה הגודל המרבי של הכוח השקול שפועל על הצנחן, ומה הגודל המזערי שלו? הסבירו.",
       "answer": {
         "type": "open"
       },
@@ -156,25 +179,31 @@
       ],
       "solution": [
         {
-          "explain": "הכוח השקול הוא $ma$, והתאוצה היא השיפוע. מחפשים את השיפוע הכי תלול ואת השיפוע הכי מתון."
+          "explain": "לפי החוק השני של ניוטון, הכוח השקול שווה למסה כפול התאוצה, והתאוצה היא השיפוע של הגרף. מחפשים את השיפוע הכי תלול ואת השיפוע הכי מתון."
         },
         {
-          "what": "המזערי",
-          "why": "בקטעים האופקיים השיפוע אפס",
-          "tex": "\\textstyle\\sum F_{\\min} = 0"
+          "what": "הכוח המזערי",
+          "why": "בקטעים האופקיים השיפוע אפס, ולכן גם הכוח השקול אפס",
+          "tex": "\\Sigma F_{\\min} = m \\cdot 0 = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "המרבי",
-          "why": "השיפוע הכי תלול ברגע פתיחת המצנח: המהירות יורדת מ-$50$ לכ-$10\\,\\text{m/s}$ בכ-$1.2\\,\\text{s}$",
-          "tex": "|a| \\approx \\frac{40}{1.2} \\approx 33\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הצנחן: כוח הכובד mg כלפי מטה, וכוח התנגדות האוויר f כלפי מעלה. התנגדות גדולה מהכובד. הכיוון החיובי כלפי מטה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"28\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"16\" text-anchor=\"middle\">f</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">התנגדות גדולה מהכובד</text>\n</svg>\n",
+          "caption": "תרשים הכוחות ברגע פתיחת המצנח"
         },
         {
-          "what": "הכוח",
-          "why": "החוק השני של ניוטון, כלפי מעלה",
-          "tex": "\\textstyle\\sum F_{\\max} \\approx 80 \\cdot 33 \\approx 2.7 \\times 10^{3}\\,\\text{N}"
+          "what": "השיפוע הכי תלול",
+          "why": "ברגע פתיחת המצנח: לפי הגרף, המהירות יורדת מחמישים לבערך עשרה מטר לשנייה, בערך בשנייה ורבע",
+          "tex": "|a| \\approx \\frac{50 - 10}{1.2} \\approx 33\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
+        },
+        {
+          "what": "הכוח המרבי",
+          "why": "מסה כפול התאוצה. הכוח כלפי מעלה, כי ההתנגדות גדולה מהכובד",
+          "tex": "\\Sigma F_{\\max} \\approx 80 \\cdot 33 \\approx 2.7 \\times 10^{3}\\,\\text{N}"
         }
       ],
-      "finalAnswer": "מזערי $0$ (מהירות קבועה). מרבי בפתיחת המצנח, בערך $2.7 \\times 10^{3}\\,\\text{N}$ כלפי מעלה",
+      "finalAnswer": "מזערי: $0$ (מהירות קבועה). מרבי: ברגע פתיחת המצנח, בערך $2.7 \\times 10^{3}\\,\\text{N}$ כלפי מעלה",
       "keyAnswer": null
     }
   ]
