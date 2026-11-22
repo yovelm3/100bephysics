@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "שני גופים, $A$ ו-$B$, שמסותיהם $m_1 = 3\\,\\text{kg}$ ו-$m_2 = 2\\,\\text{kg}$ בהתאמה, קשורים זה לזה באמצעות חוט שכרוך סביב גלגלת. אפשר להזניח את מסת החוט ואת כל כוחות החיכוך.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ב הוא סעיף אחד, כמו במקור, עם שתי תיבות: תאוצה ומתיחות.\nמה לבדוק: רק לאשר.",
+  "stem": "שני גופים, $A$ ו-$B$, במסות $m_1 = 3\\,\\text{kg}$ ו-$m_2 = 2\\,\\text{kg}$, קשורים זה לזה בחוט שעובר סביב גלגלת. אפשר להזניח את מסת החוט ואת כל כוחות החיכוך.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1999-q2.svg",
@@ -27,12 +27,12 @@
     "מתיחות",
     "האטה ועצירה"
   ],
-  "summary": "שני גופים על גלגלת: במנוחה, כשאדם דוחף, ואחרי שהוא מרפה. מתיחויות, תאוצות, וכמה קרוב לרצפה $B$ מגיע.",
+  "summary": "שני גופים על גלגלת: במנוחה, כשאדם דוחף, ואחרי שהוא עוזב. מתיחויות, תאוצות, וכמה קרוב לרצפה הגוף $B$ מגיע.",
   "position": 17,
   "parts": [
     {
       "label": "א",
-      "question": "מרגע $t = 0$ עד רגע $t = 2\\,\\text{s}$ אדם מחזיק בגוף $B$ כך ששני הגופים נמצאים במנוחה בגובה $3.5$ מטר מעל הרצפה. חשב את מתיחות החוט במצב שבו הגופים מוחזקים במנוחה.",
+      "question": "מ-$t = 0$ עד $t = 2\\,\\text{s}$ אדם מחזיק את הגוף $B$, כך ששני הגופים במנוחה בגובה $3.5$ מטר מעל הרצפה. מה המתיחות בחוט כשהגופים מוחזקים במנוחה?",
       "answer": {
         "type": "number",
         "value": 30.0,
@@ -44,21 +44,39 @@
       ],
       "solution": [
         {
-          "what": "שיווי משקל של $A$",
-          "why": "על $A$ פועלים רק החוט והכובד, והאדם לא נוגע בו",
-          "tex": "T = m_1 g = 3 \\cdot 10 = 30\\,\\text{N}"
+          "explain": "בוחרים כלפי מעלה כחיובי. השאלה לא קבעה כיוון. האדם נוגע רק בגוף B, ולכן נוח לכתוב משוואה לגוף A."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף A: מתיחות החוט כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">A</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m₁g</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">במנוחה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף A"
+        },
+        {
+          "what": "משוואת כוחות לגוף A",
+          "why": "בכיוון החיובי פועלת המתיחות, ונגדה הכובד. אין תאוצה",
+          "tex": "T - m_1 g = 0 \\;\\Rightarrow\\; T = 3 \\cdot 10 = 30\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],
       "finalAnswer": "$30\\,\\text{N}$",
       "keyAnswer": "30 N"
     },
     {
-      "label": "ב1",
-      "question": "מרגע $t = 2\\,\\text{s}$ עד רגע $t = 4\\,\\text{s}$ האדם מפעיל על גוף $B$ כוח שגודלו $15\\,\\text{N}$ וכיוונו כלפי מטה. חשב את גודל תאוצת הגופים בפרק הזמן הזה.",
+      "label": "ב",
+      "question": "מ-$t = 2\\,\\text{s}$ עד $t = 4\\,\\text{s}$ האדם מפעיל על הגוף $B$ כוח של $15\\,\\text{N}$ כלפי מטה. מה גודל התאוצה של הגופים בפרק הזמן הזה, ומה המתיחות בחוט?",
       "answer": {
-        "type": "number",
-        "value": 1.0,
-        "unit": "m/s^2"
+        "type": "multi",
+        "items": [
+          {
+            "label": "גודל התאוצה",
+            "value": 1.0,
+            "unit": "m/s^2"
+          },
+          {
+            "label": "המתיחות בחוט",
+            "value": 33.0,
+            "unit": "N"
+          }
+        ]
       },
       "skills": [
         "fbd",
@@ -66,44 +84,44 @@
       ],
       "solution": [
         {
-          "what": "הכוחות שמניעים את המערכת",
-          "why": "בצד $B$: משקלו ועוד כוח האדם. בצד $A$: משקלו",
-          "tex": "(m_2 g + F) - m_1 g = 20 + 15 - 30 = 5\\,\\text{N}"
+          "explain": "עכשיו הגוף B יורד והגוף A עולה. בוחרים לגוף B כלפי מטה כחיובי, ולגוף A כלפי מעלה, כדי שלשניהם תהיה אותה תאוצה עם אותו סימן."
         },
         {
-          "what": "התאוצה",
-          "why": "חלקי כל המסה",
-          "tex": "a = \\frac{5}{5} = 1\\,\\text{m/s}^2"
-        }
-      ],
-      "finalAnswer": "$1\\,\\text{m/s}^2$ ($B$ יורד)",
-      "keyAnswer": "1 m/s^2"
-    },
-    {
-      "label": "ב2",
-      "question": "חשב את מתיחות החוט בפרק הזמן הזה.",
-      "answer": {
-        "type": "number",
-        "value": 33.0,
-        "unit": "N"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף A: מתיחות החוט כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">A</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m₁g</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">עולה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף A"
+        },
         {
-          "what": "החוק השני ל-$A$",
-          "why": "$A$ עולה בתאוצה $1$",
-          "tex": "T - m_1 g = m_1 a \\Rightarrow T = 30 + 3 = 33\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף B: מתיחות החוט כלפי מעלה, וכלפי מטה כוח הכובד והכוח של האדם. הכיוון החיובי כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">B</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">T</text>\n<line x1=\"222\" y1=\"150\" x2=\"222\" y2=\"223\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"222\" y=\"247\" text-anchor=\"middle\">m₂g</text>\n<line x1=\"198\" y1=\"150\" x2=\"198\" y2=\"209\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"198\" y=\"233\" text-anchor=\"middle\">F</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">יורד</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף B"
+        },
+        {
+          "what": "משוואות הכוחות",
+          "why": "לגוף A: המתיחות פחות הכובד. לגוף B: הכובד והכוח של האדם, פחות המתיחות",
+          "tex": "T - m_1 g = m_1 a \\qquad m_2 g + F - T = m_2 a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים",
+          "why": "המתיחות מתבטלת",
+          "tex": "m_2 g + F - m_1 g = (m_1 + m_2)\\,a \\;\\Rightarrow\\; 20 + 15 - 30 = 5a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "מחלקים במסה הכוללת",
+          "tex": "a = \\frac{5}{5} = 1\\,\\text{m/s}^2"
+        },
+        {
+          "what": "המתיחות",
+          "why": "מציבים את התאוצה במשוואה של הגוף A",
+          "tex": "T = m_1 g + m_1 a = 30 + 3 = 33\\,\\text{N}"
         }
       ],
-      "finalAnswer": "$33\\,\\text{N}$",
-      "keyAnswer": "33 N"
+      "finalAnswer": "התאוצה $1\\,\\text{m/s}^2$ ($B$ יורד), והמתיחות $33\\,\\text{N}$",
+      "keyAnswer": "1 m/s^2 ; 33 N"
     },
     {
       "label": "ג",
-      "question": "ברגע $t = 4\\,\\text{s}$ האדם מרפה מגוף $B$. חשב את גודל תאוצת הגופים אחרי הרגע $t = 4\\,\\text{s}$.",
+      "question": "ברגע $t = 4\\,\\text{s}$ האדם עוזב את הגוף $B$. מה גודל התאוצה של הגופים אחרי הרגע הזה?",
       "answer": {
         "type": "number",
         "value": 2.0,
@@ -116,22 +134,32 @@
       ],
       "solution": [
         {
-          "what": "עכשיו $A$ כבד יותר",
-          "why": "התאוצה של המערכת לכיוון $A$ (מטה בצד $A$)",
-          "tex": "a = \\frac{(3 - 2) \\cdot 10}{5} = 2\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף B: מתיחות החוט כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">B</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"59.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"47.5\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"223\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"247\" text-anchor=\"middle\">m₂g</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">האדם עזב</text>\n</svg>\n",
+          "caption": "אחרי שהאדם עוזב: תרשים הכוחות על הגוף B"
         },
         {
-          "what": "משמעות",
-          "why": "$B$ עדיין נע מטה, ולכן הוא מאט",
-          "tex": "a_B = -2\\,\\text{m/s}^2"
+          "what": "משוואות הכוחות",
+          "why": "אותם כיוונים חיוביים כמו בסעיף ב, בלי הכוח של האדם",
+          "tex": "T - m_1 g = m_1 a \\qquad m_2 g - T = m_2 a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים ומחלקים במסה הכוללת",
+          "why": "המתיחות מתבטלת. התאוצה יוצאת שלילית: הגוף B עדיין יורד, אבל מאט",
+          "tex": "a = \\frac{(m_2 - m_1)\\,g}{m_1 + m_2} = \\frac{(2 - 3) \\cdot 10}{5} = -2\\,\\text{m/s}^2"
+        },
+        {
+          "what": "הגודל",
+          "why": "השאלה שואלת על גודל התאוצה, בלי הסימן",
+          "tex": "|a| = 2\\,\\text{m/s}^2"
         }
       ],
-      "finalAnswer": "$2\\,\\text{m/s}^2$ (הגופים מאטים)",
+      "finalAnswer": "$2\\,\\text{m/s}^2$, נגד כיוון התנועה: הגופים מאטים",
       "keyAnswer": "−2 m/s^2"
     },
     {
       "label": "ד",
-      "question": "חשב את המרחק המזערי בין גוף $B$ לרצפה.",
+      "question": "מה המרחק הקטן ביותר בין הגוף $B$ לרצפה?",
       "answer": {
         "type": "number",
         "value": 0.5,
@@ -143,18 +171,26 @@
       ],
       "solution": [
         {
-          "what": "עד $t = 4\\,\\text{s}$",
-          "why": "$2$ שניות ממנוחה בתאוצה $1$",
-          "tex": "d_1 = \\tfrac{1}{2} \\cdot 1 \\cdot 2^2 = 2\\,\\text{m},\\quad v = 2\\,\\text{m/s}"
+          "what": "הדרך עד שהאדם עוזב",
+          "why": "שתי שניות, ממנוחה, בתאוצה מסעיף ב",
+          "tex": "d_1 = 0 + 0 \\cdot 2 + \\tfrac{1}{2} \\cdot 1 \\cdot 2^2 = 2\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "אחרי השחרור עד העצירה",
-          "why": "מאט ב-$2\\,\\text{m/s}^2$",
-          "tex": "d_2 = \\frac{2^2}{2 \\cdot 2} = 1\\,\\text{m}"
+          "what": "המהירות ברגע הזה",
+          "why": "מאפס, באותה תאוצה",
+          "tex": "v = 0 + 1 \\cdot 2 = 2\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
         },
         {
-          "what": "הגובה המזערי",
-          "why": "מחסירים את שני הקטעים מהגובה ההתחלתי",
+          "what": "הדרך מהשחרור עד העצירה",
+          "why": "הגוף מאט עד שהוא נעצר. משתמשים במשוואה בלי זמן",
+          "tex": "0^2 = 2^2 + 2(-2)\\,d_2 \\;\\Rightarrow\\; d_2 = 1\\,\\text{m}",
+          "eq": "v^2 = v_0^2 + 2a(x - x_0)"
+        },
+        {
+          "what": "המרחק הקטן ביותר מהרצפה",
+          "why": "מחסירים את שתי הדרכים מהגובה ההתחלתי. אחר כך הגוף B עולה",
           "tex": "3.5 - 2 - 1 = 0.5\\,\\text{m}"
         }
       ],
