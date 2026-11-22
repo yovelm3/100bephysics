@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "משגרים לוויין לחלל באמצעות רקטה. ערב השיגור מסת הרקטה עם הדלק והלוויין היא $M = 7.3 \\times 10^5\\,\\text{kg}$. הכוח המרבי שהמנוע מפעיל בזמן השיגור הוא $F = 1.16 \\times 10^7\\,\\text{N}$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיפים א ו-ד יש בפתרון ציורים של התשובה.\nמה לבדוק: רק לאשר.",
+  "stem": "משגרים לוויין לחלל בעזרת רקטה. לפני השיגור, המסה של הרקטה עם הדלק והלוויין היא $M = 7.3 \\times 10^5\\,\\text{kg}$. הכוח המרבי שהמנוע מפעיל בזמן השיגור הוא $F = 1.16 \\times 10^7\\,\\text{N}$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2013-q5.svg",
@@ -27,12 +27,12 @@
     "מסלול אליפטי",
     "החוק השני של קפלר"
   ],
-  "summary": "שיגור לוויין: תאוצת הרקטה בהינתקות, מדוע היא גדלה, ומהירות וכוח לאורך מסלול אליפטי.",
+  "summary": "שיגור לוויין: תאוצת הרקטה כשהיא עוזבת את הכן, למה התאוצה גדלה, והמהירות והכוח לאורך מסלול אליפטי.",
   "position": 26,
   "parts": [
     {
       "label": "א",
-      "question": "סרטט במחברתך תרשים של הכוחות הפועלים על הרקטה בזמן השיגור. הנח שהתנגדות האוויר זניחה.",
+      "question": "שרטטו את הכוחות שפועלים על הרקטה בזמן השיגור. מזניחים את התנגדות האוויר.",
       "answer": {
         "type": "open"
       },
@@ -43,12 +43,16 @@
         {
           "what": "כוח הכבידה",
           "why": "כדור הארץ מושך את הרקטה כלפי מטה",
-          "tex": "Mg\\ \\downarrow"
+          "tex": "Mg"
         },
         {
           "what": "כוח הדחף",
-          "why": "הגזים הנפלטים דוחפים את הרקטה כלפי מעלה",
-          "tex": "F\\ \\uparrow"
+          "why": "הגזים שהמנוע פולט דוחפים את הרקטה כלפי מעלה",
+          "tex": "F"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הרקטה: כוח הדחף כלפי מעלה, גדול מכוח הכובד כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"218.1\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"242.1\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "תרשים הכוחות על הרקטה"
         }
       ],
       "finalAnswer": "שני כוחות: $Mg$ כלפי מטה ו-$F$ כלפי מעלה",
@@ -56,7 +60,7 @@
     },
     {
       "label": "ב",
-      "question": "הרקטה ניתקת מכן השיגור ברגע $t = 0$. מרגע ההינתקות המנוע מפעיל את הכוח המרבי. חשב את תאוצת הרקטה ברגע ההינתקות.",
+      "question": "הרקטה עוזבת את כן השיגור ברגע $t = 0$, ומהרגע הזה המנוע מפעיל את הכוח המרבי. מה תאוצת הרקטה ברגע הזה?",
       "answer": {
         "type": "number",
         "value": 5.890410958904109,
@@ -69,13 +73,14 @@
       ],
       "solution": [
         {
-          "what": "החוק השני של ניוטון",
-          "why": "כלפי מעלה חיובי",
-          "tex": "F - Mg = Ma"
+          "what": "משוואת כוחות",
+          "why": "הכיוון החיובי כלפי מעלה, ולא נקבע בשאלה. בכיוון הזה הדחף, ונגדו הכובד",
+          "tex": "F - Mg = Ma",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "מציבים",
-          "why": "$g = 10$",
+          "what": "מחלקים במסה",
+          "why": "ומציבים",
           "tex": "a = \\frac{1.16 \\times 10^7}{7.3 \\times 10^5} - 10 \\approx 15.89 - 10 = 5.89\\,\\text{m/s}^2"
         }
       ],
@@ -84,7 +89,7 @@
     },
     {
       "label": "ג1",
-      "question": "הסבר בקצרה את עקרון הפעולה של מנוע רקטי.",
+      "question": "הסבירו בקצרה איך פועל מנוע של רקטה.",
       "answer": {
         "type": "open"
       },
@@ -94,16 +99,17 @@
       "solution": [
         {
           "what": "החוק השלישי של ניוטון",
-          "why": "המנוע דוחף גזים לאחור במהירות גדולה, והגזים דוחפים את הרקטה קדימה",
-          "tex": "\\vec{F}_{g \\to r} = -\\vec{F}_{r \\to g}"
+          "why": "המנוע דוחף גזים אחורה במהירות גדולה, והגזים דוחפים את הרקטה קדימה בכוח שווה והפוך",
+          "tex": "\\vec F_{1,2} = -\\vec F_{2,1}",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         }
       ],
-      "finalAnswer": "הרקטה דוחפת גזים לאחור, והם דוחפים אותה קדימה",
+      "finalAnswer": "הרקטה דוחפת גזים אחורה, והגזים דוחפים אותה קדימה",
       "keyAnswer": null
     },
     {
       "label": "ג2",
-      "question": "בהנחה שהכוח $F$ קבוע במשך השניות הראשונות, קבע אם בפרק הזמן הזה התאוצה גדלה, קטנה או לא משתנה. נמק את קביעתך.",
+      "question": "אם הכוח $F$ קבוע בשניות הראשונות, האם בזמן הזה התאוצה גדלה, קטנה או לא משתנה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -119,13 +125,13 @@
       "solution": [
         {
           "what": "המסה קטנה",
-          "why": "הדלק נשרף ונפלט",
+          "why": "הדלק נשרף ונפלט, ולכן המסה של הרקטה קטנה",
           "tex": "a = \\frac{F}{M} - g"
         },
         {
-          "what": "$F$ קבוע ו-$M$ קטנה",
-          "why": "$F/M$ גדל",
-          "tex": "M \\downarrow \\Rightarrow a \\uparrow"
+          "what": "הכוח קבוע והמסה קטנה",
+          "why": "החלק הראשון גדל, ולכן התאוצה גדלה",
+          "tex": "M\\downarrow \\;\\Rightarrow\\; a\\uparrow"
         }
       ],
       "finalAnswer": "גדלה, כי המסה קטנה",
@@ -133,7 +139,7 @@
     },
     {
       "label": "ד",
-      "question": "רגע מסוים הלוויין מתנתק מהרקטה, וממשיך לנוע בהשפעת כוח הכובד של כדור הארץ. בתרשים מוצג מסלול הלוויין, שצורתו אליפסה (התרשים אינו בקנה מידה). הלוויין נע סביב כדור הארץ בכיוון השעון. העתק את התרשים וסמן עליו חצים המייצגים את: (1) וקטור מהירות הלוויין, בכל אחת מהנקודות $B$ ו-$D$. (2) וקטור התאוצה של הלוויין בנקודה $A$. (3) וקטור הכוח השקול הפועל על הלוויין, בכל אחת מהנקודות $C$ ו-$E$. הסבר את שיקוליך.",
+      "question": "ברגע מסוים הלוויין נפרד מהרקטה, וממשיך לנוע רק בהשפעת הכבידה של כדור הארץ. התרשים מראה את המסלול של הלוויין, שהוא אליפסה (לא בקנה מידה). הלוויין נע סביב כדור הארץ בכיוון השעון. העתיקו את התרשים וסמנו בחצים: (1) את וקטור המהירות של הלוויין בנקודות $B$ ו-$D$. (2) את וקטור התאוצה בנקודה $A$. (3) את וקטור הכוח השקול בנקודות $C$ ו-$E$. הסבירו.",
       "answer": {
         "type": "open"
       },
@@ -143,22 +149,27 @@
       ],
       "solution": [
         {
-          "what": "מהירות",
-          "why": "משיקה למסלול, בכיוון התנועה (עם השעון)",
-          "tex": "\\vec{v} \\parallel \\hat{t}"
+          "what": "המהירות",
+          "why": "המהירות תמיד משיקה למסלול, בכיוון התנועה, כלומר בכיוון השעון",
+          "tex": "\\vec v"
         },
         {
-          "what": "כוח ותאוצה",
-          "why": "הכוח היחיד הוא הכבידה, ולכן הכוח והתאוצה מכוונים אל מרכז כדור הארץ",
-          "tex": "\\vec{a} \\parallel \\vec{F} \\to O_E"
+          "what": "הכוח והתאוצה",
+          "why": "הכוח היחיד הוא הכבידה, והוא מכוון אל מרכז כדור הארץ. לפי החוק השני, התאוצה באותו כיוון",
+          "tex": "\\vec F = m\\vec a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-10 0 480 280\" direction=\"ltr\" role=\"img\" aria-label=\"המסלול האליפטי עם החצים: בנקודות B ו-D המהירות משיקה למסלול בכיוון השעון. בנקודה A התאוצה מכוונת אל כדור הארץ. בנקודות C ו-E הכוח השקול מכוון אל כדור הארץ\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<path d=\"M 60 140 A 170 100 0 1 0 400 140 A 170 100 0 1 0 60 140\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n<circle cx=\"367.5\" cy=\"140\" r=\"16\" fill=\"var(--d-fill)\" stroke=\"var(--d-line)\" stroke-width=\"2\"/>\n<circle cx=\"400\" cy=\"140\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"414\" y=\"145\" text-anchor=\"middle\">A</text>\n<circle cx=\"230\" cy=\"240\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"230\" y=\"262\" text-anchor=\"middle\">B</text>\n<circle cx=\"60\" cy=\"140\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"46\" y=\"145\" text-anchor=\"middle\">C</text>\n<circle cx=\"120.7\" cy=\"63.4\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"108.7\" y=\"55.4\" text-anchor=\"middle\">D</text>\n<circle cx=\"224.1\" cy=\"40.1\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"224.1\" y=\"28.1\" text-anchor=\"middle\">E</text>\n<line x1=\"230\" y1=\"240\" x2=\"175\" y2=\"240\" stroke=\"var(--d-ask)\" stroke-width=\"2.4\" marker-end=\"url(#f-ask)\"/>\n<text class=\"label\" x=\"171\" y=\"256\" text-anchor=\"middle\">v</text>\n<line x1=\"120.7\" y1=\"63.4\" x2=\"165.6\" y2=\"41.3\" stroke=\"var(--d-ask)\" stroke-width=\"2.4\" marker-end=\"url(#f-ask)\"/>\n<text class=\"label\" x=\"169.6\" y=\"33.3\" text-anchor=\"middle\">v</text>\n<line x1=\"400\" y1=\"140\" x2=\"385\" y2=\"140\" stroke=\"var(--d-label)\" stroke-width=\"2.4\" marker-end=\"url(#f-arr)\"/>\n<text class=\"label\" x=\"395\" y=\"128\" text-anchor=\"middle\">a</text>\n<line x1=\"60\" y1=\"140\" x2=\"110\" y2=\"140\" stroke=\"var(--d-label)\" stroke-width=\"2.4\" marker-end=\"url(#f-arr)\"/>\n<text class=\"label\" x=\"110\" y=\"130\" text-anchor=\"middle\">F</text>\n<line x1=\"224.1\" y1=\"40.1\" x2=\"265.1\" y2=\"68.6\" stroke=\"var(--d-label)\" stroke-width=\"2.4\" marker-end=\"url(#f-arr)\"/>\n<text class=\"label\" x=\"277.1\" y=\"68.6\" text-anchor=\"middle\">F</text>\n</svg>\n",
+          "caption": "התרשים עם החצים"
         }
       ],
-      "finalAnswer": "מהירות משיקה למסלול; תאוצה וכוח מכוונים אל כדור הארץ",
+      "finalAnswer": "המהירות משיקה למסלול. התאוצה והכוח מכוונים אל כדור הארץ",
       "keyAnswer": null
     },
     {
       "label": "ה",
-      "question": "קבע באיזו משתי הנקודות $A$ ו-$E$ מהירות הלוויין היא מרבית. נמק את קביעתך.",
+      "question": "באיזו משתי הנקודות, $A$ או $E$, מהירות הלוויין גדולה יותר? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -173,13 +184,14 @@
       "solution": [
         {
           "what": "החוק השני של קפלר",
-          "why": "הקו לכדור הארץ סורק שטחים שווים בזמנים שווים, ולכן קרוב יותר נע מהר יותר",
-          "tex": "r_A < r_E \\Rightarrow v_A > v_E"
+          "why": "הקו מכדור הארץ ללוויין עובר שטחים שווים בזמנים שווים. קרוב לכדור הארץ הקו קצר, ולכן הלוויין צריך לנוע מהר יותר",
+          "tex": "r_A < r_E \\;\\Rightarrow\\; v_A > v_E"
         },
         {
           "what": "בדיקה באנרגיה",
-          "why": "קרוב יותר: אנרגיה פוטנציאלית נמוכה יותר וקינטית גבוהה יותר",
-          "tex": "E_k + E_p = \\text{const}",
+          "why": "האנרגיה נשמרת. קרוב יותר האנרגיה הפוטנציאלית קטנה יותר, ולכן הקינטית גדולה יותר",
+          "tex": "\\tfrac{1}{2}mv^2 - \\frac{GMm}{r} = E",
+          "eq": "U = -\\frac{GMm}{r}",
           "check": true
         }
       ],
