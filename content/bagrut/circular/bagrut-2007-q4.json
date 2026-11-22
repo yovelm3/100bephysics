@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בתרשים מוצגת מסילה חסרת חיכוך $ABCDEFG$. קטע המסילה $CDEF$ הוא מעגל שרדיוסו $r = 0.4\\,\\text{m}$. הנקודות $C$ ו-$E$ הן קצות הקוטר האנכי, והנקודות $D$ ו-$F$ הן קצות הקוטר האופקי. הנקודה $A$ נמצאת בגובה $1.2\\,\\text{m}$ מעל הנקודה $C$. גוף שמסתו $0.2\\,\\text{kg}$, וממדיו קטנים בהרבה מרדיוס המעגל $CDEF$, משוחרר ממנוחה מהנקודה $A$, ונע לאורך המסילה.",
+  "stem": "בתרשים מוצגת מסילה בלי חיכוך, $ABCDEFG$. הקטע $CDEF$ הוא מעגל שרדיוסו $r = 0.4\\,\\text{m}$. הנקודות $C$ ו-$E$ בקצות הקוטר האנכי, והנקודות $D$ ו-$F$ בקצות הקוטר האופקי. הנקודה $A$ גבוהה ב-$1.2\\,\\text{m}$ מהנקודה $C$. גוף שמסתו $0.2\\,\\text{kg}$, וממדיו קטנים בהרבה מרדיוס המעגל, משוחרר ממנוחה בנקודה $A$ ונע לאורך המסילה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2007-q4.svg",
@@ -32,7 +32,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "חשב את הכוח (גודל וכיוון) שהמסילה מפעילה על הגוף בנקודה $E$.",
+      "question": "מה הכוח (גודל וכיוון) שהמסילה מפעילה על הגוף בנקודה $E$?",
       "answer": {
         "type": "number",
         "value": 2.0,
@@ -44,19 +44,28 @@
       ],
       "solution": [
         {
-          "what": "המהירות ב-$E$",
-          "why": "$E$ בגובה $2r = 0.8\\,\\text{m}$, כלומר $0.4\\,\\text{m}$ מתחת ל-$A$",
-          "tex": "v_E^2 = 2g \\cdot 0.4 = 8"
+          "explain": "אין חיכוך, והכוח הנורמלי ניצב לתנועה ולא עושה עבודה, ולכן האנרגיה המכנית נשמרת. בנקודה E, בראש הלולאה, המרכז מתחת לגוף. בוחרים כלפי מטה כחיובי."
         },
         {
-          "what": "בנקודה העליונה",
-          "why": "הכובד והנורמלי שניהם כלפי מטה (המרכז)",
-          "tex": "N + mg = \\frac{m v_E^2}{r}"
+          "what": "המהירות בנקודה E",
+          "why": "הנקודה E גבוהה מ-C בפעמיים הרדיוס, כלומר נמוכה מ-A בארבע עשיריות מטר",
+          "tex": "mg \\cdot 0.4 = \\tfrac{1}{2}m v_E^2 \\;\\Rightarrow\\; v_E^2 = 2 \\cdot 10 \\cdot 0.4 = 8",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         },
         {
-          "what": "מציבים",
-          "why": "m = 0.2, r = 0.4",
-          "tex": "N = \\frac{0.2 \\cdot 8}{0.4} - 2 = 2\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף בנקודה E: הכוח הנורמלי של המסילה וכוח הכובד, שניהם כלפי מטה, אל המרכז. הכיוון החיובי כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"222\" y1=\"150\" x2=\"222\" y2=\"226.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"222\" y=\"250.5\" text-anchor=\"middle\">N</text>\n<line x1=\"198\" y1=\"150\" x2=\"198\" y2=\"226.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"198\" y=\"250.5\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז מתחת</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף בנקודה E"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי פועלים הכוח הנורמלי והכובד",
+          "tex": "N + mg = m\\,\\frac{v_E^2}{r}",
+          "eq": "a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "מבודדים ומציבים",
+          "why": "מעבירים את הכובד לאגף השני",
+          "tex": "N = \\frac{0.2 \\cdot 8}{0.4} - 0.2 \\cdot 10 = 4 - 2 = 2\\,\\text{N}"
         }
       ],
       "finalAnswer": "$2\\,\\text{N}$ כלפי מטה",
@@ -64,7 +73,7 @@
     },
     {
       "label": "ב",
-      "question": "הסבר מדוע האנרגיה המכנית הכוללת של הגוף נשמרת במהלך תנועתו. בתשובתך התייחס גם לפעולה של הכוח הנורמלי.",
+      "question": "הסבירו מדוע האנרגיה המכנית של הגוף נשמרת בזמן התנועה. התייחסו גם לכוח הנורמלי.",
       "answer": {
         "type": "open"
       },
@@ -78,17 +87,18 @@
           "tex": "W_f = 0"
         },
         {
-          "what": "הנורמלי",
-          "why": "תמיד ניצב למסילה, כלומר למהירות, ולכן לא מבצע עבודה. הכובד הוא כוח משמר",
-          "tex": "W_N = 0"
+          "what": "הכוח הנורמלי",
+          "why": "הוא תמיד ניצב למסילה, כלומר ניצב למהירות, ולכן לא עושה עבודה. הכובד הוא כוח משמר",
+          "tex": "W_N = N\\cos 90^\\circ\\,\\Delta s = 0",
+          "eq": "W = F\\cos\\theta\\,\\Delta s"
         }
       ],
-      "finalAnswer": "אין חיכוך, והנורמלי ניצב לתנועה ולא מבצע עבודה",
+      "finalAnswer": "אין חיכוך, והכוח הנורמלי ניצב לתנועה ולא עושה עבודה",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "הסבר מדוע מהירות הגוף הולכת וקטנה במהלך תנועתו מהנקודה $C$ לנקודה $E$.",
+      "question": "הסבירו מדוע המהירות של הגוף קטנה בזמן שהוא נע מהנקודה $C$ לנקודה $E$.",
       "answer": {
         "type": "open"
       },
@@ -97,17 +107,18 @@
       ],
       "solution": [
         {
-          "what": "עלייה",
-          "why": "הגוף עולה, ולכן אנרגיה קינטית הופכת לאנרגיית גובה. רכיב הכובד המשיקי נגד התנועה",
-          "tex": "h\\uparrow \\Rightarrow E_k\\downarrow"
+          "what": "הגוף עולה",
+          "why": "אנרגיה קינטית הופכת לאנרגיה פוטנציאלית. אפשר לראות את זה גם בכוחות: רכיב הכובד שלאורך המסילה נגד התנועה",
+          "tex": "h\\ \\uparrow \\;\\Rightarrow\\; E_k\\ \\downarrow",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
-      "finalAnswer": "הגוף עולה, ורכיב הכובד המשיקי מאט אותו",
+      "finalAnswer": "הגוף עולה, ורכיב הכובד שלאורך המסילה מאט אותו",
       "keyAnswer": null
     },
     {
       "label": "ד",
-      "question": "חשב את הכוח שהגוף מפעיל על המסילה בנקודה $F$.",
+      "question": "מה הכוח שהגוף מפעיל על המסילה בנקודה $F$?",
       "answer": {
         "type": "number",
         "value": 8.0,
@@ -119,19 +130,29 @@
       ],
       "solution": [
         {
-          "what": "המהירות ב-$F$",
-          "why": "גובה $r = 0.4\\,\\text{m}$, כלומר $0.8\\,\\text{m}$ מתחת ל-$A$",
-          "tex": "v_F^2 = 2g \\cdot 0.8 = 16"
+          "explain": "בנקודה F, בקצה הקוטר האופקי, המרכז בכיוון אופקי. בוחרים את הכיוון אל המרכז כחיובי."
         },
         {
-          "what": "בקצה הקוטר האופקי",
-          "why": "הנורמלי אופקי ורדיאלי, והכובד משיקי",
-          "tex": "N = \\frac{m v_F^2}{r} = \\frac{0.2 \\cdot 16}{0.4} = 8\\,\\text{N}"
+          "what": "המהירות בנקודה F",
+          "why": "הנקודה F גבוהה מ-C ברדיוס, כלומר נמוכה מ-A בשמונה עשיריות מטר",
+          "tex": "v_F^2 = 2 \\cdot 10 \\cdot 0.8 = 16",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף בנקודה F: הכוח הנורמלי של המסילה אופקי, אל המרכז, וכוח הכובד כלפי מטה, בכיוון המשיק. הכיוון החיובי אל המרכז\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"102\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"84\" y=\"156\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"209\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"233\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז משמאל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף בנקודה F"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי פועל רק הכוח הנורמלי. הכובד אנכי, ניצב לכיוון הזה",
+          "tex": "N = m\\,\\frac{v_F^2}{r} = \\frac{0.2 \\cdot 16}{0.4} = 8\\,\\text{N}",
+          "eq": "a_R = \\frac{v^2}{r}"
         },
         {
           "what": "הכוח של הגוף על המסילה",
-          "why": "החוק השלישי",
-          "tex": "N_F = 8\\,\\text{N}"
+          "why": "לפי החוק השלישי, שווה בגודלו והפוך בכיוונו: אופקי, החוצה",
+          "tex": "N' = 8\\,\\text{N}",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         }
       ],
       "finalAnswer": "$8\\,\\text{N}$, אופקית (כלפי חוץ)",
@@ -139,7 +160,7 @@
     },
     {
       "label": "ה",
-      "question": "במקרה אחר, שוחרר הגוף ממנוחה מהנקודה $B$, שנמצאת בגובה $0.9\\,\\text{m}$ מעל הנקודה $C$. האם במקרה זה הגוף מגיע לנקודה $E$? אם כן, חשב את מהירות הגוף בנקודה $E$. אם לא, נמק את תשובתך.",
+      "question": "במקרה אחר משחררים את הגוף ממנוחה מהנקודה $B$, שגבוהה ב-$0.9\\,\\text{m}$ מהנקודה $C$. האם הגוף מגיע לנקודה $E$? אם כן, מה המהירות שלו שם? אם לא, נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -154,14 +175,16 @@
       ],
       "solution": [
         {
-          "what": "התנאי בנקודה העליונה",
-          "why": "הנורמלי לא שלילי",
-          "tex": "v_E^2 \\ge g r = 4"
+          "what": "התנאי בראש הלולאה",
+          "why": "מאותה משוואה כמו בסעיף א. הכוח הנורמלי לא יכול להיות שלילי",
+          "tex": "N = m\\,\\frac{v_E^2}{r} - mg \\ge 0 \\;\\Rightarrow\\; v_E^2 \\ge g\\,r = 4",
+          "eq": "a_R = \\frac{v^2}{r}"
         },
         {
           "what": "המהירות שהייתה מתקבלת",
-          "why": "שימור אנרגיה מ-B",
-          "tex": "v_E^2 = 2g(0.9 - 0.8) = 2 < 4"
+          "why": "שימור אנרגיה מהנקודה B. הנקודה E נמוכה ממנה רק בעשירית מטר",
+          "tex": "v_E^2 = 2 \\cdot 10 \\cdot (0.9 - 0.8) = 2 < 4",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "לא: הגוף מתנתק מהמסילה לפני $E$",
