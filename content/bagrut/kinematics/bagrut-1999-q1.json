@@ -12,7 +12,7 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה לדף התשובות, בסעיף ב3 (המהירות ברגע 0.08).\nבדף התשובות: 0.96 מטר לשנייה.\nאצלי: 0.8 מטר לשנייה.\nלמה: לפי הטבלה בשאלה יוצא 0.8, וגם התאוצה 5 שבדף התשובות עצמו נותנת 0.8. נראה שהמספר 0.96 הועתק בטעות משאלה 1995 שאלה 1.\nמה לבדוק: חשב את המהירות ברגע 0.08 מהטבלה. אם יוצא לך 0.8, אשר.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. אי-התאמה לדף התשובות, בסעיף ב (המהירות ברגע 0.08).\nבדף התשובות: 0.96 מטר לשנייה.\nאצלי: 0.8 מטר לשנייה.\nלמה: לפי הטבלה בשאלה יוצא 0.8, וגם התאוצה 5 שבדף התשובות עצמו נותנת 0.8. נראה שהמספר 0.96 הועתק בטעות משאלה 1995 שאלה 1.\nסעיף ב הוא סעיף אחד, כמו בבגרות (בקשת הבעלים).\nמה לבדוק: חשב את המהירות ברגע 0.08 מהטבלה. אם יוצא לך 0.8, אשר.",
   "stem": "תלמיד שחרר קרונית מהקצה העליון של משטח משופע חסר חיכוך. מרגע מסוים, שהוגדר כ-$t = 0$, הוא מדד את מקומה של הקרונית במרווחי זמן של $0.02\\,\\text{s}$. ברגע $t = 0$ מהירות הקרונית אינה שווה בהכרח לאפס. ציר המקום $x$ נבחר כך שראשיתו בנקודה שבה נמצאת הקרונית ברגע $t = 0$, וכיוונו החיובי בכיוון תנועת הקרונית. תוצאות המדידות רשומות בטבלה.",
   "figure": {
     "type": "svg",
@@ -56,12 +56,10 @@
       "keyAnswer": "v0.06=0.7 m/s"
     },
     {
-      "label": "ב1",
-      "question": "חשב את מהירות הקרונית ברגע $t = 0.02\\,\\text{s}$.",
+      "label": "ב",
+      "question": "חשב את מהירות הקרונית ברגעים $t = 0.02\\,\\text{s}$, $0.04\\,\\text{s}$, $0.08\\,\\text{s}$, $0.10\\,\\text{s}$. אינך נדרש בסעיף זה לפרט את החישובים.",
       "answer": {
-        "type": "number",
-        "value": 0.5,
-        "unit": "m/s"
+        "type": "open"
       },
       "skills": [
         "graph",
@@ -69,83 +67,35 @@
       ],
       "solution": [
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $t = 0$ ו-$0.04\\,\\text{s}$",
-          "tex": "v(0.02) \\approx \\frac{0.020 - 0}{0.04} = 0.5\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$0.5\\,\\text{m/s}$",
-      "keyAnswer": "v0.02=0.5 m/s"
-    },
-    {
-      "label": "ב2",
-      "question": "חשב את מהירות הקרונית ברגע $t = 0.04\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 0.6000000000000001,
-        "unit": "m/s"
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+          "explain": "אותה שיטה כמו בסעיף א: המהירות הרגעית שווה למהירות הממוצעת בפרק זמן שהרגע נמצא באמצעו (הנקודה שלפני והנקודה שאחרי)."
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.02$ ו-$0.06\\,\\text{s}$",
-          "tex": "v(0.04) \\approx \\frac{0.033 - 0.009}{0.04} = 0.6\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$0.6\\,\\text{m/s}$",
-      "keyAnswer": "v0.04=0.6 m/s"
-    },
-    {
-      "label": "ב3",
-      "question": "חשב את מהירות הקרונית ברגע $t = 0.08\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 0.7999999999999998,
-        "unit": "m/s"
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+          "what": "$t = 0.02\\,\\text{s}$",
+          "why": "הנקודות $0$ ו-$0.04$",
+          "tex": "v = \\frac{0.020 - 0}{0.04} = 0.5\\,\\text{m/s}"
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.06$ ו-$0.10\\,\\text{s}$",
-          "tex": "v(0.08) \\approx \\frac{0.065 - 0.033}{0.04} = 0.8\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$0.8\\,\\text{m/s}$",
-      "keyAnswer": "v0.08=0.96 m/s"
-    },
-    {
-      "label": "ב4",
-      "question": "חשב את מהירות הקרונית ברגע $t = 0.10\\,\\text{s}$.",
-      "answer": {
-        "type": "number",
-        "value": 0.9000000000000002,
-        "unit": "m/s"
-      },
-      "skills": [
-        "graph",
-        "algebra"
-      ],
-      "solution": [
+          "what": "$t = 0.04\\,\\text{s}$",
+          "why": "הנקודות $0.02$ ו-$0.06$",
+          "tex": "v = \\frac{0.033 - 0.009}{0.04} = 0.6\\,\\text{m/s}"
+        },
         {
-          "what": "אותה שיטה",
-          "why": "הנקודות $0.08$ ו-$0.12\\,\\text{s}$",
-          "tex": "v(0.10) \\approx \\frac{0.084 - 0.048}{0.04} = 0.9\\,\\text{m/s}"
+          "what": "$t = 0.08\\,\\text{s}$",
+          "why": "הנקודות $0.06$ ו-$0.10$",
+          "tex": "v = \\frac{0.065 - 0.033}{0.04} = 0.8\\,\\text{m/s}"
+        },
+        {
+          "what": "$t = 0.10\\,\\text{s}$",
+          "why": "הנקודות $0.08$ ו-$0.12$",
+          "tex": "v = \\frac{0.084 - 0.048}{0.04} = 0.9\\,\\text{m/s}"
         }
       ],
-      "finalAnswer": "$0.9\\,\\text{m/s}$",
-      "keyAnswer": null
+      "finalAnswer": "$0.5$, $0.6$, $0.8$, $0.9\\,\\text{m/s}$ (ברגעים $0.02$, $0.04$, $0.08$, $0.10$)",
+      "keyAnswer": "0.5, 0.6, 0.96 m/s"
     },
     {
       "label": "ג",
-      "question": "הצג בטבלה את חמש המהירויות שחישבת בסעיפים א ו-ב, וסרטט גרף של מהירות הקרונית כפונקציה של הזמן.",
+      "question": "הצג בטבלה את תוצאות החישובים של חמש המהירויות שחישבת בסעיפים א ו-ב, וסרטט גרף של מהירות הקרונית כפונקציה של הזמן.",
       "answer": {
         "type": "open"
       },
@@ -154,14 +104,42 @@
       ],
       "solution": [
         {
-          "what": "טבלת המהירויות",
-          "why": "מסעיפים א ו-ב",
-          "tex": "(0.02, 0.5),\\ (0.04, 0.6),\\ (0.06, 0.7),\\ (0.08, 0.8),\\ (0.10, 0.9)"
+          "caption": "הטבלה",
+          "head": [
+            "$t\\,(\\text{s})$",
+            "$v\\,(\\text{m/s})$"
+          ],
+          "rows": [
+            [
+              "0.02",
+              "0.5"
+            ],
+            [
+              "0.04",
+              "0.6"
+            ],
+            [
+              "0.06",
+              "0.7"
+            ],
+            [
+              "0.08",
+              "0.8"
+            ],
+            [
+              "0.10",
+              "0.9"
+            ]
+          ]
         },
         {
           "what": "צורת הגרף",
-          "why": "המהירות גדלה ב-$0.1$ כל $0.02$ שניות: קו ישר",
+          "why": "המהירות גדלה ב-$0.1$ כל $0.02$ שניות: הנקודות על קו ישר",
           "tex": "v = 0.4 + 5t"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"גרף התשובה: מהירות כפונקציה של זמן. חמש נקודות מהטבלה על קו ישר עולה, שחותך את ציר המהירות ב-0.4 מטר לשנייה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"137.2\" y1=\"260\" x2=\"137.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"204.4\" y1=\"260\" x2=\"204.4\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"271.6\" y1=\"260\" x2=\"271.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"338.8\" y1=\"260\" x2=\"338.8\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"406\" y1=\"260\" x2=\"406\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"473.2\" y1=\"260\" x2=\"473.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"218.1\" x2=\"490\" y2=\"218.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"176.2\" x2=\"490\" y2=\"176.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"134.3\" x2=\"490\" y2=\"134.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"92.4\" x2=\"490\" y2=\"92.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"50.5\" x2=\"490\" y2=\"50.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"137.2\" y1=\"256\" x2=\"137.2\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"137.2\" y=\"278\" text-anchor=\"middle\">0.02</text>\n<line x1=\"204.4\" y1=\"256\" x2=\"204.4\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"204.4\" y=\"278\" text-anchor=\"middle\">0.04</text>\n<line x1=\"271.6\" y1=\"256\" x2=\"271.6\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"271.6\" y=\"278\" text-anchor=\"middle\">0.06</text>\n<line x1=\"338.8\" y1=\"256\" x2=\"338.8\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"338.8\" y=\"278\" text-anchor=\"middle\">0.08</text>\n<line x1=\"406\" y1=\"256\" x2=\"406\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"406\" y=\"278\" text-anchor=\"middle\">0.1</text>\n<line x1=\"473.2\" y1=\"256\" x2=\"473.2\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"473.2\" y=\"278\" text-anchor=\"middle\">0.12</text>\n<line x1=\"66\" y1=\"218.1\" x2=\"74\" y2=\"218.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"222.1\" text-anchor=\"end\">0.2</text>\n<line x1=\"66\" y1=\"176.2\" x2=\"74\" y2=\"176.2\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"180.2\" text-anchor=\"end\">0.4</text>\n<line x1=\"66\" y1=\"134.3\" x2=\"74\" y2=\"134.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"138.3\" text-anchor=\"end\">0.6</text>\n<line x1=\"66\" y1=\"92.4\" x2=\"74\" y2=\"92.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"96.4\" text-anchor=\"end\">0.8</text>\n<line x1=\"66\" y1=\"50.5\" x2=\"74\" y2=\"50.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"54.5\" text-anchor=\"end\">1</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">v (m/s)</text>\n<polyline points=\"70,176.2 473.2,50.5\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"137.2\" cy=\"155.2\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"204.4\" cy=\"134.3\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"271.6\" cy=\"113.3\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"338.8\" cy=\"92.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"406\" cy=\"71.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"dim\" x=\"78\" y=\"192.2\" text-anchor=\"start\">0.4</text>\n</svg>\n",
+          "caption": "הגרף: מהירות כפונקציה של הזמן"
         }
       ],
       "finalAnswer": "קו ישר עולה, שחותך את ציר המהירות ב-$0.4\\,\\text{m/s}$",
