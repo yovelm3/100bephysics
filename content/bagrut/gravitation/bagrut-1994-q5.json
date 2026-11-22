@@ -12,21 +12,21 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "לכוכב לכת דמיוני אין אטמוספרה. רדיוסו $R = 10^7\\,\\text{m}$, ותאוצת הנפילה החופשית על פניו היא $10\\,\\text{m/s}^2$. גוף משוחרר ממנוחה מנקודה $A$, שנמצאת בגובה $R$ (כרדיוס הכוכב) מעל פני הכוכב.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף א2 יש בפתרון ציור של הגרף.\nמה לבדוק: רק לאשר.",
+  "stem": "לכוכב לכת דמיוני אין אטמוספרה. הרדיוס שלו $R = 10^7\\,\\text{m}$, ותאוצת הנפילה החופשית על פניו $10\\,\\text{m/s}^2$. משחררים גוף ממנוחה בנקודה $A$, שגבוהה $R$ מעל פני הכוכב, כלומר בגובה ששווה לרדיוס.",
   "figure": null,
   "authorNote": null,
   "concepts": [
-    "תאוצת כבידה במרחק",
+    "תאוצת הכבידה במרחק",
     "הערכה בגבולות",
-    "אנרגיה פוטנציאלית כבידתית"
+    "אנרגיה בשדה כבידה"
   ],
-  "summary": "נפילה מגובה שווה לרדיוס הכוכב: התאוצה משתנה פי 4, הזמן נמצא בין שני גבולות, והמהירות מאנרגיה.",
+  "summary": "נפילה מגובה ששווה לרדיוס הכוכב: התאוצה משתנה פי ארבעה, הזמן נמצא בין שני גבולות, והמהירות מאנרגיה.",
   "position": 14,
   "parts": [
     {
       "label": "א1",
-      "question": "חשב את תאוצת הנפילה החופשית בנקודה $A$.",
+      "question": "מה תאוצת הנפילה החופשית בנקודה $A$?",
       "answer": {
         "type": "number",
         "value": 2.5,
@@ -37,9 +37,10 @@
       ],
       "solution": [
         {
-          "what": "תאוצה הפוכה לריבוע המרחק",
-          "why": "$A$ במרחק $2R$ מהמרכז",
-          "tex": "g_A = g\\left(\\frac{R}{2R}\\right)^2 = \\frac{10}{4} = 2.5\\,\\text{m/s}^2"
+          "what": "התאוצה הפוכה לריבוע המרחק",
+          "why": "הנקודה נמצאת במרחק של שני רדיוסים מהמרכז",
+          "tex": "g_A = \\frac{GM}{(2R)^2} = \\frac{1}{4} \\cdot \\frac{GM}{R^2} = \\frac{10}{4} = 2.5\\,\\text{m/s}^2",
+          "eq": "g^* = \\frac{GM}{r^2}"
         }
       ],
       "finalAnswer": "$2.5\\,\\text{m/s}^2$",
@@ -47,7 +48,7 @@
     },
     {
       "label": "א2",
-      "question": "סרטט גרף מקורב, שמתאר את תאוצת הנפילה החופשית כפונקציה של מרחקו של הגוף ממרכז הכוכב, בתנועתו מ-$A$ עד פני הכוכב. רשום את התכונות המתמטיות שעליהן הוא מתבסס.",
+      "question": "שרטטו גרף מקורב של תאוצת הנפילה החופשית כפונקציה של המרחק של הגוף ממרכז הכוכב, בדרך מ-$A$ עד פני הכוכב. כתבו על אילו תכונות מתמטיות הוא מבוסס.",
       "answer": {
         "type": "open"
       },
@@ -58,21 +59,26 @@
       "solution": [
         {
           "what": "הקשר",
-          "why": "מחוק הכבידה ו-GM = gR²",
-          "tex": "g(r) = \\frac{gR^2}{r^2}"
+          "why": "מכפלת הקבוע במסה שווה לתאוצת הכובד על הפנים כפול ריבוע הרדיוס",
+          "tex": "g(r) = \\frac{GM}{r^2} = \\frac{gR^2}{r^2}",
+          "eq": "g^* = \\frac{GM}{r^2}"
         },
         {
-          "what": "צורה",
-          "why": "עקומה יורדת (היפרבולה ריבועית) מ-$10$ ב-$r = R$ ל-$2.5$ ב-$r = 2R$",
-          "tex": "g \\propto r^{-2}"
+          "what": "צורת הגרף",
+          "why": "התאוצה הפוכה לריבוע המרחק. העקומה יורדת ומתמתנת, מעשרה בפני הכוכב לשניים וחצי בנקודה ההתחלתית",
+          "tex": "g \\propto \\frac{1}{r^2}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-20 0 480 270\" direction=\"ltr\" role=\"img\" aria-label=\"גרף תאוצת הנפילה כפונקציה של המרחק מהמרכז: עקומה יורדת מעשרה מטר לשנייה בריבוע ברדיוס אחד, לשניים וחצי בשני רדיוסים\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"220\" y1=\"230\" x2=\"220\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"295\" y1=\"230\" x2=\"295\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"370\" y1=\"230\" x2=\"370\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"186.8\" x2=\"400\" y2=\"186.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"143.6\" x2=\"400\" y2=\"143.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"100.5\" x2=\"400\" y2=\"100.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"57.3\" x2=\"400\" y2=\"57.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"230\" x2=\"418\" y2=\"230\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"230\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"220\" y1=\"226\" x2=\"220\" y2=\"234\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"220\" y=\"248\" text-anchor=\"middle\">R</text>\n<line x1=\"295\" y1=\"226\" x2=\"295\" y2=\"234\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"295\" y=\"248\" text-anchor=\"middle\">1.5R</text>\n<line x1=\"370\" y1=\"226\" x2=\"370\" y2=\"234\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"370\" y=\"248\" text-anchor=\"middle\">2R</text>\n<line x1=\"66\" y1=\"186.8\" x2=\"74\" y2=\"186.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"190.8\" text-anchor=\"end\">2.5</text>\n<line x1=\"66\" y1=\"143.6\" x2=\"74\" y2=\"143.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"147.6\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"100.5\" x2=\"74\" y2=\"100.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"104.5\" text-anchor=\"end\">7.5</text>\n<line x1=\"66\" y1=\"57.3\" x2=\"74\" y2=\"57.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"61.3\" text-anchor=\"end\">10</text>\n<text class=\"label\" x=\"416\" y=\"220\" text-anchor=\"end\">r</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">g (m/s²)</text>\n<polyline points=\"220,57.3 222.5,62.9 225,68.2 227.5,73.3 230,78.2 232.5,82.8 235,87.3 237.5,91.5 240,95.5 242.5,99.4 245,103.1 247.5,106.6 250,110.1 252.5,113.3 255,116.4 257.5,119.5 260,122.3 262.5,125.1 265,127.8 267.5,130.4 270,132.8 272.5,135.2 275,137.5 277.5,139.7 280,141.9 282.5,143.9 285,145.9 287.5,147.8 290,149.7 292.5,151.5 295,153.2 297.5,154.9 300,156.5 302.5,158.1 305,159.6 307.5,161.1 310,162.5 312.5,163.9 315,165.3 317.5,166.6 320,167.8 322.5,169 325,170.2 327.5,171.4 330,172.5 332.5,173.6 335,174.7 337.5,175.7 340,176.7 342.5,177.7 345,178.6 347.5,179.5 350,180.4 352.5,181.3 355,182.2 357.5,183 360,183.8 362.5,184.6 365,185.3 367.5,186.1 370,186.8\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<line x1=\"220\" y1=\"57.3\" x2=\"220\" y2=\"230\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"3 3\" stroke-linecap=\"round\"/>\n<line x1=\"370\" y1=\"186.8\" x2=\"370\" y2=\"230\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"3 3\" stroke-linecap=\"round\"/>\n</svg>\n",
+          "caption": "גרף התאוצה כפונקציה של המרחק"
         }
       ],
-      "finalAnswer": "$g \\propto 1/r^2$: מ-$2.5$ ב-$2R$ עד $10$ ב-$R$",
+      "finalAnswer": "עקומה יורדת, הפוכה לריבוע המרחק: $10$ ב-$R$ ו-$2.5$ ב-$2R$",
       "keyAnswer": null
     },
     {
       "label": "א3",
-      "question": "הערך את משך נפילת הגוף, מרגע שחרורו ועד רגע פגיעתו בפני הכוכב, באמצעות קביעת גבול עליון וגבול תחתון עבור משך הנפילה. מהו הגבול התחתון?",
+      "question": "העריכו את זמן הנפילה מהשחרור עד הפגיעה בפני הכוכב, בעזרת גבול עליון וגבול תחתון. מה הגבול התחתון?",
       "answer": {
         "type": "number",
         "value": 1414.213562373095,
@@ -84,22 +90,18 @@
       ],
       "solution": [
         {
-          "what": "גבול תחתון",
-          "why": "אילו כל הדרך הייתה בתאוצה המרבית, $10$",
-          "tex": "t_{\\min} = \\sqrt{\\frac{2R}{10}} \\approx 1412\\,\\text{s}"
-        },
-        {
-          "what": "גבול עליון",
-          "why": "אילו כל הדרך הייתה בתאוצה המזערית, $2.5$",
-          "tex": "t_{\\max} = \\sqrt{\\frac{2R}{2.5}} \\approx 2828\\,\\text{s}"
+          "what": "הגבול התחתון",
+          "why": "אם כל הדרך הייתה בתאוצה הגדולה ביותר, הגוף היה מגיע מהר יותר מבמציאות. הדרך שווה לרדיוס",
+          "tex": "R = \\tfrac{1}{2} \\cdot 10\\,t^2 \\;\\Rightarrow\\; t_{\\min} = \\sqrt{\\frac{2 \\cdot 10^7}{10}} \\approx 1412\\,\\text{s}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
-      "finalAnswer": "בין $\\approx 1412\\,\\text{s}$ ל-$\\approx 2828\\,\\text{s}$",
+      "finalAnswer": "$\\approx 1412\\,\\text{s}$",
       "keyAnswer": "tmin=1412.2 s"
     },
     {
       "label": "א4",
-      "question": "מהו הגבול העליון?",
+      "question": "מה הגבול העליון?",
       "answer": {
         "type": "number",
         "value": 2828.42712474619,
@@ -110,9 +112,10 @@
       ],
       "solution": [
         {
-          "what": "גבול עליון",
-          "why": "התאוצה המזערית לאורך כל הדרך",
-          "tex": "t_{\\max} = \\sqrt{\\frac{2 \\cdot 10^7}{2.5}} \\approx 2828\\,\\text{s}"
+          "what": "הגבול העליון",
+          "why": "אם כל הדרך הייתה בתאוצה הקטנה ביותר, הגוף היה מגיע לאט יותר מבמציאות",
+          "tex": "t_{\\max} = \\sqrt{\\frac{2 \\cdot 10^7}{2.5}} \\approx 2828\\,\\text{s}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
       "finalAnswer": "$\\approx 2828\\,\\text{s}$",
@@ -120,7 +123,7 @@
     },
     {
       "label": "ב",
-      "question": "חשב את המהירות שבה פוגע הגוף בפני הכוכב.",
+      "question": "באיזו מהירות הגוף פוגע בפני הכוכב?",
       "answer": {
         "type": "number",
         "value": 10000.0,
@@ -132,13 +135,14 @@
       "solution": [
         {
           "what": "שימור אנרגיה בשדה כבידה",
-          "why": "$GM = gR^2$",
-          "tex": "\\tfrac{1}{2}v^2 = gR^2\\left(\\frac{1}{R} - \\frac{1}{2R}\\right) = \\frac{gR}{2}"
+          "why": "הגוף מתחיל ממנוחה במרחק של שני רדיוסים. המסה של הגוף מצטמצמת. מכפלת הקבוע במסה שווה לתאוצה על הפנים כפול ריבוע הרדיוס",
+          "tex": "0 - \\frac{GMm}{2R} = \\tfrac{1}{2}m\\,v^2 - \\frac{GMm}{R} \\;\\Rightarrow\\; v^2 = \\frac{GM}{R} = gR",
+          "eq": "U = -\\frac{GMm}{r}"
         },
         {
           "what": "המהירות",
-          "why": "שורש",
-          "tex": "v = \\sqrt{gR} = \\sqrt{10^8} = 10^4\\,\\text{m/s}"
+          "why": "מציבים ומוציאים שורש",
+          "tex": "v = \\sqrt{10 \\cdot 10^7} = 10^4\\,\\text{m/s}"
         }
       ],
       "finalAnswer": "$10^4\\,\\text{m/s}$",
