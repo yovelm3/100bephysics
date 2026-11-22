@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "תיבה שמסתה $0.5$ ק\"ג נעה לאורך קו ישר על משטח אופקי מחוספס בכיוון החיובי של ציר ה-$x$. מקדם החיכוך הקינטי בין התיבה למשטח הוא $\\mu_k = 0.1$. בזמן $t = 0$ הייתה התיבה בנקודה ששיעורה $x = 0$. הגרף בתרשים א מתאר את האנרגיה הקינטית, $E_k$, של התיבה כפונקציה של מיקומה, $x$, ב-$50$ המטרים הראשונים של תנועתה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "stem": "תיבה שמסתה $0.5\\,\\text{kg}$ נעה בקו ישר על משטח אופקי מחוספס, בכיוון החיובי של ציר $x$. מקדם החיכוך הקינטי בין התיבה למשטח $\\mu_k = 0.1$. ברגע $t = 0$ התיבה בנקודה $x = 0$. הגרף בתרשים א מראה את האנרגיה הקינטית $E_k$ של התיבה כפונקציה של המקום $x$, ב-$50$ המטרים הראשונים של התנועה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2009-q4.svg",
@@ -24,15 +24,15 @@
   "concepts": [
     "משפט העבודה והאנרגיה",
     "עבודת חיכוך",
-    "כוח נטוי ונורמלי",
+    "כוח נטוי וכוח נורמלי",
     "שימור אנרגיה מכנית"
   ],
-  "summary": "תיבה על משטח מחוספס לפי גרף אנרגיה קינטית: מתי פועל כוח נוסף, כמה, עבודת החיכוך הכוללת, ומה מתאים לגרף של אנרגיה נשמרת.",
+  "summary": "תיבה על משטח מחוספס לפי גרף אנרגיה קינטית: מתי פועל כוח נוסף, מה גודלו, העבודה של החיכוך, ואיזה מצב מתאים לגרף של אנרגיה שנשמרת.",
   "position": 10,
   "parts": [
     {
       "label": "א",
-      "question": "האם במהלך $20$ המטרים הראשונים של התנועה פועל על התיבה כוח אופקי בנוסף לכוח החיכוך? הסבר את תשובתך.",
+      "question": "האם בעשרים המטרים הראשונים פועל על התיבה כוח אופקי נוסף על החיכוך? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -48,16 +48,17 @@
       "solution": [
         {
           "what": "האנרגיה הקינטית קבועה",
-          "why": "לפי משפט העבודה והאנרגיה, העבודה הכוללת אפס. החיכוך עושה עבודה שלילית, ולכן חייב להיות כוח שמאזן אותו",
-          "tex": "W = \\Delta E_k = 0"
+          "why": "לפי משפט העבודה והאנרגיה, העבודה הכוללת אפס. החיכוך עושה עבודה שלילית, ולכן חייב לפעול כוח נוסף שעושה עבודה חיובית ומאזן אותו",
+          "tex": "W_{\\text{tot}} = \\Delta E_k = 16 - 16 = 0",
+          "eq": "W_{\\text{tot}} = \\Delta E_k"
         }
       ],
-      "finalAnswer": "כן: האנרגיה הקינטית לא יורדת למרות החיכוך",
+      "finalAnswer": "כן: האנרגיה הקינטית לא קטנה, למרות החיכוך",
       "keyAnswer": "כן"
     },
     {
       "label": "ב",
-      "question": "במהלך תנועת התיבה מ-$x = 20\\,\\text{m}$ ל-$x = 50\\,\\text{m}$, פועל על התיבה כוח אופקי קבוע $F_1$, בנוסף לכוח החיכוך. חשב את גודל הכוח $F_1$.",
+      "question": "מ-$x = 20\\,\\text{m}$ עד $x = 50\\,\\text{m}$ פועל על התיבה, נוסף על החיכוך, כוח אופקי קבוע $F_1$. מה גודל הכוח $F_1$?",
       "answer": {
         "type": "number",
         "value": 1.3,
@@ -69,19 +70,25 @@
       ],
       "solution": [
         {
-          "what": "כוח החיכוך",
-          "why": "μmg",
-          "tex": "f = 0.1 \\cdot 0.5 \\cdot 10 = 0.5\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על התיבה: הכוח אף אחת בכיוון התנועה, חיכוך קינטי נגד התנועה, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי הוא כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"279.5\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"297.5\" y=\"156\" text-anchor=\"middle\">F₁</text>\n<line x1=\"210\" y1=\"150\" x2=\"165\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"147\" y=\"156\" text-anchor=\"middle\">fₖ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על התיבה"
         },
         {
           "what": "משפט העבודה והאנרגיה",
-          "why": "עבודת השקול על 30 m",
-          "tex": "(F_1 - 0.5) \\cdot 30 = 40 - 16"
+          "why": "העבודה של כל כוח היא הכוח כפול הדרך. הכוח הנוסף בכיוון התנועה, והחיכוך נגדה. הכוח הנורמלי והכובד ניצבים לתנועה ולא עושים עבודה",
+          "tex": "F_1 \\cdot 30 - f_k \\cdot 30 = 40 - 16",
+          "eq": "W_{\\text{tot}} = \\Delta E_k"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "הכוח הנורמלי שווה לכובד",
+          "tex": "f_k = \\mu N = 0.1 \\cdot 0.5 \\cdot 10 = 0.5\\,\\text{N}",
+          "eq": "f_k = \\mu_k N"
         },
         {
           "what": "פותרים",
-          "why": "מחלקים ב-30",
-          "tex": "F_1 = 0.8 + 0.5 = 1.3\\,\\text{N}"
+          "why": "מחלקים בדרך",
+          "tex": "F_1 - 0.5 = \\frac{24}{30} = 0.8 \\;\\Rightarrow\\; F_1 = 1.3\\,\\text{N}"
         }
       ],
       "finalAnswer": "$1.3\\,\\text{N}$",
@@ -89,7 +96,7 @@
     },
     {
       "label": "ג",
-      "question": "הכוח $F_1$ הפסיק לפעול ברגע שהתיבה הגיעה ל-$x = 50\\,\\text{m}$. חשב את העבודה של כוח החיכוך בקטע התנועה מ-$x = 0$ עד שהתיבה נעצרה.",
+      "question": "ברגע שהתיבה מגיעה ל-$x = 50\\,\\text{m}$ הכוח $F_1$ מפסיק לפעול. מה העבודה של כוח החיכוך מ-$x = 0$ עד שהתיבה נעצרת?",
       "answer": {
         "type": "number",
         "value": -65.0,
@@ -101,14 +108,16 @@
       ],
       "solution": [
         {
-          "what": "הדרך אחרי $50\\,\\text{m}$",
-          "why": "החיכוך מוריד $40\\,\\text{J}$",
-          "tex": "0.5\\,d = 40 \\Rightarrow d = 80\\,\\text{m}"
+          "what": "הדרך אחרי חמישים מטר",
+          "why": "נשאר רק החיכוך, והוא לוקח את כל האנרגיה הקינטית",
+          "tex": "-f_k\\,d = 0 - 40 \\;\\Rightarrow\\; 0.5\\,d = 40 \\;\\Rightarrow\\; d = 80\\,\\text{m}",
+          "eq": "W_{\\text{tot}} = \\Delta E_k"
         },
         {
-          "what": "העבודה",
-          "why": "דרך כוללת $130\\,\\text{m}$",
-          "tex": "W_f = -0.5 \\cdot 130 = -65\\,\\text{J}"
+          "what": "העבודה של החיכוך",
+          "why": "החיכוך פועל לאורך כל הדרך, מאה ושלושים מטר, תמיד נגד התנועה",
+          "tex": "W_{f} = f_k \\cos 180^\\circ \\cdot 130 = -0.5 \\cdot 130 = -65\\,\\text{J}",
+          "eq": "W = F\\cos\\theta\\,\\Delta s"
         }
       ],
       "finalAnswer": "$-65\\,\\text{J}$",
@@ -116,7 +125,7 @@
     },
     {
       "label": "ד",
-      "question": "נניח שבקטע מ-$x = 20\\,\\text{m}$ ל-$x = 50\\,\\text{m}$ היו מפעילים על התיבה, במקום הכוח $F_1$, כוח $F_2$ שנטוי בזווית $\\alpha$ מעל האופק, כך שהרכיב האופקי שלו היה שווה ל-$F_1$. האם במקרה זה האנרגיה הקינטית של התיבה ב-$x = 50\\,\\text{m}$ הייתה שווה ל-$40\\,\\text{J}$, גדולה מ-$40\\,\\text{J}$ או קטנה מ-$40\\,\\text{J}$? הסבר.",
+      "question": "נניח שמ-$x = 20\\,\\text{m}$ עד $x = 50\\,\\text{m}$ מפעילים על התיבה, במקום $F_1$, כוח $F_2$ שנטוי בזווית $\\alpha$ מעל האופק, והרכיב האופקי שלו שווה ל-$F_1$. האם האנרגיה הקינטית ב-$x = 50\\,\\text{m}$ תהיה שווה ל-$40\\,\\text{J}$, גדולה ממנה או קטנה ממנה? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -132,22 +141,28 @@
       ],
       "solution": [
         {
-          "what": "הרכיב האנכי",
-          "why": "מרים מעט את התיבה ומקטין את הנורמלי, ולכן גם את החיכוך",
-          "tex": "N = mg - F_2\\sin\\alpha < mg"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על התיבה: הכוח אף שתיים נטוי מעל האופק, חיכוך קינטי נגד התנועה, הכוח הנורמלי כלפי מעלה, קטן יותר מכוח הכובד, וכוח הכובד כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"276.3\" y2=\"111.8\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"291.8\" y=\"108.8\" text-anchor=\"middle\">F₂</text>\n<line x1=\"210\" y1=\"150\" x2=\"168.5\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"150.5\" y=\"156\" text-anchor=\"middle\">fₖ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על התיבה עם הכוח הנטוי"
+        },
+        {
+          "what": "משוואת כוחות בניצב למשטח",
+          "why": "אין תנועה בכיוון הזה. הרכיב האנכי של הכוח מרים מעט את התיבה, ולכן הכוח הנורמלי קטן",
+          "tex": "N + F_2\\sin\\alpha - mg = 0 \\;\\Rightarrow\\; N = mg - F_2\\sin\\alpha < mg",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
           "what": "מסקנה",
-          "why": "אותה עבודה של הכוח, פחות עבודה של חיכוך",
-          "tex": "E_k > 40\\,\\text{J}"
+          "why": "החיכוך פרופורציוני לכוח הנורמלי, ולכן הוא קטן. העבודה של הרכיב האופקי זהה, והחיכוך לוקח פחות",
+          "tex": "f_k = \\mu N < 0.5\\,\\text{N} \\;\\Rightarrow\\; E_k > 40\\,\\text{J}",
+          "eq": "f_k = \\mu_k N"
         }
       ],
-      "finalAnswer": "גדולה: החיכוך קטן",
+      "finalAnswer": "גדולה: החיכוך קטן יותר",
       "keyAnswer": "גדולה מ-40 J"
     },
     {
       "label": "ה",
-      "question": "גוף קטן נע על פני משטח כלשהו. הגרף בתרשים ב מתאר את הקשר בין האנרגיה הפוטנציאלית הכובדית של הגוף לבין האנרגיה הקינטית שלו. לפניך שלושה היגדים: (1) הגוף נע על משטח אופקי חלק בהשפעת כוח קבוע. (2) הגוף נע במורד מישור משופע מחוספס. (3) הגוף נופל חופשית. איזה היגד מתאים לגרף?",
+      "question": "גוף קטן נע על משטח כלשהו. הגרף בתרשים ב מראה את הקשר בין אנרגיית הגובה של הגוף לאנרגיה הקינטית שלו. איזה מההיגדים מתאים לגרף? (1) הגוף נע על משטח אופקי חלק, בהשפעת כוח קבוע. (2) הגוף נע במורד מישור משופע מחוספס. (3) הגוף נופל נפילה חופשית.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -164,12 +179,12 @@
       "solution": [
         {
           "what": "מה הגרף אומר",
-          "why": "סכום שתי האנרגיות קבוע",
-          "tex": "E_p + E_k = 10\\,\\text{J}"
+          "why": "בכל נקודה על הקו סכום שתי האנרגיות זהה, ולכן האנרגיה המכנית נשמרת",
+          "tex": "U_G + E_k = 10\\,\\text{J}"
         },
         {
           "what": "פוסלים",
-          "why": "ב-(1) אנרגיית הגובה קבועה. ב-(2) האנרגיה המכנית יורדת בגלל החיכוך",
+          "why": "בהיגד הראשון אנרגיית הגובה לא משתנה. בהיגד השני האנרגיה המכנית קטנה בגלל החיכוך",
           "tex": "\\Delta E \\ne 0"
         }
       ],

@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "נערה נעה על גלגליות: תחילה על פני משטח אופקי, ואחר כך מכוון על פני משטח ישר ומשופע (בלי להיעזר בכוחות שרירים). נגדיר ציר $x$ אופקי, שראשיתו בנקודת ההתחלה של המשטח המשופע. הזנח את החיכוך של הנערה עם המשטח ועם האוויר. בשלוש נקודות שונות לאורך המשטח המשופע נמדדה האנרגיה הקינטית $E_k$ של הנערה. בטבלה רשומים המקום האופקי $x$ של הנקודות, והאנרגיה הקינטית של הנערה בנקודות אלה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף א התלמיד בוחר את הביטוי הנכון מתוך ארבעה. בסעיף ב יש בפתרון ציור של הגרף.\nמה לבדוק: רק לאשר.",
+  "stem": "נערה על גלגליות נעה קודם על משטח אופקי, ואחר כך עולה על משטח ישר ומשופע, בלי להפעיל את השרירים. ציר $x$ אופקי, והראשית שלו בתחילת המשטח המשופע. מזניחים את החיכוך עם המשטח ואת התנגדות האוויר. בשלוש נקודות על המשטח המשופע מדדו את האנרגיה הקינטית $E_k$ של הנערה. הטבלה מראה את המקום האופקי $x$ של כל נקודה ואת האנרגיה הקינטית בה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2000-q3.svg",
@@ -27,14 +27,21 @@
     "גרף לינארי",
     "חיתוך עם הצירים"
   ],
-  "summary": "נערה שעולה במדרון: האנרגיה הקינטית יורדת לינארית עם $x$, ומהגרף מוצאים את האנרגיה בהתחלה ואת נקודת העצירה.",
+  "summary": "נערה שעולה במשטח משופע: האנרגיה הקינטית יורדת בקו ישר עם המקום, ומהגרף מוצאים את האנרגיה בהתחלה ואת נקודת העצירה.",
   "position": 7,
   "parts": [
     {
       "label": "א",
-      "question": "בלי להתבסס על נתוני הטבלה, הוכח כי הקשר בין האנרגיה הקינטית של הנערה, $E_k$, לבין המקום $x$ על המשטח המשופע הוא לינארי (קווי).",
+      "question": "בלי להשתמש בטבלה, הוכיחו שהקשר בין האנרגיה הקינטית $E_k$ לבין המקום $x$ על המשטח המשופע הוא קו ישר. איזה ביטוי מתאר את הקשר? (האות $E$ מסמנת את האנרגיה המכנית של הנערה.)",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$E_k = E - (mg\\tan\\alpha)\\,x$",
+          "$E_k = E - (mg\\sin\\alpha)\\,x$",
+          "$E_k = E + (mg\\tan\\alpha)\\,x$",
+          "$E_k = E - mg\\,x$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -42,14 +49,20 @@
       ],
       "solution": [
         {
-          "what": "הגובה על המדרון",
-          "why": "גיאומטריה",
+          "what": "הגובה על המשטח המשופע",
+          "why": "ציר המקום אופקי. במשולש ישר זווית הגובה הוא המרחק האופקי כפול הטנגנס",
           "tex": "h = x\\tan\\alpha"
         },
         {
           "what": "שימור אנרגיה",
-          "why": "$E$ האנרגיה הכוללת",
-          "tex": "E_k = E - mg\\tan\\alpha \\cdot x"
+          "why": "אין חיכוך, והכוח הנורמלי לא עושה עבודה. האנרגיה המכנית קבועה",
+          "tex": "E = E_k + mgh = E_k + mg\\tan\\alpha \\cdot x",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
+        },
+        {
+          "what": "מבודדים",
+          "why": "המקדם של המקום קבוע, ולכן זה קו ישר",
+          "tex": "E_k = E - (mg\\tan\\alpha)\\,x"
         }
       ],
       "finalAnswer": "$E_k = E - (mg\\tan\\alpha)x$: קו ישר",
@@ -57,7 +70,7 @@
     },
     {
       "label": "ב",
-      "question": "על פי נתוני הטבלה, סרטט במערכת צירים גרף של האנרגיה הקינטית, $E_k$, כפונקציה של המקום $x$.",
+      "question": "לפי הטבלה, שרטטו גרף של האנרגיה הקינטית $E_k$ כפונקציה של המקום $x$.",
       "answer": {
         "type": "open"
       },
@@ -66,17 +79,21 @@
       ],
       "solution": [
         {
-          "what": "שיפוע",
-          "why": "שתי נקודות מהטבלה",
+          "what": "השיפוע",
+          "why": "בוחרים שתי נקודות מהטבלה",
           "tex": "\\frac{140 - 260}{1.2 - 0.4} = -150\\,\\text{J/m}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-20 0 480 280\" direction=\"ltr\" role=\"img\" aria-label=\"גרף האנרגיה הקינטית כפונקציה של המקום: שלוש נקודות מהטבלה על קו ישר יורד. הקו חותך את ציר האנרגיה ב-320 ג'אול ואת ציר המקום בערך ב-2.1 מטר\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"127.4\" y1=\"240\" x2=\"127.4\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"184.8\" y1=\"240\" x2=\"184.8\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"242.2\" y1=\"240\" x2=\"242.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"299.6\" y1=\"240\" x2=\"299.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"357\" y1=\"240\" x2=\"357\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"192.9\" x2=\"400\" y2=\"192.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"157.6\" x2=\"400\" y2=\"157.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"122.4\" x2=\"400\" y2=\"122.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"87.1\" x2=\"400\" y2=\"87.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"51.8\" x2=\"400\" y2=\"51.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"240\" x2=\"418\" y2=\"240\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"240\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"127.4\" y1=\"236\" x2=\"127.4\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"127.4\" y=\"258\" text-anchor=\"middle\">0.4</text>\n<line x1=\"184.8\" y1=\"236\" x2=\"184.8\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"184.8\" y=\"258\" text-anchor=\"middle\">0.8</text>\n<line x1=\"242.2\" y1=\"236\" x2=\"242.2\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"242.2\" y=\"258\" text-anchor=\"middle\">1.2</text>\n<line x1=\"299.6\" y1=\"236\" x2=\"299.6\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"299.6\" y=\"258\" text-anchor=\"middle\">1.6</text>\n<line x1=\"357\" y1=\"236\" x2=\"357\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"357\" y=\"258\" text-anchor=\"middle\">2.0</text>\n<line x1=\"66\" y1=\"192.9\" x2=\"74\" y2=\"192.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"196.9\" text-anchor=\"end\">80</text>\n<line x1=\"66\" y1=\"157.6\" x2=\"74\" y2=\"157.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"161.6\" text-anchor=\"end\">140</text>\n<line x1=\"66\" y1=\"122.4\" x2=\"74\" y2=\"122.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"126.4\" text-anchor=\"end\">200</text>\n<line x1=\"66\" y1=\"87.1\" x2=\"74\" y2=\"87.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"91.1\" text-anchor=\"end\">260</text>\n<line x1=\"66\" y1=\"51.8\" x2=\"74\" y2=\"51.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"55.8\" text-anchor=\"end\">320</text>\n<text class=\"label\" x=\"416\" y=\"230\" text-anchor=\"end\">x (m)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">Eₖ (J)</text>\n<polyline points=\"70,51.8 376.1,240\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2\" stroke-linejoin=\"round\"/>\n<circle cx=\"127.4\" cy=\"87.1\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"184.8\" cy=\"122.4\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"242.2\" cy=\"157.6\" r=\"4\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "גרף האנרגיה הקינטית כפונקציה של המקום"
         }
       ],
-      "finalAnswer": "קו ישר יורד בשיפוע $-150\\,\\text{J/m}$",
+      "finalAnswer": "קו ישר יורד, בשיפוע $-150\\,\\text{J/m}$",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "קבע בעזרת הגרף שסרטטת בסעיף ב, מהי האנרגיה הקינטית של הנערה בנקודת ההתחלה של המשטח המשופע.",
+      "question": "לפי הגרף מסעיף ב, מה האנרגיה הקינטית של הנערה בתחילת המשטח המשופע?",
       "answer": {
         "type": "number",
         "value": 320.0,
@@ -87,8 +104,8 @@
       ],
       "solution": [
         {
-          "what": "חיתוך עם ציר האנרגיה",
-          "why": "ממשיכים את הקו ל-$x = 0$",
+          "what": "החיתוך עם ציר האנרגיה",
+          "why": "ממשיכים את הקו עד המקום אפס, תחילת המשטח המשופע",
           "tex": "E_k(0) = 260 + 150 \\cdot 0.4 = 320\\,\\text{J}"
         }
       ],
@@ -97,7 +114,7 @@
     },
     {
       "label": "ד",
-      "question": "האם הנערה הגיעה לנקודה $A$ שעל המשטח המשופע (שבה $x = 1.6\\,\\text{m}$)? נמק.",
+      "question": "האם הנערה הגיעה לנקודה $A$ שעל המשטח המשופע, שבה $x = 1.6\\,\\text{m}$? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -112,16 +129,16 @@
       "solution": [
         {
           "what": "לפי הגרף",
-          "why": "מציבים x = 1.6",
+          "why": "מציבים את המקום של הנקודה במשוואת הקו. האנרגיה הקינטית שם עוד חיובית",
           "tex": "E_k(1.6) = 320 - 150 \\cdot 1.6 = 80\\,\\text{J} > 0"
         }
       ],
-      "finalAnswer": "כן: ב-$A$ עוד נשארה לה אנרגיה קינטית",
+      "finalAnswer": "כן: בנקודה $A$ עוד נשארה לה אנרגיה קינטית",
       "keyAnswer": "כן"
     },
     {
       "label": "ה",
-      "question": "קבע בעזרת הגרף שסרטטת בסעיף ב, מהו הערך של $x$ שמתאים לנקודה על המשטח המשופע שבה נעצרה הנערה. הסבר כיצד קבעת זאת.",
+      "question": "לפי הגרף מסעיף ב, באיזה מקום $x$ על המשטח המשופע הנערה נעצרת? הסבירו איך מצאתם.",
       "answer": {
         "type": "number",
         "value": 2.1333333333333333,
@@ -134,8 +151,8 @@
       "solution": [
         {
           "what": "נעצרת",
-          "why": "האנרגיה הקינטית אפס: החיתוך עם ציר $x$",
-          "tex": "0 = 320 - 150x \\Rightarrow x \\approx 2.1\\,\\text{m}"
+          "why": "כשהנערה נעצרת האנרגיה הקינטית אפס. זו נקודת החיתוך של הקו עם ציר המקום",
+          "tex": "0 = 320 - 150\\,x \\;\\Rightarrow\\; x \\approx 2.1\\,\\text{m}"
         }
       ],
       "finalAnswer": "$\\approx 2.1\\,\\text{m}$",

@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בתרשים מתוארת מסילה שנמצאת במישור אנכי, ועליה נע גוף קטן שמסתו $m$. קטע המסילה $ABC$ הוא חלק, והקטע האופקי $CD$ מחוספס (מקדם החיכוך הקינטי $\\mu_k$). בקצה הקטע $CD$ נמצא קפיץ רפוי שמחובר אל קיר. המשטח שהקפיץ מונח עליו הוא חלק. הגוף משוחרר ממנוחה מהנקודה $A$ (מגובה $H$ ביחס למישור הייחוס $MN$), ונע לאורך המסלול עד הנקודה $F$. בנקודה $F$ הגוף עוצר עצירה רגעית אחרי שהוא מכווץ את הקפיץ. נתון: אורך הקטע $CD$ הוא $1\\,\\text{m}$, אורך הקטע $DF$ הוא $0.1\\,\\text{m}$, $m = 1.5\\,\\text{kg}$, $H = 3\\,\\text{m}$, $h = 1\\,\\text{m}$, $\\mu_k = 0.3$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף א יש בפתרון את הטבלה המלאה.\nמה לבדוק: רק לאשר.",
+  "stem": "התרשים מראה מסילה במישור אנכי, ועליה נע גוף קטן שמסתו $m$. הקטע $ABC$ חלק, והקטע האופקי $CD$ מחוספס, עם מקדם חיכוך קינטי $\\mu_k$. בקצה הקטע $CD$ יש קפיץ רפוי שמחובר לקיר, והמשטח שמתחת לקפיץ חלק. משחררים את הגוף ממנוחה בנקודה $A$, בגובה $H$ מעל מישור הייחוס $MN$. הגוף נע על המסילה עד הנקודה $F$, ושם הוא נעצר לרגע אחרי שכיווץ את הקפיץ. נתון: $CD = 1\\,\\text{m}$, $DF = 0.1\\,\\text{m}$, $m = 1.5\\,\\text{kg}$, $H = 3\\,\\text{m}$, $h = 1\\,\\text{m}$, $\\mu_k = 0.3$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2010-q4.svg",
@@ -27,12 +27,12 @@
     "עבודת חיכוך",
     "אנרגיה אלסטית"
   ],
-  "summary": "גוף שגולש, עובר קטע מחוספס, מכווץ קפיץ וחוזר: מהירויות, קבוע הקפיץ, והגובה שאליו הוא חוזר.",
+  "summary": "גוף שגולש, עובר קטע מחוספס, מכווץ קפיץ וחוזר: המהירויות, קבוע הקפיץ, והגובה שאליו הוא חוזר.",
   "position": 11,
   "parts": [
     {
       "label": "א",
-      "question": "הטבלה מציגה את סוגי האנרגיה השונים של הגוף בכל אחת מהנקודות $A$, $B$, $C$, $D$, $F$ שהוא עובר בהן לאורך המסילה. העתק את הטבלה וסמן בכל משבצת \"+\" אם האנרגיה המתאימה אינה מתאפסת, ו-\"0\" אם היא מתאפסת.",
+      "question": "הטבלה מראה את סוגי האנרגיה של הגוף בכל אחת מהנקודות $A$, $B$, $C$, $D$, $F$. העתיקו את הטבלה, וכתבו בכל משבצת \"+\" אם האנרגיה הזו לא אפס, ו-\"0\" אם היא אפס.",
       "answer": {
         "type": "open"
       },
@@ -41,27 +41,67 @@
       ],
       "solution": [
         {
-          "what": "קינטית",
-          "why": "אפס רק בנקודות העצירה",
-          "tex": "A: 0,\\ B: +,\\ C: +,\\ D: +,\\ F: 0"
+          "what": "האנרגיה הקינטית",
+          "why": "היא אפס רק בנקודות שבהן הגוף עומד: בהתחלה ובכיווץ המרבי",
+          "tex": "E_k = 0 \\;\\Leftrightarrow\\; v = 0",
+          "eq": "E_k = \\tfrac{1}{2}mv^2"
         },
         {
-          "what": "כובדית (יחסית ל-$MN$)",
-          "why": "אפס רק בגובה $MN$",
-          "tex": "A: +,\\ B: 0,\\ C: +,\\ D: +,\\ F: +"
+          "what": "אנרגיית הגובה",
+          "why": "מודדים אותה ממישור הייחוס. היא אפס רק בנקודה הנמוכה, שנמצאת על המישור",
+          "tex": "U_G = 0 \\;\\Leftrightarrow\\; h = 0",
+          "eq": "U_G = mgh"
         },
         {
-          "what": "אלסטית",
-          "why": "רק כשהקפיץ מכווץ",
-          "tex": "A, B, C, D: 0,\\quad F: +"
+          "what": "האנרגיה האלסטית",
+          "why": "היא לא אפס רק כשהקפיץ מכווץ",
+          "tex": "U_{sp} = 0 \\;\\Leftrightarrow\\; \\Delta\\ell = 0",
+          "eq": "U_{sp} = \\tfrac{1}{2}K(\\Delta\\ell)^2"
+        },
+        {
+          "caption": "הטבלה המלאה",
+          "head": [
+            "האנרגיה",
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "rows": [
+            [
+              "קינטית",
+              "0",
+              "+",
+              "+",
+              "+",
+              "0"
+            ],
+            [
+              "כובדית",
+              "+",
+              "0",
+              "+",
+              "+",
+              "+"
+            ],
+            [
+              "אלסטית",
+              "0",
+              "0",
+              "0",
+              "0",
+              "+"
+            ]
+          ]
         }
       ],
-      "finalAnswer": "ראה את שלוש השורות בפתרון",
+      "finalAnswer": "ראו את הטבלה המלאה בפתרון",
       "keyAnswer": "טבלה"
     },
     {
       "label": "ב1",
-      "question": "חשב את מהירות הגוף בנקודה $C$ בדרכו אל $F$.",
+      "question": "מה המהירות של הגוף בנקודה $C$, בדרכו אל $F$?",
       "answer": {
         "type": "number",
         "value": 6.324555320336759,
@@ -73,8 +113,9 @@
       "solution": [
         {
           "what": "שימור אנרגיה",
-          "why": "הקטע $ABC$ חלק, ירידה של $H - h = 2\\,\\text{m}$",
-          "tex": "v_C = \\sqrt{2 \\cdot 10 \\cdot 2} = \\sqrt{40} \\approx 6.32\\,\\text{m/s}"
+          "why": "הקטע הראשון חלק, והכוח הנורמלי לא עושה עבודה. הגוף יורד מגובה שלושה מטרים לגובה מטר אחד. המסה מצטמצמת",
+          "tex": "m \\cdot 10 \\cdot 3 = \\tfrac{1}{2}m\\,v_C^2 + m \\cdot 10 \\cdot 1 \\;\\Rightarrow\\; v_C = \\sqrt{40} \\approx 6.32\\,\\text{m/s}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "$\\approx 6.32\\,\\text{m/s}$",
@@ -82,7 +123,7 @@
     },
     {
       "label": "ב2",
-      "question": "חשב את מהירות הגוף בנקודה $D$ בדרכו אל $F$.",
+      "question": "מה המהירות של הגוף בנקודה $D$, בדרכו אל $F$?",
       "answer": {
         "type": "number",
         "value": 5.830951894845301,
@@ -93,14 +134,26 @@
       ],
       "solution": [
         {
-          "what": "עבודת החיכוך ב-$CD$",
-          "why": "μmg כפול הדרך",
-          "tex": "W_f = -0.3 \\cdot 1.5 \\cdot 10 \\cdot 1 = -4.5\\,\\text{J}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגוף בקטע המחוספס: חיכוך קינטי נגד התנועה, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי הוא כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"161.5\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"143.5\" y=\"156\" text-anchor=\"middle\">fₖ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגוף בקטע המחוספס"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "הקטע אופקי, ולכן הכוח הנורמלי שווה לכובד",
+          "tex": "f_k = \\mu N = 0.3 \\cdot 1.5 \\cdot 10 = 4.5\\,\\text{N}",
+          "eq": "f_k = \\mu_k N"
+        },
+        {
+          "what": "העבודה של החיכוך",
+          "why": "החיכוך נגד התנועה לאורך כל הקטע",
+          "tex": "W_f = f_k\\cos 180^\\circ \\cdot 1 = -4.5\\,\\text{J}",
+          "eq": "W = F\\cos\\theta\\,\\Delta s"
         },
         {
           "what": "משפט העבודה והאנרגיה",
-          "why": "ליחידת מסה",
-          "tex": "v_D^2 = 40 - 2 \\cdot 0.3 \\cdot 10 \\cdot 1 = 34 \\Rightarrow v_D \\approx 5.83\\,\\text{m/s}"
+          "why": "בקטע הזה רק החיכוך עושה עבודה",
+          "tex": "-4.5 = \\tfrac{1}{2} \\cdot 1.5\\,v_D^2 - \\tfrac{1}{2} \\cdot 1.5 \\cdot 40 \\;\\Rightarrow\\; v_D^2 = 34 \\;\\Rightarrow\\; v_D \\approx 5.83\\,\\text{m/s}",
+          "eq": "W_{\\text{tot}} = \\Delta E_k"
         }
       ],
       "finalAnswer": "$\\approx 5.83\\,\\text{m/s}$",
@@ -108,7 +161,7 @@
     },
     {
       "label": "ג",
-      "question": "חשב את קבוע הקפיץ.",
+      "question": "מה קבוע הקפיץ?",
       "answer": {
         "type": "number",
         "value": 5100.0,
@@ -119,14 +172,15 @@
       ],
       "solution": [
         {
-          "what": "שימור אנרגיה מ-$D$ ל-$F$",
-          "why": "המשטח שם חלק",
-          "tex": "\\tfrac{1}{2} \\cdot 1.5 \\cdot 34 = \\tfrac{1}{2} k \\cdot 0.1^2"
+          "what": "שימור אנרגיה מהנקודה D לנקודה F",
+          "why": "המשטח שמתחת לקפיץ חלק. כל האנרגיה הקינטית נאגרת בקפיץ, שמתכווץ עשרה סנטימטרים",
+          "tex": "\\tfrac{1}{2} \\cdot 1.5 \\cdot 34 = \\tfrac{1}{2}K \\cdot 0.1^2",
+          "eq": "U_{sp} = \\tfrac{1}{2}K(\\Delta\\ell)^2"
         },
         {
           "what": "פותרים",
-          "why": "מבודדים את k",
-          "tex": "k = 5100\\,\\text{N/m}"
+          "why": "מבודדים את קבוע הקפיץ",
+          "tex": "K = \\frac{25.5 \\cdot 2}{0.01} = 5100\\,\\text{N/m}"
         }
       ],
       "finalAnswer": "$5100\\,\\text{N/m}$",
@@ -134,7 +188,7 @@
     },
     {
       "label": "ד",
-      "question": "אחרי העצירה בנקודה $F$, הגוף מתחיל לנוע בכיוון ההפוך ומתנתק מהקפיץ. חשב עד איזה גובה יגיע הגוף אחרי שיתנתק מהקפיץ.",
+      "question": "אחרי שהגוף נעצר ב-$F$, הוא מתחיל לנוע לכיוון ההפוך ועוזב את הקפיץ. לאיזה גובה הוא עולה אחרי שעזב את הקפיץ?",
       "answer": {
         "type": "number",
         "value": 2.4,
@@ -145,19 +199,21 @@
       ],
       "solution": [
         {
-          "what": "האנרגיה ב-$D$ בחזרה",
-          "why": "הקפיץ מחזיר את כל האנרגיה",
-          "tex": "\\tfrac{1}{2} \\cdot 1.5 \\cdot 34 = 25.5\\,\\text{J}"
+          "what": "האנרגיה בנקודה D בחזרה",
+          "why": "הקפיץ מחזיר את כל האנרגיה שנאגרה בו",
+          "tex": "E_k = \\tfrac{1}{2} \\cdot 1.5 \\cdot 34 = 25.5\\,\\text{J}"
         },
         {
-          "what": "אחרי $CD$",
-          "why": "החיכוך לוקח שוב $4.5\\,\\text{J}$",
-          "tex": "25.5 - 4.5 = 21\\,\\text{J}"
+          "what": "אחרי הקטע המחוספס",
+          "why": "החיכוך שוב לוקח את אותה אנרגיה",
+          "tex": "25.5 - 4.5 = 21\\,\\text{J}",
+          "eq": "W_{\\text{nc}} = \\Delta E"
         },
         {
           "what": "הגובה",
-          "why": "מגובה $C$ עולה עוד",
-          "tex": "\\Delta h = \\frac{21}{15} = 1.4\\,\\text{m} \\Rightarrow 1 + 1.4 = 2.4\\,\\text{m}"
+          "why": "הקטע העקום חלק. מגובה הקטע המחוספס הגוף עולה עוד, עד שכל האנרגיה הקינטית הופכת לאנרגיית גובה",
+          "tex": "21 = 1.5 \\cdot 10 \\cdot \\Delta h \\;\\Rightarrow\\; \\Delta h = 1.4\\,\\text{m},\\qquad 1 + 1.4 = 2.4\\,\\text{m}",
+          "eq": "U_G = mgh"
         }
       ],
       "finalAnswer": "$2.4\\,\\text{m}$ מעל $MN$",
@@ -165,7 +221,7 @@
     },
     {
       "label": "ה",
-      "question": "החליפו את הקפיץ בקפיץ אחר באותו אורך, שקבוע הקפיץ שלו גדול יותר, ושחררו שוב את הגוף ממנוחה מהנקודה $A$. האם הגובה שהגוף יגיע אליו אחרי שיתנתק מהקפיץ יהיה קטן מהגובה שחישבת בסעיף ד, גדול ממנו או שווה לו? הסבר.",
+      "question": "מחליפים את הקפיץ בקפיץ באותו אורך, עם קבוע גדול יותר, ושוב משחררים את הגוף ממנוחה ב-$A$. האם הגובה שאליו יעלה הגוף אחרי שיעזוב את הקפיץ יהיה קטן מהגובה בסעיף ד, גדול ממנו או שווה לו? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -181,8 +237,8 @@
       "solution": [
         {
           "what": "הקפיץ לא מאבד אנרגיה",
-          "why": "הוא רק מתכווץ פחות, אבל אוגר ומחזיר אותה אנרגיה. החיכוך ב-$CD$ לא השתנה",
-          "tex": "E_s = \\tfrac{1}{2}m v_D^2"
+          "why": "הקפיץ הקשה יותר מתכווץ פחות, אבל הוא אוגר ומחזיר את אותה אנרגיה. החיכוך בקטע המחוספס לא השתנה",
+          "tex": "U_{sp} = \\tfrac{1}{2}m\\,v_D^2"
         }
       ],
       "finalAnswer": "שווה",

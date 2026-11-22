@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "מסלול החלקה, הבנוי מקטעים ישרים ומקשתות של מעגלים ברדיוס $5\\,\\text{m}$, מכוסה שלג, ולכן הוא נחשב חסר חיכוך. על המסלול, בנקודה $A$, נמצאת מזחלת שמסתה $35\\,\\text{kg}$. גיל, שמסתו $65\\,\\text{kg}$, התיישב במזחלת כשהיא נמצאת במנוחה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף ד המאזניים מראים את הכוח הנורמלי על גיל בלבד, בלי המזחלת.\nמה לבדוק: רק לאשר.",
+  "stem": "מסלול החלקה בנוי מקטעים ישרים ומקשתות של מעגלים ברדיוס $5\\,\\text{m}$. המסלול מכוסה שלג, ולכן מזניחים את החיכוך. בנקודה $A$ על המסלול עומדת מזחלת שמסתה $35\\,\\text{kg}$. גיל, שמסתו $65\\,\\text{kg}$, מתיישב במזחלת כשהיא במנוחה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2014-q4.svg",
@@ -24,15 +24,15 @@
   "concepts": [
     "שימור אנרגיה",
     "חוסר משקל בראש קשת",
-    "נורמלי על מדרון",
+    "כוח נורמלי במדרון",
     "עבודת חיכוך"
   ],
-  "summary": "מזחלת על מסלול שלג: מהירות, גובה שנותן חוסר משקל, מה מראים המאזניים במדרון, וכוח החיכוך כשהשלג נמס.",
+  "summary": "מזחלת על מסלול שלג: המהירות, הגובה שבו מרגישים חסרי משקל, מה מראים המאזניים במדרון, וכוח החיכוך כשהשלג נמס.",
   "position": 15,
   "parts": [
     {
       "label": "א",
-      "question": "המזחלת שוחררה ממנוחה והיא נעה לאורך המסילה בלי להתנתק ממנה. חשב את גודל מהירותה בנקודה $B$.",
+      "question": "משחררים את המזחלת ממנוחה, והיא נעה על המסלול בלי לעזוב אותו. מה גודל המהירות שלה בנקודה $B$?",
       "answer": {
         "type": "number",
         "value": 10.0,
@@ -44,8 +44,9 @@
       "solution": [
         {
           "what": "שימור אנרגיה",
-          "why": "ירידה מ-$12$ ל-$7\\,\\text{m}$",
-          "tex": "v_B = \\sqrt{2 \\cdot 10 \\cdot 5} = 10\\,\\text{m/s}"
+          "why": "אין חיכוך, והכוח הנורמלי ניצב לתנועה. המזחלת יורדת משתים עשרה מטר לשבעה. המסה מצטמצמת",
+          "tex": "m \\cdot 10 \\cdot 12 = \\tfrac{1}{2}m\\,v_B^2 + m \\cdot 10 \\cdot 7 \\;\\Rightarrow\\; v_B = \\sqrt{100} = 10\\,\\text{m/s}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "$10\\,\\text{m/s}$",
@@ -53,7 +54,7 @@
     },
     {
       "label": "ב",
-      "question": "האם תשובתך לסעיף א הייתה משתנה אילו נער אחר, שמסתו שונה מזו של גיל, היה מתיישב במזחלת? נמק.",
+      "question": "האם התשובה לסעיף א הייתה משתנה, אם נער אחר, במסה אחרת, היה יושב במזחלת? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -67,9 +68,9 @@
       ],
       "solution": [
         {
-          "what": "המסה מתבטלת",
-          "why": "שני האגפים פרופורציוניים ל-m",
-          "tex": "\\tfrac{1}{2}mv^2 = mg\\Delta h"
+          "what": "המסה מצטמצמת",
+          "why": "גם האנרגיה הקינטית וגם אנרגיית הגובה פרופורציוניות למסה, ולכן המהירות לא תלויה בה",
+          "tex": "\\tfrac{1}{2}m v^2 = m g\\,\\Delta h \\;\\Rightarrow\\; v = \\sqrt{2g\\,\\Delta h}"
         }
       ],
       "finalAnswer": "לא: המהירות לא תלויה במסה",
@@ -77,7 +78,7 @@
     },
     {
       "label": "ג",
-      "question": "במזחלת מותקנים מאזני קפיץ, שהמשטח העליון שלהם מקביל למסלול לאורך כל זמן התנועה. גיל יושב על המאזניים, ורגליו באוויר ואינן נשענות על המזחלת. מה צריך להיות הגובה של הנקודה $C$ מעל פני הקרקע, כדי שגיל יהיה חסר משקל כאשר הוא חולף בנקודה זו? פרט את חישוביך.",
+      "question": "במזחלת יש מאזני קפיץ, והמשטח העליון שלהם תמיד מקביל למסלול. גיל יושב על המאזניים, והרגליים שלו באוויר. באיזה גובה מעל הקרקע צריכה להיות הנקודה $C$, כדי שגיל יהיה חסר משקל כשהוא עובר בה? פרטו את החישוב.",
       "answer": {
         "type": "number",
         "value": 9.5,
@@ -89,14 +90,23 @@
       ],
       "solution": [
         {
-          "what": "חוסר משקל בראש קשת",
-          "why": "הנורמלי אפס, והכובד לבדו נותן את התאוצה המרכזית",
-          "tex": "g = \\frac{v_C^2}{R} \\Rightarrow v_C^2 = 50"
+          "explain": "המאזניים מראים את הכוח הנורמלי שהם מפעילים על גיל. חסר משקל פירושו שהכוח הזה אפס. הכיוון החיובי הוא אל מרכז הקשת, כלפי מטה."
         },
         {
-          "what": "שימור אנרגיה מ-$A$",
-          "why": "מתחילים ממנוחה בגובה 12",
-          "tex": "50 = 20(12 - h_C) \\Rightarrow h_C = 9.5\\,\\text{m}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גיל בראש הקשת, כשהוא חסר משקל: רק כוח הכובד, כלפי מטה, אל מרכז הקשת. הכיוון החיובי אל המרכז\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">G</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על גיל בנקודה C"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "הכוח הנורמלי אפס, ולכן הכובד לבדו נותן את התאוצה אל המרכז. המסה מצטמצמת",
+          "tex": "m_G g - 0 = m_G\\,\\frac{v_C^2}{R} \\;\\Rightarrow\\; v_C^2 = 10 \\cdot 5 = 50\\,\\text{m}^2/\\text{s}^2",
+          "eq": "\\Sigma\\vec F = m\\vec a,\\qquad a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "שימור אנרגיה מהנקודה A",
+          "why": "המזחלת מתחילה ממנוחה בגובה שתים עשרה מטר",
+          "tex": "10 \\cdot 12 = \\tfrac{1}{2} \\cdot 50 + 10\\,h_C \\;\\Rightarrow\\; h_C = 9.5\\,\\text{m}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         }
       ],
       "finalAnswer": "$9.5\\,\\text{m}$",
@@ -104,7 +114,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב מה מורים המאזניים (ביחידות ניוטון) כאשר המזחלת חולפת בנקודה $E$.",
+      "question": "מה מראים המאזניים, בניוטון, כשהמזחלת עוברת בנקודה $E$?",
       "answer": {
         "type": "number",
         "value": 391.1797650488314,
@@ -116,14 +126,19 @@
       ],
       "solution": [
         {
-          "what": "קטע ישר",
-          "why": "אין תאוצה בניצב למסלול",
-          "tex": "N = m_G g\\cos 53^\\circ"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גיל בקטע הישר: כוח הכובד כלפי מטה, והכוח הנורמלי של המאזניים ניצב למסלול\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"137.3\" y1=\"283\" x2=\"317.8\" y2=\"43.4\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"143.3\" y1=\"275\" x2=\"146.3\" y2=\"286.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"155.4\" y1=\"259.1\" x2=\"158.3\" y2=\"270.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"167.4\" y1=\"243.1\" x2=\"170.4\" y2=\"254.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"179.4\" y1=\"227.1\" x2=\"182.4\" y2=\"238.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"191.5\" y1=\"211.2\" x2=\"194.4\" y2=\"222.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"203.5\" y1=\"195.2\" x2=\"206.5\" y2=\"206.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"215.5\" y1=\"179.2\" x2=\"218.5\" y2=\"190.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"227.6\" y1=\"163.2\" x2=\"230.5\" y2=\"174.2\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"239.6\" y1=\"147.3\" x2=\"242.6\" y2=\"158.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"251.6\" y1=\"131.3\" x2=\"254.6\" y2=\"142.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"263.7\" y1=\"115.3\" x2=\"266.7\" y2=\"126.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"275.7\" y1=\"99.3\" x2=\"278.7\" y2=\"110.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"287.8\" y1=\"83.4\" x2=\"290.7\" y2=\"94.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"299.8\" y1=\"67.4\" x2=\"302.8\" y2=\"78.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"311.8\" y1=\"51.4\" x2=\"314.8\" y2=\"62.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"178,160.9 211.7,116.2 242,139.1 208.3,183.8\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">G</tspan><tspan dy=\"-5\">g</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"157.3\" y2=\"110.3\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"142.9\" y=\"105.4\" text-anchor=\"middle\">N</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "תרשים הכוחות על גיל בנקודה E"
+        },
+        {
+          "what": "משוואת כוחות בניצב למסלול",
+          "why": "הקטע ישר, ולכן אין תאוצה בניצב למסלול. הכיוון החיובי הוא כיוון הכוח הנורמלי",
+          "tex": "N - m_G g\\cos 53^\\circ = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
           "what": "מציבים",
-          "why": "מסת גיל $65\\,\\text{kg}$",
-          "tex": "N = 650 \\cdot 0.602 \\approx 391.2\\,\\text{N}"
+          "why": "המסה של גיל לבד, כי המאזניים מראים את הכוח עליו",
+          "tex": "N = 65 \\cdot 10 \\cdot 0.602 \\approx 391.2\\,\\text{N}"
         }
       ],
       "finalAnswer": "$\\approx 391.2\\,\\text{N}$",
@@ -131,7 +146,7 @@
     },
     {
       "label": "ה",
-      "question": "ביום חם נפתחה כמות השלג לאורך הקטע $DF$, ובקטע זה היה חיכוך בין המסלול למזחלת. בעקבות החיכוך המזחלת נעצרה (רגעית) בנקודה $E$. חשב את הגודל של כוח החיכוך שפעל על המזחלת בקטע $DE$.",
+      "question": "ביום חם השלג נמס בקטע $DF$, ונוצר בו חיכוך בין המסלול למזחלת. בגלל החיכוך המזחלת נעצרת לרגע בנקודה $E$. מה גודל כוח החיכוך שפעל על המזחלת בקטע $DE$?",
       "answer": {
         "type": "number",
         "value": 456.363148598453,
@@ -142,24 +157,34 @@
       ],
       "solution": [
         {
-          "what": "האנרגיה ב-$D$",
-          "why": "ירידה של $11\\,\\text{m}$, מסה כוללת $100\\,\\text{kg}$",
-          "tex": "E_k = 100 \\cdot 10 \\cdot 11 = 11000\\,\\text{J}"
+          "explain": "מחשבים את המזחלת וגיל יחד, מאה קילוגרם. כוח החיכוך קבוע לאורך הקטע הישר."
         },
         {
-          "what": "אנרגיית הגובה ב-$E$ ביחס ל-$D$",
-          "why": "עלייה של 7 m",
-          "tex": "100 \\cdot 10 \\cdot 7 = 7000\\,\\text{J}"
+          "what": "האנרגיה בנקודה D",
+          "why": "שימור אנרגיה עד לנקודה הזו, כי עד שם אין חיכוך. בוחרים גובה אפס בנקודה הזו. המזחלת ירדה אחד עשר מטר",
+          "tex": "E_D = 100 \\cdot 10 \\cdot (12 - 1) = 11000\\,\\text{J}",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
         },
         {
-          "what": "אורך $DE$",
-          "why": "גובה חלקי sin 53°",
+          "what": "האנרגיה בנקודה E",
+          "why": "המזחלת עומדת, ונמצאת שבעה מטרים מעל הנקודה הקודמת",
+          "tex": "E_E = 100 \\cdot 10 \\cdot 7 = 7000\\,\\text{J}"
+        },
+        {
+          "what": "אורך הקטע",
+          "why": "הקטע ישר ומשופע. האורך הוא הגובה חלקי הסינוס של הזווית",
           "tex": "DE = \\frac{7}{\\sin 53^\\circ} \\approx 8.77\\,\\text{m}"
         },
         {
-          "what": "כוח החיכוך",
-          "why": "ההפרש חלקי הדרך",
-          "tex": "f = \\frac{11000 - 7000}{8.77} \\approx 456.6\\,\\text{N}"
+          "what": "העבודה של החיכוך",
+          "why": "החיכוך נגד התנועה, והעבודה שלו שווה לשינוי באנרגיה המכנית",
+          "tex": "-f_k \\cdot 8.77 = 7000 - 11000",
+          "eq": "W_{\\text{nc}} = \\Delta E"
+        },
+        {
+          "what": "פותרים",
+          "why": "מבודדים את כוח החיכוך",
+          "tex": "f_k = \\frac{4000}{8.77} \\approx 456.6\\,\\text{N}"
         }
       ],
       "finalAnswer": "$\\approx 456.6\\,\\text{N}$",
