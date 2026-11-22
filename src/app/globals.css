@@ -80,6 +80,12 @@ body {
   white-space: nowrap;
 }
 
+/* Full solutions: a long calculation wraps (after =, +, commas) instead of scrolling sideways. */
+.sol-tex .ltr,
+.sol-tex .katex {
+  white-space: normal;
+}
+
 /* Focus ring stays visible on the mint top bar */
 header :focus-visible {
   outline-color: var(--on-accent);

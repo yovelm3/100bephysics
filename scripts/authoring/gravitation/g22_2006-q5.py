@@ -20,7 +20,7 @@ E(id="bagrut-2006-q5", year=2006, label="2006 שאלה 5", topic="gravitation", 
   parts=[
     P("א", r"חשב את רדיוס המסלול המעגלי של לוויין כזה, בהנחה כי רק הירח משפיע על תנועת הלוויין.", num(r / 1000, "km", tol=2), ["principle", "algebra", "units"], [
         S(r"כבידת הירח היא הכוח הצנטריפטלי", r"רק הירח משפיע", r"\frac{GM_m m}{r^2} = m\frac{4\pi^2}{T^2}r"),
-        S(r"מבודדים את $r$", r"$T = 27.3 \cdot 86400 \approx 2.36 \times 10^6\,\text{s}$", r"r = \sqrt[3]{\frac{GM_m T^2}{4\pi^2}} = \sqrt[3]{\frac{6.67 \times 10^{-11} \cdot 7.35 \times 10^{22} \cdot (2.36 \times 10^6)^2}{4\pi^2}} \approx 8.84 \times 10^7\,\text{m}"),
+        S(r"מבודדים את $r$", r"$T = 27.3 \cdot 86400 \approx 2.36 \times 10^6\,\text{s}$", r"r = \sqrt[3]{\frac{GM_m T^2}{4\pi^2}},\quad GM_m T^2 = 6.67 \times 10^{-11} \cdot 7.35 \times 10^{22} \cdot (2.36 \times 10^6)^2 \approx 2.73 \times 10^{25},\quad r \approx 8.84 \times 10^7\,\text{m}"),
     ], r"$r \approx 88{,}400\,\text{km}$", key=r"r=88,400 km"),
     P("ב", r"המהנדס חישב ומצא שבגלל השפעת כדור הארץ, אי-אפשר למקם את הלוויין במסלול שאת רדיוסו מצאת בסעיף א. הרדיוס המקסימלי של מסלול לוויין סביב הירח שבו אפשר להזניח את השפעת כדור הארץ הוא כ-$3{,}000\,\text{km}$. חשב את זמן המחזור (בשעות) של לוויין שנע סביב הירח במסלול מעגלי שרדיוסו $3{,}000\,\text{km}$.", num(T2, "h", tol=1), ["principle", "algebra", "units"], [
         S(r"אותו קשר, הפעם מבודדים את $T$", r"$r = 3 \times 10^6\,\text{m}$", r"T = 2\pi\sqrt{\frac{r^3}{GM_m}} = 2\pi\sqrt{\frac{(3 \times 10^6)^3}{6.67 \times 10^{-11} \cdot 7.35 \times 10^{22}}} \approx 1.47 \times 10^4\,\text{s}"),

@@ -55,7 +55,7 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
             <div className="fig ltr mx-auto w-full max-w-xl" dangerouslySetInnerHTML={{ __html: group.svg }} />
           </figure>
         ) : group.kind === "explain" ? (
-          <p key={i} className="text-muted">
+          <p key={i} className="font-semibold leading-relaxed text-foreground">
             <InlineText text={group.text} />
           </p>
         ) : (
@@ -77,8 +77,8 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
                 <div className="text-muted md:px-4 md:py-3">
                   <InlineText text={row.why} />
                 </div>
-                <div className="overflow-x-auto text-left md:px-4 md:py-3">
-                  <Math tex={row.tex} />
+                <div className="sol-tex min-w-0 text-left md:px-4 md:py-3">
+                  <Math tex={breakable(row.tex)} />
                 </div>
               </div>
             ))}
@@ -87,6 +87,11 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
       )}
     </div>
   );
+}
+
+/** Lets a long calculation wrap after list separators too (KaTeX already wraps after = and +). */
+export function breakable(tex: string): string {
+  return tex.replace(/(\\quad|,\\ )/g, "$1\\allowbreak ");
 }
 
 /** Hebrew text with inline $formulas$ rendered left-to-right. */

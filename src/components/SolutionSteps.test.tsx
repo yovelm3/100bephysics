@@ -19,3 +19,10 @@ describe("every solution in content/ renders", () => {
     }
   }
 });
+
+describe("breakable", () => {
+  it("lets long lists wrap after separators", async () => {
+    const { breakable } = await import("./SolutionSteps");
+    expect(breakable(String.raw`a,\ b\quad c`)).toBe(String.raw`a,\ \allowbreak b\quad\allowbreak  c`);
+  });
+});
