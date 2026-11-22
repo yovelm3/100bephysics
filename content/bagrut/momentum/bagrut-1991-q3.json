@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "על מסילה חלקה $EF$, שנמצאת על רצפה אופקית, נעה קרונית $K$ במהירות $v_1 = 0.2\\,\\text{m/s}$. במקביל למסילה, במרחק $1\\,\\text{m}$ ממנה, ניצב קיר חלק $CD$ (מבט מלמעלה). כאשר הקרונית חולפת מול הנקודה $M$, נזרק מתוכה כדור בכיוון הניצב למסילה $EF$, במהירות $v_2 = 0.2\\,\\text{m/s}$ (ביחס לקרונית). הכדור נזרק בגובה הרצפה כלפי הקיר $CD$, נע על פני הרצפה החלקה, ומתנגש התנגשות אלסטית (לחלוטין) בקיר. הקרונית ממשיכה לנוע לאורך המסילה $EF$. הזנח את המרחק בין הקרונית לבין המסילה, ואת רוחב הקרונית.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיף א התלמיד בוחר את צורת המסלול, ובפתרון יש ציור של המסלול.\nמה לבדוק: רק לאשר.",
+  "stem": "מבט מלמעלה: קרונית $K$ נוסעת על מסילה חלקה $EF$, שמונחת על רצפה אופקית, במהירות $v_1 = 0.2\\,\\text{m/s}$. קיר חלק $CD$ מקביל למסילה, במרחק $1\\,\\text{m}$ ממנה. כשהקרונית עוברת מול הנקודה $M$ שעל הקיר, זורקים ממנה כדור לכיוון הקיר, בניצב למסילה, במהירות $v_2 = 0.2\\,\\text{m/s}$ ביחס לקרונית. הכדור מתגלגל על הרצפה החלקה ומתנגש בקיר התנגשות אלסטית. הקרונית ממשיכה לנסוע לאורך המסילה. מזניחים את רוחב הקרונית ואת המרחק בינה לבין המסילה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1991-q3.svg",
@@ -27,19 +27,19 @@
     "התנגשות אלסטית בקיר",
     "תנועה במישור"
   ],
-  "summary": "כדור שנזרק מקרונית נעה לעבר קיר וחוזר: הכדור והקרונית חולקים את רכיב המהירות לאורך המסילה, ולכן נפגשים.",
+  "summary": "כדור שנזרק מקרונית נוסעת אל קיר וחוזר: לכדור ולקרונית אותו רכיב מהירות לאורך המסילה, ולכן הם נפגשים.",
   "position": 8,
   "parts": [
     {
       "label": "א",
-      "question": "העתק את התרשים למחברתך, וסרטט בו באופן סכמטי את צורת המסלול של תנועת הכדור עד לפגיעתו בקיר $CD$ (ישר, פרבולה, היפרבולה, מסלול אחר). הסבר.",
+      "question": "סרטטו את המסלול של הכדור עד שהוא פוגע בקיר. מה צורת המסלול: קו ישר, פרבולה, היפרבולה או צורה אחרת? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
           "קו ישר",
           "פרבולה",
           "היפרבולה",
-          "מסלול אחר"
+          "צורה אחרת"
         ],
         "correct": 0
       },
@@ -48,14 +48,21 @@
       ],
       "solution": [
         {
+          "explain": "ציר x לאורך המסילה, בכיוון הנסיעה. ציר y לכיוון הקיר."
+        },
+        {
           "what": "מהירות הכדור ביחס לרצפה",
-          "why": "מהירות הקרונית ועוד המהירות ביחס אליה",
+          "why": "לכדור יש את מהירות הקרונית, ועוד המהירות שבה נזרק ממנה",
           "tex": "\\vec v = (0.2,\\ 0.2)\\,\\text{m/s}"
         },
         {
-          "what": "אין כוח אופקי",
-          "why": "הרצפה חלקה: מהירות קבועה, קו ישר בזווית $45^\\circ$",
-          "tex": "\\vec v = \\text{const}"
+          "what": "אין כוח בכיוון אופקי",
+          "why": "הרצפה חלקה, ולכן המהירות לא משתנה. מהירות קבועה פירושה קו ישר. שני הרכיבים שווים, ולכן הזווית עם המסילה היא ארבעים וחמש מעלות",
+          "tex": "\\Delta\\vec v = 0,\\qquad \\tan\\theta = \\frac{0.2}{0.2} = 1 \\;\\Rightarrow\\; \\theta = 45^\\circ"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-47 0 494 380\" direction=\"ltr\" role=\"img\" aria-label=\"מבט מלמעלה: הכדור נע בקו ישר בזווית 45 מעלות מהמסילה אל הקיר, ניתר וחוזר בקו ישר אל המסילה. הקרונית נעה לאורך המסילה ופוגשת את הכדור\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"100\" y1=\"20\" x2=\"100\" y2=\"350\" stroke=\"var(--d-line)\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"80\" y=\"30\" text-anchor=\"end\">F</text>\n<text class=\"label\" x=\"80\" y=\"350\" text-anchor=\"end\">E</text>\n<rect x=\"240\" y=\"20\" width=\"12\" height=\"330\" rx=\"0\" fill=\"url(#f-hatch)\" stroke=\"none\" stroke-width=\"0\"/>\n<line x1=\"240\" y1=\"20\" x2=\"240\" y2=\"350\" stroke=\"var(--d-line)\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"264\" y=\"30\" text-anchor=\"start\">D</text>\n<text class=\"label\" x=\"264\" y=\"350\" text-anchor=\"start\">C</text>\n<circle cx=\"240\" cy=\"320\" r=\"3.5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"262\" y=\"324\" text-anchor=\"start\">M</text>\n<line x1=\"100\" y1=\"320\" x2=\"240\" y2=\"180\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-dasharray=\"7 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<line x1=\"240\" y1=\"180\" x2=\"100\" y2=\"40\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-dasharray=\"7 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<rect x=\"88\" y=\"300\" width=\"24\" height=\"40\" rx=\"0\" fill=\"var(--d-fill)\" stroke=\"var(--d-line)\" stroke-width=\"2\"/>\n<text class=\"label\" x=\"80\" y=\"314\" text-anchor=\"end\">K</text>\n<polygon points=\"88,20 112,20 112,60 88,60\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\" stroke-linejoin=\"round\" stroke-dasharray=\"4 3\"/>\n<text class=\"label\" x=\"106\" y=\"284\" text-anchor=\"start\">45°</text>\n</svg>\n",
+          "caption": "המסלול של הכדור"
         }
       ],
       "finalAnswer": "קו ישר, בזווית $45^\\circ$ למסילה",
@@ -63,7 +70,7 @@
     },
     {
       "label": "ב",
-      "question": "באיזה מרחק מהנקודה $M$ יפגע הכדור בקיר $CD$? הסבר.",
+      "question": "באיזה מרחק מהנקודה $M$ פוגע הכדור בקיר? הסבירו.",
       "answer": {
         "type": "number",
         "value": 1.0,
@@ -75,27 +82,28 @@
       "solution": [
         {
           "what": "הזמן עד הקיר",
-          "why": "רכיב הניצב לקיר",
-          "tex": "t = \\frac{1}{0.2} = 5\\,\\text{s}"
+          "why": "רכיב המהירות לכיוון הקיר קבוע",
+          "tex": "1 = 0.2\\,t \\;\\Rightarrow\\; t = 5\\,\\text{s}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "התזוזה לאורך הקיר",
-          "why": "רכיב המקביל למסילה, כמו הקרונית",
+          "what": "ההתקדמות לאורך הקיר",
+          "why": "רכיב המהירות לאורך המסילה הוא כמו של הקרונית",
           "tex": "\\Delta x = 0.2 \\cdot 5 = 1\\,\\text{m}"
         }
       ],
-      "finalAnswer": "$1\\,\\text{m}$",
+      "finalAnswer": "$1\\,\\text{m}$ מהנקודה $M$, בכיוון הנסיעה",
       "keyAnswer": "1 m"
     },
     {
       "label": "ג",
-      "question": "האם מהירות הקרונית, אחרי שהכדור נזרק ממנה, קטנה, גדלה או שאינה משתנה? הסבר.",
+      "question": "האם מהירות הקרונית אחרי הזריקה קטנה, גדלה או לא משתנה? הסבירו.",
       "answer": {
         "type": "choice",
         "choices": [
           "קטנה",
           "גדלה",
-          "אינה משתנה"
+          "לא משתנה"
         ],
         "correct": 2
       },
@@ -105,16 +113,17 @@
       "solution": [
         {
           "what": "שימור תנע לאורך המסילה",
-          "why": "הכדור נזרק בניצב למסילה, ולכן ממשיך באותו רכיב מהירות כמו הקרונית. הכוח הניצב נבלם במסילה",
-          "tex": "\\Delta p_x = 0"
+          "why": "הכדור נזרק בניצב למסילה, ולכן הוא ממשיך באותו רכיב מהירות לאורך המסילה כמו הקרונית. הדחיפה הניצבת שהקרונית מקבלת נבלמת על ידי המסילה",
+          "tex": "(m_K + m)\\,v_1 = m_K u_K + m\\,v_1 \\;\\Rightarrow\\; u_K = v_1",
+          "eq": "m_A\\vec v_A + m_B\\vec v_B = m_A\\vec u_A + m_B\\vec u_B"
         }
       ],
-      "finalAnswer": "אינה משתנה",
+      "finalAnswer": "לא משתנה",
       "keyAnswer": "אינה משתנה"
     },
     {
       "label": "ד",
-      "question": "באיזו מהירות (גודל וכיוון) יחזור הכדור מהקיר $CD$? הוכח בעזרת חוקי שימור.",
+      "question": "באיזו מהירות (גודל וכיוון) חוזר הכדור מהקיר? הוכיחו בעזרת חוקי שימור.",
       "answer": {
         "type": "number",
         "value": 0.28284271247461906,
@@ -125,22 +134,28 @@
       ],
       "solution": [
         {
-          "what": "התנגשות אלסטית בקיר חלק",
-          "why": "הקיר מפעיל כוח רק בניצב לו: הרכיב הניצב מתהפך, והמקביל לא משתנה. גודל המהירות נשמר (שימור אנרגיה)",
-          "tex": "(0.2,\\ 0.2) \\to (0.2,\\ -0.2)"
+          "what": "הכוח מהקיר",
+          "why": "הקיר חלק, ולכן הוא דוחף רק בניצב אליו. הרכיב לאורך הקיר לא משתנה",
+          "tex": "v_x = 0.2\\,\\text{m/s}"
         },
         {
-          "what": "גודל",
-          "why": "פיתגורס",
-          "tex": "v = 0.2\\sqrt{2} \\approx 0.28\\,\\text{m/s}"
+          "what": "ההתנגשות אלסטית",
+          "why": "האנרגיה הקינטית נשמרת, ולכן גודל המהירות לא משתנה. לכן גם הרכיב הניצב שומר על גודלו, והכיוון שלו מתהפך",
+          "tex": "(0.2,\\ 0.2) \\to (0.2,\\ -0.2)",
+          "eq": "E_k = \\tfrac{1}{2}mv^2"
+        },
+        {
+          "what": "הגודל",
+          "why": "לפי משפט פיתגורס",
+          "tex": "v = \\sqrt{0.2^2 + 0.2^2} = 0.2\\sqrt{2} \\approx 0.28\\,\\text{m/s}"
         }
       ],
-      "finalAnswer": "$\\approx 0.28\\,\\text{m/s}$, בזווית $45^\\circ$ עם הקיר",
+      "finalAnswer": "$\\approx 0.28\\,\\text{m/s}$, בזווית $45^\\circ$ לקיר, ממשיך בכיוון הנסיעה וחוזר אל המסילה",
       "keyAnswer": "0.28 m/s"
     },
     {
       "label": "ה",
-      "question": "האם הכדור והקרונית ייפגשו? אם כן, היכן? אם לא, מדוע?",
+      "question": "האם הכדור והקרונית ייפגשו? אם כן, היכן? אם לא, למה?",
       "answer": {
         "type": "number",
         "value": 2.0,
@@ -151,13 +166,13 @@
       ],
       "solution": [
         {
-          "what": "החזרה",
-          "why": "עוד $5$ שניות עד המסילה",
-          "tex": "t = 10\\,\\text{s}"
+          "what": "הזמן עד שהכדור חוזר למסילה",
+          "why": "עוד חמש שניות בחזרה, באותו רכיב מהירות",
+          "tex": "t = 5 + 5 = 10\\,\\text{s}"
         },
         {
-          "what": "באותו זמן",
-          "why": "לשניהם אותו רכיב מהירות לאורך המסילה, ולכן הם באותו מקום לאורכה",
+          "what": "המקום לאורך המסילה",
+          "why": "לכדור ולקרונית אותו רכיב מהירות לאורך המסילה כל הזמן, ולכן הם תמיד באותו מקום לאורכה",
           "tex": "x_b = x_K = 0.2 \\cdot 10 = 2\\,\\text{m}"
         }
       ],

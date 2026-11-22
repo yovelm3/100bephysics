@@ -21,7 +21,7 @@ def fig():
 
 A = 30
 E(id="bagrut-1983-q1", year=1983, label="1983 שאלה 1", topic="momentum", sub="mom-collisions", diff=3, fig=fig,
-  stem=r"גוף יוצא ממנוחה ומחליק במורד מדרון בזווית $\alpha$. בתחתית המדרון הוא מתנגש התנגשות אלסטית בקיר שניצב למדרון, ועולה בחזרה.",
+  stem=r"גוף יוצא ממנוחה ומחליק במורד מדרון בזווית $\alpha$. בתחתית המדרון הוא מתנגש התנגשות אלסטית בקיר שיוצר זווית $90^\circ$ עם המדרון, ועולה בחזרה.",
   parts=[
     P("א1", r"מה היחס בין זמן הירידה לזמן העלייה (מרגע ההתנגשות עד שהגוף נעצר), כשהמדרון חלק?", num(1, ""), ["principle"], [
         X(r"בכל שלב בוחרים את כיוון התנועה כחיובי. השאלה לא קבעה כיוון."),
@@ -30,14 +30,14 @@ E(id="bagrut-1983-q1", year=1983, label="1983 שאלה 1", topic="momentum", sub
         S(r"הזמנים", r"בירידה המהירות גדלה מאפס ל-v, ובעלייה קטנה מ-v לאפס, באותו גודל של תאוצה", r"t_\downarrow = \frac{v}{a} = t_\uparrow \;\Rightarrow\; \frac{t_\downarrow}{t_\uparrow} = 1", eq=r"v = v_0 + at"),
     ], r"$1$", key=r"1"),
     P("א2", r"מה היחס כשמקדם החיכוך בין הגוף למדרון הוא $\mu$?", choice([r"$\frac{\sin\alpha + \mu\cos\alpha}{\sin\alpha - \mu\cos\alpha}$", r"$\frac{\sin\alpha - \mu\cos\alpha}{\sin\alpha + \mu\cos\alpha}$", r"$\sqrt{\frac{\sin\alpha + \mu\cos\alpha}{\sin\alpha - \mu\cos\alpha}}$", r"$1$"], 0), ["fbd", "principle", "algebra"], [
-        D(r"בירידה: תרשים הכוחות על הגוף", lambda: fbd([("mg", -90, 1.0), ("N", 90 - A, 0.9), ("fₖ", 180 - A, 0.4)],
+        D(r"בירידה: תרשים הכוחות על הגוף", lambda: fbd([("mg", -90, 1.0), ("N", 90 + A, 0.9), ("fₖ", A, 0.4)],
             "תרשים כוחות בירידה: כוח הכובד, הכוח הנורמלי ניצב למדרון, וחיכוך קינטי במעלה המדרון, נגד התנועה. הכיוון החיובי במורד",
-            positive=-A, body="block", tilt=-A, surface="below", note="יורד")),
+            positive=180 + A, body="block", tilt=A, surface="below", note="יורד")),
         S(r"משוואת כוחות בירידה", r"בכיוון החיובי, במורד, רכיב הכובד. נגדו החיכוך", r"mg\sin\alpha - f_k = m\,a_\downarrow", eq=r"\Sigma\vec F = m\vec a"),
         S(r"מציבים את החיכוך ומחלקים במסה", r"הכוח הנורמלי מאזן את רכיב הכובד שבניצב למדרון", r"f_k = \mu N = \mu mg\cos\alpha \;\Rightarrow\; a_\downarrow = g(\sin\alpha - \mu\cos\alpha)", eq=r"f_k = \mu_k N"),
-        D(r"בעלייה: תרשים הכוחות על הגוף", lambda: fbd([("mg", -90, 1.0), ("N", 90 - A, 0.9), ("fₖ", -A, 0.4)],
+        D(r"בעלייה: תרשים הכוחות על הגוף", lambda: fbd([("mg", -90, 1.0), ("N", 90 + A, 0.9), ("fₖ", 180 + A, 0.4)],
             "תרשים כוחות בעלייה: כוח הכובד, הכוח הנורמלי, וחיכוך קינטי במורד המדרון, נגד התנועה. הכיוון החיובי במעלה",
-            positive=180 - A, body="block", tilt=-A, surface="below", note="עולה")),
+            positive=A, body="block", tilt=A, surface="below", note="עולה")),
         S(r"משוואת כוחות בעלייה", r"עכשיו הכיוון החיובי במעלה. בכיוון הזה לא פועל אף כוח. נגדו רכיב הכובד והחיכוך", r"0 - mg\sin\alpha - f_k = m\,a", eq=r"\Sigma\vec F = m\vec a"),
         S(r"מציבים את החיכוך ומחלקים במסה", r"גודל ההאטה בעלייה", r"|a_\uparrow| = g(\sin\alpha + \mu\cos\alpha)"),
         S(r"הזמנים", r"הגוף מגיע לקיר במהירות v, ויוצא ממנו באותה מהירות", r"t_\downarrow = \frac{v}{a_\downarrow},\qquad t_\uparrow = \frac{v}{|a_\uparrow|}", eq=r"v = v_0 + at"),
