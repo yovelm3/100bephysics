@@ -34,6 +34,26 @@ def S(what, why, tex):
     return {"what": what, "why": why, "tex": tex}
 
 
+def D(caption, fig):
+    """A drawn answer (table / graph / diagram) for a part that asks to draw one. `fig` is a Fig or a function returning one."""
+    g = fig() if callable(fig) else fig
+    return {"draw": g.svg(), "caption": caption}
+
+
+def table(cols, rows, alt="", colw=110, rowh=30):
+    """A simple drawn table: cols = header strings, rows = lists of cell strings (left to right as in a physics table)."""
+    W = colw * len(cols); H = rowh * (len(rows) + 1)
+    g = Fig(W + 2, H + 2, alt or "טבלה")
+    g.rect(1, 1, W, H, fill="none", width=1.3)
+    g.rect(1, 1, W, rowh, fill="var(--d-fill)", stroke="none", width=0)
+    for r in range(1, len(rows) + 1): g.line(1, 1 + r * rowh, 1 + W, 1 + r * rowh, width=0.9 if r > 1 else 1.3)
+    for c in range(1, len(cols)): g.line(1 + c * colw, 1, 1 + c * colw, 1 + H, width=0.9)
+    for c, h in enumerate(cols): g.text(1 + c * colw + colw / 2, 1 + rowh / 2 + 5, h)
+    for r, row in enumerate(rows):
+        for c, v in enumerate(row): g.text(1 + c * colw + colw / 2, 1 + (r + 1.5) * rowh + 5, v, cls="dim")
+    return g
+
+
 def C(what, why, tex):
     assert not HEB.search(tex), f"Hebrew inside a formula: {tex}"
     return {"what": what, "why": why, "tex": tex, "check": True}

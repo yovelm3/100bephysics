@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { checkSvg } from "./svg";
 
 /**
  * Format of one exercise file in content/<pool>/<topic>/<name>.json.
@@ -22,6 +23,14 @@ const text = z.string().trim().min(1);
 export const SolutionStepSchema = z.union([
   z.object({ explain: text }).strict(),
   z.object({ what: text, why: text, tex: text, check: z.boolean().optional() }).strict(),
+  /** A drawn answer (table, graph, force diagram) for parts that ask to draw one. Our own SVG, checked like figures. */
+  z
+    .object({ draw: text, caption: text })
+    .strict()
+    .superRefine((d, ctx) => {
+      const bad = checkSvg(d.draw);
+      if (bad) ctx.addIssue({ code: "custom", message: `drawn answer: ${bad}` });
+    }),
 ]);
 
 const NumberAnswer = z

@@ -4,7 +4,7 @@ import { Math } from "@/components/Math";
  * One item of a full solution, in the content-file format:
  * a short explanation paragraph, or a row (what we do, why, calculation in LaTeX). `check` marks the verification row.
  */
-export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean };
+export type SolutionStep = { explain: string } | { what: string; why: string; tex: string; check?: boolean } | { draw: string; caption: string };
 type Row = Extract<SolutionStep, { what: string }>;
 
 /**
@@ -16,7 +16,15 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
   return (
     <div className="flex flex-col gap-3">
       {groupSteps(steps).map((group, i) =>
-        group.kind === "explain" ? (
+        group.kind === "draw" ? (
+          <figure key={i} className="flex flex-col gap-2 rounded-xl border border-line bg-surface p-3">
+            <figcaption className="font-bold">
+              <InlineText text={group.caption} />
+            </figcaption>
+            {/* Our own SVG, validated by checkSvg when the content is loaded. */}
+            <div className="fig ltr mx-auto w-full max-w-xl" dangerouslySetInnerHTML={{ __html: group.svg }} />
+          </figure>
+        ) : group.kind === "explain" ? (
           <p key={i} className="text-muted">
             <InlineText text={group.text} />
           </p>
@@ -63,12 +71,14 @@ export function InlineText({ text }: { text: string | null | undefined }) {
   );
 }
 
-type Group = { kind: "explain"; text: string } | { kind: "rows"; rows: Row[] };
+type Group = { kind: "explain"; text: string } | { kind: "rows"; rows: Row[] } | { kind: "draw"; svg: string; caption: string };
 
 function groupSteps(steps: SolutionStep[]): Group[] {
   const groups: Group[] = [];
   for (const s of steps ?? []) {
-    if ("explain" in s) {
+    if ("draw" in s) {
+      groups.push({ kind: "draw", svg: s.draw, caption: s.caption });
+    } else if ("explain" in s) {
       groups.push({ kind: "explain", text: s.explain });
     } else if ("what" in s) {
       const last = groups[groups.length - 1];
