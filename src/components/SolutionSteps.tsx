@@ -97,7 +97,7 @@ export function SolutionSteps({ steps }: { steps: SolutionStep[] }) {
 
 /** Lets a long calculation wrap after list separators too (KaTeX already wraps after = and +). */
 export function breakable(tex: string): string {
-  return tex.replace(/(\\quad|,\\ )/g, "$1\\allowbreak ");
+  return tex.replace(/(\\q?quad(?![a-z])|,\\ )/g, "$1\\allowbreak ");
 }
 
 /** Hebrew text with inline $formulas$ rendered left-to-right. */
