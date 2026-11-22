@@ -43,6 +43,7 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
   const [feedback, setFeedback] = useState<Record<string, Feedback>>({});
   const [solutions, setSolutions] = useState<Record<string, Solution>>({});
   const [busy, setBusy] = useState(false);
+  const [solutionError, setSolutionError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
@@ -63,7 +64,7 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
       const body = part.answerType === "choice" ? { partId: part.id, choice: choice[part.id] } : { partId: part.id, input: inputs[part.id] ?? "" };
       const res = await fetch("/api/answer", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
       if (res.status === 401) return router.push(`/login?next=/exercise/${exercise.id}`);
-      const data = res.ok ? await res.json() : { result: "error", message: "לא הצלחנו לבדוק את התשובה. נסה שוב." };
+      const data = res.ok ? await res.json() : { result: "error", message: "לא הצלחנו לבדוק את התשובה. ייתכן שהשאלה עודכנה בינתיים: רענן את הדף ונסה שוב." };
       setFeedback((f) => ({ ...f, [part.id]: data }));
       if (data.result === "correct") setSolved((s) => ({ ...s, [part.id]: true }));
     } finally {
@@ -79,6 +80,8 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
       if (res.ok) {
         const data = await res.json();
         setSolutions((s) => ({ ...s, [part.id]: data }));
+      } else {
+        setSolutionError("לא הצלחנו לפתוח את הפתרון. ייתכן שהשאלה עודכנה בינתיים: רענן את הדף ונסה שוב.");
       }
     } finally {
       setBusy(false);
@@ -227,6 +230,11 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
                 </button>
               )}
             </div>
+            {solutionError && !sol && (
+              <p role="alert" className="rounded-lg bg-warn-soft px-3 py-2 text-sm font-semibold text-warn">
+                {solutionError}
+              </p>
+            )}
 
             {(solved[part.id] || sol || part.answerType === "open") &&
               (isLast ? (
