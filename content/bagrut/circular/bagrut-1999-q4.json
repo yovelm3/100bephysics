@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "המסילה $ACFL$ מתארת \"רכבת הרים\" בלונה פארק. תלמיד נכנס לקרונית בנקודה $A$. הוא הציב מאזניים על כיסא שבקרונית, והתיישב על המאזניים כך שכפות רגליו אינן נוגעות ברצפת הקרונית. לפני כן הוא שחרר מידו אבן בגובה $H$ מעל הקרקע. האבן נפלה נפילה חופשית והגיעה לקרקע $3$ שניות אחרי שחרורה. התלמיד יצא לדרכו מ-$A$ במהירות התחלתית שווה לאפס. לקרונית אין מנוע, והיא נעה על המסילה בלי חיכוך ובלי להתנתק ממנה. בנקודה $A$ הראו המאזניים את משקלו $mg$, ובנקודה $C$ (פני הקרקע) הם הראו $10mg$.",
+  "stem": "המסילה $ACFL$ מתארת רכבת הרים בלונה פארק. תלמיד נכנס לקרונית בנקודה $A$. הוא שם מאזניים על כיסא בקרונית, וישב עליהם כך שכפות רגליו לא נוגעות ברצפה. לפני כן הוא שחרר אבן מגובה $H$ מעל הקרקע. האבן נפלה נפילה חופשית והגיעה לקרקע אחרי $3$ שניות. התלמיד יצא מ-$A$ בלי מהירות התחלתית. לקרונית אין מנוע, והיא נעה על המסילה בלי חיכוך ובלי להתנתק ממנה. בנקודה $A$ המאזניים הראו את המשקל שלו, $mg$, ובנקודה $C$, על הקרקע, הם הראו $10mg$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1999-q4.svg",
@@ -27,12 +27,12 @@
     "משקל מדומה בשקע ובגבעה",
     "נפילה חופשית"
   ],
-  "summary": "רכבת הרים עם מאזניים: גובה מזמן נפילה, מהירות בתחתית, רדיוס מהוריית המאזניים, ולמה בראש גבעה מרגישים קלים.",
+  "summary": "רכבת הרים עם מאזניים: גובה מזמן נפילה, מהירות בתחתית, רדיוס ממה שמראים המאזניים, ולמה בראש גבעה מרגישים קלים.",
   "position": 11,
   "parts": [
     {
       "label": "א",
-      "question": "חשב את הגובה $H$ של הנקודה $A$ מעל הקרקע.",
+      "question": "מה הגובה $H$ של הנקודה $A$ מעל הקרקע?",
       "answer": {
         "type": "number",
         "value": 45.0,
@@ -43,9 +43,13 @@
       ],
       "solution": [
         {
-          "what": "נפילה חופשית ממנוחה",
-          "why": "זמן הנפילה 3 שניות",
-          "tex": "H = \\tfrac{1}{2} g t^2 = \\tfrac{1}{2} \\cdot 10 \\cdot 3^2 = 45\\,\\text{m}"
+          "explain": "בוחרים כלפי מטה כחיובי לנפילת האבן. השאלה לא קבעה כיוון."
+        },
+        {
+          "what": "משוואת המקום של האבן",
+          "why": "היא נופלת ממנוחה. התאוצה היא תאוצת הכובד, ולכן מציבים אותה במקום התאוצה",
+          "tex": "H = 0 + 0 \\cdot 3 + \\tfrac{1}{2} \\cdot 10 \\cdot 3^2 = 45\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
       "finalAnswer": "$45\\,\\text{m}$",
@@ -53,7 +57,7 @@
     },
     {
       "label": "ב",
-      "question": "חשב את מהירות הקרונית בנקודה $C$.",
+      "question": "מה המהירות של הקרונית בנקודה $C$?",
       "answer": {
         "type": "number",
         "value": 30.0,
@@ -64,9 +68,18 @@
       ],
       "solution": [
         {
+          "explain": "אין חיכוך, והכוח הנורמלי ניצב לתנועה ולא עושה עבודה. לכן האנרגיה המכנית נשמרת. רמת הייחוס היא הקרקע."
+        },
+        {
           "what": "שימור אנרגיה",
-          "why": "אין חיכוך, יוצאת ממנוחה",
-          "tex": "v_C = \\sqrt{2gH} = \\sqrt{900} = 30\\,\\text{m/s}"
+          "why": "הקרונית יוצאת ממנוחה בגובה H, ומגיעה לקרקע",
+          "tex": "mgH + 0 = 0 + \\tfrac{1}{2}m v_C^2",
+          "eq": "E_k = \\tfrac{1}{2}mv^2,\\quad U_G = mgh"
+        },
+        {
+          "what": "מחלקים במסה ומבודדים",
+          "why": "המסה מצטמצמת",
+          "tex": "v_C = \\sqrt{2gH} = \\sqrt{2 \\cdot 10 \\cdot 45} = 30\\,\\text{m/s}"
         }
       ],
       "finalAnswer": "$30\\,\\text{m/s}$",
@@ -74,7 +87,7 @@
     },
     {
       "label": "ג",
-      "question": "קטע המסילה $BCD$ הוא קשת של מעגל שרדיוסו $R$. חשב את $R$.",
+      "question": "הקטע $BCD$ במסילה הוא קשת של מעגל שרדיוסו $R$. מה $R$?",
       "answer": {
         "type": "number",
         "value": 10.0,
@@ -86,13 +99,21 @@
       ],
       "solution": [
         {
-          "what": "בנקודה $C$",
-          "why": "המאזניים דוחפים מעלה ב-$10mg$, הכובד מטה. השקול כלפי מרכז הקשת (מעלה)",
-          "tex": "10mg - mg = \\frac{m v_C^2}{R}"
+          "explain": "בנקודה C, בתחתית הקשת, מרכז המעגל מעל התלמיד. בוחרים כחיובי את הכיוון אל המרכז, כלפי מעלה. המאזניים מראים את הכוח הנורמלי שהם מפעילים על התלמיד."
         },
         {
-          "what": "פותרים",
-          "why": "מבודדים את R",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על התלמיד בנקודה C: הכוח הנורמלי של המאזניים כלפי מעלה, פי עשרה מהמשקל, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה, אל מרכז הקשת\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"28\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"16\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"198.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"222.5\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז מעל</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על התלמיד בנקודה C"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי הכוח הנורמלי, ונגדו הכובד",
+          "tex": "10mg - mg = m\\,\\frac{v_C^2}{R}",
+          "eq": "a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "מחלקים במסה ומבודדים",
+          "why": "המסה מצטמצמת",
           "tex": "R = \\frac{v_C^2}{9g} = \\frac{900}{90} = 10\\,\\text{m}"
         }
       ],
@@ -101,7 +122,7 @@
     },
     {
       "label": "ד",
-      "question": "קטע המסילה $EFG$ היא קשת של מעגל. הנקודה $F$ נמצאת בגובה $h$ מעל הקרקע ($H > h$). האם בנקודה $F$ הוריית המאזניים גדולה מ-$mg$, קטנה ממנו או שווה לו? נמק.",
+      "question": "הקטע $EFG$ הוא קשת של מעגל. הנקודה $F$ בגובה $h$ מעל הקרקע ($H > h$). האם בנקודה $F$ המאזניים מראים יותר מ-$mg$, פחות מ-$mg$, או בדיוק $mg$? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -117,14 +138,22 @@
       ],
       "solution": [
         {
-          "what": "בראש הגבעה",
-          "why": "מרכז הקשת מתחת לקרונית: השקול כלפי מטה",
-          "tex": "mg - N = \\frac{m v_F^2}{r}"
+          "explain": "בנקודה F, בראש הגבעה, מרכז הקשת מתחת לתלמיד. בוחרים כחיובי את הכיוון אל המרכז, כלפי מטה."
         },
         {
-          "what": "מהירות שונה מאפס",
-          "why": "$h < H$, ולכן $v_F > 0$",
-          "tex": "N = mg - \\frac{m v_F^2}{r} < mg"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על התלמיד בנקודה F: הכוח הנורמלי של המאזניים כלפי מעלה, קטן מהמשקל, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מטה, אל מרכז הקשת\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"84\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"72\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">המרכז מתחת</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על התלמיד בנקודה F"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון החיובי הכובד, ונגדו הכוח הנורמלי",
+          "tex": "mg - N = m\\,\\frac{v_F^2}{r}",
+          "eq": "a_R = \\frac{v^2}{r}"
+        },
+        {
+          "what": "המהירות לא אפס",
+          "why": "הנקודה F נמוכה מ-A, ולכן לפי שימור אנרגיה יש לקרונית מהירות",
+          "tex": "h < H \\;\\Rightarrow\\; v_F > 0 \\;\\Rightarrow\\; N = mg - m\\frac{v_F^2}{r} < mg"
         }
       ],
       "finalAnswer": "קטנה מ-$mg$",
