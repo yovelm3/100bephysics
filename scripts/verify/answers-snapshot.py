@@ -28,7 +28,7 @@ else:
     for k, n in now.items():
         b = before.get(k)
         if not b: print("new:", n["label"]); continue
-        nums_now = [v for v in n["values"] if not isinstance(v, list)]
+        nums_now = [v for v in n["values"] if not isinstance(v, (list, tuple))]
         for v in b["values"]:
             if isinstance(v, list):  # choice answers may be re-worded; checked by hand
                 continue
