@@ -9,9 +9,15 @@ const css = fs.readFileSync("src/app/globals.css", "utf8").match(/\.fig[\s\S]*$/
   let bad = 0, n = 0;
   for (const t of fs.readdirSync(base)) {
     if (only && t !== only) continue;
-    for (const f of fs.readdirSync(path.join(base, t)).filter(f => f.endsWith(".svg"))) {
+    // the question figures (.svg files) and every drawing inside the solutions (draw steps)
+    const items = [];
+    for (const f of fs.readdirSync(path.join(base, t))) {
+      if (f.endsWith(".svg")) items.push([f, fs.readFileSync(path.join(base, t, f), "utf8")]);
+      if (f.endsWith(".json")) for (const part of JSON.parse(fs.readFileSync(path.join(base, t, f), "utf8")).parts)
+        (part.solution || []).forEach((s, k) => s.draw && items.push([`${f} ${part.label} drawing ${k}`, s.draw]));
+    }
+    for (const [f, svg] of items) {
       n++;
-      const svg = fs.readFileSync(path.join(base, t, f), "utf8");
       await p.setContent(`<html dir="rtl"><head><style>body{font-family:Heebo,sans-serif} ${css}</style></head><body><div class="fig ltr" style="width:640px;direction:ltr;unicode-bidi:isolate">${svg}</div></body></html>`);
       const r = await p.evaluate(() => {
         const s = document.querySelector("svg"), sb = s.getBoundingClientRect(), out = [];

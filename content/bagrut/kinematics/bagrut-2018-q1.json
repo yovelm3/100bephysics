@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בעבודת חקר של תלמידי מגמת פיזיקה בבית ספר תיכון, החליטו התלמידים לבחון את מאפייני התנועה של גופים שנזרקים אנכית. לשם כך הם עלו על מגדל שגובהו $H$, וזרקו באותו רגע שלושה כדורים זהים: $A$, $B$ ו-$C$. כדור $A$ נזרק כלפי מטה במהירות התחלתית שגודלה $v_0$, כדור $B$ נזרק כלפי מעלה במהירות התחלתית שגודלה זהה לגודל המהירות ההתחלתית של כדור $A$, וכדור $C$ שוחרר ממנוחה. שלושת הכדורים לא התנגשו במהלך תנועתם. התלמידים קבעו את כיוון הציר האנכי החיובי כלפי מטה. הם סרטטו גרף מהירות-זמן של אחד הכדורים, מרגע זריקתו עד סוף פגיעתו בקרקע. בסעיפים א-ד הנח כי אפשר להזניח את כוח החיכוך בין הכדורים לאוויר.",
+  "stem": "תלמידי מגמת פיזיקה חקרו את התנועה של גופים שנזרקים אנכית. הם עלו על מגדל שגובהו $H$, וזרקו באותו רגע שלושה כדורים זהים: $A$, $B$ ו-$C$. את כדור $A$ זרקו כלפי מטה במהירות התחלתית שגודלה $v_0$, את כדור $B$ זרקו כלפי מעלה במהירות התחלתית באותו גודל, ואת כדור $C$ שחררו ממנוחה. הכדורים לא התנגשו. התלמידים בחרו את הכיוון החיובי של הציר האנכי כלפי מטה, ושרטטו גרף מהירות-זמן של אחד הכדורים, מרגע הזריקה ועד הפגיעה בקרקע. בסעיפים א-ד אפשר להזניח את החיכוך בין הכדורים לאוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2018-q1.svg",
@@ -33,7 +33,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "קבע אם הגרף מתאר את מהירותו של כדור $A$, של כדור $B$ או של כדור $C$. נמק את קביעתך.",
+      "question": "האם הגרף מתאר את המהירות של כדור $A$, של כדור $B$ או של כדור $C$? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -49,22 +49,25 @@
       ],
       "solution": [
         {
+          "explain": "הכיוון החיובי נקבע בשאלה: כלפי מטה. לכן מהירות שלילית פירושה תנועה כלפי מעלה."
+        },
+        {
           "what": "המהירות ההתחלתית בגרף",
-          "why": "הכיוון החיובי כלפי מטה, ולכן מהירות שלילית פירושה כלפי מעלה",
+          "why": "הגרף מתחיל מתחת לציר הזמן, כלומר המהירות ההתחלתית שלילית",
           "tex": "v(0) = -5\\,\\text{m/s} < 0"
         },
         {
           "what": "איזה כדור נזרק כלפי מעלה",
-          "why": "רק כדור $B$",
-          "tex": "B"
+          "why": "רק כדור B",
+          "tex": "v_{0,B} < 0,\\qquad v_{0,A} > 0,\\qquad v_{0,C} = 0"
         }
       ],
-      "finalAnswer": "כדור $B$: מהירותו ההתחלתית שלילית, כלומר כלפי מעלה",
+      "finalAnswer": "כדור $B$: המהירות ההתחלתית שלו שלילית, כלומר כלפי מעלה",
       "keyAnswer": "B"
     },
     {
       "label": "ב",
-      "question": "חשב את גובה המגדל, $H$.",
+      "question": "מה גובה המגדל $H$?",
       "answer": {
         "type": "number",
         "value": 100.0,
@@ -77,19 +80,28 @@
       ],
       "solution": [
         {
-          "what": "השטח מתחת לגרף",
-          "why": "ההעתק של $B$ מהזריקה עד הקרקע. השטח השלילי (עלייה) מוחסר",
-          "tex": "\\Delta y = -\\tfrac{1}{2} \\cdot 0.5 \\cdot 5 + \\tfrac{1}{2} \\cdot 4.5 \\cdot 45 = -1.25 + 101.25"
+          "explain": "ההעתק של כדור B מהזריקה ועד הקרקע הוא השטח שמתחת לגרף, עם סימן. שטח מתחת לציר הוא תנועה כלפי מעלה, ולכן הוא נספר בשלילה."
         },
         {
-          "what": "גובה המגדל",
-          "why": "ההעתק הכולל מגג המגדל עד הקרקע",
-          "tex": "H = 100\\,\\text{m}"
+          "what": "השטח מתחת לציר",
+          "why": "משולש עד הרגע שבו המהירות מתאפסת, אחרי חצי שנייה",
+          "tex": "\\tfrac{1}{2} \\cdot 0.5 \\cdot (-5) = -1.25\\,\\text{m}"
         },
         {
-          "what": "בדיקה במשוואת מקום",
-          "why": "$v_0 = -5$, $a = 10$, $t = 5$",
-          "tex": "-5 \\cdot 5 + 5 \\cdot 25 = 100 \\;\\checkmark",
+          "what": "השטח מעל הציר",
+          "why": "משולש מהרגע הזה ועד הפגיעה, אחרי חמש שניות",
+          "tex": "\\tfrac{1}{2} \\cdot (5 - 0.5) \\cdot 45 = 101.25\\,\\text{m}"
+        },
+        {
+          "what": "ההעתק הכולל",
+          "why": "מגג המגדל ועד הקרקע, וזה גובה המגדל",
+          "tex": "H = -1.25 + 101.25 = 100\\,\\text{m}"
+        },
+        {
+          "what": "בדיקה במשוואת המקום",
+          "why": "המהירות ההתחלתית מינוס חמש, ותאוצת הכובד חיובית כי היא כלפי מטה",
+          "tex": "H = 0 + (-5) \\cdot 5 + \\tfrac{1}{2} \\cdot 10 \\cdot 5^2 = -25 + 125 = 100\\,\\text{m} \\;\\checkmark",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2",
           "check": true
         }
       ],
@@ -98,7 +110,7 @@
     },
     {
       "label": "ג",
-      "question": "חשב את המרחק האנכי בין מיקומו של כדור $A$ לבין מיקומו של כדור $B$, בזמן $t = 2\\,\\text{s}$.",
+      "question": "מה המרחק האנכי בין כדור $A$ לכדור $B$ ברגע $t = 2\\,\\text{s}$?",
       "answer": {
         "type": "number",
         "value": 20.0,
@@ -110,19 +122,20 @@
       ],
       "solution": [
         {
-          "what": "מקום $A$",
-          "why": "מהירות התחלתית $+5$ (מטה)",
-          "tex": "y_A = 5 \\cdot 2 + 5 \\cdot 4 = 30\\,\\text{m}"
+          "what": "המקום של כדור A",
+          "why": "הראשית בגג, כלפי מטה חיובי. המהירות ההתחלתית חיובית, וגם תאוצת הכובד",
+          "tex": "y_A = 0 + 5 \\cdot 2 + \\tfrac{1}{2} \\cdot 10 \\cdot 2^2 = 10 + 20 = 30\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "מקום $B$",
-          "why": "מהירות התחלתית $-5$",
-          "tex": "y_B = -5 \\cdot 2 + 5 \\cdot 4 = 10\\,\\text{m}"
+          "what": "המקום של כדור B",
+          "why": "אותה משוואה, אבל המהירות ההתחלתית שלילית",
+          "tex": "y_B = 0 + (-5) \\cdot 2 + \\tfrac{1}{2} \\cdot 10 \\cdot 2^2 = -10 + 20 = 10\\,\\text{m}"
         },
         {
           "what": "המרחק",
-          "why": "התאוצות שוות ומתבטלות, ונשאר הפרש המהירויות כפול הזמן",
-          "tex": "y_A - y_B = 20\\,\\text{m} = (5 - (-5)) \\cdot 2"
+          "why": "מחסירים. האיברים של התאוצה שווים ומתבטלים, ונשאר הפרש המהירויות כפול הזמן",
+          "tex": "y_A - y_B = 30 - 10 = 20\\,\\text{m} = \\big(5 - (-5)\\big) \\cdot 2"
         }
       ],
       "finalAnswer": "$20\\,\\text{m}$",
@@ -130,7 +143,7 @@
     },
     {
       "label": "ד",
-      "question": "התלמידים הוסיפו לאותה מערכת צירים את הגרפים של שני הכדורים האחרים. הסבר מהי המשמעות הפיזיקלית של כל אחד מהערכים (1)-(3), וקבע לאילו מהערכים יש גדלים מספריים זהים לכל שלושת הגרפים: (1) שיפוע הגרף. (2) נקודת החיתוך של הגרף עם ציר המהירות. (3) השטח הכלוא בין הגרף לציר הזמן.",
+      "question": "התלמידים הוסיפו באותה מערכת צירים את הגרפים של שני הכדורים האחרים. מה המשמעות הפיזיקלית של כל אחד מהערכים (1)-(3)? לאילו מהם יש אותו ערך בשלושת הגרפים? (1) השיפוע של הגרף. (2) נקודת החיתוך של הגרף עם ציר המהירות. (3) השטח שבין הגרף לציר הזמן.",
       "answer": {
         "type": "open"
       },
@@ -140,27 +153,27 @@
       ],
       "solution": [
         {
-          "what": "(1) שיפוע",
-          "why": "התאוצה. לכל הכדורים $g$",
+          "what": "השיפוע",
+          "why": "השיפוע של גרף מהירות-זמן הוא התאוצה. לכל הכדורים זו תאוצת הכובד",
           "tex": "a_A = a_B = a_C = 10\\,\\text{m/s}^2"
         },
         {
-          "what": "(2) חיתוך עם ציר המהירות",
-          "why": "המהירות ההתחלתית. שונה: $+5$, $-5$, $0$",
-          "tex": "v_0:\\ 5,\\ -5,\\ 0"
+          "what": "החיתוך עם ציר המהירות",
+          "why": "זו המהירות ההתחלתית, והיא שונה לכל כדור",
+          "tex": "v_0:\\ \\ 5,\\ \\ -5,\\ \\ 0\\ \\ \\text{m/s}"
         },
         {
-          "what": "(3) השטח",
-          "why": "ההעתק מהזריקה עד הקרקע. לכולם $H = 100\\,\\text{m}$",
-          "tex": "\\Delta y = H"
+          "what": "השטח",
+          "why": "זה ההעתק מהזריקה ועד הקרקע. לכל הכדורים הוא גובה המגדל",
+          "tex": "\\Delta y = H = 100\\,\\text{m}"
         }
       ],
-      "finalAnswer": "השיפוע (התאוצה) והשטח (ההעתק $H$) זהים לשלושתם. החיתוך (המהירות ההתחלתית) שונה",
+      "finalAnswer": "השיפוע (התאוצה) והשטח (ההעתק $H$) זהים בשלושתם. החיתוך (המהירות ההתחלתית) שונה",
       "keyAnswer": "(1),(3) זהים"
     },
     {
       "label": "ה",
-      "question": "בסעיף זה הנח שבין כל כדור לאוויר פועל כוח חיכוך שגודלו קבוע וקטן מהמשקל של הכדור. להזכירך, כל הכדורים זהים. קבע אם גודל המהירות של כדור $A$ ברגע פגיעתו בקרקע קטן מגודל המהירות של כדור $B$ ברגע פגיעתו בקרקע, גדול ממנו או שווה לו. נמק את קביעתך.",
+      "question": "בסעיף הזה פועל בין כל כדור לאוויר כוח חיכוך שגודלו קבוע וקטן ממשקל הכדור. הכדורים זהים. האם גודל המהירות של כדור $A$ ברגע הפגיעה בקרקע קטן מגודל המהירות של כדור $B$ ברגע הפגיעה בקרקע, גדול ממנו או שווה לו? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -176,14 +189,31 @@
       ],
       "solution": [
         {
+          "explain": "החיכוך תמיד נגד כיוון התנועה. לכן כשכדור B עולה, החיכוך כלפי מטה, וכשהוא יורד, החיכוך כלפי מעלה. הכוחות משתנים, ולכן יש תרשים לכל שלב."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הכדור: כוח הכובד mg כלפי מטה, וכוח החיכוך עם האוויר f נגד כיוון התנועה, כלפי מטה, כי הכדור עולה. הכיוון החיובי כלפי מטה, כפי שנקבע בשאלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"209\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"233\" text-anchor=\"middle\">f</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכדור עולה</text>\n</svg>\n",
+          "caption": "כדור B בעלייה: תרשים הכוחות"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הכדור: כוח הכובד mg כלפי מטה, וכוח החיכוך עם האוויר f נגד כיוון התנועה, כלפי מעלה, כי הכדור יורד. הכיוון החיובי כלפי מטה, כפי שנקבע בשאלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"91\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"79\" text-anchor=\"middle\">f</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכדור יורד</text>\n</svg>\n",
+          "caption": "כדור B בירידה, וכדור A כל הזמן: תרשים הכוחות"
+        },
+        {
           "what": "אותה אנרגיה בהתחלה",
-          "why": "אותה מסה, אותו גובה, ואותו גודל מהירות",
+          "why": "לשני הכדורים אותה מסה, אותו גובה, ואותו גודל מהירות התחלתית",
           "tex": "E_{0,A} = E_{0,B}"
         },
         {
-          "what": "עבודת החיכוך",
-          "why": "$B$ עולה ואז יורד, ולכן עובר דרך ארוכה יותר, והחיכוך מאבד ממנו יותר אנרגיה",
-          "tex": "W_f = -f \\cdot s,\\quad s_B > s_A"
+          "what": "העבודה של החיכוך",
+          "why": "החיכוך תמיד נגד התנועה, ולכן העבודה שלו שלילית ושווה לגודל הכוח כפול הדרך. כדור B עולה ואז יורד, ולכן הדרך שלו ארוכה יותר",
+          "tex": "W_f = -f\\,s,\\qquad s_B > s_A",
+          "eq": "W = F\\cos\\theta\\,\\Delta s"
+        },
+        {
+          "what": "מסקנה",
+          "why": "כדור B מאבד יותר אנרגיה לחיכוך, ולכן מגיע לקרקע עם פחות אנרגיה קינטית ובמהירות קטנה יותר",
+          "tex": "E_{k,A} > E_{k,B} \\;\\Rightarrow\\; v_A > v_B"
         }
       ],
       "finalAnswer": "גדול: כדור $B$ עובר דרך ארוכה יותר, ומאבד יותר אנרגיה לחיכוך",

@@ -187,8 +187,8 @@
           "tex": "\\Delta x = 4.5t - 4.5t = 0"
         }
       ],
-      "finalAnswer": "בדיוק מעל $Q$, בגובה $\\approx 11.6\\,\\text{m}$",
-      "keyAnswer": "מעל Q בגובה 11.6 m"
+      "finalAnswer": "מרחק אופקי $0$ (בדיוק מעל $Q$), בגובה $\\approx 11.6\\,\\text{m}$",
+      "keyAnswer": "מעל Q, מרחק אופקי 0 m, בגובה 11.6 m"
     }
   ]
 }
