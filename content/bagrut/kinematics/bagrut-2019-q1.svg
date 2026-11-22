@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-label="גרף המקום האנכי של כדור כפונקציה של הזמן: פרבולה מ-40 מטר ב-0 שניות (נקודה A), שיא 45 מטר ב-1 שנייה (B), 25 מטר ב-3 שניות (C), ו-0 ב-4 שניות (D)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" direction="ltr" role="img" aria-label="גרף המקום האנכי של כדור כפונקציה של הזמן: פרבולה מ-40 מטר ב-0 שניות (נקודה A), שיא 45 מטר ב-1 שנייה (B), 25 מטר ב-3 שניות (C), ו-0 ב-4 שניות (D)">
 <defs>
 <pattern id="f-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--d-hatch)" stroke-width="2"/></pattern>
 <marker id="f-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--d-dim)" stroke-width="1.5"/></marker>

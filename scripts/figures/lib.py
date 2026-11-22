@@ -237,7 +237,7 @@ class Fig:
         # Figures are shown at the column's full width, so a narrow or tall drawing would come out huge.
         # Pad the view box at the sides so it is at least 480 wide and about 1.3 times as wide as it is tall.
         W = max(self.w, 480, min(1.3 * self.h, 720)); x0 = -(W - self.w) / 2
-        return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{f(x0)} 0 {f(W)} {self.h}" role="img" aria-label="{alt}">\n{DEFS}\n{body}\n</svg>\n'
+        return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{f(x0)} 0 {f(W)} {self.h}" direction="ltr" role="img" aria-label="{alt}">\n{DEFS}\n{body}\n</svg>\n'
 
 
 def mini(g, ox, oy, w, h, fn=None, label="", xl="t", yl="v", neg=False, pts=None, segs=None, n=40):

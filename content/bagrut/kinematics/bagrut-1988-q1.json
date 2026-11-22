@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ד במקור שואל גם מתי וגם כמה רחוק. פיצלתי לשני סעיפים (ד: כמה רחוק, ה: מתי).",
-  "stem": "הגרף מתאר את המהירות $v$ של גוף שנע בקו ישר, כפונקציה של הזמן $t$. ברגע $t = 0$ הגוף נמצא בנקודה $A$ ונע ימינה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ד הוא סעיף אחד, כמו במקור, עם שתי תיבות: כמה רחוק ומתי.\nמה לבדוק: רק לאשר.",
+  "stem": "הגרף מתאר את המהירות $v$ של גוף שנע לאורך קו ישר, כפונקציה של הזמן $t$. ברגע $t = 0$ הגוף נמצא בנקודה $A$ ונע ימינה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1988-q1.svg",
@@ -25,15 +25,15 @@
     "גרף מהירות-זמן",
     "שיפוע כתאוצה",
     "שטח כהעתק",
-    "מרחק מקסימלי כשהמהירות מתאפסת",
+    "מרחק מרבי כשהמהירות מתאפסת",
     "שטח מתחת לציר"
   ],
-  "summary": "גוף שנע ימינה ואחר כך חוזר שמאלה. בניית גרף תאוצה מגרף מהירות, ומציאת המרחקים המקסימליים לשני הכיוונים.",
+  "summary": "גוף שנע ימינה ואחר כך חוזר שמאלה: בניית גרף תאוצה מגרף מהירות, והמרחקים הגדולים ביותר לשני הכיוונים.",
   "position": 6,
   "parts": [
     {
       "label": "א",
-      "question": "שרטט גרף של התאוצה $a$ כפונקציה של הזמן, עבור $17$ השניות הראשונות של התנועה.",
+      "question": "שרטטו גרף של התאוצה $a$ כפונקציה של הזמן, בשבע-עשרה השניות הראשונות של התנועה.",
       "answer": {
         "type": "open"
       },
@@ -43,35 +43,40 @@
       ],
       "solution": [
         {
-          "explain": "בכל קטע ישר של גרף המהירות התאוצה קבועה ושווה לשיפוע. לכן גרף התאוצה בנוי ממדרגות אופקיות."
+          "explain": "הכיוון החיובי נקבע בשאלה: ימינה, כי בהתחלה הגוף נע ימינה והמהירות בגרף חיובית. בכל קטע ישר של גרף המהירות התאוצה קבועה ושווה לשיפוע, ולכן גרף התאוצה בנוי ממדרגות אופקיות."
         },
         {
-          "what": "קטע $0$ עד $2\\,\\text{s}$",
-          "why": "המהירות עולה מ-$2$ ל-$4$",
-          "tex": "a = \\frac{4 - 2}{2} = 1\\,\\text{m/s}^2"
+          "what": "הקטע הראשון",
+          "why": "המהירות עולה בקו ישר",
+          "tex": "0 \\le t \\le 2:\\quad a = \\frac{4 - 2}{2 - 0} = 1\\,\\text{m/s}^2",
+          "eq": "\\bar a = \\frac{\\Delta v}{\\Delta t}"
         },
         {
-          "what": "קטע $2$ עד $5\\,\\text{s}$",
-          "why": "המהירות קבועה",
-          "tex": "a = 0"
+          "what": "הקטע השני",
+          "why": "המהירות קבועה, ולכן השיפוע אפס",
+          "tex": "2 \\le t \\le 5:\\quad a = \\frac{4 - 4}{5 - 2} = 0"
         },
         {
-          "what": "קטע $5$ עד $10\\,\\text{s}$",
-          "why": "המהירות יורדת מ-$4$ ל-$-6$",
-          "tex": "a = \\frac{-6 - 4}{5} = -2\\,\\text{m/s}^2"
+          "what": "הקטע השלישי",
+          "why": "המהירות יורדת, עוברת דרך אפס ונעשית שלילית. השיפוע שלילי",
+          "tex": "5 \\le t \\le 10:\\quad a = \\frac{-6 - 4}{10 - 5} = -2\\,\\text{m/s}^2"
         },
         {
-          "what": "קטע $10$ עד $17\\,\\text{s}$",
-          "why": "המהירות עולה מ-$-6$ ל-$1$",
-          "tex": "a = \\frac{1 - (-6)}{7} = 1\\,\\text{m/s}^2"
+          "what": "הקטע הרביעי",
+          "why": "המהירות השלילית קטנה בגודלה. השיפוע חיובי",
+          "tex": "10 \\le t \\le 17:\\quad a = \\frac{1 - (-6)}{17 - 10} = 1\\,\\text{m/s}^2"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 320\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: תאוצה כפונקציה של הזמן. מדרגות אופקיות: 1 מטר לשנייה בריבוע עד 2 שניות, אפס עד 5 שניות, מינוס 2 עד 10 שניות, ו-1 עד 17 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"117.8\" y1=\"250\" x2=\"117.8\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"189.4\" y1=\"250\" x2=\"189.4\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"308.9\" y1=\"250\" x2=\"308.9\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"476.1\" y1=\"250\" x2=\"476.1\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"225.6\" x2=\"500\" y2=\"225.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"176.8\" x2=\"500\" y2=\"176.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"79.3\" x2=\"500\" y2=\"79.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"128\" x2=\"518\" y2=\"128\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"256\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"117.8\" y1=\"124\" x2=\"117.8\" y2=\"132\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"117.8\" y=\"146\" text-anchor=\"middle\">2</text>\n<line x1=\"189.4\" y1=\"124\" x2=\"189.4\" y2=\"132\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"189.4\" y=\"146\" text-anchor=\"middle\">5</text>\n<line x1=\"308.9\" y1=\"124\" x2=\"308.9\" y2=\"132\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"308.9\" y=\"146\" text-anchor=\"middle\">10</text>\n<line x1=\"476.1\" y1=\"124\" x2=\"476.1\" y2=\"132\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"476.1\" y=\"146\" text-anchor=\"middle\">17</text>\n<line x1=\"66\" y1=\"225.6\" x2=\"74\" y2=\"225.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"229.6\" text-anchor=\"end\">-2</text>\n<line x1=\"66\" y1=\"176.8\" x2=\"74\" y2=\"176.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"180.8\" text-anchor=\"end\">-1</text>\n<line x1=\"66\" y1=\"79.3\" x2=\"74\" y2=\"79.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"83.3\" text-anchor=\"end\">1</text>\n<text class=\"label\" x=\"516\" y=\"118\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">a (m/s²)</text>\n<polyline points=\"70,79.3 117.8,79.3\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"117.8,128 189.4,128\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"189.4,225.6 308.9,225.6\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<polyline points=\"308.9,79.3 476.1,79.3\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/>\n<line x1=\"117.8\" y1=\"250\" x2=\"117.8\" y2=\"50\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"189.4\" y1=\"250\" x2=\"189.4\" y2=\"50\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"308.9\" y1=\"250\" x2=\"308.9\" y2=\"50\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: תאוצה כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "מדרגות: $1$ (עד $2\\,\\text{s}$), $0$ (עד $5\\,\\text{s}$), $-2$ (עד $10\\,\\text{s}$), $1\\,\\text{m/s}^2$ (עד $17\\,\\text{s}$)",
+      "finalAnswer": "ארבע מדרגות אופקיות, כמו בציור",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "באיזה רגע יימצא הגוף במרחק המקסימלי ימינה ל-$A$? נמק.",
+      "question": "באיזה רגע יהיה הגוף במרחק הגדול ביותר מימין לנקודה $A$? נמקו.",
       "answer": {
         "type": "number",
         "value": 7.0,
@@ -83,12 +88,18 @@
       ],
       "solution": [
         {
-          "explain": "כל עוד המהירות חיובית הגוף מתרחק ימינה. ברגע שהיא מתאפסת ונעשית שלילית, הוא מתחיל לחזור."
+          "explain": "כל עוד המהירות חיובית, הגוף מתרחק ימינה. ברגע שהמהירות מתאפסת ונעשית שלילית, הוא מתחיל לחזור."
         },
         {
-          "what": "מוצאים מתי המהירות מתאפסת בפעם הראשונה",
-          "why": "בקטע $5$ עד $10$ השיפוע $-2$, והמהירות מתחילה ב-$4$",
-          "tex": "0 = 4 - 2(t - 5) \\Rightarrow t = 7\\,\\text{s}"
+          "what": "משוואת המהירות בקטע השלישי",
+          "why": "מתחילים לספור זמן מתחילת הקטע. המהירות בהתחלתו ארבע, והתאוצה מינוס שתיים",
+          "tex": "v = 4 - 2(t - 5)",
+          "eq": "v = v_0 + at"
+        },
+        {
+          "what": "מציבים מהירות אפס",
+          "why": "מחפשים את הרגע שבו הגוף נעצר ומסתובב",
+          "tex": "0 = 4 - 2(t - 5) \\;\\Rightarrow\\; t - 5 = 2 \\;\\Rightarrow\\; t = 7\\,\\text{s}"
         }
       ],
       "finalAnswer": "$t = 7\\,\\text{s}$",
@@ -96,7 +107,7 @@
     },
     {
       "label": "ג",
-      "question": "מהו המרחק המקסימלי ימינה ל-$A$ שאליו מגיע הגוף?",
+      "question": "מה המרחק הגדול ביותר מימין לנקודה $A$ שאליו מגיע הגוף?",
       "answer": {
         "type": "number",
         "value": 22.0,
@@ -108,26 +119,26 @@
       ],
       "solution": [
         {
-          "explain": "המרחק הוא השטח שמתחת לגרף מ-$0$ עד $7$ שניות. מחלקים אותו לצורות פשוטות."
+          "explain": "ההעתק הוא השטח שמתחת לגרף המהירות, מההתחלה עד הרגע שמצאנו בסעיף ב. מחלקים אותו לצורות פשוטות."
         },
         {
-          "what": "טרפז מ-$0$ עד $2\\,\\text{s}$",
-          "why": "המהירות עולה מ-$2$ ל-$4$",
+          "what": "טרפז בקטע הראשון",
+          "why": "המהירות עולה משתיים לארבע במשך שתי שניות",
           "tex": "\\frac{2 + 4}{2} \\cdot 2 = 6\\,\\text{m}"
         },
         {
-          "what": "מלבן מ-$2$ עד $5\\,\\text{s}$",
-          "why": "מהירות קבועה של $4$",
+          "what": "מלבן בקטע השני",
+          "why": "מהירות קבועה במשך שלוש שניות",
           "tex": "4 \\cdot 3 = 12\\,\\text{m}"
         },
         {
-          "what": "משולש מ-$5$ עד $7\\,\\text{s}$",
-          "why": "המהירות יורדת מ-$4$ לאפס",
+          "what": "משולש עד שהגוף נעצר",
+          "why": "המהירות יורדת מארבע לאפס במשך שתי שניות",
           "tex": "\\tfrac{1}{2} \\cdot 2 \\cdot 4 = 4\\,\\text{m}"
         },
         {
           "what": "מחברים",
-          "why": "כל השטחים מעל הציר, כלומר תנועה ימינה",
+          "why": "כל השטחים מעל הציר, כלומר כל התנועה עד עכשיו ימינה",
           "tex": "x_{\\max} = 6 + 12 + 4 = 22\\,\\text{m}"
         }
       ],
@@ -136,11 +147,21 @@
     },
     {
       "label": "ד",
-      "question": "מהו המרחק המקסימלי שמאלה ל-$A$ שאליו מגיע הגוף?",
+      "question": "מה המרחק הגדול ביותר משמאל לנקודה $A$ שאליו מגיע הגוף, ובאיזה רגע הוא נמצא שם?",
       "answer": {
-        "type": "number",
-        "value": 5.0,
-        "unit": "m"
+        "type": "multi",
+        "items": [
+          {
+            "label": "המרחק משמאל לנקודה",
+            "value": 5.0,
+            "unit": "m"
+          },
+          {
+            "label": "הרגע",
+            "value": 16.0,
+            "unit": "s"
+          }
+        ]
       },
       "skills": [
         "graph",
@@ -149,51 +170,32 @@
       ],
       "solution": [
         {
-          "explain": "אחרי $7$ שניות הגוף חוזר שמאלה, עד שהמהירות מתאפסת שוב. השטח מתחת לציר הוא תנועה שמאלה."
+          "explain": "אחרי שבע שניות הגוף חוזר שמאלה, עד שהמהירות מתאפסת שוב. השטח מתחת לציר הוא תנועה שמאלה, כלומר נגד הכיוון החיובי."
         },
         {
-          "what": "מוצאים מתי המהירות מתאפסת בפעם השנייה",
-          "why": "בקטע $10$ עד $17$ השיפוע $1$, והמהירות מתחילה ב-$-6$",
-          "tex": "0 = -6 + 1 \\cdot (t - 10) \\Rightarrow t = 16\\,\\text{s}"
+          "what": "משוואת המהירות בקטע הרביעי",
+          "why": "בתחילת הקטע המהירות מינוס שש, והתאוצה אחת",
+          "tex": "v = -6 + 1 \\cdot (t - 10)",
+          "eq": "v = v_0 + at"
         },
         {
-          "what": "מחשבים את השטח מתחת לציר, מ-$7$ עד $16\\,\\text{s}$",
-          "why": "משולש אחד עם בסיס $9$ שניות ועומק $6\\,\\text{m/s}$",
-          "tex": "\\tfrac{1}{2} \\cdot 9 \\cdot 6 = 27\\,\\text{m}"
+          "what": "מציבים מהירות אפס",
+          "why": "ברגע הזה הגוף מפסיק לנוע שמאלה, ולכן הוא הכי רחוק משמאל",
+          "tex": "0 = -6 + (t - 10) \\;\\Rightarrow\\; t = 16\\,\\text{s}"
         },
         {
-          "what": "מחשבים את המקום ברגע $16\\,\\text{s}$",
-          "why": "הגוף היה $22\\,\\text{m}$ ימינה וחזר $27\\,\\text{m}$ שמאלה",
-          "tex": "x = 22 - 27 = -5\\,\\text{m}"
+          "what": "השטח מתחת לציר",
+          "why": "משולש אחד: מרגע העצירה הראשונה ועד השנייה, ועומקו מינוס שש",
+          "tex": "\\tfrac{1}{2} \\cdot (16 - 7) \\cdot (-6) = -27\\,\\text{m}"
+        },
+        {
+          "what": "המקום ברגע הזה",
+          "why": "מחברים את ההעתק ימינה ואת ההעתק שמאלה. הסימן השלילי אומר שהגוף משמאל לנקודה",
+          "tex": "x = 22 + (-27) = -5\\,\\text{m}"
         }
       ],
-      "finalAnswer": "$5\\,\\text{m}$ שמאלה ל-$A$, ברגע $t = 16\\,\\text{s}$",
+      "finalAnswer": "$5\\,\\text{m}$ משמאל לנקודה, ברגע $t = 16\\,\\text{s}$",
       "keyAnswer": "5 m ; 16 s"
-    },
-    {
-      "label": "ה",
-      "question": "באיזה רגע יימצא הגוף במרחק המקסימלי שמאלה ל-$A$?",
-      "answer": {
-        "type": "number",
-        "value": 16.0,
-        "unit": "s"
-      },
-      "skills": [
-        "graph",
-        "understanding"
-      ],
-      "solution": [
-        {
-          "explain": "כמו בסעיף ב: הגוף הכי רחוק שמאלה ברגע שהוא מפסיק לנוע שמאלה, כלומר כשהמהירות מתאפסת שוב."
-        },
-        {
-          "what": "המהירות מתאפסת שוב",
-          "why": "חישבנו בסעיף ד",
-          "tex": "t = 16\\,\\text{s}"
-        }
-      ],
-      "finalAnswer": "$t = 16\\,\\text{s}$",
-      "keyAnswer": "16 s"
     }
   ]
 }
