@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי (לפי החלטת הבעלים).\nסעיף ג: לגופים קשיחים הכוח בין הגופים אחרי שהכוח מפסיק הוא 0. בפתרון מוצגת משוואת הכוחות לכל גוף, והחלוקה במסה מצוינת במפורש.\nסעיף ד: ההסבר הראשי הוא הכוח הנורמלי בזמן הניתוק: על B בכיוון התנועה ועל A נגד כיוון התנועה, ולכן A נעצר ראשון. האנלוגיה של הקפיץ (ההסבר מדף התשובות) מופיעה בסוף, בכוכבית, כדוגמה נוספת.\nמה לבדוק: את הניסוח של שני הסעיפים.",
-  "stem": "שני גופים, $A$ ו-$B$, צמודים זה לזה, ומונחים על משטח אופקי לא חלק. ברגע מסוים מפעילים על גוף $A$ כוח אופקי קבוע $F$, כמתואר בתרשים א, והגופים מתחילים לנוע ימינה.",
+  "stem": "שני גופים, $A$ ו-$B$, צמודים זה לזה על משטח אופקי לא חלק. ברגע מסוים מפעילים על גוף $A$ כוח אופקי קבוע $F$, כמו בתרשים א, והגופים מתחילים לנוע ימינה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2009-q2.svg",
@@ -27,12 +27,12 @@
     "חיכוך קינטי",
     "מערכת גופים"
   ],
-  "summary": "שני גופים שנדחפים יחד על משטח עם חיכוך: הכוח ביניהם, מה קורה כשהדחיפה נפסקת, ולמה ערימה אחת על השנייה לא משנה את התאוצה.",
+  "summary": "שני גופים שנדחפים יחד על משטח עם חיכוך: הכוח ביניהם, מה קורה כשהדחיפה נפסקת, ולמה גוף על גוף לא משנה את התאוצה.",
   "position": 29,
   "parts": [
     {
       "label": "א",
-      "question": "האם הכוח שגוף $A$ מפעיל על גוף $B$, בזמן תנועת הגופים, גדול מהכוח שגוף $B$ מפעיל על גוף $A$, קטן ממנו או שווה לו? נמק את תשובתך.",
+      "question": "בזמן התנועה, האם הכוח שגוף $A$ מפעיל על גוף $B$ גדול מהכוח שגוף $B$ מפעיל על גוף $A$, קטן ממנו או שווה לו? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -48,8 +48,9 @@
       "solution": [
         {
           "what": "החוק השלישי של ניוטון",
-          "why": "כוחות של שני גופים זה על זה תמיד שווים בגודלם והפוכים בכיוונם, גם בתאוצה",
-          "tex": "\\vec F_{AB} = -\\vec F_{BA}"
+          "why": "הכוחות ששני גופים מפעילים זה על זה תמיד שווים בגודלם והפוכים בכיוונם, גם כשיש תאוצה",
+          "tex": "\\vec F_{AB} = -\\vec F_{BA}",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         }
       ],
       "finalAnswer": "שווה",
@@ -57,7 +58,7 @@
     },
     {
       "label": "ב",
-      "question": "נתון: $m_B = 2\\,\\text{kg}$, $m_A = 3\\,\\text{kg}$, $F = 13\\,\\text{N}$. מקדם החיכוך הקינטי בין כל גוף למשטח $\\mu_k = 0.1$. חשב את הכוח שגוף $A$ מפעיל על גוף $B$.",
+      "question": "נתון: $m_B = 2\\,\\text{kg}$, $m_A = 3\\,\\text{kg}$, $F = 13\\,\\text{N}$. מקדם החיכוך הקינטי בין כל גוף למשטח $\\mu_k = 0.1$. מה הכוח שגוף $A$ מפעיל על גוף $B$?",
       "answer": {
         "type": "number",
         "value": 5.2,
@@ -70,19 +71,37 @@
       ],
       "solution": [
         {
-          "what": "תאוצת המערכת",
-          "why": "החיכוך על שני הגופים יחד: $\\mu(m_A + m_B)g = 5\\,\\text{N}$",
-          "tex": "a = \\frac{13 - 5}{5} = 1.6\\,\\text{m/s}^2"
+          "explain": "הכיוון החיובי ימינה, כיוון התנועה. בוחרים אותו, כי השאלה לא קבעה כיוון. בציר האנכי כל גוף במנוחה, ולכן הכוח הנורמלי של המשטח על כל גוף שווה למשקל שלו."
         },
         {
-          "what": "החוק השני ל-$B$",
-          "why": "על $B$ פועלים הכוח מ-$A$ קדימה והחיכוך אחורה",
-          "tex": "F_{AB} - \\mu m_B g = m_B a"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף A: הכוח F ימינה, הכוח של B על A שמאלה, חיכוך שמאלה, הכוח הנורמלי של המשטח כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">A</text>\n<line x1=\"210\" y1=\"150\" x2=\"325\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"343\" y=\"156\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"164\" x2=\"133.5\" y2=\"164\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"115.5\" y=\"170\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">BA</tspan></text>\n<line x1=\"210\" y1=\"136\" x2=\"161.5\" y2=\"136\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"143.5\" y=\"142\" text-anchor=\"middle\">f<tspan dy=\"5\" font-size=\"13\">A</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">A</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">נדחף</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על גוף A"
         },
         {
-          "what": "מציבים",
-          "why": "מבודדים את F_AB",
-          "tex": "F_{AB} = 2 \\cdot 1.6 + 0.1 \\cdot 20 = 5.2\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף B: הכוח של A על B ימינה, חיכוך שמאלה, הכוח הנורמלי של המשטח כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">B</text>\n<line x1=\"210\" y1=\"150\" x2=\"276\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"294\" y=\"156\" text-anchor=\"middle\">F<tspan dy=\"5\" font-size=\"13\">AB</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"165\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"147\" y=\"156\" text-anchor=\"middle\">f<tspan dy=\"5\" font-size=\"13\">B</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"230\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"254\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">B</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">נדחף על ידי A</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על גוף B"
+        },
+        {
+          "what": "משוואות הכוחות",
+          "why": "לגוף A: הכוח, פחות הכוח של B ופחות החיכוך. לגוף B: הכוח של A, פחות החיכוך",
+          "tex": "F - F_{BA} - \\mu m_A g = m_A a \\qquad F_{AB} - \\mu m_B g = m_B a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים",
+          "why": "שני הכוחות שבין הגופים שווים בגודלם, לפי סעיף א, ולכן מתבטלים",
+          "tex": "F - \\mu (m_A + m_B)\\,g = (m_A + m_B)\\,a",
+          "eq": "f_k = \\mu_k N"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "מחלקים במסה הכוללת",
+          "tex": "a = \\frac{13 - 0.1 \\cdot 5 \\cdot 10}{5} = \\frac{13 - 5}{5} = 1.6\\,\\text{m/s}^2"
+        },
+        {
+          "what": "הכוח של A על B",
+          "why": "מבודדים אותו מהמשוואה של גוף B ומציבים",
+          "tex": "F_{AB} = m_B a + \\mu m_B g = 2 \\cdot 1.6 + 0.1 \\cdot 20 = 5.2\\,\\text{N}"
         }
       ],
       "finalAnswer": "$5.2\\,\\text{N}$",
@@ -90,7 +109,7 @@
     },
     {
       "label": "ג",
-      "question": "הכוח $F$ פועל במשך כמה שניות בלבד. אחרי שהכוח $F$ מפסיק לפעול, מהו הכוח שגוף $A$ מפעיל על גוף $B$? פרט את תשובתך (התייחס לגופים כאל גופים קשיחים).",
+      "question": "הכוח $F$ פועל רק כמה שניות. אחרי שהוא מפסיק לפעול, מה הכוח שגוף $A$ מפעיל על גוף $B$? פרטו. (התייחסו לגופים כאל גופים קשיחים.)",
       "answer": {
         "type": "number",
         "value": 0.0,
@@ -103,27 +122,32 @@
       ],
       "solution": [
         {
-          "explain": "בודקים מה הייתה התאוצה של כל גוף אילו נע לבד, בלי כוח ביניהם. אחרי שהכוח $F$ מפסיק, הכוח האופקי היחיד על כל גוף הוא כוח החיכוך, נגד כיוון התנועה."
+          "explain": "בודקים מה הייתה התאוצה של כל גוף אילו נע לבד, בלי כוח ביניהם. אחרי שהכוח $F$ מפסיק, הכוח האופקי היחיד על כל גוף הוא החיכוך, נגד כיוון התנועה."
         },
         {
-          "what": "משוואת כוחות לגוף $A$",
-          "why": "החוק השני של ניוטון בציר התנועה. החיכוך הקינטי $\\mu N = \\mu m_A g$",
-          "tex": "m_A a_A = -\\mu m_A g"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף אחרי שהכוח F הפסיק: רק חיכוך שמאלה, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"161.5\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"143.5\" y=\"156\" text-anchor=\"middle\">f</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח F הפסיק</text>\n</svg>\n",
+          "caption": "אחרי שהכוח הפסיק: תרשים הכוחות על כל גוף"
         },
         {
-          "what": "מחלקים את משוואת הכוחות במסה $m_A$",
-          "why": "המסה מופיעה בשני צדי המשוואה, ולכן היא מצטמצמת: התאוצה לא תלויה במסה",
+          "what": "משוואת כוחות לגוף A",
+          "why": "בכיוון החיובי לא פועל אף כוח. נגדו פועל החיכוך הקינטי",
+          "tex": "0 - \\mu m_A g = m_A a_A",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "המסה מופיעה בשני האגפים, ולכן היא מצטמצמת: התאוצה לא תלויה במסה",
           "tex": "a_A = -\\mu g = -0.1 \\cdot 10 = -1\\,\\text{m/s}^2"
         },
         {
-          "what": "משוואת כוחות לגוף $B$, ומחלקים ב-$m_B$",
-          "why": "אותו חישוב בדיוק, והמסה $m_B$ מצטמצמת",
-          "tex": "m_B a_B = -\\mu m_B g \\Rightarrow a_B = -\\mu g = -1\\,\\text{m/s}^2"
+          "what": "משוואת כוחות לגוף B, ומחלקים במסה",
+          "why": "אותו חישוב בדיוק, והמסה שוב מצטמצמת",
+          "tex": "0 - \\mu m_B g = m_B a_B \\;\\Rightarrow\\; a_B = -\\mu g = -1\\,\\text{m/s}^2"
         },
         {
           "what": "מסקנה",
           "why": "לשני הגופים אותה האטה גם בלי לדחוף זה את זה, ולכן אין צורך בכוח ביניהם",
-          "tex": "a_A = a_B \\Rightarrow F_{AB} = 0"
+          "tex": "a_A = a_B \\;\\Rightarrow\\; F_{AB} = 0"
         }
       ],
       "finalAnswer": "$0$: לשני הגופים אותה האטה, $\\mu g = 1\\,\\text{m/s}^2$, ולכן הם לא לוחצים זה על זה",
@@ -131,7 +155,7 @@
     },
     {
       "label": "ד",
-      "question": "לפניך שלושה היגדים. קבע מהו ההיגד הנכון, ונמק את תשובתך. (1) ברגע שהכוח $F$ מפסיק לפעול, שני הגופים נעצרים מיד. (2) אחרי שהכוח $F$ מפסיק לפעול, שני הגופים ייעצרו כעבור אותו זמן (גדול מ-$0$). (3) אחרי שהכוח $F$ מפסיק לפעול, גוף $A$ ייעצר מוקדם יותר מגוף $B$.",
+      "question": "איזה מההיגדים נכון? נמקו. (1) ברגע שהכוח $F$ מפסיק לפעול, שני הגופים נעצרים מיד. (2) אחרי שהכוח $F$ מפסיק, שני הגופים נעצרים אחרי אותו זמן (גדול מ-$0$). (3) אחרי שהכוח $F$ מפסיק, גוף $A$ נעצר לפני גוף $B$.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -148,22 +172,32 @@
       ],
       "solution": [
         {
-          "explain": "בזמן הדחיפה גוף $A$ דוחף את גוף $B$, ולכן הגופים לחוצים זה אל זה ופועל ביניהם כוח נורמלי. ברגע שהכוח $F$ מפסיק, הלחץ הזה לא נעלם מיד: בזמן הניתוק עדיין פועל בין הגופים כוח נורמלי."
+          "explain": "בזמן הדחיפה גוף $A$ דוחף את גוף $B$, ולכן הגופים לחוצים זה אל זה, ופועל ביניהם כוח נורמלי. ברגע שהכוח $F$ מפסיק, הלחץ הזה לא נעלם מיד: בזמן הניתוק עדיין פועל בין הגופים כוח נורמלי."
         },
         {
-          "what": "הכוח הנורמלי על גוף $B$",
-          "why": "$A$ דוחף את $B$ קדימה, ולכן הנורמלי על $B$ פועל בכיוון התנועה ומקטין את ההאטה שלו",
-          "tex": "\\vec N_{A \\to B}:\\ \\rightarrow"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף B בזמן הניתוק: הכוח הנורמלי של A ימינה, חיכוך שמאלה, הכוח הנורמלי של המשטח וכוח הכובד. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">B</text>\n<line x1=\"210\" y1=\"150\" x2=\"262\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"280\" y=\"156\" text-anchor=\"middle\">N<tspan dy=\"5\" font-size=\"13\">AB</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"165\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"147\" y=\"156\" text-anchor=\"middle\">f<tspan dy=\"5\" font-size=\"13\">B</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"230\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"254\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">B</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">בזמן הניתוק</text>\n</svg>\n",
+          "caption": "בזמן הניתוק: תרשים הכוחות על גוף B"
         },
         {
-          "what": "הכוח הנורמלי על גוף $A$",
-          "why": "לפי החוק השלישי של ניוטון, $B$ דוחף את $A$ בכוח שווה ומנוגד, כלומר נגד כיוון התנועה. הכוח הזה מצטרף לחיכוך ומגדיל את ההאטה של $A$",
-          "tex": "\\vec N_{B \\to A} = -\\vec N_{A \\to B}:\\ \\leftarrow"
+          "what": "הכוח הנורמלי על גוף B",
+          "why": "גוף A דוחף את B קדימה, ולכן הכוח הזה בכיוון החיובי ומקטין את ההאטה של B",
+          "tex": "N_{AB} - \\mu m_B g = m_B a_B \\;\\Rightarrow\\; |a_B| < \\mu g",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף A בזמן הניתוק: הכוח הנורמלי של B שמאלה, חיכוך שמאלה, הכוח הנורמלי של המשטח וכוח הכובד. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"250.7\" y=\"139.2\" text-anchor=\"middle\">A</text>\n<line x1=\"210\" y1=\"164\" x2=\"147.5\" y2=\"164\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"129.5\" y=\"170\" text-anchor=\"middle\">N<tspan dy=\"5\" font-size=\"13\">BA</tspan></text>\n<line x1=\"210\" y1=\"136\" x2=\"161.5\" y2=\"136\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"143.5\" y=\"142\" text-anchor=\"middle\">f<tspan dy=\"5\" font-size=\"13\">A</tspan></text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">A</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">בזמן הניתוק</text>\n</svg>\n",
+          "caption": "בזמן הניתוק: תרשים הכוחות על גוף A"
+        },
+        {
+          "what": "הכוח הנורמלי על גוף A",
+          "why": "לפי החוק השלישי, גוף B דוחף את A בכוח שווה והפוך, כלומר נגד כיוון התנועה. הכוח הזה מצטרף לחיכוך ומגדיל את ההאטה של A",
+          "tex": "0 - N_{BA} - \\mu m_A g = m_A a_A \\;\\Rightarrow\\; |a_A| > \\mu g",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
         },
         {
           "what": "מסקנה",
-          "why": "בזמן הניתוק $A$ מאט יותר מ-$B$, ולכן מהירותו קטנה יותר מזו של $B$, והגופים נפרדים. אחר כך לשניהם אותה האטה ($\\mu g$), ולכן $A$, שהתחיל עם מהירות קטנה יותר, נעצר ראשון",
-          "tex": "|a_A| > |a_B| \\Rightarrow v_A < v_B \\Rightarrow t_A < t_B"
+          "why": "בזמן הניתוק גוף A מאט יותר מגוף B, ולכן המהירות שלו קטנה יותר והגופים נפרדים. אחר כך לשניהם אותה האטה, ולכן A, שהתחיל עם מהירות קטנה יותר, נעצר ראשון",
+          "tex": "|a_A| > |a_B| \\;\\Rightarrow\\; v_A < v_B \\;\\Rightarrow\\; t_A < t_B"
         },
         {
           "explain": "* דוגמה נוספת למי שרוצה: אפשר לדמיין קפיץ קטן ודחוס בין שני הגופים. בזמן הדחיפה הקפיץ נדחס. כשהכוח $F$ מפסיק, הקפיץ משתחרר ודוחף את $B$ קדימה ואת $A$ אחורה, ולכן $A$ נעצר קודם."
@@ -174,7 +208,7 @@
     },
     {
       "label": "ה",
-      "question": "במקרה אחר, מדביקים את גוף $B$ על גוף $A$ (תרשים ב). מפעילים על גוף $A$ כוח ששווה לכוח הנתון בסעיף ב. האם תאוצת הגופים $A$ ו-$B$ במצב זה גדולה מתאוצת הגופים במצב שמתואר בסעיף ב, שווה לה או קטנה ממנה? נמק.",
+      "question": "במקרה אחר מדביקים את גוף $B$ על גוף $A$ (תרשים ב), ומפעילים על גוף $A$ אותו כוח כמו בסעיף ב. האם התאוצה של הגופים עכשיו גדולה מהתאוצה בסעיף ב, שווה לה או קטנה ממנה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -190,14 +224,25 @@
       ],
       "solution": [
         {
-          "what": "החיכוך",
-          "why": "הנורמלי על המשטח הוא כל המשקל, כמו קודם",
-          "tex": "f = \\mu(m_A + m_B)g = 5\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על שני הגופים יחד: הכוח F ימינה, חיכוך שמאלה, הכוח הנורמלי של המשטח כלפי מעלה וכוח הכובד של שניהם כלפי מטה. הכיוון החיובי ימינה, כיוון התנועה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">A+B</text>\n<line x1=\"210\" y1=\"150\" x2=\"325\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"343\" y=\"156\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"150\" x2=\"151\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"133\" y=\"156\" text-anchor=\"middle\">f</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"42\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"30\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"258\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"282\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מודבקים</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על שני הגופים יחד (M היא המסה של שניהם)"
         },
         {
-          "what": "התאוצה",
-          "why": "אותו כוח, אותו חיכוך, אותה מסה",
-          "tex": "a = \\frac{13 - 5}{5} = 1.6\\,\\text{m/s}^2"
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "רק גוף A נוגע במשטח, והוא נושא את שני הגופים. לכן הכוח הנורמלי שווה למשקל של שניהם, כמו קודם",
+          "tex": "N - (m_A + m_B)\\,g = 0 \\;\\Rightarrow\\; N = 50\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "משוואת כוחות בכיוון התנועה",
+          "why": "אותו כוח, ואותו חיכוך כולל",
+          "tex": "F - \\mu N = (m_A + m_B)\\,a \\;\\Rightarrow\\; 13 - 5 = 5a",
+          "eq": "f_k = \\mu_k N"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "אותה תאוצה כמו בסעיף ב",
+          "tex": "a = 1.6\\,\\text{m/s}^2"
         }
       ],
       "finalAnswer": "שווה",
