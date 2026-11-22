@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "שני כדורים, $A$ ו-$B$, נזרקו באותו רגע כלפי מעלה: כדור $A$ נזרק מגג בניין שגובהו $45$ מטר במהירות שגודלה $40\\,\\text{m/s}$, וכדור $B$ נזרק מרגלי הבניין במהירות שגודלה $55\\,\\text{m/s}$. כאשר כדור $A$ נע כלפי מטה, הוא חולף סמוך לגג הבניין (ואינו פוגע בו). ברגע מסוים שני הכדורים חולפים זה ליד זה, בלי שהם מתנגשים. הזנח את התנגדות האוויר.",
+  "stem": "שני כדורים, $A$ ו-$B$, נזרקים כלפי מעלה באותו רגע. כדור $A$ נזרק מגג בניין שגובהו $45$ מטר, במהירות שגודלה $40\\,\\text{m/s}$. כדור $B$ נזרק מרגלי הבניין, במהירות שגודלה $55\\,\\text{m/s}$. כשכדור $A$ יורד, הוא עובר ליד גג הבניין ולא פוגע בו. ברגע מסוים הכדורים חולפים זה ליד זה, בלי להתנגש. אפשר להזניח את התנגדות האוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2009-q1.svg",
@@ -28,12 +28,12 @@
     "מערכת ייחוס נעה",
     "תאוצה יחסית"
   ],
-  "summary": "שני כדורים בזריקה אנכית מגבהים שונים. מפגש, מהירויות שוות בגודל, ותנועה יחסית בלי תאוצה.",
+  "summary": "שני כדורים בזריקה אנכית מגבהים שונים: מפגש, מהירויות שוות בגודל, ותנועה יחסית בלי תאוצה.",
   "position": 27,
   "parts": [
     {
       "label": "א",
-      "question": "באיזה גובה מעל הקרקע שני הכדורים חולפים זה ליד זה?",
+      "question": "באיזה גובה מעל הקרקע חולפים הכדורים זה ליד זה?",
       "answer": {
         "type": "number",
         "value": 120.0,
@@ -45,19 +45,29 @@
       ],
       "solution": [
         {
-          "what": "משוואות מקום, ראשית בקרקע וחיובי מעלה",
-          "why": "שני הכדורים בתאוצה $-g$",
-          "tex": "y_A = 45 + 40t - 5t^2,\\quad y_B = 55t - 5t^2"
+          "explain": "השאלה לא קבעה ציר. בוחרים ראשית בקרקע וכיוון חיובי כלפי מעלה. לשני הכדורים התאוצה היא תאוצת הכובד, שלילית כי היא כלפי מטה."
+        },
+        {
+          "what": "משוואות המקום",
+          "why": "כדור A יוצא מגובה הגג, וכדור B מהקרקע",
+          "tex": "y_A = 45 + 40t - 5t^2 \\qquad y_B = 0 + 55t - 5t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
           "what": "משווים",
-          "why": "האיבר $-5t^2$ מתבטל",
-          "tex": "45 + 40t = 55t \\Rightarrow t = 3\\,\\text{s}"
+          "why": "כשהם חולפים זה ליד זה הם באותו גובה. האיבר של ריבוע הזמן זהה ומתבטל",
+          "tex": "45 + 40t = 55t \\;\\Rightarrow\\; 15t = 45 \\;\\Rightarrow\\; t = 3\\,\\text{s}"
         },
         {
           "what": "הגובה",
-          "why": "מציבים באחת המשוואות",
-          "tex": "y = 55 \\cdot 3 - 5 \\cdot 9 = 120\\,\\text{m}"
+          "why": "מציבים את הזמן באחת המשוואות",
+          "tex": "y = 55 \\cdot 3 - 5 \\cdot 3^2 = 165 - 45 = 120\\,\\text{m}"
+        },
+        {
+          "what": "בדיקה במשוואה השנייה",
+          "why": "צריך לצאת אותו גובה",
+          "tex": "y_A = 45 + 120 - 45 = 120\\,\\text{m} \\;\\checkmark",
+          "check": true
         }
       ],
       "finalAnswer": "$120\\,\\text{m}$",
@@ -65,7 +75,7 @@
     },
     {
       "label": "ב",
-      "question": "האם במהלך התנועה של שני הכדורים באוויר יש רגע שבו וקטורי המהירות שלהם שווים? אם כן, מצא את הרגע. אם לא, נמק.",
+      "question": "האם יש רגע, בזמן ששני הכדורים באוויר, שבו וקטורי המהירות שלהם שווים? אם כן, מתי? אם לא, נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -80,14 +90,15 @@
       ],
       "solution": [
         {
-          "what": "המהירויות",
-          "why": "משוואת מהירות לכל כדור",
-          "tex": "v_A = 40 - 10t,\\quad v_B = 55 - 10t"
+          "what": "משוואות המהירות",
+          "why": "אותה תאוצה לשני הכדורים",
+          "tex": "v_A = 40 - 10t \\qquad v_B = 55 - 10t",
+          "eq": "v = v_0 + at"
         },
         {
-          "what": "ההפרש",
-          "why": "לשניהם אותה תאוצה, ולכן ההפרש נשאר כל הזמן כמו בהתחלה",
-          "tex": "v_B - v_A = 15\\,\\text{m/s} \\ne 0"
+          "what": "ההפרש בין המהירויות",
+          "why": "התאוצות שוות, ולכן ההפרש נשאר כל הזמן כמו בהתחלה, ואף פעם לא אפס",
+          "tex": "v_B - v_A = 15\\,\\text{m/s}"
         }
       ],
       "finalAnswer": "לא: ההפרש בין המהירויות קבוע, $15\\,\\text{m/s}$",
@@ -95,7 +106,7 @@
     },
     {
       "label": "ג",
-      "question": "האם במהלך התנועה של שני הכדורים באוויר יש רגע שבו הגודל של המהירויות שלהם שווה? אם כן, מצא את הרגע. אם לא, נמק.",
+      "question": "האם יש רגע, בזמן ששני הכדורים באוויר, שבו גודלי המהירויות שלהם שווים? אם כן, מתי? אם לא, נמקו.",
       "answer": {
         "type": "number",
         "value": 4.75,
@@ -108,7 +119,7 @@
       ],
       "solution": [
         {
-          "explain": "גדלים שווים עם וקטורים שונים: אחד עולה והשני יורד באותה מהירות."
+          "explain": "גדלים שווים, אבל וקטורים שונים: כדור אחד יורד וכדור אחד עולה, באותה מהירות."
         },
         {
           "what": "התנאי",
@@ -116,23 +127,28 @@
           "tex": "40 - 10t = -(55 - 10t)"
         },
         {
-          "what": "פותרים",
-          "why": "פותחים סוגריים ומעבירים אגפים",
-          "tex": "95 = 20t \\Rightarrow t = 4.75\\,\\text{s}"
+          "what": "פותחים סוגריים",
+          "why": "מעבירים את האיברים עם הזמן לאגף אחד",
+          "tex": "40 - 10t = -55 + 10t \\;\\Rightarrow\\; 95 = 20t"
+        },
+        {
+          "what": "מחלקים",
+          "why": "משוואה ממעלה ראשונה",
+          "tex": "t = 4.75\\,\\text{s}"
         },
         {
           "what": "בדיקה",
-          "why": "מציבים",
-          "tex": "v_A = -7.5,\\quad v_B = +7.5\\,\\text{m/s} \\;\\checkmark",
+          "why": "מציבים בשתי משוואות המהירות",
+          "tex": "v_A = 40 - 47.5 = -7.5\\,\\text{m/s},\\qquad v_B = 55 - 47.5 = 7.5\\,\\text{m/s} \\;\\checkmark",
           "check": true
         }
       ],
-      "finalAnswer": "כן, ב-$t = 4.75\\,\\text{s}$",
+      "finalAnswer": "כן, ברגע $t = 4.75\\,\\text{s}$",
       "keyAnswer": "4.75 s"
     },
     {
       "label": "ד",
-      "question": "ציר מקום $y^*$ \"צמוד\" לכדור $B$: ראשיתו בכדור $B$ וכיוונו החיובי כלפי מעלה. מצא את תאוצת כדור $A$ ביחס לציר $y^*$.",
+      "question": "ציר מקום $y^*$ \"צמוד\" לכדור $B$: ראשיתו בכדור $B$, וכיוונו החיובי כלפי מעלה. מה התאוצה של כדור $A$ לפי הציר $y^*$?",
       "answer": {
         "type": "number",
         "value": 0.0,
@@ -143,8 +159,8 @@
       ],
       "solution": [
         {
-          "what": "תאוצה יחסית",
-          "why": "מחסירים את תאוצת $B$ מתאוצת $A$. שתיהן $-g$",
+          "what": "התאוצה היחסית",
+          "why": "מחסירים את התאוצה של כדור B מהתאוצה של כדור A. שתיהן תאוצת הכובד",
           "tex": "a_{A/B} = -g - (-g) = 0"
         }
       ],
@@ -153,7 +169,7 @@
     },
     {
       "label": "ה",
-      "question": "מצא את המהירות של כדור $A$ ברגע זריקת הכדורים, ביחס לציר $y^*$.",
+      "question": "מה המהירות של כדור $A$ ברגע הזריקה, לפי הציר $y^*$?",
       "answer": {
         "type": "number",
         "value": -15.0,
@@ -165,17 +181,17 @@
       ],
       "solution": [
         {
-          "what": "מהירות יחסית",
-          "why": "מחסירים את מהירות $B$ ממהירות $A$",
+          "what": "המהירות היחסית",
+          "why": "מחסירים את המהירות של כדור B מהמהירות של כדור A",
           "tex": "v_{A/B} = 40 - 55 = -15\\,\\text{m/s}"
         }
       ],
-      "finalAnswer": "$-15\\,\\text{m/s}$: מנקודת המבט של $B$, $A$ מתקרב כלפי מטה",
+      "finalAnswer": "$-15\\,\\text{m/s}$: מנקודת המבט של כדור $B$, כדור $A$ מתקרב אליו כלפי מטה",
       "keyAnswer": "−15 m/s"
     },
     {
       "label": "ו",
-      "question": "סרטט גרף של המקום של כדור $A$ ביחס לציר $y^*$ כפונקציה של הזמן, מרגע זריקת שני הכדורים עד הרגע שבו הם חולפים זה ליד זה.",
+      "question": "שרטטו גרף של המקום של כדור $A$ לפי הציר $y^*$ כפונקציה של הזמן, מרגע הזריקה עד הרגע שבו הכדורים חולפים זה ליד זה.",
       "answer": {
         "type": "open"
       },
@@ -185,16 +201,21 @@
       "solution": [
         {
           "what": "המקום היחסי",
-          "why": "התחלה $45\\,\\text{m}$, מהירות יחסית קבועה $-15$, בלי תאוצה יחסית",
-          "tex": "y^*_A = 45 - 15t"
+          "why": "בהתחלה כדור A ארבעים וחמישה מטר מעל כדור B. המהירות היחסית קבועה, כי אין תאוצה יחסית",
+          "tex": "y^*_A = 45 + (-15)\\,t + \\tfrac{1}{2} \\cdot 0 \\cdot t^2 = 45 - 15t",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
           "what": "הגרף",
-          "why": "קו ישר מ-$45$ לאפס ב-$3\\,\\text{s}$",
-          "tex": "y^*_A(3) = 0"
+          "why": "קו ישר יורד, שמגיע לאפס ברגע שהכדורים נפגשים",
+          "tex": "y^*_A(3) = 45 - 45 = 0"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 280\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: המקום של כדור A לפי הציר שצמוד לכדור B, כפונקציה של הזמן. קו ישר יורד מ-45 מטר ברגע אפס, עד אפס אחרי 3 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"193.5\" y1=\"240\" x2=\"193.5\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"317.1\" y1=\"240\" x2=\"317.1\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"440.6\" y1=\"240\" x2=\"440.6\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"183\" x2=\"490\" y2=\"183\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"126\" x2=\"490\" y2=\"126\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"69\" x2=\"490\" y2=\"69\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"240\" x2=\"508\" y2=\"240\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"240\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"193.5\" y1=\"236\" x2=\"193.5\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"193.5\" y=\"258\" text-anchor=\"middle\">1</text>\n<line x1=\"317.1\" y1=\"236\" x2=\"317.1\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"317.1\" y=\"258\" text-anchor=\"middle\">2</text>\n<line x1=\"440.6\" y1=\"236\" x2=\"440.6\" y2=\"244\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"440.6\" y=\"258\" text-anchor=\"middle\">3</text>\n<line x1=\"66\" y1=\"183\" x2=\"74\" y2=\"183\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"187\" text-anchor=\"end\">15</text>\n<line x1=\"66\" y1=\"126\" x2=\"74\" y2=\"126\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"130\" text-anchor=\"end\">30</text>\n<line x1=\"66\" y1=\"69\" x2=\"74\" y2=\"69\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"73\" text-anchor=\"end\">45</text>\n<text class=\"label\" x=\"506\" y=\"230\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">y*_A (m)</text>\n<polyline points=\"70,69 440.6,240\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n</svg>\n",
+          "caption": "הגרף: המקום של כדור A לפי הציר הצמוד לכדור B"
         }
       ],
-      "finalAnswer": "קו ישר מ-$45\\,\\text{m}$ לאפס ב-$3\\,\\text{s}$",
+      "finalAnswer": "קו ישר מ-$45\\,\\text{m}$ עד אפס אחרי $3\\,\\text{s}$",
       "keyAnswer": null
     }
   ]
