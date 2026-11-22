@@ -6,7 +6,8 @@ export function splitRuns(text: string): string[] {
   const out: string[] = [];
   text.split(RUN).forEach((s, i) => {
     if (i % 2 === 0) {
-      out.length % 2 === 0 ? out.push(s) : (out[out.length - 1] += s);
+      if (out.length % 2 === 0) out.push(s);
+      else out[out.length - 1] += s;
       return;
     }
     let run = s;
