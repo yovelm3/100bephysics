@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הטבלה המקורית מופיעה בנוסח (ולא רק בציור).",
-  "stem": "תלמיד מבצע ניסוי בעזרת מערכת: על מסילה אופקית מונחת עגלה שמסתה $M_0$. העגלה קשורה בחוט שעובר על פני גלגלת אל סל תלוי שמסתו $m_0 = 100\\,\\text{g}$. כוחות החיכוך, מסת הגלגלת ומסת החוט זניחים. לרשות התלמיד $6$ משקולות, שמסתה של כל אחת מהן $m_1 = 300\\,\\text{g}$. התלמיד מודד את תאוצת המערכת (עגלה + סל + משקולות) בעזרת חיישן כמה פעמים. במדידה הראשונה כל המשקולות בתוך העגלה. בכל מדידה נוספת התלמיד מעביר משקולת אחת מתוך העגלה אל הסל, וחוזר על המדידה. התוצאות: במדידות 1-6, עם $0, 1, 2, 3, 4, 5$ משקולות בסל, התאוצות הן $0.43$, $1.66$, $2.91$, $4.16$, $5.40$, $6.67\\,\\text{m/s}^2$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nהטבלה המקורית מופיעה בנוסח, ולא רק בציור. בסעיף ג התלמיד בוחר את הביטוי הנכון מתוך ארבעה. הטבלה, הגרף ותרשימי הכוחות מופיעים בפתרון.\nמה לבדוק: רק לאשר.",
+  "stem": "תלמיד עורך ניסוי: על מסילה אופקית עומדת עגלה שמסתה $M_0$. העגלה קשורה בחוט, שעובר על גלגלת, לסל תלוי שמסתו $m_0 = 100\\,\\text{g}$. החיכוך, מסת הגלגלת ומסת החוט זניחים. לתלמיד יש $6$ משקולות, כל אחת במסה $m_1 = 300\\,\\text{g}$. התלמיד מודד בחיישן את התאוצה של המערכת (עגלה, סל ומשקולות) כמה פעמים. במדידה הראשונה כל המשקולות בעגלה. לפני כל מדידה נוספת הוא מעביר משקולת אחת מהעגלה לסל. התוצאות: במדידות 1-6, עם $0, 1, 2, 3, 4, 5$ משקולות בסל, התאוצות הן $0.43$, $1.66$, $2.91$, $4.16$, $5.40$, $6.67\\,\\text{m/s}^2$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2010-q1.svg",
@@ -32,7 +32,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "סרטט במחברתך טבלה חדשה ובה $4$ עמודות: מספר המדידה, מסת הסל עם המשקולות שבו $m$ (ב-$\\text{kg}$), כוח הכובד $F_g$ שפועל על הסל עם המשקולות (ב-$\\text{N}$), והתאוצה $a$. סרטט גרף של $a$ כפונקציה של $F_g$.",
+      "question": "הכינו טבלה חדשה עם $4$ עמודות: מספר המדידה, המסה של הסל עם המשקולות שבו $m$ (ב-$\\text{kg}$), כוח הכובד $F_g$ על הסל עם המשקולות (ב-$\\text{N}$), והתאוצה $a$. שרטטו גרף של $a$ כפונקציה של $F_g$.",
       "answer": {
         "type": "open"
       },
@@ -42,19 +42,71 @@
       ],
       "solution": [
         {
-          "what": "מסת הסל",
-          "why": "$0.1$ ועוד $0.3$ לכל משקולת",
-          "tex": "m = 0.1,\\ 0.4,\\ 0.7,\\ 1.0,\\ 1.3,\\ 1.6\\,\\text{kg}"
+          "what": "המסה של הסל עם המשקולות",
+          "why": "מאה גרם של הסל, ועוד שלוש מאות גרם לכל משקולת. ממירים לקילוגרם",
+          "tex": "m = 0.1,\\ 0.4,\\ 0.7,\\ 1.0,\\ 1.3,\\ 1.6\\ \\text{kg}"
         },
         {
           "what": "כוח הכובד",
-          "why": "כפול $g$",
-          "tex": "F_g = 1,\\ 4,\\ 7,\\ 10,\\ 13,\\ 16\\,\\text{N}"
+          "why": "המסה כפול תאוצת הכובד",
+          "tex": "F_g = mg = 1,\\ 4,\\ 7,\\ 10,\\ 13,\\ 16\\ \\text{N}",
+          "eq": "F = mg"
+        },
+        {
+          "caption": "הטבלה",
+          "head": [
+            "מדידה",
+            "$m\\,(\\text{kg})$",
+            "$F_g\\,(\\text{N})$",
+            "$a\\,(\\text{m/s}^2)$"
+          ],
+          "rows": [
+            [
+              "1",
+              "0.1",
+              "1",
+              "0.43"
+            ],
+            [
+              "2",
+              "0.4",
+              "4",
+              "1.66"
+            ],
+            [
+              "3",
+              "0.7",
+              "7",
+              "2.91"
+            ],
+            [
+              "4",
+              "1",
+              "10",
+              "4.16"
+            ],
+            [
+              "5",
+              "1.3",
+              "13",
+              "5.4"
+            ],
+            [
+              "6",
+              "1.6",
+              "16",
+              "6.67"
+            ]
+          ]
         },
         {
           "what": "הגרף",
-          "why": "הנקודות על קו ישר",
+          "why": "הנקודות כמעט על קו ישר, שעובר כמעט בראשית",
           "tex": "a \\approx 0.416\\,F_g"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: התאוצה כפונקציה של כוח הכובד על הסל. שש נקודות, מ-0.43 בכוח של 1 ניוטון ועד 6.67 בכוח של 16 ניוטון, על קו ישר שעובר כמעט בראשית\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"94\" y1=\"260\" x2=\"94\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"166\" y1=\"260\" x2=\"166\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"238\" y1=\"260\" x2=\"238\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"260\" x2=\"310\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"382\" y1=\"260\" x2=\"382\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"454\" y1=\"260\" x2=\"454\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"230.3\" x2=\"490\" y2=\"230.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"200.5\" x2=\"490\" y2=\"200.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"170.8\" x2=\"490\" y2=\"170.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"141.1\" x2=\"490\" y2=\"141.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"111.4\" x2=\"490\" y2=\"111.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"81.6\" x2=\"490\" y2=\"81.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"51.9\" x2=\"490\" y2=\"51.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"94\" y1=\"256\" x2=\"94\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"94\" y=\"278\" text-anchor=\"middle\">1</text>\n<line x1=\"166\" y1=\"256\" x2=\"166\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"166\" y=\"278\" text-anchor=\"middle\">4</text>\n<line x1=\"238\" y1=\"256\" x2=\"238\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"238\" y=\"278\" text-anchor=\"middle\">7</text>\n<line x1=\"310\" y1=\"256\" x2=\"310\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"310\" y=\"278\" text-anchor=\"middle\">10</text>\n<line x1=\"382\" y1=\"256\" x2=\"382\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"382\" y=\"278\" text-anchor=\"middle\">13</text>\n<line x1=\"454\" y1=\"256\" x2=\"454\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"454\" y=\"278\" text-anchor=\"middle\">16</text>\n<line x1=\"66\" y1=\"230.3\" x2=\"74\" y2=\"230.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"234.3\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"200.5\" x2=\"74\" y2=\"200.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"204.5\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"170.8\" x2=\"74\" y2=\"170.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"174.8\" text-anchor=\"end\">3</text>\n<line x1=\"66\" y1=\"141.1\" x2=\"74\" y2=\"141.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"145.1\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"111.4\" x2=\"74\" y2=\"111.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"115.4\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"81.6\" x2=\"74\" y2=\"81.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"85.6\" text-anchor=\"end\">6</text>\n<line x1=\"66\" y1=\"51.9\" x2=\"74\" y2=\"51.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"55.9\" text-anchor=\"end\">7</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">F_g (N)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">a (m/s²)</text>\n<polyline points=\"70,260 478,49.8\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"94\" cy=\"247.2\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"166\" cy=\"210.6\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"238\" cy=\"173.5\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"310\" cy=\"136.3\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"382\" cy=\"99.5\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"454\" cy=\"61.7\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "הגרף: התאוצה כפונקציה של כוח הכובד על הסל"
         }
       ],
       "finalAnswer": "קו ישר שעובר (בקירוב) בראשית",
@@ -62,7 +114,7 @@
     },
     {
       "label": "ב",
-      "question": "בנה תרשים של כל הכוחות שפועלים על העגלה (עם המשקולות) ועל הסל (עם המשקולות), ורשום ליד כל חץ את שם הכוח. ציין מי מפעיל כל כוח.",
+      "question": "שרטטו תרשים של כל הכוחות שפועלים על העגלה (עם המשקולות שבה) ועל הסל (עם המשקולות שבו). כתבו ליד כל חץ את שם הכוח, ומי מפעיל אותו.",
       "answer": {
         "type": "open"
       },
@@ -72,23 +124,38 @@
       "solution": [
         {
           "what": "על העגלה",
-          "why": "כובד (כדור הארץ), נורמלי (המסילה), מתיחות אופקית (החוט)",
-          "tex": "Mg\\downarrow,\\ N\\uparrow,\\ T\\rightarrow"
+          "why": "כוח הכובד, שכדור הארץ מפעיל. הכוח הנורמלי, שהמסילה מפעילה. מתיחות אופקית, שהחוט מפעיל",
+          "tex": "M_1 g,\\qquad N,\\qquad T"
         },
         {
           "what": "על הסל",
-          "why": "כובד (כדור הארץ), מתיחות כלפי מעלה (החוט)",
-          "tex": "mg\\downarrow,\\ T\\uparrow"
+          "why": "כוח הכובד, שכדור הארץ מפעיל. מתיחות כלפי מעלה, שהחוט מפעיל",
+          "tex": "mg,\\qquad T"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על העגלה: מתיחות החוט לעבר הגלגלת, הכוח הנורמלי של המסילה כלפי מעלה, וכוח הכובד כלפי מטה. הכיוון החיובי לעבר הגלגלת\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"290\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"308\" y=\"156\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">M₁g</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">על המסילה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על העגלה (M₁: העגלה עם המשקולות שבה)"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הסל: מתיחות החוט כלפי מעלה, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מטה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"70\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"58\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">יורד</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הסל"
         }
       ],
-      "finalAnswer": "עגלה: כובד, נורמלי, מתיחות. סל: כובד, מתיחות",
+      "finalAnswer": "עגלה: כובד, כוח נורמלי ומתיחות. סל: כובד ומתיחות",
       "keyAnswer": null
     },
     {
       "label": "ג",
-      "question": "פתח ביטוי של $a$ כפונקציה של $F_g$. האם מתקבלת פונקציה לינארית (קווית)? הסבר.",
+      "question": "מה הביטוי ל-$a$ כפונקציה של $F_g$? האם זו פונקציה לינארית (קווית)? הסבירו.",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$a = \\frac{F_g}{M_0 + m_0 + 6m_1}$, לינארית",
+          "$a = \\frac{F_g}{M_0}$, לינארית",
+          "$a = \\frac{F_g}{M_0 + F_g/g}$, לא לינארית",
+          "$a = \\frac{F_g - M_0 g}{M_0 + m_0 + 6m_1}$, לינארית"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -96,22 +163,36 @@
       ],
       "solution": [
         {
-          "what": "החוק השני למערכת",
-          "why": "הכוח המניע הוא $F_g$, והמסה הכוללת קבועה בכל המדידות (המשקולות רק עוברות ממקום למקום)",
-          "tex": "a = \\frac{F_g}{M_0 + m_0 + 6m_1}"
+          "explain": "בוחרים לעגלה כחיובי את הכיוון לעבר הגלגלת, ולסל כלפי מטה. כך לשניהם אותה תאוצה."
         },
         {
-          "what": "לינארית",
-          "why": "המכנה קבוע",
-          "tex": "a \\propto F_g"
+          "what": "משוואות הכוחות",
+          "why": "לעגלה: רק המתיחות. לסל: הכובד פחות המתיחות. נסמן באות M₁ את העגלה עם המשקולות שנשארו בה",
+          "tex": "T = M_1 a \\qquad F_g - T = m\\,a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים",
+          "why": "המתיחות מתבטלת",
+          "tex": "F_g = (M_1 + m)\\,a"
+        },
+        {
+          "what": "המסה הכוללת קבועה",
+          "why": "המשקולות רק עוברות מהעגלה לסל, ולכן כל המסה יחד לא משתנה בין המדידות",
+          "tex": "M_1 + m = M_0 + m_0 + 6m_1"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "המכנה קבוע, ולכן התאוצה פרופורציונית לכוח: קו ישר דרך הראשית",
+          "tex": "a = \\frac{F_g}{M_0 + m_0 + 6m_1}"
         }
       ],
-      "finalAnswer": "$a = \\frac{F_g}{m_0 + M_0 + 6m_1}$, לינארית כי המסה הכוללת קבועה",
+      "finalAnswer": "$a = \\frac{F_g}{M_0 + m_0 + 6m_1}$, לינארית כי המסה הכוללת קבועה",
       "keyAnswer": "a = Fg/(m0+M0+6m1) ; לינארית"
     },
     {
       "label": "ד",
-      "question": "מצא בעזרת הגרף את מסת העגלה $M_0$.",
+      "question": "מה המסה של העגלה $M_0$, לפי הגרף?",
       "answer": {
         "type": "number",
         "value": 0.5043966109457292,
@@ -124,19 +205,19 @@
       ],
       "solution": [
         {
-          "what": "שיפוע הגרף",
-          "why": "נקודות רחוקות",
+          "what": "השיפוע של הגרף",
+          "why": "לוקחים שתי נקודות רחוקות",
           "tex": "\\frac{6.67 - 0.43}{16 - 1} \\approx 0.416\\,\\text{kg}^{-1}"
         },
         {
           "what": "המסה הכוללת",
-          "why": "השיפוע הוא אחד חלקי המסה הכוללת",
-          "tex": "M = \\frac{1}{0.416} \\approx 2.40\\,\\text{kg}"
+          "why": "לפי הביטוי מסעיף ג, השיפוע הוא אחד חלקי המסה הכוללת",
+          "tex": "M_0 + m_0 + 6m_1 = \\frac{1}{0.416} \\approx 2.40\\,\\text{kg}"
         },
         {
-          "what": "מסת העגלה",
-          "why": "מחסירים את הסל ואת $6$ המשקולות",
-          "tex": "M_0 \\approx 2.40 - 0.1 - 1.8 = 0.5\\,\\text{kg}"
+          "what": "המסה של העגלה",
+          "why": "מחסירים את הסל ואת שש המשקולות",
+          "tex": "M_0 \\approx 2.40 - 0.1 - 6 \\cdot 0.3 = 0.5\\,\\text{kg}"
         }
       ],
       "finalAnswer": "$M_0 \\approx 0.5\\,\\text{kg}$",

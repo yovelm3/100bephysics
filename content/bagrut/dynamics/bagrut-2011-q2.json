@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "תלמידים עורכים ניסוי למדידת מקדם החיכוך הסטטי $\\mu$ בין שני משטחים. בניסוי התלמידים משתמשים בקופסה ריקה שמסתה $M$, שמונחת על שולחן אופקי, בקפיץ שקבוע הקפיץ שלו $k$, בסרט מדידה ובגלילים שהמסה של כל אחד מהם $m$. תלמיד מחבר את הקפיץ לאחת מפאות הקופסה ומושך אותו. הקופסה נשארת במנוחה. התלמיד מכניס גליל אחד לתוך הקופסה, ומותח את הקפיץ. ברגע שהקופסה נמצאת על סף תנועה, התלמיד מודד את התארכות הקפיץ $\\Delta\\ell$. התלמיד מוסיף גלילים לתוך הקופסה, ובכל פעם מודד את התארכות הקפיץ ברגע שהקופסה על סף תנועה. תוצאות הניסוי מוצגות בגרף שבתרשים ב.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nקבוע הקפיץ מסומן באות K גדולה, לפי ההחלטה שלך. בסעיף א תרשים הכוחות מופיע בפתרון.\nמה לבדוק: רק לאשר.",
+  "stem": "תלמידים עורכים ניסוי למדידת מקדם החיכוך הסטטי $\\mu$ בין שני משטחים. יש להם קופסה ריקה שמסתה $M$, שמונחת על שולחן אופקי, קפיץ שקבוע הקפיץ שלו $K$, סרט מדידה, וגלילים, כל אחד במסה $m$. תלמיד מחבר את הקפיץ לאחת הדפנות של הקופסה ומושך בו, והקופסה נשארת במנוחה. הוא מכניס גליל אחד לקופסה ומותח את הקפיץ. כשהקופסה על סף תנועה, הוא מודד את התארכות הקפיץ $\\Delta\\ell$. הוא מוסיף גלילים לקופסה, ובכל פעם מודד את התארכות הקפיץ כשהקופסה על סף תנועה. התוצאות מוצגות בגרף שבתרשים ב.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2011-q2.svg",
@@ -26,14 +26,14 @@
     "סף תנועה",
     "חוק הוק",
     "שיפוע וחיתוך",
-    "חיכוך סטטי לא מקסימלי"
+    "חיכוך סטטי לא מרבי"
   ],
   "summary": "מדידת מקדם חיכוך סטטי בעזרת קפיץ וגלילים: מהשיפוע $\\mu$, מהחיתוך מסת הקופסה, ולמה החיכוך לפני הסף שווה לכוח הקפיץ.",
   "position": 31,
   "parts": [
     {
       "label": "א",
-      "question": "סרטט תרשים של הכוחות שפועלים על הקופסה הריקה במצב המתואר (כשהקפיץ מושך והיא במנוחה), ורשום ליד כל חץ את שם הכוח.",
+      "question": "שרטטו תרשים של הכוחות על הקופסה הריקה כשהקפיץ מושך והיא במנוחה. כתבו ליד כל חץ את שם הכוח.",
       "answer": {
         "type": "open"
       },
@@ -43,16 +43,20 @@
       "solution": [
         {
           "what": "ארבעה כוחות",
-          "why": "כובד, נורמלי, כוח הקפיץ, וחיכוך סטטי נגדו",
-          "tex": "Mg\\downarrow,\\ N\\uparrow,\\ k\\Delta\\ell \\rightarrow,\\ f_s \\leftarrow"
+          "why": "כוח הכובד כלפי מטה, הכוח הנורמלי כלפי מעלה, כוח הקפיץ בכיוון המשיכה, וחיכוך סטטי נגדו",
+          "tex": "Mg,\\qquad N,\\qquad K\\Delta\\ell,\\qquad f_s"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקופסה: כוח הקפיץ בכיוון המשיכה, חיכוך סטטי שווה לו בכיוון ההפוך, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי הוא כיוון המשיכה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">M</text>\n<line x1=\"210\" y1=\"150\" x2=\"290\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"308\" y=\"156\" text-anchor=\"middle\">KΔℓ</text>\n<line x1=\"210\" y1=\"150\" x2=\"130\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"112\" y=\"156\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">במנוחה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הקופסה"
         }
       ],
-      "finalAnswer": "כובד, נורמלי, כוח הקפיץ וחיכוך סטטי",
+      "finalAnswer": "כוח הכובד, הכוח הנורמלי, כוח הקפיץ וחיכוך סטטי",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "חשב את שיפוע הגרף, וציין את משמעותו הפיזיקלית.",
+      "question": "מה השיפוע של הגרף, ומה המשמעות הפיזיקלית שלו?",
       "answer": {
         "type": "number",
         "value": 0.02,
@@ -64,13 +68,13 @@
       ],
       "solution": [
         {
-          "what": "שיפוע הקו",
-          "why": "נקודות רחוקות על הקו",
+          "what": "השיפוע של הקו",
+          "why": "לוקחים שתי נקודות רחוקות על הקו",
           "tex": "\\frac{0.17 - 0.07}{6 - 1} = 0.02\\,\\text{m}"
         },
         {
-          "what": "משמעות",
-          "why": "בכמה מתארך הקפיץ (בסף תנועה) על כל גליל שמוסיפים",
+          "what": "המשמעות",
+          "why": "בכמה גדלה התארכות הקפיץ בסף התנועה, על כל גליל שמוסיפים",
           "tex": "\\frac{\\Delta(\\Delta\\ell)}{\\Delta n} = 0.02\\,\\text{m}"
         }
       ],
@@ -79,7 +83,7 @@
     },
     {
       "label": "ג",
-      "question": "הוכח כי הקשר בין $\\Delta\\ell$ (התארכות הקפיץ) לבין $n$ (מספר הגלילים) נתון על ידי הביטוי $\\Delta\\ell = \\frac{\\mu m g}{k} n + \\frac{\\mu M g}{k}$.",
+      "question": "הוכיחו שהקשר בין $\\Delta\\ell$ (התארכות הקפיץ) ל-$n$ (מספר הגלילים) הוא $\\Delta\\ell = \\frac{\\mu m g}{K} n + \\frac{\\mu M g}{K}$.",
       "answer": {
         "type": "open"
       },
@@ -90,27 +94,39 @@
       ],
       "solution": [
         {
-          "what": "בסף תנועה",
-          "why": "החיכוך הסטטי מקסימלי ושווה לכוח הקפיץ",
-          "tex": "k\\Delta\\ell = \\mu N"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקופסה עם הגלילים בסף התנועה: כוח הקפיץ, חיכוך סטטי מרבי בכיוון ההפוך, הכוח הנורמלי, וכוח הכובד של הקופסה והגלילים. הכיוון החיובי הוא כיוון המשיכה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"304\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"322\" y=\"156\" text-anchor=\"middle\">KΔℓ</text>\n<line x1=\"210\" y1=\"150\" x2=\"116\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"98\" y=\"156\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"42\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"30\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"258\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"282\" text-anchor=\"middle\">(M+nm)g</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">על סף תנועה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הקופסה עם n גלילים, בסף התנועה"
         },
         {
-          "what": "הנורמלי",
-          "why": "משקל הקופסה ו-$n$ גלילים",
-          "tex": "N = (M + nm)g"
+          "what": "משוואת כוחות בציר האנכי",
+          "why": "הקופסה לא זזה בציר הזה. הכוח הנורמלי מאזן את המשקל של הקופסה ושל כל הגלילים",
+          "tex": "N - (M + nm)\\,g = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "מבודדים",
-          "why": "מחלקים ב-k",
-          "tex": "\\Delta\\ell = \\frac{\\mu m g}{k}\\,n + \\frac{\\mu M g}{k}"
+          "what": "משוואת כוחות בכיוון המשיכה",
+          "why": "בסף התנועה הקופסה עדיין במנוחה, והחיכוך הסטטי מרבי",
+          "tex": "K\\Delta\\ell - \\mu N = 0",
+          "eq": "f_s \\le \\mu_s N"
+        },
+        {
+          "what": "מציבים את הכוח הנורמלי",
+          "why": "מהמשוואה בציר האנכי",
+          "tex": "K\\Delta\\ell = \\mu (M + nm)\\,g",
+          "eq": "F_{sp} = K\\Delta\\ell"
+        },
+        {
+          "what": "מבודדים את ההתארכות",
+          "why": "מחלקים בקבוע הקפיץ ופותחים סוגריים",
+          "tex": "\\Delta\\ell = \\frac{\\mu m g}{K}\\,n + \\frac{\\mu M g}{K}"
         }
       ],
-      "finalAnswer": "מ-$k\\Delta\\ell = \\mu(M + nm)g$",
+      "finalAnswer": "מ-$K\\Delta\\ell = \\mu(M + nm)g$",
       "keyAnswer": null
     },
     {
       "label": "ד",
-      "question": "נתון: קבוע הקפיץ $k = 12\\,\\text{N/m}$, המסה של כל אחד מהגלילים $80\\,\\text{g}$. מצא את מקדם החיכוך הסטטי בין הקופסה לבין המשטח.",
+      "question": "נתון: קבוע הקפיץ $K = 12\\,\\text{N/m}$, ומסת כל גליל $80\\,\\text{g}$. מה מקדם החיכוך הסטטי בין הקופסה למשטח?",
       "answer": {
         "type": "number",
         "value": 0.3,
@@ -124,12 +140,12 @@
       "solution": [
         {
           "what": "השיפוע לפי הביטוי",
-          "why": "המקדם של n",
-          "tex": "\\frac{\\mu m g}{k} = 0.02"
+          "why": "השיפוע הוא המקדם של מספר הגלילים בביטוי מסעיף ג",
+          "tex": "\\frac{\\mu m g}{K} = 0.02"
         },
         {
-          "what": "מבודדים",
-          "why": "$m = 0.08\\,\\text{kg}$",
+          "what": "מבודדים את מקדם החיכוך",
+          "why": "ממירים את מסת הגליל לקילוגרם",
           "tex": "\\mu = \\frac{0.02 \\cdot 12}{0.08 \\cdot 10} = 0.3"
         }
       ],
@@ -138,7 +154,7 @@
     },
     {
       "label": "ה",
-      "question": "היעזר בגרף ומצא את המסה של הקופסה הריקה.",
+      "question": "מה המסה של הקופסה הריקה, לפי הגרף?",
       "answer": {
         "type": "number",
         "value": 0.2,
@@ -152,12 +168,12 @@
       "solution": [
         {
           "what": "החיתוך עם הציר האנכי",
-          "why": "ממשיכים את הקו ל-$n = 0$",
-          "tex": "\\frac{\\mu M g}{k} \\approx 0.05\\,\\text{m}"
+          "why": "ממשיכים את הקו עד אפס גלילים. לפי הביטוי, זה האיבר החופשי",
+          "tex": "\\frac{\\mu M g}{K} \\approx 0.05\\,\\text{m}"
         },
         {
-          "what": "מבודדים",
-          "why": "מציבים את μ מסעיף ד",
+          "what": "מבודדים את המסה",
+          "why": "מציבים את מקדם החיכוך מסעיף ד",
           "tex": "M = \\frac{0.05 \\cdot 12}{0.3 \\cdot 10} = 0.2\\,\\text{kg}"
         }
       ],
@@ -166,7 +182,7 @@
     },
     {
       "label": "ו",
-      "question": "חשב את הגודל של כוח החיכוך שפועל על הקופסה הריקה, כאשר $\\Delta\\ell = 0.02\\,\\text{m}$.",
+      "question": "מה הגודל של כוח החיכוך על הקופסה הריקה, כשההתארכות היא $\\Delta\\ell = 0.02\\,\\text{m}$?",
       "answer": {
         "type": "number",
         "value": 0.24,
@@ -178,14 +194,19 @@
       ],
       "solution": [
         {
-          "what": "האם היא על סף תנועה?",
-          "why": "לקופסה ריקה הסף הוא $0.05\\,\\text{m}$. ב-$0.02$ היא במנוחה, והחיכוך הסטטי שווה לכוח הקפיץ (לא למקסימום)",
-          "tex": "f_s = k\\Delta\\ell"
+          "what": "האם הקופסה על סף תנועה?",
+          "why": "לקופסה ריקה הסף הוא חמש מאיות מטר, לפי סעיף ה. בהתארכות קטנה יותר היא במנוחה, והחיכוך הסטטי לא מרבי",
+          "tex": "\\Delta\\ell = 0.02\\,\\text{m} < 0.05\\,\\text{m}"
         },
         {
-          "what": "מציבים",
-          "why": "k = 12",
-          "tex": "f_s = 12 \\cdot 0.02 = 0.24\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקופסה הריקה: כוח קפיץ קטן, חיכוך סטטי שווה לו בכיוון ההפוך, הכוח הנורמלי וכוח הכובד. הכיוון החיובי הוא כיוון המשיכה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">M</text>\n<line x1=\"210\" y1=\"150\" x2=\"290\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"308\" y=\"156\" text-anchor=\"middle\">KΔℓ</text>\n<line x1=\"210\" y1=\"150\" x2=\"158\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"140\" y=\"156\" text-anchor=\"middle\">fₛ</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">חיכוך לא מרבי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הקופסה הריקה במנוחה"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המשיכה",
+          "why": "הקופסה במנוחה, ולכן החיכוך שווה לכוח הקפיץ",
+          "tex": "K\\Delta\\ell - f_s = 0 \\;\\Rightarrow\\; f_s = 12 \\cdot 0.02 = 0.24\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],
       "finalAnswer": "$0.24\\,\\text{N}$",
