@@ -39,9 +39,11 @@ E(id="bagrut-2003-q2", year=2003, label="2003 שאלה 2", topic="dynamics", sub
               r"$a_\uparrow = -g(\cos\alpha + \mu\sin\alpha)$, $a_\downarrow = -g(\cos\alpha - \mu\sin\alpha)$",
               r"$a_\uparrow = -g(\sin\alpha + \mu)$, $a_\downarrow = -g(\sin\alpha - \mu)$"], 0), ["fbd", "principle", "algebra"], [
         S(r"משוואת כוחות בניצב למדרון", r"בכיוון הזה הגוף לא זז, בעלייה ובירידה", r"N - mg\cos\alpha = 0 \;\Rightarrow\; N = mg\cos\alpha", eq=r"\Sigma\vec F = m\vec a"),
-        S(r"משוואת כוחות בעלייה, לאורך המדרון", r"בכיוון החיובי לא פועל אף כוח. נגדו פועלים רכיב הכובד והחיכוך", r"0 - mg\sin\alpha - \mu mg\cos\alpha = m a_\uparrow", eq=r"f_k = \mu_k N"),
+        S(r"משוואת כוחות בעלייה, לאורך המדרון", r"בכיוון החיובי לא פועל אף כוח. נגדו פועלים רכיב הכובד והחיכוך", r"0 - mg\sin\alpha - f_k = m a_\uparrow", eq=r"f_k = \mu_k N"),
+        S(r"מציבים את החיכוך", r"החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי", r"f_k = \mu N = \mu mg\cos\alpha \;\Rightarrow\; -mg\sin\alpha - \mu mg\cos\alpha = m a_\uparrow"),
         S(r"מחלקים את משוואת הכוחות במסה", r"ומוציאים את תאוצת הכובד כגורם משותף", r"a_\uparrow = -g(\sin\alpha + \mu\cos\alpha)"),
-        S(r"משוואת כוחות בירידה, לאורך המדרון", r"עכשיו החיכוך במעלה, בכיוון החיובי. רכיב הכובד נגדו", r"\mu mg\cos\alpha - mg\sin\alpha = m a_\downarrow"),
+        S(r"משוואת כוחות בירידה, לאורך המדרון", r"עכשיו החיכוך במעלה, בכיוון החיובי. רכיב הכובד נגדו", r"f_k - mg\sin\alpha = m a_\downarrow"),
+        S(r"מציבים את החיכוך", r"אותו גודל של חיכוך, כי הכוח הנורמלי לא השתנה", r"f_k = \mu mg\cos\alpha \;\Rightarrow\; \mu mg\cos\alpha - mg\sin\alpha = m a_\downarrow"),
         S(r"מחלקים את משוואת הכוחות במסה", r"ומוציאים את תאוצת הכובד כגורם משותף", r"a_\downarrow = -g(\sin\alpha - \mu\cos\alpha)"),
     ], r"$a_\uparrow = -g(\sin\alpha + \mu\cos\alpha)$, $a_\downarrow = -g(\sin\alpha - \mu\cos\alpha)$", key=r"a=−g(sinα+μcosα) ; a=−g(sinα−μcosα)"),
     P("ד", r"לפי הגרף, הירידה לוקחת יותר זמן מהעלייה. הסבירו מדוע, בעזרת הביטויים מסעיף ג.", OPEN, ["principle"], [

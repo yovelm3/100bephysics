@@ -85,8 +85,13 @@
         {
           "what": "משוואת כוחות לאורך המדרון",
           "why": "סכום הכוחות בכיוון החיובי פחות סכום הכוחות נגדו. בכיוון החיובי פועל רק רכיב הכוח F. נגד הכיוון החיובי פועלים רכיב הכובד והחיכוך. מהירות קבועה, ולכן התאוצה אפס",
-          "tex": "F\\cos\\alpha - mg\\sin\\alpha - \\mu(mg\\cos\\alpha + F\\sin\\alpha) = m \\cdot 0",
+          "tex": "F\\cos\\alpha - mg\\sin\\alpha - f_k = m \\cdot 0",
           "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "מציבים את החיכוך הקינטי שמצאנו",
+          "tex": "F\\cos\\alpha - mg\\sin\\alpha - \\mu(mg\\cos\\alpha + F\\sin\\alpha) = 0"
         },
         {
           "what": "פותחים סוגריים",
@@ -145,8 +150,13 @@
         {
           "what": "משוואת כוחות לאורך המדרון",
           "why": "בכיוון החיובי פועל רכיב הכוח F. נגד הכיוון החיובי פועלים רכיב הכובד והחיכוך. הנורמלי מסעיף א לא השתנה בצורתו",
-          "tex": "F\\cos\\alpha - mg\\sin\\alpha - \\mu(mg\\cos\\alpha + F\\sin\\alpha) = ma",
+          "tex": "F\\cos\\alpha - mg\\sin\\alpha - f_k = ma",
           "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי מסעיף א",
+          "tex": "F\\cos\\alpha - mg\\sin\\alpha - \\mu(mg\\cos\\alpha + F\\sin\\alpha) = ma"
         },
         {
           "what": "מסדרים כמו בסעיף א",

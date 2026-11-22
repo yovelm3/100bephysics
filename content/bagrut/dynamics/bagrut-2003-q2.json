@@ -132,8 +132,13 @@
         {
           "what": "משוואת כוחות בעלייה, לאורך המדרון",
           "why": "בכיוון החיובי לא פועל אף כוח. נגדו פועלים רכיב הכובד והחיכוך",
-          "tex": "0 - mg\\sin\\alpha - \\mu mg\\cos\\alpha = m a_\\uparrow",
+          "tex": "0 - mg\\sin\\alpha - f_k = m a_\\uparrow",
           "eq": "f_k = \\mu_k N"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי",
+          "tex": "f_k = \\mu N = \\mu mg\\cos\\alpha \\;\\Rightarrow\\; -mg\\sin\\alpha - \\mu mg\\cos\\alpha = m a_\\uparrow"
         },
         {
           "what": "מחלקים את משוואת הכוחות במסה",
@@ -143,7 +148,12 @@
         {
           "what": "משוואת כוחות בירידה, לאורך המדרון",
           "why": "עכשיו החיכוך במעלה, בכיוון החיובי. רכיב הכובד נגדו",
-          "tex": "\\mu mg\\cos\\alpha - mg\\sin\\alpha = m a_\\downarrow"
+          "tex": "f_k - mg\\sin\\alpha = m a_\\downarrow"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "אותו גודל של חיכוך, כי הכוח הנורמלי לא השתנה",
+          "tex": "f_k = \\mu mg\\cos\\alpha \\;\\Rightarrow\\; \\mu mg\\cos\\alpha - mg\\sin\\alpha = m a_\\downarrow"
         },
         {
           "what": "מחלקים את משוואת הכוחות במסה",

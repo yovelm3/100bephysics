@@ -84,8 +84,13 @@
         {
           "what": "משוואת כוחות לאורך המדרון",
           "why": "בכיוון החיובי רכיב הכובד, ונגדו החיכוך",
-          "tex": "mg\\sin\\alpha - \\mu mg\\cos\\alpha = ma",
+          "tex": "mg\\sin\\alpha - f_k = ma",
           "eq": "f_k = \\mu_k N"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי",
+          "tex": "f_k = \\mu N = \\mu mg\\cos\\alpha \\;\\Rightarrow\\; mg\\sin\\alpha - \\mu mg\\cos\\alpha = ma"
         },
         {
           "what": "מחלקים את משוואת הכוחות במסה",

@@ -133,8 +133,13 @@
         {
           "what": "משוואת כוחות לאורך המישור",
           "why": "בכיוון החיובי לא פועל אף כוח. נגדו רכיב הכובד והחיכוך",
-          "tex": "0 - mg\\sin\\theta - \\mu_k mg\\cos\\theta = ma",
+          "tex": "0 - mg\\sin\\theta - f_k = ma",
           "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מציבים את החיכוך",
+          "why": "החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי מסעיף א",
+          "tex": "f_k = \\mu_k N = \\mu_k mg\\cos\\theta \\;\\Rightarrow\\; -mg\\sin\\theta - \\mu_k mg\\cos\\theta = ma"
         },
         {
           "what": "מחלקים את משוואת הכוחות במסה",

@@ -44,7 +44,8 @@ E(id="bagrut-2015-q2", year=2015, label="2015 שאלה 2", topic="dynamics", sub
     P("ב", r"בעזרת תרשים הכוחות, מה הביטוי לתאוצה $a$ של הגוף כפונקציה של מקדם החיכוך $\mu$? בביטוי הסופי השתמשו רק ב-$g$ וב-$\alpha$.", choice([r"$a = g\sin\alpha - \mu g\cos\alpha$", r"$a = g\cos\alpha - \mu g\sin\alpha$", r"$a = g\sin\alpha + \mu g\cos\alpha$", r"$a = g(1 - \mu)\sin\alpha$"], 0), ["fbd", "principle", "algebra"], [
         X(r"השאלה לא קבעה כיוון. בוחרים את כיוון התנועה, במורד המדרון, כחיובי."),
         S(r"משוואת כוחות בניצב למדרון", r"בכיוון הזה הגוף לא זז", r"N - mg\cos\alpha = 0 \;\Rightarrow\; N = mg\cos\alpha", eq=r"\Sigma\vec F = m\vec a"),
-        S(r"משוואת כוחות לאורך המדרון", r"בכיוון החיובי רכיב הכובד, ונגדו החיכוך", r"mg\sin\alpha - \mu mg\cos\alpha = ma", eq=r"f_k = \mu_k N"),
+        S(r"משוואת כוחות לאורך המדרון", r"בכיוון החיובי רכיב הכובד, ונגדו החיכוך", r"mg\sin\alpha - f_k = ma", eq=r"f_k = \mu_k N"),
+        S(r"מציבים את החיכוך", r"החיכוך הקינטי הוא מקדם החיכוך כפול הכוח הנורמלי", r"f_k = \mu N = \mu mg\cos\alpha \;\Rightarrow\; mg\sin\alpha - \mu mg\cos\alpha = ma"),
         S(r"מחלקים את משוואת הכוחות במסה", r"המסה מצטמצמת", r"a = g\sin\alpha - \mu g\cos\alpha"),
     ], r"$a = g\sin\alpha - \mu g\cos\alpha$", key=r"a = g·sinα − μg·cosα"),
     P("ג", r"שרטטו לפי הטבלה גרף של התאוצה $a$ של הגוף כפונקציה של מקדם החיכוך $\mu$.", OPEN, ["graph"], [
