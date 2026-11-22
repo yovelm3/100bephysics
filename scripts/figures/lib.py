@@ -308,8 +308,10 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
         g.add(f'<line x1="{f(ox_)}" y1="{f(oy_)}" x2="{f(x2)}" y2="{f(y2)}" stroke="var(--d-force, var(--d-label))" stroke-width="3" stroke-linecap="round" marker-end="url(#f-force)"/>')
         lx, ly = ox_ + (L + 18) * math.cos(a), oy_ - (L + 18) * math.sin(a) + 6
         if "_" in label:  # "T_b": a real subscript
-            base, sub = label.split("_", 1)
-            g.add(f'<text class="force" x="{f(lx)}" y="{f(ly)}" text-anchor="middle">{esc(base)}<tspan dy="5" font-size="13">{esc(sub)}</tspan></text>')
+            base, rest = label.split("_", 1)
+            sub, _, tail = rest.partition(" ")  # "m_Y g": only "Y" is the subscript
+            tail_svg = f'<tspan dy="-5">{esc(tail)}</tspan>' if tail else ""
+            g.add(f'<text class="force" x="{f(lx)}" y="{f(ly)}" text-anchor="middle">{esc(base)}<tspan dy="5" font-size="13">{esc(sub)}</tspan>{tail_svg}</text>')
         else:
             g.text(lx, ly, label, cls="force", anchor="middle")
     g.circle(cx, cy, 3.2, fill="var(--d-label)")

@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "תלמיד ערך ניסוי במערכת של שני גופים, $A$ ו-$B$. גוף $A$ מונח על משטח חלק, והוא קשור לגוף $B$ באמצעות חוט שכרוך סביב גלגלת. כדי שהמערכת תימצא במנוחה, התלמיד מפעיל כוח $F$ ימינה על גוף $A$. הזנח את מסת החוט, את מסת הגלגלת ואת כוחות החיכוך. התלמיד מפעיל כוח $F$ גדול יותר, ומודד אותו בעזרת מד-כוח. בעת הפעלת הכוח המערכת נעה ימינה, והתלמיד מודד את תאוצת המערכת, $a$, בעזרת חיישן. התלמיד חוזר ומפעיל כוחות בעוצמות שונות, מודד אותם, ומודד את התאוצות שנוצרו. תוצאות המדידות רשומות בטבלה.",
+  "stem": "תלמיד ערך ניסוי עם שני גופים, $A$ ו-$B$. גוף $A$ מונח על משטח חלק, וקשור לגוף $B$ בחוט שעובר סביב גלגלת. כדי שהמערכת תהיה במנוחה, התלמיד מפעיל על גוף $A$ כוח $F$ ימינה. אפשר להזניח את מסת החוט, את מסת הגלגלת ואת כוחות החיכוך. התלמיד מפעיל כוח $F$ גדול יותר ומודד אותו במד כוח. המערכת נעה ימינה, והתלמיד מודד את התאוצה $a$ שלה בחיישן. הוא חוזר על המדידה עם כוחות שונים. התוצאות בטבלה.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2005-q4.svg",
@@ -32,7 +32,7 @@
   "parts": [
     {
       "label": "א",
-      "question": "סרטט גרף שיתאר את תאוצת המערכת כפונקציה של הכוח המופעל.",
+      "question": "שרטטו גרף של התאוצה של המערכת כפונקציה של הכוח.",
       "answer": {
         "type": "open"
       },
@@ -41,9 +41,18 @@
       ],
       "solution": [
         {
-          "what": "נקודות וקו מגמה",
-          "why": "הנקודות כמעט על קו ישר",
-          "tex": "a \\approx 1.74F - 3.66"
+          "what": "מסמנים את הנקודות",
+          "why": "כל זוג של כוח ותאוצה מהטבלה",
+          "tex": "(3,\\ 1.5),\\ (3.5,\\ 2.5),\\ \\dots,\\ (5.5,\\ 6)"
+        },
+        {
+          "what": "קו מגמה",
+          "why": "הנקודות כמעט על קו ישר. מעבירים קו אחד שעובר קרוב ככל האפשר לכולן, וממשיכים אותו עד ציר הכוח",
+          "tex": "a \\approx 1.74\\,F - 3.66"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: התאוצה כפונקציה של הכוח. שש נקודות מהטבלה, וקו מגמה ישר שחותך את ציר הכוח בערך ב-2.1 ניוטון\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"135.6\" y1=\"260\" x2=\"135.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"201.2\" y1=\"260\" x2=\"201.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"266.9\" y1=\"260\" x2=\"266.9\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"332.5\" y1=\"260\" x2=\"332.5\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"398.1\" y1=\"260\" x2=\"398.1\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"463.8\" y1=\"260\" x2=\"463.8\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"230.3\" x2=\"490\" y2=\"230.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"200.5\" x2=\"490\" y2=\"200.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"170.8\" x2=\"490\" y2=\"170.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"141.1\" x2=\"490\" y2=\"141.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"111.4\" x2=\"490\" y2=\"111.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"81.6\" x2=\"490\" y2=\"81.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"51.9\" x2=\"490\" y2=\"51.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"135.6\" y1=\"256\" x2=\"135.6\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"135.6\" y=\"278\" text-anchor=\"middle\">1</text>\n<line x1=\"201.2\" y1=\"256\" x2=\"201.2\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"201.2\" y=\"278\" text-anchor=\"middle\">2</text>\n<line x1=\"266.9\" y1=\"256\" x2=\"266.9\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"266.9\" y=\"278\" text-anchor=\"middle\">3</text>\n<line x1=\"332.5\" y1=\"256\" x2=\"332.5\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"332.5\" y=\"278\" text-anchor=\"middle\">4</text>\n<line x1=\"398.1\" y1=\"256\" x2=\"398.1\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"398.1\" y=\"278\" text-anchor=\"middle\">5</text>\n<line x1=\"463.8\" y1=\"256\" x2=\"463.8\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"463.8\" y=\"278\" text-anchor=\"middle\">6</text>\n<line x1=\"66\" y1=\"230.3\" x2=\"74\" y2=\"230.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"234.3\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"200.5\" x2=\"74\" y2=\"200.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"204.5\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"170.8\" x2=\"74\" y2=\"170.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"174.8\" text-anchor=\"end\">3</text>\n<line x1=\"66\" y1=\"141.1\" x2=\"74\" y2=\"141.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"145.1\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"111.4\" x2=\"74\" y2=\"111.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"115.4\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"81.6\" x2=\"74\" y2=\"81.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"85.6\" text-anchor=\"end\">6</text>\n<line x1=\"66\" y1=\"51.9\" x2=\"74\" y2=\"51.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"55.9\" text-anchor=\"end\">7</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">F (N)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">a (m/s²)</text>\n<polyline points=\"207.7,260 476.9,47.5\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"266.9\" cy=\"215.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"299.7\" cy=\"185.7\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"332.5\" cy=\"155.9\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"365.3\" cy=\"141.1\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"398.1\" cy=\"111.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"430.9\" cy=\"81.6\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"207.7\" cy=\"260\" r=\"4.5\" fill=\"var(--d-ask)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "הגרף: התאוצה כפונקציה של הכוח"
         }
       ],
       "finalAnswer": "קו ישר עולה",
@@ -51,7 +60,7 @@
     },
     {
       "label": "ב",
-      "question": "הסבר את משמעות נקודת החיתוך של הגרף עם ציר הכוח.",
+      "question": "מה המשמעות של נקודת החיתוך של הגרף עם ציר הכוח?",
       "answer": {
         "type": "open"
       },
@@ -61,22 +70,39 @@
       ],
       "solution": [
         {
-          "what": "החוק השני למערכת",
-          "why": "$F$ מושך ימינה, משקל $B$ מושך שמאלה",
+          "explain": "הכיוון החיובי ימינה לגוף A, וכלפי מעלה לגוף B, כי כשגוף A זז ימינה, גוף B עולה. כך לשניהם אותה תאוצה, עם אותו סימן."
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף A: הכוח F ימינה, מתיחות החוט שמאלה, הכוח הנורמלי כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי ימינה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"178.9\" y=\"124.9\" text-anchor=\"middle\">A</text>\n<line x1=\"210\" y1=\"150\" x2=\"311\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"329\" y=\"156\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"150\" x2=\"144\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"126\" y=\"156\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"63\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"51\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"237\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"261\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">A</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">נמשך ימינה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על גוף A"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על גוף B: מתיחות החוט כלפי מעלה וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">B</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"84\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"72\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"205.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"229.5\" text-anchor=\"middle\">m<tspan dy=\"5\" font-size=\"13\">B</tspan><tspan dy=\"-5\">g</tspan></text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">עולה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על גוף B"
+        },
+        {
+          "what": "משוואות הכוחות",
+          "why": "לגוף A: הכוח פחות המתיחות. לגוף B: המתיחות פחות הכובד",
+          "tex": "F - T = m_A a \\qquad T - m_B g = m_B a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים ומחלקים במסה הכוללת",
+          "why": "המתיחות מתבטלת",
           "tex": "a = \\frac{F - m_B g}{m_A + m_B}"
         },
         {
-          "what": "החיתוך, $a = 0$",
-          "why": "הכוח שבו המערכת לא מאיצה: שווה למשקל $B$",
-          "tex": "F_0 = m_B g"
+          "what": "נקודת החיתוך",
+          "why": "בנקודה הזו התאוצה אפס, ולכן הכוח שווה למשקל של גוף B",
+          "tex": "a = 0 \\;\\Rightarrow\\; F_0 = m_B g"
         }
       ],
-      "finalAnswer": "הכוח שצריך כדי שהתאוצה תהיה אפס, ששווה למשקל $B$",
+      "finalAnswer": "הכוח שבו התאוצה אפס, והוא שווה למשקל של הגוף $B$",
       "keyAnswer": "הכוח הדרוש כדי שהתאוצה תהיה אפס"
     },
     {
       "label": "ג",
-      "question": "מצא את מסת הגוף $B$ בעזרת הגרף שסרטטת, ונמק את תשובתך.",
+      "question": "מה המסה של הגוף $B$, לפי הגרף? נמקו.",
       "answer": {
         "type": "number",
         "value": 0.2098360655737705,
@@ -90,19 +116,19 @@
       ],
       "solution": [
         {
-          "what": "שיפוע קו המגמה",
-          "why": "לוקחים את הקו הטוב ביותר",
+          "what": "השיפוע של קו המגמה",
+          "why": "מהמשוואה בסעיף ב, השיפוע הוא אחד חלקי המסה הכוללת",
           "tex": "\\frac{1}{m_A + m_B} \\approx 1.74\\,\\text{kg}^{-1}"
         },
         {
           "what": "החיתוך עם ציר הכוח",
-          "why": "איפה הקו פוגש את a = 0",
+          "why": "קוראים מהגרף איפה הקו פוגש את התאוצה אפס",
           "tex": "F_0 \\approx 2.1\\,\\text{N}"
         },
         {
           "what": "המסה",
-          "why": "$F_0 = m_B g$",
-          "tex": "m_B = \\frac{2.1}{10} \\approx 0.21\\,\\text{kg}"
+          "why": "מהקשר שמצאנו בסעיף ב",
+          "tex": "m_B = \\frac{F_0}{g} = \\frac{2.1}{10} \\approx 0.21\\,\\text{kg}"
         }
       ],
       "finalAnswer": "$\\approx 0.21\\,\\text{kg}$",
@@ -110,7 +136,7 @@
     },
     {
       "label": "ד",
-      "question": "היעזר בגרף שסרטטת, ומצא מה הייתה המתיחות בחוט שמקשר בין שני הגופים, אילו הפעיל התלמיד כוח של $6$ ניוטון.",
+      "question": "לפי הגרף, מה הייתה המתיחות בחוט שמחבר את הגופים, אילו התלמיד היה מפעיל כוח של $6$ ניוטון?",
       "answer": {
         "type": "number",
         "value": 3.5252459016393445,
@@ -124,14 +150,20 @@
       ],
       "solution": [
         {
-          "what": "התאוצה ב-$6\\,\\text{N}$",
-          "why": "מהקו (המשכו)",
-          "tex": "a \\approx 1.74(6 - 2.1) \\approx 6.8\\,\\text{m/s}^2"
+          "what": "התאוצה בכוח הזה",
+          "why": "ממשיכים את קו המגמה",
+          "tex": "a \\approx 1.74 \\cdot (6 - 2.1) \\approx 6.8\\,\\text{m/s}^2"
         },
         {
-          "what": "החוק השני ל-$B$",
-          "why": "$B$ עולה בתאוצה $a$",
-          "tex": "T = m_B(g + a) \\approx 0.21 \\cdot 16.8 \\approx 3.5\\,\\text{N}"
+          "what": "משוואת כוחות לגוף B",
+          "why": "מסעיף ב: המתיחות פחות הכובד שווה למסה כפול התאוצה",
+          "tex": "T - m_B g = m_B a",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מבודדים ומציבים",
+          "why": "מוציאים את המסה כגורם משותף",
+          "tex": "T = m_B (g + a) \\approx 0.21 \\cdot 16.8 \\approx 3.5\\,\\text{N}"
         }
       ],
       "finalAnswer": "$\\approx 3.5\\,\\text{N}$",
@@ -139,7 +171,7 @@
     },
     {
       "label": "ה",
-      "question": "התלמיד מגדיל את מסת הגוף $A$, ומבצע שוב את הניסוי. הוסף לגרף שסרטטת בסעיף א גרף מקווקו, שיתאר באופן איכותי את המקרה החדש.",
+      "question": "התלמיד מגדיל את המסה של הגוף $A$ וחוזר על הניסוי. הוסיפו לגרף מסעיף א גרף מקווקו, שמתאר בצורה איכותית את המקרה החדש.",
       "answer": {
         "type": "open"
       },
@@ -150,13 +182,17 @@
       "solution": [
         {
           "what": "השיפוע",
-          "why": "$1/(m_A + m_B)$ קטן",
-          "tex": "\\frac{1}{m_A + m_B}\\downarrow"
+          "why": "השיפוע הוא אחד חלקי המסה הכוללת. המסה גדלה, ולכן השיפוע קטן",
+          "tex": "\\frac{1}{m_A + m_B}\\ \\downarrow"
         },
         {
           "what": "החיתוך",
-          "why": "תלוי רק ב-$m_B$, ולכן לא זז",
+          "why": "החיתוך תלוי רק במסה של גוף B, ולכן לא זז",
           "tex": "F_0 = m_B g"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: התאוצה כפונקציה של הכוח. שש נקודות מהטבלה, וקו מגמה ישר שחותך את ציר הכוח בערך ב-2.1 ניוטון. וקו מקווקו מתון יותר, שיוצא מאותה נקודה, למסה גדולה יותר\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"135.6\" y1=\"260\" x2=\"135.6\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"201.2\" y1=\"260\" x2=\"201.2\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"266.9\" y1=\"260\" x2=\"266.9\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"332.5\" y1=\"260\" x2=\"332.5\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"398.1\" y1=\"260\" x2=\"398.1\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"463.8\" y1=\"260\" x2=\"463.8\" y2=\"40\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"230.3\" x2=\"490\" y2=\"230.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"200.5\" x2=\"490\" y2=\"200.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"170.8\" x2=\"490\" y2=\"170.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"141.1\" x2=\"490\" y2=\"141.1\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"111.4\" x2=\"490\" y2=\"111.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"81.6\" x2=\"490\" y2=\"81.6\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"51.9\" x2=\"490\" y2=\"51.9\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"22\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"135.6\" y1=\"256\" x2=\"135.6\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"135.6\" y=\"278\" text-anchor=\"middle\">1</text>\n<line x1=\"201.2\" y1=\"256\" x2=\"201.2\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"201.2\" y=\"278\" text-anchor=\"middle\">2</text>\n<line x1=\"266.9\" y1=\"256\" x2=\"266.9\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"266.9\" y=\"278\" text-anchor=\"middle\">3</text>\n<line x1=\"332.5\" y1=\"256\" x2=\"332.5\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"332.5\" y=\"278\" text-anchor=\"middle\">4</text>\n<line x1=\"398.1\" y1=\"256\" x2=\"398.1\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"398.1\" y=\"278\" text-anchor=\"middle\">5</text>\n<line x1=\"463.8\" y1=\"256\" x2=\"463.8\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"463.8\" y=\"278\" text-anchor=\"middle\">6</text>\n<line x1=\"66\" y1=\"230.3\" x2=\"74\" y2=\"230.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"234.3\" text-anchor=\"end\">1</text>\n<line x1=\"66\" y1=\"200.5\" x2=\"74\" y2=\"200.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"204.5\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"170.8\" x2=\"74\" y2=\"170.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"174.8\" text-anchor=\"end\">3</text>\n<line x1=\"66\" y1=\"141.1\" x2=\"74\" y2=\"141.1\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"145.1\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"111.4\" x2=\"74\" y2=\"111.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"115.4\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"81.6\" x2=\"74\" y2=\"81.6\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"85.6\" text-anchor=\"end\">6</text>\n<line x1=\"66\" y1=\"51.9\" x2=\"74\" y2=\"51.9\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"55.9\" text-anchor=\"end\">7</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">F (N)</text>\n<text class=\"label\" x=\"80\" y=\"34\" text-anchor=\"start\">a (m/s²)</text>\n<polyline points=\"207.7,260 476.9,47.5\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"266.9\" cy=\"215.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"299.7\" cy=\"185.7\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"332.5\" cy=\"155.9\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"365.3\" cy=\"141.1\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"398.1\" cy=\"111.4\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<circle cx=\"430.9\" cy=\"81.6\" r=\"5\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<polyline points=\"207.7,260 476.9,143.1\" fill=\"none\" stroke=\"var(--d-ask)\" stroke-width=\"2.6\" stroke-linejoin=\"round\" stroke-dasharray=\"7 5\"/>\n<circle cx=\"207.7\" cy=\"260\" r=\"4.5\" fill=\"var(--d-ask)\" stroke=\"none\" stroke-width=\"2\"/>\n</svg>\n",
+          "caption": "הגרף: גם הקו המקווקו של המקרה החדש"
         }
       ],
       "finalAnswer": "קו מתון יותר, שיוצא מאותה נקודה על ציר הכוח",
