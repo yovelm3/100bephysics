@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בתרשים מוצגת מערכת מכנית, שכוללת: גלגלת נייחת שמרכזה $O_1$, גלגלת ניידת שמרכזה $O_2$, שלושה חוטים $S_1$, $S_2$, $S_3$, ומשקולת שמסתה $M = 100\\,\\text{kg}$ שמונחת על הקרקע. אדם שמסתו $m = 80\\,\\text{kg}$ עומד על הקרקע ומחזיק בקצה החוט $S_3$. הזנח את מסת הגלגלות והחוטים, ואת החיכוך בין כל גלגלת לציר שלה.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיפים א ו-ג הם סעיף אחד כל אחד, כמו במקור, עם כמה תיבות.\nמה לבדוק: רק לאשר.",
+  "stem": "בתרשים מוצגת מערכת שכוללת: גלגלת קבועה שמרכזה $O_1$, גלגלת ניידת שמרכזה $O_2$, שלושה חוטים $S_1$, $S_2$, $S_3$, ומשקולת שמסתה $M = 100\\,\\text{kg}$ שמונחת על הקרקע. אדם שמסתו $m = 80\\,\\text{kg}$ עומד על הקרקע ומחזיק את הקצה של החוט $S_3$. אפשר להזניח את מסת הגלגלות והחוטים, ואת החיכוך בצירי הגלגלות.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2004-q2.svg",
@@ -31,12 +31,27 @@
   "position": 22,
   "parts": [
     {
-      "label": "א1",
-      "question": "האדם מושך (כלפי מטה) את קצה החוט $S_3$ בכוח שגודלו $100\\,\\text{N}$. חשב את גודל הכוח שהאדם מפעיל על הקרקע.",
+      "label": "א",
+      "question": "האדם מושך את קצה החוט $S_3$ כלפי מטה בכוח של $100\\,\\text{N}$. מה גודל הכוח שהאדם מפעיל על הקרקע? מה המתיחות בחוט $S_1$? מה גודל הכוח שהמשקולת מפעילה על הקרקע?",
       "answer": {
-        "type": "number",
-        "value": 700.0,
-        "unit": "N"
+        "type": "multi",
+        "items": [
+          {
+            "label": "הכוח של האדם על הקרקע",
+            "value": 700.0,
+            "unit": "N"
+          },
+          {
+            "label": "המתיחות בחוט S₁",
+            "value": 200.0,
+            "unit": "N"
+          },
+          {
+            "label": "הכוח של המשקולת על הקרקע",
+            "value": 800.0,
+            "unit": "N"
+          }
+        ]
       },
       "skills": [
         "fbd",
@@ -44,71 +59,54 @@
       ],
       "solution": [
         {
-          "what": "הכוחות על האדם",
-          "why": "כובד מטה. החוט מושך אותו מעלה ב-$100\\,\\text{N}$ (החוק השלישי). הקרקע מעלה",
-          "tex": "N + 100 = 800"
+          "explain": "כל הגופים במנוחה, ולכן הכוח השקול על כל אחד אפס. בוחרים כלפי מעלה כחיובי. השאלה לא קבעה כיוון. לאורך החוט $S_3$ המתיחות זהה בכל מקום, כי החוט קל והגלגלות בלי חיכוך."
         },
         {
-          "what": "הכוח על הקרקע",
-          "why": "שווה לנורמלי לפי החוק השלישי",
-          "tex": "N = 700\\,\\text{N}"
-        }
-      ],
-      "finalAnswer": "$700\\,\\text{N}$ כלפי מטה",
-      "keyAnswer": "700 N"
-    },
-    {
-      "label": "א2",
-      "question": "חשב את מתיחות החוט $S_1$.",
-      "answer": {
-        "type": "number",
-        "value": 200.0,
-        "unit": "N"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
-        {
-          "what": "שיווי משקל של $O_1$",
-          "why": "שני קטעי $S_3$ יורדים ממנה, וכל אחד מושך מטה ב-$100\\,\\text{N}$",
-          "tex": "S_1 = 2 \\cdot 100 = 200\\,\\text{N}"
-        }
-      ],
-      "finalAnswer": "$200\\,\\text{N}$",
-      "keyAnswer": "200 N"
-    },
-    {
-      "label": "א3",
-      "question": "חשב את גודל הכוח שהמשקולת מפעילה על הקרקע.",
-      "answer": {
-        "type": "number",
-        "value": 800.0,
-        "unit": "N"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
-        {
-          "what": "המתיחות ב-$S_2$",
-          "why": "$O_2$ מוחזקת בשני קטעי $S_3$",
-          "tex": "S_2 = 2 \\cdot 100 = 200\\,\\text{N}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על האדם: מתיחות החוט כלפי מעלה, הכוח הנורמלי של הקרקע כלפי מעלה, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"196\" y1=\"150\" x2=\"196\" y2=\"101.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"196\" y=\"89.5\" text-anchor=\"middle\">T</text>\n<line x1=\"224\" y1=\"150\" x2=\"224\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"224\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"254.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"278.5\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">במנוחה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על האדם"
         },
         {
-          "what": "שיווי משקל של המשקולת",
+          "what": "משוואת כוחות לאדם",
+          "why": "האדם מושך את החוט כלפי מטה, ולכן לפי החוק השלישי החוט מושך אותו כלפי מעלה באותו כוח. גם הקרקע דוחפת אותו כלפי מעלה, והכובד נגדם",
+          "tex": "T + N - mg = 0 \\;\\Rightarrow\\; N = 800 - 100 = 700\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "הכוח של האדם על הקרקע",
+          "why": "לפי החוק השלישי, שווה בגודלו לכוח הנורמלי והפוך בכיוונו",
+          "tex": "N' = 700\\,\\text{N}\\ \\downarrow",
+          "eq": "\\vec F_{1,2} = -\\vec F_{2,1}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הגלגלת הקבועה: החוט S1 כלפי מעלה, ושני הקטעים של החוט S3 כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<circle cx=\"210\" cy=\"150\" r=\"16\" fill=\"var(--d-body)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">S₁</text>\n<line x1=\"224\" y1=\"150\" x2=\"224\" y2=\"209\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"224\" y=\"233\" text-anchor=\"middle\">T</text>\n<line x1=\"196\" y1=\"150\" x2=\"196\" y2=\"209\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"196\" y=\"233\" text-anchor=\"middle\">T</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">גלגלת קלה</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על הגלגלת הקבועה"
+        },
+        {
+          "what": "משוואת כוחות לגלגלת הקבועה",
+          "why": "שני קטעים של החוט S₃ יורדים ממנה, וכל אחד מושך כלפי מטה במאה ניוטון",
+          "tex": "S_1 - 2T = 0 \\;\\Rightarrow\\; S_1 = 2 \\cdot 100 = 200\\,\\text{N}"
+        },
+        {
+          "what": "משוואת כוחות לגלגלת הניידת",
+          "why": "שני קטעים של החוט S₃ מחזיקים אותה כלפי מעלה, והחוט S₂ מושך אותה כלפי מטה",
+          "tex": "2T - S_2 = 0 \\;\\Rightarrow\\; S_2 = 200\\,\\text{N}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המשקולת: החוט S2 כלפי מעלה, הכוח הנורמלי של הקרקע כלפי מעלה, וכוח הכובד כלפי מטה. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">M</text>\n<line x1=\"196\" y1=\"150\" x2=\"196\" y2=\"94.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"196\" y=\"82.5\" text-anchor=\"middle\">S₂</text>\n<line x1=\"224\" y1=\"150\" x2=\"224\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"224\" y=\"44\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"265\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"289\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">על הקרקע</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המשקולת"
+        },
+        {
+          "what": "משוואת כוחות למשקולת",
           "why": "הקרקע משלימה את מה שהחוט לא מחזיק",
-          "tex": "N_M = 1000 - 200 = 800\\,\\text{N}"
+          "tex": "S_2 + N_M - Mg = 0 \\;\\Rightarrow\\; N_M = 1000 - 200 = 800\\,\\text{N}"
         }
       ],
-      "finalAnswer": "$800\\,\\text{N}$ כלפי מטה",
-      "keyAnswer": "800 N"
+      "finalAnswer": "האדם על הקרקע: $700\\,\\text{N}$. המתיחות בחוט $S_1$: $200\\,\\text{N}$. המשקולת על הקרקע: $800\\,\\text{N}$",
+      "keyAnswer": "700 N ; 200 N ; 800 N"
     },
     {
       "label": "ב",
-      "question": "חשב את הכוח הקטן ביותר שהאדם צריך למשוך בקצה החוט $S_3$, כדי שהמשקולת לא תפעיל כוח על הקרקע.",
+      "question": "מה הכוח הקטן ביותר שהאדם צריך למשוך בו את קצה החוט $S_3$, כדי שהמשקולת לא תפעיל כוח על הקרקע?",
       "answer": {
         "type": "number",
         "value": 500.0,
@@ -121,25 +119,36 @@
       "solution": [
         {
           "what": "התנאי",
-          "why": "$S_2$ מחזיק את כל המשקל",
-          "tex": "S_2 = 1000\\,\\text{N}"
+          "why": "הכוח הנורמלי על המשקולת מתאפס, והחוט S₂ מחזיק את כל המשקל",
+          "tex": "S_2 - Mg = 0 \\;\\Rightarrow\\; S_2 = 1000\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
-          "what": "הכוח ב-$S_3$",
-          "why": "$S_2 = 2S_3$",
-          "tex": "S_3 = 500\\,\\text{N}"
+          "what": "הכוח בחוט S₃",
+          "why": "מהמשוואה של הגלגלת הניידת: החוט S₂ מושך פי שניים מהחוט S₃",
+          "tex": "2T = S_2 \\;\\Rightarrow\\; T = 500\\,\\text{N}"
         }
       ],
       "finalAnswer": "$500\\,\\text{N}$",
       "keyAnswer": "500 N"
     },
     {
-      "label": "ג1",
-      "question": "האדם מושך את קצה החוט $S_3$ בכוח הגדול ביותר שמאפשר לו שלא להפעיל כוח על הקרקע. חשב את הגודל של הכוח שהאדם מפעיל על החוט $S_3$ במצב זה.",
+      "label": "ג",
+      "question": "האדם מושך את קצה החוט $S_3$ בכוח הגדול ביותר שבו הוא עדיין לא מתרומם מהקרקע (כלומר, כמעט לא מפעיל עליה כוח). מה הכוח שהאדם מפעיל על החוט במצב הזה? האם המשקולת מאיצה, ואם כן, מה התאוצה שלה?",
       "answer": {
-        "type": "number",
-        "value": 800.0,
-        "unit": "N"
+        "type": "multi",
+        "items": [
+          {
+            "label": "הכוח של האדם על החוט",
+            "value": 800.0,
+            "unit": "N"
+          },
+          {
+            "label": "התאוצה של המשקולת (כלפי מעלה)",
+            "value": 6.0,
+            "unit": "m/s^2"
+          }
+        ]
       },
       "skills": [
         "fbd",
@@ -147,40 +156,34 @@
       ],
       "solution": [
         {
-          "what": "התנאי",
-          "why": "הנורמלי על האדם מתאפס: החוט מחזיק את כל משקלו",
-          "tex": "S_3 = mg = 800\\,\\text{N}"
-        }
-      ],
-      "finalAnswer": "$800\\,\\text{N}$",
-      "keyAnswer": "800 N"
-    },
-    {
-      "label": "ג2",
-      "question": "האם במצב זה המשקולת מואצת? אם כן, חשב את תאוצתה.",
-      "answer": {
-        "type": "number",
-        "value": 6.0,
-        "unit": "m/s^2"
-      },
-      "skills": [
-        "fbd",
-        "principle"
-      ],
-      "solution": [
+          "what": "התנאי לאדם",
+          "why": "הכוח הנורמלי על האדם מתאפס, והחוט מחזיק את כל משקלו",
+          "tex": "T + 0 - mg = 0 \\;\\Rightarrow\\; T = 800\\,\\text{N}",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
         {
-          "what": "הכוח ב-$S_2$",
-          "why": "פעמיים $S_3$",
+          "what": "הכוח בחוט S₂",
+          "why": "פי שניים מהחוט S₃, וזה יותר ממשקל המשקולת",
           "tex": "S_2 = 2 \\cdot 800 = 1600\\,\\text{N} > 1000\\,\\text{N}"
         },
         {
-          "what": "החוק השני למשקולת",
-          "why": "החוט מושך יותר מהמשקל",
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המשקולת: החוט S2 כלפי מעלה, גדול מכוח הכובד כלפי מטה. אין כוח נורמלי. הכיוון החיובי כלפי מעלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"254\" y=\"156\" text-anchor=\"middle\">M</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"35\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"23\" text-anchor=\"middle\">S₂</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"233.5\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"257.5\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מתרוממת</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על המשקולת כשהיא מתרוממת"
+        },
+        {
+          "what": "משוואת כוחות למשקולת",
+          "why": "בכיוון החיובי פועל החוט, ונגדו הכובד. המשקולת כבר לא על הקרקע",
+          "tex": "S_2 - Mg = Ma",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה חיובית, כלומר כלפי מעלה",
           "tex": "a = \\frac{1600 - 1000}{100} = 6\\,\\text{m/s}^2"
         }
       ],
-      "finalAnswer": "כן, $6\\,\\text{m/s}^2$ כלפי מעלה",
-      "keyAnswer": "6 m/s^2 כלפי מעלה"
+      "finalAnswer": "הכוח $800\\,\\text{N}$. כן, המשקולת מאיצה ב-$6\\,\\text{m/s}^2$ כלפי מעלה",
+      "keyAnswer": "800 N ; 6 m/s^2 כלפי מעלה"
     }
   ]
 }
