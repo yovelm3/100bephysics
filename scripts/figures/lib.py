@@ -309,6 +309,6 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
         g.line(ox, oy, x2, y2, stroke="var(--d-dim)", width=1.8, dash="5 4", arrow=True)
         g.text(x2 + 12 * math.cos(a) + (8 if abs(math.cos(a)) < 0.3 else 0), y2 - 12 * math.sin(a) + 5, "+", cls="label")
         g.heb(ox + 24, oy + 22, "כיוון חיובי")
-    if note:
-        g.heb(w / 2, 22, note)
+    if note:  # bottom-right corner, away from the arrows
+        g.heb(w - 12, h - 10, note, anchor="end")
     return g
