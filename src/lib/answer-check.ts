@@ -67,7 +67,9 @@ function matches(student: Parsed, exact: number, tolerancePct: number | null): b
 export function checkNumber(raw: string, exact: number, tolerancePct: number | null = null): CheckResult {
   const p = parseAnswer(raw);
   if (!p) return "invalid";
-  if (tolerancePct == null && p.sigFigs < 2 && p.value !== 0) return "too_few_digits";
+  // An exact answer that itself has one significant figure (0.5, 20, 3) is correct as written.
+  const exactMatch = Math.abs(p.value - exact) <= 1e-9 * Math.max(1, Math.abs(exact));
+  if (tolerancePct == null && p.sigFigs < 2 && p.value !== 0 && !exactMatch) return "too_few_digits";
   if (matches(p, exact, tolerancePct)) return "correct";
   if (exact !== 0 && matches({ ...p, value: -p.value }, exact, tolerancePct)) return "sign";
   for (const k of [10, 100, 1000]) {

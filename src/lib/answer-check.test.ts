@@ -53,8 +53,14 @@ describe("checkNumber: the owner's examples", () => {
   it("fewer than 2 significant figures → message, not a wrong attempt", () => {
     expect(checkNumber("3", 3.2)).toBe("too_few_digits");
     expect(checkNumber("30", 27.39)).toBe("wrong"); // 2 sig figs, and 27.39 rounds to 27
-    expect(checkNumber("4e3", 4000)).toBe("too_few_digits");
+    expect(checkNumber("4e3", 4200)).toBe("too_few_digits");
     expect(checkNumber("4.0e3", 4000)).toBe("correct");
+  });
+
+  it("an exact answer with one significant figure is correct as written", () => {
+    expect(checkNumber("0.5", 0.5)).toBe("correct");
+    expect(checkNumber("4e3", 4000)).toBe("correct");
+    expect(checkNumber("0.5", 0.52)).toBe("too_few_digits");
   });
 
   it("works with the real 1987 answers", () => {

@@ -317,9 +317,11 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
         <section className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4 md:p-5" aria-label={`פתרון סעיף ${section.label}`}>
           <h2 className="text-lg font-bold text-accent">פתרון מלא · סעיף {section.label}</h2>
           <SolutionSteps steps={sol.solution} />
-          <p className="flex flex-wrap justify-between gap-2 border-t border-line pt-3 font-bold">
-            <span>תשובה סופית</span>
-            <InlineText text={sol.final_answer} />
+          <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-line pt-3 font-bold">
+            <span className="text-accent">תשובה סופית</span>
+            <span>
+              <InlineText text={sol.final_answer} />
+            </span>
           </p>
         </section>
       )}
