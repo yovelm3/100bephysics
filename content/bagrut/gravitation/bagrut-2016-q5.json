@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "בתרחיש דמיוני, שני אסטרונאוטים טים וג'ים חקרו כוכב לכת שלא נע סביב צירו. טים ישב על כיסא בתוך מעבורת שהקיפה את כוכב הלכת במסלול מעגלי במנוע כבוי. ג'ים ישב על כיסא בתוך רכב חלל שעמד על פני כוכב הלכת (ראה תרשים). לשני האסטרונאוטים מסה זהה $m = 100\\,\\text{kg}$.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nמה לבדוק: רק לאשר.",
+  "stem": "בסיפור דמיוני, שני אסטרונאוטים, טים וג'ים, חוקרים כוכב לכת שלא מסתובב סביב הציר שלו. טים יושב על כיסא בתוך מעבורת שנעה סביב הכוכב במסלול מעגלי, עם מנוע כבוי. ג'ים יושב על כיסא ברכב חלל שעומד על פני הכוכב (ראו תרשים). לשני האסטרונאוטים אותה מסה, $m = 100\\,\\text{kg}$.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2016-q5.svg",
@@ -23,16 +23,16 @@
   "authorNote": null,
   "concepts": [
     "חוסר משקל",
-    "כוח נורמל בתנועה מעגלית",
+    "כוח נורמלי בתנועה מעגלית",
     "תאוצת הכובד",
     "מסת כוכב לכת"
   ],
-  "summary": "שני אסטרונאוטים: אחד במסלול ואחד על הקרקע. מד-משקל שמראה פחות ככל שנוסעים מהר, ומזה הרדיוס והמסה של הכוכב.",
+  "summary": "שני אסטרונאוטים, אחד במסלול ואחד על הקרקע: מד משקל שמראה פחות ככל שנוסעים מהר, ומזה הרדיוס והמסה של הכוכב.",
   "position": 29,
   "parts": [
     {
       "label": "א",
-      "question": "קבע מיהו האסטרונאוט שהפעיל עליו כיסאו כוח גדול יותר: טים או ג'ים? נמק בלי חישוב.",
+      "question": "על מי הכיסא מפעיל כוח גדול יותר, על טים או על ג'ים? נמקו בלי חישוב.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -48,21 +48,22 @@
       "solution": [
         {
           "what": "טים במעבורת",
-          "why": "נופל חופשית יחד עם המעבורת, ולכן הכיסא לא דוחף אותו",
-          "tex": "N_{\\text{Tim}} = 0"
+          "why": "טים והמעבורת נמצאים בנפילה חופשית יחד, עם אותה תאוצה, ולכן הכיסא לא צריך לדחוף אותו",
+          "tex": "mg^* - N_T = m g^* \\;\\Rightarrow\\; N_T = 0",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         },
         {
           "what": "ג'ים על הקרקע",
-          "why": "במנוחה, הכיסא מאזן את הכבידה",
-          "tex": "N_{\\text{Jim}} = mg^* > 0"
+          "why": "ג'ים במנוחה, ולכן הכיסא מאזן את הכבידה",
+          "tex": "N_J - mg^* = 0 \\;\\Rightarrow\\; N_J = mg^* > 0"
         }
       ],
-      "finalAnswer": "ג'ים: טים נופל חופשית במסלול, וכיסאו לא מפעיל עליו כוח",
+      "finalAnswer": "על ג'ים: טים בנפילה חופשית במסלול, והכיסא שלו לא מפעיל עליו כוח",
       "keyAnswer": "Jim"
     },
     {
       "label": "ב",
-      "question": "על הרצפה של רכב החלל שעמד על פני כוכב הלכת הותקן מד-משקל. כאשר ג'ים עמד עליו, הוריית המד-משקל הייתה $2000\\,\\text{N}$. ג'ים התחיל בנסיעה לאורך מסלול מעגלי על קו המשווה של כוכב הלכת. הוא הבחין שככל שהגביר את מהירותו, כך קטנה הוריית המד-משקל. הסבר מדוע קטנה הוריית המד-משקל.",
+      "question": "על רצפת רכב החלל יש מד משקל. כשג'ים עומד עליו ברכב שעומד במקום, המד מראה $2000\\,\\text{N}$. ג'ים מתחיל לנסוע במסלול מעגלי לאורך קו המשווה של הכוכב, ומגלה שככל שהוא נוסע מהר יותר, המד מראה פחות. הסבירו למה.",
       "answer": {
         "type": "open"
       },
@@ -72,22 +73,30 @@
       ],
       "solution": [
         {
-          "what": "החוק השני בתנועה מעגלית",
-          "why": "השקול כלפי המרכז הוא הכוח הצנטריפטלי",
-          "tex": "mg^* - N = \\frac{mv^2}{R}"
+          "explain": "הכיוון החיובי הוא אל מרכז הכוכב, כלפי מטה. המד מראה את הכוח הנורמלי שהוא מפעיל על ג'ים."
         },
         {
-          "what": "מבודדים את $N$",
-          "why": "ככל ש-$v$ גדלה, $N$ קטן",
-          "tex": "N = mg^* - \\frac{mv^2}{R}"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על ג'ים בזמן הנסיעה: הכוח הנורמלי של המד כלפי מעלה, קטן מכוח הכבידה כלפי מטה. הכיוון החיובי אל מרכז הכוכב\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-ask\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"12\" markerHeight=\"12\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-ask)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"91\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"79\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">mg*</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"222\" x2=\"66\" y2=\"262\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"268\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n</svg>\n",
+          "caption": "תרשים הכוחות על ג'ים בזמן הנסיעה"
+        },
+        {
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "בכיוון המרכז הכבידה, ונגדו הכוח הנורמלי. השקול נותן את התאוצה אל המרכז",
+          "tex": "mg^* - N = m\\frac{v^2}{R}",
+          "eq": "\\Sigma F_R = m\\frac{v^2}{r}"
+        },
+        {
+          "what": "מבודדים את הכוח הנורמלי",
+          "why": "ככל שהמהירות גדלה, האיבר שמחסירים גדל, והכוח הנורמלי קטן",
+          "tex": "N = mg^* - m\\frac{v^2}{R}"
         }
       ],
-      "finalAnswer": "חלק מכוח הכבידה משמש ככוח צנטריפטלי, ולכן הנורמל קטן",
+      "finalAnswer": "חלק מכוח הכבידה משמש לתאוצה אל המרכז, ולכן הכוח הנורמלי קטן",
       "keyAnswer": "centripetal force grows with speed"
     },
     {
       "label": "ג",
-      "question": "נתון: כאשר הגיע רכב החלל למהירות של $v = 1.25 \\times 10^4\\,\\text{m/s}$, הייתה הוריית המד-משקל $980\\,\\text{N}$. חשב את הרדיוס של כוכב הלכת.",
+      "question": "כשרכב החלל מגיע למהירות $v = 1.25 \\times 10^4\\,\\text{m/s}$, המד מראה $980\\,\\text{N}$. מה הרדיוס של כוכב הלכת?",
       "answer": {
         "type": "number",
         "value": 15318627.450980391,
@@ -100,19 +109,21 @@
       ],
       "solution": [
         {
-          "what": "תאוצת הכובד בכוכב",
-          "why": "מהוריית המד במנוחה",
-          "tex": "g^* = \\frac{2000}{100} = 20\\,\\text{m/s}^2"
+          "what": "תאוצת הכובד על הכוכב",
+          "why": "כשהרכב עומד, המד מראה את המשקל",
+          "tex": "g^* = \\frac{2000}{100} = 20\\,\\text{m/s}^2",
+          "eq": "F = mg"
         },
         {
-          "what": "החוק השני",
-          "why": "$mg^* - N = mv^2/R$",
-          "tex": "2000 - 980 = \\frac{100 \\cdot (1.25 \\times 10^4)^2}{R}"
+          "what": "משוואת כוחות בכיוון המרכז",
+          "why": "מהסעיף הקודם",
+          "tex": "2000 - 980 = \\frac{100 \\cdot (1.25 \\times 10^4)^2}{R}",
+          "eq": "\\Sigma F_R = m\\frac{v^2}{r}"
         },
         {
           "what": "פותרים",
-          "why": "$1.5625 \\times 10^{10} / 1020$",
-          "tex": "R \\approx 1.53 \\times 10^7\\,\\text{m}"
+          "why": "מבודדים את הרדיוס",
+          "tex": "R = \\frac{1.5625 \\times 10^{10}}{1020} \\approx 1.53 \\times 10^7\\,\\text{m}"
         }
       ],
       "finalAnswer": "$R \\approx 1.53 \\times 10^7\\,\\text{m}$",
@@ -120,7 +131,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב את מסתו של כוכב הלכת.",
+      "question": "מה המסה של כוכב הלכת?",
       "answer": {
         "type": "number",
         "value": 7.036292263326237e+25,
@@ -134,8 +145,9 @@
       "solution": [
         {
           "what": "תאוצת הכובד על הפנים",
-          "why": "$g^* = GM/R^2$",
-          "tex": "M = \\frac{g^* R^2}{G} = \\frac{20 \\cdot (1.53 \\times 10^7)^2}{6.67 \\times 10^{-11}} \\approx 7.04 \\times 10^{25}\\,\\text{kg}"
+          "why": "מבודדים את המסה, ומציבים את התאוצה ואת הרדיוס מהסעיפים הקודמים",
+          "tex": "M = \\frac{g^* R^2}{G} = \\frac{20 \\cdot (1.53 \\times 10^7)^2}{6.67 \\times 10^{-11}} \\approx 7.04 \\times 10^{25}\\,\\text{kg}",
+          "eq": "g^* = \\frac{GM}{r^2}"
         }
       ],
       "finalAnswer": "$M \\approx 7.04 \\times 10^{25}\\,\\text{kg}$",
@@ -143,7 +155,7 @@
     },
     {
       "label": "ה",
-      "question": "תאוצת המעבורת שהקיפה את כוכב הלכת בתנועה מעגלית קצובה הייתה $a$. נסמן ב-$g^*$ את תאוצת הכובד בגובה שבו סובבת המעבורת סביב כוכב הלכת. קבע איזה מן ההיגדים נכון: (1) $a > g^*$ (2) $a = g^*$ (3) $a < g^*$. נמק את קביעתך.",
+      "question": "התאוצה של המעבורת, שנעה סביב הכוכב במסלול מעגלי במהירות שגודלה קבוע, היא $a$. נסמן ב-$g^*$ את תאוצת הכובד בגובה של המעבורת. איזה היגד נכון? (1) $a > g^*$ (2) $a = g^*$ (3) $a < g^*$. נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -159,8 +171,9 @@
       "solution": [
         {
           "what": "הכוח היחיד הוא הכבידה",
-          "why": "המנוע כבוי",
-          "tex": "ma = mg^* \\Rightarrow a = g^*"
+          "why": "המנוע כבוי, ולכן לפי החוק השני התאוצה היא תאוצת הכבידה",
+          "tex": "mg^* = m a \\;\\Rightarrow\\; a = g^*",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],
       "finalAnswer": "$a = g^*$",
