@@ -17,8 +17,9 @@ export function ZoomFigure({ svg, alt, className = "" }: { svg: string; alt: str
         aria-label={`הגדלת הציור: ${alt}`}
       >
         <div role="img" aria-label={alt} className="fig ltr" dangerouslySetInnerHTML={{ __html: svg }} />
-        <span aria-hidden className="absolute bottom-1 left-1 rounded-md bg-surface/90 px-1.5 py-0.5 text-xs font-semibold text-muted opacity-80 group-hover:opacity-100">
-          הגדלה ⤢
+        {/* Below the drawing, not on it: a label in the corner of a drawing could hide a label of the drawing. */}
+        <span aria-hidden className="mt-1 flex justify-end">
+          <span className="rounded-md px-1.5 py-0.5 text-xs font-semibold text-muted opacity-80 group-hover:text-accent group-hover:opacity-100">הגדלה ⤢</span>
         </span>
       </button>
       <dialog
