@@ -13,26 +13,26 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "על שולחן חלק ניצבת קרונית שמסתה $m = 6\\,\\text{kg}$. הקרונית קשורה באמצעות חוט, שכרוך על גלגלת חסרת חיכוך, אל משקולת שמסתה $M = 4\\,\\text{kg}$. כוח אופקי $F = 60\\,\\text{N}$ מושך שמאלה את הקרונית במשך $3$ שניות. אחרי זמן זה מפסיק הכוח לפעול.",
+  "stem": "על שולחן חלק עומדת קרונית שמסתה $m = 6\\,\\text{kg}$. הקרונית קשורה בחוט, שעובר על גלגלת בלי חיכוך, למשקולת שמסתה $M = 4\\,\\text{kg}$. כוח אופקי $F = 60\\,\\text{N}$ מושך את הקרונית שמאלה במשך $3$ שניות, ואז מפסיק לפעול.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1982-q2.svg",
     "alt": "קרונית במסה 6 קילוגרם על שולחן חלק, קשורה בחוט שעובר על גלגלת למשקולת במסה 4 קילוגרם. כוח אופקי F מושך את הקרונית שמאלה",
     "provisional": false
   },
-  "authorNote": "גופים שמחוברים בחוט מתוח נעים יחד. אפשר לכתוב את החוק השני לכל המערכת: כל הכוחות החיצוניים בכיוון התנועה, חלקי כל המסה.",
+  "authorNote": "גופים שמחוברים בחוט מתוח נעים יחד. אפשר לכתוב משוואת כוחות לכל גוף, ולחבר אותן: המתיחות מתבטלת.",
   "concepts": [
     "מערכת גופים מחוברים",
     "גלגלת",
     "החוק השני של ניוטון",
     "האטה וחזרה"
   ],
-  "summary": "קרונית שנמשכת שמאלה נגד משקולת תלויה, ואחר כך נשארת רק המשקולת. תאוצות, מהירות, מרחק וזמן חזרה.",
+  "summary": "קרונית שנמשכת שמאלה נגד משקולת תלויה, ואחר כך נשארת רק המשקולת: תאוצות, מהירות, מרחק וזמן חזרה.",
   "position": 2,
   "parts": [
     {
       "label": "א",
-      "question": "תאר במילים את תנועת הקרונית ב-$3$ השניות הראשונות ואחריהן.",
+      "question": "תארו במילים את התנועה של הקרונית בשלוש השניות הראשונות, ואחריהן.",
       "answer": {
         "type": "open"
       },
@@ -42,25 +42,64 @@
       ],
       "solution": [
         {
-          "explain": "הקרונית והמשקולת מחוברות בחוט מתוח, ולכן נעות יחד באותה תאוצה (בגודל). מתייחסים אליהן כמערכת אחת."
+          "explain": "הקרונית והמשקולת מחוברות בחוט מתוח, ולכן יש להן אותה תאוצה בגודלה. השאלה לא קבעה כיוון. לקרונית בוחרים שמאלה כחיובי, כיוון הכוח, ולמשקולת כלפי מעלה, כי כשהקרונית זזה שמאלה המשקולת עולה. כך לשתיהן אותה תאוצה, עם אותו סימן."
         },
         {
-          "what": "ב-$3$ השניות הראשונות",
-          "why": "$F$ מושך שמאלה, וכובד המשקולת מושך ימינה (דרך החוט). $F$ גדול יותר",
-          "tex": "a_1 = \\frac{F - Mg}{m + M} = \\frac{60 - 40}{10} = 2\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקרונית: הכוח F שמאלה, מתיחות החוט T ימינה, הכוח הנורמלי N כלפי מעלה וכוח הכובד mg כלפי מטה. הכיוון החיובי שמאלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">m</text>\n<line x1=\"210\" y1=\"150\" x2=\"88\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"70\" y=\"156\" text-anchor=\"middle\">F</text>\n<line x1=\"210\" y1=\"150\" x2=\"304\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"322\" y=\"156\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח F פועל</text>\n</svg>\n",
+          "caption": "שלב ראשון: תרשים הכוחות על הקרונית"
         },
         {
-          "what": "אחרי שהכוח מפסיק",
-          "why": "נשאר רק כובד המשקולת, נגד כיוון התנועה. הקרונית מאטה, נעצרת, וחוזרת ימינה",
-          "tex": "a_2 = -\\frac{Mg}{m + M} = -4\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על המשקולת: מתיחות החוט T כלפי מעלה וכוח הכובד Mg כלפי מטה. הכיוון החיובי כלפי מעלה, כי כשהקרונית נעה שמאלה המשקולת עולה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">M</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"56\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"44\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"244\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"268\" text-anchor=\"middle\">Mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"66\" y1=\"262\" x2=\"66\" y2=\"222\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"78\" y=\"228\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">אותה מתיחות</text>\n</svg>\n",
+          "caption": "שלב ראשון: תרשים הכוחות על המשקולת"
+        },
+        {
+          "what": "משוואת כוחות לקרונית, שלב ראשון",
+          "why": "בכיוון החיובי פועל הכוח, ונגדו פועלת מתיחות החוט. הכוח הנורמלי והכובד אנכיים ומתאזנים",
+          "tex": "F - T = m a_1",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "משוואת כוחות למשקולת, שלב ראשון",
+          "why": "בכיוון החיובי פועלת המתיחות, ונגדה הכובד",
+          "tex": "T - Mg = M a_1",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחברים את שתי המשוואות",
+          "why": "המתיחות מופיעה פעם בפלוס ופעם במינוס, ולכן מתבטלת",
+          "tex": "F - Mg = (m + M)\\,a_1"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "מחלקים במסה הכוללת של שני הגופים",
+          "tex": "a_1 = \\frac{F - Mg}{m + M} = \\frac{60 - 40}{6 + 4} = 2\\,\\text{m/s}^2"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"תרשים כוחות על הקרונית: מתיחות החוט T ימינה, הכוח הנורמלי N כלפי מעלה וכוח הכובד mg כלפי מטה. הכיוון החיובי שמאלה\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"60\" y1=\"172\" x2=\"360\" y2=\"172\" stroke=\"var(--d-line)\" stroke-width=\"2.4\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"172\" x2=\"63\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"90\" y1=\"172\" x2=\"83\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"110\" y1=\"172\" x2=\"103\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"130\" y1=\"172\" x2=\"123\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"150\" y1=\"172\" x2=\"143\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"170\" y1=\"172\" x2=\"163\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"190\" y1=\"172\" x2=\"183\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"210\" y1=\"172\" x2=\"203\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"230\" y1=\"172\" x2=\"223\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"250\" y1=\"172\" x2=\"243\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"270\" y1=\"172\" x2=\"263\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"290\" y1=\"172\" x2=\"283\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"310\" y1=\"172\" x2=\"303\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"330\" y1=\"172\" x2=\"323\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<line x1=\"350\" y1=\"172\" x2=\"343\" y2=\"181\" stroke=\"var(--d-hatch)\" stroke-width=\"1.4\" stroke-linecap=\"round\"/>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">m</text>\n<line x1=\"210\" y1=\"150\" x2=\"304\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"322\" y=\"156\" text-anchor=\"middle\">T</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">N</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"251\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"275\" text-anchor=\"middle\">mg</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"86\" y1=\"242\" x2=\"46\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"34\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">הכוח F הפסיק</text>\n</svg>\n",
+          "caption": "שלב שני: תרשים הכוחות על הקרונית (הכוח F הפסיק)"
+        },
+        {
+          "what": "משוואות הכוחות בשלב השני",
+          "why": "אותן משוואות, בלי הכוח. מחברים, והמתיחות שוב מתבטלת",
+          "tex": "-T = m a_2,\\quad T - Mg = M a_2 \\;\\Rightarrow\\; -Mg = (m + M)\\,a_2"
+        },
+        {
+          "what": "מחלקים במסה הכוללת",
+          "why": "התאוצה שלילית, כלומר נגד כיוון התנועה: הקרונית מאטה",
+          "tex": "a_2 = -\\frac{Mg}{m + M} = -\\frac{40}{10} = -4\\,\\text{m/s}^2"
+        },
+        {
+          "what": "מה קורה אחר כך",
+          "why": "התאוצה נשארת אותה תאוצה כל זמן שהחוט מתוח. לכן הקרונית נעצרת, ואחר כך נעה ימינה ומאיצה",
+          "tex": "v\\ \\downarrow \\;\\to\\; v = 0 \\;\\to\\; v < 0"
         }
       ],
-      "finalAnswer": "מאיצה שמאלה ב-$2\\,\\text{m/s}^2$, ואחר כך מאטה ב-$4\\,\\text{m/s}^2$, נעצרת וחוזרת ימינה",
+      "finalAnswer": "מאיצה שמאלה ב-$2\\,\\text{m/s}^2$. אחר כך מאטה ב-$4\\,\\text{m/s}^2$, נעצרת, וחוזרת ימינה",
       "keyAnswer": null
     },
     {
       "label": "ב",
-      "question": "מה מהירות הקרונית ברגע שהכוח $F$ מפסיק לפעול?",
+      "question": "מה המהירות של הקרונית ברגע שהכוח $F$ מפסיק לפעול?",
       "answer": {
         "type": "number",
         "value": 6.0,
@@ -73,8 +112,9 @@
       "solution": [
         {
           "what": "משוואת המהירות",
-          "why": "ממנוחה, תאוצה $2\\,\\text{m/s}^2$ במשך $3$ שניות",
-          "tex": "v = a_1 t = 2 \\cdot 3 = 6\\,\\text{m/s}"
+          "why": "הקרונית יוצאת ממנוחה, בתאוצה מסעיף א, במשך שלוש שניות",
+          "tex": "v = 0 + 2 \\cdot 3 = 6\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
         }
       ],
       "finalAnswer": "$6\\,\\text{m/s}$ שמאלה",
@@ -82,7 +122,7 @@
     },
     {
       "label": "ג",
-      "question": "מה המרחק שעברה הקרונית מהרגע שהכוח $F$ התחיל לפעול ועד שפסק?",
+      "question": "מה המרחק שעברה הקרונית מהרגע שהכוח $F$ התחיל לפעול ועד שהפסיק?",
       "answer": {
         "type": "number",
         "value": 9.0,
@@ -95,8 +135,9 @@
       "solution": [
         {
           "what": "משוואת המקום",
-          "why": "ממנוחה בתאוצה קבועה",
-          "tex": "x = \\tfrac{1}{2} a_1 t^2 = \\tfrac{1}{2} \\cdot 2 \\cdot 3^2 = 9\\,\\text{m}"
+          "why": "ממנוחה, בתאוצה קבועה",
+          "tex": "x = 0 + 0 \\cdot 3 + \\tfrac{1}{2} \\cdot 2 \\cdot 3^2 = 9\\,\\text{m}",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
       "finalAnswer": "$9\\,\\text{m}$",
@@ -104,7 +145,7 @@
     },
     {
       "label": "ד",
-      "question": "כעבור כמה זמן מהרגע שהכוח מפסיק לפעול, תחזור הקרונית למקום שבו הייתה ברגע שבו הכוח הפסיק לפעול?",
+      "question": "כעבור כמה זמן מהרגע שהכוח מפסיק לפעול, חוזרת הקרונית למקום שבו הייתה באותו רגע?",
       "answer": {
         "type": "number",
         "value": 3.0,
@@ -117,14 +158,15 @@
       ],
       "solution": [
         {
-          "what": "משוואת מקום מרגע הפסקת הכוח",
-          "why": "מהירות התחלתית $6$ שמאלה (חיובי), תאוצה $-4$",
-          "tex": "x = 6t - 2t^2"
+          "what": "משוואת המקום מהרגע שהכוח הפסיק",
+          "why": "הראשית במקום של הקרונית ברגע הזה. המהירות ההתחלתית חיובית, שמאלה, והתאוצה שלילית",
+          "tex": "x = 0 + 6t + \\tfrac{1}{2}(-4)\\,t^2 = 6t - 2t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "חזרה לאותו מקום",
-          "why": "$x = 0$, הפתרון $t = 0$ הוא רגע ההתחלה",
-          "tex": "t(6 - 2t) = 0 \\Rightarrow t = 3\\,\\text{s}"
+          "what": "מציבים מקום אפס",
+          "why": "הקרונית חוזרת לאותו מקום. מוציאים את הזמן כגורם משותף. הפתרון אפס הוא רגע ההתחלה",
+          "tex": "0 = t\\,(6 - 2t) \\;\\Rightarrow\\; t = 3\\,\\text{s}"
         }
       ],
       "finalAnswer": "$3\\,\\text{s}$",

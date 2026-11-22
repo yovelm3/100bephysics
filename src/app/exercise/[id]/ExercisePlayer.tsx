@@ -6,6 +6,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { ANIMATIONS } from "@/components/animations/registry";
 import { InlineText, SolutionSteps, type SolutionStep } from "@/components/SolutionSteps";
 import { ZoomFigure } from "@/components/ZoomFigure";
+import { speakable } from "@/lib/speak";
 
 export type PlayerExercise = {
   id: string;
@@ -231,7 +232,7 @@ export function ExercisePlayer({ exercise, parts, adminPanel }: { exercise: Play
                         inputMode="decimal"
                         autoComplete="off"
                         placeholder="התשובה שלך"
-                        aria-label={r.slot ? `התשובה שלך: ${r.slot.replace(/\$/g, "")}` : "התשובה שלך"}
+                        aria-label={r.slot ? `התשובה שלך: ${speakable(r.slot)}` : "התשובה שלך"}
                         value={inputs[r.id] ?? ""}
                         disabled={solved[r.id]}
                         onChange={(e) => setInputs((s) => ({ ...s, [r.id]: e.target.value }))}
