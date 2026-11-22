@@ -13,7 +13,7 @@
   "status": "draft",
   "needsReview": true,
   "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "הגרף מתאר את מקומן של שתי סירות, א ו-ב, כפונקציה של הזמן. הסירות נעות במסלולים ישרים ומקבילים.",
+  "stem": "הגרף מתאר את המקום של שתי סירות, א ו-ב, כפונקציה של הזמן. הסירות נעות במסלולים ישרים ומקבילים.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2013-q1.svg",
@@ -27,12 +27,12 @@
     "שיפוע כמהירות",
     "תאוצה שלילית"
   ],
-  "summary": "שתי סירות שמגיעות לאותו מקום באותו זמן בדרכים שונות. מהירות ממוצעת, ותאוצה מגרף מקום.",
+  "summary": "שתי סירות שמגיעות לאותו מקום באותו זמן בדרכים שונות: מהירות ממוצעת, ותאוצה מגרף מקום.",
   "position": 30,
   "parts": [
     {
       "label": "א",
-      "question": "הגדר את המושג \"מהירות ממוצעת\".",
+      "question": "הגדירו את המושג \"מהירות ממוצעת\".",
       "answer": {
         "type": "open"
       },
@@ -42,8 +42,9 @@
       "solution": [
         {
           "what": "ההגדרה",
-          "why": "ההעתק הכולל חלקי הזמן שבו הוא התרחש. זו המהירות הקבועה שהייתה מביאה את הגוף לאותו מקום באותו זמן",
-          "tex": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
+          "why": "ההעתק הכולל חלקי פרק הזמן שבו הוא התרחש. זו המהירות הקבועה שהייתה מביאה את הגוף לאותו מקום באותו זמן",
+          "tex": "\\bar v = \\frac{\\Delta x}{\\Delta t}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
         }
       ],
       "finalAnswer": "$\\bar v = \\Delta x / \\Delta t$",
@@ -51,7 +52,7 @@
     },
     {
       "label": "ב",
-      "question": "הסירות שטות במשך $230\\,\\text{s}$. קבע אם במשך פרק הזמן הזה המהירות הממוצעת של סירה א גדולה מהמהירות הממוצעת של סירה ב, קטנה ממנה או שווה לה. נמק את קביעתך.",
+      "question": "הסירות שטות במשך $230\\,\\text{s}$. האם בפרק הזמן הזה המהירות הממוצעת של סירה א גדולה מזו של סירה ב, קטנה ממנה או שווה לה? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -67,13 +68,14 @@
       "solution": [
         {
           "what": "ההעתק של כל סירה",
-          "why": "שתיהן יוצאות מ-$0$ ומגיעות ל-$4\\,\\text{km}$ ב-$230\\,\\text{s}$",
+          "why": "לפי הגרף, שתיהן יוצאות מאפס ומגיעות לארבעה קילומטר באותו זמן",
           "tex": "\\Delta x_A = \\Delta x_B = 4\\,\\text{km}"
         },
         {
           "what": "מסקנה",
-          "why": "אותו העתק באותו זמן",
-          "tex": "\\bar v_A = \\bar v_B = \\frac{4000}{230} \\approx 17.4\\,\\text{m/s}"
+          "why": "אותו העתק באותו זמן נותן אותה מהירות ממוצעת",
+          "tex": "\\bar v_A = \\bar v_B = \\frac{4000}{230} \\approx 17.4\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
         }
       ],
       "finalAnswer": "שווה",
@@ -81,7 +83,7 @@
     },
     {
       "label": "ג",
-      "question": "החל מרגע $t = 150\\,\\text{s}$ ועד הרגע $t = 230\\,\\text{s}$ סירה ב נעה בתאוצה קבועה. האם התאוצה חיובית או שלילית? נמק.",
+      "question": "מהרגע $t = 150\\,\\text{s}$ ועד הרגע $t = 230\\,\\text{s}$ סירה ב נעה בתאוצה קבועה. האם התאוצה חיובית או שלילית? נמקו.",
       "answer": {
         "type": "choice",
         "choices": [
@@ -96,9 +98,12 @@
       ],
       "solution": [
         {
+          "explain": "הכיוון החיובי הוא כיוון ציר המקום בגרף. השיפוע של גרף מקום-זמן הוא המהירות."
+        },
+        {
           "what": "השיפוע של גרף ב בקטע הזה",
-          "why": "הגרף מתמתן: השיפוע, כלומר המהירות, קטן",
-          "tex": "v\\downarrow \\Rightarrow a < 0"
+          "why": "הגרף מתמתן, כלומר השיפוע קטן. המהירות חיובית וקטנה, ולכן התאוצה שלילית",
+          "tex": "v > 0,\\quad v\\ \\downarrow \\;\\Rightarrow\\; a < 0"
         }
       ],
       "finalAnswer": "שלילית: השיפוע של גרף המקום קטן",
@@ -106,7 +111,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב את גודל התאוצה של סירה ב החל מרגע $t = 150\\,\\text{s}$.",
+      "question": "מה גודל התאוצה של סירה ב מהרגע $t = 150\\,\\text{s}$?",
       "answer": {
         "type": "number",
         "value": 0.1875,
@@ -119,19 +124,26 @@
       ],
       "solution": [
         {
-          "what": "מהירות ב' עד $150\\,\\text{s}$",
-          "why": "קו ישר: $3\\,\\text{km}$ ב-$150\\,\\text{s}$",
-          "tex": "v_0 = \\frac{3000}{150} = 20\\,\\text{m/s}"
+          "what": "המהירות של סירה ב עד הרגע הזה",
+          "why": "עד כאן הגרף שלה הוא קו ישר: שלושה קילומטר במאה וחמישים שניות",
+          "tex": "v_0 = \\frac{3000 - 0}{150 - 0} = 20\\,\\text{m/s}",
+          "eq": "\\bar v = \\frac{\\Delta x}{\\Delta t}"
         },
         {
-          "what": "משוואת מקום לקטע השני",
-          "why": "$80$ שניות, ובהן היא עוברת $1000\\,\\text{m}$",
-          "tex": "1000 = 20 \\cdot 80 + \\tfrac{1}{2} a \\cdot 80^2"
+          "what": "משוואת המקום בקטע השני",
+          "why": "הקטע נמשך שמונים שניות, ובו הסירה עוברת עוד קילומטר אחד",
+          "tex": "1000 = 20 \\cdot 80 + \\tfrac{1}{2}\\,a \\cdot 80^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         },
         {
-          "what": "פותרים",
-          "why": "מחסירים 1600 ומחלקים ב-3200",
-          "tex": "1000 = 1600 + 3200a \\Rightarrow a = -0.1875\\,\\text{m/s}^2"
+          "what": "מסדרים",
+          "why": "מחשבים את האיברים הידועים",
+          "tex": "1000 = 1600 + 3200\\,a"
+        },
+        {
+          "what": "מבודדים את התאוצה",
+          "why": "מחסירים ומחלקים",
+          "tex": "a = \\frac{1000 - 1600}{3200} = -0.1875\\,\\text{m/s}^2"
         }
       ],
       "finalAnswer": "$0.1875\\,\\text{m/s}^2$ (התאוצה שלילית)",
@@ -139,7 +151,7 @@
     },
     {
       "label": "ה",
-      "question": "סרטט במחברתך גרף מדויק של מהירות סירה ב כפונקציה של הזמן, בפרק הזמן שמתואר בגרף הנתון. ציין על הגרף שסרטטת את המהירות הסופית שסירה ב הגיעה אליה.",
+      "question": "שרטטו גרף מדויק של מהירות סירה ב כפונקציה של הזמן, בפרק הזמן שבגרף הנתון. ציינו על הגרף את המהירות הסופית של סירה ב.",
       "answer": {
         "type": "open"
       },
@@ -149,17 +161,22 @@
       ],
       "solution": [
         {
-          "what": "עד $150\\,\\text{s}$",
-          "why": "קו אופקי",
+          "what": "עד הרגע מאה וחמישים",
+          "why": "המהירות קבועה, ולכן הגרף קו אופקי",
           "tex": "v = 20\\,\\text{m/s}"
         },
         {
-          "what": "מ-$150$ עד $230\\,\\text{s}$",
-          "why": "קו ישר יורד",
-          "tex": "v(230) = 20 - 0.1875 \\cdot 80 = 5\\,\\text{m/s}"
+          "what": "אחרי הרגע הזה",
+          "why": "התאוצה קבועה, ולכן הגרף קו ישר יורד. מחשבים את המהירות בסוף",
+          "tex": "v(230) = 20 + (-0.1875) \\cdot 80 = 5\\,\\text{m/s}",
+          "eq": "v = v_0 + at"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: מהירות סירה ב כפונקציה של הזמן. קו אופקי ב-20 מטר לשנייה עד 150 שניות, ואחר כך קו ישר יורד עד 5 מטר לשנייה אחרי 230 שניות\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"154\" y1=\"260\" x2=\"154\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"238\" y1=\"260\" x2=\"238\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"322\" y1=\"260\" x2=\"322\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"406\" y1=\"260\" x2=\"406\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"456.4\" y1=\"260\" x2=\"456.4\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"214.3\" x2=\"490\" y2=\"214.3\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"168.7\" x2=\"490\" y2=\"168.7\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"123\" x2=\"490\" y2=\"123\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"77.4\" x2=\"490\" y2=\"77.4\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"154\" y1=\"256\" x2=\"154\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"154\" y=\"278\" text-anchor=\"middle\">50</text>\n<line x1=\"238\" y1=\"256\" x2=\"238\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"238\" y=\"278\" text-anchor=\"middle\">100</text>\n<line x1=\"322\" y1=\"256\" x2=\"322\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"322\" y=\"278\" text-anchor=\"middle\">150</text>\n<line x1=\"406\" y1=\"256\" x2=\"406\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"406\" y=\"278\" text-anchor=\"middle\">200</text>\n<line x1=\"456.4\" y1=\"256\" x2=\"456.4\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"456.4\" y=\"278\" text-anchor=\"middle\">230</text>\n<line x1=\"66\" y1=\"214.3\" x2=\"74\" y2=\"214.3\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"218.3\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"168.7\" x2=\"74\" y2=\"168.7\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"172.7\" text-anchor=\"end\">10</text>\n<line x1=\"66\" y1=\"123\" x2=\"74\" y2=\"123\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"127\" text-anchor=\"end\">15</text>\n<line x1=\"66\" y1=\"77.4\" x2=\"74\" y2=\"77.4\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"81.4\" text-anchor=\"end\">20</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">v (m/s)</text>\n<polyline points=\"70,77.4 322,77.4 456.4,214.3\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<line x1=\"456.4\" y1=\"214.3\" x2=\"456.4\" y2=\"260\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<line x1=\"456.4\" y1=\"214.3\" x2=\"70\" y2=\"214.3\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"464.4\" y=\"206.3\" text-anchor=\"start\">5 m/s</text>\n</svg>\n",
+          "caption": "הגרף: מהירות סירה ב כפונקציה של הזמן"
         }
       ],
-      "finalAnswer": "קו אופקי ב-$20$, ואחר כך ירידה בקו ישר ל-$5\\,\\text{m/s}$",
+      "finalAnswer": "קו אופקי ב-$20\\,\\text{m/s}$, ואחר כך ירידה בקו ישר עד $5\\,\\text{m/s}$",
       "keyAnswer": null
     }
   ]

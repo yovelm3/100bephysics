@@ -296,7 +296,7 @@ def fbd(forces, alt, positive=None, body="block", tilt=0, surface=None, w=420, h
             g.text(cx, cy + 5, body_label, color="#ffffff")
     for label, ang, size in forces:
         a = math.radians(ang)
-        L = 46 + 50 * size
+        L = min(24 + 70 * size, h / 2 - 28)  # proportional to the force, but always inside the drawing
         x2, y2 = cx + L * math.cos(a), cy - L * math.sin(a)
         g.add(f'<line x1="{f(cx)}" y1="{f(cy)}" x2="{f(x2)}" y2="{f(y2)}" stroke="var(--d-force, var(--d-label))" stroke-width="3" stroke-linecap="round" marker-end="url(#f-force)"/>')
         lx, ly = cx + (L + 18) * math.cos(a), cy - (L + 18) * math.sin(a) + 6
