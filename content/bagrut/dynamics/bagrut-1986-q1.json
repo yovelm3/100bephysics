@@ -12,8 +12,8 @@
   "difficulty": 4,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. סעיף ב במקור שואל מהירות ותאוצה בשלושה מקרים. פיצלתי לב1-ב5.",
-  "stem": "גוף שמסתו $m = 2\\,\\text{kg}$ נע במהירות קבועה $v_0 = 3\\,\\text{m/s}$ על פני משטח אופקי חלק. ברגע מסוים מתחיל לפעול על הגוף כוח $F$ שגודלו משתנה עם הזמן $t$. גודל הכוח כפונקציה של הזמן מתואר בגרף.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nסעיף ב הוא סעיף אחד, כמו במקור, עם חמש תיבות.\nמה לבדוק: רק לאשר.",
+  "stem": "גוף שמסתו $m = 2\\,\\text{kg}$ נע במהירות קבועה $v_0 = 3\\,\\text{m/s}$ על משטח אופקי חלק. ברגע מסוים מתחיל לפעול על הגוף כוח $F$, שגודלו משתנה עם הזמן $t$. הגרף מתאר את גודל הכוח כפונקציה של הזמן.",
   "figure": {
     "type": "svg",
     "file": "bagrut-1986-q1.svg",
@@ -27,17 +27,17 @@
     "שטח מתחת לגרף כוח-זמן",
     "רכיבי מהירות"
   ],
-  "summary": "כוח שגדל עם הזמן פועל על גוף נע, בשלושה כיוונים שונים. שינוי המהירות מהשטח, והמהירות הסופית בכל מקרה.",
+  "summary": "כוח שגדל עם הזמן פועל על גוף נע, בשלושה כיוונים שונים: שינוי המהירות מהשטח, והמהירות הסופית בכל מקרה.",
   "position": 7,
   "parts": [
     {
       "label": "א",
-      "question": "מהו אופי תנועתו של הגוף (האם תנועתו קצובה, שוות-תאוצה, או שתאוצתו משתנה)?",
+      "question": "איזו תנועה זו: קצובה, שוות תאוצה, או תנועה שהתאוצה בה משתנה?",
       "answer": {
         "type": "choice",
         "choices": [
           "קצובה",
-          "שוות-תאוצה",
+          "שוות תאוצה",
           "תאוצה משתנה"
         ],
         "correct": 2
@@ -47,140 +47,127 @@
       ],
       "solution": [
         {
-          "what": "התאוצה לפי החוק השני",
-          "why": "הכוח גדל עם הזמן, והמסה קבועה",
-          "tex": "a = \\frac{F}{m} = \\frac{1.5t}{2} = 0.75t"
+          "explain": "המשטח חלק, ולכן בציר האופקי פועל רק הכוח הזה. הכובד והכוח הנורמלי אנכיים ומתאזנים."
+        },
+        {
+          "what": "הכוח לפי הגרף",
+          "why": "קו ישר מהראשית: הכוח גדל באותו קצב בכל שנייה",
+          "tex": "F = \\frac{6}{4}\\,t = 1.5\\,t"
+        },
+        {
+          "what": "משוואת כוחות בכיוון הכוח",
+          "why": "בכיוון הכוח פועל רק הכוח הזה, ונגדו אין כוח",
+          "tex": "F - 0 = ma",
+          "eq": "\\Sigma\\vec F = m\\vec a"
+        },
+        {
+          "what": "מחלקים את משוואת הכוחות במסה",
+          "why": "התאוצה גדלה עם הזמן, כמו הכוח",
+          "tex": "a = \\frac{1.5\\,t}{2} = 0.75\\,t"
         }
       ],
-      "finalAnswer": "תנועה בתאוצה משתנה (גדלה עם הזמן)",
+      "finalAnswer": "תנועה שהתאוצה בה משתנה (גדלה עם הזמן)",
       "keyAnswer": null
     },
     {
-      "label": "ב1",
-      "question": "מצא את מהירות הגוף (גודל וכיוון) $4$ שניות אחרי שהכוח $F$ התחיל לפעול, אם הכוח פועל בכיוון המהירות $v_0$.",
+      "label": "ב",
+      "question": "מה המהירות של הגוף, בגודל ובכיוון, ומה התאוצה שלו, ארבע שניות אחרי שהכוח התחיל לפעול? ענו בשלושה מקרים: (1) הכוח בכיוון המהירות $v_0$. (2) הכוח נגד כיוון המהירות $v_0$. (3) הכוח בכיוון קבוע שניצב למהירות $v_0$.",
       "answer": {
-        "type": "number",
-        "value": 9.0,
-        "unit": "m/s"
+        "type": "multi",
+        "items": [
+          {
+            "label": "מקרה 1: המהירות",
+            "value": 9.0,
+            "unit": "m/s"
+          },
+          {
+            "label": "מקרה 2: המהירות (מינוס: נגד כיוון $v_0$)",
+            "value": -3.0,
+            "unit": "m/s"
+          },
+          {
+            "label": "מקרה 3: גודל המהירות",
+            "value": 6.708203932499369,
+            "unit": "m/s"
+          },
+          {
+            "label": "מקרה 3: הזווית בין המהירות ל-$v_0$",
+            "value": 63.43494882292201,
+            "unit": "°"
+          },
+          {
+            "label": "גודל התאוצה (זהה בשלושת המקרים)",
+            "value": 3.0,
+            "unit": "m/s^2"
+          }
+        ]
       },
       "skills": [
         "graph",
         "principle",
-        "algebra"
-      ],
-      "solution": [
-        {
-          "explain": "התאוצה משתנה, ולכן אי אפשר להשתמש ב-$v = v_0 + at$ עם $a$ אחד. שינוי המהירות הוא השטח מתחת לגרף התאוצה, כלומר השטח מתחת לגרף הכוח חלקי המסה."
-        },
-        {
-          "what": "השטח מתחת לגרף הכוח",
-          "why": "משולש עם בסיס $4\\,\\text{s}$ וגובה $6\\,\\text{N}$",
-          "tex": "\\tfrac{1}{2} \\cdot 4 \\cdot 6 = 12\\,\\text{N}\\cdot\\text{s}"
-        },
-        {
-          "what": "שינוי המהירות",
-          "why": "מחלקים במסה",
-          "tex": "\\Delta v = \\frac{12}{2} = 6\\,\\text{m/s}"
-        },
-        {
-          "what": "המהירות",
-          "why": "הכוח בכיוון התנועה ומוסיף לה",
-          "tex": "v = 3 + 6 = 9\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$9\\,\\text{m/s}$ בכיוון $v_0$",
-      "keyAnswer": "9 m/s"
-    },
-    {
-      "label": "ב2",
-      "question": "אותה שאלה, אם הכוח פועל בכיוון נגדי לכיוון המהירות $v_0$.",
-      "answer": {
-        "type": "number",
-        "value": -3.0,
-        "unit": "m/s"
-      },
-      "skills": [
-        "principle",
+        "algebra",
         "signs"
       ],
       "solution": [
         {
-          "what": "שינוי המהירות",
-          "why": "אותו גודל, $6\\,\\text{m/s}$, אבל נגד התנועה",
-          "tex": "v = 3 - 6 = -3\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$3\\,\\text{m/s}$ בכיוון נגדי ל-$v_0$",
-      "keyAnswer": "−3 m/s"
-    },
-    {
-      "label": "ב3",
-      "question": "אותה שאלה, אם הכוח פועל בכיוון קבוע שמאונך לכיוון המהירות $v_0$. מה גודל המהירות?",
-      "answer": {
-        "type": "number",
-        "value": 6.708203932499369,
-        "unit": "m/s"
-      },
-      "skills": [
-        "principle",
-        "algebra"
-      ],
-      "solution": [
-        {
-          "what": "רכיבי המהירות",
-          "why": "הכוח לא משנה את הרכיב לאורך $v_0$, ומוסיף $6\\,\\text{m/s}$ בניצב",
-          "tex": "v_\\parallel = 3,\\quad v_\\perp = 6\\,\\text{m/s}"
+          "explain": "התאוצה משתנה, ולכן אי אפשר להציב תאוצה אחת במשוואת המהירות. שינוי המהירות הוא השטח מתחת לגרף התאוצה, כלומר השטח מתחת לגרף הכוח חלקי המסה. הכיוון החיובי הוא כיוון המהירות ההתחלתית."
         },
         {
-          "what": "גודל",
-          "why": "פיתגורס",
-          "tex": "v = \\sqrt{3^2 + 6^2} \\approx 6.7\\,\\text{m/s}"
-        }
-      ],
-      "finalAnswer": "$\\approx 6.7\\,\\text{m/s}$",
-      "keyAnswer": "6.7 m/s"
-    },
-    {
-      "label": "ב4",
-      "question": "מה הזווית בין כיוון המהירות במקרה 3 לבין כיוון $v_0$?",
-      "answer": {
-        "type": "number",
-        "value": 63.43494882292201,
-        "unit": "°"
-      },
-      "skills": [
-        "algebra"
-      ],
-      "solution": [
+          "what": "השטח מתחת לגרף הכוח",
+          "why": "משולש עם בסיס של ארבע שניות וגובה של שישה ניוטון",
+          "tex": "\\tfrac{1}{2} \\cdot 4 \\cdot 6 = 12\\,\\text{N}\\cdot\\text{s}"
+        },
         {
-          "what": "טנגנס הזווית",
-          "why": "היחס בין הרכיב הניצב לרכיב המקורי",
-          "tex": "\\tan\\theta = \\frac{6}{3} = 2 \\Rightarrow \\theta \\approx 63.4^\\circ"
-        }
-      ],
-      "finalAnswer": "$\\approx 63.4^\\circ$",
-      "keyAnswer": "63.4°"
-    },
-    {
-      "label": "ב5",
-      "question": "מה גודל התאוצה $4$ שניות אחרי שהכוח התחיל לפעול? (התשובה זהה בשלושת המקרים.)",
-      "answer": {
-        "type": "number",
-        "value": 3.0,
-        "unit": "m/s^2"
-      },
-      "skills": [
-        "principle"
-      ],
-      "solution": [
+          "what": "גודל שינוי המהירות",
+          "why": "מחלקים את השטח במסה",
+          "tex": "|\\Delta v| = \\frac{12}{2} = 6\\,\\text{m/s}"
+        },
         {
-          "what": "החוק השני ברגע הזה",
-          "why": "הכוח ב-$4\\,\\text{s}$ הוא $6\\,\\text{N}$, ואין כוח אופקי אחר (המשטח חלק)",
-          "tex": "a = \\frac{6}{2} = 3\\,\\text{m/s}^2"
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"מבט מלמעלה על הגוף, רק הכוחות האופקיים. הכוח F בכיוון המהירות. הכיוון החיובי הוא כיוון המהירות ההתחלתית\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">m</text>\n<line x1=\"210\" y1=\"150\" x2=\"311\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"329\" y=\"156\" text-anchor=\"middle\">F</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מקרה 1</text>\n</svg>\n",
+          "caption": "מקרה 1: הכוח בכיוון המהירות"
+        },
+        {
+          "what": "מקרה 1",
+          "why": "הכוח בכיוון החיובי, ולכן שינוי המהירות חיובי ומתווסף",
+          "tex": "v = 3 + 6 = 9\\,\\text{m/s}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"מבט מלמעלה על הגוף, רק הכוחות האופקיים. הכוח F נגד כיוון המהירות. הכיוון החיובי הוא כיוון המהירות ההתחלתית\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">m</text>\n<line x1=\"210\" y1=\"150\" x2=\"109\" y2=\"150\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"91\" y=\"156\" text-anchor=\"middle\">F</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מקרה 2</text>\n</svg>\n",
+          "caption": "מקרה 2: הכוח נגד כיוון המהירות"
+        },
+        {
+          "what": "מקרה 2",
+          "why": "הכוח נגד הכיוון החיובי, ולכן שינוי המהירות שלילי. התוצאה שלילית: הגוף נע עכשיו בכיוון ההפוך",
+          "tex": "v = 3 + (-6) = -3\\,\\text{m/s}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-30 0 480 300\" direction=\"ltr\" role=\"img\" aria-label=\"מבט מלמעלה על הגוף, רק הכוחות האופקיים. הכוח F ניצב לכיוון המהירות ההתחלתית. הכיוון החיובי הוא כיוון המהירות ההתחלתית\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<polygon points=\"182,131 238,131 238,169 182,169\" fill=\"var(--d-body)\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/>\n<text class=\"label\" x=\"210\" y=\"155\" text-anchor=\"middle\" style=\"fill:#ffffff\">m</text>\n<line x1=\"210\" y1=\"150\" x2=\"210\" y2=\"49\" stroke=\"var(--d-force, var(--d-label))\" stroke-width=\"3\" stroke-linecap=\"round\" marker-end=\"url(#f-force)\"/>\n<text class=\"force\" x=\"210\" y=\"37\" text-anchor=\"middle\">F</text>\n<circle cx=\"210\" cy=\"150\" r=\"3.2\" fill=\"var(--d-label)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"46\" y1=\"242\" x2=\"86\" y2=\"242\" stroke=\"var(--d-dim)\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" marker-end=\"url(#f-arr)\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"98\" y=\"236\" text-anchor=\"middle\">+</text>\n<text class=\"heb\" x=\"68\" y=\"288\" text-anchor=\"middle\" direction=\"rtl\">כיוון חיובי</text>\n<text class=\"heb\" x=\"408\" y=\"290\" text-anchor=\"start\" direction=\"rtl\">מקרה 3</text>\n</svg>\n",
+          "caption": "מקרה 3: הכוח ניצב למהירות"
+        },
+        {
+          "what": "מקרה 3: רכיבי המהירות",
+          "why": "הכוח לא משנה את הרכיב שבכיוון המהירות ההתחלתית, ומוסיף שישה מטר לשנייה בכיוון הניצב",
+          "tex": "v_\\parallel = 3\\,\\text{m/s},\\qquad v_\\perp = 6\\,\\text{m/s}"
+        },
+        {
+          "what": "מקרה 3: גודל המהירות",
+          "why": "לפי משפט פיתגורס, כי הרכיבים ניצבים",
+          "tex": "v = \\sqrt{3^2 + 6^2} = \\sqrt{45} \\approx 6.7\\,\\text{m/s}"
+        },
+        {
+          "what": "מקרה 3: הזווית",
+          "why": "הטנגנס של הזווית הוא הרכיב הניצב חלקי הרכיב המקורי",
+          "tex": "\\tan\\theta = \\frac{6}{3} = 2 \\;\\Rightarrow\\; \\theta \\approx 63.4^\\circ"
+        },
+        {
+          "what": "התאוצה אחרי ארבע שניות",
+          "why": "לפי הגרף הכוח ברגע הזה שישה ניוטון. אין כוח אופקי אחר, ולכן בכל המקרים התאוצה באותו גודל, בכיוון הכוח",
+          "tex": "F - 0 = ma \\;\\Rightarrow\\; a = \\frac{6}{2} = 3\\,\\text{m/s}^2",
+          "eq": "\\Sigma\\vec F = m\\vec a"
         }
       ],
-      "finalAnswer": "$3\\,\\text{m/s}^2$ בכיוון הכוח",
-      "keyAnswer": "3 m/s^2"
+      "finalAnswer": "מקרה 1: $9\\,\\text{m/s}$. מקרה 2: $3\\,\\text{m/s}$ נגד $v_0$. מקרה 3: $\\approx 6.7\\,\\text{m/s}$ בזווית $\\approx 63.4^\\circ$ ל-$v_0$. התאוצה בכל המקרים $3\\,\\text{m/s}^2$",
+      "keyAnswer": "9 m/s ; −3 m/s ; 6.7 m/s ; 63.4° ; 3 m/s^2"
     }
   ]
 }
