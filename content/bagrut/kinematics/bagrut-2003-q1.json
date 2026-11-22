@@ -12,8 +12,8 @@
   "difficulty": 3,
   "status": "draft",
   "needsReview": true,
-  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים.",
-  "stem": "ברגע $t = 0$ נזרקה אבן מפני הקרקע, אנכית כלפי מעלה, במהירות התחלתית $v_1$. ציר המקום $y$ מוגדר כך שכיוונו החיובי כלפי מעלה וראשיתו בנקודת הזריקה. לאחר זמן $T$ נזרקה אבן שנייה מאותה נקודה, אנכית כלפי מעלה, במהירות התחלתית $v_2$. התעלם מהתנגדות האוויר.",
+  "reviewNotes": "טיוטה: נוסח, פתרון וציור של Claude, ממתין לאישור הבעלים. הנחה שלי.\nבסעיפים א ו-ב התלמיד בוחר את הביטוי הנכון מתוך ארבעה.\nמה לבדוק: רק לאשר.",
+  "stem": "ברגע $t = 0$ זורקים אבן מפני הקרקע אנכית כלפי מעלה, במהירות התחלתית $v_1$. ציר המקום $y$ מכוון כלפי מעלה, וראשיתו בנקודת הזריקה. אחרי זמן $T$ זורקים אבן שנייה מאותה נקודה, אנכית כלפי מעלה, במהירות התחלתית $v_2$. אפשר להזניח את התנגדות האוויר.",
   "figure": {
     "type": "svg",
     "file": "bagrut-2003-q1.svg",
@@ -28,14 +28,21 @@
     "זמן מעוף",
     "גרף מקום-זמן"
   ],
-  "summary": "שתי אבנים בזריקה אנכית, השנייה באיחור. משוואות מקום, רגע חלוף, ופער זמני הנחיתה.",
+  "summary": "שתי אבנים בזריקה אנכית, השנייה באיחור: משוואות מקום, רגע חלוף, ופער זמני הנחיתה.",
   "position": 20,
   "parts": [
     {
       "label": "א",
-      "question": "רשום ביטוי ל-$y_1(t)$, המתאר את מקום האבן הראשונה כפונקציה של הזמן.",
+      "question": "מה הביטוי ל-$y_1(t)$, המקום של האבן הראשונה כפונקציה של הזמן?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$y_1(t) = v_1 t - \\tfrac{1}{2} g t^2$",
+          "$y_1(t) = v_1 t + \\tfrac{1}{2} g t^2$",
+          "$y_1(t) = v_1 t - g t^2$",
+          "$y_1(t) = v_1 (t - T) - \\tfrac{1}{2} g (t - T)^2$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -43,9 +50,13 @@
       ],
       "solution": [
         {
+          "explain": "הכיוון החיובי נקבע בשאלה: כלפי מעלה. לכן מהירות הזריקה חיובית ותאוצת הכובד שלילית."
+        },
+        {
           "what": "משוואת המקום",
-          "why": "יוצאת מהראשית ב-$t = 0$, מהירות התחלתית חיובית ותאוצה $-g$",
-          "tex": "y_1(t) = v_1 t - \\tfrac{1}{2} g t^2"
+          "why": "האבן יוצאת מהראשית ברגע אפס. התאוצה היא תאוצת הכובד, ולכן מציבים אותה במקום התאוצה, עם סימן מינוס",
+          "tex": "y_1(t) = 0 + v_1 t + \\tfrac{1}{2}(-g)\\,t^2 = v_1 t - \\tfrac{1}{2} g t^2",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
       "finalAnswer": "$y_1(t) = v_1 t - \\tfrac{1}{2} g t^2$",
@@ -53,9 +64,16 @@
     },
     {
       "label": "ב",
-      "question": "רשום ביטוי ל-$y_2(t)$, המתאר את מקום האבן השנייה כפונקציה של הזמן, החל מרגע $t = T$.",
+      "question": "מה הביטוי ל-$y_2(t)$, המקום של האבן השנייה כפונקציה של הזמן, מהרגע $t = T$?",
       "answer": {
-        "type": "open"
+        "type": "choice",
+        "choices": [
+          "$y_2(t) = v_2 (t - T) - \\tfrac{1}{2} g (t - T)^2$",
+          "$y_2(t) = v_2 t - \\tfrac{1}{2} g t^2$",
+          "$y_2(t) = v_2 (t + T) - \\tfrac{1}{2} g (t + T)^2$",
+          "$y_2(t) = v_2 (t - T) - \\tfrac{1}{2} g t^2$"
+        ],
+        "correct": 0
       },
       "skills": [
         "principle",
@@ -63,9 +81,13 @@
       ],
       "solution": [
         {
+          "explain": "האבן השנייה יוצאת רק ברגע T. לכן הזמן שעבר מאז שהיא נזרקה הוא הזמן בשעון פחות T."
+        },
+        {
           "what": "משוואת המקום",
-          "why": "אותה משוואה, אבל הזמן של האבן השנייה מתחיל ב-$T$, ולכן מציבים $t - T$",
-          "tex": "y_2(t) = v_2 (t - T) - \\tfrac{1}{2} g (t - T)^2"
+          "why": "אותה משוואה כמו של האבן הראשונה, אבל בכל מקום שכתוב זמן מציבים את הזמן מאז הזריקה השנייה",
+          "tex": "y_2(t) = v_2 (t - T) - \\tfrac{1}{2} g (t - T)^2,\\qquad t \\ge T",
+          "eq": "x = x_0 + v_0 t + \\tfrac{1}{2}at^2"
         }
       ],
       "finalAnswer": "$y_2(t) = v_2(t - T) - \\tfrac{1}{2} g (t - T)^2$",
@@ -73,7 +95,7 @@
     },
     {
       "label": "ג",
-      "question": "נתון: $T = 0.5\\,\\text{s}$, $v_2 = 12\\,\\text{m/s}$, $v_1 = 10\\,\\text{m/s}$. חשב כעבור כמה זמן מרגע $t = 0$ תחלוף האבן השנייה על פני האבן הראשונה.",
+      "question": "נתון: $T = 0.5\\,\\text{s}$, $v_2 = 12\\,\\text{m/s}$, $v_1 = 10\\,\\text{m/s}$. כעבור כמה זמן מהרגע $t = 0$ חולפת האבן השנייה על פני הראשונה?",
       "answer": {
         "type": "number",
         "value": 1.0357142857142858,
@@ -85,23 +107,28 @@
       "solution": [
         {
           "what": "משווים את המקומות",
-          "why": "חולפות זו על פני זו כשהן באותו גובה",
+          "why": "האבנים חולפות זו על פני זו כשהן באותו גובה באותו רגע. מציבים את הנתונים בשני הביטויים",
           "tex": "10t - 5t^2 = 12(t - 0.5) - 5(t - 0.5)^2"
         },
         {
           "what": "פותחים סוגריים",
-          "why": "$-5t^2$ מתבטל",
+          "why": "משתמשים בנוסחת הכפל המקוצר לריבוע",
           "tex": "10t - 5t^2 = 12t - 6 - 5t^2 + 5t - 1.25"
+        },
+        {
+          "what": "מצמצמים",
+          "why": "האיבר של ריבוע הזמן מופיע בשני האגפים ומתבטל. מעבירים את האיברים עם הזמן לאגף אחד",
+          "tex": "7t = 7.25"
         },
         {
           "what": "פותרים",
           "why": "משוואה ממעלה ראשונה",
-          "tex": "7t = 7.25 \\Rightarrow t \\approx 1.04\\,\\text{s}"
+          "tex": "t = \\frac{7.25}{7} \\approx 1.04\\,\\text{s}"
         },
         {
-          "what": "בדיקה: האבן הראשונה עוד באוויר",
-          "why": "היא נוחתת אחרי $2v_1/g = 2\\,\\text{s}$",
-          "tex": "y_1(1.04) = 10.4 - 5.4 \\approx 5\\,\\text{m} > 0 \\;\\checkmark",
+          "what": "בדיקה: האבן הראשונה עדיין באוויר",
+          "why": "מציבים את הזמן בביטוי של האבן הראשונה, והגובה יוצא חיובי",
+          "tex": "y_1(1.04) = 10.4 - 5 \\cdot 1.04^2 \\approx 5\\,\\text{m} > 0 \\;\\checkmark",
           "check": true
         }
       ],
@@ -110,7 +137,7 @@
     },
     {
       "label": "ד",
-      "question": "חשב כעבור כמה זמן אחרי פגיעת האבן הראשונה בקרקע תפגע האבן השנייה בקרקע.",
+      "question": "כעבור כמה זמן מהפגיעה של האבן הראשונה בקרקע פוגעת בקרקע האבן השנייה?",
       "answer": {
         "type": "number",
         "value": 0.8999999999999999,
@@ -122,18 +149,18 @@
       ],
       "solution": [
         {
-          "what": "זמן הנחיתה של האבן הראשונה",
-          "why": "זמן מעוף של זריקה אנכית מהקרקע",
-          "tex": "t_1 = \\frac{2v_1}{g} = \\frac{2 \\cdot 10}{10} = 2\\,\\text{s}"
+          "what": "מתי האבן הראשונה פוגעת בקרקע",
+          "why": "מציבים גובה אפס ומוציאים את הזמן כגורם משותף. הפתרון אפס הוא רגע הזריקה",
+          "tex": "0 = 10t - 5t^2 = t\\,(10 - 5t) \\;\\Rightarrow\\; t_1 = 2\\,\\text{s}"
         },
         {
-          "what": "זמן הנחיתה של האבן השנייה",
-          "why": "זמן המעוף שלה $2v_2/g$, והיא יצאה ב-$T = 0.5$",
-          "tex": "t_2 = 0.5 + \\frac{2 \\cdot 12}{10} = 2.9\\,\\text{s}"
+          "what": "מתי האבן השנייה פוגעת בקרקע",
+          "why": "אותה דרך, עם הזמן מאז הזריקה השנייה",
+          "tex": "0 = 12(t - 0.5) - 5(t - 0.5)^2 \\;\\Rightarrow\\; t - 0.5 = \\frac{12}{5} = 2.4 \\;\\Rightarrow\\; t_2 = 2.9\\,\\text{s}"
         },
         {
           "what": "מחסירים",
-          "why": "השאלה על ההפרש בין זמני הנחיתה",
+          "why": "השאלה שואלת על ההפרש בין שני רגעי הפגיעה",
           "tex": "\\Delta t = 2.9 - 2 = 0.9\\,\\text{s}"
         }
       ],
@@ -142,7 +169,7 @@
     },
     {
       "label": "ה",
-      "question": "על אותה מערכת צירים, סרטט גרף של $y_1(t)$ וגרף של $y_2(t)$, מתחילת התנועה של האבן ועד פגיעתה בקרקע. סמן את הגרפים ב-$y_1(t)$ וב-$y_2(t)$. (בסרטוט הסתמך על חישוביך בסעיפים הקודמים. אין צורך בחישובים נוספים.)",
+      "question": "שרטטו באותה מערכת צירים את הגרף של $y_1(t)$ ואת הגרף של $y_2(t)$, מתחילת התנועה של כל אבן ועד שהיא פוגעת בקרקע. סמנו כל גרף בשם שלו. היעזרו בחישובים מהסעיפים הקודמים, בלי חישובים נוספים.",
       "answer": {
         "type": "open"
       },
@@ -151,19 +178,23 @@
       ],
       "solution": [
         {
-          "what": "$y_1$",
-          "why": "פרבולה הפוכה מ-$0$ עד $2\\,\\text{s}$, שיא $5\\,\\text{m}$ ב-$1\\,\\text{s}$",
-          "tex": "y_{1,\\max} = \\frac{10^2}{20} = 5\\,\\text{m}"
+          "what": "הגרף של האבן הראשונה",
+          "why": "פרבולה הפוכה מאפס עד שתי שניות. השיא באמצע, אחרי שנייה",
+          "tex": "y_{1}(1) = 10 - 5 = 5\\,\\text{m}"
         },
         {
-          "what": "$y_2$",
-          "why": "פרבולה הפוכה מ-$0.5$ עד $2.9\\,\\text{s}$, שיא $7.2\\,\\text{m}$ ב-$1.7\\,\\text{s}$",
-          "tex": "y_{2,\\max} = \\frac{12^2}{20} = 7.2\\,\\text{m}"
+          "what": "הגרף של האבן השנייה",
+          "why": "פרבולה הפוכה מחצי שנייה עד שתיים נקודה תשע. השיא באמצע, אחרי שנייה ושבע עשיריות",
+          "tex": "y_{2}(1.7) = 12 \\cdot 1.2 - 5 \\cdot 1.2^2 = 7.2\\,\\text{m}"
         },
         {
           "what": "נקודת החיתוך",
-          "why": "מסעיף ג",
-          "tex": "t \\approx 1.04\\,\\text{s},\\ y \\approx 5\\,\\text{m}"
+          "why": "זה הרגע שמצאנו בסעיף ג",
+          "tex": "t \\approx 1.04\\,\\text{s},\\qquad y \\approx 5\\,\\text{m}"
+        },
+        {
+          "draw": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" direction=\"ltr\" role=\"img\" aria-label=\"גרף התשובה: מקום האבנים כפונקציה של הזמן. y1: פרבולה הפוכה מאפס עד 2 שניות, שיא 5 מטר אחרי שנייה. y2: פרבולה הפוכה מחצי שנייה עד 2.9 שניות, שיא 7.2 מטר אחרי 1.7 שניות. הגרפים נחתכים בערך אחרי 1.04 שניות, בגובה של כ-5 מטר\">\n<defs>\n<pattern id=\"f-hatch\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"10\" stroke=\"var(--d-hatch)\" stroke-width=\"2\"/></pattern>\n<marker id=\"f-dim\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-dim)\" stroke-width=\"1.5\"/></marker>\n<marker id=\"f-arr\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"var(--d-label)\"/></marker>\n<marker id=\"f-force\" viewBox=\"0 0 12 12\" refX=\"10\" refY=\"6\" markerWidth=\"13\" markerHeight=\"13\" markerUnits=\"userSpaceOnUse\" orient=\"auto\"><path d=\"M0,0.5 L12,6 L0,11.5 L3,6 z\" fill=\"var(--d-force, var(--d-label))\"/></marker>\n<marker id=\"f-axis\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"8\" markerHeight=\"8\" orient=\"auto\"><path d=\"M0,1 L9,5 L0,9\" fill=\"none\" stroke=\"var(--d-line)\" stroke-width=\"1.5\"/></marker>\n</defs>\n<line x1=\"137.7\" y1=\"260\" x2=\"137.7\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"205.5\" y1=\"260\" x2=\"205.5\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"273.2\" y1=\"260\" x2=\"273.2\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"341\" y1=\"260\" x2=\"341\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"408.7\" y1=\"260\" x2=\"408.7\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"462.9\" y1=\"260\" x2=\"462.9\" y2=\"50\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"207.5\" x2=\"490\" y2=\"207.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"155\" x2=\"490\" y2=\"155\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"128.8\" x2=\"490\" y2=\"128.8\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"102.5\" x2=\"490\" y2=\"102.5\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"71\" x2=\"490\" y2=\"71\" stroke=\"var(--d-hatch)\" stroke-width=\"1\" stroke-linecap=\"round\"/>\n<line x1=\"70\" y1=\"260\" x2=\"508\" y2=\"260\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"70\" y1=\"260\" x2=\"70\" y2=\"32\" stroke=\"var(--d-line)\" stroke-width=\"1.8\" marker-end=\"url(#f-axis)\"/>\n<line x1=\"137.7\" y1=\"256\" x2=\"137.7\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"137.7\" y=\"278\" text-anchor=\"middle\">0.5</text>\n<line x1=\"205.5\" y1=\"256\" x2=\"205.5\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"205.5\" y=\"278\" text-anchor=\"middle\">1</text>\n<line x1=\"273.2\" y1=\"256\" x2=\"273.2\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"273.2\" y=\"278\" text-anchor=\"middle\">1.5</text>\n<line x1=\"341\" y1=\"256\" x2=\"341\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"341\" y=\"278\" text-anchor=\"middle\">2</text>\n<line x1=\"408.7\" y1=\"256\" x2=\"408.7\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"408.7\" y=\"278\" text-anchor=\"middle\">2.5</text>\n<line x1=\"462.9\" y1=\"256\" x2=\"462.9\" y2=\"264\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"462.9\" y=\"278\" text-anchor=\"middle\">2.9</text>\n<line x1=\"66\" y1=\"207.5\" x2=\"74\" y2=\"207.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"211.5\" text-anchor=\"end\">2</text>\n<line x1=\"66\" y1=\"155\" x2=\"74\" y2=\"155\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"159\" text-anchor=\"end\">4</text>\n<line x1=\"66\" y1=\"128.8\" x2=\"74\" y2=\"128.8\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"132.8\" text-anchor=\"end\">5</text>\n<line x1=\"66\" y1=\"102.5\" x2=\"74\" y2=\"102.5\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"106.5\" text-anchor=\"end\">6</text>\n<line x1=\"66\" y1=\"71\" x2=\"74\" y2=\"71\" stroke=\"var(--d-line)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n<text class=\"dim\" x=\"62\" y=\"75\" text-anchor=\"end\">7.2</text>\n<text class=\"label\" x=\"506\" y=\"250\" text-anchor=\"end\">t (s)</text>\n<text class=\"label\" x=\"80\" y=\"44\" text-anchor=\"start\">y (m)</text>\n<polyline points=\"70,260 74.5,251.4 79,243.1 83.5,235.1 88.1,227.3 92.6,219.9 97.1,212.8 101.6,205.9 106.1,199.3 110.6,193.1 115.2,187.1 119.7,181.4 124.2,176 128.7,170.9 133.2,166.1 137.7,161.6 142.3,157.3 146.8,153.4 151.3,149.8 155.8,146.4 160.3,143.3 164.8,140.6 169.4,138.1 173.9,135.9 178.4,134 182.9,132.4 187.4,131.1 191.9,130.1 196.5,129.3 201,128.9 205.5,128.8 210,128.9 214.5,129.3 219,130.1 223.5,131.1 228.1,132.4 232.6,134 237.1,135.9 241.6,138.1 246.1,140.6 250.6,143.3 255.2,146.4 259.7,149.7 264.2,153.4 268.7,157.3 273.2,161.6 277.7,166.1 282.3,170.9 286.8,176 291.3,181.4 295.8,187.1 300.3,193.1 304.8,199.3 309.4,205.9 313.9,212.7 318.4,219.9 322.9,227.3 327.4,235.1 331.9,243.1 336.5,251.4 341,260\" fill=\"none\" stroke=\"var(--d-label)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<polyline points=\"137.7,260 143.2,247.6 148.6,235.6 154,224.1 159.4,213 164.8,202.2 170.3,192 175.7,182.1 181.1,172.6 186.5,163.6 191.9,155 197.4,146.8 202.8,139 208.2,131.7 213.6,124.8 219,118.2 224.5,112.2 229.9,106.5 235.3,101.2 240.7,96.4 246.1,92 251.5,88 257,84.4 262.4,81.3 267.8,78.6 273.2,76.2 278.6,74.4 284.1,72.9 289.5,71.8 294.9,71.2 300.3,71 305.7,71.2 311.2,71.8 316.6,72.9 322,74.4 327.4,76.3 332.8,78.6 338.3,81.3 343.7,84.4 349.1,88 354.5,92 359.9,96.4 365.4,101.2 370.8,106.5 376.2,112.2 381.6,118.2 387,124.8 392.5,131.7 397.9,139 403.3,146.8 408.7,155 414.1,163.6 419.5,172.6 425,182.1 430.4,192 435.8,202.3 441.2,213 446.6,224.1 452.1,235.6 457.5,247.6 462.9,260\" fill=\"none\" stroke=\"var(--d-body)\" stroke-width=\"2.6\" stroke-linejoin=\"round\"/>\n<circle cx=\"210.3\" cy=\"128.9\" r=\"5\" fill=\"var(--d-ask)\" stroke=\"none\" stroke-width=\"2\"/>\n<line x1=\"210.3\" y1=\"128.9\" x2=\"210.3\" y2=\"260\" stroke=\"var(--d-dim)\" stroke-width=\"1\" stroke-dasharray=\"4 3\" stroke-linecap=\"round\"/>\n<text class=\"label\" x=\"144.5\" y=\"149.8\" text-anchor=\"end\">y₁</text>\n<text class=\"label\" x=\"374.8\" y=\"92\" text-anchor=\"start\">y₂</text>\n</svg>\n",
+          "caption": "הגרף: מקום שתי האבנים כפונקציה של הזמן"
         }
       ],
       "finalAnswer": "שתי פרבולות הפוכות שנחתכות ב-$t \\approx 1.04\\,\\text{s}$",
