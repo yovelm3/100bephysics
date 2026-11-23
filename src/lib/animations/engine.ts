@@ -376,7 +376,8 @@ export function storySimulation(st: Story): Model {
     accel: (s, t) => {
       if (phase >= total) return {};
       const a = st.phases[phase].force(s, t);
-      return Object.fromEntries(Object.entries(a).map(([k, [ax, ay]]) => [k, { ax, ay }]));
+      // a body that the phase does not mention has no acceleration (as in build 1)
+      return Object.fromEntries(Object.keys(s).map((k) => { const [ax, ay] = a[k] ?? [0, 0]; return [k, { ax, ay }]; }));
     },
     events: evs,
     tMax: 1e4,

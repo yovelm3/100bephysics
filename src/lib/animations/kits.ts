@@ -20,7 +20,7 @@ export type GraphMotion = {
   /** Drawing window of the line, in meters. */
   range: [number, number];
   /** tTicks/vTicks: only numbers printed on the original graph (never computed ones). ghost: the graph line as printed. */
-  graph: { vMin: number; vMax: number; yLabel?: string; tTicks?: number[]; vTicks?: number[]; ghost?: [number, number][] };
+  graph: { vMin: number; vMax: number; yLabel?: string; tTicks?: number[]; vTicks?: number[]; ghost?: [number, number][]; sign?: 1 | -1 };
   /** graphT: the time window of the graph panel in this part (to zoom on the start). */
   parts: (PartAnim & { ask?: (P: Painter, m: Model, t: number) => void; graphT?: number })[];
   /** Which graph the question gives: velocity (default) or acceleration (steps). */
@@ -178,16 +178,18 @@ export function graphMotion(g: GraphMotion): AnimSpec {
       P.arrowScreen(G.gx(tc), gp.yPx + gp.hPx, G.gx(tc), gp.yPx, { tone: "idle", w: 1 });
     } else {
       const G = P.graph({ ...gp, tMax: tMaxG, vMin: g.graph.vMin, vMax: g.graph.vMax, xLabel: "t (s)", yLabel: g.graph.yLabel ?? "v (m/s)" });
-      P.path((g.graph.ghost ?? pts).filter(([pt]) => pt <= tMaxG * 1.0001).map(([pt, pv]) => [G.gx(pt), G.gy(pv)]), { tone: "soft", w: 2 });
+      // sign -1: the graph is drawn with the positive axis downwards, as in the question
+      const sg = g.graph.sign ?? 1;
+      P.path((g.graph.ghost ?? pts.map(([pt, pv]) => [pt, sg * pv] as [number, number])).filter(([pt]) => pt <= tMaxG * 1.0001).map(([pt, pv]) => [G.gx(pt), G.gy(pv)]), { tone: "soft", w: 2 });
       // ticks: only numbers of the given graph (data, not answers)
       const tts = g.graph.tTicks ?? [...new Set(pts.map(([pt]) => pt))].filter((pt) => pt > 0);
-      tts.forEach((pt, i) => P.textPx(G.gx(pt), G.gy(Math.max(g.graph.vMin, 0)) + 13 + (i % 2) * 11, fmt(pt), { tone: "data", size: 10 }));
-      (g.graph.vTicks ?? [...new Set(pts.map(([, pv]) => pv))].filter((pv) => pv !== 0)).forEach((pv) => P.textPx(gp.xPx - 4, G.gy(pv) + 4, fmt(pv), { tone: "data", size: 10, anchor: "end" }));
+      tts.filter((pt) => pt <= tMaxG).forEach((pt, i) => P.textPx(G.gx(pt), G.gy(Math.max(g.graph.vMin, 0)) + 13 + (i % 2) * 11, fmt(pt), { tone: "data", size: 10 }));
+      (g.graph.vTicks ?? [...new Set(pts.map(([, pv]) => sg * pv))].filter((pv) => pv !== 0)).forEach((pv) => P.textPx(gp.xPx - 4, G.gy(pv) + 4, fmt(pv), { tone: "data", size: 10, anchor: "end" }));
       const upto: [number, number][] = [];
-      for (const [pt, pv] of pts) if (pt <= tg) upto.push([G.gx(pt), G.gy(pv)]);
-      upto.push([G.gx(tg), G.gy(F().state(tg).b.vx)]);
+      for (const [pt, pv] of pts) if (pt <= tg) upto.push([G.gx(pt), G.gy(sg * pv)]);
+      upto.push([G.gx(tg), G.gy(sg * F().state(tg).b.vx)]);
       P.path(upto, { tone: "body", w: 2.6 });
-      if (tc <= tMaxG) P.arrowScreen(G.gx(tc), gp.yPx + gp.hPx, G.gx(tc), G.gy(F().state(tc).b.vx), { tone: "idle", w: 1 });
+      if (tc <= tMaxG) P.arrowScreen(G.gx(tc), gp.yPx + gp.hPx, G.gx(tc), G.gy(sg * F().state(tc).b.vx), { tone: "idle", w: 1 });
     }
     // strobe marks of the places so far
     if (g.strobe && !g.along) {
