@@ -20,7 +20,8 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
   const [t, setT] = useState(start);
   const [playing, setPlaying] = useState(false);
   const [slow, setSlow] = useState(false);
-  const view = { ...spec.view, w: spec.view.w ?? W, h: spec.view.h ?? H };
+  const v0 = spec.views?.[p] ?? spec.view;
+  const view = { ...v0, w: v0.w ?? W, h: v0.h ?? H };
 
   // A new part starts from its own beginning.
   useEffect(() => {

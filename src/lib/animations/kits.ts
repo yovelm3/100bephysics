@@ -257,7 +257,7 @@ export function flash(P: Painter, t: number, at: number, x: number, y: number, t
 
 // ───────────── stories with phases (one or several scenarios) ─────────────
 
-import { scenarios as nest, storyFormula, storySimulation, type AnimSpec as Spec, type Story } from "./engine";
+import { isNested, scenarios as nest, storyFormula, storySimulation, type AnimSpec as Spec, type Story } from "./engine";
 
 /** Merges several scenarios into one model: bodies and events are named "scenario.name". */
 function merge(models: Record<string, Model>): Model {
@@ -315,5 +315,123 @@ export function fallPhase(o: { end: string; body: string; ax?: number; ay?: numb
     },
     force: () => ({ [o.body]: [ax, ay], ...(o.others ?? {}) }),
     until: (s) => (o.down === false ? s[o.body].y >= o.toY : s[o.body].y <= o.toY && s[o.body].vy <= 0),
+  };
+}
+
+// ───────────── several animated stories in one exercise (parts from different specs) ─────────────
+
+/** Joins specs: the parts of each come in order. Bodies, events and values are kept apart by a prefix. */
+export function joinSpecs(id: string, list: { key: string; spec: Spec; parts: number[] }[]): Spec {
+  const sub = (m: Model, key: string): Model => {
+    const pre = `${key}:`;
+    const pick = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => k.startsWith(pre)).map(([k, v]) => [k.slice(pre.length), v]));
+    return { state: (t) => pick(m.state(t)), events: pick(m.events), values: pick(m.values) };
+  };
+  const join = (build: "formula" | "simulation") => (): Model => {
+    const ms = list.map((l) => [l.key, l.spec[build]()] as const);
+    const events: Record<string, number> = {}, values: Record<string, number> = {};
+    for (const [k, m] of ms) {
+      for (const [e, v] of Object.entries(m.events)) events[`${k}:${e}`] = v;
+      for (const [e, v] of Object.entries(m.values)) values[`${k}:${e}`] = v;
+    }
+    return {
+      events, values,
+      state: (t) => Object.fromEntries(ms.flatMap(([k, m]) => Object.entries(m.state(t)).map(([b, st]) => [`${k}:${b}`, st]))),
+    };
+  };
+  const parts: PartAnim[] = [];
+  const owners: { key: string; spec: Spec; idx: number }[] = [];
+  for (const l of list) for (const i of l.parts) {
+    const p = l.spec.parts[i];
+    owners.push({ key: l.key, spec: l.spec, idx: i });
+    parts.push({ ...p, from: p.from ? (m) => p.from!(sub(m, l.key)) : undefined, to: (m) => p.to(sub(m, l.key)) });
+  }
+  const orders = list.map((l) => {
+    const o = l.spec.order as (string | string[])[];
+    const lists = isNestedOrder(o) ? (o as unknown as (string | string[])[][]) : [o];
+    return lists.map((li) => li.map((x) => (Array.isArray(x) ? x.map((y) => `${l.key}:${y}`) : `${l.key}:${x}`)));
+  }).flat();
+  return {
+    id,
+    view: list[0].spec.view,
+    formula: join("formula"),
+    simulation: join("simulation"),
+    order: nest(...orders),
+    tolTime: Math.min(...list.map((l) => l.spec.tolTime ?? 5e-3)),
+    relTol: Math.min(...list.map((l) => l.spec.relTol ?? 3e-3)),
+    scale: Math.max(...list.map((l) => l.spec.scale ?? 0)),
+    answers: Object.fromEntries(list.flatMap((l) => Object.entries(l.spec.answers ?? {}).map(([k, v]) => [`${l.key}:${k}`, v]))),
+    parts,
+    draw: (P, m, t, part) => { const o = owners[part]; o.spec.draw(P, sub(m, o.key), t, o.idx); },
+    views: owners.map((o) => o.spec.view),
+  } as Spec;
+}
+const isNestedOrder = (o: unknown) => isNested(o);
+
+// ───────────── a body sliding on a curved track, no friction ─────────────
+
+export type Track = {
+  id: string;
+  /** The track: points along it from the start (x, y in meters); the body starts at the first point. */
+  path: [number, number][];
+  v0?: number;
+  answers?: Record<string, [number, number]>;
+  view: Spec["view"];
+  parts: (PartAnim & { ask?: (P: Painter, m: Model, t: number) => void })[];
+  extra?: (P: Painter, m: Model, t: number, part: number) => void;
+  /** Stop where the track ends, or at this index of the path. */
+  endIndex?: number;
+};
+
+export function trackMotion(o: Track): Spec {
+  // arc length along the polyline
+  const pts = o.path, L: number[] = [0];
+  for (let i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+  const end = o.endIndex ?? pts.length - 1, S = L[end];
+  const at = (s: number) => {
+    let i = 0;
+    while (i < pts.length - 2 && L[i + 1] < s) i++;
+    const f = (s - L[i]) / (L[i + 1] - L[i] || 1);
+    const x = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, y = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f;
+    const sin = (pts[i + 1][1] - pts[i][1]) / (L[i + 1] - L[i] || 1);
+    return { x, y, sin, cos: (pts[i + 1][0] - pts[i][0]) / (L[i + 1] - L[i] || 1) };
+  };
+  const v0 = o.v0 ?? 0, y0 = pts[0][1];
+  const speedAt = (s: number) => Math.sqrt(Math.max(0, v0 * v0 + 2 * G * (y0 - at(s).y)));
+  // build 1: speed from energy conservation; time from summing ds / v along the track
+  const formula = (): Model => {
+    const N = 20000, ts: number[] = [0], ss: number[] = [0];
+    for (let k = 1; k <= N; k++) {
+      const s1 = (S * (k - 1)) / N, s2 = (S * k) / N, vm = (speedAt(s1) + speedAt(s2)) / 2;
+      ts.push(ts[k - 1] + (s2 - s1) / Math.max(vm, 1e-9)); ss.push(s2);
+    }
+    const T = ts[N];
+    const sOf = (t: number) => { if (t >= T) return S; let lo = 0, hi = N; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (ts[mid] <= t) lo = mid; else hi = mid; } return ss[lo] + ((t - ts[lo]) / (ts[hi] - ts[lo])) * (ss[hi] - ss[lo]); };
+    const state = (t: number): State => { const s = sOf(Math.max(0, t)), p = at(s), v = speedAt(s); return { b: body(p.x, p.y, v * p.cos, v * p.sin, { s, v }) }; };
+    return { state, events: { end: T }, values: { vEnd: speedAt(S) } };
+  };
+  // build 2: step by step along the track, with the tangential part of gravity
+  const simulation = (): Model => {
+    const res = simulate({
+      init: { b: body(0, 0, v0, 0) },
+      accel: (s) => ({ b: { ax: -G * at(s.b.x).sin, ay: 0 } }),
+      events: [{ name: "end", when: (s) => s.b.x >= S, stop: true, record: (s) => ({ vEnd: s.b.vx }) }],
+      tMax: 1e3,
+      dt: 1e-4,
+    });
+    const m = res.model, st = m.state;
+    m.state = (t) => { const q = st(t).b, p = at(Math.min(q.x, S)); return { b: body(p.x, p.y, q.vx * p.cos, q.vx * p.sin, { s: q.x, v: q.vx }) }; };
+    return m;
+  };
+  return {
+    id: o.id, view: o.view, formula, simulation, order: ["end"], answers: o.answers, scale: S, tolTime: 2e-3, relTol: 3e-3,
+    parts: o.parts,
+    draw: (P, m, t, part) => {
+      P.poly(pts.slice(0, end + 1).map(([x, y]) => [x, y] as [number, number]), { close: false, fill: "none", tone: "line", w: 2.4 });
+      const b = m.state(t).b;
+      P.ball(b.x, b.y, { rPx: 8 });
+      o.parts[part]?.ask?.(P, m, t);
+      o.extra?.(P, m, t, part);
+    },
   };
 }

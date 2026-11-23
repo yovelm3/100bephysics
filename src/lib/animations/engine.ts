@@ -145,7 +145,7 @@ export function bisect(f: (x: number) => number, lo: number, hi: number, iters =
 /** An order given as several lists (one per scenario) is marked by wrapping it: [["a", "b"], ["c"]] with nested: true. */
 const NESTED = Symbol("nested");
 export const scenarios = (...lists: (string | string[])[][]) => Object.assign(lists, { [NESTED]: true }) as unknown as (string | string[])[];
-const isNested = (o: unknown) => !!(o as Record<symbol, unknown>)[NESTED];
+export const isNested = (o: unknown) => !!(o as Record<symbol, unknown>)[NESTED];
 
 export type Check = { name: string; a: number; b: number; tol: number; ok: boolean };
 export type Verdict = { checks: Check[]; orderOk: boolean; allOk: boolean; problems: string[] };
@@ -252,6 +252,8 @@ export type AnimSpec = {
   id: string;
   /** World window: x from x0 to x1 (meters), y from y0 up; the scale fits the width. */
   view: { x0: number; x1: number; y0: number; y1: number; w?: number; h?: number; fixed?: { ox: number; oy: number; k: number } };
+  /** A different window for some parts (by part index). */
+  views?: AnimSpec["view"][];
   formula: () => Model;
   simulation: () => Model;
   order: (string | string[])[];
