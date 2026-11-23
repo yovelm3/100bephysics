@@ -11,4 +11,7 @@ export const SPECS: Record<string, () => Promise<{ spec: AnimSpec }>> = {
   "bagrut-1992-q1": () => import("./bagrut-1992-q1"),
   "bagrut-1993-q1": () => import("./bagrut-1993-q1"),
   "bagrut-1994-q1": () => import("./bagrut-1994-q1"),
+  "bagrut-1995-q1": () => import("./bagrut-1995-q1"),
+  "bagrut-1996-q1": () => import("./bagrut-1996-q1"),
+  "bagrut-1998-q1": () => import("./bagrut-1998-q1"),
 };

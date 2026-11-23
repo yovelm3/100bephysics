@@ -24,7 +24,11 @@ export type GraphMotion = {
   /** graphT: the time window of the graph panel in this part (to zoom on the start). */
   parts: (PartAnim & { ask?: (P: Painter, m: Model, t: number) => void; graphT?: number })[];
   /** Which graph the question gives: velocity (default) or acceleration (steps). */
-  panel?: "v" | "a";
+  panel?: "v" | "a" | "x" | "none";
+  /** Position-time graph panel (when the question gives x(t)): window and range in meters. */
+  xGraph?: { xMin: number; xMax: number; label?: string; tTicks?: number[]; xTicks?: [number, string][] };
+  /** Marks of the body's place every `every` seconds, like a strobe photo or a measurement table. */
+  strobe?: { every: number; labelEvery?: number };
   /** Body shape. */
   shape?: "block" | "rocket" | "elevator" | "cart" | "ball";
   /** Extra drawing on top (data labels…). */
@@ -146,7 +150,17 @@ export function graphMotion(g: GraphMotion): AnimSpec {
     const tMaxG = g.parts[part]?.graphT ?? Math.max(T, ...(g.graph.ghost ?? []).map(([gt]) => gt)) * 1.05;
     const tg = Math.min(tc, tMaxG);
     const fmt = (n: number) => String(Math.round(n * 1e6) / 1e6);
-    if (g.panel === "a") {
+    if (g.panel === "none") {
+      // no graph: the question gives only a table, or the graph is what is asked
+    } else if (g.panel === "x") {
+      const xg = g.xGraph!;
+      const G = P.graph({ ...gp, tMax: tMaxG, vMin: xg.xMin, vMax: xg.xMax, xLabel: "t (s)", yLabel: xg.label ?? "x" });
+      const curve = (until: number) => Array.from({ length: 81 }, (_, i) => { const u = (until * i) / 80; return [G.gx(u), G.gy(F().state(u).b.x)] as [number, number]; });
+      P.path(curve(T), { tone: "soft", w: 2 });
+      P.path(curve(tg), { tone: "body", w: 2.6 });
+      (xg.tTicks ?? []).forEach((pt) => P.textPx(G.gx(pt), G.gy(xg.xMin) + 13, fmt(pt), { tone: "data", size: 10 }));
+      (xg.xTicks ?? []).forEach(([pv, lab]) => P.textPx(gp.xPx - 4, G.gy(pv) + 4, lab, { tone: "data", size: 10, anchor: "end" }));
+    } else if (g.panel === "a") {
       // the acceleration-time graph that the question gives: steps
       const G = P.graph({ ...gp, tMax: tMaxG, vMin: g.graph.vMin, vMax: g.graph.vMax, xLabel: "t", yLabel: g.graph.yLabel ?? "a" });
       const steps = (until: number) => {
@@ -172,6 +186,14 @@ export function graphMotion(g: GraphMotion): AnimSpec {
       upto.push([G.gx(tg), G.gy(F().state(tg).b.vx)]);
       P.path(upto, { tone: "body", w: 2.6 });
       if (tc <= tMaxG) P.arrowScreen(G.gx(tc), gp.yPx + gp.hPx, G.gx(tc), G.gy(F().state(tc).b.vx), { tone: "idle", w: 1 });
+    }
+    // strobe marks of the places so far
+    if (g.strobe) {
+      for (let u = 0, k = 0; u <= tc + 1e-9; u += g.strobe.every, k++) {
+        const p = F().state(u).b;
+        if (vert) P.line(-span * 0.02, p.x, span * 0.02, p.x, { tone: "idle", w: 1.6 });
+        else { P.line(p.x, -span * 0.012, p.x, span * 0.012, { tone: "idle", w: 1.6 }); if (g.strobe.labelEvery && k % g.strobe.labelEvery === 0) P.mono(p.x, 0, fmt(Math.round(u * 1000) / 1000), { tone: "data", size: 9, dyPx: 26 }); }
+      }
     }
     // the track and the body
     if (vert) {
