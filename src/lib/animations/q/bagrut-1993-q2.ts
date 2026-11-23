@@ -57,8 +57,8 @@ export const spec = storySpec({
       P.circle(2.0, ey, 5, { fill: "runner" });
       P.arrowPx(2.85, ey, 0, 30, { tone: "vel", label: "v" });
     }
-    if (part === 0) askLabel(P, 0.35, 2.2, "T_b = ?", 30, 0);
-    if (part === 1) askLabel(P, 0, 2.85, "T_c = ?", 30, -4);
+    if (part === 0) askLabel(P, 0.35, 2.2, "T(b) = ?", 30, 0);
+    if (part === 1) askLabel(P, 0, 2.85, "T(c) = ?", 30, -4);
     if (part === 2) askLabel(P, 0.35, s.m.y, "a < g ?", 30, 0);
     if (part === 3) askLabel(P, 0.35, s.m.y, "a' ?", 30, 0);
     if (part === 4 && t >= mm.events.break) askLabel(P, 0.35, s.R.y, "?", 30, 0);
