@@ -55,4 +55,10 @@ export const SPECS: Record<string, () => Promise<{ spec: AnimSpec }>> = {
   "bagrut-1998-q3": () => import("./bagrut-1998-q3"),
   "bagrut-1999-q2": () => import("./bagrut-1999-q2"),
   "bagrut-1999-q3": () => import("./bagrut-1999-q3"),
+  "bagrut-2001-q3": () => import("./bagrut-2001-q3"),
+  "bagrut-2002-q2": () => import("./bagrut-2002-q2"),
+  "bagrut-2003-q2": () => import("./bagrut-2003-q2"),
+  "bagrut-2004-q2": () => import("./bagrut-2004-q2"),
+  "bagrut-2005-q3": () => import("./bagrut-2005-q3"),
+  "bagrut-2005-q4": () => import("./bagrut-2005-q4"),
 };
