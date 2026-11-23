@@ -29,6 +29,8 @@ export type GraphMotion = {
   xGraph?: { xMin: number; xMax: number; label?: string; tTicks?: number[]; xTicks?: [number, string][] };
   /** Marks of the body's place every `every` seconds, like a strobe photo or a measurement table. */
   strobe?: { every: number; labelEvery?: number };
+  /** Move along this curved path (meters) instead of a straight line; the position is the distance along it. */
+  along?: [number, number][];
   /** Body shape. */
   shape?: "block" | "rocket" | "elevator" | "cart" | "ball";
   /** Extra drawing on top (data labels…). */
@@ -188,7 +190,7 @@ export function graphMotion(g: GraphMotion): AnimSpec {
       if (tc <= tMaxG) P.arrowScreen(G.gx(tc), gp.yPx + gp.hPx, G.gx(tc), G.gy(F().state(tc).b.vx), { tone: "idle", w: 1 });
     }
     // strobe marks of the places so far
-    if (g.strobe) {
+    if (g.strobe && !g.along) {
       for (let u = 0, k = 0; u <= tc + 1e-9; u += g.strobe.every, k++) {
         const p = F().state(u).b;
         if (vert) P.line(-span * 0.02, p.x, span * 0.02, p.x, { tone: "idle", w: 1.6 });
@@ -205,6 +207,15 @@ export function graphMotion(g: GraphMotion): AnimSpec {
       else P.poly([[-span * 0.012, s.x], [span * 0.012, s.x], [span * 0.012, s.x + span * 0.05], [0, s.x + span * 0.07], [-span * 0.012, s.x + span * 0.05]], { tone: "body", fill: "body" });
       const vpx = Math.max(-60, Math.min(60, -s.vx * (60 / Math.max(Math.abs(g.graph.vMax), Math.abs(g.graph.vMin)))));
       if (Math.abs(vpx) > 3) P.arrowPx(0, s.x + span * 0.035, 0, vpx, { tone: "vel", label: "v" });
+    } else if (g.along) {
+      // the body moves along a drawn curved path: the position is the distance along it
+      const pts = g.along, Ls: number[] = [0];
+      for (let i = 1; i < pts.length; i++) Ls.push(Ls[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      const pointAt = (d: number) => { let i = 0; while (i < pts.length - 2 && Ls[i + 1] < d) i++; const f = (d - Ls[i]) / (Ls[i + 1] - Ls[i] || 1); return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f]; };
+      P.poly(pts, { close: false, fill: "none", tone: "line", w: 3 });
+      if (g.strobe) for (let u = 0; u <= tc + 1e-9; u += g.strobe.every) { const [px, py] = pointAt(F().state(u).b.x); P.circle(px, py, 3, { fill: "idle" }); }
+      const [bx, by] = pointAt(s.x);
+      P.ball(bx, by, { rPx: 8 });
     } else {
       P.ground(0, r0 - span * 0.05, r1 + span * 0.05);
       for (const [mx, lab] of g.marks ?? []) { P.line(mx, 0, mx, -span * 0.04, { tone: "data", w: 1.2 }); P.mono(mx, -span * 0.04, lab, { tone: "data", size: 12, dyPx: 14 }); }
