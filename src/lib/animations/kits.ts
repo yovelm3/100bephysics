@@ -334,7 +334,7 @@ export function fallPhase(o: { end: string; body: string; ax?: number; ay?: numb
 // ───────────── several animated stories in one exercise (parts from different specs) ─────────────
 
 /** Joins specs: the parts of each come in order. Bodies, events and values are kept apart by a prefix. */
-export function joinSpecs(id: string, list: { key: string; spec: Spec; parts: number[] }[]): Spec {
+export function joinSpecs(id: string, list: { key: string; spec: Spec; parts: number[] }[], seq?: [string, number][]): Spec {
   const sub = (m: Model, key: string): Model => {
     const pre = `${key}:`;
     const pick = <T,>(o: Record<string, T>) => Object.fromEntries(Object.entries(o).filter(([k]) => k.startsWith(pre)).map(([k, v]) => [k.slice(pre.length), v]));
@@ -354,7 +354,9 @@ export function joinSpecs(id: string, list: { key: string; spec: Spec; parts: nu
   };
   const parts: PartAnim[] = [];
   const owners: { key: string; spec: Spec; idx: number }[] = [];
-  for (const l of list) for (const i of l.parts) {
+  // the parts in the question's order: as listed, or as given in seq ([key, part index] pairs)
+  const pairs = seq ? seq.map(([k, i]) => [list.find((l) => l.key === k)!, i] as const) : list.flatMap((l) => l.parts.map((i) => [l, i] as const));
+  for (const [l, i] of pairs) {
     const p = l.spec.parts[i];
     owners.push({ key: l.key, spec: l.spec, idx: i });
     parts.push({ ...p, from: p.from ? (m) => p.from!(sub(m, l.key)) : undefined, to: (m) => p.to(sub(m, l.key)) });
@@ -394,6 +396,11 @@ export type Track = {
   extra?: (P: Painter, m: Model, t: number, part: number) => void;
   /** Stop where the track ends, or at this index of the path. */
   endIndex?: number;
+  /** Named points along the track (path index): events when the body passes them, and its speed there (v@name). */
+  points?: Record<string, number>;
+  dt?: number;
+  /** Draw the track and the ball (default), or leave all drawing to extra. */
+  bare?: boolean;
 };
 
 export function trackMotion(o: Track): Spec {
@@ -421,30 +428,99 @@ export function trackMotion(o: Track): Spec {
     const T = ts[N];
     const sOf = (t: number) => { if (t >= T) return S; let lo = 0, hi = N; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (ts[mid] <= t) lo = mid; else hi = mid; } return ss[lo] + ((t - ts[lo]) / (ts[hi] - ts[lo])) * (ss[hi] - ss[lo]); };
     const state = (t: number): State => { const s = sOf(Math.max(0, t)), p = at(s), v = speedAt(s); return { b: body(p.x, p.y, v * p.cos, v * p.sin, { s, v }) }; };
-    return { state, events: { end: T }, values: { vEnd: speedAt(S) } };
+    const events: Record<string, number> = { end: T }, values: Record<string, number> = { vEnd: speedAt(S) };
+    const tAt = (sq: number) => { let lo = 0, hi = N; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (ss[mid] <= sq) lo = mid; else hi = mid; } return ts[lo] + ((sq - ss[lo]) / (ss[hi] - ss[lo])) * (ts[hi] - ts[lo]); };
+    for (const [n, i] of Object.entries(o.points ?? {})) { events[n] = tAt(L[i]); values[`v@${n}`] = speedAt(L[i]); }
+    return { state, events, values };
   };
   // build 2: step by step along the track, with the tangential part of gravity
   const simulation = (): Model => {
     const res = simulate({
       init: { b: body(0, 0, v0, 0) },
       accel: (s) => ({ b: { ax: -G * at(s.b.x).sin, ay: 0 } }),
-      events: [{ name: "end", when: (s) => s.b.x >= S, stop: true, record: (s) => ({ vEnd: s.b.vx }) }],
+      events: [
+        ...Object.entries(o.points ?? {}).map(([n, i]) => ({ name: n, when: (s: State) => s.b.x >= L[i], record: (s: State) => ({ [`v@${n}`]: s.b.vx }) })),
+        { name: "end", when: (s) => s.b.x >= S, stop: true, record: (s) => ({ vEnd: s.b.vx }) },
+      ],
       tMax: 1e3,
-      dt: 1e-4,
+      dt: o.dt ?? 1e-4,
     });
     const m = res.model, st = m.state;
     m.state = (t) => { const q = st(t).b, p = at(Math.min(q.x, S)); return { b: body(p.x, p.y, q.vx * p.cos, q.vx * p.sin, { s: q.x, v: q.vx }) }; };
     return m;
   };
   return {
-    id: o.id, view: o.view, formula, simulation, order: ["end"], answers: o.answers, scale: S, tolTime: 2e-3, relTol: 3e-3,
+    id: o.id, view: o.view, formula, simulation, answers: o.answers, scale: S, tolTime: 2e-3, relTol: 3e-3,
+    order: [...Object.entries(o.points ?? {}).sort((a, b) => a[1] - b[1]).map(([n]) => n), "end"],
     parts: o.parts,
     draw: (P, m, t, part) => {
-      P.poly(pts.slice(0, end + 1).map(([x, y]) => [x, y] as [number, number]), { close: false, fill: "none", tone: "line", w: 2.4 });
-      const b = m.state(t).b;
-      P.ball(b.x, b.y, { rPx: 8 });
+      if (!o.bare) {
+        P.poly(pts.slice(0, end + 1).map(([x, y]) => [x, y] as [number, number]), { close: false, fill: "none", tone: "line", w: 2.4 });
+        const b = m.state(t).b;
+        P.ball(b.x, b.y, { rPx: 8 });
+      }
       o.parts[part]?.ask?.(P, m, t);
       o.extra?.(P, m, t, part);
     },
   };
+}
+
+/** Points on a circular arc around (cx, cy), radius R, from angle a0 to a1 (radians, measured from straight down, counterclockwise). */
+export function arc(cx: number, cy: number, R: number, a0: number, a1: number, n = 400): [number, number][] {
+  return Array.from({ length: n + 1 }, (_, i) => { const a = a0 + ((a1 - a0) * i) / n; return [cx + R * Math.sin(a), cy - R * Math.cos(a)] as [number, number]; });
+}
+
+// ───────────── uniform circular motion (a horizontal circle) ─────────────
+
+export type Spin = {
+  id: string;
+  /** Radius (m) and period (s). */
+  r: number;
+  period: number;
+  /** How many laps the story lasts. */
+  laps: number;
+  answers?: Record<string, [number, number]>;
+  view: Spec["view"];
+  views?: Spec["view"][];
+  parts: PartAnim[];
+  /** Draws the scene; c is the body's place in the circle's plane (x, z), with its velocity (vx, vz) and the angle. */
+  draw: (P: Painter, c: { x: number; z: number; vx: number; vz: number; ang: number }, m: Model, t: number, part: number) => void;
+};
+
+/** Build 1: angle = ω·t. Build 2: step by step with only an acceleration v²/r toward the center (no ω given to it). */
+export function spinMotion(o: Spin): Spec {
+  const w = (2 * Math.PI) / o.period, T = o.laps * o.period;
+  const formula = (): Model => {
+    const state = (t: number): State => { const tt = Math.min(Math.max(t, 0), T), a = w * tt; return { b: body(o.r * Math.cos(a), o.r * Math.sin(a), -w * o.r * Math.sin(a), w * o.r * Math.cos(a), { ang: a }) }; };
+    const events: Record<string, number> = {};
+    for (let k = 1; k <= o.laps; k++) events[`lap${k}`] = k * o.period;
+    return { state, events, values: { v: w * o.r, a: w * w * o.r } };
+  };
+  const simulation = (): Model => {
+    let lap = 0, prevY = 0, lapT = -Infinity;
+    const res = simulate({
+      init: { b: body(o.r, 0, 0, w * o.r) },
+      accel: (s) => { const b = s.b, r2 = b.x * b.x + b.y * b.y, v2 = b.vx * b.vx + b.vy * b.vy; prevY = b.y; return { b: { ax: (-v2 * b.x) / r2, ay: (-v2 * b.y) / r2 } }; },
+      events: Array.from({ length: o.laps }, (_, k) => ({
+        name: `lap${k + 1}`,
+        when: (s: State, t: number) => { const hit = prevY < 0 && s.b.y >= 0 && s.b.x > 0 && lap === k && t > lapT + o.period / 4; if (hit) { lap++; lapT = t; } return hit; },
+        stop: k === o.laps - 1,
+        record: (s: State): Record<string, number> => (k === 0 ? { v: Math.hypot(s.b.vx, s.b.vy), a: (s.b.vx ** 2 + s.b.vy ** 2) / Math.hypot(s.b.x, s.b.y) } : {}),
+      })),
+      tMax: T * 1.1,
+      dt: o.period / 2e5,
+    });
+    return res.model;
+  };
+  return {
+    id: o.id, view: o.view, views: o.views, formula, simulation, answers: o.answers, scale: o.r, relTol: 2e-3,
+    order: Array.from({ length: o.laps }, (_, k) => `lap${k + 1}`),
+    parts: o.parts,
+    draw: (P, m, t, part) => { const b = m.state(t).b; o.draw(P, { x: b.x, z: b.y, vx: b.vx, vz: b.vy, ang: Math.atan2(b.y, b.x) }, m, t, part); },
+  };
+}
+
+/** Points along a straight segment (for building tracks), without the first point. */
+export function seg(a: [number, number], b: [number, number], n = 40): [number, number][] {
+  return Array.from({ length: n }, (_, i) => [a[0] + ((b[0] - a[0]) * (i + 1)) / n, a[1] + ((b[1] - a[1]) * (i + 1)) / n] as [number, number]);
 }
