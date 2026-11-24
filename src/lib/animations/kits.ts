@@ -483,6 +483,8 @@ export type Spin = {
   view: Spec["view"];
   views?: Spec["view"][];
   parts: PartAnim[];
+  /** For an orbit: GM of the center. Build 2 then uses the law of gravitation, GM/r², instead of v²/r. */
+  gm?: number;
   /** Draws the scene; c is the body's place in the circle's plane (x, z), with its velocity (vx, vz) and the angle. */
   draw: (P: Painter, c: { x: number; z: number; vx: number; vz: number; ang: number }, m: Model, t: number, part: number) => void;
 };
@@ -500,7 +502,11 @@ export function spinMotion(o: Spin): Spec {
     let lap = 0, prevY = 0, lapT = -Infinity;
     const res = simulate({
       init: { b: body(o.r, 0, 0, w * o.r) },
-      accel: (s) => { const b = s.b, r2 = b.x * b.x + b.y * b.y, v2 = b.vx * b.vx + b.vy * b.vy; prevY = b.y; return { b: { ax: (-v2 * b.x) / r2, ay: (-v2 * b.y) / r2 } }; },
+      accel: (s) => {
+        const b = s.b, r2 = b.x * b.x + b.y * b.y, v2 = b.vx * b.vx + b.vy * b.vy; prevY = b.y;
+        if (o.gm) { const r3 = r2 * Math.sqrt(r2); return { b: { ax: (-o.gm * b.x) / r3, ay: (-o.gm * b.y) / r3 } }; }
+        return { b: { ax: (-v2 * b.x) / r2, ay: (-v2 * b.y) / r2 } };
+      },
       events: Array.from({ length: o.laps }, (_, k) => ({
         name: `lap${k + 1}`,
         when: (s: State, t: number) => { const hit = prevY < 0 && s.b.y >= 0 && s.b.x > 0 && lap === k && t > lapT + o.period / 4; if (hit) { lap++; lapT = t; } return hit; },
@@ -651,4 +657,71 @@ export function springApart(o: { ma: number; mb: number; k: number; x0: number; 
     }).model;
   };
   return { formula, simulation };
+}
+
+// ───────────── radial motion toward or away from a planet (g changes with the distance) ─────────────
+
+/**
+ * Starts at distance r0 from the center with radial velocity v0 (+ away), and ends at r1 (the motion must not turn
+ * before it). Build 1: v from energy, v² = v0² + 2GM(1/r − 1/r0), and the time as the sum of dr/v.
+ * Build 2: step by step with a = −GM/r². Values: vEnd. Optional named distances: events and v@name.
+ */
+export function radialMotion(o: { gm: number; r0: number; v0: number; r1: number; points?: Record<string, number>; dt?: number; gm2?: number; d?: number }): { formula: () => Model; simulation: () => Model; T: () => number } {
+  const { gm, r0, v0, r1 } = o, dir = Math.sign(r1 - r0);
+  // a second body (gm2) on the same line, at distance d from the first one's center (the Moon, for instance)
+  const gm2 = o.gm2 ?? 0, d = o.d ?? Infinity;
+  const pot = (r: number) => -gm / r - (gm2 ? gm2 / (d - r) : 0);
+  const vAt = (r: number) => Math.sqrt(Math.max(0, v0 * v0 + 2 * (pot(r0) - pot(r))));
+  const N = 40000, rs: number[] = [r0], ts: number[] = [0];
+  for (let i = 1; i <= N; i++) {
+    // denser steps near the ends, where the speed may be small
+    const u = (1 - Math.cos((Math.PI * i) / N)) / 2, r = r0 + (r1 - r0) * u, ra = rs[i - 1];
+    const vm = (vAt(ra) + vAt(r)) / 2;
+    rs.push(r); ts.push(ts[i - 1] + Math.abs(r - ra) / Math.max(vm, 1e-12));
+  }
+  const T = ts[N];
+  const tOf = (r: number) => { let lo = 0, hi = N; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if ((rs[mid] - r) * dir <= 0) lo = mid; else hi = mid; } return ts[lo] + ((r - rs[lo]) / (rs[hi] - rs[lo] || 1)) * (ts[hi] - ts[lo]); };
+  const formula = (): Model => {
+    const state = (tq: number): State => {
+      const t = Math.min(Math.max(tq, 0), T);
+      let lo = 0, hi = N; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (ts[mid] <= t) lo = mid; else hi = mid; }
+      const r = rs[lo] + ((t - ts[lo]) / (ts[hi] - ts[lo] || 1)) * (rs[hi] - rs[lo]);
+      return { b: body(0, r, 0, dir * vAt(r)) };
+    };
+    const events: Record<string, number> = { end: T }, values: Record<string, number> = { vEnd: vAt(r1) };
+    for (const [n, r] of Object.entries(o.points ?? {})) { events[n] = tOf(r); values[`v@${n}`] = vAt(r); }
+    return { state, events, values };
+  };
+  // build 2: step by step from the force, with a fourth-order (Runge–Kutta) step, since the trip can be long
+  const simulation = (): Model => {
+    const acc = (r: number) => -gm / (r * r) + (gm2 ? gm2 / (d - r) ** 2 : 0);
+    const dt = o.dt ?? T / 2e5;
+    const ts2: number[] = [0], rr: number[] = [r0], vv: number[] = [v0];
+    const events: Record<string, number> = {}, values: Record<string, number> = {};
+    const marks = Object.entries(o.points ?? {});
+    let r = r0, v = v0, t = 0;
+    while ((r - r1) * dir < 0 && t < T * 1.5) {
+      const k1r = v, k1v = acc(r);
+      const k2r = v + 0.5 * dt * k1v, k2v = acc(r + 0.5 * dt * k1r);
+      const k3r = v + 0.5 * dt * k2v, k3v = acc(r + 0.5 * dt * k2r);
+      const k4r = v + dt * k3v, k4v = acc(r + dt * k3r);
+      const rn = r + (dt / 6) * (k1r + 2 * k2r + 2 * k3r + k4r), vn = v + (dt / 6) * (k1v + 2 * k2v + 2 * k3v + k4v);
+      // events: where a named distance (or the end) is crossed inside the step, by linear interpolation
+      for (const [n, rp] of [...marks, ["end", r1] as [string, number]]) {
+        if (events[n] === undefined && (r - rp) * dir < 0 && (rn - rp) * dir >= 0) {
+          const f = (rp - r) / (rn - r); events[n] = t + f * dt; values[n === "end" ? "vEnd" : `v@${n}`] = Math.abs(v + f * (vn - v));
+        }
+      }
+      r = rn; v = vn; t += dt;
+      ts2.push(t); rr.push(r); vv.push(v);
+    }
+    const state = (tq: number): State => {
+      const tt = Math.min(Math.max(tq, 0), t);
+      let lo = 0, hi = ts2.length - 1; while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (ts2[mid] <= tt) lo = mid; else hi = mid; }
+      const f = (tt - ts2[lo]) / (ts2[hi] - ts2[lo] || 1);
+      return { b: body(0, rr[lo] + f * (rr[hi] - rr[lo]), 0, vv[lo] + f * (vv[hi] - vv[lo])) };
+    };
+    return { state, events, values };
+  };
+  return { formula, simulation, T: () => T };
 }
