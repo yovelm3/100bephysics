@@ -524,3 +524,95 @@ export function spinMotion(o: Spin): Spec {
 export function seg(a: [number, number], b: [number, number], n = 40): [number, number][] {
   return Array.from({ length: n }, (_, i) => [a[0] + ((b[0] - a[0]) * (i + 1)) / n, a[1] + ((b[1] - a[1]) * (i + 1)) / n] as [number, number]);
 }
+
+// ───────────── a head-on collision of two bodies (or a body and a wall) ─────────────
+
+export type Collision = {
+  id: string;
+  /** Centers (m), velocities (m/s), masses (kg) and widths (m, for the contact) of the two bodies. */
+  a: { m: number; x: number; v: number; w: number };
+  /** The second body, or a wall at x (its face). */
+  b: { m: number; x: number; v: number; w: number } | { wall: number };
+  kind: "elastic" | "plastic";
+  /** Stiffness of the contact (N/m): the collision lasts about π·√(μ/k). */
+  k: number;
+  /** How long the story lasts. */
+  tEnd: number;
+  answers?: Record<string, [number, number]>;
+  view: Spec["view"];
+  views?: Spec["view"][];
+  parts: PartAnim[];
+  draw: (P: Painter, m: Model, t: number, part: number) => void;
+};
+
+/**
+ * Build 1: closed formulas: the center of mass moves uniformly, and during the contact the compression is
+ * (v_rel/ω)·sin(ωτ), ω = √(k/μ) (for a plastic collision the bodies lock at the largest compression).
+ * Build 2: step by step with a contact force k·overlap; a plastic collision locks when the bodies stop approaching.
+ * Values: va, vb (after), F (the largest contact force), dK (kinetic energy lost).
+ */
+export function collision(o: Collision): Spec {
+  const wall = "wall" in o.b;
+  const A = o.a, Bb = wall ? { m: Infinity, x: (o.b as { wall: number }).wall, v: 0, w: 0 } : (o.b as Collision["a"]);
+  const D0 = (A.w + Bb.w) / 2;
+  const mu = wall ? A.m : (A.m * Bb.m) / (A.m + Bb.m);
+  const Mt = wall ? A.m : A.m + Bb.m;
+  const w = Math.sqrt(o.k / mu);
+  const vrel = A.v - Bb.v;
+  const tHit = (Bb.x - A.x - D0) / vrel;
+  const plastic = o.kind === "plastic";
+  const tau = plastic ? Math.PI / (2 * w) : Math.PI / w;
+  const Vc = wall ? 0 : (A.m * A.v + Bb.m * Bb.v) / Mt;
+  const after = plastic ? { va: Vc, vb: wall ? 0 : Vc } : wall ? { va: -A.v, vb: 0 } : { va: (2 * Vc - A.v), vb: (2 * Vc - Bb.v) };
+  const K0 = 0.5 * A.m * A.v ** 2 + (wall ? 0 : 0.5 * Bb.m * Bb.v ** 2);
+  const K1 = 0.5 * A.m * after.va ** 2 + (wall ? 0 : 0.5 * Bb.m * after.vb ** 2);
+  const formula = (): Model => {
+    const xa1 = A.x + A.v * tHit, xb1 = Bb.x + Bb.v * tHit;
+    const sMax = vrel / w;
+    const state = (tq: number): State => {
+      const t = Math.min(Math.max(tq, 0), o.tEnd);
+      if (t <= tHit) return { a: body(A.x + A.v * t, 0, A.v, 0), b: body(Bb.x + Bb.v * t, 0, Bb.v, 0) };
+      const u = Math.min(t - tHit, tau);
+      const s = (vrel / w) * Math.sin(w * u), ds = vrel * Math.cos(w * u);
+      let xa: number, xb: number, va: number, vb: number;
+      if (wall) { xa = xa1 + s; xb = Bb.x; va = ds; vb = 0; }
+      else {
+        const xc = (A.m * xa1 + Bb.m * xb1) / Mt + Vc * u, d = D0 - s;
+        xa = xc - (Bb.m / Mt) * d; xb = xc + (A.m / Mt) * d; va = Vc + (Bb.m / Mt) * ds; vb = Vc - (A.m / Mt) * ds;
+      }
+      const rest = t - tHit - u;
+      return { a: body(xa + after.va * rest, 0, rest > 0 ? after.va : va, 0), b: body(xb + after.vb * rest, 0, rest > 0 ? after.vb : vb, 0) };
+    };
+    return { state, events: { hit: tHit, [plastic ? "stick" : "sep"]: tHit + tau, end: o.tEnd }, values: { ...after, F: o.k * sMax, ...(plastic ? { dK: K0 - K1 } : {}) } };
+  };
+  const simulation = (): Model => {
+    let stuck = false, Fmax = 0;
+    const overlap = (s: State) => D0 - (s.b.x - s.a.x);
+    const res = simulate({
+      init: { a: body(A.x, 0, A.v, 0), b: body(Bb.x, 0, Bb.v, 0) },
+      accel: (s) => {
+        if (stuck) return { a: { ax: 0, ay: 0 }, b: { ax: 0, ay: 0 } };
+        const F = Math.max(0, o.k * overlap(s));
+        Fmax = Math.max(Fmax, F);
+        return { a: { ax: -F / A.m, ay: 0 }, b: { ax: wall ? 0 : F / Bb.m, ay: 0 } };
+      },
+      events: [
+        { name: "hit", when: (s) => overlap(s) >= 0 },
+        plastic
+          ? { name: "stick", when: (s, _t, f) => f.has("hit") && s.a.vx - s.b.vx <= 0, then: (s) => { const V = wall ? 0 : (A.m * s.a.vx + Bb.m * s.b.vx) / Mt; s.a.vx = V; s.b.vx = V; stuck = true; }, record: () => ({ F: Fmax }) }
+          : { name: "sep", when: (s, _t, f) => f.has("hit") && overlap(s) < 0, record: (s) => ({ va: s.a.vx, vb: s.b.vx, F: Fmax }) },
+        { name: "end", when: (_s, t) => t >= o.tEnd - 1e-12, stop: true, record: (s): Record<string, number> => ({ va: s.a.vx, vb: s.b.vx, ...(plastic ? { dK: K0 - 0.5 * A.m * s.a.vx ** 2 - (wall ? 0 : 0.5 * Bb.m * s.b.vx ** 2) } : {}) }) },
+      ],
+      tMax: o.tEnd * 1.01,
+      dt: tau / 4000,
+      sampleDt: Math.min(tau / 50, o.tEnd / 2000),
+    });
+    return res.model;
+  };
+  return {
+    id: o.id, view: o.view, views: o.views, formula, simulation, answers: o.answers,
+    order: ["hit", plastic ? "stick" : "sep", "end"],
+    scale: Math.max(1e-3, Math.abs(A.v) * o.tEnd), relTol: 3e-3, tolTime: tau / 20,
+    parts: o.parts, draw: o.draw,
+  };
+}
