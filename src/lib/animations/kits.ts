@@ -616,3 +616,39 @@ export function collision(o: Collision): Spec {
     parts: o.parts, draw: o.draw,
   };
 }
+
+// ───────────── two bodies pushed apart by a compressed spring (touching, not attached) ─────────────
+
+/**
+ * Bodies a (left) and b (right) at rest, a spring of natural length L0 compressed by x0 between them.
+ * Build 1: the compression is x0·cos(ωt), ω = √(k/μ), until it reaches zero; then constant speeds.
+ * Build 2: the spring force k·compression, step by step, until it lets go. Values: va, vb (after), E (stored).
+ */
+export function springApart(o: { ma: number; mb: number; k: number; x0: number; L0: number; tEnd: number }): { formula: () => Model; simulation: () => Model } {
+  const { ma, mb, k, x0, L0, tEnd } = o, M = ma + mb;
+  const mu = (ma * mb) / M, w = Math.sqrt(k / mu), tau = Math.PI / (2 * w);
+  const formula = (): Model => {
+    const state = (tq: number): State => {
+      const t = Math.min(Math.max(tq, 0), tEnd), u = Math.min(t, tau);
+      const s = x0 * Math.cos(w * u), ds = -x0 * w * Math.sin(w * u);
+      const d = L0 - s, xa = -(mb / M) * d, xb = (ma / M) * d, va = (mb / M) * ds, vb = -(ma / M) * ds, rest = t - u;
+      return { a: body(xa + va * rest, 0, va, 0), b: body(xb + vb * rest, 0, vb, 0) };
+    };
+    const v = x0 * w;
+    return { state, events: { free: tau, end: tEnd }, values: { va: -(mb / M) * v, vb: (ma / M) * v, E: 0.5 * k * x0 * x0 } };
+  };
+  const simulation = (): Model => {
+    const comp = (s: State) => L0 - (s.b.x - s.a.x);
+    return simulate({
+      init: { a: body(-(mb / M) * (L0 - x0), 0, 0, 0), b: body((ma / M) * (L0 - x0), 0, 0, 0) },
+      accel: (s) => { const F = Math.max(0, k * comp(s)); return { a: { ax: -F / ma, ay: 0 }, b: { ax: F / mb, ay: 0 } }; },
+      events: [
+        { name: "free", when: (s) => comp(s) <= 0, record: (s) => ({ va: s.a.vx, vb: s.b.vx, E: 0.5 * ma * s.a.vx ** 2 + 0.5 * mb * s.b.vx ** 2 }) },
+        { name: "end", when: (_s, t) => t >= tEnd - 1e-12, stop: true },
+      ],
+      tMax: tEnd * 1.1,
+      dt: tau / 3000,
+    }).model;
+  };
+  return { formula, simulation };
+}

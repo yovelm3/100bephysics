@@ -15,7 +15,7 @@ const hit = collision({
   tEnd: 0.0016,
   answers: { vb: [1, 1e-9] },
   view: { x0: -0.6, x1: 0.3, y0: -0.25, y1: 0.2 },
-  parts: [{ to: (m) => m.events.end, pace: 2000, caption: "הקליע נתקע בגוש. האם האנרגיה המכנית נשמרת בהתנגשות?" }],
+  parts: [{ to: (m) => m.events.end, pace: 2000, hideClock: true, caption: "הקליע נתקע בגוש. האם האנרגיה המכנית נשמרת בהתנגשות?" }],
   draw: (P, m, t) => {
     const s = m.state(t);
     P.line(0, 0.2, s.b.x, 0.1, { tone: "line", w: 1.4 });
