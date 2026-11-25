@@ -43,10 +43,19 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
     // the key moment being shown: a ring around the place and its label
     const h = holds.find((k, i) => holding === i || Math.abs(t - k.at) < 1e-9);
     if (h) {
-      if (h.where) {
-        painter.circle(h.where[0], h.where[1], 22, { fill: "none", tone: "runner", w: 3, dash: "5 4" });
-        painter.heb(h.where[0], h.where[1], h.label, { tone: "runner", size: 14, dyPx: -32 });
-      } else painter.textPx(view.w / 2, 26, h.label, { tone: "runner", size: 15, heb: true });
+      if (h.where) painter.circle(h.where[0], h.where[1], 22, { fill: "none", tone: "runner", w: 3, dash: "5 4" });
+      // the label sits in a banner at the top, so it never covers the bodies or their labels
+      painter.textPx(view.w / 2, 24, h.label, { tone: "runner", size: 15, heb: true, weight: 700 });
+      const svg = svgRef.current, txt = svg.lastElementChild as SVGTextElement | null;
+      if (txt && txt.tagName === "text") {
+        const bb = txt.getBBox();
+        const bg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        bg.setAttribute("x", String(bb.x - 10)); bg.setAttribute("y", String(bb.y - 4));
+        bg.setAttribute("width", String(bb.width + 20)); bg.setAttribute("height", String(bb.height + 8));
+        bg.setAttribute("rx", "8"); bg.setAttribute("fill", "#ffffff"); bg.setAttribute("fill-opacity", "0.95");
+        bg.setAttribute("stroke", txt.getAttribute("fill") ?? "#2563eb"); bg.setAttribute("stroke-width", "1.5");
+        svg.insertBefore(bg, txt);
+      }
     }
     // view is derived from spec
     // eslint-disable-next-line react-hooks/exhaustive-deps
