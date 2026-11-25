@@ -21,21 +21,34 @@ export const spec = storySpec({
   order: ["land", "stop"],
   answers: { d: [8, 1e-9], V: [2, 1e-9], dist: [1, 1e-9] },
   parts: [
-    { to: (m) => m.events.land, pace: 1.5, caption: "הגוש נזרק אופקית מגובה 5 m. באיזה מרחק מהבניין הוא פוגע בקרונית?" },
-    { to: (m) => m.events.land, pace: 1.5, caption: "מה גודל המהירות של הגוש רגע לפני הפגיעה, ומה הזווית שלה עם האופק?" },
-    { to: (m) => m.events.land + 0.2, pace: 1.5, caption: "הגוש נדבק לקרונית. מה המהירות המשותפת מיד אחרי ההתנגשות?" },
-    { to: (m) => m.events.stop, pace: 1.5, caption: "μ = 0.2. איזה מרחק עוברת הקרונית עד שהיא נעצרת?" },
+    { to: (m) => m.events.land, pace: 1.5, caption: "הגוש נזרק אופקית מגובה 5 m. באיזה מרחק מהבניין הוא פוגע בקרונית? שימו לב לשני רכיבי המהירות.",
+      holds: (m) => [{ at: m.events.land, label: "פוגע בקרונית", where: [8, 0.5] }] },
+    { to: (m) => m.events.land, pace: 1.5, caption: "מה גודל המהירות של הגוש רגע לפני הפגיעה, ומה הזווית שלה עם האופק?",
+      holds: (m) => [{ at: m.events.land, label: "רגע לפני הפגיעה", where: [8, 0.5] }] },
+    { from: (m) => m.events.land - 0.25, to: (m) => m.events.land + 0.3, pace: 3, caption: "הגוש נדבק לקרונית. מה המהירות המשותפת מיד אחרי ההתנגשות? רק הרכיב האופקי ממשיך.",
+      holds: (m) => [{ at: m.events.land, label: "הגוש נדבק לקרונית", where: [8, 0.5] }] },
+    { from: (m) => m.events.land, to: (m) => m.events.stop + 0.2, pace: 1.5, caption: "החיכוך עם המשטח (μ = 0.2) מאט את הקרונית עם הגוש. איזה מרחק היא עוברת עד שהיא נעצרת?",
+      holds: (m) => [{ at: m.events.stop, label: "נעצרת", where: [m.state(m.events.stop).c.x, 0.5] }] },
   ],
   draw: (P, m, t, part) => {
     P.ground(0, -2.4, 10.8);
     P.poly([[-2, 0], [0, 0], [0, 5], [-2, 5]]);
     const s = m.state(t), landed = t >= m.events.land - 1e-9;
+    // data where it acts
+    if (part <= 1) P.dim(-2.2, 0, -2.2, 5, "5 m", { offPx: 0 });
+    if (t < 0.25) P.mono(0, 5, "8 m/s", { tone: "data", size: 12, dxPx: 10, dyPx: -20, anchor: "start" });
+    if (part >= 2) { P.mono(8, 0, "1.5 kg", { tone: "data", size: 11, dyPx: 18 }); if (!landed) P.mono(s.p.x, s.p.y, "0.5 kg", { tone: "data", size: 11, dxPx: 12, anchor: "start" }); }
+    if (part === 3) P.mono(6, 0, "μ = 0.2", { tone: "data", size: 11, dyPx: 18 });
     P.cart(s.c.x, 0, { wPx: 50, tone: "b2" });
     P.circle(s.p.x, landed ? 0.55 : s.p.y + 0.1, 6, { fill: "runner" });
-    if (!landed) P.arrowPx(s.p.x, s.p.y + 0.1, s.p.vx * 5, -s.p.vy * 5, { tone: "vel", label: "v" });
-    else if (s.c.vx > 0.02) P.arrowPx(s.c.x, 1.2, s.c.vx * 18, 0, { tone: "vel", label: "v" });
+    if (!landed) {
+      // the two parts of the velocity: horizontal stays, vertical grows
+      if (part <= 1) { P.arrowPx(s.p.x, s.p.y + 0.1, s.p.vx * 5, 0, { tone: "vel", label: "vx" }); P.arrowPx(s.p.x, s.p.y + 0.1, 0, -s.p.vy * 5, { tone: "vel", label: "vy" }); }
+      else P.arrowPx(s.p.x, s.p.y + 0.1, s.p.vx * 5, -s.p.vy * 5, { tone: "vel", label: "v" });
+    } else if (s.c.vx > 0.02) P.arrowPx(s.c.x, 1.2, s.c.vx * 18, 0, { tone: "vel", label: "V" });
+    if (part === 3 && s.c.vx > 0.02) P.arrowPx(s.c.x - 0.6, 0.35, -30, 0, { tone: "force", label: "f" });
     if (part === 0 && landed) askWidth(P, 0, 8, 0, "d = ?", 40);
-    if (part === 1 && t >= m.events.land - 0.05) askLabel(P, s.p.x, 0.6, "v = ?, θ = ?", -100, -30);
+    if (part === 1 && landed) askLabel(P, s.p.x, 0.6, "v = ?, θ = ?", -100, -30);
     if (part === 2 && landed) askLabel(P, s.c.x, 1.2, "V = ?", 20, -20);
     if (part === 3 && t >= m.events.stop - 1e-9) askWidth(P, 8, s.c.x, 0, "d = ?", 40);
   },

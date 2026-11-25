@@ -1,4 +1,4 @@
-import { body, simulate, type AnimSpec, type Model, type Painter, type State } from "../engine";
+import { body, simulate, type AnimSpec, type Model, type Painter, type PartAnim, type State } from "../engine";
 import { askLabel } from "../kits";
 
 /**
@@ -7,7 +7,7 @@ import { askLabel } from "../kits";
  * the weight is balanced at equilibrium, so the net force is still −k·x).
  * Events: eq1, eq2… when it passes equilibrium; turn1, turn2… when it stops for a moment (after the start).
  */
-type Ask = { caption: string; ask?: string; at?: "body" | "eq" | "top" | "spring"; until?: number; from?: number; clock?: boolean };
+type Ask = { holds?: PartAnim["holds"]; caption: string; ask?: string; at?: "body" | "eq" | "top" | "spring"; until?: number; from?: number; clock?: boolean };
 export function shmSpec(o: {
   id: string; k: number; m: number; A: number; vertical?: boolean; periods?: number; L0?: number;
   /** Start at equilibrium moving with the full speed (x = A·sin ωt) instead of at rest at A. */
@@ -64,7 +64,7 @@ export function shmSpec(o: {
     order: ev,
     scale: Math.abs(o.A) * 2,
     answers: o.answers,
-    parts: o.parts.map((p) => ({ from: p.from !== undefined ? () => p.from! * T : undefined, to: () => (p.until ?? (o.periods ?? 1.5)) * T, pace: Math.max(1, 3 / T), hideClock: !(p.clock ?? true), caption: p.caption })),
+    parts: o.parts.map((p) => ({ from: p.from !== undefined ? () => p.from! * T : undefined, to: () => (p.until ?? (o.periods ?? 1.5)) * T, pace: Math.max(1, 3 / T), hideClock: !(p.clock ?? true), caption: p.caption, holds: p.holds })),
     draw: (P, m, t, part) => {
       const x = m.state(t).b.x;
       if (o.vertical) {

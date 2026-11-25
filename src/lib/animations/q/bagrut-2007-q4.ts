@@ -25,21 +25,38 @@ const main = trackMotion({
   bare: true,
   answers: { "v@E": [Math.sqrt(8), 1e-3], "v@F": [4, 1e-3] },
   parts: [
-    { to: (m) => m.events.E, pace: 1.5, caption: "הגוף משוחרר ממנוחה ב-A. מה הכוח שהמסילה מפעילה עליו בנקודה E?" },
-    { to: (m) => m.events.end, pace: 1.5, caption: "למה האנרגיה המכנית נשמרת? מה עם הכוח הנורמלי?" },
-    { from: (m) => m.events.C, to: (m) => m.events.E, pace: 1.5, caption: "למה המהירות קטנה בזמן שהגוף עולה מ-C ל-E?" },
-    { to: (m) => m.events.F, pace: 1.5, caption: "מה הכוח שהגוף מפעיל על המסילה בנקודה F?" },
+    { to: (m) => m.events.E, pace: 1.5, caption: "הגוף משוחרר ממנוחה ב-A, 1.2 m מעל C. מה הכוח שהמסילה מפעילה עליו בנקודה E, בגודל ובכיוון?",
+      holds: (m) => [{ at: m.events.C, label: "נכנס ללולאה", where: [0, 0] }, { at: m.events.E, label: "הנקודה הגבוהה בלולאה", where: [0, 2 * r] }] },
+    { to: (m) => m.events.F, pace: 1.5, caption: "למה האנרגיה המכנית נשמרת? שימו לב לכיוון של הכוח הנורמלי ביחס לכיוון התנועה.",
+      holds: (m) => [{ at: m.events.D, label: "הכוח הנורמלי ניצב לתנועה", where: [r, r] }] },
+    { from: (m) => m.events.C, to: (m) => m.events.E, pace: 2, caption: "למה המהירות קטנה בזמן שהגוף עולה מ-C ל-E? הסתכלו על כוח הכובד ביחס לכיוון התנועה.",
+      holds: (m) => [{ at: m.events.D, label: "כוח הכובד נגד התנועה", where: [r, r] }] },
+    { to: (m) => m.events.F, pace: 1.5, caption: "מה הכוח שהגוף מפעיל על המסילה בנקודה F, בקצה הקוטר האופקי?",
+      holds: (m) => [{ at: m.events.F, label: "הגוף בנקודה F", where: [-r, r] }] },
   ],
   extra: (P, m, t, part) => {
     draw0(P);
     P.mono(-1.2 / Math.tan(th), 1.2, "A", { tone: "data", size: 12, dyPx: -10 });
     const b = m.state(t).b;
+    // data where it acts: the height of A above C, the loop's radius, the mass
+    if (part === 0 || part === 3) { P.dim(-1.95, 0, -1.95, 1.2, "1.2 m", { offPx: 0 }); P.mono(0, r, "r = 0.4 m", { tone: "data", size: 11, dyPx: 4 }); }
+    if (t < 0.3) P.mono(b.x, b.y, "0.2 kg", { tone: "data", size: 11, dyPx: -14 });
     P.circle(b.x, b.y, 7, { fill: "body" });
     if (Math.hypot(b.vx, b.vy) > 0.05) P.arrowPx(b.x, b.y, b.vx * 9, -b.vy * 9, { tone: "vel", label: "v" });
-    if (part === 0 && t >= m.events.E - 1e-9) askLabel(P, 0, 2 * r, "N = ?", 16, -14);
-    if (part === 1) askLabel(P, b.x, b.y, "E = const ?", 16, -14);
-    if (part === 2) askLabel(P, b.x, b.y, "?", 16, -14);
-    if (part === 3 && t >= m.events.F - 1e-9) askLabel(P, -r, r, "F = ?", -50, 0);
+    const inLoop = t >= m.events.C;
+    const toC = inLoop ? [(0 - b.x), (r - b.y)] : [0, 1];
+    const n = Math.hypot(toC[0], toC[1]) || 1;
+    if (part === 1 && inLoop) P.arrowPx(b.x, b.y, (toC[0] / n) * 34, (-toC[1] / n) * 34, { tone: "force", label: "N" });
+    if (part === 2) {
+      P.arrowPx(b.x, b.y, 0, 34, { tone: "force", label: "mg" });
+      // the part of the weight along the motion (against it on the way up)
+      const v = Math.hypot(b.vx, b.vy) || 1, comp = -10 * (b.vy / v);
+      P.arrowPx(b.x, b.y, (b.vx / v) * comp * 3, (-b.vy / v) * comp * 3, { tone: "ask", w: 2 });
+      askLabel(P, b.x, b.y, "v ↓ ?", 16, -14);
+    }
+    if (part === 0 && t >= m.events.E - 1e-9) { P.arrowPx(0, 2 * r, 0, 30, { tone: "force", label: "mg" }); P.arrowPx(0.06, 2 * r, 0, 30, { tone: "ask", label: "N ?" }); askLabel(P, 0, 2 * r, "N = ?", 30, -24); }
+    if (part === 1) askLabel(P, 0.8, 1.1, "E = const ?", 0, 0);
+    if (part === 3 && t >= m.events.F - 1e-9) { P.arrowPx(-r, r, 34, 0, { tone: "ask", label: "?" }); askLabel(P, -r, r, "F = ?", -60, 0); }
   },
 });
 const fromB = trackMotion({
@@ -47,10 +64,12 @@ const fromB = trackMotion({
   path: [...start(0.9), ...loop.slice(0, 200)],
   view: { x0: -2.1, x1: 1.3, y0: -0.25, y1: 1.45 },
   bare: true,
-  parts: [{ to: (m) => m.events.end, pace: 1.5, caption: "הפעם הגוף משוחרר מ-B, 0.9 m מעל C. האם הוא מגיע לנקודה E?" }],
+  parts: [{ to: (m) => m.events.end, pace: 1.5, caption: "הפעם הגוף משוחרר מ-B, 0.9 m מעל C. האם הוא מגיע לנקודה E?",
+    holds: (m) => [{ at: m.events.end, label: "מה קורה לגוף כאן?", secs: 1.8 }] }],
   extra: (P, m, t) => {
     draw0(P);
     P.mono(-0.9 / Math.tan(th), 0.9, "B", { tone: "data", size: 12, dyPx: -10 });
+    P.dim(-1.75, 0, -1.75, 0.9, "0.9 m", { offPx: 0 });
     const b = m.state(t).b;
     P.circle(b.x, b.y, 7, { fill: "body" });
     if (t >= m.events.end - 1e-9) askLabel(P, 0, 2 * r, "E ?", 16, -14);

@@ -1,5 +1,5 @@
 import { body, simulate, type AnimSpec, type Model, type State } from "../engine";
-import { askLabel, askSpan } from "../kits";
+import { askLabel } from "../kits";
 
 /**
  * 2010 q4: 1.5 kg let go at A (H = 3 m); smooth down to C (h = 1 m), then a rough level part CD (1 m, μk = 0.3), then a
@@ -52,15 +52,20 @@ export const spec: AnimSpec = {
   tolTime: 2e-3,
   answers: { vD: [5.830951894845301, 1e-6], DF: [0.1, 1e-3], hUp: [2.4, 1e-3] },
   parts: [
-    { to: (mm) => mm.events.F, pace: 1, caption: "אילו סוגי אנרגיה יש לגוף בכל אחת מהנקודות A, B, C, D, F?" },
-    { to: () => 0.02, pace: 1, caption: "מה המהירות של הגוף בנקודה C, בדרכו אל F?" },
-    { to: (mm) => mm.events.D, pace: 1, caption: "מה המהירות בנקודה D?" },
-    { to: (mm) => mm.events.F, pace: 1, caption: "הגוף נעצר לרגע ב-F, אחרי שכיווץ את הקפיץ ב-0.1 m. מה קבוע הקפיץ?" },
-    { to: (mm) => mm.events.C, pace: 1, caption: "הגוף חוזר. לאיזה גובה הוא עולה אחרי שעזב את הקפיץ?" },
-    { to: (mm) => mm.events.F, pace: 1, caption: "קפיץ קשה יותר, באותו אורך. האם הגובה שאליו יעלה יהיה קטן, גדול או שווה?" },
+    { to: (mm) => mm.events.F, pace: 1, caption: "אילו סוגי אנרגיה יש לגוף בכל אחת מהנקודות A, B, C, D, F? (הסיפור מתחיל ב-C, אחרי הירידה מ-A.)",
+      holds: (mm) => [{ at: mm.events.D, label: "מגיע לקפיץ", where: [L, hC] }, { at: mm.events.F, label: "עצירה רגעית: הקפיץ מכווץ ביותר", where: [L + 0.1, hC] }] },
+    { to: () => 0.05, pace: 1, caption: "מה המהירות של הגוף בנקודה C, בדרכו אל F? הוא ירד מ-A, 3 m מעל MN, בלי חיכוך.",
+      holds: () => [{ at: 0.01, label: "הגוף בנקודה C", where: [0, hC] }] },
+    { to: (mm) => mm.events.D, pace: 1, caption: "על הקטע CD פועל חיכוך (μ = 0.3) נגד התנועה. מה המהירות בנקודה D?",
+      holds: (mm) => [{ at: mm.events.D, label: "סוף הקטע המחוספס", where: [L, hC] }] },
+    { from: (mm) => mm.events.D - 0.05, to: (mm) => mm.events.F + 0.05, pace: 6, caption: "הקפיץ דוחף יותר ויותר ככל שהוא מתכווץ, עד שהגוף נעצר ב-F. מה קבוע הקפיץ?",
+      holds: (mm) => [{ at: mm.events.F, label: "עצירה רגעית", where: [L + 0.1, hC] }] },
+    { from: (mm) => mm.events.F, to: (mm) => mm.events.C, pace: 1, caption: "הגוף חוזר. על CD החיכוך מתהפך: עכשיו הוא שוב נגד התנועה. לאיזה גובה הגוף עולה אחרי שעזב את הקפיץ?",
+      holds: (mm) => [{ at: mm.events.out, label: "עוזב את הקפיץ", where: [L, hC] }, { at: mm.events.C, label: "חוזר לחלק החלק", where: [0, hC] }] },
+    { from: (mm) => mm.events.D - 0.05, to: (mm) => mm.events.F + 0.05, pace: 6, caption: "קפיץ קשה יותר, באותו אורך. מה משתנה בכיווץ, ומה קורה לגובה שאליו הגוף יעלה?",
+      holds: (mm) => [{ at: mm.events.F, label: "הכיווץ המרבי", where: [L + 0.1, hC] }] },
   ],
   draw: (P, mm, t, part) => {
-    // the smooth part: from A (3 m) down to B and to C (1 m), drawn as a curve; then CD and the spring
     const curve: [number, number][] = Array.from({ length: 41 }, (_, i) => { const u = i / 40; return [Ax + (0 - Ax) * u, hC + (3 - hC) * (1 - u) ** 2 - 0.6 * Math.sin(Math.PI * u) ** 2] as [number, number]; });
     P.poly(curve, { close: false, fill: "none", tone: "line", w: 2.4 });
     P.line(0, hC, L, hC, { tone: "line", w: 2.4 }); P.poly([[0, hC], [L, hC], [L, hC - 0.06], [0, hC - 0.06]], { tone: "soft", fill: "soft" });
@@ -72,11 +77,20 @@ export const spec: AnimSpec = {
     P.block(b.x, hC, { wPx: 18, hPx: 16 });
     for (const [l, x, y] of [["A", Ax, 3], ["C", 0, hC], ["D", L, hC], ["F", L + 0.1, hC]] as const) P.mono(x, y, l, { tone: "data", size: 11, dyPx: l === "A" ? -10 : 16 });
     P.line(-2.9, 0, 1.5, 0, { tone: "idle", w: 1, dash: "4 4" }); P.mono(-2.9, 0, "MN", { tone: "data", size: 10, dyPx: 14, anchor: "start" });
+    // data where it acts
+    if (part <= 1) { P.dim(Ax - 0.2, 0, Ax - 0.2, 3, "H = 3 m", { offPx: 0 }); P.dim(-0.15, 0, -0.15, hC, "h = 1 m", { offPx: 0 }); }
+    if (part === 2 || part === 4) { P.mono(L / 2, hC, "μ = 0.3", { tone: "data", size: 11, dyPx: 18 }); P.mono(L / 2, hC, "1 m", { tone: "data", size: 10, dyPx: 32 }); }
+    if (part === 3) P.mono(L + 0.05, hC, "0.1 m", { tone: "data", size: 10, dyPx: 32 });
+    const v = b.vx;
+    if (Math.abs(v) > 0.05) P.arrowPx(b.x, hC + 0.4, v * 6, 0, { tone: "vel", label: "v" });
+    // friction against the motion on CD, and the spring's push beyond D
+    if ((part === 2 || part === 4) && b.x < L && Math.abs(v) > 0.05) P.arrowPx(b.x, hC + 0.12, -Math.sign(v) * 26, 0, { tone: "force", label: "f" });
+    if ((part === 3 || part === 5) && b.x > L) P.arrowPx(b.x + 0.06, hC + 0.12, -(10 + 400 * (b.x - L)), 0, { tone: "force", label: "F" });
     if (part === 0) askLabel(P, -1.2, 2.8, "Ek, Ep, Eel ?", 0, 0);
     if (part === 1) askLabel(P, 0, hC, "vC = ?", 0, -30);
     if (part === 2 && t >= mm.events.D - 1e-9) askLabel(P, L, hC, "vD = ?", 0, -30);
-    if (part === 3 && t >= mm.events.F - 1e-9) askLabel(P, L + 0.1, hC, "k = ?", 0, -30);
-    if (part === 4 && t >= mm.events.C - 1e-9) askSpan(P, -0.3, 0, hC + 1.4, "h = ?", 0);
-    if (part === 5) askLabel(P, 1.3, hC + 0.12, "k ↑ ?", 0, -26);
+    if (part === 3 && t >= mm.events.F - 1e-9) askLabel(P, L + 0.1, hC, "K = ?", 0, -40);
+    if (part === 4 && t >= mm.events.C - 1e-9) askLabel(P, -0.6, hC + 0.5, "h max = ?", 0, 0);
+    if (part === 5) askLabel(P, 1.3, hC + 0.12, "K ↑ : h ?", 0, -36);
   },
 };

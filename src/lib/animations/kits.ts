@@ -359,7 +359,7 @@ export function joinSpecs(id: string, list: { key: string; spec: Spec; parts: nu
   for (const [l, i] of pairs) {
     const p = l.spec.parts[i];
     owners.push({ key: l.key, spec: l.spec, idx: i });
-    parts.push({ ...p, from: p.from ? (m) => p.from!(sub(m, l.key)) : undefined, to: (m) => p.to(sub(m, l.key)) });
+    parts.push({ ...p, from: p.from ? (m) => p.from!(sub(m, l.key)) : undefined, to: (m) => p.to(sub(m, l.key)), holds: p.holds ? (m) => p.holds!(sub(m, l.key)) : undefined });
   }
   const orders = list.map((l) => {
     const o = l.spec.order as (string | string[])[];

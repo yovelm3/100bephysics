@@ -29,6 +29,8 @@ describe("animations: two independent builds must agree, event by event and in o
       for (const p of spec.parts) {
         const a = p.from ? p.from(v.A) : 0, b = p.to(v.A);
         expect(Number.isFinite(a) && Number.isFinite(b) && b > a).toBe(true);
+        // key moments are real moments of the story, inside the part's window
+        for (const h of p.holds?.(v.A) ?? []) expect(Number.isFinite(h.at) && h.at > a && h.at <= b + 1e-9, `hold ${h.label}`).toBe(true);
       }
     });
   }

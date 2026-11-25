@@ -3,7 +3,7 @@ import { askLabel, radialMotion, spinMotion } from "../kits";
 
 /** Shared builders for the gravitation questions: a satellite in a circular orbit, and radial motion near a planet. */
 
-type Ask = { caption: string; ask?: string; at?: "sat" | "center" | "orbit" | "planet"; until?: number; from?: number; clock?: boolean };
+type Ask = { holds?: PartAnim["holds"]; caption: string; ask?: string; at?: "sat" | "center" | "orbit" | "planet"; until?: number; from?: number; clock?: boolean };
 export const disk = (P: Painter, x: number, y: number, r: number, tone: "b2" | "body" | "soft" = "b2") =>
   P.poly(Array.from({ length: 64 }, (_, i) => { const a = (2 * Math.PI * i) / 64; return [x + r * Math.cos(a), y + r * Math.sin(a)] as [number, number]; }), { tone, fill: tone === "soft" ? "soft" : "none", w: 2 });
 
@@ -20,6 +20,7 @@ export function orbitSpec(o: { id: string; R: number; r: number; gm: number; spa
     pace: 8 / T,
     hideClock: !p.clock,
     caption: p.caption,
+    holds: p.holds,
   }));
   return spinMotion({
     id: o.id, r: o.r, period: T, laps, gm: o.gm, answers: o.answers,
@@ -62,7 +63,7 @@ export function radialSpec(o: { id: string; R: number; gm: number; r0: number; v
     tolTime: T * 1e-3,
     relTol: 2e-3,
     answers: o.answers,
-    parts: o.parts.map((p) => ({ from: p.from ? () => p.from! * T : undefined, to: () => (p.until ?? 1) * T, pace: 8 / T, hideClock: !p.clock, caption: p.caption })),
+    parts: o.parts.map((p) => ({ from: p.from ? () => p.from! * T : undefined, to: () => (p.until ?? 1) * T, pace: 8 / T, hideClock: !p.clock, caption: p.caption, holds: p.holds })),
     draw: (P, m, t, part) => {
       // the planet seen from the side: its top arc, the center below the picture
       P.poly(Array.from({ length: 81 }, (_, i) => { const a = Math.PI / 2 + ((i - 40) / 40) * 0.9; return [o.R * Math.cos(a), o.R * Math.sin(a) - o.R] as [number, number]; }), { close: false, fill: "none", tone: "b2", w: 3 });

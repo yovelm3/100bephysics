@@ -20,6 +20,11 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
   const [t, setT] = useState(start);
   const [playing, setPlaying] = useState(false);
   const [slow, setSlow] = useState(false);
+  // key moments: the player waits there for a moment, and highlights them
+  const holds = useMemo(() => (P.holds ? P.holds(model) : []).filter((h) => h.at > start + 1e-9 && h.at <= end + 1e-9).sort((a, b) => a.at - b.at), [P, model, start, end]);
+  const passed = useRef(new Set<number>());
+  const holdUntil = useRef(0);
+  const [holding, setHolding] = useState<number | null>(null);
   const v0 = spec.views?.[p] ?? spec.view;
   const view = { ...v0, w: v0.w ?? W, h: v0.h ?? H };
 
@@ -27,15 +32,25 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
   useEffect(() => {
     setPlaying(false);
     setT(start);
+    passed.current.clear();
+    setHolding(null);
   }, [p, start]);
 
   useEffect(() => {
     if (!svgRef.current) return;
     const painter = svgPainter(svgRef.current, view);
     spec.draw(painter, model, t, p);
+    // the key moment being shown: a ring around the place and its label
+    const h = holds.find((k, i) => holding === i || Math.abs(t - k.at) < 1e-9);
+    if (h) {
+      if (h.where) {
+        painter.circle(h.where[0], h.where[1], 22, { fill: "none", tone: "runner", w: 3, dash: "5 4" });
+        painter.heb(h.where[0], h.where[1], h.label, { tone: "runner", size: 14, dyPx: -32 });
+      } else painter.textPx(view.w / 2, 26, h.label, { tone: "runner", size: 15, heb: true });
+    }
     // view is derived from spec
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [spec, model, t, p]);
+  }, [spec, model, t, p, holding, holds]);
 
   useEffect(() => {
     if (!playing) return;
@@ -44,8 +59,18 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
     const frame = (now: number) => {
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
+      if (now < holdUntil.current) { raf = requestAnimationFrame(frame); return; }
+      if (holdUntil.current) { holdUntil.current = 0; setHolding(null); }
       setT((prev) => {
         const next = prev + dt / (P.pace * (slow ? 2.5 : 1));
+        // stop for a moment at the next key moment on the way
+        const i = holds.findIndex((h) => !passed.current.has(h.at) && h.at > prev - 1e-12 && h.at <= Math.min(next, end));
+        if (i >= 0) {
+          passed.current.add(holds[i].at);
+          holdUntil.current = now + (holds[i].secs ?? 1.4) * 1000 * (slow ? 1.5 : 1);
+          setHolding(i);
+          return holds[i].at;
+        }
         if (next >= end) {
           setPlaying(false);
           return end;
@@ -56,14 +81,14 @@ export function SceneAnimation({ spec, part }: { spec: AnimSpec; part: number })
     };
     raf = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(raf);
-  }, [playing, slow, end, P.pace]);
+  }, [playing, slow, end, P.pace, holds]);
 
   const play = () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setT(end);
       return;
     }
-    if (t >= end - 1e-9) setT(start);
+    if (t >= end - 1e-9) { setT(start); passed.current.clear(); }
     setPlaying(true);
   };
 

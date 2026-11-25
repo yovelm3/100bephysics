@@ -246,7 +246,13 @@ export type PartAnim = {
   caption: string;
   /** The part asks for a time: the clock is hidden, so it does not give the answer away. */
   hideClock?: boolean;
+  /**
+   * Key moments of this part: the player stops there for a moment (secs, default 1.4 s) and highlights the place
+   * (where, in world units) with a short label. Labels describe what happens ("נעצר לרגע") and never give a value.
+   */
+  holds?: (m: Model) => Hold[];
 };
+export type Hold = { at: number; label: string; where?: [number, number]; secs?: number };
 
 export type AnimSpec = {
   id: string;
